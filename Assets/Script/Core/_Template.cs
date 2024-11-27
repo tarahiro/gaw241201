@@ -8,7 +8,7 @@ using VContainer;
 using VContainer.Unity;
 using UniRx;
 
-namespace FakeProject
+namespace gaw241201
 {
     public class _Template
     {

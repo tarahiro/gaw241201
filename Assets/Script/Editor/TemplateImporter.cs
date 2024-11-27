@@ -5,11 +5,11 @@ using Tarahiro.MasterData;
 using Tarahiro.Editor.XmlImporter;
 using System.Collections.Generic;
 using UnityEditor;
-using FakeProject;
-using FakeProject.Model;
-using FakeProject.Model.MasterData;
+using gaw241201;
+using gaw241201.Model;
+using gaw241201.Model.MasterData;
 
-namespace FakeProject.Editor
+namespace gaw241201.Editor
 {
 #if UNITY_EDITOR
     //---プロジェクト作成時にやること---//
