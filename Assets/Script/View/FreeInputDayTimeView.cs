@@ -64,6 +64,7 @@ namespace gaw241201.View
 
         private void Exit()
         {
+            _enterKeyObject.SetActive(false);
             string s = "";
             foreach (var item in _inputCharacterList)
             {

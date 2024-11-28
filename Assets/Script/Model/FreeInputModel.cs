@@ -12,7 +12,7 @@ namespace gaw241201
 {
     public class FreeInputModel : IFlowModel
     {
-        [Inject] IGlobalFlagRegisterer _flagRegisterer;
+        [Inject] FreeInputValueRegisterer _valueRegisterer;
 
         bool _isEnded = false;
         string _bodyId;
@@ -32,7 +32,7 @@ namespace gaw241201
         public void EndFlow(string value)
         {
             Log.Comment("FreeInput‚ÌI—¹‚ğŒŸ’mBvalue = " + value);
-            _flagRegisterer.RegisterFlag(_bodyId, value);
+            _valueRegisterer.Register(_bodyId, value);
             _isEnded = true;
         }
 

@@ -17,14 +17,19 @@ namespace gaw241201.Inject
             //FreeInput
             builder.Register<FreeInputModel>(Lifetime.Singleton).AsSelf();
             builder.RegisterComponentInHierarchy<FreeInputView>().AsSelf();
+            builder.Register<FreeInputValueRegisterer>(Lifetime.Singleton).AsSelf();
+
+            //RegisterFlagFlow
+            builder.Register<RegisterFlagFlowModel>(Lifetime.Singleton).AsSelf();
 
             //Conversation
             builder.Register<ConversationModel>(Lifetime.Singleton).AsSelf();
             builder.Register<ConversationView>(Lifetime.Singleton).AsSelf();
             builder.Register<ConversationMasterDataProvider>(Lifetime.Singleton).AsImplementedInterfaces();
-            builder.RegisterFactory<IConversationMaster, ConversationViewArgs>(x => new ConversationViewArgs(x.Message, x.Facial));
+            builder.RegisterFactory<IConversationMaster, ConversationViewArgs>(x => new ConversationViewArgs(Container.Resolve<MessageKeyProcessor>().ProcessKey(x.Message), x.Facial));
             builder.RegisterComponentInHierarchy<ConversationTextView>().AsSelf();
             builder.RegisterComponentInHierarchy<EyesView>().AsSelf();
+            builder.Register<MessageKeyProcessor>(Lifetime.Singleton).AsSelf();
 
             //Flow
             builder.Register<FlowHundler>(Lifetime.Singleton).AsSelf().AsImplementedInterfaces();
@@ -33,6 +38,7 @@ namespace gaw241201.Inject
 
             //Flag
             builder.Register<GlobalFlagContainer>(Lifetime.Singleton).AsImplementedInterfaces();
+            builder.Register<RegisterFlagOrderProcessor>(Lifetime.Singleton).AsSelf();
 
             //Manager
             builder.Register<AdapterToModel>(Lifetime.Singleton).AsImplementedInterfaces();

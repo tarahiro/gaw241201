@@ -14,6 +14,7 @@ namespace gaw241201
     {
         [Inject] ConversationModel _conversationModel;
         [Inject] FreeInputModel _freeInputModel;
+        [Inject] RegisterFlagFlowModel _registerFlagFlowModel;
 
         public IFlowModel GetFlowModel(string category)
         {
@@ -26,6 +27,9 @@ namespace gaw241201
 
                 case "FreeInput":
                     return _freeInputModel;
+
+                case "RegisterFlag":
+                    return _registerFlagFlowModel;
 
                 default:
                     Log.DebugAssert("不正なカテゴリー名です");

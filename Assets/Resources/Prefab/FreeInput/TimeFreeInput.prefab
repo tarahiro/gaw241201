@@ -87,7 +87,7 @@ GameObject:
   - component: {fileID: 5025693443394589628}
   - component: {fileID: 5903968938118432032}
   m_Layer: 5
-  m_Name: 101010DayTimeFreeInput
+  m_Name: TimeFreeInput
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
