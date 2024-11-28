@@ -1,6 +1,6 @@
 {
-    "name": "gaw241201.Inject",
-    "rootNamespace": "gaw241201.Inject",
+    "name": "gaw241201.Presenter",
+    "rootNamespace": "gaw241201.Presenter",
     "references": [
         "GUID:0be27b54e10228743974a8df3dda3639",
         "GUID:560b04d1a97f54a4e82edc0cbbb69285",
@@ -8,8 +8,6 @@
         "GUID:b0214a6008ed146ff8f122a6a9c2f6cc",
         "GUID:80730cb7ec02f6544bfe954bc465eae7",
         "GUID:eab71cc59d3b71e409a49c0566585d57",
-        "GUID:923c6bf0b90cc66458dd799c35b181e0",
-        "GUID:2b376bc4e0c0de9458a5b8d53277afed",
         "GUID:869514e06b3584849b8d2f9c50ea21a8"
     ],
     "includePlatforms": [],

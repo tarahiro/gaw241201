@@ -2,6 +2,8 @@ using VContainer;
 using VContainer.Unity;
 using Tarahiro;
 using gaw241201.Model.MasterData;
+using gaw241201.Presenter;
+using gaw241201.View;
 
 namespace gaw241201.Inject
 {
@@ -13,6 +15,8 @@ namespace gaw241201.Inject
 
             //Conversation
             builder.Register<ConversationModel>(Lifetime.Singleton).AsSelf();
+            builder.Register<ConversationView>(Lifetime.Singleton).AsSelf();
+            builder.Register<ConversationMasterDataProvider>(Lifetime.Singleton).AsImplementedInterfaces();
 
             //Flow
             builder.Register<FlowHundler>(Lifetime.Singleton).AsImplementedInterfaces();
@@ -25,6 +29,7 @@ namespace gaw241201.Inject
             builder.UseEntryPoints(Lifetime.Singleton, entryPoints =>
             {
                 entryPoints.Add<GameManager>();
+                entryPoints.Add<ConversationPresenter>();
             });
         }
     }
