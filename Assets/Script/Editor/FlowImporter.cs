@@ -19,24 +19,26 @@ namespace gaw241201.Editor
     //---クラス作成時にやること---//
     //"Template" を置換
     //ITemplateMasterに合わせてフィールドを追加
-    internal sealed class ConversationImporter
+    internal sealed class FlowImporter
     {
-        const string c_XmlPath = "ImportData/Conversation/Conversation.xml";
+        const string c_XmlPath = "ImportData/Flow/Flow.xml";
         const string c_SheetName = "Script";
         enum Columns
         {
             Index = 0,
             Id = 1,
-            Message = 2,
-            Facial = 3,
+            Category = 2,
+            BodyId = 3,
+            Condition = 4,
+            ConditionArg = 5,
         }
 
         //--------------------------------------------------------------------
         // 読み込み
         //--------------------------------------------------------------------
 
-        [MenuItem("Assets/Tables/Import Conversation", false, 2)]
-        static void ImportMenuConversation()
+        [MenuItem("Assets/Tables/Import Flow", false, 2)]
+        static void ImportMenuFlow()
         {
             var stopwatch = new System.Diagnostics.Stopwatch();
             stopwatch.Start();
@@ -44,14 +46,14 @@ namespace gaw241201.Editor
             Import();
 
             stopwatch.Stop();
-            Log.DebugLog($"Conversation imported in {stopwatch.ElapsedMilliseconds / 1000.0f} seconds.");
+            Log.DebugLog($"Flow imported in {stopwatch.ElapsedMilliseconds / 1000.0f} seconds.");
         }
 
         public static void Import()
         {
             var book = XmlImporter.ImportWorkbook(c_XmlPath);
 
-            var ConversationDataList = new List<ConversationMasterData.Record>();
+            var FlowDataList = new List<FlowMasterData.Record>();
 
             var sheet = book.TryGetWorksheet(c_SheetName);
             if (sheet == null)
@@ -66,17 +68,19 @@ namespace gaw241201.Editor
                     if (int.TryParse(sheet[row, (int)Columns.Index].String, out int index))
                     {
                         string id = sheet[row, (int)Columns.Id].String;
-                        ConversationDataList.Add(new ConversationMasterData.Record(index, id)
+                        FlowDataList.Add(new FlowMasterData.Record(index, id)
                         {
-                            SettableMessage= sheet[row, (int)Columns.Message].String,
-                            SettableFacial= sheet[row, (int)Columns.Facial].String,
+                            SettableCategory= sheet[row, (int)Columns.Category].String,
+                            SettableBodyId= sheet[row, (int)Columns.BodyId].String,
+                            SettableCondition = sheet[row, (int)Columns.Condition].String,
+                            SettableConditionArg = sheet[row, (int)Columns.ConditionArg].String,
                         });
                     }
                 }
             }
 
             // データ出力
-            XmlImporter.ExportOrderedDictionary<ConversationMasterData, ConversationMasterData.Record, IMasterDataRecord<IConversationMaster>>(ConversationMasterData.c_DataPath, ConversationDataList);
+            XmlImporter.ExportOrderedDictionary<FlowMasterData, FlowMasterData.Record, IMasterDataRecord<IFlowMaster>>(FlowMasterData.c_DataPath, FlowDataList);
         }
     }
 #endif

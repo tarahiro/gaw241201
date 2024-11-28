@@ -17,7 +17,7 @@ namespace Tarahiro.OtherGame.Inject
     {
         protected override void Configure(IContainerBuilder builder)
         {
-            Log.DebugLogComment("OtherGameLifetimeScopeでRegister開始");
+            Log.Comment("OtherGameLifetimeScopeでRegister開始");
             //OtherGame
             builder.RegisterFactory<Sprite, IOtherGameIcon>(container =>
             {
