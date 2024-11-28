@@ -10,11 +10,11 @@ namespace Tarahiro.Ui
     public static class TextUtil
     {
         const float c_defaultTextIntervalTime = .1f;
-        public static async UniTask DisplayTextByCharacter(string text, TextMeshProUGUI textMeshProUGUI, string SeLabel,KeyCode decide, float textIntervalTime = c_defaultTextIntervalTime)
+        public static async UniTask DisplayTextByCharacter(string text, TextMeshProUGUI textMeshProUGUI, string SeLabel,KeyCode decide, CancellationToken ct, float textIntervalTime = c_defaultTextIntervalTime)
         {
             var t = new GameObject().AddComponent<TextCounter>();
-            t.StartTextCount(text,textMeshProUGUI,SeLabel,decide,c_defaultTextIntervalTime);
-            await UniTask.WaitUntil(() => t.IsEndTextCount);
+            t.StartTextCount(text,textMeshProUGUI,SeLabel,decide,c_defaultTextIntervalTime,ct);
+            await UniTask.WaitUntil(() => t.IsEndTextCount, cancellationToken: ct);
             GameObject.Destroy(t.gameObject);
         }
     }

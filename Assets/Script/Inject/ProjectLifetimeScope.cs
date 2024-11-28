@@ -4,6 +4,7 @@ using Tarahiro;
 using gaw241201.Model.MasterData;
 using gaw241201.Presenter;
 using gaw241201.View;
+using gaw241201.Model;
 
 namespace gaw241201.Inject
 {
@@ -13,15 +14,25 @@ namespace gaw241201.Inject
         {
             Log.Comment("ProjectLifetimeScope‚Ì“o˜^ŠJŽn");
 
+            //FreeInput
+            builder.Register<FreeInputModel>(Lifetime.Singleton).AsSelf();
+            builder.RegisterComponentInHierarchy<FreeInputView>().AsSelf();
+
             //Conversation
             builder.Register<ConversationModel>(Lifetime.Singleton).AsSelf();
             builder.Register<ConversationView>(Lifetime.Singleton).AsSelf();
             builder.Register<ConversationMasterDataProvider>(Lifetime.Singleton).AsImplementedInterfaces();
+            builder.RegisterFactory<IConversationMaster, ConversationViewArgs>(x => new ConversationViewArgs(x.Message, x.Facial));
+            builder.RegisterComponentInHierarchy<ConversationTextView>().AsSelf();
+            builder.RegisterComponentInHierarchy<EyesView>().AsSelf();
 
             //Flow
-            builder.Register<FlowHundler>(Lifetime.Singleton).AsImplementedInterfaces();
+            builder.Register<FlowHundler>(Lifetime.Singleton).AsSelf().AsImplementedInterfaces();
             builder.Register<FlowMasterDataProvider>(Lifetime.Singleton).AsImplementedInterfaces();
             builder.Register<FlowProvider>(Lifetime.Singleton).AsImplementedInterfaces();
+
+            //Flag
+            builder.Register<GlobalFlagContainer>(Lifetime.Singleton).AsImplementedInterfaces();
 
             //Manager
             builder.Register<AdapterToModel>(Lifetime.Singleton).AsImplementedInterfaces();
@@ -30,6 +41,10 @@ namespace gaw241201.Inject
             {
                 entryPoints.Add<GameManager>();
                 entryPoints.Add<ConversationPresenter>();
+                entryPoints.Add<FreeInputPresenter>();
+#if ENABLE_DEBUG
+                entryPoints.Add<DebugManager>();
+#endif
             });
         }
     }

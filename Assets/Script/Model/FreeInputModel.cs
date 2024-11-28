@@ -1,5 +1,4 @@
 using Cysharp.Threading.Tasks;
-using gaw241201.Model;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -11,32 +10,29 @@ using VContainer.Unity;
 
 namespace gaw241201
 {
-    public class ConversationModel : IFlowModel {
+    public class FreeInputModel : IFlowModel
+    {
+        [Inject] IGlobalFlagRegisterer _flagRegisterer;
 
-        [Inject] IConversationMasterDataProvider _masterDataProvider;
-
-        Subject<IConversationMaster> _entered = new Subject<IConversationMaster>();
-
-
-        public IObservable<IConversationMaster> Entered => _entered;
-
-
-        //UnitaskとSubjectの変換を使ってきれいにしたい
         bool _isEnded = false;
+        string _bodyId;
+        Subject<string> _entered  = new Subject<string>();
+        public IObservable<string> Entered => _entered;
 
         public async UniTask EnterFlow(string bodyId)
         {
-            Log.Comment(bodyId + "のConversation開始");
+            Log.Comment(bodyId + "のFreeInput開始");
+            _bodyId = bodyId;
 
-            _isEnded = false;
+            _entered.OnNext(bodyId);
 
-            _entered.OnNext(_masterDataProvider.TryGetFromId(bodyId).GetMaster());
-            await UniTask.WaitUntil(() => _isEnded);
+            await UniTask.WaitUntil(() =>  _isEnded);
         }
 
-        public void EndFlow()
+        public void EndFlow(string value)
         {
-            Log.Comment("終了を検知");
+            Log.Comment("FreeInputの終了を検知。value = " + value);
+            _flagRegisterer.RegisterFlag(_bodyId, value);
             _isEnded = true;
         }
 

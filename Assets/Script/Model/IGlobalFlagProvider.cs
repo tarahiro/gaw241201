@@ -10,12 +10,8 @@ using VContainer.Unity;
 
 namespace gaw241201
 {
-    public interface IFlowModel
+    public interface IGlobalFlagProvider
     {
-       UniTask EnterFlow(string bodyId);
-#if ENABLE_DEBUG
-        void ForceEndFlow();
-        string ForceGetCategory { get; }
-#endif
+        string GetFlag(string key);
     }
 }

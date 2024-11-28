@@ -10,11 +10,13 @@ using VContainer.Unity;
 
 namespace gaw241201.View
 {
-    public class ConversationView
+    public class EyeView : MonoBehaviour
     {
-       public async UniTask EnterConversation(ConversationViewArgs args)
+        [SerializeField] Transform _eyeball;
+
+        public void SetEyePosition(Vector2 localPosition)
         {
-            Log.Comment(args.Message + " " + args.Facial + "‚ÌConversation•\Ž¦ŠJŽn");
+            _eyeball.localPosition = localPosition;
         }
     }
 }

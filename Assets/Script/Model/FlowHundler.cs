@@ -16,6 +16,8 @@ namespace gaw241201
         [Inject] IFlowMasterDataProvider _masterDataProvider;
         [Inject] IFlowProvider _flowProvider;
 
+        IFlowModel _currentFlow;
+
         public async UniTask EnterMainLoop()
         {
             Log.Comment("フローループ開始");
@@ -25,10 +27,16 @@ namespace gaw241201
             {
                 Log.Comment("フロー開始");
                 var master = _masterDataProvider.TryGetFromIndex(i).GetMaster();
-                var item = _flowProvider.GetFlowModel(master.Category);
-                await item.EnterFlow(master.BodyId);
+                _currentFlow = _flowProvider.GetFlowModel(master.Category);
+                await _currentFlow.EnterFlow(master.BodyId);
             }
 
         }
+#if ENABLE_DEBUG
+        public IFlowModel ForceGetCurrentFlow()
+        {
+            return _currentFlow;
+        }
+#endif
     }
 }

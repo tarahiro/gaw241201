@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using TMPro;
 using UnityEngine;
 
@@ -21,7 +22,7 @@ namespace Tarahiro.Ui
         int textCount = 0;
         float m_Tick = 0;
 
-        public void StartTextCount(string text, TextMeshProUGUI textMeshProUGUI, string SeLabel, KeyCode decide, float textIntervalTime)
+        public void StartTextCount(string text, TextMeshProUGUI textMeshProUGUI, string SeLabel, KeyCode decide, float textIntervalTime, CancellationToken ct)
         {
             m_text = text;
             m_textMeshProUGUI = textMeshProUGUI;

@@ -4,6 +4,7 @@ using gaw241201.View;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using Tarahiro;
 using UniRx;
 using UnityEngine;
@@ -17,17 +18,25 @@ namespace gaw241201.Presenter
     {
         [Inject] ConversationModel _model;
         [Inject] ConversationView _view;
+        [Inject] Func<IConversationMaster, ConversationViewArgs> _factory;
 
         CompositeDisposable _disposable = new CompositeDisposable();
+        CancellationTokenSource cancellationTokenSource = new CancellationTokenSource();
 
         public void PostInitialize()
         {
-            _model.Entered.Subscribe(Fake).AddTo(_disposable);
+            _model.Entered.Subscribe(x =>  _view.EnterConversation(_factory.Invoke(x), cancellationTokenSource.Token).Forget()).AddTo(_disposable);
+            _view.Completed.Subscribe(x => _model.EndFlow()).AddTo(_disposable);
+#if ENABLE_DEBUG
+            _model.ForceEnded.Subscribe(_ => { Cancell(); _model.EndFlow(); }).AddTo(_disposable);
+#endif
         }
 
-        void Fake(IConversationMaster _master)
+        void Cancell()
         {
-            Log.DebugLog(_master.Id);
+            cancellationTokenSource.Cancel();
         }
+
+
     }
 }

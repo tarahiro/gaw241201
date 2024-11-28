@@ -13,6 +13,7 @@ namespace gaw241201
     public class FlowProvider : IFlowProvider
     {
         [Inject] ConversationModel _conversationModel;
+        [Inject] FreeInputModel _freeInputModel;
 
         public IFlowModel GetFlowModel(string category)
         {
@@ -22,6 +23,9 @@ namespace gaw241201
             {
                 case "Conversation":
                     return _conversationModel;
+
+                case "FreeInput":
+                    return _freeInputModel;
 
                 default:
                     Log.DebugAssert("不正なカテゴリー名です");
