@@ -10,13 +10,19 @@ using VContainer.Unity;
 
 namespace gaw241201
 {
-    public static class FreeInputConst
+    public class FacialConst
     {
-        public enum RegisterProcessKey
+        public enum Key
         {
-            TimeFreeInput,
-            NameFreeInput,
-            BirthDateFreeInput,
+            Center,
+            Top,
+            RightTop,
+            Right,
+            RightBottom,
+            Bottom,
+            LeftBottom,
+            Left,
+            LeftTop
         }
     }
 }

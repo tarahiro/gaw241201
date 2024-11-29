@@ -14,10 +14,19 @@ namespace gaw241201.Inject
         {
             Log.Comment("ProjectLifetimeScope‚Ì“o˜^ŠJŽn");
 
+            //Eyes
+            builder.RegisterComponentInHierarchy<EyesView>().AsImplementedInterfaces();
+
+            //DeleteUi
+            builder.Register<DeleteUiModel>(Lifetime.Singleton).AsSelf();
+            builder.Register<UiDeletableProvider>(Lifetime.Singleton).AsSelf();
+
             //FreeInput
             builder.Register<FreeInputModel>(Lifetime.Singleton).AsSelf();
             builder.RegisterComponentInHierarchy<FreeInputView>().AsSelf();
             builder.Register<FreeInputValueRegisterer>(Lifetime.Singleton).AsSelf();
+            builder.Register<DeleteFreeInputUi>(Lifetime.Singleton).AsSelf().AsImplementedInterfaces();
+            builder.Register<FreeInputView>(Lifetime.Singleton).AsImplementedInterfaces();
 
             //RegisterFlagFlow
             builder.Register<RegisterFlagFlowModel>(Lifetime.Singleton).AsSelf();
@@ -26,13 +35,15 @@ namespace gaw241201.Inject
             builder.Register<ConversationModel>(Lifetime.Singleton).AsSelf();
             builder.Register<ConversationView>(Lifetime.Singleton).AsSelf();
             builder.Register<ConversationMasterDataProvider>(Lifetime.Singleton).AsImplementedInterfaces();
-            builder.RegisterFactory<IConversationMaster, ConversationViewArgs>(x => new ConversationViewArgs(Container.Resolve<MessageKeyHundler>().HundleKey(x.Message), x.Facial));
+            builder.RegisterFactory<IConversationMaster, ConversationViewArgs>(x => new ConversationViewArgs(
+                Container.Resolve<MessageKeyHundler>().HundleKey(x.Message),
+                EnumUtil.KeyToType<FacialConst.Key>(x.Facial)));
             builder.RegisterComponentInHierarchy<ConversationTextView>().AsSelf();
-            builder.RegisterComponentInHierarchy<EyesView>().AsSelf();
             builder.Register<MessageKeyHundler>(Lifetime.Singleton).AsSelf();
             builder.Register<MessageKeyReplacerProvider>(Lifetime.Singleton).AsSelf();
             builder.Register<ApplicationTimeKeyReplacer>(Lifetime.Singleton).AsSelf();
             builder.Register<DiffSecondKeyReplacer>(Lifetime.Singleton).AsSelf();
+            builder.Register<RowKeyReplacer>(Lifetime.Singleton).AsSelf();
 
             //Flow
             builder.Register<FlowHundler>(Lifetime.Singleton).AsSelf().AsImplementedInterfaces();

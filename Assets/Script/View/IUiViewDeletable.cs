@@ -8,15 +8,10 @@ using UnityEngine;
 using VContainer;
 using VContainer.Unity;
 
-namespace gaw241201
+namespace gaw241201.View
 {
-    public static class FreeInputConst
+    public interface IUiViewDeletable
     {
-        public enum RegisterProcessKey
-        {
-            TimeFreeInput,
-            NameFreeInput,
-            BirthDateFreeInput,
-        }
+        void Delete();
     }
 }

@@ -11,19 +11,15 @@ using static gaw241201.DayTimeUtil;
 
 namespace gaw241201
 {
-    public class DiffSecondKeyReplacer : IKeyReplacer
+    public class RowKeyReplacer : IKeyReplacer
+
     {
         [Inject] IGlobalFlagProvider _flagProvider;
         public string ReplaceTo(ConversationConst.Key key)
         {
             Log.Comment("DiffSecondèëÇ´ä∑Ç¶");
+            return _flagProvider.GetFlag(EnumUtil.KeyToType<FlagConst.Key>(key.ToString()));
 
-            TimeInDay applicationTid = CreateTimeInDay(_flagProvider.GetFlag(FlagConst.Key.ApplicationTime));
-            TimeInDay inputTid = CreateTimeInDay(_flagProvider.GetFlag(FlagConst.Key.InputTime));
-
-            int diff = Mathf.Abs(applicationTid.GetAllSecond() - inputTid.GetAllSecond());
-
-            return diff.ToString();
         }
     }
 }

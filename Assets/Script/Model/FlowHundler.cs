@@ -27,7 +27,7 @@ namespace gaw241201
             {
                 Log.Comment("フロー開始");
                 var master = _masterDataProvider.TryGetFromIndex(i).GetMaster();
-                _currentFlow = _flowProvider.GetFlowModel(master.Category);
+                _currentFlow = _flowProvider.GetFlowModel(EnumUtil.KeyToType<FlowConst.Category>(master.Category));
                 await _currentFlow.EnterFlow(master.BodyId);
             }
 

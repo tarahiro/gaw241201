@@ -15,21 +15,25 @@ namespace gaw241201
         [Inject] ConversationModel _conversationModel;
         [Inject] FreeInputModel _freeInputModel;
         [Inject] RegisterFlagFlowModel _registerFlagFlowModel;
+        [Inject] DeleteUiModel _deleteUiModel;
 
-        public IFlowModel GetFlowModel(string category)
+        public IFlowModel GetFlowModel(FlowConst.Category category)
         {
             Log.Comment("フロー取得");
 
             switch (category)
             {
-                case "Conversation":
+                case FlowConst.Category.Conversation :
                     return _conversationModel;
 
-                case "FreeInput":
+                case FlowConst.Category.FreeInput:
                     return _freeInputModel;
 
-                case "RegisterFlag":
+                case FlowConst.Category.RegisterFlag:
                     return _registerFlagFlowModel;
+
+                case FlowConst.Category.DeleteUi:
+                    return _deleteUiModel;
 
                 default:
                     Log.DebugAssert("不正なカテゴリー名です");

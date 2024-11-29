@@ -13,9 +13,9 @@ namespace gaw241201.View
     public class ConversationViewArgs
     {
         public string Message { get; set; }
-        public string Facial { get; set; }
+        public FacialConst.Key Facial { get; set; }
 
-        public ConversationViewArgs(string message, string facial)
+        public ConversationViewArgs(string message, FacialConst.Key facial)
         {
             Message = message;
             Facial = facial;

@@ -14,6 +14,7 @@ namespace gaw241201
     {
         [Inject] ApplicationTimeKeyReplacer _applicationTimeKeyReplacer;
         [Inject] DiffSecondKeyReplacer _diffSecondKeyReplacer;
+        [Inject] RowKeyReplacer _rowKeyReplacer;
         public IKeyReplacer GetKeyReplacer(ConversationConst.Key key)
         {
             switch (key)
@@ -25,8 +26,7 @@ namespace gaw241201
                     return _diffSecondKeyReplacer;
 
                 default:
-                    Log.DebugAssert(key + "ÇÕïsê≥Ç»ílÇ≈Ç∑");
-                    return null;
+                    return _rowKeyReplacer;
             }
     
         }

@@ -10,13 +10,9 @@ using VContainer.Unity;
 
 namespace gaw241201
 {
-    public static class FreeInputConst
+    public interface IUiDeletable
     {
-        public enum RegisterProcessKey
-        {
-            TimeFreeInput,
-            NameFreeInput,
-            BirthDateFreeInput,
-        }
+        void DeleteUi();
+        IObservable<Unit> UiDeleted { get; }
     }
 }

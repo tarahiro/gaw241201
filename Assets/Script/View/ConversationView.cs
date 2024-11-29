@@ -14,7 +14,7 @@ namespace gaw241201.View
     public class ConversationView
     {
         [Inject] ConversationTextView _textView;
-        [Inject] EyesView _eyesView;
+        [Inject] IFacialChangable _facialChangable;
 
         Subject<Unit> _completed = new Subject<Unit>();
         public Subject<Unit> Completed => _completed;
@@ -24,7 +24,7 @@ namespace gaw241201.View
         {
             Log.Comment(args.Message + " " + args.Facial + "‚ÌConversation•\Ž¦ŠJŽn");
 
-            _eyesView.SetEye(args.Facial);
+            _facialChangable.SetFacial(args.Facial);
             await _textView.Enter(args.Message,ct);
 
             _completed.OnNext(Unit.Default);

@@ -11,9 +11,11 @@ using VContainer.Unity;
 
 namespace gaw241201.View
 {
-    public class FreeInputView : MonoBehaviour
+    public class FreeInputView : MonoBehaviour, IUiViewDeletable
     {
-        FreeInputItemView _item;
+        [Inject] IGazable _gazable;
+
+        FreeInputItemView _currentItem;
 
         const string c_prefix = "Prefab/FreeInput/";
 
@@ -24,13 +26,22 @@ namespace gaw241201.View
         public async UniTask Enter(string bodyId, CancellationToken ct)
         {
             Log.DebugLog(c_prefix + bodyId + "ÇÃprefabê∂ê¨");
-            _item = Instantiate(Resources.Load<FreeInputItemView>(c_prefix + bodyId), transform);
+            _currentItem = Instantiate(Resources.Load<FreeInputItemView>(c_prefix + bodyId), transform);
+            _currentItem.Construct(_gazable);
+
             string value = "UnRegistered";
-            _item.Exited.Subscribe(x => value = x);
-            await _item.Enter(ct);
+            _currentItem.Exited.Subscribe(x => value = x);
+            await _currentItem.Enter(ct);
 
             _exited.OnNext(value);
 
+        }
+
+        public void Delete()
+        {
+            Log.Comment("FreeInputViewItemÇçÌèú");
+            //êFÅXdisposeÇµÇ»Ç¢Ç∆Ç¢ÇØÇ»Ç¢ãCÇ‡Ç∑ÇÈ
+            Destroy(_currentItem.gameObject);
         }
     }
 }

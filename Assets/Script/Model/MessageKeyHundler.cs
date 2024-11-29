@@ -24,7 +24,7 @@ namespace gaw241201
                 string command = "<key=" + key.ToString()  + ">";
                 if (returnMessage.Contains(command))
                 {
-                    returnMessage = returnMessage.Replace(command, _replacerProvider.GetKeyReplacer(key).ReplaceTo());
+                    returnMessage = returnMessage.Replace(command, _replacerProvider.GetKeyReplacer(key).ReplaceTo(key));
                 }
 
             }

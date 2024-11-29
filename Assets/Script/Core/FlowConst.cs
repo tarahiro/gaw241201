@@ -10,13 +10,14 @@ using VContainer.Unity;
 
 namespace gaw241201
 {
-    public static class FreeInputConst
+    public static class FlowConst
     {
-        public enum RegisterProcessKey
+        public enum Category
         {
-            TimeFreeInput,
-            NameFreeInput,
-            BirthDateFreeInput,
+            Conversation,
+            FreeInput,
+            RegisterFlag,
+            DeleteUi
         }
     }
 }

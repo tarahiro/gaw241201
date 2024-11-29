@@ -10,61 +10,75 @@ using VContainer.Unity;
 
 namespace gaw241201.View
 {
-    public class EyesView : MonoBehaviour
+    public class EyesView : MonoBehaviour, IFacialChangable, IGazable
     {
         const float c_length = .2f;
 
         [SerializeField] List<EyeView> _eyeViewList;
 
-        public void SetEye(string directionKey)
+
+        public void SetFacial(FacialConst.Key facialKey)
         {
             Vector2 direction;
 
-            switch (directionKey)
+            switch (facialKey)
             {
-                case "Center":
+                case FacialConst.Key.Center:
                     direction = Vector2.zero;
                     break;
 
-                case "Top":
+                case FacialConst.Key.Top:
                     direction = Vector2.up;
                     break;
 
-                case "RightTop":
+                case FacialConst.Key.RightTop:
                     direction = Vector2.up + Vector2.right;
                     break;
 
-                case "Right":
+                case FacialConst.Key.Right:
                     direction = Vector2.right;
                     break;
 
-                case "RightBottom":
+                case FacialConst.Key.RightBottom:
                     direction = Vector2.down + Vector2.right;
                     break;
 
-                case "Bottom":
+                case FacialConst.Key.Bottom:
                     direction = Vector2.down;
                     break;
 
-                case "LeftBottom":
+                case FacialConst.Key.LeftBottom:
                     direction = Vector2.left + Vector2.down;
                     break;
 
-                case "Left":
+                case FacialConst.Key.Left:
                     direction = Vector2.left;
                     break;
 
-                case "LeftTop":
+                case FacialConst.Key.LeftTop:
                     direction = Vector2.left + Vector2.up;
                     break;
 
                 default:
-                    Log.DebugAssert(directionKey + "は不正な値です");
+                    Log.DebugAssert(facialKey + "は不正な値です");
                     direction = Vector2.zero;
                     break;
 
             }
 
+            SetEyePosition(direction);
+
+
+        }
+
+        public void Gaze(Vector2 screenPosition)
+        {
+            Vector2 direction = screenPosition - (Vector2)Camera.main.WorldToScreenPoint(transform.position);
+            SetEyePosition(direction);
+        }
+
+        void SetEyePosition(Vector2 direction)
+        {
             var position = direction.normalized * c_length;
 
             foreach (var item in _eyeViewList)

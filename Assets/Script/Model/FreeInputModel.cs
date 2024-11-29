@@ -23,6 +23,7 @@ namespace gaw241201
         {
             Log.Comment(bodyId + "のFreeInput開始");
             _bodyId = bodyId;
+            _isEnded = false;
 
             _entered.OnNext(bodyId);
 
@@ -32,7 +33,7 @@ namespace gaw241201
         public void EndFlow(string value)
         {
             Log.Comment("FreeInputの終了を検知。value = " + value);
-            _valueRegisterer.Register(EnumUtil.KeyToType<FreeInputConst.Key> (_bodyId), value);
+            _valueRegisterer.Register(EnumUtil.KeyToType<FreeInputConst.RegisterProcessKey> (_bodyId), value);
             _isEnded = true;
         }
 

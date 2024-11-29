@@ -1,7 +1,9 @@
 using Cysharp.Threading.Tasks;
+using LitMotion;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using Tarahiro;
 using TMPro;
 using UniRx;
@@ -14,16 +16,55 @@ namespace gaw241201.View
 {
     public class InputCharacter : MonoBehaviour
     {
-        [SerializeField] TextMeshProUGUI _tmp;
+        IGazable _gazable;
 
-        public void SetCharacter(char c)
+        [SerializeField] TextMeshProUGUI _tmp;
+        [SerializeField] GameObject _underBar;
+        
+        CancellationTokenSource _cancellationTokenSource;
+
+
+        public void SetCharacter(string s)
         {
-            _tmp.text = c.ToString();
+            _tmp.text = s[0].ToString();
         }
 
-        public void Enter()
+        public void ClearCharacter()
         {
-            Log.DebugWarning("–¢ŽÀ‘• ‚¿‚©‚¿‚©‚³‚¹‚é");
+            _tmp.text = null;
+        }
+
+        public void Focus()
+        {
+            _cancellationTokenSource = new CancellationTokenSource();
+            Blink(_cancellationTokenSource.Token).Forget();
+
+            _gazable.Gaze(transform.position);
+           
+        }
+
+        public void UnFocus()
+        {
+            _cancellationTokenSource.Cancel();
+            _underBar.SetActive(true);
+
+        }
+
+        async UniTask Blink(CancellationToken ct)
+        {
+            while (!ct.IsCancellationRequested)
+            {
+
+                _underBar.SetActive(true);
+                await UniTask.WaitForSeconds(0.5f, cancellationToken: ct);
+                _underBar.SetActive(false);
+                await UniTask.WaitForSeconds(0.2f, cancellationToken: ct);
+            }
+        }
+
+        public void Enter(IGazable gazable)
+        {
+            _gazable = gazable;
         }
 
         public bool TryGetCharacter(out char c)

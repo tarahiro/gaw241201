@@ -12,6 +12,6 @@ namespace gaw241201
 {
     public interface IFlowProvider
     {
-        IFlowModel GetFlowModel(string category);
+        IFlowModel GetFlowModel(FlowConst.Category category);
     }
 }

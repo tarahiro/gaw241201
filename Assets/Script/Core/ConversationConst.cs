@@ -24,6 +24,7 @@ namespace gaw241201
         {
             ApplicationTime,
             DiffSecond,
+            Name,
         }
     }
 }

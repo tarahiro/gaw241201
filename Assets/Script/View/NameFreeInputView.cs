@@ -8,21 +8,18 @@ using UnityEngine;
 using VContainer;
 using VContainer.Unity;
 
-namespace gaw241201
+namespace gaw241201.View
 {
-    public static class FlagConst
+    public class NameFreeInputView : FreeInputItemView
     {
-        public enum Key
+        protected override bool isAcceptKey(int index, string key)
         {
-            ApplicationTime,
-            InputTime,
-            Name,
-            BirthDate,
+            return true;
         }
 
-        public enum RegisterOrder
+        protected override bool IsAcceptEnter()
         {
-            ReadTime
+            return _index >= 1;
         }
     }
 }
