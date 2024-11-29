@@ -26,10 +26,13 @@ namespace gaw241201.Inject
             builder.Register<ConversationModel>(Lifetime.Singleton).AsSelf();
             builder.Register<ConversationView>(Lifetime.Singleton).AsSelf();
             builder.Register<ConversationMasterDataProvider>(Lifetime.Singleton).AsImplementedInterfaces();
-            builder.RegisterFactory<IConversationMaster, ConversationViewArgs>(x => new ConversationViewArgs(Container.Resolve<MessageKeyProcessor>().ProcessKey(x.Message), x.Facial));
+            builder.RegisterFactory<IConversationMaster, ConversationViewArgs>(x => new ConversationViewArgs(Container.Resolve<MessageKeyHundler>().HundleKey(x.Message), x.Facial));
             builder.RegisterComponentInHierarchy<ConversationTextView>().AsSelf();
             builder.RegisterComponentInHierarchy<EyesView>().AsSelf();
-            builder.Register<MessageKeyProcessor>(Lifetime.Singleton).AsSelf();
+            builder.Register<MessageKeyHundler>(Lifetime.Singleton).AsSelf();
+            builder.Register<MessageKeyReplacerProvider>(Lifetime.Singleton).AsSelf();
+            builder.Register<ApplicationTimeKeyReplacer>(Lifetime.Singleton).AsSelf();
+            builder.Register<DiffSecondKeyReplacer>(Lifetime.Singleton).AsSelf();
 
             //Flow
             builder.Register<FlowHundler>(Lifetime.Singleton).AsSelf().AsImplementedInterfaces();
