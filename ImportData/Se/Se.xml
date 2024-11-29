@@ -9,7 +9,7 @@
   <Author>h t</Author>
   <LastAuthor>h t</LastAuthor>
   <Created>2021-10-25T13:58:26Z</Created>
-  <LastSaved>2024-11-28T05:39:07Z</LastSaved>
+  <LastSaved>2024-11-28T14:39:30Z</LastSaved>
   <Version>16.00</Version>
  </DocumentProperties>
  <OfficeDocumentSettings xmlns="urn:schemas-microsoft-com:office:office">
@@ -17,10 +17,10 @@
  </OfficeDocumentSettings>
  <ExcelWorkbook xmlns="urn:schemas-microsoft-com:office:excel">
   <SupBook>
-   <Path>\Users\owner\Documents\gaw241201\gaw241201\ImportData\Conversation\Conversation.xml</Path>
-   <SheetName>Script</SheetName>
-   <SheetName>凡例</SheetName>
-   <SheetName>Template</SheetName>
+   <Path> </Path>
+   <SheetName> </SheetName>
+   <SheetName> </SheetName>
+   <SheetName> </SheetName>
    <Xct>
     <Count>0</Count>
     <SheetIndex>0</SheetIndex>
@@ -28,10 +28,6 @@
    <Xct>
     <Count>0</Count>
     <SheetIndex>1</SheetIndex>
-   </Xct>
-   <Xct>
-    <Count>0</Count>
-    <SheetIndex>2</SheetIndex>
    </Xct>
   </SupBook>
   <WindowHeight>15800</WindowHeight>
@@ -148,7 +144,7 @@
     <Pane>
      <Number>3</Number>
      <ActiveRow>4</ActiveRow>
-     <ActiveCol>2</ActiveCol>
+     <ActiveCol>14</ActiveCol>
     </Pane>
    </Panes>
    <ProtectObjects>False</ProtectObjects>

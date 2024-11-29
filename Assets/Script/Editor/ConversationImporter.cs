@@ -27,8 +27,9 @@ namespace gaw241201.Editor
         {
             Index = 0,
             Id = 1,
-            Message = 2,
-            Facial = 3,
+            ConversationGroup = 2,
+            Message = 3,
+            Facial = 4,
         }
 
         //--------------------------------------------------------------------
@@ -68,7 +69,8 @@ namespace gaw241201.Editor
                         string id = sheet[row, (int)Columns.Id].String;
                         ConversationDataList.Add(new ConversationMasterData.Record(index, id)
                         {
-                            SettableMessage= sheet[row, (int)Columns.Message].String,
+                            SettableConversationGroup = sheet[row, (int)Columns.ConversationGroup].String,
+                            SettableMessage = sheet[row, (int)Columns.Message].String,
                             SettableFacial= sheet[row, (int)Columns.Facial].String,
                         });
                     }

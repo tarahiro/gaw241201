@@ -3,6 +3,7 @@ using gaw241201.Model;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using Tarahiro;
 using UniRx;
 using UnityEngine;
@@ -19,6 +20,7 @@ namespace gaw241201
 
 
         public IObservable<IConversationMaster> Entered => _entered;
+        CancellationTokenSource _cts = new CancellationTokenSource();
 
 
         //UnitaskとSubjectの変換を使ってきれいにしたい
@@ -26,15 +28,31 @@ namespace gaw241201
 
         public async UniTask EnterFlow(string bodyId)
         {
-            Log.Comment(bodyId + "のConversation開始");
+            Log.Comment(bodyId + "のConversationGroup開始");
+            _cts = new CancellationTokenSource();
+            List<IConversationMaster> _thisConversationGroup = new List<IConversationMaster>();
 
-            _isEnded = false;
+            for (int i = 0; i < _masterDataProvider.Count; i++)
+            {
+                if(_masterDataProvider.TryGetFromIndex(i).GetMaster().ConversationGroup == bodyId)
+                {
+                    _thisConversationGroup.Add(_masterDataProvider.TryGetFromIndex(i).GetMaster());
+                }
+            }
 
-            _entered.OnNext(_masterDataProvider.TryGetFromId(bodyId).GetMaster());
-            await UniTask.WaitUntil(() => _isEnded);
+            for (int i = 0; i < _thisConversationGroup.Count && !_cts.IsCancellationRequested; i++)
+            {
+                Log.Comment(_thisConversationGroup[i].Id + "のConversation開始");
+                _isEnded = false;
+
+                _entered.OnNext(_thisConversationGroup[i]);
+                await UniTask.WaitUntil(() => _isEnded);
+            }
+
+            Log.Comment(bodyId + "のConversationGroup終了");
         }
 
-        public void EndFlow()
+        public void EndSIngleConversation()
         {
             Log.Comment("終了を検知");
             _isEnded = true;
@@ -46,6 +64,8 @@ namespace gaw241201
         public string ForceGetCategory => "Conversation";
         public void ForceEndFlow()
         {
+            EndSIngleConversation();
+            _cts.Cancel();
             _forceEnded.OnNext(Unit.Default);
         }
 

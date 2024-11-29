@@ -21,6 +21,11 @@ namespace gaw241201.Inject
         {
             if (Input.GetKeyDown(KeyCode.Tab))
             {
+                _flowHundler.ForceGetCurrentFlow().ForceEndFlow();
+            }
+            /*
+            if (Input.GetKeyDown(KeyCode.Tab))
+            {
                 _initialCategory = _flowHundler.ForceGetCurrentFlow().ForceGetCategory;
             }
 
@@ -31,6 +36,7 @@ namespace gaw241201.Inject
                     _flowHundler.ForceGetCurrentFlow().ForceEndFlow();
                 }
             }
+            */
         }
     }
 #endif

@@ -9,15 +9,15 @@
   <Author>h t</Author>
   <LastAuthor>h t</LastAuthor>
   <Created>2021-10-25T13:58:26Z</Created>
-  <LastSaved>2024-11-28T14:28:05Z</LastSaved>
+  <LastSaved>2024-11-28T14:39:30Z</LastSaved>
   <Version>16.00</Version>
  </DocumentProperties>
  <OfficeDocumentSettings xmlns="urn:schemas-microsoft-com:office:office">
   <AllowPNG/>
  </OfficeDocumentSettings>
  <ExcelWorkbook xmlns="urn:schemas-microsoft-com:office:excel">
-  <WindowHeight>15800</WindowHeight>
-  <WindowWidth>32767</WindowWidth>
+  <WindowHeight>10160</WindowHeight>
+  <WindowWidth>28580</WindowWidth>
   <WindowTopX>32767</WindowTopX>
   <WindowTopY>32767</WindowTopY>
   <RefModeR1C1/>
@@ -88,11 +88,11 @@
   </Style>
  </Styles>
  <Worksheet ss:Name="Script">
-  <Table ss:ExpandedColumnCount="4" ss:ExpandedRowCount="20" x:FullColumns="1"
+  <Table ss:ExpandedColumnCount="5" ss:ExpandedRowCount="21" x:FullColumns="1"
    x:FullRows="1" ss:DefaultColumnWidth="52.5" ss:DefaultRowHeight="18">
    <Column ss:AutoFitWidth="0" ss:Width="30"/>
-   <Column ss:AutoFitWidth="0" ss:Width="105"/>
-   <Column ss:AutoFitWidth="0" ss:Width="308.5"/>
+   <Column ss:AutoFitWidth="0" ss:Width="105" ss:Span="1"/>
+   <Column ss:Index="4" ss:AutoFitWidth="0" ss:Width="308.5"/>
    <Column ss:AutoFitWidth="0" ss:Width="90"/>
    <Row ss:AutoFitHeight="0" ss:Height="24.5" ss:StyleID="s62">
     <Cell ss:StyleID="s63" ss:ArrayRange="RC"
@@ -102,48 +102,56 @@
    <Row ss:Index="4" ss:AutoFitHeight="0" ss:Height="17.5" ss:StyleID="s64">
     <Cell ss:StyleID="s65"><Data ss:Type="String">index</Data></Cell>
     <Cell ss:StyleID="s66"><Data ss:Type="String">Id</Data></Cell>
+    <Cell ss:StyleID="s66"><Data ss:Type="String">Category</Data></Cell>
     <Cell ss:StyleID="s65"><Data ss:Type="String">Message</Data></Cell>
     <Cell ss:StyleID="s65"><Data ss:Type="String">Facial</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
     <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">0</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">100010InitialConversation</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">100000InitialConversation</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">こんにちは。</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">Center</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
     <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">1</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">100020InitialConversation</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">100000InitialConversation</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">……。</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">Bottom</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
     <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">2</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">100030InitialConversation</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">100000InitialConversation</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">…ん？</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">Right</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
     <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">3</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">100040InitialConversation</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">100000InitialConversation</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">おはようございます？</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">RightTop</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
     <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">4</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">100050InitialConversation</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">100000InitialConversation</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">こんばんは？</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">LeftTop</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
     <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">5</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">100060InitialConversation</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">100000InitialConversation</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">……。</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">Bottom</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
     <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">6</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">100070InitialConversation</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">100000InitialConversation</Data></Cell>
     <Cell ss:StyleID="s67"><PhoneticText
       xmlns="urn:schemas-microsoft-com:office:excel">シツレイシツレイ</PhoneticText><Data
       ss:Type="String">失礼　失礼。</Data></Cell>
@@ -152,66 +160,82 @@
    <Row ss:AutoFitHeight="0">
     <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">7</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">100080InitialConversation</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">100000InitialConversation</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">あいさつは　ちゃんと　しなければ。</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Top</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">8</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">100090InitialConversation</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">100000InitialConversation</Data></Cell>
     <Cell ss:StyleID="s67"><PhoneticText
       xmlns="urn:schemas-microsoft-com:office:excel">イマジカンオシ</PhoneticText><Data
       ss:Type="String">今の　時間を　教えて　いただけますかな？</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">Center</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">8</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">102010InitialConversation</Data></Cell>
+    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">9</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">101910InitialConversation</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">101900InitialConversation</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">……。</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">Bottom</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">9</Data></Cell>
+    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">10</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">102020InitialConversation</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">102000InitialConversation</Data></Cell>
     <Cell ss:StyleID="s67"><PhoneticText
       xmlns="urn:schemas-microsoft-com:office:excel">イマ</PhoneticText><Data
       ss:Type="String">今は&lt;key=ApplicationTime&gt;　です。</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">Center</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">10</Data></Cell>
+    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">11</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">102030InitialConversation</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">102000InitialConversation</Data></Cell>
     <Cell ss:StyleID="s67"><PhoneticText
       xmlns="urn:schemas-microsoft-com:office:excel">ビョウ</PhoneticText><Data
       ss:Type="String">&lt;key=DiffSecond&gt;秒も　ちがいます。</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">Right</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">11</Data></Cell>
+    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">12</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">102040InitialConversation</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">102000InitialConversation</Data></Cell>
     <Cell ss:StyleID="s67"><PhoneticText
       xmlns="urn:schemas-microsoft-com:office:excel">ワタクシウソキラ</PhoneticText><Data
       ss:Type="String">私　嘘が　とても　嫌いです。</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">LeftTop</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">12</Data></Cell>
+    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">13</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">102050InitialConversation</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">102000InitialConversation</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">おぼえておいてください。</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">Center</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">13</Data></Cell>
+    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">14</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">102060InitialConversation</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">102000InitialConversation</Data></Cell>
     <Cell ss:StyleID="s67"><PhoneticText
       xmlns="urn:schemas-microsoft-com:office:excel">ニンゲンテイドゴサ</PhoneticText><Data
       ss:Type="String">…人間には　この程度　誤差かもしれませんが。</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">LeftBottom</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">14</Data></Cell>
+    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">15</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">102070InitialConversation</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">102000InitialConversation</Data></Cell>
     <Cell ss:StyleID="s67"><PhoneticText
       xmlns="urn:schemas-microsoft-com:office:excel">ワタシシンライ</PhoneticText><Data
       ss:Type="String">これからは　私も　あなたを信頼して</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">Center</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">15</Data></Cell>
+    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">16</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">102080InitialConversation</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">102000InitialConversation</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">ズルは　しませんから。</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">Right</Data></Cell>
    </Row>
@@ -230,34 +254,21 @@
     <VerticalResolution>360</VerticalResolution>
    </Print>
    <TabColorIndex>13</TabColorIndex>
-   <Zoom>115</Zoom>
+   <Zoom>85</Zoom>
    <Selected/>
+   <TopRowVisible>2</TopRowVisible>
    <Panes>
     <Pane>
      <Number>3</Number>
-     <ActiveRow>23</ActiveRow>
-     <ActiveCol>2</ActiveCol>
+     <ActiveRow>11</ActiveRow>
+     <ActiveCol>4</ActiveCol>
     </Pane>
    </Panes>
    <ProtectObjects>False</ProtectObjects>
    <ProtectScenarios>False</ProtectScenarios>
   </WorksheetOptions>
   <ConditionalFormatting xmlns="urn:schemas-microsoft-com:office:excel">
-   <Range>R5C1:R19C4,R20C2</Range>
-   <Condition>
-    <Value1>LEN(TRIM(RC))=0</Value1>
-    <Format Style='background:#E7E6E6'/>
-   </Condition>
-  </ConditionalFormatting>
-  <ConditionalFormatting xmlns="urn:schemas-microsoft-com:office:excel">
-   <Range>R20C1,R20C3</Range>
-   <Condition>
-    <Value1>LEN(TRIM(RC))=0</Value1>
-    <Format Style='background:#E7E6E6'/>
-   </Condition>
-  </ConditionalFormatting>
-  <ConditionalFormatting xmlns="urn:schemas-microsoft-com:office:excel">
-   <Range>R20C4</Range>
+   <Range>R5C1:R21C5</Range>
    <Condition>
     <Value1>LEN(TRIM(RC))=0</Value1>
     <Format Style='background:#E7E6E6'/>

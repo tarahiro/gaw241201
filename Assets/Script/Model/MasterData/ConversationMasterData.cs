@@ -29,18 +29,21 @@ namespace gaw241201.Model.MasterData
 
             [SerializeField] int m_Index;
             [SerializeField] string m_Id;
+            [SerializeField] string m_ConversationGroup;
             [SerializeField] string m_Message;
             [SerializeField] string m_Facial;
 
 
             public int Index => m_Index;
             public string Id => m_Id;
+            public string ConversationGroup => m_ConversationGroup;
             public string Message => m_Message;
             public string Facial => m_Facial;
 
             public IConversationMaster GetMaster() => this;
 
 #if UNITY_EDITOR
+            public string SettableConversationGroup { set => m_ConversationGroup = value; }
             public string SettableMessage { set => m_Message = value; }
             public string SettableFacial { set => m_Facial = value; }
 

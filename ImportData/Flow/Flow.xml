@@ -9,15 +9,15 @@
   <Author>h t</Author>
   <LastAuthor>h t</LastAuthor>
   <Created>2021-10-25T13:58:26Z</Created>
-  <LastSaved>2024-11-28T14:28:05Z</LastSaved>
+  <LastSaved>2024-11-29T02:02:21Z</LastSaved>
   <Version>16.00</Version>
  </DocumentProperties>
  <OfficeDocumentSettings xmlns="urn:schemas-microsoft-com:office:office">
   <AllowPNG/>
  </OfficeDocumentSettings>
  <ExcelWorkbook xmlns="urn:schemas-microsoft-com:office:excel">
-  <WindowHeight>15800</WindowHeight>
-  <WindowWidth>32767</WindowWidth>
+  <WindowHeight>10160</WindowHeight>
+  <WindowWidth>28580</WindowWidth>
   <WindowTopX>32767</WindowTopX>
   <WindowTopY>32767</WindowTopY>
   <RefModeR1C1/>
@@ -88,7 +88,7 @@
   </Style>
  </Styles>
  <Worksheet ss:Name="Script">
-  <Table ss:ExpandedColumnCount="6" ss:ExpandedRowCount="22" x:FullColumns="1"
+  <Table ss:ExpandedColumnCount="6" ss:ExpandedRowCount="9" x:FullColumns="1"
    x:FullRows="1" ss:DefaultColumnWidth="52.5" ss:DefaultRowHeight="18">
    <Column ss:AutoFitWidth="0" ss:Width="30"/>
    <Column ss:AutoFitWidth="0" ss:Width="128"/>
@@ -108,86 +108,30 @@
    </Row>
    <Row ss:AutoFitHeight="0">
     <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">0</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">100010InitialConversation</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">100000InitialConversation</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">Conversation</Data></Cell>
-    <Cell ss:StyleID="s67" ss:Formula="=RC[-2]"><Data ss:Type="String">100010InitialConversation</Data></Cell>
+    <Cell ss:StyleID="s67" ss:Formula="=RC[-2]"><Data ss:Type="String">100000InitialConversation</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
     <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">1</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">100020InitialConversation</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">Conversation</Data></Cell>
-    <Cell ss:StyleID="s67" ss:Formula="=RC[-2]"><Data ss:Type="String">100020InitialConversation</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">Clear</Data></Cell>
-    <Cell ss:StyleID="s67" ss:Formula="=R[-1]C[-4]"><Data ss:Type="String">100010InitialConversation</Data></Cell>
-   </Row>
-   <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">2</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">100030InitialConversation</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">Conversation</Data></Cell>
-    <Cell ss:StyleID="s67" ss:Formula="=RC[-2]"><Data ss:Type="String">100030InitialConversation</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">Clear</Data></Cell>
-    <Cell ss:StyleID="s67" ss:Formula="=R[-1]C[-4]"><Data ss:Type="String">100020InitialConversation</Data></Cell>
-   </Row>
-   <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">3</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">100040InitialConversation</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">Conversation</Data></Cell>
-    <Cell ss:StyleID="s67" ss:Formula="=RC[-2]"><Data ss:Type="String">100040InitialConversation</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">Clear</Data></Cell>
-    <Cell ss:StyleID="s67" ss:Formula="=R[-1]C[-4]"><Data ss:Type="String">100030InitialConversation</Data></Cell>
-   </Row>
-   <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">4</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">100050InitialConversation</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">Conversation</Data></Cell>
-    <Cell ss:StyleID="s67" ss:Formula="=RC[-2]"><Data ss:Type="String">100050InitialConversation</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">Clear</Data></Cell>
-    <Cell ss:StyleID="s67" ss:Formula="=R[-1]C[-4]"><Data ss:Type="String">100040InitialConversation</Data></Cell>
-   </Row>
-   <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">5</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">100060InitialConversation</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">Conversation</Data></Cell>
-    <Cell ss:StyleID="s67" ss:Formula="=RC[-2]"><Data ss:Type="String">100060InitialConversation</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">Clear</Data></Cell>
-    <Cell ss:StyleID="s67" ss:Formula="=R[-1]C[-4]"><Data ss:Type="String">100050InitialConversation</Data></Cell>
-   </Row>
-   <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">6</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">100070InitialConversation</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">Conversation</Data></Cell>
-    <Cell ss:StyleID="s67" ss:Formula="=RC[-2]"><Data ss:Type="String">100070InitialConversation</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">Clear</Data></Cell>
-    <Cell ss:StyleID="s67" ss:Formula="=R[-1]C[-4]"><Data ss:Type="String">100060InitialConversation</Data></Cell>
-   </Row>
-   <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">7</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">100080InitialConversation</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">Conversation</Data></Cell>
-    <Cell ss:StyleID="s67" ss:Formula="=RC[-2]"><Data ss:Type="String">100080InitialConversation</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">Clear</Data></Cell>
-    <Cell ss:StyleID="s67" ss:Formula="=R[-1]C[-4]"><Data ss:Type="String">100070InitialConversation</Data></Cell>
-   </Row>
-   <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">8</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">101010TimeFreeInput</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">FreeInput</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">TimeFreeInput</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">Clear</Data></Cell>
-    <Cell ss:StyleID="s67" ss:Formula="=R[-1]C[-4]"><Data ss:Type="String">100080InitialConversation</Data></Cell>
+    <Cell ss:StyleID="s67" ss:Formula="=R[-1]C[-4]"><Data ss:Type="String">100000InitialConversation</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">9</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">102010InitialConversation</Data></Cell>
+    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">2</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">101900InitialConversation</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">Conversation</Data></Cell>
-    <Cell ss:StyleID="s67" ss:Formula="=RC[-2]"><Data ss:Type="String">102010InitialConversation</Data></Cell>
+    <Cell ss:StyleID="s67" ss:Formula="=RC[-2]"><Data ss:Type="String">101900InitialConversation</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">Clear</Data></Cell>
     <Cell ss:StyleID="s67" ss:Formula="=R[-1]C[-4]"><Data ss:Type="String">101010TimeFreeInput</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">10</Data></Cell>
+    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">3</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">102011ReadTimeRegisterFlag</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">RegisterFlag</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">ReadTime</Data></Cell>
@@ -195,60 +139,12 @@
     <Cell ss:StyleID="s67" ss:Formula="=R[-2]C[-4]"><Data ss:Type="String">101010TimeFreeInput</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">11</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">102020InitialConversation</Data></Cell>
+    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">4</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">102000InitialConversation</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">Conversation</Data></Cell>
-    <Cell ss:StyleID="s67" ss:Formula="=RC[-2]"><Data ss:Type="String">102020InitialConversation</Data></Cell>
+    <Cell ss:StyleID="s67" ss:Formula="=RC[-2]"><Data ss:Type="String">102000InitialConversation</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">Clear</Data></Cell>
-    <Cell ss:StyleID="s67" ss:Formula="=R[-2]C[-4]"><Data ss:Type="String">102010InitialConversation</Data></Cell>
-   </Row>
-   <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">12</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">102030InitialConversation</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">Conversation</Data></Cell>
-    <Cell ss:StyleID="s67" ss:Formula="=RC[-2]"><Data ss:Type="String">102030InitialConversation</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">Clear</Data></Cell>
-    <Cell ss:StyleID="s67" ss:Formula="=R[-1]C[-4]"><Data ss:Type="String">102020InitialConversation</Data></Cell>
-   </Row>
-   <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">13</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">102040InitialConversation</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">Conversation</Data></Cell>
-    <Cell ss:StyleID="s67" ss:Formula="=RC[-2]"><Data ss:Type="String">102040InitialConversation</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">Clear</Data></Cell>
-    <Cell ss:StyleID="s67" ss:Formula="=R[-1]C[-4]"><Data ss:Type="String">102030InitialConversation</Data></Cell>
-   </Row>
-   <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">14</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">102050InitialConversation</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">Conversation</Data></Cell>
-    <Cell ss:StyleID="s67" ss:Formula="=RC[-2]"><Data ss:Type="String">102050InitialConversation</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">Clear</Data></Cell>
-    <Cell ss:StyleID="s67" ss:Formula="=R[-1]C[-4]"><Data ss:Type="String">102040InitialConversation</Data></Cell>
-   </Row>
-   <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">15</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">102060InitialConversation</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">Conversation</Data></Cell>
-    <Cell ss:StyleID="s67" ss:Formula="=RC[-2]"><Data ss:Type="String">102060InitialConversation</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">Clear</Data></Cell>
-    <Cell ss:StyleID="s67" ss:Formula="=R[-1]C[-4]"><Data ss:Type="String">102050InitialConversation</Data></Cell>
-   </Row>
-   <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">16</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">102070InitialConversation</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">Conversation</Data></Cell>
-    <Cell ss:StyleID="s67" ss:Formula="=RC[-2]"><Data ss:Type="String">102070InitialConversation</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">Clear</Data></Cell>
-    <Cell ss:StyleID="s67" ss:Formula="=R[-1]C[-4]"><Data ss:Type="String">102060InitialConversation</Data></Cell>
-   </Row>
-   <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">17</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">102080InitialConversation</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">Conversation</Data></Cell>
-    <Cell ss:StyleID="s67" ss:Formula="=RC[-2]"><Data ss:Type="String">102080InitialConversation</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">Clear</Data></Cell>
-    <Cell ss:StyleID="s67" ss:Formula="=R[-1]C[-4]"><Data ss:Type="String">102070InitialConversation</Data></Cell>
+    <Cell ss:StyleID="s67" ss:Formula="=R[-2]C[-4]"><Data ss:Type="String">101900InitialConversation</Data></Cell>
    </Row>
   </Table>
   <WorksheetOptions xmlns="urn:schemas-microsoft-com:office:excel">
@@ -270,106 +166,15 @@
    <Panes>
     <Pane>
      <Number>3</Number>
-     <ActiveRow>21</ActiveRow>
-     <ActiveCol>9</ActiveCol>
+     <ActiveRow>5</ActiveRow>
+     <ActiveCol>5</ActiveCol>
     </Pane>
    </Panes>
    <ProtectObjects>False</ProtectObjects>
    <ProtectScenarios>False</ProtectScenarios>
   </WorksheetOptions>
   <ConditionalFormatting xmlns="urn:schemas-microsoft-com:office:excel">
-   <Range>R5C1:R7C6,R8C2:R13C2</Range>
-   <Condition>
-    <Value1>LEN(TRIM(RC))=0</Value1>
-    <Format Style='background:#E7E6E6'/>
-   </Condition>
-  </ConditionalFormatting>
-  <ConditionalFormatting xmlns="urn:schemas-microsoft-com:office:excel">
-   <Range>R8C1,R8C3:R8C6</Range>
-   <Condition>
-    <Value1>LEN(TRIM(RC))=0</Value1>
-    <Format Style='background:#E7E6E6'/>
-   </Condition>
-  </ConditionalFormatting>
-  <ConditionalFormatting xmlns="urn:schemas-microsoft-com:office:excel">
-   <Range>R9C1:R10C1,R9C3:R10C6</Range>
-   <Condition>
-    <Value1>LEN(TRIM(RC))=0</Value1>
-    <Format Style='background:#E7E6E6'/>
-   </Condition>
-  </ConditionalFormatting>
-  <ConditionalFormatting xmlns="urn:schemas-microsoft-com:office:excel">
-   <Range>R11C1,R11C3:R11C6</Range>
-   <Condition>
-    <Value1>LEN(TRIM(RC))=0</Value1>
-    <Format Style='background:#E7E6E6'/>
-   </Condition>
-  </ConditionalFormatting>
-  <ConditionalFormatting xmlns="urn:schemas-microsoft-com:office:excel">
-   <Range>R12C1:R13C1,R12C3:R13C6,R13C5:R21C6</Range>
-   <Condition>
-    <Value1>LEN(TRIM(RC))=0</Value1>
-    <Format Style='background:#E7E6E6'/>
-   </Condition>
-  </ConditionalFormatting>
-  <ConditionalFormatting xmlns="urn:schemas-microsoft-com:office:excel">
-   <Range>R17C2,R19C2,R14C1:R15C6,R21C2</Range>
-   <Condition>
-    <Value1>LEN(TRIM(RC))=0</Value1>
-    <Format Style='background:#E7E6E6'/>
-   </Condition>
-  </ConditionalFormatting>
-  <ConditionalFormatting xmlns="urn:schemas-microsoft-com:office:excel">
-   <Range>R16C2:R16C6,R18C2,R20C2,R22C2</Range>
-   <Condition>
-    <Value1>LEN(TRIM(RC))=0</Value1>
-    <Format Style='background:#E7E6E6'/>
-   </Condition>
-  </ConditionalFormatting>
-  <ConditionalFormatting xmlns="urn:schemas-microsoft-com:office:excel">
-   <Range>R17C1,R17C3:R17C6</Range>
-   <Condition>
-    <Value1>LEN(TRIM(RC))=0</Value1>
-    <Format Style='background:#E7E6E6'/>
-   </Condition>
-  </ConditionalFormatting>
-  <ConditionalFormatting xmlns="urn:schemas-microsoft-com:office:excel">
-   <Range>R18C1,R18C3:R18C6</Range>
-   <Condition>
-    <Value1>LEN(TRIM(RC))=0</Value1>
-    <Format Style='background:#E7E6E6'/>
-   </Condition>
-  </ConditionalFormatting>
-  <ConditionalFormatting xmlns="urn:schemas-microsoft-com:office:excel">
-   <Range>R19C1,R19C3:R19C6</Range>
-   <Condition>
-    <Value1>LEN(TRIM(RC))=0</Value1>
-    <Format Style='background:#E7E6E6'/>
-   </Condition>
-  </ConditionalFormatting>
-  <ConditionalFormatting xmlns="urn:schemas-microsoft-com:office:excel">
-   <Range>R20C1:R22C1,R20C3:R22C6</Range>
-   <Condition>
-    <Value1>LEN(TRIM(RC))=0</Value1>
-    <Format Style='background:#E7E6E6'/>
-   </Condition>
-  </ConditionalFormatting>
-  <ConditionalFormatting xmlns="urn:schemas-microsoft-com:office:excel">
-   <Range>R16C1</Range>
-   <Condition>
-    <Value1>LEN(TRIM(RC))=0</Value1>
-    <Format Style='background:#E7E6E6'/>
-   </Condition>
-  </ConditionalFormatting>
-  <ConditionalFormatting xmlns="urn:schemas-microsoft-com:office:excel">
-   <Range>R15C6</Range>
-   <Condition>
-    <Value1>LEN(TRIM(RC))=0</Value1>
-    <Format Style='background:#E7E6E6'/>
-   </Condition>
-  </ConditionalFormatting>
-  <ConditionalFormatting xmlns="urn:schemas-microsoft-com:office:excel">
-   <Range>R22C5:R22C6</Range>
+   <Range>R5C1:R9C6</Range>
    <Condition>
     <Value1>LEN(TRIM(RC))=0</Value1>
     <Format Style='background:#E7E6E6'/>

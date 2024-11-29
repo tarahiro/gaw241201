@@ -12,6 +12,8 @@ namespace gaw241201.Model
     //フィールドを追加
     public interface IConversationMaster : IIdentifiable, IIndexable
     {
+        string ConversationGroup { get; }
+
         string Message{ get; }
 
         string Facial { get; }
