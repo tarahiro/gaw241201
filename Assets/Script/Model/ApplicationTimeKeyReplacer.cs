@@ -18,7 +18,7 @@ namespace gaw241201
         {
             Log.Comment("ApplicationTimeèëÇ´ä∑Ç¶");
 
-            string value = _flagProvider.GetFlag("ApplicationTime");
+            string value = _flagProvider.GetFlag(FlagConst.Key.ApplicationTime);
             string replaceTo = "";
 
             TimeInDay applicationTid = CreateTimeInDay(value);

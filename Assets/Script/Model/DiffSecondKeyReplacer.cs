@@ -18,8 +18,8 @@ namespace gaw241201
         {
             Log.Comment("DiffSecondèëÇ´ä∑Ç¶");
 
-            TimeInDay applicationTid = CreateTimeInDay(_flagProvider.GetFlag("ApplicationTime"));
-            TimeInDay inputTid = CreateTimeInDay(_flagProvider.GetFlag("InputTime"));
+            TimeInDay applicationTid = CreateTimeInDay(_flagProvider.GetFlag(FlagConst.Key.ApplicationTime));
+            TimeInDay inputTid = CreateTimeInDay(_flagProvider.GetFlag(FlagConst.Key.InputTime));
 
             int diff = Mathf.Abs(applicationTid.GetAllSecond() - inputTid.GetAllSecond());
 

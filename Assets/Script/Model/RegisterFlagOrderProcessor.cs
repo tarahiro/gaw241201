@@ -14,11 +14,11 @@ namespace gaw241201
     {
         [Inject] IGlobalFlagRegisterer _globalFlagRegisterer;
 
-        public void ProcessRegisterOrder(string order)
+        public void ProcessRegisterOrder(FlagConst.RegisterOrder order)
         {
             switch (order)
             {
-                case "ReadTime":
+                case FlagConst.RegisterOrder.ReadTime:
                     DateTime dateTime = DateTime.Now;
                     int hour = dateTime.Hour;
                     int minute = dateTime.Minute;
@@ -28,7 +28,7 @@ namespace gaw241201
                     s += hour.ToString("D2");
                     s += minute.ToString("D2");
                     s += second.ToString("D2");
-                    _globalFlagRegisterer.RegisterFlag("ApplicationTime", s);
+                    _globalFlagRegisterer.RegisterFlag(FlagConst.Key.ApplicationTime, s);
                     break;
 
                 default:

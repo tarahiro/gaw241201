@@ -14,12 +14,12 @@ namespace gaw241201
     {
         [Inject] IGlobalFlagRegisterer _flagRegisterer;
 
-        public void Register(string bodyId, string value)
+        public void Register(FreeInputConst.Key bodyId, string value)
         {
             switch (bodyId)
             {
-                case "TimeFreeInput":
-                    _flagRegisterer.RegisterFlag("InputTime", value);
+                case FreeInputConst.Key.TimeFreeInput:
+                    _flagRegisterer.RegisterFlag(FlagConst.Key.InputTime, value);
                     break;
 
                 default:

@@ -10,8 +10,17 @@ using VContainer.Unity;
 
 namespace gaw241201
 {
-    public interface IGlobalFlagRegisterer
+    public static class FlagConst
     {
-        void RegisterFlag(FlagConst.Key key, string value);
+        public enum Key
+        {
+            ApplicationTime,
+            InputTime,
+        }
+
+        public enum RegisterOrder
+        {
+            ReadTime
+        }
     }
 }

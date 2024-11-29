@@ -10,8 +10,11 @@ using VContainer.Unity;
 
 namespace gaw241201
 {
-    public interface IGlobalFlagRegisterer
+    public static class FreeInputConst
     {
-        void RegisterFlag(FlagConst.Key key, string value);
+        public enum Key
+        {
+            TimeFreeInput,
+        }
     }
 }

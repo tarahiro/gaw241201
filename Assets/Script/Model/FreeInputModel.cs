@@ -32,7 +32,7 @@ namespace gaw241201
         public void EndFlow(string value)
         {
             Log.Comment("FreeInput‚ÌI—¹‚ğŒŸ’mBvalue = " + value);
-            _valueRegisterer.Register(_bodyId, value);
+            _valueRegisterer.Register(EnumUtil.KeyToType<FreeInputConst.Key> (_bodyId), value);
             _isEnded = true;
         }
 
