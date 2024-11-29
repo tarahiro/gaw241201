@@ -12,10 +12,18 @@ namespace gaw241201
 {
     public static class ConversationConst
     {
+        /*
         public static List<string> KeyList = new List<string>()
         {
             "ApplicationTime",
             "DiffSecond",
         };
+        */
+
+        public enum Key
+        {
+            ApplicationTime,
+            DiffSecond,
+        }
     }
 }

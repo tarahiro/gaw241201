@@ -14,14 +14,14 @@ namespace gaw241201
     {
         [Inject] ApplicationTimeKeyReplacer _applicationTimeKeyReplacer;
         [Inject] DiffSecondKeyReplacer _diffSecondKeyReplacer;
-        public IKeyReplacer GetKeyReplacer(string key)
+        public IKeyReplacer GetKeyReplacer(ConversationConst.Key key)
         {
             switch (key)
             {
-                case "ApplicationTime":
+                case ConversationConst.Key.ApplicationTime: 
                     return _applicationTimeKeyReplacer;
 
-                case "DiffSecond":
+                case ConversationConst.Key.DiffSecond:
                     return _diffSecondKeyReplacer;
 
                 default:
