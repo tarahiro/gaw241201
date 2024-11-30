@@ -12,7 +12,7 @@ namespace gaw241201
 {
     public class DeleteUiModel : IFlowModel
     {
-        [Inject] UiDeletableProvider _uiDeletableProvider;
+        [Inject] IUiDeletableProvider _uiDeletableProvider;
         public async UniTask EnterFlow(string bodyId)
         {
             Log.Comment("DeleteUiŠJŽn");

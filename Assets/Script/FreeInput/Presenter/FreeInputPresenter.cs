@@ -1,5 +1,4 @@
 using Cysharp.Threading.Tasks;
-using gaw241201.Model;
 using gaw241201.View;
 using System;
 using System.Collections;

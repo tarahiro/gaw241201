@@ -19,7 +19,7 @@ namespace gaw241201.Inject
 
             //DeleteUi
             builder.Register<DeleteUiModel>(Lifetime.Singleton).AsSelf();
-            builder.Register<UiDeletableProvider>(Lifetime.Singleton).AsSelf();
+            builder.Register<UiDeletableProvider>(Lifetime.Singleton).AsImplementedInterfaces();
 
             //FreeInput
             builder.Register<FreeInputModel>(Lifetime.Singleton).AsSelf();

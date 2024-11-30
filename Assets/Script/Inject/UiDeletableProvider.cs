@@ -10,7 +10,7 @@ using VContainer.Unity;
 
 namespace gaw241201
 {
-    public class UiDeletableProvider
+    public class UiDeletableProvider : IUiDeletableProvider
     {
         [Inject] DeleteFreeInputUi _deleteFreeInputUi;
 
