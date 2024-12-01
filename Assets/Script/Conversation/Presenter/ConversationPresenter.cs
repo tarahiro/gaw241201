@@ -1,5 +1,4 @@
 using Cysharp.Threading.Tasks;
-using gaw241201.Model;
 using gaw241201.View;
 using System;
 using System.Collections;
@@ -39,13 +38,6 @@ namespace gaw241201.Presenter
 
             cancellationTokenSource.Cancel();
             cancellationTokenSource = new CancellationTokenSource();
-            /*
-            _disposable.Dispose();
-
-            _disposable = new CompositeDisposable();
-
-            PostInitialize();
-            */
         }
 #endif
     }

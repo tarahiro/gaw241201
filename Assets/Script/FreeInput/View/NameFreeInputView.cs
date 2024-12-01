@@ -10,8 +10,10 @@ using VContainer.Unity;
 
 namespace gaw241201.View
 {
+
     public class NameFreeInputView : FreeInputItemView
     {
+        protected override string defaultValue { get; set; } = "NAME";
         protected override bool isAcceptKey(int index, string key)
         {
             return true;

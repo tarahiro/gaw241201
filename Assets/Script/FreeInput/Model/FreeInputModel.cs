@@ -2,6 +2,7 @@ using Cysharp.Threading.Tasks;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using Tarahiro;
 using UniRx;
 using UnityEngine;
@@ -22,6 +23,7 @@ namespace gaw241201
         public async UniTask EnterFlow(string bodyId)
         {
             Log.Comment(bodyId + "‚ÌFreeInputŠJŽn");
+            CancellationTokenSource _cts;
             _bodyId = bodyId;
             _isEnded = false;
 

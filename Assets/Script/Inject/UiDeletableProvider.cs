@@ -2,6 +2,7 @@ using Cysharp.Threading.Tasks;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using gaw241201.Model;
 using Tarahiro;
 using UniRx;
 using UnityEngine;

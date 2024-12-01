@@ -13,6 +13,7 @@ namespace gaw241201.View
 {
     public class DayTimeFreeInputView : FreeInputItemView
     {
+        protected override string defaultValue { get; set; } = "000000";
 
         protected override bool isAcceptKey(int index, string key)
         {

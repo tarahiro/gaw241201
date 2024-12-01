@@ -12,6 +12,7 @@ namespace gaw241201.View
 {
     public class BirthDateFreeInput : FreeInputItemView
     {
+        protected override string defaultValue { get; set; } = "190000";
         protected override bool isAcceptKey(int index, string key)
         {
             int i = int.Parse(key);

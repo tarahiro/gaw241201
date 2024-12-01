@@ -24,6 +24,23 @@ namespace gaw241201.View
         protected Subject<string> _exited = new Subject<string>();
         public IObservable<string> Exited => _exited;
 
+        protected virtual string defaultValue { get; set; }
+
+        protected virtual void Initialize()
+        {
+
+        }
+
+        protected virtual bool IsAcceptEnter()
+        {
+            return true;
+        }
+
+        protected virtual bool IsForceEnd()
+        {
+            return false;
+        }
+
         private void Start()
         {
             _enterKeyObject.SetActive(false);
@@ -34,7 +51,7 @@ namespace gaw241201.View
             _gazable = gazable;
         }
 
-        public  async UniTask Enter(CancellationToken ct)
+        public async UniTask Enter(CancellationToken ct)
         {
             foreach (var item in _inputCharacterList)
             {
@@ -48,7 +65,7 @@ namespace gaw241201.View
                 CheckInput();
             }
 
-            Exit();
+            Exit(ct);
         }
 
         void AcceptEnter()
@@ -60,15 +77,6 @@ namespace gaw241201.View
             _enterKeyObject.SetActive(false);
         }
 
-        protected virtual bool IsAcceptEnter()
-        {
-            return true;
-        }
-
-        protected virtual bool IsForceEnd()
-        {
-            return false;
-        }
 
         void CheckInput()
         {
@@ -149,7 +157,7 @@ namespace gaw241201.View
             }
         }
 
-        private void Exit()
+        private void Exit(CancellationToken ct)
         {
             NotAcceptEnter();
             if(_index < _inputCharacterList.Count)
@@ -158,15 +166,27 @@ namespace gaw241201.View
             }
 
             string s = "";
-
-            foreach (var item in _inputCharacterList)
+            if (ct.IsCancellationRequested)
             {
-                item.TryGetCharacter(out char c);
-                s += c;
-            };
+                s = defaultValue;
+            }
+            else
+            {
+
+                foreach (var item in _inputCharacterList)
+                {
+                    if (item.TryGetCharacter(out char c))
+                    {
+                        s += c;
+                    }
+                };
+            }
 
             _exited.OnNext(s);
+
         }
+
+     
 
 
 
@@ -237,6 +257,7 @@ namespace gaw241201.View
                 case KeyCode.H: return "H";
                 case KeyCode.I: return "I";
                 case KeyCode.J: return "J";
+                case KeyCode.K: return "K";
                 case KeyCode.L: return "L";
                 case KeyCode.M: return "M";
                 case KeyCode.N: return "N";
@@ -253,7 +274,7 @@ namespace gaw241201.View
                 case KeyCode.Y: return "Y";
                 case KeyCode.Z: return "Z";
 
-                default: return "Error";
+                default: return "error";
             }
         }
         protected virtual bool isAcceptKey(int index, string key)

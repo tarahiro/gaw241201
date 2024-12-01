@@ -10,6 +10,7 @@ using VContainer.Unity;
 
 namespace gaw241201
 {
+
     public interface IUiDeletableProvider
     {
         IUiDeletable GetUiDeletable(FlowConst.Category category);

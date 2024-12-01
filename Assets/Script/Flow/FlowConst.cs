@@ -17,7 +17,8 @@ namespace gaw241201
             Conversation,
             FreeInput,
             RegisterFlag,
-            DeleteUi
+            DeleteUi,
+            ClickInput
         }
     }
 }

@@ -2,7 +2,7 @@
 using UnityEngine;
 using Tarahiro;
 
-namespace gaw241201.Model
+namespace gaw241201
 {
     //---プロジェクト作成時にやること---//
     //namespaceの"FakeProject"部分を変更。（gaw[yymmdd].Modelとか）

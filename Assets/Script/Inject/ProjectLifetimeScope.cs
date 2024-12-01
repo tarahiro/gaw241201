@@ -21,6 +21,10 @@ namespace gaw241201.Inject
             builder.Register<DeleteUiModel>(Lifetime.Singleton).AsSelf();
             builder.Register<UiDeletableProvider>(Lifetime.Singleton).AsImplementedInterfaces();
 
+            // ClickInput
+            builder.Register<ClickInputModel>(Lifetime.Singleton).AsSelf();
+
+
             //FreeInput
             builder.Register<FreeInputModel>(Lifetime.Singleton).AsSelf();
             builder.RegisterComponentInHierarchy<FreeInputView>().AsSelf();
