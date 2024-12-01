@@ -23,6 +23,7 @@ namespace gaw241201.Inject
 
             // ClickInput
             builder.Register<ClickInputModel>(Lifetime.Singleton).AsSelf();
+            builder.RegisterComponentInHierarchy<ClickInputView>().AsSelf();
 
 
             //FreeInput
@@ -66,6 +67,7 @@ namespace gaw241201.Inject
                 entryPoints.Add<GameManager>();
                 entryPoints.Add<ConversationPresenter>();
                 entryPoints.Add<FreeInputPresenter>();
+                entryPoints.Add<ClickInputPresenter>();
 #if ENABLE_DEBUG
                 entryPoints.Add<DebugManager>();
 #endif
