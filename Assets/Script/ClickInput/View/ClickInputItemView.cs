@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
 using Tarahiro;
+using Tarahiro.TInput;
 using UniRx;
 using UnityEngine;
 using UnityEngine.UI;
@@ -35,7 +36,12 @@ namespace gaw241201.View
 
             _isWait = true;
 
-            await UniTask.WaitUntil(() => !_isWait,cancellationToken:ct);
+            while (_isWait && !ct.IsCancellationRequested)
+            {
+                await UniTask.Yield(PlayerLoopTiming.Update);
+                _gazable.Gaze(TTouch.GetInstance().ScreenPointOnThisFrame);
+            }
+
 
         }
 
