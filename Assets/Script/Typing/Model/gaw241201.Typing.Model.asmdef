@@ -1,13 +1,13 @@
 {
-    "name": "gaw241201.Flow",
-    "rootNamespace": "gaw241201.Flow",
+    "name": "gaw241201.Typing.Model",
+    "rootNamespace": "gaw241201.Typing.Model",
     "references": [
         "GUID:0be27b54e10228743974a8df3dda3639",
         "GUID:560b04d1a97f54a4e82edc0cbbb69285",
         "GUID:f51ebe6a0ceec4240a699833d6309b23",
         "GUID:b0214a6008ed146ff8f122a6a9c2f6cc",
-        "GUID:eab71cc59d3b71e409a49c0566585d57",
-        "GUID:80730cb7ec02f6544bfe954bc465eae7"
+        "GUID:06bcd70755cf0024dbcab68f7f987f46",
+        "GUID:7ee3ff7b0dfc7aa498135a795b831c6e"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

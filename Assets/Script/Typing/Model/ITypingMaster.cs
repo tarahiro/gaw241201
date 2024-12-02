@@ -2,7 +2,7 @@
 using UnityEngine;
 using Tarahiro;
 
-namespace gaw241201
+namespace gaw241201.Model
 {
     //---プロジェクト作成時にやること---//
     //namespaceの"FakeProject"部分を変更。（gaw[yymmdd].Modelとか）
@@ -10,11 +10,15 @@ namespace gaw241201
     //---クラス作成時にやること---//
     //"Template" を置換
     //フィールドを追加
-    public interface IConversationMaster : IIdentifiable, IIndexable, IGroupable
+    public interface ITypingMaster : IIdentifiable, IIndexable
     {
 
-        string Message{ get; }
+        /// <summary>
+        /// このデータのIDを取得します。
+        /// </summary>
 
-        string Facial { get; }
+        string TypingGroup{ get; }
+        string JpText { get; }
+        string RomanText { get; }
     }
 }

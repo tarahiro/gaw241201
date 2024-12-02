@@ -12,17 +12,14 @@ using VContainer.Unity;
 
 namespace gaw241201
 {
-    public class ConversationModel : IFlowModel {
-
+    public class ConversationModel : TextSequenceModel<IConversationMaster> {
+        /*
         [Inject] IConversationMasterDataProvider _masterDataProvider;
         [Inject] ConversationModelArgsFactory _modelArgsFactory;
 
-        Subject<ConversationModelArgs> _entered = new Subject<ConversationModelArgs>();
-
-
-        public IObservable<ConversationModelArgs> Entered => _entered;
         CancellationTokenSource _cts = new CancellationTokenSource();
-
+        Subject<ConversationModelArgs> _entered = new Subject<ConversationModelArgs>();
+        public IObservable<ConversationModelArgs> Entered => _entered;
 
         //UnitaskとSubjectの変換を使ってきれいにしたい
         bool _isEnded = false;
@@ -35,7 +32,7 @@ namespace gaw241201
 
             for (int i = 0; i < _masterDataProvider.Count; i++)
             {
-                if(_masterDataProvider.TryGetFromIndex(i).GetMaster().ConversationGroup == bodyId)
+                if(_masterDataProvider.TryGetFromIndex(i).GetMaster().Group == bodyId)
                 {
                     _thisConversationGroup.Add(_masterDataProvider.TryGetFromIndex(i).GetMaster());
                 }
@@ -53,7 +50,7 @@ namespace gaw241201
             Log.Comment(bodyId + "のConversationGroup終了");
         }
 
-        public void EndSIngleConversation()
+        public void EndSIngle()
         {
             Log.Comment("終了を検知");
             _isEnded = true;
@@ -66,5 +63,6 @@ namespace gaw241201
         }
 
 #endif
+        */
     }
 }

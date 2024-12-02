@@ -17,6 +17,7 @@ namespace gaw241201
         [Inject] RegisterFlagFlowModel _registerFlagFlowModel;
         [Inject] DeleteUiModel _deleteUiModel;
         [Inject] ClickInputModel _clickInputModel;
+        [Inject] TypingModel _typingModel;
 
         public IFlowModel GetFlowModel(FlowConst.Category category)
         {
@@ -38,6 +39,9 @@ namespace gaw241201
 
                 case FlowConst.Category.ClickInput:
                     return _clickInputModel;
+
+                case FlowConst.Category.Typing:
+                    return _typingModel;
 
                 default:
                     Log.DebugAssert("不正なカテゴリー名です");

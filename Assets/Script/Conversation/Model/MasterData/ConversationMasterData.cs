@@ -36,7 +36,7 @@ namespace gaw241201.Model.MasterData
 
             public int Index => m_Index;
             public string Id => m_Id;
-            public string ConversationGroup => m_ConversationGroup;
+            public string Group => m_ConversationGroup;
             public string Message => m_Message;
             public string Facial => m_Facial;
 

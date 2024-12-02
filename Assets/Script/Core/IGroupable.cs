@@ -10,16 +10,8 @@ using VContainer.Unity;
 
 namespace gaw241201
 {
-    public static class FlowConst
+    public interface IGroupable
     {
-        public enum Category
-        {
-            Conversation,
-            FreeInput,
-            RegisterFlag,
-            DeleteUi,
-            ClickInput,
-            Typing
-        }
+        string Group { get; }
     }
 }

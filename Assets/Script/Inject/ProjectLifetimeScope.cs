@@ -17,6 +17,11 @@ namespace gaw241201.Inject
             //Eyes
             builder.RegisterComponentInHierarchy<EyesView>().AsImplementedInterfaces();
 
+            //Typing
+            builder.Register<TypingModel>(Lifetime.Singleton).AsSelf();
+            builder.Register<TypingMasterDataProvider>(Lifetime.Singleton).AsImplementedInterfaces();
+
+
             //DeleteUi
             builder.Register<DeleteUiModel>(Lifetime.Singleton).AsSelf();
             builder.Register<UiDeletableProvider>(Lifetime.Singleton).AsImplementedInterfaces();
@@ -41,7 +46,8 @@ namespace gaw241201.Inject
             builder.Register<ConversationModel>(Lifetime.Singleton).AsSelf();
             builder.Register<ConversationView>(Lifetime.Singleton).AsSelf();
             builder.Register<ConversationMasterDataProvider>(Lifetime.Singleton).AsImplementedInterfaces();
-            builder.Register<ConversationModelArgsFactory>(Lifetime.Singleton).AsSelf();
+            builder.Register<ModelArgsFactory<IConversationMaster>>(Lifetime.Singleton).AsSelf();
+           // builder.Register<ConversationModelArgsFactory>(Lifetime.Singleton).AsSelf();
             builder.Register<ConversationViewArgsFactory>(Lifetime.Singleton).AsSelf();
             builder.RegisterComponentInHierarchy<ConversationTextView>().AsSelf();
             builder.Register<MessageKeyHundler>(Lifetime.Singleton).AsSelf();

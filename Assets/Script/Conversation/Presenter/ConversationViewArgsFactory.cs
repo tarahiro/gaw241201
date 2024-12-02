@@ -16,7 +16,7 @@ namespace gaw241201.Presenter
     {
         [Inject] MessageKeyHundler _messageKeyHundler;
 
-        public ConversationViewArgs Create(ConversationModelArgs modelArgs)
+        public ConversationViewArgs Create(ModelArgs<IConversationMaster> modelArgs)
         {
             return new ConversationViewArgs(_messageKeyHundler.HundleKey(modelArgs.Master.Message), EnumUtil.KeyToType<FacialConst.Key>(modelArgs.Master.Facial),modelArgs.CancellationToken);
         }
