@@ -24,7 +24,7 @@ namespace Tarahiro.OtherGame.Inject
 
                 return sprite =>
                 {
-                    var prefab = Resources.Load<OtherGameIcon>("Prefab/OtherGameIcon");
+                    var prefab = ResourceUtil.GetResource<OtherGameIcon>("Prefab/OtherGameIcon");
                     OtherGameIcon instance = container.Instantiate(prefab);
                     instance.Construct(sprite);
                     return instance;
@@ -40,7 +40,7 @@ namespace Tarahiro.OtherGame.Inject
             {
                 return args =>
                 {
-                    var prefab = Resources.Load<OtherGameMenuItemView>("Prefab/OtherGameMenuItemView");
+                    var prefab = ResourceUtil.GetResource<OtherGameMenuItemView>("Prefab/OtherGameMenuItemView");
                     OtherGameMenuItemView instance = container.Instantiate(prefab);
                     instance.Construct(args);
                     return instance;

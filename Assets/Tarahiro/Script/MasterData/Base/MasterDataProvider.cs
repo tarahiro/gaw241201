@@ -15,7 +15,7 @@ namespace Tarahiro.MasterData
 
         public MasterDataProvider()
         {
-            m_Dictionary = Resources.Load<MasterDataOrderedDictionary<DataType,InterfaceType>>(m_pathName);
+            m_Dictionary = ResourceUtil.GetResource<MasterDataOrderedDictionary<DataType, InterfaceType>>(m_pathName);
         }
 
         public InterfaceType TryGetFromIndex(int index)

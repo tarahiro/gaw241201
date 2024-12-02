@@ -26,7 +26,7 @@ namespace gaw241201.View
         public async UniTask Enter(FreeInputArgs args)
         {
             Log.Comment(c_prefix + args.BodyId + "ÇÃprefabê∂ê¨");
-            _currentItem = Instantiate(Resources.Load<FreeInputItemView>(c_prefix + args.BodyId), transform);
+            _currentItem = Instantiate(ResourceUtil.GetResource<FreeInputItemView>(c_prefix + args.BodyId), transform);
             _currentItem.Construct(_gazable);
 
             string value = "UnRegistered";

@@ -25,7 +25,7 @@ namespace gaw241201.View
         public async UniTask Enter(CancellationToken ct)
         {
             Log.DebugLog("ClickInputViewŠJŽn");
-            _currentItem = Instantiate(Resources.Load<ClickInputItemView>(c_prefabPath), transform);
+            _currentItem = Instantiate(ResourceUtil.GetResource<ClickInputItemView>(c_prefabPath), transform);
             _currentItem.Construct(_gazable);
             ct.Register(OnExit);
 
