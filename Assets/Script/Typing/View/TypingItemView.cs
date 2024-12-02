@@ -14,7 +14,9 @@ namespace gaw241201.View
 {
     public class TypingItemView : MonoBehaviour
     {
+
         TypingViewArgs _viewArgsList;
+        IGazable _gazable;
 
 
         [SerializeField] private TextMeshProUGUI textJapanese; // ここに日本語表示のTextMeshProをアタッチする。
@@ -25,44 +27,57 @@ namespace gaw241201.View
         private int _romanIndex;
         bool _isWindows = true;
         bool _isMac = false;
+        bool _isEndLoop = false;
 
-        public void Construct(TypingViewArgs args)
+        public void Construct(TypingViewArgs args, IGazable gazable)
         {
             _viewArgsList = args;
+            _gazable = gazable;
         }
 
         public async UniTask Enter()
         {
             InitializeQuestion();
-            while (true)
+
+            while (!_isEndLoop)
             {
                 await UniTask.Yield(PlayerLoopTiming.Update);
+                CheckInput();
             }
         }
 
-
-        private void OnGUI()
+        void CheckInput()
         {
-            if (Event.current.type == EventType.KeyDown)
+            if (KeyInputUtil.TryGetKeyDown(out var key))
             {
-                switch (InputKey(GetCharFromKeyCode(Event.current.keyCode)))
+                if (IsMainInputAccept())
                 {
-                    case 1: // 正解タイプ時
-                        _romanIndex++;
-                        if (_roman[_romanIndex] == '@') // 「@」がタイピングの終わりの判定となる。
-                        {
-                            InitializeQuestion();
-                        }
-                        else
-                        {
-                            textRoman.text = GenerateTextRoman();
-                        }
-                        break;
-                    case 2: // ミスタイプ時
-                        break;
+                    switch (InputKey(GetCharFromKeyCode(key)))
+                    {
+                        case 1: // 正解タイプ時
+                            _romanIndex++;
+                            if (_roman[_romanIndex] == '@') // 「@」がタイピングの終わりの判定となる。
+                            {
+                                _isEndLoop = true;
+                            }
+                            else
+                            {
+                                textRoman.text = GenerateTextRoman();
+                                _gazable.Gaze((Vector2)textRoman.transform.position + Vector2.right * textRoman.preferredWidth * (-0.5f + ((float)_romanIndex) / _roman.Count));
+                            }
+                            break;
+                        case 2: // ミスタイプ時
+                            break;
+                    }
                 }
             }
         }
+        bool IsMainInputAccept()
+        {
+
+            return true;
+        }
+
 
         void InitializeQuestion()
         {
@@ -83,7 +98,9 @@ namespace gaw241201.View
             _roman.Add('@');
 
             textJapanese.text = _viewArgsList.JpText;
+
             textRoman.text = GenerateTextRoman();
+            _gazable.Gaze((Vector2)textRoman.transform.position + Vector2.right * textRoman.preferredWidth * ( -0.5f + ((float)_romanIndex)/_roman.Count));
         }
 
         string GenerateTextRoman()

@@ -110,8 +110,8 @@
     <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">0</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">202010Typing</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">202000Typing</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">テスト</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">tesuto</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">テシュトじゃよ</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">tesyutojayo</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
     <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">1</Data></Cell>
@@ -147,8 +147,8 @@
    <Panes>
     <Pane>
      <Number>3</Number>
-     <ActiveRow>9</ActiveRow>
-     <ActiveCol>9</ActiveCol>
+     <ActiveRow>5</ActiveRow>
+     <ActiveCol>4</ActiveCol>
     </Pane>
    </Panes>
    <ProtectObjects>False</ProtectObjects>

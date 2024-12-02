@@ -14,9 +14,9 @@ namespace gaw241201.View
     public class NameFreeInputView : FreeInputItemView
     {
         protected override string defaultValue { get; set; } = "NAME";
-        protected override bool isAcceptKey(int index, string key)
+        protected override bool IsMainKeyListContains(int index, KeyCode key)
         {
-            return true;
+            return TryGetStringFromInput(key, out var s);
         }
 
         protected override bool IsAcceptEnter()

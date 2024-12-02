@@ -40,6 +40,10 @@ namespace gaw241201.View
         {
             return false;
         }
+        protected virtual bool IsMainKeyListContains(int index, KeyCode key)
+        {
+            return true;
+        }
 
         private void Start()
         {
@@ -60,7 +64,6 @@ namespace gaw241201.View
             _currentItem.Focus();
             ct.Register(() => Exit(ct));
 
-
             while (!_isEndLoop)
             {
                 await UniTask.Yield(PlayerLoopTiming.Update);
@@ -79,20 +82,26 @@ namespace gaw241201.View
             _enterKeyObject.SetActive(false);
         }
 
+        bool IsMainInputAccept()
+        {
+            return _index < _inputCharacterList.Count;
+        }
+
 
         void CheckInput()
         {
-            if (_index < _inputCharacterList.Count)
+            if (KeyInputUtil.TryGetKeyDown(out var key))
             {
-                foreach (var item in _inputtableKeyList)
+                if (IsMainInputAccept())
                 {
-                    if (Input.GetKeyDown(item))
+                    Log.Comment("このクラスのキーリストに入ってるか確認");
+                    if (IsMainKeyListContains(_index, key))
                     {
-                        string key = GetStringFromInput(item);
-
-                        if (isAcceptKey(_index, key))
+                        Log.Comment("このクラスのキーリストから文字列が取れるか確認");
+                        if (TryGetStringFromInput(key, out var s))
                         {
-                            _currentItem.SetCharacter(key);
+                            Log.Comment("有効なキー処理があったら対応");
+                            _currentItem.SetCharacter(s);
                             if (_index < _inputCharacterList.Count)
                             {
                                 TryGoNextCharacter();
@@ -100,22 +109,23 @@ namespace gaw241201.View
                         }
                     }
                 }
-            }
 
-            if (_index > 0)
-            {
-                if (Input.GetKeyDown(KeyCode.Backspace))
+                if (_index > 0)
                 {
-                    GoBackCharacter();
+                    if (key == KeyCode.Backspace)
+                    {
+                        GoBackCharacter();
+                    }
                 }
-            }
 
-            if (IsAcceptEnter())
-            {
-                if (Input.GetKey(KeyCode.Return))
+                if (IsAcceptEnter())
                 {
-                    EndLoop();
+                    if (key == KeyCode.Return)
+                    {
+                        EndLoop();
+                    }
                 }
+
             }
         }
 
@@ -192,96 +202,53 @@ namespace gaw241201.View
 
 
 
-        List<KeyCode> _inputtableKeyList = new List<KeyCode>()
-        {
-            KeyCode.Alpha0,
-            KeyCode.Alpha1,
-            KeyCode.Alpha2, 
-            KeyCode.Alpha3,
-            KeyCode.Alpha4, 
-            KeyCode.Alpha5,
-            KeyCode.Alpha6, 
-            KeyCode.Alpha7,
-            KeyCode.Alpha8, 
-            KeyCode.Alpha9,
 
-            KeyCode.A,
-            KeyCode.B,
-            KeyCode.C,
-            KeyCode.D,
-            KeyCode.E,
-            KeyCode.F,
-            KeyCode.G,
-            KeyCode.H,
-            KeyCode.I,
-            KeyCode.J,
-            KeyCode.K,
-            KeyCode.L,
-            KeyCode.M,
-            KeyCode.N,
-            KeyCode.O,
-            KeyCode.P,
-            KeyCode.Q,
-            KeyCode.R,
-            KeyCode.S,
-            KeyCode.T,
-            KeyCode.U,
-            KeyCode.V,
-            KeyCode.W,
-            KeyCode.X,
-            KeyCode.Y,
-            KeyCode.Z,
-        };
-
-
-        string GetStringFromInput(KeyCode keyCode)
+        protected bool TryGetStringFromInput(KeyCode keyCode, out string s)
         {
             switch (keyCode)
             {
-                case KeyCode.Alpha0: return "0";
-                case KeyCode.Alpha1: return "1";
-                case KeyCode.Alpha2: return "2";
-                case KeyCode.Alpha3: return "3";
-                case KeyCode.Alpha4: return "4";
-                case KeyCode.Alpha5: return "5";
-                case KeyCode.Alpha6: return "6";
-                case KeyCode.Alpha7: return "7";
-                case KeyCode.Alpha8: return "8";
-                case KeyCode.Alpha9: return "9";
+                case KeyCode.Alpha0: s = "0"; return true;
+                case KeyCode.Alpha1: s = "1"; return true;
+                case KeyCode.Alpha2: s = "2"; return true;
+                case KeyCode.Alpha3: s = "3"; return true;
+                case KeyCode.Alpha4: s =  "4"; return true;
+                case KeyCode.Alpha5: s =  "5"; return true;
+                case KeyCode.Alpha6: s =  "6"; return true;
+                case KeyCode.Alpha7: s =  "7"; return true;
+                case KeyCode.Alpha8: s =  "8"; return true;
+                case KeyCode.Alpha9: s =  "9"; return true;
 
-                case KeyCode.A: return "A";
-                case KeyCode.B: return "B";
-                case KeyCode.C: return "C";
-                case KeyCode.D: return "D";
-                case KeyCode.E: return "E";
-                case KeyCode.F: return "F";
-                case KeyCode.G: return "G";
-                case KeyCode.H: return "H";
-                case KeyCode.I: return "I";
-                case KeyCode.J: return "J";
-                case KeyCode.K: return "K";
-                case KeyCode.L: return "L";
-                case KeyCode.M: return "M";
-                case KeyCode.N: return "N";
-                case KeyCode.O: return "O";
-                case KeyCode.P: return "P";
-                case KeyCode.Q: return "Q";
-                case KeyCode.R: return "R";
-                case KeyCode.S: return "S";
-                case KeyCode.T: return "T";
-                case KeyCode.U: return "U";
-                case KeyCode.V: return "V";
-                case KeyCode.W: return "W";
-                case KeyCode.X: return "X";
-                case KeyCode.Y: return "Y";
-                case KeyCode.Z: return "Z";
+                case KeyCode.A: s =  "A"; return true;
+                case KeyCode.B: s =  "B"; return true;
+                case KeyCode.C: s =  "C"; return true;
+                case KeyCode.D: s =  "D"; return true;
+                case KeyCode.E: s =  "E"; return true;
+                case KeyCode.F: s =  "F"; return true;
+                case KeyCode.G: s =  "G"; return true;
+                case KeyCode.H: s =  "H"; return true;
+                case KeyCode.I: s =  "I"; return true;
+                case KeyCode.J: s =  "J"; return true;
+                case KeyCode.K: s =  "K"; return true;
+                case KeyCode.L: s =  "L"; return true;
+                case KeyCode.M: s =  "M"; return true;
+                case KeyCode.N: s =  "N"; return true;
+                case KeyCode.O: s =  "O"; return true;
+                case KeyCode.P: s =  "P"; return true;
+                case KeyCode.Q: s =  "Q"; return true;
+                case KeyCode.R: s =  "R"; return true;
+                case KeyCode.S: s =  "S"; return true;
+                case KeyCode.T: s =  "T"; return true;
+                case KeyCode.U: s =  "U"; return true;
+                case KeyCode.V: s =  "V"; return true;
+                case KeyCode.W: s =  "W"; return true;
+                case KeyCode.X: s =  "X"; return true;
+                case KeyCode.Y: s =  "Y"; return true;
+                case KeyCode.Z: s =  "Z"; return true;
 
-                default: return "error";
+                default: 
+                    s = "error";
+                    return false;
             }
-        }
-        protected virtual bool isAcceptKey(int index, string key)
-        {
-            return true;
         }
     }
 }

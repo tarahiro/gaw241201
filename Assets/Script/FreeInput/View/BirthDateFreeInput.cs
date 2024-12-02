@@ -13,45 +13,52 @@ namespace gaw241201.View
     public class BirthDateFreeInput : FreeInputItemView
     {
         protected override string defaultValue { get; set; } = "190000";
-        protected override bool isAcceptKey(int index, string key)
+        protected override bool IsMainKeyListContains(int index, KeyCode key)
         {
-            int i = int.Parse(key);
-            switch (index)
+            if (TryGetStringFromInput(key, out var s))
             {
-                case 0:
-                    return i <= 2;
-
-                case 1:
-                    return true;
-
-                case 2:
-                    return true;
-
-                case 3:
-                    return true;
-
-                case 4:
-                    return i <= 1;
-
-                case 5:
-                    Log.DebugAssert(_inputCharacterList[index - 1].TryGetCharacter(out var c));
-                    if (int.Parse(c.ToString()) < 1)
+                if (int.TryParse(s, out var i))
+                {
+                    switch (index)
                     {
-                        return true;
-                    }
-                    else
-                    {
-                        return i <= 2;
+                        case 0:
+                            return i <= 2;
+
+                        case 1:
+                            return true;
+
+                        case 2:
+                            return true;
+
+                        case 3:
+                            return true;
+
+                        case 4:
+                            return i <= 1;
+
+                        case 5:
+                            Log.DebugAssert(_inputCharacterList[index - 1].TryGetCharacter(out var c));
+                            if (int.Parse(c.ToString()) < 1)
+                            {
+                                return true;
+                            }
+                            else
+                            {
+                                return i <= 2;
+                            }
+
+                        case 6:
+                            return i <= 3;
+
+                        default:
+                            Log.DebugLog("不正な値です");
+                            return false;
                     }
 
-                case 6:
-                    return i <= 3;
-
-                default:
-                    Log.DebugLog("不正な値です");
-                    return false;
+                }
 
             }
+            return false;
         }
 
         protected override bool IsAcceptEnter()
