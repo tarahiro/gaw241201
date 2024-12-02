@@ -10,14 +10,13 @@ namespace gaw241201.Model
     //---クラス作成時にやること---//
     //"Template" を置換
     //フィールドを追加
-    public interface ITypingMaster : IIdentifiable, IIndexable
+    public interface ITypingMaster : IIdentifiable, IIndexable, IGroupable
     {
 
         /// <summary>
         /// このデータのIDを取得します。
         /// </summary>
 
-        string TypingGroup{ get; }
         string JpText { get; }
         string RomanText { get; }
     }

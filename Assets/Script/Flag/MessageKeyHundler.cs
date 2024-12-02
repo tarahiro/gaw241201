@@ -19,7 +19,7 @@ namespace gaw241201
             Log.Comment("Message“à‚ÌKey‚ÌŒŸõŠJn");
             string returnMessage = message;
 
-            foreach(ConversationConst.Key key in Enum.GetValues(typeof(ConversationConst.Key))) 
+            foreach(FlagConst.MessageKey key in Enum.GetValues(typeof(FlagConst.MessageKey))) 
             {
                 string command = "<key=" + key.ToString()  + ">";
                 if (returnMessage.Contains(command))

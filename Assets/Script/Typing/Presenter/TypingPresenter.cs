@@ -12,7 +12,17 @@ using gaw241201.View;
 
 namespace gaw241201.Presenter
 {
-    public class TypingPresenter
+    public class TypingPresenter : IPostInitializable
     {
+        [Inject] TypingModel _model;
+        [Inject] TypingView _view;
+        [Inject] TypingViewArgsFactory _argsFactory;
+
+        CompositeDisposable _disposable = new CompositeDisposable();
+
+        public void PostInitialize()
+        {
+            _model.Entered.Subscribe(x => _view.Enter(_argsFactory.Create(x)).Forget()).AddTo(_disposable);
+        }
     }
 }

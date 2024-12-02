@@ -14,7 +14,7 @@ namespace gaw241201
     public class DiffSecondKeyReplacer : IKeyReplacer
     {
         [Inject] IGlobalFlagProvider _flagProvider;
-        public string ReplaceTo(ConversationConst.Key key)
+        public string ReplaceTo(FlagConst.MessageKey key)
         {
             Log.Comment("DiffSecondèëÇ´ä∑Ç¶");
 

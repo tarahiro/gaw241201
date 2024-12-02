@@ -14,7 +14,7 @@ namespace gaw241201
     public class ApplicationTimeKeyReplacer : IKeyReplacer
     {
         [Inject] IGlobalFlagProvider _flagProvider;
-        public string ReplaceTo(ConversationConst.Key key)
+        public string ReplaceTo(FlagConst.MessageKey key)
         {
             Log.Comment("ApplicationTimeèëÇ´ä∑Ç¶");
 

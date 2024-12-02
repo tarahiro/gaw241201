@@ -20,11 +20,5 @@ namespace gaw241201
         };
         */
 
-        public enum Key
-        {
-            ApplicationTime,
-            DiffSecond,
-            Name,
-        }
     }
 }

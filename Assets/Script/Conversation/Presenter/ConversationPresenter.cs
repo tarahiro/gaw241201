@@ -20,7 +20,6 @@ namespace gaw241201.Presenter
         [Inject] ConversationViewArgsFactory _viewArgsFactory;
 
         CompositeDisposable _disposable = new CompositeDisposable();
-        CancellationTokenSource cancellationTokenSource = new CancellationTokenSource();
 
         public void PostInitialize()
         {

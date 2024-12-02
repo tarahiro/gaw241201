@@ -20,6 +20,9 @@ namespace gaw241201.Inject
             //Typing
             builder.Register<TypingModel>(Lifetime.Singleton).AsSelf();
             builder.Register<TypingMasterDataProvider>(Lifetime.Singleton).AsImplementedInterfaces();
+            builder.Register<ModelArgsFactory<ITypingMaster>>(Lifetime.Singleton).AsSelf();
+            builder.Register<TypingViewArgsFactory>(Lifetime.Singleton).AsSelf();
+            builder.RegisterComponentInHierarchy<TypingView>().AsSelf();
 
 
             //DeleteUi
@@ -74,6 +77,7 @@ namespace gaw241201.Inject
                 entryPoints.Add<ConversationPresenter>();
                 entryPoints.Add<FreeInputPresenter>();
                 entryPoints.Add<ClickInputPresenter>();
+                entryPoints.Add<TypingPresenter>();
 #if ENABLE_DEBUG
                 entryPoints.Add<DebugManager>();
 #endif

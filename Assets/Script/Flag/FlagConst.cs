@@ -24,5 +24,13 @@ namespace gaw241201
         {
             ReadTime
         }
+
+        public enum MessageKey
+        {
+
+            ApplicationTime,
+            DiffSecond,
+            Name,
+        }
     }
 }

@@ -1,5 +1,4 @@
 using Cysharp.Threading.Tasks;
-using gaw241201.Model;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -10,16 +9,18 @@ using UnityEngine;
 using VContainer;
 using VContainer.Unity;
 
-namespace gaw241201
+namespace gaw241201.View
 {
-    public class TypingModelArgs
+    public class TypingViewArgs
     {
-        public ITypingMaster Master { get; private set; }
+        public string JpText { get; private set; }
+        public string RomanText { get; private set; }
         public CancellationToken CancellationToken { get; private set; }
 
-        public TypingModelArgs(ITypingMaster master, CancellationToken cancellationToken)
+        public TypingViewArgs(string jpText, string romanText, CancellationToken cancellationToken)
         {
-            Master = master;
+            JpText = jpText;
+            RomanText = romanText;
             CancellationToken = cancellationToken;
         }
     }

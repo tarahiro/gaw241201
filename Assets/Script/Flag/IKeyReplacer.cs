@@ -12,6 +12,6 @@ namespace gaw241201
 {
     public interface IKeyReplacer
     {
-        string ReplaceTo(ConversationConst.Key key);
+        string ReplaceTo(FlagConst.MessageKey key);
     }
 }

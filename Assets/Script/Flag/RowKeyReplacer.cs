@@ -15,7 +15,7 @@ namespace gaw241201
 
     {
         [Inject] IGlobalFlagProvider _flagProvider;
-        public string ReplaceTo(ConversationConst.Key key)
+        public string ReplaceTo(FlagConst.MessageKey key)
         {
             Log.Comment("DiffSecondèëÇ´ä∑Ç¶");
             return _flagProvider.GetFlag(EnumUtil.KeyToType<FlagConst.Key>(key.ToString()));
