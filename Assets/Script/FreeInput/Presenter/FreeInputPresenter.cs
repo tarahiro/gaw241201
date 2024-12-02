@@ -26,22 +26,9 @@ namespace gaw241201.Presenter
 
         public void PostInitialize()
         {
-            _model.Entered.Subscribe(x => _view.Enter(x, cancellationTokenSource.Token).Forget()).AddTo(_disposable);
+            _model.Entered.Subscribe(x => _view.Enter(x).Forget()).AddTo(_disposable);
             _view.Exited.Subscribe(_model.EndFlow).AddTo(_disposable);
-            _uiDeletable.UiDeleted.Subscribe(_ => _view.Delete()).AddTo(_disposable); 
-#if ENABLE_DEBUG
-            _model.ForceEnded.Subscribe(_ => Cancell()).AddTo(_disposable);
-#endif
+            _uiDeletable.UiDeleted.Subscribe(_ => _view.Delete()).AddTo(_disposable);
         }
-
-#if ENABLE_DEBUG
-        void Cancell()
-        {
-            Log.Comment("ConversationPresenterのキャンセル開始");
-
-            cancellationTokenSource.Cancel();
-            cancellationTokenSource = new CancellationTokenSource();
-        }
-#endif
     }
 }

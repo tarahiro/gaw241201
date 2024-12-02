@@ -38,7 +38,7 @@ namespace gaw241201.View
         {
 
             Log.Comment("ClickInputViewèIóπ");
-            _exited.OnNext(Unit.Default);
+            _exited.OnNext(Unit.Default);   
 
         }
     }

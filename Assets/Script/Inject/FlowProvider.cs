@@ -24,7 +24,7 @@ namespace gaw241201
 
             switch (category)
             {
-                case FlowConst.Category.Conversation :
+                case FlowConst.Category.Conversation:
                     return _conversationModel;
 
                 case FlowConst.Category.FreeInput:

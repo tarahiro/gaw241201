@@ -23,18 +23,25 @@ namespace gaw241201.View
         public IObservable<string> Exited => _exited;
         
 
-        public async UniTask Enter(string bodyId, CancellationToken ct)
+        public async UniTask Enter(FreeInputArgs args)
         {
-            Log.DebugLog(c_prefix + bodyId + "ÇÃprefabê∂ê¨");
-            _currentItem = Instantiate(Resources.Load<FreeInputItemView>(c_prefix + bodyId), transform);
+            Log.Comment(c_prefix + args.BodyId + "ÇÃprefabê∂ê¨");
+            _currentItem = Instantiate(Resources.Load<FreeInputItemView>(c_prefix + args.BodyId), transform);
             _currentItem.Construct(_gazable);
 
             string value = "UnRegistered";
             _currentItem.Exited.Subscribe(x => value = x);
-            await _currentItem.Enter(ct);
+            args.CancellationToken.Register(() => OnExit(value));
 
+            await _currentItem.Enter(args.CancellationToken);
+
+            OnExit(value);
+
+        }
+
+        void OnExit(string value)
+        {
             _exited.OnNext(value);
-
         }
 
         public void Delete()

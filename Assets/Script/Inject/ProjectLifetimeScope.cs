@@ -32,6 +32,7 @@ namespace gaw241201.Inject
             builder.Register<FreeInputValueRegisterer>(Lifetime.Singleton).AsSelf();
             builder.Register<DeleteFreeInputUi>(Lifetime.Singleton).AsSelf().AsImplementedInterfaces();
             builder.Register<FreeInputView>(Lifetime.Singleton).AsImplementedInterfaces();
+            builder.Register<FreeInputArgsFactory>(Lifetime.Singleton).AsSelf();
 
             //RegisterFlagFlow
             builder.Register<RegisterFlagFlowModel>(Lifetime.Singleton).AsSelf();
@@ -40,9 +41,8 @@ namespace gaw241201.Inject
             builder.Register<ConversationModel>(Lifetime.Singleton).AsSelf();
             builder.Register<ConversationView>(Lifetime.Singleton).AsSelf();
             builder.Register<ConversationMasterDataProvider>(Lifetime.Singleton).AsImplementedInterfaces();
-            builder.RegisterFactory<IConversationMaster, ConversationViewArgs>(x => new ConversationViewArgs(
-                Container.Resolve<MessageKeyHundler>().HundleKey(x.Message),
-                EnumUtil.KeyToType<FacialConst.Key>(x.Facial)));
+            builder.Register<ConversationModelArgsFactory>(Lifetime.Singleton).AsSelf();
+            builder.Register<ConversationViewArgsFactory>(Lifetime.Singleton).AsSelf();
             builder.RegisterComponentInHierarchy<ConversationTextView>().AsSelf();
             builder.Register<MessageKeyHundler>(Lifetime.Singleton).AsSelf();
             builder.Register<MessageKeyReplacerProvider>(Lifetime.Singleton).AsSelf();

@@ -15,7 +15,6 @@ namespace gaw241201
        UniTask EnterFlow(string bodyId);
 #if ENABLE_DEBUG
         void ForceEndFlow();
-        string ForceGetCategory { get; }
 #endif
     }
 }

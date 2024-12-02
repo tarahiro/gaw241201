@@ -15,11 +15,12 @@ namespace gaw241201
     public class ConversationModel : IFlowModel {
 
         [Inject] IConversationMasterDataProvider _masterDataProvider;
+        [Inject] ConversationModelArgsFactory _modelArgsFactory;
 
-        Subject<IConversationMaster> _entered = new Subject<IConversationMaster>();
+        Subject<ConversationModelArgs> _entered = new Subject<ConversationModelArgs>();
 
 
-        public IObservable<IConversationMaster> Entered => _entered;
+        public IObservable<ConversationModelArgs> Entered => _entered;
         CancellationTokenSource _cts = new CancellationTokenSource();
 
 
@@ -45,7 +46,7 @@ namespace gaw241201
                 Log.Comment(_thisConversationGroup[i].Id + "‚ÌConversationŠJŽn");
                 _isEnded = false;
 
-                _entered.OnNext(_thisConversationGroup[i]);
+                _entered.OnNext(_modelArgsFactory.Create(_thisConversationGroup[i],_cts.Token));
                 await UniTask.WaitUntil(() => _isEnded);
             }
 
@@ -59,14 +60,9 @@ namespace gaw241201
         }
 
 #if ENABLE_DEBUG
-        Subject<Unit> _forceEnded = new Subject<Unit>();
-        public IObservable<Unit> ForceEnded => _forceEnded;
-        public string ForceGetCategory => "Conversation";
         public void ForceEndFlow()
         {
-            EndSIngleConversation();
             _cts.Cancel();
-            _forceEnded.OnNext(Unit.Default);
         }
 
 #endif

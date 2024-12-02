@@ -14,20 +14,23 @@ namespace gaw241201
     public class FreeInputModel : IFlowModel
     {
         [Inject] FreeInputValueRegisterer _valueRegisterer;
+        [Inject] FreeInputArgsFactory _flowArgsFactory;
 
         bool _isEnded = false;
         string _bodyId;
-        Subject<string> _entered  = new Subject<string>();
-        public IObservable<string> Entered => _entered;
+        CancellationTokenSource _cts;
+        Subject<FreeInputArgs> _entered  = new Subject<FreeInputArgs>();
+
+        public IObservable<FreeInputArgs> Entered => _entered;
 
         public async UniTask EnterFlow(string bodyId)
         {
             Log.Comment(bodyId + "‚ÌFreeInputŠJŽn");
-            CancellationTokenSource _cts;
+            _cts = new CancellationTokenSource();
             _bodyId = bodyId;
             _isEnded = false;
 
-            _entered.OnNext(bodyId);
+            _entered.OnNext(_flowArgsFactory.Create(bodyId,_cts.Token));
 
             await UniTask.WaitUntil(() =>  _isEnded);
         }
@@ -40,12 +43,9 @@ namespace gaw241201
         }
 
 #if ENABLE_DEBUG
-        Subject<Unit> _forceEnded = new Subject<Unit>();
-        public IObservable<Unit> ForceEnded => _forceEnded;
-        public string ForceGetCategory => "Conversation";
         public void ForceEndFlow()
         {
-            _forceEnded.OnNext(Unit.Default);
+            _cts.Cancel();
         }
 
 #endif

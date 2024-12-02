@@ -20,12 +20,14 @@ namespace gaw241201.View
         public Subject<Unit> Completed => _completed;
 
 
-        public async UniTask EnterConversation(ConversationViewArgs args, CancellationToken ct)
+        public async UniTask EnterConversation(ConversationViewArgs args)
         {
             Log.Comment(args.Message + " " + args.Facial + "‚ÌConversation•\Ž¦ŠJŽn");
 
+            args.CancellationToken.Register(() => _completed.OnNext(Unit.Default));
+
             _facialChangable.SetFacial(args.Facial);
-            await _textView.Enter(args.Message,ct);
+            await _textView.Enter(args.Message, args.CancellationToken);
 
             _completed.OnNext(Unit.Default);
         }

@@ -11,14 +11,18 @@ namespace Tarahiro.Ui
     public static class TextUtil
     {
         const float c_defaultTextIntervalTime = .1f;
-        public static async UniTask DisplayTextByCharacter(string text, TextMeshProUGUI textMeshProUGUI, string SeLabel, KeyCode decide, CancellationToken ct, bool IsSeRun = true, float textIntervalTime = c_defaultTextIntervalTime)
+        public static async UniTask DisplayTextByCharacter(string text, TextMeshProUGUI textMeshProUGUI, string SeLabel, KeyCode decide, CancellationToken ct, bool isSeRun = true, float textIntervalTime = c_defaultTextIntervalTime)
         {
-            await TextCount(text,textMeshProUGUI, SeLabel, decide, ct, textIntervalTime);
+            ct.Register(() => ExitDisplayText(text, textMeshProUGUI, isSeRun));
+            await TextCount(text,textMeshProUGUI, SeLabel, decide, ct,isSeRun, textIntervalTime);
+            ExitDisplayText(text, textMeshProUGUI, isSeRun);
         }
 
-        static async UniTask TextCount(string m_text, TextMeshProUGUI m_textMeshProUGUI, string SeLabel, KeyCode m_decide, CancellationToken ct, float m_textIntervalTime)
+        static async UniTask TextCount(string text, TextMeshProUGUI textMeshProUGUI, string seLabel, KeyCode decide, CancellationToken ct, bool isSeRun, float textIntervalTime)
         {
-            SoundManager.PlaySEWithLoop(SeLabel);
+            if (isSeRun) {
+                SoundManager.PlaySEWithLoop(seLabel);
+            }
             float m_Tick = 0;
             int textCount = 0;
             bool _isEnd = false;
@@ -27,20 +31,20 @@ namespace Tarahiro.Ui
             {
                 await UniTask.Yield(PlayerLoopTiming.Update);
 
-                if (Input.GetKeyDown(m_decide))
+                if (Input.GetKeyDown(decide))
                 {
                     _isEnd = true;
                 }
 
                 m_Tick += Time.deltaTime;
-                if (m_Tick > m_textIntervalTime)
+                if (m_Tick > textIntervalTime)
                 {
-                    m_textMeshProUGUI.text += m_text[textCount];
+                    textMeshProUGUI.text += text[textCount];
 
                     m_Tick = 0;
                     textCount++;
 
-                    if (textCount >= m_text.Length)
+                    if (textCount >= text.Length)
                     {
                         _isEnd = true;
 
@@ -48,9 +52,17 @@ namespace Tarahiro.Ui
                 }
             }
 
-            SoundManager.StopLoopSE();
-            m_textMeshProUGUI.text = m_text;
 
+
+        }
+
+        static void ExitDisplayText(string text, TextMeshProUGUI textMeshProUGUI,bool isSeRun)
+        {
+            if (isSeRun)
+            {
+                SoundManager.StopLoopSE();
+            }
+            textMeshProUGUI.text = text;
 
         }
     }

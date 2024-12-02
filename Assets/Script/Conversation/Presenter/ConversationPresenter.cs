@@ -17,28 +17,15 @@ namespace gaw241201.Presenter
     {
         [Inject] ConversationModel _model;
         [Inject] ConversationView _view;
-        [Inject] Func<IConversationMaster, ConversationViewArgs> _factory;
+        [Inject] ConversationViewArgsFactory _viewArgsFactory;
 
         CompositeDisposable _disposable = new CompositeDisposable();
         CancellationTokenSource cancellationTokenSource = new CancellationTokenSource();
 
         public void PostInitialize()
         {
-            _model.Entered.Subscribe(x =>  _view.EnterConversation(_factory.Invoke(x), cancellationTokenSource.Token).Forget()).AddTo(_disposable);
+            _model.Entered.Subscribe(x =>  _view.EnterConversation(_viewArgsFactory.Create(x)).Forget()).AddTo(_disposable);
             _view.Completed.Subscribe(x => _model.EndSIngleConversation()).AddTo(_disposable);
-#if ENABLE_DEBUG
-            _model.ForceEnded.Subscribe(_ => Cancell()).AddTo(_disposable);
-#endif
         }
-
-#if ENABLE_DEBUG
-        void Cancell()
-        {
-            Log.Comment("ConversationPresenterのキャンセル開始");
-
-            cancellationTokenSource.Cancel();
-            cancellationTokenSource = new CancellationTokenSource();
-        }
-#endif
     }
 }

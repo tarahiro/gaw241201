@@ -58,8 +58,10 @@ namespace gaw241201.View
                 item.Enter(_gazable);
             }
             _currentItem.Focus();
+            ct.Register(() => Exit(ct));
 
-            while (!_isEndLoop && !ct.IsCancellationRequested)
+
+            while (!_isEndLoop)
             {
                 await UniTask.Yield(PlayerLoopTiming.Update);
                 CheckInput();
