@@ -17,6 +17,7 @@ namespace gaw241201
             ApplicationTime,
             InputTime,
             Name,
+            NameLower,
             BirthDate,
         }
 
@@ -31,6 +32,7 @@ namespace gaw241201
             ApplicationTime,
             DiffSecond,
             Name,
+            NameLower,
         }
     }
 }

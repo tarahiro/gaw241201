@@ -32,6 +32,7 @@ namespace gaw241201.Inject
             // ClickInput
             builder.Register<ClickInputModel>(Lifetime.Singleton).AsSelf();
             builder.RegisterComponentInHierarchy<ClickInputView>().AsSelf();
+            builder.Register<DeleteClickInputUi>(Lifetime.Singleton).AsSelf();
 
 
             //FreeInput

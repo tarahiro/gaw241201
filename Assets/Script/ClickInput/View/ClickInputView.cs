@@ -11,7 +11,7 @@ using System.Threading;
 
 namespace gaw241201.View
 {
-    public class ClickInputView : MonoBehaviour
+    public class ClickInputView : MonoBehaviour, IUiViewDeletable
     {
         [Inject] IGazable _gazable;
 
@@ -38,8 +38,15 @@ namespace gaw241201.View
         {
 
             Log.Comment("ClickInputView終了");
-            _exited.OnNext(Unit.Default);   
+            _exited.OnNext(Unit.Default);
 
+        }
+
+        public void Delete()
+        {
+            Log.Comment("FreeInputViewItemを削除");
+            //色々disposeしないといけない気もする
+            Destroy(_currentItem.gameObject);
         }
     }
 }

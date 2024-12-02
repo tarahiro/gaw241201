@@ -24,6 +24,7 @@ namespace gaw241201
 
                 case FreeInputConst.RegisterProcessKey.NameFreeInput:
                     _flagRegisterer.RegisterFlag(FlagConst.Key.Name, value);
+                    _flagRegisterer.RegisterFlag(FlagConst.Key.NameLower, value.ToLower());
                     break;
 
                 case FreeInputConst.RegisterProcessKey.BirthDateFreeInput:
