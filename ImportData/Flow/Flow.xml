@@ -108,126 +108,6 @@
    </Row>
    <Row ss:AutoFitHeight="0">
     <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">0</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">201000TypingConversation</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">Conversation</Data></Cell>
-    <Cell ss:StyleID="s67" ss:Formula="=RC[-2]"><Data ss:Type="String">201000TypingConversation</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">Clear</Data></Cell>
-    <Cell ss:StyleID="s67" ss:Formula="=R[27]C[-4]"><Data ss:Type="String">109000InitialConversation</Data></Cell>
-   </Row>
-   <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">1</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">202000Typing</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">Typing</Data></Cell>
-    <Cell ss:StyleID="s67" ss:Formula="=RC[-2]"><Data ss:Type="String">202000Typing</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">Clear</Data></Cell>
-    <Cell ss:StyleID="s67" ss:Formula="=R[27]C[-4]"><Data ss:Type="String">110000ClickInput</Data></Cell>
-   </Row>
-   <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">2</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">203000TypingConversation</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">Conversation</Data></Cell>
-    <Cell ss:StyleID="s67" ss:Formula="=RC[-2]"><Data ss:Type="String">203000TypingConversation</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">Clear</Data></Cell>
-    <Cell ss:StyleID="s67" ss:Formula="=R[27]C[-4]"><Data ss:Type="String">200000DeleteUi</Data></Cell>
-   </Row>
-   <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">3</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">204000Typing</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">Typing</Data></Cell>
-    <Cell ss:StyleID="s67" ss:Formula="=RC[-2]"><Data ss:Type="String">204000Typing</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">Clear</Data></Cell>
-    <Cell ss:StyleID="s67" ss:Formula="=R[-3]C[-4]"><Data ss:Type="String">201000TypingConversation</Data></Cell>
-   </Row>
-   <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">4</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">205000TypingConversation</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">Conversation</Data></Cell>
-    <Cell ss:StyleID="s67" ss:Formula="=RC[-2]"><Data ss:Type="String">205000TypingConversation</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">Clear</Data></Cell>
-    <Cell ss:StyleID="s67" ss:Formula="=R[-6]C[-4]"><Data ss:Type="Number">0</Data></Cell>
-   </Row>
-   <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">5</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">206000Typing</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">Typing</Data></Cell>
-    <Cell ss:StyleID="s67" ss:Formula="=RC[-2]"><Data ss:Type="String">206000Typing</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">Clear</Data></Cell>
-    <Cell ss:StyleID="s67" ss:Formula="=R[-4]C[-4]"><Data ss:Type="String">202000Typing</Data></Cell>
-   </Row>
-   <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">6</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">206800ConfiscateLeftEye</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">Confiscate</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">LeftEye</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">Clear</Data></Cell>
-    <Cell ss:StyleID="s67" ss:Formula="=R[23]C[-4]"><Data ss:Type="String">200000DeleteUi</Data></Cell>
-   </Row>
-   <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">7</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">207000TypingConversation</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">Conversation</Data></Cell>
-    <Cell ss:StyleID="s67" ss:Formula="=RC[-2]"><Data ss:Type="String">207000TypingConversation</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">Clear</Data></Cell>
-    <Cell ss:StyleID="s67" ss:Formula="=R[9]C[-4]"><Data ss:Type="String">101010TimeFreeInput</Data></Cell>
-   </Row>
-   <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">8</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">208000Typing</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">Typing</Data></Cell>
-    <Cell ss:StyleID="s67" ss:Formula="=RC[-2]"><Data ss:Type="String">208000Typing</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">Clear</Data></Cell>
-    <Cell ss:StyleID="s67" ss:Formula="=R[-8]C[-4]"><Data ss:Type="String">201000TypingConversation</Data></Cell>
-   </Row>
-   <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">9</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">209000TypingConversation</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">Conversation</Data></Cell>
-    <Cell ss:StyleID="s67" ss:Formula="=RC[-2]"><Data ss:Type="String">209000TypingConversation</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">Clear</Data></Cell>
-    <Cell ss:StyleID="s67" ss:Formula="=R[8]C[-4]"><Data ss:Type="String">101900InitialConversation</Data></Cell>
-   </Row>
-   <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">10</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">210000Typing</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">Typing</Data></Cell>
-    <Cell ss:StyleID="s67" ss:Formula="=RC[-2]"><Data ss:Type="String">210000Typing</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">Clear</Data></Cell>
-    <Cell ss:StyleID="s67" ss:Formula="=R[8]C[-4]"><Data ss:Type="String">102011ReadTimeRegisterFlag</Data></Cell>
-   </Row>
-   <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">11</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">212000TypingConversation</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">Conversation</Data></Cell>
-    <Cell ss:StyleID="s67" ss:Formula="=RC[-2]"><Data ss:Type="String">212000TypingConversation</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">Clear</Data></Cell>
-    <Cell ss:StyleID="s67" ss:Formula="=R[8]C[-4]"><Data ss:Type="String">102000InitialConversation</Data></Cell>
-   </Row>
-   <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">12</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">213000Typing</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">Typing</Data></Cell>
-    <Cell ss:StyleID="s67" ss:Formula="=RC[-2]"><Data ss:Type="String">213000Typing</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">Clear</Data></Cell>
-    <Cell ss:StyleID="s67" ss:Formula="=R[8]C[-4]"><Data ss:Type="String">102080DeleteUi</Data></Cell>
-   </Row>
-   <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">13</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">214000TypingConversation</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">Conversation</Data></Cell>
-    <Cell ss:StyleID="s67" ss:Formula="=RC[-2]"><Data ss:Type="String">214000TypingConversation</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">Clear</Data></Cell>
-    <Cell ss:StyleID="s67" ss:Formula="=R[8]C[-4]"><Data ss:Type="String">103000NameFreeInput</Data></Cell>
-   </Row>
-   <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">14</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">215000Typing</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">Typing</Data></Cell>
-    <Cell ss:StyleID="s67" ss:Formula="=RC[-2]"><Data ss:Type="String">215000Typing</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">Clear</Data></Cell>
-    <Cell ss:StyleID="s67" ss:Formula="=R[8]C[-4]"><Data ss:Type="String">104000InitialConversation</Data></Cell>
-   </Row>
-   <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">15</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">100000InitialConversation</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">Conversation</Data></Cell>
     <Cell ss:StyleID="s67" ss:Formula="=RC[-2]"><Data ss:Type="String">100000InitialConversation</Data></Cell>
@@ -235,7 +115,7 @@
     <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">16</Data></Cell>
+    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">1</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">101010TimeFreeInput</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">FreeInput</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">TimeFreeInput</Data></Cell>
@@ -243,7 +123,7 @@
     <Cell ss:StyleID="s67" ss:Formula="=R[-1]C[-4]"><Data ss:Type="String">100000InitialConversation</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">17</Data></Cell>
+    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">2</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">101900InitialConversation</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">Conversation</Data></Cell>
     <Cell ss:StyleID="s67" ss:Formula="=RC[-2]"><Data ss:Type="String">101900InitialConversation</Data></Cell>
@@ -251,7 +131,7 @@
     <Cell ss:StyleID="s67" ss:Formula="=R[-1]C[-4]"><Data ss:Type="String">101010TimeFreeInput</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">18</Data></Cell>
+    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">3</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">102011ReadTimeRegisterFlag</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">RegisterFlag</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">ReadTime</Data></Cell>
@@ -259,7 +139,7 @@
     <Cell ss:StyleID="s67" ss:Formula="=R[-2]C[-4]"><Data ss:Type="String">101010TimeFreeInput</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">19</Data></Cell>
+    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">4</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">102000InitialConversation</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">Conversation</Data></Cell>
     <Cell ss:StyleID="s67" ss:Formula="=RC[-2]"><Data ss:Type="String">102000InitialConversation</Data></Cell>
@@ -267,7 +147,7 @@
     <Cell ss:StyleID="s67" ss:Formula="=R[-2]C[-4]"><Data ss:Type="String">101900InitialConversation</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">20</Data></Cell>
+    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">5</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">102080DeleteUi</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">DeleteUi</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">FreeInput</Data></Cell>
@@ -275,7 +155,7 @@
     <Cell ss:StyleID="s67" ss:Formula="=R[-2]C[-4]"><Data ss:Type="String">102011ReadTimeRegisterFlag</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">21</Data></Cell>
+    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">6</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">103000NameFreeInput</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">FreeInput</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">NameFreeInput</Data></Cell>
@@ -283,7 +163,7 @@
     <Cell ss:StyleID="s67" ss:Formula="=R[-3]C[-4]"><Data ss:Type="String">102011ReadTimeRegisterFlag</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">22</Data></Cell>
+    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">7</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">104000InitialConversation</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">Conversation</Data></Cell>
     <Cell ss:StyleID="s67" ss:Formula="=RC[-2]"><Data ss:Type="String">104000InitialConversation</Data></Cell>
@@ -291,7 +171,7 @@
     <Cell ss:StyleID="s67" ss:Formula="=R[-2]C[-4]"><Data ss:Type="String">102080DeleteUi</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">23</Data></Cell>
+    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">8</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">105000DeleteUi</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">DeleteUi</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">FreeInput</Data></Cell>
@@ -299,7 +179,7 @@
     <Cell ss:StyleID="s67" ss:Formula="=R[-2]C[-4]"><Data ss:Type="String">103000NameFreeInput</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">24</Data></Cell>
+    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">9</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">106000InitialConversation</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">Conversation</Data></Cell>
     <Cell ss:StyleID="s67" ss:Formula="=RC[-2]"><Data ss:Type="String">106000InitialConversation</Data></Cell>
@@ -307,7 +187,7 @@
     <Cell ss:StyleID="s67" ss:Formula="=R[-2]C[-4]"><Data ss:Type="String">104000InitialConversation</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">25</Data></Cell>
+    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">10</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">107000BirthDateFreeInput</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">FreeInput</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">BirthDateFreeInput</Data></Cell>
@@ -315,7 +195,7 @@
     <Cell ss:StyleID="s67" ss:Formula="=R[-3]C[-4]"><Data ss:Type="String">104000InitialConversation</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">26</Data></Cell>
+    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">11</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">108000DeleteUi</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">DeleteUi</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">FreeInput</Data></Cell>
@@ -323,7 +203,7 @@
     <Cell ss:StyleID="s67" ss:Formula="=R[-2]C[-4]"><Data ss:Type="String">106000InitialConversation</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">27</Data></Cell>
+    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">12</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">109000InitialConversation</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">Conversation</Data></Cell>
     <Cell ss:StyleID="s67" ss:Formula="=RC[-2]"><Data ss:Type="String">109000InitialConversation</Data></Cell>
@@ -331,7 +211,7 @@
     <Cell ss:StyleID="s67" ss:Formula="=R[-2]C[-4]"><Data ss:Type="String">107000BirthDateFreeInput</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">28</Data></Cell>
+    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">13</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">110000ClickInput</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">ClickInput</Data></Cell>
     <Cell ss:StyleID="s67" ss:Formula="=RC[-2]"><Data ss:Type="String">110000ClickInput</Data></Cell>
@@ -339,12 +219,132 @@
     <Cell ss:StyleID="s67" ss:Formula="=R[-2]C[-4]"><Data ss:Type="String">108000DeleteUi</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">29</Data></Cell>
+    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">14</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">200000DeleteUi</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">DeleteUi</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">ClickInput</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">Clear</Data></Cell>
     <Cell ss:StyleID="s67" ss:Formula="=R[-2]C[-4]"><Data ss:Type="String">109000InitialConversation</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="17">
+    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">15</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">201000TypingConversation</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Conversation</Data></Cell>
+    <Cell ss:StyleID="s67" ss:Formula="=RC[-2]"><Data ss:Type="String">201000TypingConversation</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Clear</Data></Cell>
+    <Cell ss:StyleID="s67" ss:Formula="=R[-3]C[-4]"><Data ss:Type="String">109000InitialConversation</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">16</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">202000Typing</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Typing</Data></Cell>
+    <Cell ss:StyleID="s67" ss:Formula="=RC[-2]"><Data ss:Type="String">202000Typing</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Clear</Data></Cell>
+    <Cell ss:StyleID="s67" ss:Formula="=R[-3]C[-4]"><Data ss:Type="String">110000ClickInput</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">17</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">203000TypingConversation</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Conversation</Data></Cell>
+    <Cell ss:StyleID="s67" ss:Formula="=RC[-2]"><Data ss:Type="String">203000TypingConversation</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Clear</Data></Cell>
+    <Cell ss:StyleID="s67" ss:Formula="=R[-3]C[-4]"><Data ss:Type="String">200000DeleteUi</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">18</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">204000Typing</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Typing</Data></Cell>
+    <Cell ss:StyleID="s67" ss:Formula="=RC[-2]"><Data ss:Type="String">204000Typing</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Clear</Data></Cell>
+    <Cell ss:StyleID="s67" ss:Formula="=R[-3]C[-4]"><Data ss:Type="String">201000TypingConversation</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">19</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">205000TypingConversation</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Conversation</Data></Cell>
+    <Cell ss:StyleID="s67" ss:Formula="=RC[-2]"><Data ss:Type="String">205000TypingConversation</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Clear</Data></Cell>
+    <Cell ss:StyleID="s67" ss:Formula="=R[-21]C[-4]"><Data ss:Type="Number">0</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">20</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">206000Typing</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Typing</Data></Cell>
+    <Cell ss:StyleID="s67" ss:Formula="=RC[-2]"><Data ss:Type="String">206000Typing</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Clear</Data></Cell>
+    <Cell ss:StyleID="s67" ss:Formula="=R[-4]C[-4]"><Data ss:Type="String">202000Typing</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">21</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">206800ConfiscateLeftEye</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Confiscate</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">LeftEye</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Clear</Data></Cell>
+    <Cell ss:StyleID="s67" ss:Formula="=R[-7]C[-4]"><Data ss:Type="String">200000DeleteUi</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">22</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">207000TypingConversation</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Conversation</Data></Cell>
+    <Cell ss:StyleID="s67" ss:Formula="=RC[-2]"><Data ss:Type="String">207000TypingConversation</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Clear</Data></Cell>
+    <Cell ss:StyleID="s67" ss:Formula="=R[-21]C[-4]"><Data ss:Type="String">101010TimeFreeInput</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">23</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">208000Typing</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Typing</Data></Cell>
+    <Cell ss:StyleID="s67" ss:Formula="=RC[-2]"><Data ss:Type="String">208000Typing</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Clear</Data></Cell>
+    <Cell ss:StyleID="s67" ss:Formula="=R[-8]C[-4]"><Data ss:Type="String">201000TypingConversation</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">24</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">209000TypingConversation</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Conversation</Data></Cell>
+    <Cell ss:StyleID="s67" ss:Formula="=RC[-2]"><Data ss:Type="String">209000TypingConversation</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Clear</Data></Cell>
+    <Cell ss:StyleID="s67" ss:Formula="=R[-22]C[-4]"><Data ss:Type="String">101900InitialConversation</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">25</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">210000Typing</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Typing</Data></Cell>
+    <Cell ss:StyleID="s67" ss:Formula="=RC[-2]"><Data ss:Type="String">210000Typing</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Clear</Data></Cell>
+    <Cell ss:StyleID="s67" ss:Formula="=R[-22]C[-4]"><Data ss:Type="String">102011ReadTimeRegisterFlag</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">26</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">212000TypingConversation</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Conversation</Data></Cell>
+    <Cell ss:StyleID="s67" ss:Formula="=RC[-2]"><Data ss:Type="String">212000TypingConversation</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Clear</Data></Cell>
+    <Cell ss:StyleID="s67" ss:Formula="=R[-22]C[-4]"><Data ss:Type="String">102000InitialConversation</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">27</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">213000Typing</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Typing</Data></Cell>
+    <Cell ss:StyleID="s67" ss:Formula="=RC[-2]"><Data ss:Type="String">213000Typing</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Clear</Data></Cell>
+    <Cell ss:StyleID="s67" ss:Formula="=R[-22]C[-4]"><Data ss:Type="String">102080DeleteUi</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">28</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">214000TypingConversation</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Conversation</Data></Cell>
+    <Cell ss:StyleID="s67" ss:Formula="=RC[-2]"><Data ss:Type="String">214000TypingConversation</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Clear</Data></Cell>
+    <Cell ss:StyleID="s67" ss:Formula="=R[-22]C[-4]"><Data ss:Type="String">103000NameFreeInput</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">29</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">215000Typing</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Typing</Data></Cell>
+    <Cell ss:StyleID="s67" ss:Formula="=RC[-2]"><Data ss:Type="String">215000Typing</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Clear</Data></Cell>
+    <Cell ss:StyleID="s67" ss:Formula="=R[-22]C[-4]"><Data ss:Type="String">104000InitialConversation</Data></Cell>
    </Row>
   </Table>
   <WorksheetOptions xmlns="urn:schemas-microsoft-com:office:excel">
@@ -374,98 +374,98 @@
    <ProtectScenarios>False</ProtectScenarios>
   </WorksheetOptions>
   <ConditionalFormatting xmlns="urn:schemas-microsoft-com:office:excel">
-   <Range>R20C1:R34C6,R5C1:R13C6</Range>
+   <Range>R5C1:R28C6</Range>
    <Condition>
     <Value1>LEN(TRIM(RC))=0</Value1>
     <Format Style='background:#E7E6E6'/>
    </Condition>
   </ConditionalFormatting>
   <ConditionalFormatting xmlns="urn:schemas-microsoft-com:office:excel">
-   <Range>R13C1:R13C6</Range>
+   <Range>R28C1:R28C6</Range>
    <Condition>
     <Value1>LEN(TRIM(RC))=0</Value1>
     <Format Style='background:#E7E6E6'/>
    </Condition>
   </ConditionalFormatting>
   <ConditionalFormatting xmlns="urn:schemas-microsoft-com:office:excel">
-   <Range>R14C1:R14C6</Range>
+   <Range>R29C1:R29C6</Range>
    <Condition>
     <Value1>LEN(TRIM(RC))=0</Value1>
     <Format Style='background:#E7E6E6'/>
    </Condition>
   </ConditionalFormatting>
   <ConditionalFormatting xmlns="urn:schemas-microsoft-com:office:excel">
-   <Range>R15C1,R15C3:R15C6</Range>
+   <Range>R30C1,R30C3:R30C6</Range>
    <Condition>
     <Value1>LEN(TRIM(RC))=0</Value1>
     <Format Style='background:#E7E6E6'/>
    </Condition>
   </ConditionalFormatting>
   <ConditionalFormatting xmlns="urn:schemas-microsoft-com:office:excel">
-   <Range>R15C2</Range>
+   <Range>R30C2</Range>
    <Condition>
     <Value1>LEN(TRIM(RC))=0</Value1>
     <Format Style='background:#E7E6E6'/>
    </Condition>
   </ConditionalFormatting>
   <ConditionalFormatting xmlns="urn:schemas-microsoft-com:office:excel">
-   <Range>R15C2</Range>
+   <Range>R30C2</Range>
    <Condition>
     <Value1>LEN(TRIM(RC))=0</Value1>
     <Format Style='background:#E7E6E6'/>
    </Condition>
   </ConditionalFormatting>
   <ConditionalFormatting xmlns="urn:schemas-microsoft-com:office:excel">
-   <Range>R16C1:R16C6</Range>
+   <Range>R31C1:R31C6</Range>
    <Condition>
     <Value1>LEN(TRIM(RC))=0</Value1>
     <Format Style='background:#E7E6E6'/>
    </Condition>
   </ConditionalFormatting>
   <ConditionalFormatting xmlns="urn:schemas-microsoft-com:office:excel">
-   <Range>R17C1,R17C3:R17C6</Range>
+   <Range>R32C1,R32C3:R32C6</Range>
    <Condition>
     <Value1>LEN(TRIM(RC))=0</Value1>
     <Format Style='background:#E7E6E6'/>
    </Condition>
   </ConditionalFormatting>
   <ConditionalFormatting xmlns="urn:schemas-microsoft-com:office:excel">
-   <Range>R17C2</Range>
+   <Range>R32C2</Range>
    <Condition>
     <Value1>LEN(TRIM(RC))=0</Value1>
     <Format Style='background:#E7E6E6'/>
    </Condition>
   </ConditionalFormatting>
   <ConditionalFormatting xmlns="urn:schemas-microsoft-com:office:excel">
-   <Range>R17C2</Range>
+   <Range>R32C2</Range>
    <Condition>
     <Value1>LEN(TRIM(RC))=0</Value1>
     <Format Style='background:#E7E6E6'/>
    </Condition>
   </ConditionalFormatting>
   <ConditionalFormatting xmlns="urn:schemas-microsoft-com:office:excel">
-   <Range>R18C1:R18C6</Range>
+   <Range>R33C1:R33C6</Range>
    <Condition>
     <Value1>LEN(TRIM(RC))=0</Value1>
     <Format Style='background:#E7E6E6'/>
    </Condition>
   </ConditionalFormatting>
   <ConditionalFormatting xmlns="urn:schemas-microsoft-com:office:excel">
-   <Range>R19C1,R19C3:R19C6</Range>
+   <Range>R34C1,R34C3:R34C6</Range>
    <Condition>
     <Value1>LEN(TRIM(RC))=0</Value1>
     <Format Style='background:#E7E6E6'/>
    </Condition>
   </ConditionalFormatting>
   <ConditionalFormatting xmlns="urn:schemas-microsoft-com:office:excel">
-   <Range>R19C2</Range>
+   <Range>R34C2</Range>
    <Condition>
     <Value1>LEN(TRIM(RC))=0</Value1>
     <Format Style='background:#E7E6E6'/>
    </Condition>
   </ConditionalFormatting>
   <ConditionalFormatting xmlns="urn:schemas-microsoft-com:office:excel">
-   <Range>R19C2</Range>
+   <Range>R34C2</Range>
    <Condition>
     <Value1>LEN(TRIM(RC))=0</Value1>
     <Format Style='background:#E7E6E6'/>
