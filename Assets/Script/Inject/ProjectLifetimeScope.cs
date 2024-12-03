@@ -17,6 +17,9 @@ namespace gaw241201.Inject
             //Eyes
             builder.RegisterComponentInHierarchy<EyesView>().AsImplementedInterfaces();
 
+            //Confiscate
+            builder.Register<ConfiscateModel>(Lifetime.Singleton).AsSelf();
+
             //Typing
             builder.Register<TypingModel>(Lifetime.Singleton).AsSelf();
             builder.Register<TypingMasterDataProvider>(Lifetime.Singleton).AsImplementedInterfaces();
