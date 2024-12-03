@@ -10,11 +10,12 @@ using VContainer.Unity;
 
 namespace gaw241201.View
 {
-    public class EyesView : MonoBehaviour, IFacialChangable, IGazable
+    public class EyesView : MonoBehaviour, IFacialChangable, IGazable, IRobbable
     {
         const float c_length = .2f;
 
         [SerializeField] List<EyeView> _eyeViewList;
+        [SerializeField] GameObject _lefteyeRobbedParts;
 
 
         public void SetFacial(FacialConst.Key facialKey)
@@ -86,6 +87,11 @@ namespace gaw241201.View
                 item.SetEyePosition(position);
             }
 
+        }
+
+        public void RobParts()
+        {
+            _lefteyeRobbedParts.SetActive(true);
         }
     }
 }

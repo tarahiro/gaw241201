@@ -19,6 +19,8 @@ namespace gaw241201.Inject
 
             //Confiscate
             builder.Register<ConfiscateModel>(Lifetime.Singleton).AsSelf();
+            builder.Register<ConfiscateView>(Lifetime.Singleton).AsSelf();  
+            builder.RegisterComponentInHierarchy<LeftEyeRemovedable>().AsImplementedInterfaces().AsSelf() ;
 
             //Typing
             builder.Register<TypingModel>(Lifetime.Singleton).AsSelf();
@@ -84,6 +86,7 @@ namespace gaw241201.Inject
                 entryPoints.Add<FreeInputPresenter>();
                 entryPoints.Add<ClickInputPresenter>();
                 entryPoints.Add<TypingPresenter>();
+                entryPoints.Add<ConfiscatePresenter>();
 #if ENABLE_DEBUG
                 entryPoints.Add<DebugManager>();
 #endif

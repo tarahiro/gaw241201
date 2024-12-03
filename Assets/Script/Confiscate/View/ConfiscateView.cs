@@ -12,5 +12,15 @@ namespace gaw241201.View
 {
     public class ConfiscateView
     {
+        [Inject] IRemovedable _removedable;
+        [Inject] IRobbable _robbable;
+
+        public void Confiscate(ConfiscateConst.Type type)
+        {
+            Log.Comment(type +"‚ÌView‚ÌConfiscateŠJŽn");
+
+            _removedable.RemoveParts();
+            _robbable.RobParts();
+        }
     }
 }
