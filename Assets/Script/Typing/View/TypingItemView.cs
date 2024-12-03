@@ -2,6 +2,7 @@ using Cysharp.Threading.Tasks;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using Tarahiro;
 using TMPro;
 using UniRx;
@@ -35,11 +36,11 @@ namespace gaw241201.View
             _gazable = gazable;
         }
 
-        public async UniTask Enter()
+        public async UniTask Enter(CancellationToken cancellationToken)
         {
             InitializeQuestion();
 
-            while (!_isEndLoop)
+            while (!_isEndLoop & !cancellationToken.IsCancellationRequested)
             {
                 await UniTask.Yield(PlayerLoopTiming.Update);
                 CheckInput();

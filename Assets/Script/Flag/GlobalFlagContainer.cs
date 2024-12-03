@@ -22,8 +22,17 @@ namespace gaw241201
 
         public string GetFlag(FlagConst.Key key)
         {
-            return _dictionary[key];
+            if (_dictionary.ContainsKey(key))
+            {
+                return _dictionary[key];
+            }
+            else
+            {
+                Log.DebugWarning(key + "‚ª“o˜^‚³‚ê‚Ä‚¢‚Ü‚¹‚ñB‰Šú’l‚ğ•Ô‚µ‚Ü‚·");
+                return FlagConst.InitialValue(key);
+            }
         }
+
 
     }
 }

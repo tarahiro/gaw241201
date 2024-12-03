@@ -56,14 +56,16 @@ namespace gaw241201.Inject
             builder.RegisterComponentInHierarchy<ConversationTextView>().AsSelf();
             builder.Register<MessageKeyHundler>(Lifetime.Singleton).AsSelf();
             builder.Register<MessageKeyReplacerProvider>(Lifetime.Singleton).AsSelf();
-            builder.Register<ApplicationTimeKeyReplacer>(Lifetime.Singleton).AsSelf();
-            builder.Register<DiffSecondKeyReplacer>(Lifetime.Singleton).AsSelf();
-            builder.Register<RowKeyReplacer>(Lifetime.Singleton).AsSelf();
 
             //Flow
             builder.Register<FlowHundler>(Lifetime.Singleton).AsSelf().AsImplementedInterfaces();
             builder.Register<FlowMasterDataProvider>(Lifetime.Singleton).AsImplementedInterfaces();
             builder.Register<FlowProvider>(Lifetime.Singleton).AsImplementedInterfaces();
+            builder.Register<ApplicationTimeKeyReplacer>(Lifetime.Singleton).AsSelf();
+            builder.Register<DiffSecondKeyReplacer>(Lifetime.Singleton).AsSelf();
+            builder.Register<RowKeyReplacer>(Lifetime.Singleton).AsSelf();
+            builder.Register<DeviceLowerKeyReplacer>(Lifetime.Singleton).AsSelf();
+            builder.Register<DeviceKeyReplacer>(Lifetime.Singleton).AsSelf();
 
             //Flag
             builder.Register<GlobalFlagContainer>(Lifetime.Singleton).AsImplementedInterfaces();

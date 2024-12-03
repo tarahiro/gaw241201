@@ -14,7 +14,10 @@ namespace gaw241201
     {
         [Inject] ApplicationTimeKeyReplacer _applicationTimeKeyReplacer;
         [Inject] DiffSecondKeyReplacer _diffSecondKeyReplacer;
+        [Inject] DeviceKeyReplacer _deviceKeyReplacer;
+        [Inject] DeviceLowerKeyReplacer _deviceLowerKeyReplacer;
         [Inject] RowKeyReplacer _rowKeyReplacer;
+
         public IKeyReplacer GetKeyReplacer(FlagConst.MessageKey key)
         {
             switch (key)
@@ -24,6 +27,13 @@ namespace gaw241201
 
                 case FlagConst.MessageKey.DiffSecond:
                     return _diffSecondKeyReplacer;
+
+                case FlagConst.MessageKey.Device:
+                    return _deviceKeyReplacer;
+
+                case FlagConst.MessageKey.DeviceLower:
+                    return _deviceLowerKeyReplacer;
+
 
                 default:
                     return _rowKeyReplacer;

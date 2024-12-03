@@ -33,6 +33,24 @@ namespace gaw241201
             DiffSecond,
             Name,
             NameLower,
+            Device,
+            DeviceLower,
+        }
+
+        public static string InitialValue(Key key)
+        {
+            switch (key)
+            {
+                case Key.ApplicationTime: return "000000";
+                case Key.InputTime: return "000000";
+                case Key.Name: return "PLAYER";
+                case Key.NameLower: return "player";
+                case Key.BirthDate: return "BirthDate";
+
+                default:
+                    Log.DebugAssert(key + "‚Ì‰Šú’l‚ªw’è‚³‚ê‚Ä‚¢‚Ü‚¹‚ñ");
+                    return "Null";
+            }
         }
     }
 }

@@ -25,9 +25,15 @@ namespace gaw241201.View
             Log.Comment(args.JpText + "ŠJŽn");
             _currentItem = Instantiate(ResourceUtil.GetResource<TypingItemView>(c_prefabPath), transform);
             _currentItem.Construct(args,_gazable);
+            args.CancellationToken.Register(OnExit);
 
-            await _currentItem.Enter();
+            await _currentItem.Enter(args.CancellationToken);
 
+            OnExit();
+        }
+
+        private void OnExit()
+        {
             Destroy(_currentItem.gameObject);
             _exited.OnNext(Unit.Default);
         }
