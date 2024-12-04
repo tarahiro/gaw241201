@@ -15,7 +15,8 @@ namespace gaw241201
         public enum Key
         {
             Glitch,
-            CmdError
+            CmdError,
+            CmdAnswer,
         }
     }
 }
