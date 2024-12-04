@@ -25,6 +25,8 @@ namespace Tarahiro.Ui
             }
             float m_Tick = 0;
             int textCount = 0;
+            textMeshProUGUI.text = text;
+            textMeshProUGUI.maxVisibleCharacters = 0;
             bool _isEnd = false;
 
             while (!_isEnd && ! ct.IsCancellationRequested)
@@ -39,12 +41,12 @@ namespace Tarahiro.Ui
                 m_Tick += Time.deltaTime;
                 if (m_Tick > textIntervalTime)
                 {
-                    textMeshProUGUI.text += text[textCount];
 
                     m_Tick = 0;
                     textCount++;
+                    textMeshProUGUI.maxVisibleCharacters = textCount;
 
-                    if (textCount >= text.Length)
+                    if (textCount >= textMeshProUGUI.text.Length)
                     {
                         _isEnd = true;
 
@@ -62,7 +64,7 @@ namespace Tarahiro.Ui
             {
                 SoundManager.StopLoopSE();
             }
-            textMeshProUGUI.text = text;
+            textMeshProUGUI.maxVisibleCharacters = textMeshProUGUI.text.Length;
 
         }
     }
