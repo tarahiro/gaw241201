@@ -20,7 +20,9 @@ namespace gaw241201
             DeleteUi,
             ClickInput,
             Typing,
-            Confiscate
+            Confiscate,
+            EnterEffect,
+            EndEffect
         }
     }
 }

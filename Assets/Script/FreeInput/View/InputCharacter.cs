@@ -19,7 +19,7 @@ namespace gaw241201.View
         IGazable _gazable;
 
         [SerializeField] TextMeshProUGUI _tmp;
-        [SerializeField] GameObject _underBar;
+        [SerializeField] BlinkableCursor _underBar;
         
         CancellationTokenSource _cancellationTokenSource;
 
@@ -37,7 +37,7 @@ namespace gaw241201.View
         public void Focus()
         {
             _cancellationTokenSource = new CancellationTokenSource();
-            Blink(_cancellationTokenSource.Token).Forget();
+            _underBar.StartBlink();
 
             _gazable.Gaze(transform.position);
            
@@ -46,21 +46,10 @@ namespace gaw241201.View
         public void UnFocus()
         {
             _cancellationTokenSource.Cancel();
-            _underBar.SetActive(true);
+            _underBar.StopBlink();
 
         }
 
-        async UniTask Blink(CancellationToken ct)
-        {
-            while (!ct.IsCancellationRequested)
-            {
-
-                _underBar.SetActive(true);
-                await UniTask.WaitForSeconds(0.5f, cancellationToken: ct);
-                _underBar.SetActive(false);
-                await UniTask.WaitForSeconds(0.2f, cancellationToken: ct);
-            }
-        }
 
         public void Enter(IGazable gazable)
         {

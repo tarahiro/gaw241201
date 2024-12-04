@@ -19,6 +19,8 @@ namespace gaw241201
         [Inject] ClickInputModel _clickInputModel;
         [Inject] TypingModel _typingModel;
         [Inject] ConfiscateModel _confiscateModel;
+        [Inject] EnterEffectModel _enterEffectModel;
+        [Inject] EndEffectModel _endEffectModel;
 
         public IFlowModel GetFlowModel(FlowConst.Category category)
         {
@@ -46,6 +48,12 @@ namespace gaw241201
 
                     case FlowConst.Category.Confiscate:
                         return _confiscateModel;
+
+                    case FlowConst.Category.EnterEffect:
+                        return _enterEffectModel;
+
+                case FlowConst.Category.EndEffect:
+                    return _endEffectModel;
 
                 default:
                     Log.DebugAssert("不正なカテゴリー名です");

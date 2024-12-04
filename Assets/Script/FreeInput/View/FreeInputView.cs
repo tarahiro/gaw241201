@@ -23,7 +23,7 @@ namespace gaw241201.View
         public IObservable<string> Exited => _exited;
         
 
-        public async UniTask Enter(FreeInputArgs args)
+        public async UniTask Enter(FlowArgs args)
         {
             Log.Comment(c_prefix + args.BodyId + "ÇÃprefabê∂ê¨");
             _currentItem = Instantiate(ResourceUtil.GetResource<FreeInputItemView>(c_prefix + args.BodyId), transform);

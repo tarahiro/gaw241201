@@ -22,7 +22,6 @@ namespace gaw241201
             foreach(FlagConst.MessageKey key in Enum.GetValues(typeof(FlagConst.MessageKey))) 
             {
                 string command = "<key=" + key.ToString()  + ">";
-                Log.Comment(command);
                 if (returnMessage.Contains(command))
                 {
                     returnMessage = returnMessage.Replace(command, _replacerProvider.GetKeyReplacer(key).ReplaceTo(key));

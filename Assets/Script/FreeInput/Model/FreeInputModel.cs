@@ -14,14 +14,14 @@ namespace gaw241201
     public class FreeInputModel : IFlowModel
     {
         [Inject] FreeInputValueRegisterer _valueRegisterer;
-        [Inject] FreeInputArgsFactory _flowArgsFactory;
+        [Inject] FlowViewArgsFactory _flowArgsFactory;
 
         bool _isEnded = false;
         string _bodyId;
         CancellationTokenSource _cts;
-        Subject<FreeInputArgs> _entered  = new Subject<FreeInputArgs>();
+        Subject<FlowArgs> _entered  = new Subject<FlowArgs>();
 
-        public IObservable<FreeInputArgs> Entered => _entered;
+        public IObservable<FlowArgs> Entered => _entered;
 
         public async UniTask EnterFlow(string bodyId)
         {

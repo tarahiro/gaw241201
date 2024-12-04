@@ -17,6 +17,13 @@ namespace gaw241201.Inject
             //Eyes
             builder.RegisterComponentInHierarchy<EyesView>().AsImplementedInterfaces();
 
+            //Effect
+            builder.Register<EnterEffectModel>(Lifetime.Singleton).AsSelf();
+            builder.Register<EndEffectModel>(Lifetime.Singleton).AsSelf();
+            builder.Register<EffectArgsFactory>(Lifetime.Singleton).AsSelf();
+            builder.RegisterComponentInHierarchy<EffectView>().AsImplementedInterfaces();
+            builder.Register<EffectViewItemFactory>(Lifetime.Singleton).AsSelf();
+
             //Confiscate
             builder.Register<ConfiscateModel>(Lifetime.Singleton).AsSelf();
             builder.Register<ConfiscateView>(Lifetime.Singleton).AsSelf();  
@@ -46,7 +53,7 @@ namespace gaw241201.Inject
             builder.Register<FreeInputValueRegisterer>(Lifetime.Singleton).AsSelf();
             builder.Register<DeleteFreeInputUi>(Lifetime.Singleton).AsSelf().AsImplementedInterfaces();
             builder.Register<FreeInputView>(Lifetime.Singleton).AsImplementedInterfaces();
-            builder.Register<FreeInputArgsFactory>(Lifetime.Singleton).AsSelf();
+            builder.Register<FlowViewArgsFactory>(Lifetime.Singleton).AsSelf();
 
             //RegisterFlagFlow
             builder.Register<RegisterFlagFlowModel>(Lifetime.Singleton).AsSelf();
@@ -87,6 +94,7 @@ namespace gaw241201.Inject
                 entryPoints.Add<ClickInputPresenter>();
                 entryPoints.Add<TypingPresenter>();
                 entryPoints.Add<ConfiscatePresenter>();
+                entryPoints.Add<EffectPresenter>();
 #if ENABLE_DEBUG
                 entryPoints.Add<DebugManager>();
 #endif

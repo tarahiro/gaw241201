@@ -9,13 +9,12 @@ using UnityEngine;
 using VContainer;
 using VContainer.Unity;
 
-namespace gaw241201
+namespace gaw241201.View
 {
-    public class FreeInputArgsFactory
+    public interface IEffectItemView : ITransform
     {
-        public FreeInputArgs Create(string bodyId, CancellationToken cancellationToken)
-        {
-            return new FreeInputArgs(bodyId, cancellationToken);
-        }
+        bool IsAutoEnd { get; }
+        UniTask Enter(CancellationToken cancellationToken);
+        UniTask End(CancellationToken cancellationToken);
     }
 }

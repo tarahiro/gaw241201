@@ -1,0 +1,22 @@
+{
+    "name": "gaw241201.Effect.Presenter",
+    "rootNamespace": "gaw241201.Effect.Presenter",
+    "references": [
+        "GUID:0be27b54e10228743974a8df3dda3639",
+        "GUID:560b04d1a97f54a4e82edc0cbbb69285",
+        "GUID:f51ebe6a0ceec4240a699833d6309b23",
+        "GUID:b0214a6008ed146ff8f122a6a9c2f6cc",
+        "GUID:62d61eb730879914d9f2e22d4de9981b",
+        "GUID:335350643b1a99d41bcb56bb94c68111",
+        "GUID:47d7bf9c620eec149be132671eeab98a"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": false,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

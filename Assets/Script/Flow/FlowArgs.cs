@@ -11,12 +11,12 @@ using VContainer.Unity;
 
 namespace gaw241201
 {
-    public class FreeInputArgs
+    public class FlowArgs
     {
         public string BodyId { get; set; }
         public CancellationToken CancellationToken { get; set; }
 
-        public FreeInputArgs(string bodyId, CancellationToken cancellationToken)
+        public FlowArgs(string bodyId, CancellationToken cancellationToken)
         {
             this.BodyId = bodyId;
             this.CancellationToken = cancellationToken;
