@@ -17,6 +17,10 @@ namespace gaw241201.Inject
             //Eyes
             builder.RegisterComponentInHierarchy<EyesView>().AsImplementedInterfaces();
 
+            //EndGame
+            builder.Register<EndGameModel>(Lifetime.Singleton).AsSelf();
+            builder.RegisterComponentInHierarchy<EndGameView>().AsSelf();
+
             //Effect
             builder.Register<EnterEffectModel>(Lifetime.Singleton).AsSelf();
             builder.Register<EndEffectModel>(Lifetime.Singleton).AsSelf();
@@ -95,6 +99,7 @@ namespace gaw241201.Inject
                 entryPoints.Add<TypingPresenter>();
                 entryPoints.Add<ConfiscatePresenter>();
                 entryPoints.Add<EffectPresenter>();
+                entryPoints.Add<EndGamePresenter>();
 #if ENABLE_DEBUG
                 entryPoints.Add<DebugManager>();
 #endif

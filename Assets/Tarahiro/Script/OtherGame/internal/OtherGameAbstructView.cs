@@ -33,6 +33,7 @@ namespace Tarahiro.OtherGame
             {
                 var v = factory.Invoke(ResourceUtil.GetResource<Sprite>(spritePathList[i]));
                 v.transform.parent = _iconRoot;
+                v.transform.localScale = Vector3.one;
                 UiUtil.SetUiComponentOnAlinedAnchoredPosition(_iconRoot, v.transform.GetComponent<RectTransform>(), c_iconMergin, i, iconCount);
                 int count = i;
                 v.Button.onClick.AddListener(() => OnClickIcon(count));

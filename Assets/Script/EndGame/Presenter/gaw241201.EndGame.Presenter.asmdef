@@ -1,0 +1,23 @@
+{
+    "name": "gaw241201.EndGame.Presenter",
+    "rootNamespace": "gaw241201.EndGame.Presenter",
+    "references": [
+        "GUID:0be27b54e10228743974a8df3dda3639",
+        "GUID:560b04d1a97f54a4e82edc0cbbb69285",
+        "GUID:f51ebe6a0ceec4240a699833d6309b23",
+        "GUID:b0214a6008ed146ff8f122a6a9c2f6cc",
+        "GUID:06bcd70755cf0024dbcab68f7f987f46",
+        "GUID:0b4bb09df31cb1c40866418b1913dc5d",
+        "GUID:f9757f53453c74c4b8aa21d9be221e73",
+        "GUID:17c362525b60ec64f84ed38f3d1c5ef2"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": false,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

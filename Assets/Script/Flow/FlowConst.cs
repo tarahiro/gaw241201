@@ -22,7 +22,8 @@ namespace gaw241201
             Typing,
             Confiscate,
             EnterEffect,
-            EndEffect
+            EndEffect,
+            EndGame,
         }
     }
 }

@@ -27,7 +27,7 @@ namespace gaw241201.View
                             return i <= 2;
 
                         case 1:
-                            Log.DebugAssert(_inputCharacterList[index - 1].TryGetCharacter(out var c));
+                            _inputCharacterList[index - 1].TryGetCharacter(out var c);
                             if (int.Parse(c.ToString()) < 2)
                             {
                                 return true;
