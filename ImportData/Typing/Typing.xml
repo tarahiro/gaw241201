@@ -211,35 +211,35 @@
     <Cell ss:StyleID="s67"><Data ss:Type="String">210010Typing</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">210000Typing</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">int sum = 0;</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">intsum0;</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">int sum=0;</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
     <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">12</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">210020Typing</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">210000Typing</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">for(int i = 1;i &lt; 10;i++) sum+=i;</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">forinti1i10isumi;</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">for(int i = 1;i &lt;= 10;i++) sum+=i;</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">for(int i=1;i&lt;=10;i++)sum+=i;</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
     <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">13</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">210030Typing</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">210000Typing</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">return sum;</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">returnsum;</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">return sum;</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
     <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">14</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">213010Typing</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">213000Typing</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">using System;</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">usingsystem;</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">using system;</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
     <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">15</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">215010Typing</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">215000Typing</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">rm -rf /</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">rm-rf/</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">rm -rf /</Data></Cell>
    </Row>
   </Table>
   <WorksheetOptions xmlns="urn:schemas-microsoft-com:office:excel">
@@ -256,13 +256,12 @@
     <VerticalResolution>360</VerticalResolution>
    </Print>
    <TabColorIndex>13</TabColorIndex>
-   <Zoom>85</Zoom>
    <Selected/>
    <Panes>
     <Pane>
      <Number>3</Number>
-     <ActiveRow>23</ActiveRow>
-     <ActiveCol>8</ActiveCol>
+     <ActiveRow>16</ActiveRow>
+     <ActiveCol>4</ActiveCol>
     </Pane>
    </Panes>
    <ProtectObjects>False</ProtectObjects>

@@ -26,6 +26,11 @@ namespace gaw241201.View
             return false;
         }
 
+        public static bool IsPressedShift()
+        {
+            return Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift);
+        }
+
 
         public readonly static List<KeyCode> InputtableKeyList = new List<KeyCode>()
         {

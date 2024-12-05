@@ -53,7 +53,19 @@ namespace gaw241201.View
             {
                 if (IsMainInputAccept())
                 {
-                    switch (InputKey(GetCharFromKeyCode(key)))
+                    char c;
+
+                    if(KeyInputUtil.IsPressedShift())
+                    {
+                        c = GetCharFromKeyCodeWithShift(key);
+                    }
+                    else
+                    {
+                        c = GetCharFromKeyCode(key);
+                    }
+
+
+                    switch (InputKey(c))
                     {
                         case 1: // 正解タイプ時
                             _romanIndex++;
@@ -561,8 +573,57 @@ namespace gaw241201.View
 
             return 2;
         }
+        char GetCharFromKeyCodeWithShift(KeyCode keyCode)
+        {
+            switch (keyCode)
+            {
+                case KeyCode.Alpha1:
+                    return '!';
+                case KeyCode.Alpha2:
+                    return '"';
+                case KeyCode.Alpha3:
+                    return '#';
+                case KeyCode.Alpha4:
+                    return '$';
+                case KeyCode.Alpha5:
+                    return '%';
+                case KeyCode.Alpha6:
+                    return '&';
+                case KeyCode.Alpha8:
+                    return '(';
+                case KeyCode.Alpha9:
+                    return ')';
 
-        char GetCharFromKeyCode(KeyCode keyCode)
+                case KeyCode.Minus:
+                    return '=';
+                case KeyCode.Caret:
+                    return '~';
+                case KeyCode.Backslash:
+                    return '|';
+                case KeyCode.At:
+                    return '`';
+                case KeyCode.LeftBracket:
+                    return '{';
+                case KeyCode.Semicolon:
+                    return '+';
+                case KeyCode.Colon:
+                    return '*';
+                case KeyCode.RightBracket:
+                    return '}';
+                case KeyCode.Comma:
+                    return '<';
+                case KeyCode.Period:
+                    return '>';
+                case KeyCode.Slash:
+                    return '?';
+                case KeyCode.Underscore:
+                    return '_';
+                default: //上記以外のキーが押された場合は「null文字」を返す。
+                    return '\0';
+            }
+        }
+
+            char GetCharFromKeyCode(KeyCode keyCode)
         {
             switch (keyCode)
             {
