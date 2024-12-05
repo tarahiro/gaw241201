@@ -11,8 +11,10 @@ namespace gaw241201.Model.MasterData
 
     //---クラス作成時にやること---//
     //"Template" を置換
-    public class TypingMasterDataProvider : MasterDataProvider<TypingMasterData.Record,IMasterDataRecord<ITypingMaster>>, ITypingMasterDataProvider
+    public class TypingMasterDataProvider : MasterDataProvider<TypingMasterData.Record, IMasterDataRecord<ITypingMaster>>, ITypingMasterDataProvider
     {
-        protected override string m_pathName => "Data/Typing";
+        public TypingMasterDataProvider(string fileName) : base(fileName)
+        {
+        }
     }
 }

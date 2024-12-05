@@ -34,7 +34,7 @@ namespace Tarahiro.OtherGame.Inject
             builder.RegisterComponentInHierarchy<OtherGameAbstructView>().AsImplementedInterfaces();
             builder.RegisterComponentInHierarchy<OtherGameMenuView>().AsImplementedInterfaces();
             builder.RegisterComponentInHierarchy<OtherGameDetailView>().AsImplementedInterfaces();
-            builder.Register<OtherGameMasterDataProvider>(Lifetime.Singleton).AsImplementedInterfaces();
+            builder.Register<OtherGameMasterDataProvider>(Lifetime.Singleton).WithParameter<string>("OtherGame").AsImplementedInterfaces();
 
             builder.RegisterFactory<IOtherGameMenuItemViewArgs, IOtherGameMenuItemView>(container =>
             {

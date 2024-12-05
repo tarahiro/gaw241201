@@ -13,6 +13,8 @@ namespace gaw241201.Model.MasterData
     //"Template" を置換
     public class ConversationMasterDataProvider : MasterDataProvider<ConversationMasterData.Record,IMasterDataRecord<IConversationMaster>>, IConversationMasterDataProvider
     {
-        protected override string m_pathName => "Data/Conversation";
+        public ConversationMasterDataProvider(string fileName) : base(fileName)
+        {
+        }
     }
 }

@@ -13,6 +13,8 @@ namespace gaw241201.Model.MasterData
     //"Template" を置換
     public class FlowMasterDataProvider : MasterDataProvider<FlowMasterData.Record,IMasterDataRecord<IFlowMaster>>, IFlowMasterDataProvider
     {
-        protected override string m_pathName => "Data/Flow";
+        public FlowMasterDataProvider(string fileName) : base(fileName)
+        {
+        }
     }
 }
