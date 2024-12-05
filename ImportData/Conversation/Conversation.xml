@@ -17,8 +17,8 @@
  </OfficeDocumentSettings>
  <ExcelWorkbook xmlns="urn:schemas-microsoft-com:office:excel">
   <SupBook>
-   <Path> </Path>
-   <SheetName> </SheetName>
+   <Path>凡例</Path>
+   <SheetName>凡例</SheetName>
   </SupBook>
   <WindowHeight>15800</WindowHeight>
   <WindowWidth>32767</WindowWidth>
@@ -420,14 +420,14 @@
       ss:Type="String">私　許可がないと　動けないもので。</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">Bottom</Data></Cell>
    </Row>
-   <Row>
+   <Row ss:AutoFitHeight="0">
     <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">38</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">201010TypingConversation</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">201000TypingConversation</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">……。</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">Bottom</Data></Cell>
    </Row>
-   <Row>
+   <Row ss:AutoFitHeight="0">
     <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">39</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">201020TypingConversation</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">201000TypingConversation</Data></Cell>
@@ -441,7 +441,7 @@
     <Cell ss:StyleID="s67"><Data ss:Type="String">どうか　されましたか？</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">LeftTop</Data></Cell>
    </Row>
-   <Row>
+   <Row ss:AutoFitHeight="0">
     <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">41</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">201040TypingConversation</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">201000TypingConversation</Data></Cell>
@@ -884,7 +884,7 @@
    <TabColorIndex>13</TabColorIndex>
    <Zoom>85</Zoom>
    <Selected/>
-   <TopRowVisible>80</TopRowVisible>
+   <TopRowVisible>86</TopRowVisible>
    <Panes>
     <Pane>
      <Number>3</Number>
@@ -899,52 +899,10 @@
   <DataValidation xmlns="urn:schemas-microsoft-com:office:excel">
    <Range>R5C5:R99C5</Range>
    <Type>List</Type>
-   <Value>凡例!R2C5:R10C5</Value>
+   <Value>凡例!#REF!</Value>
   </DataValidation>
   <ConditionalFormatting xmlns="urn:schemas-microsoft-com:office:excel">
-   <Range>R24C3:R28C3,R5C1:R25C5,R26C2:R28C2,R29C2:R30C3,R31C2:R43C2,R26C1:R43C1,R26C3:R43C5,R44C1:R90C5</Range>
-   <Condition>
-    <Value1>LEN(TRIM(RC))=0</Value1>
-    <Format Style='background:#E7E6E6'/>
-   </Condition>
-  </ConditionalFormatting>
-  <ConditionalFormatting xmlns="urn:schemas-microsoft-com:office:excel">
-   <Range>R91C1:R92C5,R93C2:R94C2</Range>
-   <Condition>
-    <Value1>LEN(TRIM(RC))=0</Value1>
-    <Format Style='background:#E7E6E6'/>
-   </Condition>
-  </ConditionalFormatting>
-  <ConditionalFormatting xmlns="urn:schemas-microsoft-com:office:excel">
-   <Range>R93C1,R93C3:R93C5</Range>
-   <Condition>
-    <Value1>LEN(TRIM(RC))=0</Value1>
-    <Format Style='background:#E7E6E6'/>
-   </Condition>
-  </ConditionalFormatting>
-  <ConditionalFormatting xmlns="urn:schemas-microsoft-com:office:excel">
-   <Range>R94C1,R94C3:R94C5</Range>
-   <Condition>
-    <Value1>LEN(TRIM(RC))=0</Value1>
-    <Format Style='background:#E7E6E6'/>
-   </Condition>
-  </ConditionalFormatting>
-  <ConditionalFormatting xmlns="urn:schemas-microsoft-com:office:excel">
-   <Range>R95C1:R96C5,R95C3:R97C3,R97C2:R99C2</Range>
-   <Condition>
-    <Value1>LEN(TRIM(RC))=0</Value1>
-    <Format Style='background:#E7E6E6'/>
-   </Condition>
-  </ConditionalFormatting>
-  <ConditionalFormatting xmlns="urn:schemas-microsoft-com:office:excel">
-   <Range>R97C1,R97C3:R97C5</Range>
-   <Condition>
-    <Value1>LEN(TRIM(RC))=0</Value1>
-    <Format Style='background:#E7E6E6'/>
-   </Condition>
-  </ConditionalFormatting>
-  <ConditionalFormatting xmlns="urn:schemas-microsoft-com:office:excel">
-   <Range>R98C1:R99C1,R98C3:R99C5</Range>
+   <Range>R24C3:R28C3,R5C1:R25C5,R26C2:R28C2,R29C2:R30C3,R31C2:R43C2,R26C1:R43C1,R26C3:R43C5,R44C1:R99C5</Range>
    <Condition>
     <Value1>LEN(TRIM(RC))=0</Value1>
     <Format Style='background:#E7E6E6'/>

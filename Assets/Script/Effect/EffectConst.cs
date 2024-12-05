@@ -14,9 +14,12 @@ namespace gaw241201
     {
         public enum Key
         {
-            Glitch,
+            GlitchLargeAutoEnd,
+            GlitchSmall,
+            GlitchLarge,
             CmdError,
             CmdAnswer,
+            CmdRm
         }
     }
 }

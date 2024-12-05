@@ -14,7 +14,9 @@ namespace Tarahiro
 
         public static T GetResource<T>(string path) where T : UnityEngine.Object
         {
-            return Resources.Load<T>(path);
+            T obj = Resources.Load<T>(path);
+            Log.DebugAssert(obj != null, path + "にオブジェクトが存在しません");
+            return obj;
         }
 
 

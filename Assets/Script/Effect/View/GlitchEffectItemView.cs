@@ -14,25 +14,22 @@ namespace gaw241201.View
 {
     public class GlitchEffectItemView : MonoBehaviour, IEffectItemView 
     {
-        const float c_glitchTime = 2f;
-        UniversalAdditionalCameraData universalAdditionalCameraData;
 
-        public bool IsAutoEnd => true;
+        [SerializeField] bool _isAutoEnd;
+        [SerializeField] ViewConst.Renderer _renderer;
 
 
-        public async UniTask Enter(CancellationToken cancellationToken)
+        public bool IsAutoEnd => _isAutoEnd;
+
+
+        public virtual async UniTask Enter(CancellationToken cancellationToken)
         {
-            universalAdditionalCameraData = Camera.main.GetUniversalAdditionalCameraData();
-            universalAdditionalCameraData.SetRenderer(1);
-
-            await UniTask.WaitForSeconds(c_glitchTime, cancellationToken: cancellationToken);
-            
+            ViewUtil.SetFullScreenPathRenderer(_renderer);
         }
 
         public async UniTask End(CancellationToken cancellationToken)
         {
-            universalAdditionalCameraData.SetRenderer(0);
-
+            ViewUtil.SetFullScreenPathRenderer(ViewConst.Renderer.Default);
         }
     }
 }

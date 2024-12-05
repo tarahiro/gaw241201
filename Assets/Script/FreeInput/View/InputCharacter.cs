@@ -39,7 +39,7 @@ namespace gaw241201.View
             _cancellationTokenSource = new CancellationTokenSource();
             _underBar.StartBlink();
 
-            _gazable.Gaze(transform.position);
+            _gazable.Gaze(Camera.main.WorldToScreenPoint(transform.position));
            
         }
 

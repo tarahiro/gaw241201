@@ -11,7 +11,7 @@ using VContainer.Unity;
 
 namespace gaw241201.View
 {
-    public class CmdEffectItemView : MonoBehaviour, IEffectItemView
+    public class CmdItem : MonoBehaviour, IEffectItemView
     {
         [SerializeField] string _text;
         [SerializeField] CmdLine _cmdLinePrefab;
@@ -26,8 +26,9 @@ namespace gaw241201.View
         public async UniTask Enter(CancellationToken cancellationToken)
         {
             _cmdLine = Instantiate(_cmdLinePrefab, _lineRoot);
-            _cmdLine.Construct(_text);
             _cmdLine.GetComponent<RectTransform>().anchoredPosition = Vector3.zero;
+
+            _cmdLine.Construct(_text);
             await UniTask.WaitForSeconds(c_showTime);
             _cmdLine.SetLine();
         }

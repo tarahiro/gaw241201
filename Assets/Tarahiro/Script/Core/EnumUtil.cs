@@ -32,6 +32,7 @@ namespace Tarahiro
         /// </summary>
         public static T KeyToType<T>(string targetKey)
         {
+            Log.DebugAssert(ContainsKey<T>(targetKey), targetKey + "が存在しません");
             return (T)Enum.Parse(typeof(T), targetKey);
         }
 

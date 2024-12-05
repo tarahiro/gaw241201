@@ -63,8 +63,7 @@ namespace gaw241201.View
                             }
                             else
                             {
-                                textRoman.text = GenerateTextRoman();
-                                _gazable.Gaze((Vector2)textRoman.transform.position + Vector2.right * textRoman.preferredWidth * (-0.5f + ((float)_romanIndex) / _roman.Count));
+                                SetRomanText();
                             }
                             break;
                         case 2: // ミスタイプ時
@@ -99,9 +98,16 @@ namespace gaw241201.View
             _roman.Add('@');
 
             textJapanese.text = _viewArgsList.JpText;
+            SetRomanText();
 
+        }
+
+        void SetRomanText()
+        {
             textRoman.text = GenerateTextRoman();
-            _gazable.Gaze((Vector2)textRoman.transform.position + Vector2.right * textRoman.preferredWidth * ( -0.5f + ((float)_romanIndex)/_roman.Count));
+            _gazable.Gaze((Vector2)Camera.main.WorldToScreenPoint(textRoman.transform.position) +
+                Vector2.right * textRoman.preferredWidth * (-0.5f + ((float)_romanIndex) / _roman.Count));
+
         }
 
         string GenerateTextRoman()

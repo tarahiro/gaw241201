@@ -137,7 +137,7 @@ GameObject:
   - component: {fileID: 1931379282870507085}
   - component: {fileID: 8247157750877401531}
   m_Layer: 5
-  m_Name: Line
+  m_Name: CmdLine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
