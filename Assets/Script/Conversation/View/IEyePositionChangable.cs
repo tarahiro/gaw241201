@@ -10,7 +10,7 @@ using VContainer.Unity;
 
 namespace gaw241201.View
 {
-    public interface IFacialChangable : IConversationEffectChangable<ConversationViewConst.Facial>
+    public interface IEyePositionChangable : IConversationEffectChangable<ConversationViewConst.EyePosition>
     {
     }
 }

@@ -131,6 +131,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _eyeball: {fileID: 1519025705018347737}
+  _eyeContour: {fileID: 8569691765886121511}
 --- !u!1 &8662346413056920901
 GameObject:
   m_ObjectHideFlags: 0

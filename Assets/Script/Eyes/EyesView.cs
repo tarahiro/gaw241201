@@ -10,7 +10,7 @@ using VContainer.Unity;
 
 namespace gaw241201.View
 {
-    public class EyesView : MonoBehaviour, IFacialChangable, IGazable, IRobbable
+    public class EyesView : MonoBehaviour, IEyePositionChangable, IFacialChangable, IGazable, IRobbable
     {
         const float c_length = .2f;
 
@@ -18,45 +18,45 @@ namespace gaw241201.View
         [SerializeField] GameObject _lefteyeRobbedParts;
 
 
-        public void SetFacial(FacialConst.Key facialKey)
+        public void SetEffect(ConversationViewConst.EyePosition facialKey)
         {
             Vector2 direction;
 
             switch (facialKey)
             {
-                case FacialConst.Key.Center:
+                case ConversationViewConst.EyePosition.Center:
                     direction = Vector2.zero;
                     break;
 
-                case FacialConst.Key.Top:
+                case ConversationViewConst.EyePosition.Top:
                     direction = Vector2.up;
                     break;
 
-                case FacialConst.Key.RightTop:
+                case ConversationViewConst.EyePosition.RightTop:
                     direction = Vector2.up + Vector2.right;
                     break;
 
-                case FacialConst.Key.Right:
+                case ConversationViewConst.EyePosition.Right:
                     direction = Vector2.right;
                     break;
 
-                case FacialConst.Key.RightBottom:
+                case ConversationViewConst.EyePosition.RightBottom:
                     direction = Vector2.down + Vector2.right;
                     break;
 
-                case FacialConst.Key.Bottom:
+                case ConversationViewConst.EyePosition.Bottom:
                     direction = Vector2.down;
                     break;
 
-                case FacialConst.Key.LeftBottom:
+                case ConversationViewConst.EyePosition.LeftBottom:
                     direction = Vector2.left + Vector2.down;
                     break;
 
-                case FacialConst.Key.Left:
+                case ConversationViewConst.EyePosition.Left:
                     direction = Vector2.left;
                     break;
 
-                case FacialConst.Key.LeftTop:
+                case ConversationViewConst.EyePosition.LeftTop:
                     direction = Vector2.left + Vector2.up;
                     break;
 
@@ -68,8 +68,51 @@ namespace gaw241201.View
             }
 
             SetEyePosition(direction);
+        }
+        public void SetEffect(ConversationViewConst.Facial facialKey)
+        {
+            switch (facialKey)
+            {
+                case ConversationViewConst.Facial.Mad:
+                    foreach(var eye in _eyeViewList)
+                    {
+                        eye.SetRotation(new Vector3(0, 0, 90f));
+                    }
+                    break;
 
+                case ConversationViewConst.Facial.Big:
+                    foreach (var eye in _eyeViewList)
+                    {
+                        eye.SetScale(1.5f);
+                    }
+                    break;
 
+            }
+        }
+
+        public void ResetEffect(ConversationViewConst.EyePosition position)
+        {
+
+        }
+        public void ResetEffect(ConversationViewConst.Facial facialKey)
+        {
+            switch (facialKey)
+            {
+                case ConversationViewConst.Facial.Mad:
+                    foreach (var eye in _eyeViewList)
+                    {
+                        eye.SetRotation(new Vector3(0, 0, 00f));
+                    }
+                    break;
+
+                case ConversationViewConst.Facial.Big:
+                    foreach (var eye in _eyeViewList)
+                    {
+                        eye.SetScale(1f);
+                    }
+                    break;
+
+            }
         }
 
         public void Gaze(Vector2 screenPosition)

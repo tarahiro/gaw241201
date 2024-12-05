@@ -26,6 +26,7 @@ namespace gaw241201.View
 
         public void SetCharacter(string s)
         {
+            SoundManager.PlaySE("Key");
             _tmp.text = s[0].ToString();
         }
 

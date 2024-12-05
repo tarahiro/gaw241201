@@ -29,7 +29,9 @@ namespace gaw241201.Editor
             Id = 1,
             ConversationGroup = 2,
             Message = 3,
-            Facial = 4,
+            EyePosition = 4,
+            Facial = 5,
+            Impression = 6,
         }
 
         //--------------------------------------------------------------------
@@ -71,7 +73,9 @@ namespace gaw241201.Editor
                         {
                             SettableConversationGroup = sheet[row, (int)Columns.ConversationGroup].String,
                             SettableMessage = sheet[row, (int)Columns.Message].String,
-                            SettableFacial= sheet[row, (int)Columns.Facial].String,
+                            SettableEyePosition= sheet[row, (int)Columns.EyePosition].String,
+                            SettableFacial = sheet[row, (int)Columns.Facial].String,
+                            SettableImpression = sheet[row, (int)Columns.Impression].String,
                         });
                     }
                 }

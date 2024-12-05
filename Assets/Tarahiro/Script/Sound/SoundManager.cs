@@ -405,7 +405,8 @@ public class SoundManager
             {
                 if (loopSEList[i] != null)
                 {
-                    loopSEList[i].GetComponent<AudioSource>().loop = false;
+                    Destroy(loopSEList[i].gameObject);
+                    loopSEList.RemoveAt(i);
                 }
             }
             loopSEList = new List<GameObject>();

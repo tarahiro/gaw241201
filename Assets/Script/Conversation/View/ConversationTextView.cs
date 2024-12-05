@@ -25,9 +25,10 @@ namespace gaw241201.View
         public async UniTask Enter(string text,CancellationToken ct)
         {
             _tmp.text = "";
-            await TextUtil.DisplayTextByCharacter(text, _tmp, "Text", KeyCode.Space, ct);
+            SoundManager.PlaySE("TalkShort");
+            await TextUtil.DisplayTextByCharacter(text, _tmp, "Talk", KeyCode.Return, ct,false);
             await UniTask.Yield(PlayerLoopTiming.Update);
-            await UniTask.WaitUntil(() => Input.GetKeyDown(KeyCode.Space), cancellationToken:ct);
+            await UniTask.WaitUntil(() => Input.GetKeyDown(KeyCode.Return), cancellationToken:ct);
         }
     }
 }

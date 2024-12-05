@@ -25,11 +25,16 @@ namespace gaw241201.View
         public virtual async UniTask Enter(CancellationToken cancellationToken)
         {
             ViewUtil.SetFullScreenPathRenderer(_renderer);
+            if(_renderer == ViewConst.Renderer.GlitchLarge)
+            {
+                SoundManager.PlaySEWithLoop("Glitch");
+            }
         }
 
         public async UniTask End(CancellationToken cancellationToken)
         {
             ViewUtil.SetFullScreenPathRenderer(ViewConst.Renderer.Default);
+            SoundManager.StopLoopSE();
         }
     }
 }

@@ -39,8 +39,6 @@ namespace gaw241201.View
                 await EndItem(args);
             }
 
-            await UniTask.WaitForSeconds(c_waitTime);
-
             _enterExited.OnNext(Unit.Default);
         }
 

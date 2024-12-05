@@ -16,6 +16,7 @@ namespace gaw241201.Inject
 
             //Eyes
             builder.RegisterComponentInHierarchy<EyesView>().AsImplementedInterfaces();
+            builder.Register<ImpressionView>(Lifetime.Singleton).AsImplementedInterfaces();
 
             //EndGame
             builder.Register<EndGameModel>(Lifetime.Singleton).AsSelf();

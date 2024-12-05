@@ -15,6 +15,8 @@ namespace gaw241201
 
         string Message{ get; }
 
+        string EyePosition { get; }
         string Facial { get; }
+        string Impression { get; }
     }
 }

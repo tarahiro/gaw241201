@@ -10,7 +10,9 @@ using VContainer.Unity;
 
 namespace gaw241201.View
 {
-    public interface IFacialChangable : IConversationEffectChangable<ConversationViewConst.Facial>
+    public interface IConversationEffectChangable<T> where T : Enum
     {
+        void SetEffect(T key);
+        void ResetEffect(T key);
     }
 }

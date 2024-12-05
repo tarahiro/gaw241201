@@ -18,7 +18,11 @@ namespace gaw241201.Presenter
 
         public ConversationViewArgs Create(ModelArgs<IConversationMaster> modelArgs)
         {
-            return new ConversationViewArgs(_messageKeyHundler.HundleKey(modelArgs.Master.Message), EnumUtil.KeyToType<FacialConst.Key>(modelArgs.Master.Facial),modelArgs.CancellationToken);
+            return new ConversationViewArgs(_messageKeyHundler.HundleKey(modelArgs.Master.Message), 
+                EnumUtil.KeyToType<ConversationViewConst.EyePosition>(modelArgs.Master.EyePosition),
+                EnumUtil.KeyToType<ConversationViewConst.Facial>(modelArgs.Master.Facial),
+                EnumUtil.KeyToType<ConversationViewConst.Impression>(modelArgs.Master.Impression),
+                modelArgs.CancellationToken);
         }
     }
 }

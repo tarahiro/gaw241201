@@ -57,6 +57,7 @@ namespace gaw241201.View
                     {
                         case 1: // 正解タイプ時
                             _romanIndex++;
+                            SoundManager.PlaySE("Key");
                             if (_roman[_romanIndex] == '@') // 「@」がタイピングの終わりの判定となる。
                             {
                                 _isEndLoop = true;

@@ -21,6 +21,7 @@ namespace gaw241201
         public async UniTask EnterMainLoop()
         {
             Log.Comment("フローループ開始");
+            SoundManager.PlayBGM("Main");
 
             //とりあえず上から読んでいく 後々はConditionを見る
             for(int i = 0; i < _masterDataProvider.Count; i++)

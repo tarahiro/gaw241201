@@ -19,7 +19,8 @@ namespace gaw241201
             GlitchLarge,
             CmdError,
             CmdAnswer,
-            CmdRm
+            CmdRm,
+            Wait
         }
     }
 }
