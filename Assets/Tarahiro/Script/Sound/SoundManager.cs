@@ -256,7 +256,7 @@ public class SoundManager
             }
 
             //SeDictionaryロード
-            seMasterDataProvider = new SeMasterDataProvider("Se");
+            seMasterDataProvider = new SeMasterDataProvider("Data/Se");
         }
 
         private AudioListener audioListener;

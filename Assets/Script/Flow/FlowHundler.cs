@@ -13,7 +13,7 @@ namespace gaw241201
 {
     public class FlowHundler : IMainLoopHundler
     {
-        [Inject] IFlowMasterDataProvider _masterDataProvider;
+        [Inject] IFlowMasterDataDictionaryProvider _masterDataDictionaryProvider;
         [Inject] IFlowProvider _flowProvider;
 
         IFlowModel _currentFlow;
@@ -23,11 +23,13 @@ namespace gaw241201
             Log.Comment("フローループ開始");
             SoundManager.PlayBGM("Main");
 
+            var _provider = _masterDataDictionaryProvider.GetProvider("MainFlow");
+
             //とりあえず上から読んでいく 後々はConditionを見る
-            for(int i = 0; i < _masterDataProvider.Count; i++)
+            for(int i = 0; i < _provider.Count; i++)
             {
                 Log.Comment("フロー開始");
-                var master = _masterDataProvider.TryGetFromIndex(i).GetMaster();
+                var master = _provider.TryGetFromIndex(i).GetMaster();
                 _currentFlow = _flowProvider.GetFlowModel(EnumUtil.KeyToType<FlowConst.Category>(master.Category));
                 await _currentFlow.EnterFlow(master.BodyId);
             }

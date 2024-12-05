@@ -36,7 +36,7 @@ namespace gaw241201.Inject
 
             //Typing
             builder.Register<TypingModel>(Lifetime.Singleton).AsSelf();
-            builder.Register<TypingMasterDataProvider>(Lifetime.Singleton).WithParameter<string>("Typing").AsImplementedInterfaces();
+            builder.Register<TypingMasterDataProvider>(Lifetime.Singleton).WithParameter<string>("Data/Typing").AsImplementedInterfaces();
             builder.Register<ModelArgsFactory<ITypingMaster>>(Lifetime.Singleton).AsSelf();
             builder.Register<TypingViewArgsFactory>(Lifetime.Singleton).AsSelf();
             builder.RegisterComponentInHierarchy<TypingView>().AsSelf();
@@ -66,7 +66,7 @@ namespace gaw241201.Inject
             //Conversation
             builder.Register<ConversationModel>(Lifetime.Singleton).AsSelf();
             builder.Register<ConversationView>(Lifetime.Singleton).AsSelf();
-            builder.Register<ConversationMasterDataProvider>(Lifetime.Singleton).WithParameter<string>("Conversation").AsImplementedInterfaces();
+            builder.Register<ConversationMasterDataProvider>(Lifetime.Singleton).WithParameter<string>("Data/Conversation").AsImplementedInterfaces();
             builder.Register<ModelArgsFactory<IConversationMaster>>(Lifetime.Singleton).AsSelf();
             builder.Register<ConversationViewArgsFactory>(Lifetime.Singleton).AsSelf();
             builder.RegisterComponentInHierarchy<ConversationTextView>().AsSelf();
@@ -75,7 +75,7 @@ namespace gaw241201.Inject
 
             //Flow
             builder.Register<FlowHundler>(Lifetime.Singleton).AsSelf().AsImplementedInterfaces();
-            builder.Register<FlowMasterDataProvider>(Lifetime.Singleton).WithParameter<string>("Flow").AsImplementedInterfaces();
+            builder.Register<FlowMasterDataDictionaryProvider>(Lifetime.Singleton).AsImplementedInterfaces();
             builder.Register<FlowProvider>(Lifetime.Singleton).AsImplementedInterfaces();
             builder.Register<ApplicationTimeKeyReplacer>(Lifetime.Singleton).AsSelf();
             builder.Register<DiffSecondKeyReplacer>(Lifetime.Singleton).AsSelf();

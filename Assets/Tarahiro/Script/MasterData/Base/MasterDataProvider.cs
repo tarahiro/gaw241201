@@ -13,12 +13,12 @@ namespace Tarahiro.MasterData
         protected MasterDataOrderedDictionary<DataType, InterfaceType> m_Dictionary;
 
 
-        const string c_pathPrefix = "Data/";
 
         [Inject]
-        public MasterDataProvider(string fileName)
+        public MasterDataProvider(string filepath)
         {
-            m_Dictionary = ResourceUtil.GetResource<MasterDataOrderedDictionary<DataType, InterfaceType>>(c_pathPrefix + fileName);
+            Log.Comment(filepath + "のData読み込み");
+            m_Dictionary = ResourceUtil.GetResource<MasterDataOrderedDictionary<DataType, InterfaceType>>(filepath);
         }
 
         public InterfaceType TryGetFromIndex(int index)

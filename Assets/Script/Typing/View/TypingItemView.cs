@@ -9,7 +9,6 @@ using UniRx;
 using UnityEngine;
 using VContainer;
 using VContainer.Unity;
-using static PlasticGui.WorkspaceWindow.CodeReview.ReviewChanges.Summary.CommentSummaryData;
 
 namespace gaw241201.View
 {

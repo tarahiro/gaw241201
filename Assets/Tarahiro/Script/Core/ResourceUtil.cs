@@ -19,6 +19,11 @@ namespace Tarahiro
             return obj;
         }
 
+        public static string ResourcePath()
+        {
+            return "Assets/Resources/";
+        }
+
 
     }
 }

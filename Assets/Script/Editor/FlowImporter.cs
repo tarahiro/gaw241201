@@ -8,6 +8,7 @@ using UnityEditor;
 using gaw241201;
 using gaw241201.Model;
 using gaw241201.Model.MasterData;
+using System.IO;
 
 namespace gaw241201.Editor
 {
@@ -21,7 +22,8 @@ namespace gaw241201.Editor
     //ITemplateMasterに合わせてフィールドを追加
     internal sealed class FlowImporter
     {
-        const string c_XmlPath = "ImportData/Flow/Flow.xml";
+        const string c_XmlPathPrefix = "ImportData/Flow/";
+        const string c_XmlPathSuffix = ".xml";
         const string c_SheetName = "Script";
         enum Columns
         {
@@ -51,36 +53,43 @@ namespace gaw241201.Editor
 
         public static void Import()
         {
-            var book = XmlImporter.ImportWorkbook(c_XmlPath);
+            var files = Directory.GetFiles(c_XmlPathPrefix, "*" + c_XmlPathSuffix, SearchOption.TopDirectoryOnly);
 
-            var FlowDataList = new List<FlowMasterData.Record>();
+            foreach (var file in files)
+            {
+                var book = XmlImporter.ImportWorkbook(file);
 
-            var sheet = book.TryGetWorksheet(c_SheetName);
-            if (sheet == null)
-            {
-                Log.DebugWarning($"シート: {c_SheetName} が見つかりませんでした。");
-            }
-            else
-            {
-                for (int row = 0; row < sheet.Height; ++row)
+                var FlowDataList = new List<FlowMasterData.Record>();
+
+                var sheet = book.TryGetWorksheet(c_SheetName);
+                if (sheet == null)
                 {
-                    // Indexの欄が有効な数字だったら読み込み
-                    if (int.TryParse(sheet[row, (int)Columns.Index].String, out int index))
+                    Log.DebugWarning($"シート: {c_SheetName} が見つかりませんでした。");
+                }
+                else
+                {
+                    for (int row = 0; row < sheet.Height; ++row)
                     {
-                        string id = sheet[row, (int)Columns.Id].String;
-                        FlowDataList.Add(new FlowMasterData.Record(index, id)
+                        // Indexの欄が有効な数字だったら読み込み
+                        if (int.TryParse(sheet[row, (int)Columns.Index].String, out int index))
                         {
-                            SettableCategory= sheet[row, (int)Columns.Category].String,
-                            SettableBodyId= sheet[row, (int)Columns.BodyId].String,
-                            SettableCondition = sheet[row, (int)Columns.Condition].String,
-                            SettableConditionArg = sheet[row, (int)Columns.ConditionArg].String,
-                        });
+                            string id = sheet[row, (int)Columns.Id].String;
+                            FlowDataList.Add(new FlowMasterData.Record(index, id)
+                            {
+                                SettableCategory = sheet[row, (int)Columns.Category].String,
+                                SettableBodyId = sheet[row, (int)Columns.BodyId].String,
+                                SettableCondition = sheet[row, (int)Columns.Condition].String,
+                                SettableConditionArg = sheet[row, (int)Columns.ConditionArg].String,
+                            });
+                        }
                     }
                 }
-            }
 
-            // データ出力
-            XmlImporter.ExportOrderedDictionary<FlowMasterData, FlowMasterData.Record, IMasterDataRecord<IFlowMaster>>(FlowMasterData.c_DataPath, FlowDataList);
+                // データ出力
+                XmlImporter.ExportOrderedDictionary<FlowMasterData, FlowMasterData.Record, IMasterDataRecord<IFlowMaster>>(
+                    FlowMasterData.c_DataPathPrefix + file.Replace(c_XmlPathPrefix,"").Replace(c_XmlPathSuffix,""),
+                    FlowDataList);
+            }
         }
     }
 #endif

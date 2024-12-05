@@ -9,7 +9,7 @@
   <Author>h t</Author>
   <LastAuthor>h t</LastAuthor>
   <Created>2021-10-25T13:58:26Z</Created>
-  <LastSaved>2024-12-05T09:44:38Z</LastSaved>
+  <LastSaved>2024-12-05T12:17:56Z</LastSaved>
   <Version>16.00</Version>
  </DocumentProperties>
  <OfficeDocumentSettings xmlns="urn:schemas-microsoft-com:office:office">
@@ -101,7 +101,7 @@
   </Style>
  </Styles>
  <Worksheet ss:Name="Script">
-  <Table ss:ExpandedColumnCount="7" ss:ExpandedRowCount="99" x:FullColumns="1"
+  <Table ss:ExpandedColumnCount="7" ss:ExpandedRowCount="101" x:FullColumns="1"
    x:FullRows="1" ss:DefaultColumnWidth="52.5" ss:DefaultRowHeight="18">
    <Column ss:AutoFitWidth="0" ss:Width="30"/>
    <Column ss:AutoFitWidth="0" ss:Width="163"/>
@@ -1059,6 +1059,26 @@
     <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
    </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">95</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">400010TypingConversation</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">400000TrueEndConversation</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">……。</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Center</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">96</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">400020TypingConversation</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">400000TrueEndConversation</Data></Cell>
+    <Cell ss:StyleID="s67"><PhoneticText
+      xmlns="urn:schemas-microsoft-com:office:excel">ナニ</PhoneticText><Data
+      ss:Type="String">&lt;style=highlight&gt;何をした？&lt;/style&gt;</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Center</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Big</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
+   </Row>
   </Table>
   <WorksheetOptions xmlns="urn:schemas-microsoft-com:office:excel">
    <PageSetup>
@@ -1076,18 +1096,19 @@
    <TabColorIndex>13</TabColorIndex>
    <Zoom>85</Zoom>
    <Selected/>
+   <TopRowVisible>71</TopRowVisible>
    <Panes>
     <Pane>
      <Number>3</Number>
-     <ActiveRow>13</ActiveRow>
-     <ActiveCol>17</ActiveCol>
+     <ActiveRow>100</ActiveRow>
+     <ActiveCol>1</ActiveCol>
     </Pane>
    </Panes>
    <ProtectObjects>False</ProtectObjects>
    <ProtectScenarios>False</ProtectScenarios>
   </WorksheetOptions>
   <DataValidation xmlns="urn:schemas-microsoft-com:office:excel">
-   <Range>R5C5:R99C5</Range>
+   <Range>R5C5:R101C5</Range>
    <Type>List</Type>
    <Value>凡例!R2C5:R10C5</Value>
   </DataValidation>
@@ -1099,7 +1120,7 @@
    </Condition>
   </ConditionalFormatting>
   <ConditionalFormatting xmlns="urn:schemas-microsoft-com:office:excel">
-   <Range>R5C6:R99C6</Range>
+   <Range>R5C6:R101C6</Range>
    <Condition>
     <Value1>LEN(TRIM(RC))=0</Value1>
     <Format Style='background:#E7E6E6'/>
@@ -1113,7 +1134,21 @@
    </Condition>
   </ConditionalFormatting>
   <ConditionalFormatting xmlns="urn:schemas-microsoft-com:office:excel">
-   <Range>R5C7:R99C7</Range>
+   <Range>R5C7:R101C7</Range>
+   <Condition>
+    <Value1>LEN(TRIM(RC))=0</Value1>
+    <Format Style='background:#E7E6E6'/>
+   </Condition>
+  </ConditionalFormatting>
+  <ConditionalFormatting xmlns="urn:schemas-microsoft-com:office:excel">
+   <Range>R100C1:R101C5</Range>
+   <Condition>
+    <Value1>LEN(TRIM(RC))=0</Value1>
+    <Format Style='background:#E7E6E6'/>
+   </Condition>
+  </ConditionalFormatting>
+  <ConditionalFormatting xmlns="urn:schemas-microsoft-com:office:excel">
+   <Range>R100C7</Range>
    <Condition>
     <Value1>LEN(TRIM(RC))=0</Value1>
     <Format Style='background:#E7E6E6'/>
