@@ -4,6 +4,7 @@ using UnityEngine.UI;
 using TMPro;
 using Cysharp.Threading.Tasks;
 using System.Threading;
+using System.Linq;
 using static SoundManager;
 
 namespace Tarahiro.Ui
@@ -11,14 +12,14 @@ namespace Tarahiro.Ui
     public static class TextUtil
     {
         const float c_defaultTextIntervalTime = .1f;
-        public static async UniTask DisplayTextByCharacter(string text, TextMeshProUGUI textMeshProUGUI, string SeLabel, KeyCode decide, CancellationToken ct, bool isSeRun = true, float textIntervalTime = c_defaultTextIntervalTime)
+        public static async UniTask DisplayTextByCharacter(string text, TextMeshProUGUI textMeshProUGUI, string SeLabel, KeyCode[] decide, CancellationToken ct, bool isSeRun = true, float textIntervalTime = c_defaultTextIntervalTime)
         {
             ct.Register(() => ExitDisplayText(text, textMeshProUGUI, isSeRun));
             await TextCount(text,textMeshProUGUI, SeLabel, decide, ct,isSeRun, textIntervalTime);
             ExitDisplayText(text, textMeshProUGUI, isSeRun);
         }
 
-        static async UniTask TextCount(string text, TextMeshProUGUI textMeshProUGUI, string seLabel, KeyCode decide, CancellationToken ct, bool isSeRun, float textIntervalTime)
+        static async UniTask TextCount(string text, TextMeshProUGUI textMeshProUGUI, string seLabel, KeyCode[] decide, CancellationToken ct, bool isSeRun, float textIntervalTime)
         {
             if (isSeRun) {
                 SoundManager.PlaySEWithLoop(seLabel);
@@ -33,7 +34,7 @@ namespace Tarahiro.Ui
             {
                 await UniTask.Yield(PlayerLoopTiming.Update);
 
-                if (Input.GetKeyDown(decide))
+                if (decide.Any(x => Input.GetKeyDown(x)))
                 {
                     _isEnd = true;
                 }

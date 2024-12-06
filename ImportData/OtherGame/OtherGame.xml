@@ -16,8 +16,8 @@
   <AllowPNG/>
  </OfficeDocumentSettings>
  <ExcelWorkbook xmlns="urn:schemas-microsoft-com:office:excel">
-  <WindowHeight>10160</WindowHeight>
-  <WindowWidth>28580</WindowWidth>
+  <WindowHeight>15800</WindowHeight>
+  <WindowWidth>32767</WindowWidth>
   <WindowTopX>32767</WindowTopX>
   <WindowTopY>32767</WindowTopY>
   <RefModeR1C1/>
@@ -113,7 +113,7 @@
   </Style>
  </Styles>
  <Worksheet ss:Name="Script">
-  <Table ss:ExpandedColumnCount="19" ss:ExpandedRowCount="9" x:FullColumns="1"
+  <Table ss:ExpandedColumnCount="19" ss:ExpandedRowCount="10" x:FullColumns="1"
    x:FullRows="1" ss:DefaultColumnWidth="52.5" ss:DefaultRowHeight="18">
    <Column ss:AutoFitWidth="0" ss:Width="30"/>
    <Column ss:AutoFitWidth="0" ss:Width="46.5"/>
@@ -147,6 +147,37 @@
    </Row>
    <Row ss:AutoFitHeight="0">
     <Cell ss:StyleID="s68"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="s68"><Data ss:Type="String">gaw241201</Data></Cell>
+    <Cell ss:StyleID="s68"><Data ss:Type="String">gaw241201</Data></Cell>
+    <Cell ss:StyleID="s68"><Data ss:Type="String">DYPING</Data></Cell>
+    <Cell ss:StyleID="s68"/>
+    <Cell ss:StyleID="s68"><Data ss:Type="String">ホラータイピングゲーム</Data></Cell>
+    <Cell ss:StyleID="s68"/>
+    <Cell ss:StyleID="s69"><PhoneticText
+      xmlns="urn:schemas-microsoft-com:office:excel">ナゾメダマシタガハカイヒスベ</PhoneticText><Data
+      ss:Type="String">謎の目玉に従うままに、タイピングをさせられるホラーゲーム。&#10;果たしてゲームオーバーを回避する術はあるのか。</Data></Cell>
+    <Cell ss:StyleID="s69"/>
+    <Cell ss:StyleID="s68" ss:Formula="=CONCAT(&quot;Sprite/OtherGame/&quot;,RC3,&quot;_icon&quot;)"><Data
+      ss:Type="String">Sprite/OtherGame/gaw241201_icon</Data></Cell>
+    <Cell ss:StyleID="s68" ss:Formula="=CONCAT(&quot;Sprite/OtherGame/&quot;,RC3,&quot;_icon&quot;)"><Data
+      ss:Type="String">Sprite/OtherGame/gaw241201_icon</Data></Cell>
+    <Cell ss:StyleID="s68" ss:Formula="=CONCAT(&quot;Sprite/OtherGame/&quot;,RC3,&quot;_c&quot;)"><Data
+      ss:Type="String">Sprite/OtherGame/gaw241201_c</Data></Cell>
+    <Cell ss:StyleID="s68" ss:Formula="=CONCAT(&quot;Sprite/OtherGame/&quot;,RC3,&quot;_c&quot;)"><Data
+      ss:Type="String">Sprite/OtherGame/gaw241201_c</Data></Cell>
+    <Cell ss:StyleID="s68" ss:Formula="=CONCAT(&quot;Sprite/OtherGame/&quot;,RC3,&quot;_rt&quot;)"><Data
+      ss:Type="String">Sprite/OtherGame/gaw241201_rt</Data></Cell>
+    <Cell ss:StyleID="s68" ss:Formula="=CONCAT(&quot;Sprite/OtherGame/&quot;,RC3,&quot;_rt&quot;)"><Data
+      ss:Type="String">Sprite/OtherGame/gaw241201_rt</Data></Cell>
+    <Cell ss:StyleID="s68" ss:Formula="=CONCAT(&quot;Sprite/OtherGame/&quot;,RC3,&quot;_rb&quot;)"><Data
+      ss:Type="String">Sprite/OtherGame/gaw241201_rb</Data></Cell>
+    <Cell ss:StyleID="s68" ss:Formula="=CONCAT(&quot;Sprite/OtherGame/&quot;,RC3,&quot;_rb&quot;)"><Data
+      ss:Type="String">Sprite/OtherGame/gaw241201_rb</Data></Cell>
+    <Cell ss:StyleID="s68"><Data ss:Type="String">https://unityroom.com/games/typinglesson</Data></Cell>
+    <Cell ss:StyleID="s68"><Data ss:Type="String">https://unityroom.com/games/typinglesson</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s68"><Data ss:Type="Number">1</Data></Cell>
     <Cell ss:StyleID="s68"><Data ss:Type="String">ccc</Data></Cell>
     <Cell ss:StyleID="s68"><Data ss:Type="String">ccc</Data></Cell>
     <Cell ss:StyleID="s68"><PhoneticText
@@ -179,7 +210,7 @@
     <Cell ss:StyleID="s68"><Data ss:Type="String">https://store.steampowered.com/app/2885880/_/</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s68"><Data ss:Type="Number">1</Data></Cell>
+    <Cell ss:StyleID="s68"><Data ss:Type="Number">2</Data></Cell>
     <Cell ss:StyleID="s68"><Data ss:Type="String">csq</Data></Cell>
     <Cell ss:StyleID="s68"><Data ss:Type="String">csq</Data></Cell>
     <Cell ss:StyleID="s68"><Data ss:Type="String">●LIVE IN DUNGEON</Data></Cell>
@@ -210,7 +241,7 @@
       ss:Type="String">https://store.steampowered.com/app/1610650/LIVE_IN_DUNGEON/</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s68"><Data ss:Type="Number">2</Data></Cell>
+    <Cell ss:StyleID="s68"><Data ss:Type="Number">3</Data></Cell>
     <Cell ss:StyleID="s68"><Data ss:Type="String">u1w</Data></Cell>
     <Cell ss:StyleID="s68"><Data ss:Type="String">u1w</Data></Cell>
     <Cell ss:StyleID="s68"><Data ss:Type="String">わだつみのこだま</Data></Cell>
@@ -239,7 +270,7 @@
     <Cell ss:StyleID="s68"><Data ss:Type="String">https://store.steampowered.com/app/2057080/_/</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s68"><Data ss:Type="Number">3</Data></Cell>
+    <Cell ss:StyleID="s68"><Data ss:Type="Number">4</Data></Cell>
     <Cell ss:StyleID="s68"><Data ss:Type="String">gaw241110</Data></Cell>
     <Cell ss:StyleID="s68"><Data ss:Type="String">gaw241110</Data></Cell>
     <Cell ss:StyleID="s68"><Data ss:Type="String">ねこクッキーサバイバー</Data></Cell>
@@ -272,7 +303,7 @@
       ss:Type="String">https://unityroom.com/games/catcookiesurviver</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s68"><Data ss:Type="Number">4</Data></Cell>
+    <Cell ss:StyleID="s68"><Data ss:Type="Number">5</Data></Cell>
     <Cell ss:StyleID="s68"><Data ss:Type="String">gaw241117</Data></Cell>
     <Cell ss:StyleID="s68"><Data ss:Type="String">gaw241117</Data></Cell>
     <Cell ss:StyleID="s68"><Data ss:Type="String">コイントスシミュレーター</Data></Cell>
@@ -319,19 +350,26 @@
    <TabColorIndex>13</TabColorIndex>
    <Zoom>115</Zoom>
    <Selected/>
+   <LeftColumnVisible>10</LeftColumnVisible>
    <Panes>
     <Pane>
      <Number>3</Number>
-     <ActiveRow>7</ActiveRow>
-     <ActiveCol>2</ActiveCol>
-     <RangeSelection>R8C3:R9C3</RangeSelection>
+     <ActiveRow>21</ActiveRow>
+     <ActiveCol>16</ActiveCol>
     </Pane>
    </Panes>
    <ProtectObjects>False</ProtectObjects>
    <ProtectScenarios>False</ProtectScenarios>
   </WorksheetOptions>
   <ConditionalFormatting xmlns="urn:schemas-microsoft-com:office:excel">
-   <Range>R5C1:R9C19</Range>
+   <Range>R6C1:R10C19</Range>
+   <Condition>
+    <Value1>LEN(TRIM(RC))=0</Value1>
+    <Format Style='background:#E7E6E6'/>
+   </Condition>
+  </ConditionalFormatting>
+  <ConditionalFormatting xmlns="urn:schemas-microsoft-com:office:excel">
+   <Range>R5C1:R5C19</Range>
    <Condition>
     <Value1>LEN(TRIM(RC))=0</Value1>
     <Format Style='background:#E7E6E6'/>

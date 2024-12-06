@@ -31,7 +31,8 @@ namespace gaw241201
         {
             MainFlow,
             TrueEndFlow,
-            SaveDataExistFlow
+            SaveDataExistFlow,
+            ScreenShotFlow
         }
     }
 }

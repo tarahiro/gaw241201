@@ -15,6 +15,8 @@ namespace gaw241201.View
     {
         [SerializeField] GameObject _cursor;
         [SerializeField] bool _isDefaultShow = true;
+        [SerializeField] float _activeTime = .5f;
+        [SerializeField] float _waitTime = .2f;
 
         CancellationTokenSource cancellationTokenSource = null;
 
@@ -38,9 +40,9 @@ namespace gaw241201.View
             {
 
                 _cursor.SetActive(true);
-                await UniTask.WaitForSeconds(0.5f, cancellationToken: ct);
+                await UniTask.WaitForSeconds(_activeTime, cancellationToken: ct);
                 _cursor.SetActive(false);
-                await UniTask.WaitForSeconds(0.2f, cancellationToken: ct);
+                await UniTask.WaitForSeconds(_waitTime, cancellationToken: ct);
 
             }
         }

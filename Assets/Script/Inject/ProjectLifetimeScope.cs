@@ -85,6 +85,14 @@ namespace gaw241201.Inject
             builder.Register<MessageKeyHundler>(Lifetime.Singleton).AsSelf();
             builder.Register<MessageKeyReplacerProvider>(Lifetime.Singleton).AsSelf();
 
+            builder.Register<DeviceModelKeyReplacer>(Lifetime.Singleton).AsSelf();
+            builder.Register<DeviceModelLowerKeyReplacer>(Lifetime.Singleton).AsSelf();
+            builder.Register<DeviceTypeFake>(Lifetime.Singleton).AsSelf();
+            builder.Register<GraphicsName>(Lifetime.Singleton).AsSelf();
+            builder.Register<GraphicsType>(Lifetime.Singleton).AsSelf();
+            builder.Register<GraphicsVendor>(Lifetime.Singleton).AsSelf();
+            builder.Register<GraphicsVersion>(Lifetime.Singleton).AsSelf();
+
             //Flow
             builder.Register<FlowHundler>(Lifetime.Singleton).AsSelf().AsImplementedInterfaces();
             builder.Register<FlowMasterDataDictionaryProvider>(Lifetime.Singleton).AsImplementedInterfaces();

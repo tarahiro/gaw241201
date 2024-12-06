@@ -36,6 +36,13 @@ namespace gaw241201
             NameLower,
             Device,
             DeviceLower,
+            DeviceModel,
+            DeviceModelLower,
+            DeviceType,
+            GraphicsDeciveName,
+            GraphicsDeviceType,
+            GraphicsDeviceVendor,
+            GraphicsDeviceVersion
         }
 
         public static string InitialValue(Key key)
