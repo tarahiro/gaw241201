@@ -10,12 +10,8 @@ using VContainer.Unity;
 
 namespace gaw241201
 {
-    public class HaltModel
+    public interface IFlowSwitchable_Fake
     {
-        [Inject] FlowHundler _flowHundler;
-        public void Halt()
-        {
-            _flowHundler.SwitchFlow(new FlowSwitchArgs_Fake(FlowConst.FlowName.TrueEndFlow,""));
-        }
+        public IObservable<FlowSwitchArgs_Fake> SwitchFlow { get; }
     }
 }

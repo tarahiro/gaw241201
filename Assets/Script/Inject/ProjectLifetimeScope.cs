@@ -61,6 +61,7 @@ namespace gaw241201.Inject
             builder.Register<DeleteClickInputUi>(Lifetime.Singleton).AsSelf();
             builder.Register<ClickInputProccessorProvider>(Lifetime.Singleton).AsSelf();
             builder.Register<DoubleAffirmation>(Lifetime.Singleton).AsSelf();
+            builder.Register<Skippable>(Lifetime.Singleton).AsSelf().AsImplementedInterfaces();
 
 
             //FreeInput

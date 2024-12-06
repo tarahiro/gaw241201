@@ -33,5 +33,10 @@ namespace gaw241201.View
         {
             _button.onClick.AddListener(() => _onClicked.OnNext(_index));
         }
+
+        public void Exit()
+        {
+            _button.interactable = false;
+        }
     }
 }

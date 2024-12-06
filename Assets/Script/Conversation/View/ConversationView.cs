@@ -36,13 +36,11 @@ namespace gaw241201.View
             ProcessConversationEffect<ConversationViewConst.Facial>((int)args.Facial, (int)ConversationViewConst.Facial.None, _prevArgs != null ? (int)_prevArgs.Facial : -1, _facialChangable);
             ProcessConversationEffect<ConversationViewConst.Impression>((int)args.Impression, (int)ConversationViewConst.Impression.None, _prevArgs != null ? (int)_prevArgs.Impression : -1, _impressionChangable);
 
-         //   _eyePositionChangable.SetEffect(args.EyePosition);
-
-
-
 
 
             await _textView.Enter(args.Message, args.CancellationToken);
+
+            Log.Comment(args.Message + " " + args.EyePosition + "ÇÃConversationï\é¶èIóπ");
 
             _prevArgs = args;
             _completed.OnNext(Unit.Default);

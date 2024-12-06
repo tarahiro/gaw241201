@@ -17,14 +17,22 @@ namespace gaw241201
         [Inject] IFlowMasterDataDictionaryProvider _masterDataDictionaryProvider;
         [Inject] IFlowProvider _flowProvider;
         [Inject] IGlobalFlagProvider _globalFlagProvider;
+        [Inject] IFlowSwitchable_Fake _flowSwitchable;
 
         IFlowModel _currentFlow;
 
+        CompositeDisposable _reserveDisposable;
         CancellationTokenSource _cancellationTokenSource;
+
+        Subject<Unit> _onFlowExited = new Subject<Unit> ();
+        IObservable<Unit> OnFlowExited => _onFlowExited;
 
         public void EnterMainLoop()
         {
             SoundManager.PlayBGM("Main");
+
+            //Fake
+            _flowSwitchable.SwitchFlow.Subscribe(args =>  ReserveNextFlow(args,SwitchFlow));
 
             if (_globalFlagProvider.GetFlag(FlagConst.Key.IsSaveDataExist) == "False")
             {
@@ -36,14 +44,14 @@ namespace gaw241201
             }
         }
 
-        public void SwitchFlow(FlowConst.FlowName nextFlowName, string specificId = "")
+        public void SwitchFlow(FlowSwitchArgs_Fake _args)
         {
             _cancellationTokenSource.Cancel();
 
             //ñ{ìñÇÕ_cancellationTokenÇ…RegisterÇµÇΩÇ©Ç¡ÇΩÇ™ÅA
             if(_currentFlow != null)_currentFlow.ForceEndFlow();
 
-            EnterFlowLoop(nextFlowName,specificId);
+            EnterFlowLoop(_args.FlowName, _args.InitialFlowId);
         }
 
         void EnterFlowLoop(FlowConst.FlowName flowName, string specificId = "")
@@ -73,14 +81,21 @@ namespace gaw241201
                 var master = _provider.TryGetFromIndex(i).GetMaster();
                 _currentFlow = _flowProvider.GetFlowModel(EnumUtil.KeyToType<FlowConst.Category>(master.Category));
                 await _currentFlow.EnterFlow(master.BodyId);
-                _currentFlow = null;
+
+                if (!cancellationToken.IsCancellationRequested)
+                {
+                    _currentFlow = null;
+                }
             }
 
-            //Fake
-            if(flowName == FlowConst.FlowName.SaveDataExistFlow)
-            {
-                SwitchFlow(FlowConst.FlowName.MainFlow, "207000TypingConversation");
-            }
+            _onFlowExited.OnNext(Unit.Default);
+            _onFlowExited.Dispose();
+        }
+
+        void ReserveNextFlow(FlowSwitchArgs_Fake args, Action<FlowSwitchArgs_Fake> action)
+        {
+            _reserveDisposable = new CompositeDisposable();
+            _onFlowExited.Subscribe(_=> action.Invoke(args)).AddTo(_reserveDisposable);
         }
 
 

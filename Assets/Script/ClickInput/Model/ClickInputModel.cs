@@ -35,7 +35,7 @@ namespace gaw241201
 
             _entered.OnNext(_currentProcessor.CreateArgs(_ct.Token));
 
-            await UniTask.WaitUntil(() => _isEnded);
+            await UniTask.WaitUntil(() => _isEnded, cancellationToken: _ct.Token);
 
             Log.Comment("ClickInputModelèIóπ");
         }

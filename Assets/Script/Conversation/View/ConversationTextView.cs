@@ -26,9 +26,12 @@ namespace gaw241201.View
         {
             _tmp.text = "";
             SoundManager.PlaySE("TalkShort");
+            Log.Comment("TextView表示開始");
             await TextUtil.DisplayTextByCharacter(text, _tmp, "Talk", KeyCode.Return, ct,false);
-            await UniTask.Yield(PlayerLoopTiming.Update);
+            await UniTask.Yield(PlayerLoopTiming.Update,ct);
+            Log.Comment("TextView表示終了");
             await UniTask.WaitUntil(() => Input.GetKeyDown(KeyCode.Return), cancellationToken:ct);
+            Log.Comment("TextView決定終了");
         }
     }
 }

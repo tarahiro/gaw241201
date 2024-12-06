@@ -45,6 +45,11 @@ namespace gaw241201.View
         {
             Log.Comment("ClickInputViewèIóπ");
             _exited.OnNext(i);
+            foreach(var item in _itemList)
+            {
+                item.Exit();
+            }
+
         }
 
         public void Delete()
