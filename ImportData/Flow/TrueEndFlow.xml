@@ -9,7 +9,7 @@
   <Author>h t</Author>
   <LastAuthor>h t</LastAuthor>
   <Created>2021-10-25T13:58:26Z</Created>
-  <LastSaved>2024-12-05T12:17:56Z</LastSaved>
+  <LastSaved>2024-12-06T05:22:17Z</LastSaved>
   <Version>16.00</Version>
  </DocumentProperties>
  <OfficeDocumentSettings xmlns="urn:schemas-microsoft-com:office:office">
@@ -88,7 +88,7 @@
   </Style>
  </Styles>
  <Worksheet ss:Name="Script">
-  <Table ss:ExpandedColumnCount="6" ss:ExpandedRowCount="5" x:FullColumns="1"
+  <Table ss:ExpandedColumnCount="6" ss:ExpandedRowCount="10" x:FullColumns="1"
    x:FullRows="1" ss:DefaultColumnWidth="52.5" ss:DefaultRowHeight="18">
    <Column ss:AutoFitWidth="0" ss:Width="30"/>
    <Column ss:AutoFitWidth="0" ss:Width="128"/>
@@ -108,9 +108,49 @@
    </Row>
    <Row ss:AutoFitHeight="0">
     <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">396000EndGlitchSmallEffect</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">EndEffect</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">GlitchSmall</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">1</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">397000EndGlitchLargeEffect</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">EndEffect</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">GlitchLarge</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">2</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">398000EndCmdRmEffect</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">EndEffect</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">CmdRm</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">3</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">400000TrueEndConversation</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">Conversation</Data></Cell>
     <Cell ss:StyleID="s67" ss:Formula="=RC[-2]"><Data ss:Type="String">400000TrueEndConversation</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">4</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">401000EnterGlitchEffect</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">EnterEffect</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">GlitchLargeAutoEnd</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Clear</Data></Cell>
+    <Cell ss:StyleID="s67" ss:Formula="=R[-4]C[-4]"><Data ss:Type="String">396000EndGlitchSmallEffect</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">5</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">490000EndGameClear</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">EndGame</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">GameClear</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
    </Row>
@@ -134,7 +174,7 @@
    <Panes>
     <Pane>
      <Number>3</Number>
-     <ActiveRow>4</ActiveRow>
+     <ActiveRow>7</ActiveRow>
      <ActiveCol>1</ActiveCol>
     </Pane>
    </Panes>
@@ -142,7 +182,21 @@
    <ProtectScenarios>False</ProtectScenarios>
   </WorksheetOptions>
   <ConditionalFormatting xmlns="urn:schemas-microsoft-com:office:excel">
-   <Range>R5C1:R5C6</Range>
+   <Range>R5C1:R8C6</Range>
+   <Condition>
+    <Value1>LEN(TRIM(RC))=0</Value1>
+    <Format Style='background:#E7E6E6'/>
+   </Condition>
+  </ConditionalFormatting>
+  <ConditionalFormatting xmlns="urn:schemas-microsoft-com:office:excel">
+   <Range>R10C1:R10C6</Range>
+   <Condition>
+    <Value1>LEN(TRIM(RC))=0</Value1>
+    <Format Style='background:#E7E6E6'/>
+   </Condition>
+  </ConditionalFormatting>
+  <ConditionalFormatting xmlns="urn:schemas-microsoft-com:office:excel">
+   <Range>R9C1:R9C6</Range>
    <Condition>
     <Value1>LEN(TRIM(RC))=0</Value1>
     <Format Style='background:#E7E6E6'/>

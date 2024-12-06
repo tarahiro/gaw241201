@@ -13,8 +13,6 @@ namespace gaw241201
     public interface IFlowModel
     {
        UniTask EnterFlow(string bodyId);
-#if ENABLE_DEBUG
         void ForceEndFlow();
-#endif
     }
 }

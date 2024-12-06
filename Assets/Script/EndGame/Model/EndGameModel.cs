@@ -15,11 +15,14 @@ namespace gaw241201
 {
     public class EndGameModel : IFlowModel
     {
+        [Inject] ISavable _savable;
+
         Subject<EndGameConst.Key> _entered = new Subject<EndGameConst.Key> ();
         public IObservable<EndGameConst.Key> Entered => _entered;
         public async UniTask EnterFlow(string bodyId)
         {
             Log.DebugLog(bodyId + "ŠJŽn");
+            _savable.Save();
             _entered.OnNext(EnumUtil.KeyToType<EndGameConst.Key>(bodyId));
         }
 
@@ -28,10 +31,8 @@ namespace gaw241201
             SceneManager.LoadScene("Main");
         }
 
-#if ENABLE_DEBUG
         public void ForceEndFlow()
         {
         }
-#endif
     }
 }

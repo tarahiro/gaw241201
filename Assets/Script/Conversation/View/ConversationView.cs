@@ -51,16 +51,14 @@ namespace gaw241201.View
         void ProcessConversationEffect<T>(int key, int none, int prevKey, IConversationEffectChangable<T> effectChangable) where T : Enum
         {
 
+            if (prevKey != key)
+            {
+                effectChangable.ResetEffect(EnumUtil.NoToType<T>(prevKey));
+            }
+
             if (key != none)
             {
                 effectChangable.SetEffect(EnumUtil.NoToType<T>(key));
-            }
-            else
-            {
-                if (prevKey != none)
-                {
-                    effectChangable.ResetEffect(EnumUtil.NoToType<T>(prevKey));
-                }
             }
 
         }

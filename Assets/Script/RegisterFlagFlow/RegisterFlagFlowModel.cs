@@ -18,13 +18,10 @@ namespace gaw241201
         {
             _flagRegisterProcessor.ProcessRegisterOrder(EnumUtil.KeyToType<FlagConst.RegisterOrder>(bodyId));
         }
-#if ENABLE_DEBUG
         public void ForceEndFlow()
         {
 
         }
-        public string ForceGetCategory => "RegisterFlag"; 
-#endif
 
     }
 }

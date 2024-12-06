@@ -14,6 +14,7 @@ namespace gaw241201.Inject
     public class DebugManager : ITickable, IStartable
     {
         [Inject] FlowHundler _flowHundler;
+        [Inject] ISaveDeletable _saveDeletable;
 
         string _initialCategory;
 
@@ -33,6 +34,11 @@ namespace gaw241201.Inject
             if (Input.GetKeyDown(KeyCode.Tab))
             {
                 _flowHundler.ForceGetCurrentFlow().ForceEndFlow();
+            }
+
+            if (Input.GetKeyDown(KeyCode.LeftAlt))
+            {
+                _saveDeletable.DeleteSaveData();
             }
         }
     }

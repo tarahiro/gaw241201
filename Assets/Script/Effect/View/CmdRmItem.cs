@@ -21,7 +21,7 @@ namespace gaw241201.View
         CmdLine _currentCmdLine;
         int _lineIndex = 0;
 
-        const int c_maxDisplayLineNumber = 20;
+        const int c_maxDisplayLineNumber = 1;
 
         CancellationTokenSource ContinuousCts;
 
@@ -31,8 +31,7 @@ namespace gaw241201.View
 
             while (_lineIndex < c_maxDisplayLineNumber && !cancellationToken.IsCancellationRequested)
             {
-                await ShowLine(_lineIndex, cancellationToken);
-                _lineIndex++;
+                await ShowLine(GetLineText(_lineIndex), WaitCoeff(_lineIndex), cancellationToken);
             }
 
             OnExit();
@@ -40,31 +39,41 @@ namespace gaw241201.View
 
         public async UniTask End(CancellationToken cancellationToken)
         {
-            _currentCmdLine.Unfoucus();
+            ContinuousCts.Cancel();
+            _lineIndex++;
+
+            await ShowLine("Process Stopped.", 1f, cancellationToken);
+            await UniTask.WaitForSeconds(2f, cancellationToken: cancellationToken);
         }
 
         void OnExit()
         {
             ContinuousCts = new CancellationTokenSource();
             ContinuousLineLoop(ContinuousCts.Token).Forget();
-
         }
 
         const float c_textShowTime = 1f;
         const float c_waitForNextLineTime = .5f;
 
         const float c_lineInterval = 18f;
+        const int c_maxIndex = 10001;
 
         async UniTask ContinuousLineLoop(CancellationToken cancellationToken)
         {
             while (!cancellationToken.IsCancellationRequested) 
             {
-                await ShowLine(_lineIndex, cancellationToken);
-                _lineIndex++;
+                if (_lineIndex < c_maxIndex)
+                {
+                    await ShowLine(GetLineText(_lineIndex), WaitCoeff(_lineIndex), cancellationToken);
+                }
+                else
+                {
+                    await ShowLine(GetLineText(c_maxIndex), WaitCoeff(c_maxIndex), cancellationToken);
+                }
             }
         }
 
-        async UniTask ShowLine(int lineIndex, CancellationToken cancellationToken)
+        async UniTask ShowLine(string lineText, float waitCoeffTime, CancellationToken cancellationToken)
         {
             cancellationToken.Register(() => _currentCmdLine.Unfoucus());
             _currentCmdLine = Instantiate(_cmdLinePrefab, _lineRoot);
@@ -74,13 +83,14 @@ namespace gaw241201.View
                 _lineRoot.GetComponent<RectTransform>().anchoredPosition += Vector2.up * c_lineInterval;
             }
 
-            _currentCmdLine.GetComponent<RectTransform>().anchoredPosition = Vector2.down * c_lineInterval * lineIndex;
+            _currentCmdLine.GetComponent<RectTransform>().anchoredPosition = Vector2.down * c_lineInterval * _lineIndex;
 
-            _currentCmdLine.Construct(GetLineText(lineIndex));
-            await UniTask.WaitForSeconds(c_textShowTime * WaitCoeff(lineIndex), cancellationToken: cancellationToken);
+            _currentCmdLine.Construct(lineText);
+            await UniTask.WaitForSeconds(c_textShowTime * waitCoeffTime, cancellationToken: cancellationToken);
             _currentCmdLine.SetLine();
-            await UniTask.WaitForSeconds(c_waitForNextLineTime * WaitCoeff(lineIndex), cancellationToken: cancellationToken);
+            await UniTask.WaitForSeconds(c_waitForNextLineTime * waitCoeffTime, cancellationToken: cancellationToken);
 
+            _lineIndex++;
             _currentCmdLine.Unfoucus();
         }
 

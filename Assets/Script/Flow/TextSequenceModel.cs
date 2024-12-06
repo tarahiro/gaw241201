@@ -58,13 +58,9 @@ namespace gaw241201
             _isEnded = true;
         }
 
-
-#if ENABLE_DEBUG
         public void ForceEndFlow()
         {
             _cts.Cancel();
         }
-
-#endif
     }
 }

@@ -18,11 +18,8 @@ namespace gaw241201
             Log.Comment("DeleteUiŠJŽn");
             _uiDeletableProvider.GetUiDeletable(EnumUtil.KeyToType<FlowConst.Category>(bodyId)).DeleteUi();
         }
-#if ENABLE_DEBUG
         public void ForceEndFlow()
         {
         }
-        public string ForceGetCategory => "DeleteUi";
-#endif
     }
 }

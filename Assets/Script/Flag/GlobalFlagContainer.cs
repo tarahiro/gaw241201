@@ -17,7 +17,14 @@ namespace gaw241201
         public void RegisterFlag(FlagConst.Key key, string value)
         {
             Log.Comment(key + "," + value +"‚ÌFlag‚ğ“o˜^");
-            _dictionary.Add(key, value);
+            if (_dictionary.ContainsKey(key))
+            {
+                _dictionary.Add(key, value);
+            }
+            else
+            {
+                _dictionary[key] = value;
+            }
         }
 
         public string GetFlag(FlagConst.Key key)
@@ -31,6 +38,11 @@ namespace gaw241201
                 Log.DebugWarning(key + "‚ª“o˜^‚³‚ê‚Ä‚¢‚Ü‚¹‚ñB‰Šú’l‚ğ•Ô‚µ‚Ü‚·");
                 return FlagConst.InitialValue(key);
             }
+        }
+
+        public bool IsContainskey(FlagConst.Key key)
+        {
+            return _dictionary.ContainsKey(key);
         }
 
 

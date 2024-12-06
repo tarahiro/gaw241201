@@ -22,11 +22,9 @@ namespace gaw241201
             _entered.OnNext(EnumUtil.KeyToType<ConfiscateConst.Type>(bodyId));
         }
 
-#if ENABLE_DEBUG
         public void ForceEndFlow()
         {
 
         }
-#endif
     }
 }

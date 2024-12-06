@@ -19,6 +19,7 @@ namespace gaw241201
             Name,
             NameLower,
             BirthDate,
+            IsSaveDataExist,
         }
 
         public enum RegisterOrder
@@ -46,6 +47,7 @@ namespace gaw241201
                 case Key.Name: return "PLAYER";
                 case Key.NameLower: return "player";
                 case Key.BirthDate: return "BirthDate";
+                case Key.IsSaveDataExist: return "False";
 
                 default:
                     Log.DebugAssert(key + "‚Ì‰Šú’l‚ªw’è‚³‚ê‚Ä‚¢‚Ü‚¹‚ñ");

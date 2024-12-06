@@ -22,6 +22,7 @@ namespace gaw241201
         [Inject] EnterEffectModel _enterEffectModel;
         [Inject] EndEffectModel _endEffectModel;
         [Inject] EndGameModel _endGameModel;
+        [Inject] StartMonitorModel _startMonitorModel;
 
         public IFlowModel GetFlowModel(FlowConst.Category category)
         {
@@ -47,17 +48,20 @@ namespace gaw241201
                 case FlowConst.Category.Typing:
                     return _typingModel;
 
-                    case FlowConst.Category.Confiscate:
-                        return _confiscateModel;
+                case FlowConst.Category.Confiscate:
+                    return _confiscateModel;
 
-                    case FlowConst.Category.EnterEffect:
-                        return _enterEffectModel;
+                case FlowConst.Category.EnterEffect:
+                    return _enterEffectModel;
 
                 case FlowConst.Category.EndEffect:
                     return _endEffectModel;
 
                 case FlowConst.Category.EndGame:
                     return _endGameModel;
+
+                case FlowConst.Category.StartMonitor:
+                    return _startMonitorModel;
 
                 default:
                     Log.DebugAssert("不正なカテゴリー名です");

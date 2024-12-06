@@ -53,9 +53,12 @@ namespace gaw241201.View
 
         async UniTask EndItem(EffectArgs args)
         {
-            await _itemDictionary[args.Key].End(args.CancellationToken);
-            Destroy(_itemDictionary[args.Key].transform.gameObject);
-            _itemDictionary.Remove(args.Key);
+            if (_itemDictionary.ContainsKey(args.Key))
+            {
+                await _itemDictionary[args.Key].End(args.CancellationToken);
+                Destroy(_itemDictionary[args.Key].transform.gameObject);
+                _itemDictionary.Remove(args.Key);
+            }
 
         }
 

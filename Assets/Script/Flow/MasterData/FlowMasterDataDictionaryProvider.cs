@@ -31,6 +31,8 @@ namespace gaw241201
             }
             */
             _dictionary.Add("MainFlow", new FlowMasterDataProvider("Data/Flow/MainFlow"));
+            _dictionary.Add("TrueEndFlow", new FlowMasterDataProvider("Data/Flow/TrueEndFlow"));
+            _dictionary.Add("SaveDataExistFlow", new FlowMasterDataProvider("Data/Flow/SaveDataExistFlow"));
         }
 
         public IFlowMasterDataProvider GetProvider(string key)

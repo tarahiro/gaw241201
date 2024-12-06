@@ -14,9 +14,18 @@ namespace gaw241201.Inject
         {
             Log.Comment("ProjectLifetimeScope‚Ì“o˜^ŠJŽn");
 
+            //Save
+            builder.Register<SaveDataManager>(Lifetime.Singleton).AsImplementedInterfaces();
+            builder.Register<SaveData>(Lifetime.Singleton).AsSelf();
+
             //Eyes
             builder.RegisterComponentInHierarchy<EyesView>().AsImplementedInterfaces();
             builder.Register<ImpressionView>(Lifetime.Singleton).AsImplementedInterfaces();
+
+            //Monitor
+            builder.Register<StartMonitorModel>(Lifetime.Singleton).AsSelf();
+            builder.Register<MonitorView>(Lifetime.Singleton).AsSelf();
+            builder.Register<HaltModel>(Lifetime.Singleton).AsSelf();
 
             //EndGame
             builder.Register<EndGameModel>(Lifetime.Singleton).AsSelf();
@@ -100,6 +109,7 @@ namespace gaw241201.Inject
                 entryPoints.Add<ConfiscatePresenter>();
                 entryPoints.Add<EffectPresenter>();
                 entryPoints.Add<EndGamePresenter>();
+                entryPoints.Add<MonitorPresenter>();
 #if ENABLE_DEBUG
                 entryPoints.Add<DebugManager>();
 #endif

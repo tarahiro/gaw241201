@@ -31,6 +31,11 @@ namespace gaw241201.View
             return Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift);
         }
 
+        public static bool IsPressedCtrl()
+        {
+            return Input.GetKey(KeyCode.LeftControl) || Input.GetKey(KeyCode.RightControl);
+        }
+
 
         public readonly static List<KeyCode> InputtableKeyList = new List<KeyCode>()
         {
@@ -87,5 +92,10 @@ namespace gaw241201.View
                  KeyCode.Return,
                  KeyCode.Space,
         };
+
+        public static bool IsKeyDown(KeyCode keyCode)
+        {
+            return Input.GetKeyDown(keyCode);
+        }
     }
 }

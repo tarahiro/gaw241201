@@ -40,12 +40,9 @@ namespace gaw241201
             Log.Comment("Model‚ÅI—¹ŒŸ’m");
             _isEnded = true;
         }
-#if ENABLE_DEBUG
         public void ForceEndFlow()
         {
             _ct.Cancel();
         }
-        public string ForceGetCategory => "ClickInput";
-#endif
     }
 }

@@ -12,6 +12,6 @@ namespace gaw241201
 {
     public interface IMainLoopHundler
     {
-        UniTask EnterMainLoop();
+        void EnterMainLoop();
     }
 }

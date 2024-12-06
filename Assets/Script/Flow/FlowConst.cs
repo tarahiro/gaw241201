@@ -24,6 +24,14 @@ namespace gaw241201
             EnterEffect,
             EndEffect,
             EndGame,
+            StartMonitor
+        }
+
+        public enum FlowName
+        {
+            MainFlow,
+            TrueEndFlow,
+            SaveDataExistFlow
         }
     }
 }

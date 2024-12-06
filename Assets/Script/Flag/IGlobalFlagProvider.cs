@@ -13,5 +13,7 @@ namespace gaw241201
     public interface IGlobalFlagProvider
     {
         string GetFlag(FlagConst.Key key);
+
+        bool IsContainskey(FlagConst.Key key);
     }
 }
