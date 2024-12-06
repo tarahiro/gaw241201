@@ -2,9 +2,8 @@ using Cysharp.Threading.Tasks;
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Threading;
 using Tarahiro;
-using Tarahiro.TInput;
+using TMPro;
 using UniRx;
 using UnityEngine;
 using UnityEngine.UI;
@@ -15,48 +14,24 @@ namespace gaw241201.View
 {
     public class ClickInputItemView : MonoBehaviour
     {
-        IGazable _gazable;
-        [SerializeField] List<Button> _button ;
+        int _index;
 
-        bool _isWait;
-        public void Construct(IGazable gazable)
+        Subject<int> _onClicked = new Subject<int>();
+        public IObservable<int> OnClicked => _onClicked;
+
+
+        [SerializeField] Button _button;
+        [SerializeField] TextMeshProUGUI _tmp;
+
+        public void Construct(int index, string s)
         {
-            _gazable = gazable;
+            _index = index;
+            _tmp.text = s;
         }
 
-        public async UniTask Enter(CancellationToken ct)
+        public void Initialize()
         {
-            Log.Comment("ClickInputItemViewŠJŽn");
-            foreach (var button in _button)
-            {
-                button.onClick.AddListener(OnClick);
-                button.interactable = true;
-            }
-            ct.Register(OnExit);
-
-            _isWait = true;
-
-            while (_isWait && !ct.IsCancellationRequested)
-            {
-                await UniTask.Yield(PlayerLoopTiming.Update);
-                _gazable.Gaze(TTouch.GetInstance().ScreenPointOnThisFrame);
-            }
-
-
+            _button.onClick.AddListener(() => _onClicked.OnNext(_index));
         }
-
-        private void OnClick()
-        {
-            _isWait = false;
-        }
-
-        private void OnExit()
-        {
-            foreach (var button in _button)
-            {
-                button.interactable = false;
-            }
-        }
-
     }
 }

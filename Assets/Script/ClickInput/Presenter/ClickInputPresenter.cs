@@ -25,7 +25,7 @@ namespace gaw241201.Presenter
         {
             _model.Entered.Subscribe(x => _view.Enter(x).Forget()).AddTo(_compositeDisposable);
             _deleteUi.UiDeleted.Subscribe(x => _view.Delete()).AddTo(_compositeDisposable);
-            _view.Exited.Subscribe(_ => _model.End()).AddTo(_compositeDisposable);
+            _view.Exited.Subscribe(_model.End).AddTo(_compositeDisposable);
         }
     }
 }

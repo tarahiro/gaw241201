@@ -1,16 +1,12 @@
 {
-    "name": "gaw241201.ClickInput.Presenter",
-    "rootNamespace": "gaw241201.ClickInput.Presenter",
+    "name": "gaw241201.ClickInput",
+    "rootNamespace": "gaw241201.ClickInput",
     "references": [
         "GUID:0be27b54e10228743974a8df3dda3639",
         "GUID:560b04d1a97f54a4e82edc0cbbb69285",
         "GUID:f51ebe6a0ceec4240a699833d6309b23",
         "GUID:b0214a6008ed146ff8f122a6a9c2f6cc",
-        "GUID:7ee3ff7b0dfc7aa498135a795b831c6e",
-        "GUID:80730cb7ec02f6544bfe954bc465eae7",
-        "GUID:125b4ab23f0db1a4085c84a817e568fd",
-        "GUID:d523d77f782a3714cae18e12b2d876e9",
-        "GUID:ff8deb04093f82a46849fdaf9a9d1dde"
+        "GUID:80730cb7ec02f6544bfe954bc465eae7"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

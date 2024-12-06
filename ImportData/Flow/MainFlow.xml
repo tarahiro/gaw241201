@@ -9,7 +9,7 @@
   <Author>h t</Author>
   <LastAuthor>h t</LastAuthor>
   <Created>2021-10-25T13:58:26Z</Created>
-  <LastSaved>2024-12-06T05:33:42Z</LastSaved>
+  <LastSaved>2024-12-06T06:00:19Z</LastSaved>
   <Version>16.00</Version>
  </DocumentProperties>
  <OfficeDocumentSettings xmlns="urn:schemas-microsoft-com:office:office">
@@ -214,7 +214,7 @@
     <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">13</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">110000ClickInput</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">ClickInput</Data></Cell>
-    <Cell ss:StyleID="s67" ss:Formula="=RC[-2]"><Data ss:Type="String">110000ClickInput</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">DoubleAffirmation</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">Clear</Data></Cell>
     <Cell ss:StyleID="s67" ss:Formula="=R[-2]C[-4]"><Data ss:Type="String">108000DeleteUi</Data></Cell>
    </Row>
@@ -571,11 +571,12 @@
    <TabColorIndex>13</TabColorIndex>
    <Zoom>115</Zoom>
    <Selected/>
+   <TopRowVisible>47</TopRowVisible>
    <Panes>
     <Pane>
      <Number>3</Number>
-     <ActiveRow>15</ActiveRow>
-     <ActiveCol>14</ActiveCol>
+     <ActiveRow>47</ActiveRow>
+     <RangeSelection>R48:R60</RangeSelection>
     </Pane>
    </Panes>
    <ProtectObjects>False</ProtectObjects>

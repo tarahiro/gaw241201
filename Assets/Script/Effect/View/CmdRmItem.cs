@@ -21,7 +21,7 @@ namespace gaw241201.View
         CmdLine _currentCmdLine;
         int _lineIndex = 0;
 
-        const int c_maxDisplayLineNumber = 1;
+        const int c_maxDisplayLineNumber = 17;
 
         CancellationTokenSource ContinuousCts;
 

@@ -15,38 +15,46 @@ namespace gaw241201.View
     {
         [Inject] IGazable _gazable;
 
-        ClickInputItemView _currentItem;
+        [SerializeField] ClickInputItemView _itemPrefab;
 
-        const string c_prefabPath = "Prefab/ClickInput/ClickInputItemView";
+        List<ClickInputItemView> _itemList;
 
-        Subject<Unit> _exited = new Subject<Unit>();
-        public IObservable<Unit> Exited => _exited;
+        const float c_initialX = -280f;
+        const float c_intervalX = 560f;
 
-        public async UniTask Enter(CancellationToken ct)
+        Subject<int> _exited = new Subject<int>();
+        public IObservable<int> Exited => _exited;
+
+        public async UniTask Enter(ClickInputArgs args)
         {
             Log.DebugLog("ClickInputView開始");
-            _currentItem = Instantiate(ResourceUtil.GetResource<ClickInputItemView>(c_prefabPath), transform);
-            _currentItem.Construct(_gazable);
-            ct.Register(OnExit);
+            _itemList = new List<ClickInputItemView>();
 
-            await _currentItem.Enter(ct);
-
-            OnExit();
+            for (int i = 0; i < args.LabelList.Count; i++)
+            {
+                var item = Instantiate<ClickInputItemView> (_itemPrefab, transform);
+                item.Construct(i, args.LabelList[i]);
+                item.transform.localPosition = Vector2.right * (c_initialX + c_intervalX * i);
+                item.OnClicked.Subscribe(OnExit);
+                item.Initialize();
+                _itemList.Add(item);
+            }
         }
 
-        private void OnExit()
+        private void OnExit(int i)
         {
-
             Log.Comment("ClickInputView終了");
-            _exited.OnNext(Unit.Default);
-
+            _exited.OnNext(i);
         }
 
         public void Delete()
         {
             Log.Comment("FreeInputViewItemを削除");
             //色々disposeしないといけない気もする
-            Destroy(_currentItem.gameObject);
+            for(int i = 0;i < _itemList.Count; i++)
+            {
+                Destroy(_itemList[i].gameObject);
+            }
         }
     }
 }
