@@ -12,6 +12,7 @@ namespace gaw241201.Model
     //フィールドを追加
     public interface IFlowMaster : IIdentifiable, IIndexable
     {
+
         string Category{ get; }
 
         string BodyId { get; }

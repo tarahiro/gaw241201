@@ -8,6 +8,8 @@ using UnityEditor;
 using gaw241201;
 using gaw241201.Model;
 using gaw241201.Model.MasterData;
+using Tarahiro.Editor;
+using Tarahiro.Sound;
 
 namespace gaw241201.Editor
 {
@@ -21,8 +23,6 @@ namespace gaw241201.Editor
     //ITemplateMasterに合わせてフィールドを追加
     internal sealed class TypingImporter
     {
-        const string c_XmlPath = "ImportData/Typing/Typing.xml";
-        const string c_SheetName = "Script";
         enum Columns
         {
             Index = 0,
@@ -50,14 +50,14 @@ namespace gaw241201.Editor
 
         public static void Import()
         {
-            var book = XmlImporter.ImportWorkbook(c_XmlPath);
+            var book = XmlImporter.ImportWorkbook(EditorUtil.XmlPath(TypingMasterData.DataPath));
 
             var TypingDataList = new List<TypingMasterData.Record>();
 
-            var sheet = book.TryGetWorksheet(c_SheetName);
+            var sheet = book.TryGetWorksheet(EditorConst.c_SheetName);
             if (sheet == null)
             {
-                Log.DebugWarning($"シート: {c_SheetName} が見つかりませんでした。");
+                Log.DebugWarning($"シート: {EditorConst.c_SheetName} が見つかりませんでした。");
             }
             else
             {
@@ -78,7 +78,7 @@ namespace gaw241201.Editor
             }
 
             // データ出力
-            XmlImporter.ExportOrderedDictionary<TypingMasterData, TypingMasterData.Record, IMasterDataRecord<ITypingMaster>>(TypingMasterData.c_DataPath, TypingDataList);
+            XmlImporter.ExportOrderedDictionary<TypingMasterData, TypingMasterData.Record, IMasterDataRecord<ITypingMaster>>(MasterDataConst.DataPath + TypingMasterData.DataPath, TypingDataList);
         }
     }
 #endif

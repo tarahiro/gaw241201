@@ -9,7 +9,7 @@
   <Author>h t</Author>
   <LastAuthor>h t</LastAuthor>
   <Created>2021-10-25T13:58:26Z</Created>
-  <LastSaved>2024-12-06T06:00:19Z</LastSaved>
+  <LastSaved>2024-12-06T13:28:58Z</LastSaved>
   <Version>16.00</Version>
  </DocumentProperties>
  <OfficeDocumentSettings xmlns="urn:schemas-microsoft-com:office:office">
@@ -571,12 +571,11 @@
    <TabColorIndex>13</TabColorIndex>
    <Zoom>115</Zoom>
    <Selected/>
-   <TopRowVisible>47</TopRowVisible>
    <Panes>
     <Pane>
      <Number>3</Number>
-     <ActiveRow>47</ActiveRow>
-     <RangeSelection>R48:R60</RangeSelection>
+     <ActiveRow>10</ActiveRow>
+     <RangeSelection>R11</RangeSelection>
     </Pane>
    </Panes>
    <ProtectObjects>False</ProtectObjects>

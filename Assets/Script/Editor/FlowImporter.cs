@@ -87,7 +87,7 @@ namespace gaw241201.Editor
 
                 // データ出力
                 XmlImporter.ExportOrderedDictionary<FlowMasterData, FlowMasterData.Record, IMasterDataRecord<IFlowMaster>>(
-                    FlowMasterData.c_DataPathPrefix + file.Replace(c_XmlPathPrefix,"").Replace(c_XmlPathSuffix,""),
+                    "Data/Flow/" + file.Replace(c_XmlPathPrefix,"").Replace(c_XmlPathSuffix,""),
                     FlowDataList);
             }
         }
