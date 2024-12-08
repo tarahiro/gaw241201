@@ -30,11 +30,11 @@ namespace Tarahiro.OtherGame.Inject
                     return instance;
                 };
             }, Lifetime.Scoped);
-            builder.Register<OtherGameModel>(Lifetime.Singleton).WithParameter<string>("FakeProjectCode").AsImplementedInterfaces();
+            builder.Register<OtherGameModel>(Lifetime.Singleton).AsImplementedInterfaces();
             builder.RegisterComponentInHierarchy<OtherGameAbstructView>().AsImplementedInterfaces();
             builder.RegisterComponentInHierarchy<OtherGameMenuView>().AsImplementedInterfaces();
             builder.RegisterComponentInHierarchy<OtherGameDetailView>().AsImplementedInterfaces();
-            builder.Register<OtherGameMasterDataProvider>(Lifetime.Singleton).WithParameter<string>("Data/OtherGame").AsImplementedInterfaces();
+            builder.Register<OtherGameMasterDataProvider>(Lifetime.Singleton).AsImplementedInterfaces();
 
             builder.RegisterFactory<IOtherGameMenuItemViewArgs, IOtherGameMenuItemView>(container =>
             {
