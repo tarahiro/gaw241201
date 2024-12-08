@@ -50,8 +50,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1a736e5aa3e7544ca340c35bb80bb32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textJapanese: {fileID: 4609748226831012055}
-  textRoman: {fileID: 221807368237014043}
+  _tmpSample: {fileID: 4609748226831012055}
+  _tmpQuestion: {fileID: 221807368237014043}
 --- !u!1001 &5562062325675079177
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -62,7 +62,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 211256672648796651, guid: 0138a8f0f0d182546910b132e0cf94b7, type: 3}
       propertyPath: m_Name
-      value: roman
+      value: question
       objectReference: {fileID: 0}
     - target: {fileID: 4608008696644039956, guid: 0138a8f0f0d182546910b132e0cf94b7, type: 3}
       propertyPath: m_Pivot.x
@@ -175,7 +175,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 211256672648796651, guid: 0138a8f0f0d182546910b132e0cf94b7, type: 3}
       propertyPath: m_Name
-      value: jp
+      value: sample
       objectReference: {fileID: 0}
     - target: {fileID: 4608008696644039956, guid: 0138a8f0f0d182546910b132e0cf94b7, type: 3}
       propertyPath: m_Pivot.x

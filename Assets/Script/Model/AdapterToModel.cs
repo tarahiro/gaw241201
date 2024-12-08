@@ -23,7 +23,8 @@ namespace gaw241201
             _loadable.Load();
 
             Log.Comment("メインループ開始");
-            _flowHundler.EnterMainLoop();
+            //_flowHundler.EnterMainLoop();
+            _flowHundler.EnterTypingTestFlow();
         }
     }
 }

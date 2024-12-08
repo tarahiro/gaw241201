@@ -14,6 +14,10 @@ namespace gaw241201.Inject
         {
             Log.Comment("ProjectLifetimeScope‚Ì“o˜^ŠJŽn");
 
+
+            //Tarahiro
+            builder.Register<PlatformInfoProvider>(Lifetime.Singleton).AsSelf();
+
             //Save
             builder.Register<SaveDataManager>(Lifetime.Singleton).AsImplementedInterfaces();
             builder.Register<SaveData>(Lifetime.Singleton).AsSelf();
@@ -49,7 +53,8 @@ namespace gaw241201.Inject
             builder.Register<ModelArgsFactory<ITypingMaster>>(Lifetime.Singleton).AsSelf();
             builder.Register<TypingViewArgsFactory>(Lifetime.Singleton).AsSelf();
             builder.RegisterComponentInHierarchy<TypingView>().AsSelf();
-
+            builder.Register<RomanKeyInputJudger>(Lifetime.Singleton).AsImplementedInterfaces();
+            builder.Register<TypingConverter>(Lifetime.Singleton).AsImplementedInterfaces();
 
             //DeleteUi
             builder.Register<DeleteUiModel>(Lifetime.Singleton).AsSelf();
@@ -62,7 +67,6 @@ namespace gaw241201.Inject
             builder.Register<ClickInputProccessorProvider>(Lifetime.Singleton).AsSelf();
             builder.Register<DoubleAffirmation>(Lifetime.Singleton).AsSelf();
             builder.Register<Skippable>(Lifetime.Singleton).AsSelf().AsImplementedInterfaces();
-
 
             //FreeInput
             builder.Register<FreeInputModel>(Lifetime.Singleton).AsSelf();

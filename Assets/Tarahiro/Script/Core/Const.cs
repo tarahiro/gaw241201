@@ -18,6 +18,12 @@ namespace Tarahiro
 #endif
         }
 
+        public enum Platform
+        {
+            Windows,
+            Mac,
+        }
+
         public static Vector2 Resolution = new Vector2(1920f, 1080f);
     }
 }

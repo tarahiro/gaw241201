@@ -13,14 +13,14 @@ namespace gaw241201.View
 {
     public class TypingViewArgs
     {
-        public string JpText { get; private set; }
-        public string RomanText { get; private set; }
+        public string SampleText { get; private set; }
+        public string QuestionText { get; private set; }
         public CancellationToken CancellationToken { get; private set; }
 
         public TypingViewArgs(string jpText, string romanText, CancellationToken cancellationToken)
         {
-            JpText = jpText;
-            RomanText = romanText;
+            SampleText = jpText;
+            QuestionText = romanText;
             CancellationToken = cancellationToken;
         }
     }

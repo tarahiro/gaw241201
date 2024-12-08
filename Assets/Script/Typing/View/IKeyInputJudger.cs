@@ -8,13 +8,10 @@ using UnityEngine;
 using VContainer;
 using VContainer.Unity;
 
-namespace gaw241201
+namespace gaw241201.View
 {
-    public interface IMainLoopHundler
+    public interface IKeyInputJudger
     {
-        void EnterMainLoop();
-#if ENABLE_DEBUG
-        void EnterTypingTestFlow();
-#endif
+        bool IsKeyInputCorrect(char inputChar, int charIndex, List<char> questionCharList);
     }
 }

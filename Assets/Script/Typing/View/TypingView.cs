@@ -13,6 +13,8 @@ namespace gaw241201.View
     public class TypingView : MonoBehaviour
     {
         [Inject] IGazable _gazable;
+        [Inject] IKeyInputJudger _keyInputJudger;
+        [Inject] IKeyCodeToCharConverter _keyToCharConverter;
 
         TypingItemView _currentItem;
         const string c_prefabPath = "Prefab/Typing/TypingItemView";
@@ -22,9 +24,9 @@ namespace gaw241201.View
 
         public async UniTask Enter(TypingViewArgs args)
         {
-            Log.Comment(args.JpText + "開始");
+            Log.Comment(args.SampleText + "開始");
             _currentItem = Instantiate(ResourceUtil.GetResource<TypingItemView>(c_prefabPath), transform);
-            _currentItem.Construct(args,_gazable);
+            _currentItem.Construct(args,_gazable, _keyInputJudger, _keyToCharConverter);
             args.CancellationToken.Register(OnExit);
 
             await _currentItem.Enter(args.CancellationToken);

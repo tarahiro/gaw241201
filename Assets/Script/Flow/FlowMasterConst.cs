@@ -18,6 +18,7 @@ namespace gaw241201
             TrueEndFlow,
             SaveDataExistFlow,
             ScreenShotFlow,
+            TypingTestFlow,
         }
     }
 }

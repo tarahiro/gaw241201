@@ -44,6 +44,14 @@ namespace gaw241201
             }
         }
 
+#if ENABLE_DEBUG
+        public void EnterTypingTestFlow()
+        {
+            SoundManager.PlayBGM("Main");
+            EnterFlowLoop(FlowMasterConst.FlowMasterLabel.TypingTestFlow);
+        }
+#endif
+
         public void SwitchFlow(FlowSwitchArgs_Fake _args)
         {
             _cancellationTokenSource.Cancel();

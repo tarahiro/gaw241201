@@ -46,7 +46,6 @@ namespace gaw241201.Model.MasterData
             public string SettableTypingGroup { set => m_TypingGroup = value; }
             public string SettableJpText { set => m_JpText = value; }
             public string SettableRomanText { set => m_RomanText = value; }
-
 #endif
         }
     }
