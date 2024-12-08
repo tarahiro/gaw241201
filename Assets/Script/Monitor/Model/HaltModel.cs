@@ -15,7 +15,7 @@ namespace gaw241201
         [Inject] FlowHundler _flowHundler;
         public void Halt()
         {
-            _flowHundler.SwitchFlow(new FlowSwitchArgs_Fake(FlowConst.FlowName.TrueEndFlow,""));
+            _flowHundler.SwitchFlow(new FlowSwitchArgs_Fake(FlowMasterConst.FlowMasterLabel.TrueEndFlow,""));
         }
     }
 }

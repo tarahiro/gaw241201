@@ -63,7 +63,7 @@ namespace Tarahiro.OtherGame.Editor
 
         public static void Import()
         {
-            var book = XmlImporter.ImportWorkbook(EditorUtil.XmlPath(OtherGameMasterData.DataPath));
+            var book = XmlImporter.ImportWorkbook(EditorUtil.XmlPath(OtherGameMasterData.c_DataName, OtherGameMasterData.c_DataName));
 
             var OtherGameDataList = new List<OtherGameMasterData.Record>();
 
@@ -105,7 +105,7 @@ namespace Tarahiro.OtherGame.Editor
             }
 
             // データ出力
-            XmlImporter.ExportOrderedDictionary<OtherGameMasterData, OtherGameMasterData.Record, IMasterDataRecord<IOtherGameMaster>>(MasterDataConst.DataPath + OtherGameMasterData.DataPath, OtherGameDataList);
+            XmlImporter.ExportOrderedDictionary<OtherGameMasterData, OtherGameMasterData.Record, IMasterDataRecord<IOtherGameMaster>>(MasterDataConst.DataPath + OtherGameMasterData.c_DataName, OtherGameDataList);
         }
     }
 #endif

@@ -3,6 +3,7 @@ using UnityEngine;
 using Tarahiro.MasterData;
 using gaw241201;
 using gaw241201.Model;
+using Tarahiro;
 
 namespace gaw241201.Model.MasterData
 {
@@ -13,8 +14,9 @@ namespace gaw241201.Model.MasterData
     //"Template" を置換
     public class ConversationMasterDataProvider : MasterDataProvider<ConversationMasterData.Record,IMasterDataRecord<IConversationMaster>>, IConversationMasterDataProvider
     {
-        public ConversationMasterDataProvider(string fileName) : base(fileName)
+        public ConversationMasterDataProvider() : base()
         {
+            Load(ConversationMasterData.c_DataName);
         }
     }
 }

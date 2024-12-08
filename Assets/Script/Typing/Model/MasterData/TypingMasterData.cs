@@ -16,7 +16,7 @@ namespace gaw241201.Model.MasterData
     //ITemplateMasterに合わせてフィールドを追加
     public class TypingMasterData : MasterDataOrderedDictionary<TypingMasterData.Record, IMasterDataRecord<ITypingMaster>>
     {
-        public static string DataPath => "Typing";
+        public const string c_DataName = "Typing";
 
         [Serializable]
         public class Record : IMasterDataRecord<ITypingMaster>, ITypingMaster

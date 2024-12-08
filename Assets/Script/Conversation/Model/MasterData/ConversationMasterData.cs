@@ -16,7 +16,7 @@ namespace gaw241201.Model.MasterData
     //ITemplateMasterに合わせてフィールドを追加
     public class ConversationMasterData : MasterDataOrderedDictionary<ConversationMasterData.Record, IMasterDataRecord<IConversationMaster>>
     {
-        public const string c_DataPath = "Data/Conversation";
+        public const string c_DataName = "Conversation";
 
         [Serializable]
         public class Record : IMasterDataRecord<IConversationMaster>, IConversationMaster

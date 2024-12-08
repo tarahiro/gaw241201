@@ -12,10 +12,10 @@ namespace gaw241201
 {
     public class FlowSwitchArgs_Fake
     {
-        public FlowConst.FlowName FlowName { get; set; }
+        public FlowMasterConst.FlowMasterLabel FlowName { get; set; }
         public string InitialFlowId {  get; set; }
 
-        public FlowSwitchArgs_Fake(FlowConst.FlowName flowName, string initialFlowId)
+        public FlowSwitchArgs_Fake(FlowMasterConst.FlowMasterLabel flowName, string initialFlowId)
         {
             FlowName = flowName;
             InitialFlowId = initialFlowId;

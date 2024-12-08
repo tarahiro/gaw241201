@@ -16,7 +16,7 @@ namespace gaw241201.Model.MasterData
     //ITemplateMasterに合わせてフィールドを追加
     public class TemplateMasterData : MasterDataOrderedDictionary<TemplateMasterData.Record, IMasterDataRecord<ITemplateMaster>>
     {
-        public const string DataPath = "Template";
+        public const string c_DataName = "Template";
 
         [Serializable]
         public class Record : IMasterDataRecord<ITemplateMaster>, ITemplateMaster

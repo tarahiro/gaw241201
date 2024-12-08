@@ -36,11 +36,11 @@ namespace gaw241201
 
             if (_globalFlagProvider.GetFlag(FlagConst.Key.IsSaveDataExist) == "False")
             {
-                EnterFlowLoop(FlowConst.FlowName.MainFlow);
+                EnterFlowLoop(FlowMasterConst.FlowMasterLabel.MainFlow);
             }
             else
             {
-                EnterFlowLoop(FlowConst.FlowName.SaveDataExistFlow);
+                EnterFlowLoop(FlowMasterConst.FlowMasterLabel.SaveDataExistFlow);
             }
         }
 
@@ -54,17 +54,17 @@ namespace gaw241201
             EnterFlowLoop(_args.FlowName, _args.InitialFlowId);
         }
 
-        void EnterFlowLoop(FlowConst.FlowName flowName, string specificId = "")
+        void EnterFlowLoop(FlowMasterConst.FlowMasterLabel flowName, string specificId = "")
         {
             _cancellationTokenSource = new CancellationTokenSource();
             FlowLoop(flowName, _cancellationTokenSource.Token, specificId).Forget();
         }
 
-        async UniTask FlowLoop(FlowConst.FlowName flowName, CancellationToken cancellationToken, string specificId)
+        async UniTask FlowLoop(FlowMasterConst.FlowMasterLabel flowName, CancellationToken cancellationToken, string specificId)
         {
             Log.Comment("フローループ開始");
 
-            var _provider = _masterDataDictionaryProvider.GetProvider(flowName.ToString());
+            var _provider = _masterDataDictionaryProvider.GetProvider(flowName);
 
 
             int firstId = 0;

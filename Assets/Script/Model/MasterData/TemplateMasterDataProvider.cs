@@ -13,8 +13,9 @@ namespace gaw241201.Model.MasterData
     //"Template" を置換
     public class TemplateMasterDataProvider : MasterDataProvider<TemplateMasterData.Record, IMasterDataRecord<ITemplateMaster>>, ITemplateMasterDataProvider
     {
-        public TemplateMasterDataProvider(string fileName) : base(fileName)
+        public TemplateMasterDataProvider() : base()
         {
+            Load(TemplateMasterData.c_DataName);
         }
     }
 }

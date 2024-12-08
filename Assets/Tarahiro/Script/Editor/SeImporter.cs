@@ -43,7 +43,7 @@ namespace Tarahiro.Editor
 
         public static void Import()
         {
-            var book = XmlImporter.XmlImporter.ImportWorkbook(EditorUtil.XmlPath(SeMasterData.DataPath));
+            var book = XmlImporter.XmlImporter.ImportWorkbook(EditorUtil.XmlPath(SeMasterData.c_DataName, SeMasterData.c_DataName));
 
             var SeDataList = new List<SeMasterData.Record>();
 
@@ -69,7 +69,7 @@ namespace Tarahiro.Editor
             }
 
             // データ出力
-            XmlImporter.XmlImporter.ExportOrderedDictionary<SeMasterData, SeMasterData.Record, IMasterDataRecord<ISeMaster>>(MasterDataConst.DataPath + SeMasterData.DataPath, SeDataList);
+            XmlImporter.XmlImporter.ExportOrderedDictionary<SeMasterData, SeMasterData.Record, IMasterDataRecord<ISeMaster>>(MasterDataConst.DataPath + SeMasterData.c_DataName, SeDataList);
         }
     }
 #endif

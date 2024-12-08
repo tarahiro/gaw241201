@@ -13,8 +13,9 @@ namespace gaw241201.Model.MasterData
     //"Template" を置換
     public class TypingMasterDataProvider : MasterDataProvider<TypingMasterData.Record, IMasterDataRecord<ITypingMaster>>, ITypingMasterDataProvider
     {
-        public TypingMasterDataProvider(string fileName) : base(fileName)
+        public TypingMasterDataProvider() : base()
         {
+            Load(TypingMasterData.c_DataName);
         }
     }
 }

@@ -9,6 +9,8 @@ using gaw241201;
 using gaw241201.Model;
 using gaw241201.Model.MasterData;
 using System.IO;
+using Tarahiro.Editor;
+using System;
 
 namespace gaw241201.Editor
 {
@@ -22,9 +24,7 @@ namespace gaw241201.Editor
     //ITemplateMasterに合わせてフィールドを追加
     internal sealed class FlowImporter
     {
-        const string c_XmlPathPrefix = "ImportData/Flow/";
         const string c_XmlPathSuffix = ".xml";
-        const string c_SheetName = "Script";
         enum Columns
         {
             Index = 0,
@@ -53,18 +53,18 @@ namespace gaw241201.Editor
 
         public static void Import()
         {
-            var files = Directory.GetFiles(c_XmlPathPrefix, "*" + c_XmlPathSuffix, SearchOption.TopDirectoryOnly);
-
-            foreach (var file in files)
+            foreach (FlowMasterConst.FlowMasterLabel v in Enum.GetValues(typeof(FlowMasterConst.FlowMasterLabel)))
             {
+                string file = EditorUtil.XmlPath(FlowMasterData.c_DataName, v.ToString());
+
                 var book = XmlImporter.ImportWorkbook(file);
 
                 var FlowDataList = new List<FlowMasterData.Record>();
 
-                var sheet = book.TryGetWorksheet(c_SheetName);
+                var sheet = book.TryGetWorksheet(EditorConst.c_SheetName);
                 if (sheet == null)
                 {
-                    Log.DebugWarning($"シート: {c_SheetName} が見つかりませんでした。");
+                    Log.DebugWarning($"シート: {EditorConst.c_SheetName} が見つかりませんでした。");
                 }
                 else
                 {
@@ -87,7 +87,7 @@ namespace gaw241201.Editor
 
                 // データ出力
                 XmlImporter.ExportOrderedDictionary<FlowMasterData, FlowMasterData.Record, IMasterDataRecord<IFlowMaster>>(
-                    "Data/Flow/" + file.Replace(c_XmlPathPrefix,"").Replace(c_XmlPathSuffix,""),
+                    MasterDataConst.DataPath + FlowMasterData.c_DataName + "/" + v.ToString(),
                     FlowDataList);
             }
         }

@@ -16,11 +16,11 @@ namespace gaw241201.Model.MasterData
     //ITemplateMasterに合わせてフィールドを追加
     public class FlowMasterData : MasterDataOrderedDictionary<FlowMasterData.Record, IMasterDataRecord<IFlowMaster>>
     {
+        public const string c_DataName = "Flow";
 
         [Serializable]
         public class Record : IMasterDataRecord<IFlowMaster>, IFlowMaster
         {
-            public static string DataPath => "Flow";
             public Record(int index, string id)
             {
                 m_Index = index;

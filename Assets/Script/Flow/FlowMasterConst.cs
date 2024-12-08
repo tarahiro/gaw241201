@@ -1,5 +1,4 @@
 using Cysharp.Threading.Tasks;
-using gaw241201.Model;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -11,8 +10,14 @@ using VContainer.Unity;
 
 namespace gaw241201
 {
-    public interface IFlowMasterDataDictionaryProvider
+    public static class FlowMasterConst
     {
-        public IFlowMasterDataProvider GetProvider(FlowMasterConst.FlowMasterLabel key);
+        public enum FlowMasterLabel
+        {
+            MainFlow,
+            TrueEndFlow,
+            SaveDataExistFlow,
+            ScreenShotFlow,
+        }
     }
 }

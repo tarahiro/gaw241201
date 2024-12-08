@@ -50,7 +50,7 @@ namespace gaw241201.Editor
 
         public static void Import()
         {
-            var book = XmlImporter.ImportWorkbook(EditorUtil.XmlPath(TypingMasterData.DataPath));
+            var book = XmlImporter.ImportWorkbook(EditorUtil.XmlPath(TypingMasterData.c_DataName, TypingMasterData.c_DataName));
 
             var TypingDataList = new List<TypingMasterData.Record>();
 
@@ -78,7 +78,7 @@ namespace gaw241201.Editor
             }
 
             // データ出力
-            XmlImporter.ExportOrderedDictionary<TypingMasterData, TypingMasterData.Record, IMasterDataRecord<ITypingMaster>>(MasterDataConst.DataPath + TypingMasterData.DataPath, TypingDataList);
+            XmlImporter.ExportOrderedDictionary<TypingMasterData, TypingMasterData.Record, IMasterDataRecord<ITypingMaster>>(MasterDataConst.DataPath + TypingMasterData.c_DataName, TypingDataList);
         }
     }
 #endif

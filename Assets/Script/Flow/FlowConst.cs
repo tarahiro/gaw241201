@@ -27,12 +27,5 @@ namespace gaw241201
             StartMonitor
         }
 
-        public enum FlowName
-        {
-            MainFlow,
-            TrueEndFlow,
-            SaveDataExistFlow,
-            ScreenShotFlow
-        }
     }
 }

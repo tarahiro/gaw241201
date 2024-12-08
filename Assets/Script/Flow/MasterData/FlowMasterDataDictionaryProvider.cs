@@ -15,11 +15,11 @@ namespace gaw241201
 {
     public class FlowMasterDataDictionaryProvider : IFlowMasterDataDictionaryProvider
     {
-        Dictionary<string, IFlowMasterDataProvider> _dictionary;
+        Dictionary<FlowMasterConst.FlowMasterLabel, IFlowMasterDataProvider> _dictionary;
         const string c_assetSuffix = ".asset";
 
         public FlowMasterDataDictionaryProvider() {
-            _dictionary = new Dictionary<string, IFlowMasterDataProvider>();
+            _dictionary = new Dictionary<FlowMasterConst.FlowMasterLabel, IFlowMasterDataProvider>();
             /*
             string prefix = ResourceUtil.ResourcePath() + FlowMasterData.c_DataPathPrefix;
             var files = Directory.GetFiles(prefix, "*" + c_assetSuffix, SearchOption.TopDirectoryOnly);
@@ -30,13 +30,19 @@ namespace gaw241201
                 _dictionary.Add(fileName, new FlowMasterDataProvider(item.Replace(ResourceUtil.ResourcePath(),"").Replace(c_assetSuffix,"")));
             }
             */
-            _dictionary.Add("MainFlow", new FlowMasterDataProvider("Data/Flow/MainFlow"));
-            _dictionary.Add("TrueEndFlow", new FlowMasterDataProvider("Data/Flow/TrueEndFlow"));
-            _dictionary.Add("SaveDataExistFlow", new FlowMasterDataProvider("Data/Flow/SaveDataExistFlow"));
-            _dictionary.Add("ScreenShotFlow", new FlowMasterDataProvider("Data/Flow/ScreenShotFlow"));
+
+            foreach(FlowMasterConst.FlowMasterLabel v in Enum.GetValues(typeof(FlowMasterConst.FlowMasterLabel)))
+            {
+                AddToDictionary(v);
+            }
         }
 
-        public IFlowMasterDataProvider GetProvider(string key)
+        void AddToDictionary(FlowMasterConst.FlowMasterLabel label)
+        {
+            _dictionary.Add(label, new FlowMasterDataProvider(FlowMasterData.c_DataName + "/" + label.ToString()));
+        }
+
+        public IFlowMasterDataProvider GetProvider(FlowMasterConst.FlowMasterLabel key)
         {
             return _dictionary[key];
         }

@@ -15,10 +15,15 @@ namespace Tarahiro.MasterData
 
 
         [Inject]
-        public MasterDataProvider(string filepath)
+        public MasterDataProvider()
         {
-            Log.Comment(filepath + "のData読み込み");
-            m_Dictionary = ResourceUtil.GetResource<MasterDataOrderedDictionary<DataType, InterfaceType>>(filepath);
+        }
+
+        protected void Load(string filePath)
+        {
+            string path = MasterDataConst.DataPath + filePath;
+            Log.Comment(path + "のData読み込み");
+            m_Dictionary = ResourceUtil.GetResource<MasterDataOrderedDictionary<DataType, InterfaceType>>(path);
         }
 
         public InterfaceType TryGetFromIndex(int index)
