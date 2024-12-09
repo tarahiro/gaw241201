@@ -19,6 +19,7 @@ namespace gaw241201
             SaveDataExistFlow,
             ScreenShotFlow,
             TypingTestFlow,
+            FreeInputTestFlow,
         }
     }
 }

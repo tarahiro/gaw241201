@@ -15,6 +15,7 @@ namespace gaw241201
         void EnterMainLoop();
 #if ENABLE_DEBUG
         void EnterTypingTestFlow();
+        void FreeInputTestFlow();
 #endif
     }
 }

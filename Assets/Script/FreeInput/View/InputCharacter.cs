@@ -24,10 +24,10 @@ namespace gaw241201.View
         CancellationTokenSource _cancellationTokenSource;
 
 
-        public void SetCharacter(string s)
+        public void SetCharacter(char c)
         {
             SoundManager.PlaySE("Key");
-            _tmp.text = s[0].ToString();
+            _tmp.text = c.ToString();
         }
 
         public void ClearCharacter()

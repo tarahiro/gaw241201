@@ -15,47 +15,46 @@ namespace gaw241201.View
     {
         protected override string defaultValue { get; set; } = "000000";
 
-        protected override bool IsMainKeyListContains(int index, KeyCode key)
+        protected override bool IsInputCharValid(int index, char key)
         {
-            if (TryGetStringFromInput(key, out var s))
+            var i = char.GetNumericValue(key);
+            if (i >= 0)
             {
-                if (int.TryParse(s, out var i))
+                switch (index)
                 {
-                    switch (index)
-                    {
-                        case 0:
-                            return i <= 2;
+                    case 0:
+                        return i <= 2;
 
-                        case 1:
-                            _inputCharacterList[index - 1].TryGetCharacter(out var c);
-                            if (int.Parse(c.ToString()) < 2)
-                            {
-                                return true;
-                            }
-                            else
-                            {
-                                return i <= 3;
-                            }
-
-                        case 2:
-                            return i <= 5;
-
-                        case 3:
+                    case 1:
+                        _inputCharacterList[index - 1].TryGetCharacter(out var c);
+                        if (int.Parse(c.ToString()) < 2)
+                        {
                             return true;
+                        }
+                        else
+                        {
+                            return i <= 3;
+                        }
 
-                        case 4:
-                            return i <= 5;
+                    case 2:
+                        return i <= 5;
 
-                        case 5:
-                            return true;
+                    case 3:
+                        return true;
 
-                        default:
-                            Log.DebugLog("不正な値です");
-                            return false;
+                    case 4:
+                        return i <= 5;
 
-                    }
+                    case 5:
+                        return true;
+
+                    default:
+                        Log.DebugLog("不正な値です");
+                        return false;
+
                 }
             }
+            Log.DebugLog("不正な値です");
             return false;
         }
 

@@ -24,7 +24,8 @@ namespace gaw241201
 
             Log.Comment("メインループ開始");
             //_flowHundler.EnterMainLoop();
-            _flowHundler.EnterTypingTestFlow();
+            // _flowHundler.EnterTypingTestFlow();
+            _flowHundler.FreeInputTestFlow();
         }
     }
 }

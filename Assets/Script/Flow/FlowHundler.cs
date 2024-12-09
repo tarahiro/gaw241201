@@ -50,6 +50,11 @@ namespace gaw241201
             SoundManager.PlayBGM("Main");
             EnterFlowLoop(FlowMasterConst.FlowMasterLabel.TypingTestFlow);
         }
+        public void FreeInputTestFlow()
+        {
+            SoundManager.PlayBGM("Main");
+            EnterFlowLoop(FlowMasterConst.FlowMasterLabel.FreeInputTestFlow);
+        }
 #endif
 
         public void SwitchFlow(FlowSwitchArgs_Fake _args)

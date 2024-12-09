@@ -1,4 +1,5 @@
 using Cysharp.Threading.Tasks;
+using NUnit.Framework;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -13,48 +14,45 @@ namespace gaw241201.View
     public class BirthDateFreeInput : FreeInputItemView
     {
         protected override string defaultValue { get; set; } = "190000";
-        protected override bool IsMainKeyListContains(int index, KeyCode key)
+        protected override bool IsInputCharValid(int index, char key)
         {
-            if (TryGetStringFromInput(key, out var s))
+            var i = char.GetNumericValue(key);
+            if (i >= 0)
             {
-                if (int.TryParse(s, out var i))
+                switch (index)
                 {
-                    switch (index)
-                    {
-                        case 0:
+                    case 0:
+                        return i <= 2;
+
+                    case 1:
+                        return true;
+
+                    case 2:
+                        return true;
+
+                    case 3:
+                        return true;
+
+                    case 4:
+                        return i <= 1;
+
+                    case 5:
+                        _inputCharacterList[index - 1].TryGetCharacter(out var c);
+                        if (int.Parse(c.ToString()) < 1)
+                        {
+                            return true;
+                        }
+                        else
+                        {
                             return i <= 2;
+                        }
 
-                        case 1:
-                            return true;
+                    case 6:
+                        return i <= 3;
 
-                        case 2:
-                            return true;
-
-                        case 3:
-                            return true;
-
-                        case 4:
-                            return i <= 1;
-
-                        case 5:
-                            _inputCharacterList[index - 1].TryGetCharacter(out var c);
-                            if (int.Parse(c.ToString()) < 1)
-                            {
-                                return true;
-                            }
-                            else
-                            {
-                                return i <= 2;
-                            }
-
-                        case 6:
-                            return i <= 3;
-
-                        default:
-                            Log.DebugLog("不正な値です");
-                            return false;
-                    }
-
+                    default:
+                        Log.DebugLog("不正な値です");
+                        return false;
                 }
 
             }

@@ -40,7 +40,7 @@ namespace gaw241201.View
         {
             return false;
         }
-        protected virtual bool IsMainKeyListContains(int index, KeyCode key)
+        protected virtual bool IsInputCharValid(int index, char c)
         {
             return true;
         }
@@ -90,42 +90,37 @@ namespace gaw241201.View
 
         void CheckInput()
         {
-            if (KeyInputUtil.TryGetKeyDown(out var key))
+            if (IsMainInputAccept())
             {
-                if (IsMainInputAccept())
+                for (int i = 0; i < Input.inputString.Length; i++)
                 {
+                    char c = Input.inputString[i];
+
                     Log.Comment("このクラスのキーリストに入ってるか確認");
-                    if (IsMainKeyListContains(_index, key))
+                    if (IsInputCharValid(_index, c))
                     {
-                        Log.Comment("このクラスのキーリストから文字列が取れるか確認");
-                        if (TryGetStringFromInput(key, out var s))
+                        _currentItem.SetCharacter(ConvertChar(c));
+                        if (_index < _inputCharacterList.Count)
                         {
-                            Log.Comment("有効なキー処理があったら対応");
-                            _currentItem.SetCharacter(s);
-                            if (_index < _inputCharacterList.Count)
-                            {
-                                TryGoNextCharacter();
-                            }
+                            TryGoNextCharacter();
                         }
                     }
                 }
-
-                if (_index > 0)
+            }
+            if (_index > 0)
+            {
+                if (KeyInputUtil.IsKeyDown(KeyCode.Backspace))
                 {
-                    if (key == KeyCode.Backspace)
-                    {
-                        GoBackCharacter();
-                    }
+                    GoBackCharacter();
                 }
+            }
 
-                if (IsAcceptEnter())
+            if (IsAcceptEnter())
+            {
+                if (KeyInputUtil.IsKeyDown(KeyCode.Return))
                 {
-                    if (key == KeyCode.Return)
-                    {
-                        EndLoop();
-                    }
+                    EndLoop();
                 }
-
             }
         }
 
@@ -203,8 +198,11 @@ namespace gaw241201.View
 
 
 
-        protected bool TryGetStringFromInput(KeyCode keyCode, out string s)
+        protected char ConvertChar(char c)
         {
+            return char.ToUpper(c);
+
+            /*
             switch (keyCode)
             {
                 case KeyCode.Alpha0: s = "0"; return true;
@@ -249,6 +247,7 @@ namespace gaw241201.View
                     s = "error";
                     return false;
             }
+            */
         }
     }
 }
