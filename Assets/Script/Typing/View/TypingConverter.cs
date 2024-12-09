@@ -14,20 +14,33 @@ namespace gaw241201.View
     {
         public bool TryConvertKeyCodeToChar(KeyCode key, out char c)
         {
+            if (Input.inputString.Length > 0)
+            {
+                Log.DebugLog(Input.inputString);
+                c = Input.inputString[0];
+            }
+            else
+            {
+                c = '\0';
+            }
+
+                /*
 
             if (KeyInputUtil.IsPressedShift())
             {
+
                 c = GetCharFromKeyCodeWithShift(key);
             }
             else
             {
                 c = GetCharFromKeyCode(key);
             }
+                */
 
             return c != '\0';
         }
 
-
+        /*
         char GetCharFromKeyCodeWithShift(KeyCode keyCode)
         {
             switch (keyCode)
@@ -48,7 +61,6 @@ namespace gaw241201.View
                     return '(';
                 case KeyCode.Alpha9:
                     return ')';
-
                 case KeyCode.Minus:
                     return '=';
                 case KeyCode.Caret:
@@ -184,9 +196,12 @@ namespace gaw241201.View
                     return '\r';
                 case KeyCode.Space:
                     return ' ';
+                case KeyCode.Equals:
+                    return '=';
                 default: //上記以外のキーが押された場合は「null文字」を返す。
                     return '\0';
             }
         }
+        */
     }
 }

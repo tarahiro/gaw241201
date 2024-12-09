@@ -26,6 +26,10 @@ namespace gaw241201.View
         public async UniTask Enter(TypingViewArgs args)
         {
             Log.Comment(args.SampleText + "ŠJŽn");
+
+            _questionTextGenerator.Initialize();
+
+
             _currentItem = Instantiate(ResourceUtil.GetResource<TypingItemView>(c_prefabPath), transform);
             _currentItem.Construct(args,_gazable, _keyInputJudger, _keyToCharConverter, _questionTextGenerator);
             args.CancellationToken.Register(OnExit);

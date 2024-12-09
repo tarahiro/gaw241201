@@ -12,6 +12,7 @@ namespace gaw241201.View
 {
     public interface IQuestionTextGenerator
     {
+        void Initialize();
         string GenerateQuestionText(List<char> questionCharList, int charIndex);
     }
 }

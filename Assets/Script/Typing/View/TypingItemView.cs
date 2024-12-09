@@ -86,13 +86,12 @@ namespace gaw241201.View
 
         void CheckInput()
         {
-            if (KeyInputUtil.TryGetKeyDown(out var key))
+            if (IsMainInputAccept())
             {
-                if (IsMainInputAccept())
+               
+                for (int i = 0; i < Input.inputString.Length; i++)
                 {
-                    _keyToCharConverter.TryConvertKeyCodeToChar(key,out char c);
-
-                    if (_keyInputJudger.IsKeyInputCorrect(c, _charIndex, _questionCharList))
+                    if (_keyInputJudger.IsKeyInputCorrect(Input.inputString[i], _charIndex, _questionCharList))
                     {
                         _charIndex++;
                         SoundManager.PlaySE("Key");
