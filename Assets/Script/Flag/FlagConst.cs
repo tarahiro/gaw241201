@@ -54,7 +54,7 @@ namespace gaw241201
                 case Key.Name: return "PLAYER";
                 case Key.NameLower: return "player";
                 case Key.BirthDate: return "BirthDate";
-                case Key.IsSaveDataExist: return "False";
+                case Key.IsSaveDataExist: return Tarahiro.Const.c_false;
 
                 default:
                     Log.DebugAssert(key + "‚Ì‰Šú’l‚ªw’è‚³‚ê‚Ä‚¢‚Ü‚¹‚ñ");

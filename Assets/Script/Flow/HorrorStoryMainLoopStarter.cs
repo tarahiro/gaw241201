@@ -20,7 +20,7 @@ namespace gaw241201
             SoundManager.PlayBGM("Main");
             _flowHundler.Enter();
 
-            if (_globalFlagProvider.GetFlag(FlagConst.Key.IsSaveDataExist) == "False")
+            if (_globalFlagProvider.GetFlag(FlagConst.Key.IsSaveDataExist) == Tarahiro.Const.c_false)
             {
                 _flowHundler.EnterFlowLoop(FlowMasterConst.FlowMasterLabel.MainFlow);
             }
