@@ -1,5 +1,10 @@
 using VContainer;
 using VContainer.Unity;
+using Tarahiro;
+using gaw241201.Model.MasterData;
+using gaw241201.Presenter;
+using gaw241201.View;
+using gaw241201.Model;
 
 namespace gaw241201.Inject
 {
@@ -7,6 +12,9 @@ namespace gaw241201.Inject
     {
         protected override void Configure(IContainerBuilder builder)
         {
+            //starter
+            builder.Register<TypingRoguelikeMainLoopStarter>(Lifetime.Singleton).AsSelf();
+
         }
     }
 }

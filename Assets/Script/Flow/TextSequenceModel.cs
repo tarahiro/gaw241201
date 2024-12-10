@@ -12,10 +12,10 @@ using VContainer.Unity;
 
 namespace gaw241201
 {
-    public abstract class TextSequenceModel<T> : IFlowModel where T : IIdentifiable, IIndexable,IGroupable
+    public abstract class TextSequenceModel<T> : IFlowModel where T : IIdentifiable, IIndexable,IGroupable 
     {
         [Inject] ModelArgsFactory<T> _modelArgsFactory;
-        [Inject] IMasterDataProvider<IMasterDataRecord<T>> _masterDataProvider;
+        [Inject] IGroupMasterGettable<T> _groupMasterGettable;
 
         CancellationTokenSource _cts = new CancellationTokenSource();
         Subject<ModelArgs<T>> _entered = new Subject<ModelArgs<T>>();
@@ -29,16 +29,7 @@ namespace gaw241201
             Log.Comment(bodyId + "のGroup開始");
 
             _cts = new CancellationTokenSource();
-            List<T> _thisGroup = new List<T>();
-
-            for (int i = 0; i < _masterDataProvider.Count; i++)
-            {
-                if (_masterDataProvider.TryGetFromIndex(i).GetMaster().Group == bodyId)
-                {
-                    _thisGroup.Add(_masterDataProvider.TryGetFromIndex(i).GetMaster());
-                }
-            }
-
+            List<T> _thisGroup = _groupMasterGettable.GetGroupMaster(bodyId);
 
             for (int i = 0; i < _thisGroup.Count && !_cts.IsCancellationRequested; i++)
             {
@@ -52,7 +43,7 @@ namespace gaw241201
             Log.Comment(bodyId + "のGroup終了");
         }
 
-        public void EndSIngle()
+        public void EndSingle()
         {
             Log.Comment("終了を検知");
             _isEnded = true;

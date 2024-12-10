@@ -24,7 +24,7 @@ namespace gaw241201.Presenter
         public void PostInitialize()
         {
             _model.Entered.Subscribe(x =>  _view.EnterConversation(_viewArgsFactory.Create(x)).Forget()).AddTo(_disposable);
-            _view.Completed.Subscribe(x => _model.EndSIngle()).AddTo(_disposable);
+            _view.Completed.Subscribe(x => _model.EndSingle()).AddTo(_disposable);
         }
     }
 }

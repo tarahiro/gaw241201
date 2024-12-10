@@ -12,10 +12,10 @@ using gaw241201.View;
 
 namespace gaw241201.Presenter
 {
-    public class TypingPresenter : IPostInitializable
+    public class TypingRoguelikePresetner : IPostInitializable
     {
-        [Inject] TypingModel _model;
-        [Inject] TypingView _view;
+        [Inject] TypingRoguelikeModel _model;
+        [Inject] TypingRoguelikeView _view;
         [Inject] TypingViewArgsFactory _argsFactory;
 
         CompositeDisposable _disposable = new CompositeDisposable();

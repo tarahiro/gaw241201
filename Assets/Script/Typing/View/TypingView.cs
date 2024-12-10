@@ -32,11 +32,15 @@ namespace gaw241201.View
 
             _currentItem = Instantiate(ResourceUtil.GetResource<TypingItemView>(c_prefabPath), transform);
             _currentItem.Construct(args,_gazable, _keyInputJudger, _keyToCharConverter, _questionTextGenerator);
-            args.CancellationToken.Register(OnExit);
+            var v = args.CancellationToken.Register(OnExit);
 
             await _currentItem.Enter(args.CancellationToken);
 
-            OnExit();
+            v.Dispose();
+            if (!args.CancellationToken.IsCancellationRequested)
+            {
+                OnExit();
+            }
         }
 
         private void OnExit()

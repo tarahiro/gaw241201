@@ -22,7 +22,7 @@ namespace gaw241201
 
             if (_globalFlagProvider.GetFlag(FlagConst.Key.IsSaveDataExist) == Tarahiro.Const.c_false)
             {
-                _flowHundler.EnterFlowLoop(FlowMasterConst.FlowMasterLabel.MainFlow);
+                _flowHundler.EnterFlowLoop(FlowMasterConst.FlowMasterLabel.HorrorStoryMainFlow);
             }
             else
             {
