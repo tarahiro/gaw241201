@@ -23,11 +23,11 @@ namespace gaw241201.Inject
             //TypingRoguelike
             builder.Register<TypingRoguelikeModel>(Lifetime.Singleton).AsSelf();
             builder.Register<TypingRoguelikeMasterDataProvider>(Lifetime.Singleton).AsImplementedInterfaces();
-            builder.Register<MergedGroupMasterGetter<ITypingMaster, ITypingRoguelikeMaster>>(Lifetime.Singleton).AsImplementedInterfaces();
-            builder.RegisterComponentInHierarchy<TypingRoguelikeView>().AsSelf();
+         //   builder.Register<MergedGroupMasterGetter<ITypingMaster, ITypingRoguelikeMaster>>(Lifetime.Singleton).AsImplementedInterfaces();
+            builder.Register<TypingRoguelikeView>(Lifetime.Singleton).AsSelf();
 
             //Manager
-            builder.Register<AdapterFactory<TypingRoguelikeMainLoopStarter,SaveDataManager>>(Lifetime.Singleton).WithParameter<LifetimeScope[]>(FindObjectsOfType<LifetimeScope>).AsImplementedInterfaces();
+            builder.Register<AdapterFactory<TypingTestStarter,SaveDataManager>>(Lifetime.Singleton).WithParameter<LifetimeScope[]>(FindObjectsOfType<LifetimeScope>).AsImplementedInterfaces();
 
             //Flow
             builder.Register<FlowHundler>(Lifetime.Singleton).AsSelf().AsImplementedInterfaces();
@@ -83,11 +83,11 @@ namespace gaw241201.Inject
             builder.Register<TypingMasterDataProvider>(Lifetime.Singleton).AsImplementedInterfaces();
             builder.Register<ModelArgsFactory<ITypingMaster>>(Lifetime.Singleton).AsSelf();
             builder.Register<TypingViewArgsFactory>(Lifetime.Singleton).AsSelf();
-            builder.RegisterComponentInHierarchy<TypingView>().AsSelf();
+            builder.Register<TypingView>(Lifetime.Singleton).AsSelf();
+            builder.RegisterComponentInHierarchy<TypingItemView>().AsSelf();
             builder.Register<RomanKeyInputJudger>(Lifetime.Singleton).AsImplementedInterfaces();
-            builder.Register<TypingConverter>(Lifetime.Singleton).AsImplementedInterfaces();
             builder.Register<QusetionTextGenerator>(Lifetime.Singleton).AsImplementedInterfaces();
-          //  builder.Register<SimpleGroupMasterGetter<ITypingMaster>>(Lifetime.Singleton).AsImplementedInterfaces();
+            builder.Register<SimpleGroupMasterGetter<ITypingMaster>>(Lifetime.Singleton).AsImplementedInterfaces();
 
             //DeleteUi
             builder.Register<DeleteUiModel>(Lifetime.Singleton).AsSelf();

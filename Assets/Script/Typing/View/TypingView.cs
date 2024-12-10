@@ -12,29 +12,22 @@ namespace gaw241201.View
 {
     public class TypingView : MonoBehaviour
     {
-        [Inject] IGazable _gazable;
-        [Inject] IKeyInputJudger _keyInputJudger;
-        [Inject] IKeyCodeToCharConverter _keyToCharConverter;
-        [Inject] IQuestionTextGenerator _questionTextGenerator;
-
-        TypingItemView _currentItem;
-        const string c_prefabPath = "Prefab/Typing/TypingItemView";
+        [Inject] TypingItemView _currentItem;
 
         Subject<Unit> _exited = new Subject<Unit>();
         public IObservable<Unit> Exited => _exited;
+
+        public void Initialize()
+        {
+            _currentItem.Initialize();
+        }
 
         public async UniTask Enter(TypingViewArgs args)
         {
             Log.Comment(args.SampleText + "ŠJŽn");
 
-            _questionTextGenerator.Initialize();
-
-
-            _currentItem = Instantiate(ResourceUtil.GetResource<TypingItemView>(c_prefabPath), transform);
-            _currentItem.Construct(args,_gazable, _keyInputJudger, _keyToCharConverter, _questionTextGenerator);
             var v = args.CancellationToken.Register(OnExit);
-
-            await _currentItem.Enter(args.CancellationToken);
+            await _currentItem.Enter(args);
 
             v.Dispose();
             if (!args.CancellationToken.IsCancellationRequested)
@@ -45,7 +38,6 @@ namespace gaw241201.View
 
         private void OnExit()
         {
-            Destroy(_currentItem.gameObject);
             _exited.OnNext(Unit.Default);
         }
     }

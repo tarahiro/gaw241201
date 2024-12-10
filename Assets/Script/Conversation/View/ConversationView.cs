@@ -37,7 +37,6 @@ namespace gaw241201.View
             ProcessConversationEffect<ConversationViewConst.Impression>((int)args.Impression, (int)ConversationViewConst.Impression.None, _prevArgs != null ? (int)_prevArgs.Impression : -1, _impressionChangable);
 
 
-
             await _textView.Enter(args.Message, args.CancellationToken);
 
             registration.Dispose();
