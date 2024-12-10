@@ -10,12 +10,9 @@ using VContainer.Unity;
 
 namespace gaw241201
 {
-    public interface IMainLoopHundler
+    public interface IFlowHundler
     {
-        void EnterMainLoop();
-#if ENABLE_DEBUG
-        void EnterTypingTestFlow();
-        void FreeInputTestFlow();
-#endif
+        void Enter();
+        void EnterFlowLoop(FlowMasterConst.FlowMasterLabel flowName, string specificId = "");
     }
 }

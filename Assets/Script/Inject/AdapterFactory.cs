@@ -10,13 +10,28 @@ using VContainer.Unity;
 
 namespace gaw241201.Inject
 {
-    public class AdapterFactory<T> : IAdapterFactory where T : IMainLoopHundler
+    public class AdapterFactory<T,U> : IAdapterFactory where T : IMainLoopStarter where U:ILoadable
     {
-        [Inject] HorrorStoryLifetimeScope _horrorStory;
+        [Inject] LifetimeScope[] _scope;
 
         public IAdapterManagerToModel Create()
         {
-            return new AdapterToModel(_horrorStory.Container.Resolve<T>(), _horrorStory.Container.Resolve<ILoadable>());
+            T _mainLoopHundler = default;
+            U _loadable = default;
+
+            foreach(var scope in _scope)
+            {
+                if(scope.Container.TryResolve<T>(out var mainLoopHundler))
+                {
+                    _mainLoopHundler = mainLoopHundler;
+                }
+                if (scope.Container.TryResolve<U>(out var loadable))
+                {
+                    _loadable = loadable;
+                }
+            }
+
+            return new AdapterToModel(_mainLoopHundler, _loadable);
         }
     }
 }

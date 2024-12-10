@@ -12,10 +12,10 @@ namespace gaw241201
 {
     public class AdapterToModel : IAdapterManagerToModel
     {
-        IMainLoopHundler _flowHundler;
+        IMainLoopStarter _flowHundler;
         ILoadable _loadable;
 
-        public AdapterToModel(IMainLoopHundler mainLoopHundler, ILoadable loadable)
+        public AdapterToModel(IMainLoopStarter mainLoopHundler, ILoadable loadable)
         {
             _flowHundler = mainLoopHundler;
             _loadable = loadable;
@@ -29,9 +29,7 @@ namespace gaw241201
             _loadable.Load();
 
             Log.Comment("メインループ開始");
-            //_flowHundler.EnterMainLoop();
-            // _flowHundler.EnterTypingTestFlow();
-            _flowHundler.FreeInputTestFlow();
+            _flowHundler.EnterMainLoop();
         }
     }
 }

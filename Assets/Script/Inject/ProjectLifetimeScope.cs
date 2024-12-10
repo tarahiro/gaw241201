@@ -11,7 +11,6 @@ namespace gaw241201.Inject
 {
     public class ProjectLifetimeScope : LifetimeScope
     {
-        [SerializeField] HorrorStoryLifetimeScope horrorStory;
 
         protected override void Configure(IContainerBuilder builder)
         {
@@ -22,7 +21,7 @@ namespace gaw241201.Inject
             builder.Register<PlatformInfoProvider>(Lifetime.Singleton).AsSelf();
 
             //Manager
-            builder.Register<AdapterFactory<FlowHundler>>(Lifetime.Singleton).WithParameter(horrorStory).AsImplementedInterfaces();
+            builder.Register<AdapterFactory<HorrorStoryMainLoopStarter,SaveDataManager>>(Lifetime.Singleton).WithParameter<LifetimeScope[]>(FindObjectsOfType<LifetimeScope>).AsImplementedInterfaces();
         }
     }
 }

@@ -15,7 +15,7 @@ namespace gaw241201.View
     public class WaitEffectItemView :MonoBehaviour, IEffectItemView
     {
         // const float c_waitTime = .5f
-        const float c_waitTime = 5f;
+        const float c_waitTime = .5f;
         public bool IsAutoEnd => true;
         public virtual async UniTask Enter(CancellationToken cancellationToken)
         {

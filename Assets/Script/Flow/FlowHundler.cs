@@ -12,7 +12,7 @@ using VContainer.Unity;
 
 namespace gaw241201
 {
-    public class FlowHundler : IMainLoopHundler
+    public class FlowHundler : IFlowHundler
     {
         [Inject] IFlowMasterDataDictionaryProvider _masterDataDictionaryProvider;
         [Inject] IFlowProvider _flowProvider;
@@ -25,37 +25,12 @@ namespace gaw241201
         CancellationTokenSource _cancellationTokenSource;
 
         Subject<Unit> _onFlowExited = new Subject<Unit> ();
-        IObservable<Unit> OnFlowExited => _onFlowExited;
 
-        public void EnterMainLoop()
+        public void Enter()
         {
-            SoundManager.PlayBGM("Main");
-
-            //Fake
-            _flowSwitchable.SwitchFlow.Subscribe(args =>  ReserveNextFlow(args,SwitchFlow));
-
-            if (_globalFlagProvider.GetFlag(FlagConst.Key.IsSaveDataExist) == "False")
-            {
-                EnterFlowLoop(FlowMasterConst.FlowMasterLabel.MainFlow);
-            }
-            else
-            {
-                EnterFlowLoop(FlowMasterConst.FlowMasterLabel.SaveDataExistFlow);
-            }
+            _flowSwitchable.SwitchFlow.Subscribe(args => ReserveNextFlow(args, SwitchFlow));
         }
 
-#if ENABLE_DEBUG
-        public void EnterTypingTestFlow()
-        {
-            SoundManager.PlayBGM("Main");
-            EnterFlowLoop(FlowMasterConst.FlowMasterLabel.TypingTestFlow);
-        }
-        public void FreeInputTestFlow()
-        {
-            SoundManager.PlayBGM("Main");
-            EnterFlowLoop(FlowMasterConst.FlowMasterLabel.FreeInputTestFlow);
-        }
-#endif
 
         public void SwitchFlow(FlowSwitchArgs_Fake _args)
         {
@@ -67,7 +42,7 @@ namespace gaw241201
             EnterFlowLoop(_args.FlowName, _args.InitialFlowId);
         }
 
-        void EnterFlowLoop(FlowMasterConst.FlowMasterLabel flowName, string specificId = "")
+        public void EnterFlowLoop(FlowMasterConst.FlowMasterLabel flowName, string specificId = "")
         {
             _cancellationTokenSource = new CancellationTokenSource();
             FlowLoop(flowName, _cancellationTokenSource.Token, specificId).Forget();

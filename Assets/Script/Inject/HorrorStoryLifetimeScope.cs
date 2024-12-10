@@ -15,7 +15,7 @@ namespace gaw241201.Inject
             Log.Comment("HorrorStoryLifetimeScope‚Ì“o˜^ŠJŽn");
 
             //Save
-            builder.Register<SaveDataManager>(Lifetime.Singleton).AsImplementedInterfaces();
+            builder.Register<SaveDataManager>(Lifetime.Singleton).AsSelf().AsImplementedInterfaces();
             builder.Register<SaveData>(Lifetime.Singleton).AsSelf();
 
             //Eyes
@@ -103,6 +103,10 @@ namespace gaw241201.Inject
             builder.Register<RowKeyReplacer>(Lifetime.Singleton).AsSelf();
             builder.Register<DeviceLowerKeyReplacer>(Lifetime.Singleton).AsSelf();
             builder.Register<DeviceKeyReplacer>(Lifetime.Singleton).AsSelf();
+
+            builder.Register<HorrorStoryMainLoopStarter>(Lifetime.Singleton).AsSelf();
+            builder.Register<TypingTestStarter>(Lifetime.Singleton).AsSelf();
+            builder.Register<FreeInputTestStarter>(Lifetime.Singleton).AsSelf();
 
             //Flag
             builder.Register<GlobalFlagContainer>(Lifetime.Singleton).AsImplementedInterfaces();

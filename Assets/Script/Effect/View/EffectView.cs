@@ -29,17 +29,24 @@ namespace gaw241201.View
             Log.DebugLog(args.Key + "‚ÌEffectViewŠJŽn");
 
             var item = _itemFactory.Create(args.Key,transform);
-            args.CancellationToken.Register(() => _enterExited.OnNext(Unit.Default));
+            args.CancellationToken.Register(() => Exit(item,args).Forget());
             _itemDictionary.Add(args.Key, item);
 
             await item.Enter(args.CancellationToken);
 
+            await Exit(item, args);
+
+        }
+
+        async UniTask Exit(IEffectItemView item, EffectArgs args)
+        {
             if (item.IsAutoEnd)
             {
                 await EndItem(args);
             }
 
             _enterExited.OnNext(Unit.Default);
+
         }
 
         public async UniTask End(EffectArgs args)
