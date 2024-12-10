@@ -17,8 +17,8 @@ namespace gaw241201.View
     public class TypingItemView : MonoBehaviour
     {
         [Inject] IGazable _gazable;
-        [SerializeField] private TextMeshProUGUI _tmpSample; // ここに日本語表示のTextMeshProをアタッチする。
-        [SerializeField] private TextMeshProUGUI _tmpQuestion; // ここにローマ字表示のTextMeshProをアタッチする。
+        [SerializeField] private TextMeshProUGUI _tmpSample; 
+        [SerializeField] private TextMeshProUGUI _tmpQuestion; 
 
         public void ResetText()
         {

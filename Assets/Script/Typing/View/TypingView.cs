@@ -18,12 +18,9 @@ namespace gaw241201.View
         [Inject] TypingItemView _item;
         TypingViewArgs _viewArgsList;
 
-
         private readonly List<char> _questionCharList = new List<char>();
 
         private int _charIndex;
-        bool _isWindows = true;
-        bool _isMac = false;
         bool _isEndLoop = false;
 
         Subject<Unit> _exited = new Subject<Unit>();
@@ -56,16 +53,12 @@ namespace gaw241201.View
 
         private void OnExit()
         {
-            Log.Comment("TypingItemView‚ÌI—¹ˆ—");
             _item.ResetText();
             _exited.OnNext(Unit.Default);
         }
 
         void InitializeQuestion()
         {
-            Log.Comment("TypingItemView‚ÌI—¹ˆ—");
-
-
             //‰Šú‰»
             _questionCharList.Clear();
             _charIndex = 0;
