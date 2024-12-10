@@ -7,7 +7,6 @@ using Tarahiro;
 using VContainer;
 using VContainer.Unity;
 using UniRx;
-using gaw241201.Model;
 using gaw241201.View;
 
 

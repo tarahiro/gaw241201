@@ -30,7 +30,7 @@ namespace Tarahiro.OtherGame.Inject
                     return instance;
                 };
             }, Lifetime.Scoped);
-            builder.Register<OtherGameModel>(Lifetime.Singleton).AsImplementedInterfaces();
+            builder.Register<OtherGameModel>(Lifetime.Singleton).WithParameter("Test").AsImplementedInterfaces();
             builder.RegisterComponentInHierarchy<OtherGameAbstructView>().AsImplementedInterfaces();
             builder.RegisterComponentInHierarchy<OtherGameMenuView>().AsImplementedInterfaces();
             builder.RegisterComponentInHierarchy<OtherGameDetailView>().AsImplementedInterfaces();

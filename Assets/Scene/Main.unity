@@ -1790,6 +1790,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1360695887}
+  - component: {fileID: 1360695889}
   - component: {fileID: 1360695886}
   - component: {fileID: 1360695888}
   m_Layer: 0
@@ -1812,7 +1813,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parentReference:
-    TypeName: 
+    TypeName: gaw241201.Inject.ProjectLifetimeScope
   autoRun: 1
   autoInjectGameObjects:
   - {fileID: 1310494465}
@@ -1851,6 +1852,23 @@ MonoBehaviour:
     TypeName: 
   autoRun: 1
   autoInjectGameObjects: []
+--- !u!114 &1360695889
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1360695885}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8158f16b9bcf19f42a92db8c9361dcf9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parentReference:
+    TypeName: 
+  autoRun: 1
+  autoInjectGameObjects: []
+  horrorStory: {fileID: 1360695886}
 --- !u!1 &1455066587
 GameObject:
   m_ObjectHideFlags: 0

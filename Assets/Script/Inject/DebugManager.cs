@@ -20,13 +20,7 @@ namespace gaw241201.Inject
 
         public void Start()
         {
-            Log.DebugLog(SystemInfo.deviceName);
-            Log.DebugLog(SystemInfo.deviceModel);
-            Log.DebugLog(SystemInfo.deviceType);
-            Log.DebugLog(SystemInfo.graphicsDeviceName);
-            Log.DebugLog(SystemInfo.graphicsDeviceType);
-            Log.DebugLog(SystemInfo.graphicsDeviceVendor);
-            Log.DebugLog(SystemInfo.graphicsDeviceVersion);
+
         }
 
         public void Tick()

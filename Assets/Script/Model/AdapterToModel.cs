@@ -12,8 +12,14 @@ namespace gaw241201
 {
     public class AdapterToModel : IAdapterManagerToModel
     {
-        [Inject] IMainLoopHundler _flowHundler;
-        [Inject] ILoadable _loadable;
+        IMainLoopHundler _flowHundler;
+        ILoadable _loadable;
+
+        public AdapterToModel(IMainLoopHundler mainLoopHundler, ILoadable loadable)
+        {
+            _flowHundler = mainLoopHundler;
+            _loadable = loadable;
+        }
 
         public async UniTask Enter()
         {
