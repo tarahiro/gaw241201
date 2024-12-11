@@ -30,11 +30,11 @@ namespace gaw241201
             switch (_argsIndex)
             {
                 case 0:
-                    _switchFlow.OnNext(new FlowSwitchArgs_Fake(FlowMasterConst.FlowMasterLabel.MainFlow, "205000TypingConversation"));
+                    _switchFlow.OnNext(new FlowSwitchArgs_Fake(FlowMasterConst.FlowMasterLabel.HorrorStoryMainFlow, "205000TypingConversation"));
                     break;
 
                 case 1:
-                    _switchFlow.OnNext(new FlowSwitchArgs_Fake(FlowMasterConst.FlowMasterLabel.MainFlow, ""));
+                    _switchFlow.OnNext(new FlowSwitchArgs_Fake(FlowMasterConst.FlowMasterLabel.HorrorStoryMainFlow, ""));
                     break;
             }
         }

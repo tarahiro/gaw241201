@@ -12,8 +12,14 @@ namespace gaw241201
 {
     public class AdapterToModel : IAdapterManagerToModel
     {
-        [Inject] IMainLoopHundler _flowHundler;
-        [Inject] ILoadable _loadable;
+        IMainLoopStarter _flowHundler;
+        ILoadable _loadable;
+
+        public AdapterToModel(IMainLoopStarter mainLoopHundler, ILoadable loadable)
+        {
+            _flowHundler = mainLoopHundler;
+            _loadable = loadable;
+        }
 
         public async UniTask Enter()
         {
@@ -24,8 +30,6 @@ namespace gaw241201
 
             Log.Comment("メインループ開始");
             _flowHundler.EnterMainLoop();
-            //_flowHundler.EnterTypingTestFlow();
-            //_flowHundler.FreeInputTestFlow();
         }
     }
 }

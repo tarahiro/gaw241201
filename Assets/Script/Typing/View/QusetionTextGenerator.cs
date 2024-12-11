@@ -36,7 +36,6 @@ namespace gaw241201.View
             style = new List<TMP_Style>();
             style.Add(styleSheet.GetStyle(c_typedName));
             style.Add(styleSheet.GetStyle(c_untypedName));
-
         }
 
         public string GenerateQuestionText(List<char> questionCharList, int charIndex)

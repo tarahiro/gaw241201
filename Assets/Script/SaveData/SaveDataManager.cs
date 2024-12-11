@@ -35,12 +35,12 @@ namespace gaw241201
             if (!_provider.IsContainskey(FlagConst.Key.IsSaveDataExist))
             {
                 Log.Comment("セーブフラグ追加");
-                _registerer.RegisterFlag(FlagConst.Key.IsSaveDataExist, "True");
+                _registerer.RegisterFlag(FlagConst.Key.IsSaveDataExist, Tarahiro.Const.c_true);
             }
-            else if (_provider.GetFlag(FlagConst.Key.IsSaveDataExist) == "False")
+            else if (_provider.GetFlag(FlagConst.Key.IsSaveDataExist) == Tarahiro.Const.c_false)
             {
                 Log.Comment("セーブフラグ追加");
-                _registerer.RegisterFlag(FlagConst.Key.IsSaveDataExist, "True");
+                _registerer.RegisterFlag(FlagConst.Key.IsSaveDataExist, Tarahiro.Const.c_true);
             }
 
 

@@ -5,11 +5,13 @@ using gaw241201.Model.MasterData;
 using gaw241201.Presenter;
 using gaw241201.View;
 using gaw241201.Model;
+using UnityEngine;
 
 namespace gaw241201.Inject
 {
     public class ProjectLifetimeScope : LifetimeScope
     {
+
         protected override void Configure(IContainerBuilder builder)
         {
             Log.Comment("ProjectLifetimeScope‚Ì“o˜^ŠJŽn");
@@ -18,13 +20,32 @@ namespace gaw241201.Inject
             //Tarahiro
             builder.Register<PlatformInfoProvider>(Lifetime.Singleton).AsSelf();
 
-            //Save
-            builder.Register<SaveDataManager>(Lifetime.Singleton).AsImplementedInterfaces();
-            builder.Register<SaveData>(Lifetime.Singleton).AsSelf();
+            //TypingRoguelike
+            builder.Register<TypingRoguelikeModel>(Lifetime.Singleton).AsSelf();
+            builder.Register<TypingRoguelikeMasterDataProvider>(Lifetime.Singleton).AsImplementedInterfaces();
+            builder.Register<MergedGroupMasterGetter<ITypingMaster, ITypingRoguelikeMaster>>(Lifetime.Singleton).AsImplementedInterfaces();
+            builder.Register<TypingRoguelikeView>(Lifetime.Singleton).AsSelf();
 
-            //Eyes
-            builder.RegisterComponentInHierarchy<EyesView>().AsImplementedInterfaces();
-            builder.Register<ImpressionView>(Lifetime.Singleton).AsImplementedInterfaces();
+            //Manager
+            builder.Register<AdapterFactory<TypingRoguelikeMainLoopStarter,SaveDataManager>>(Lifetime.Singleton).WithParameter<LifetimeScope[]>(FindObjectsOfType<LifetimeScope>).AsImplementedInterfaces();
+
+            //Flow
+            builder.Register<FlowHundler>(Lifetime.Singleton).AsSelf().AsImplementedInterfaces();
+            builder.Register<FlowMasterDataDictionaryProvider>(Lifetime.Singleton).AsImplementedInterfaces();
+            builder.Register<FlowProvider>(Lifetime.Singleton).AsImplementedInterfaces();
+            builder.Register<ApplicationTimeKeyReplacer>(Lifetime.Singleton).AsSelf();
+            builder.Register<DiffSecondKeyReplacer>(Lifetime.Singleton).AsSelf();
+            builder.Register<RowKeyReplacer>(Lifetime.Singleton).AsSelf();
+            builder.Register<DeviceLowerKeyReplacer>(Lifetime.Singleton).AsSelf();
+            builder.Register<DeviceKeyReplacer>(Lifetime.Singleton).AsSelf();
+
+            builder.Register<HorrorStoryMainLoopStarter>(Lifetime.Singleton).AsSelf();
+            builder.Register<TypingTestStarter>(Lifetime.Singleton).AsSelf();
+            builder.Register<FreeInputTestStarter>(Lifetime.Singleton).AsSelf();
+
+            //Flag
+            builder.Register<GlobalFlagContainer>(Lifetime.Singleton).AsImplementedInterfaces();
+            builder.Register<RegisterFlagOrderProcessor>(Lifetime.Singleton).AsSelf();
 
             //Monitor
             builder.Register<StartMonitorModel>(Lifetime.Singleton).AsSelf();
@@ -35,6 +56,16 @@ namespace gaw241201.Inject
             builder.Register<EndGameModel>(Lifetime.Singleton).AsSelf();
             builder.RegisterComponentInHierarchy<EndGameView>().AsSelf();
 
+            //Save
+            builder.Register<SaveDataManager>(Lifetime.Singleton).AsSelf().AsImplementedInterfaces();
+            builder.Register<SaveData>(Lifetime.Singleton).AsSelf();
+
+
+            //Eyes
+            builder.RegisterComponentInHierarchy<EyesView>().AsImplementedInterfaces();
+            builder.Register<ImpressionView>(Lifetime.Singleton).AsImplementedInterfaces();
+
+
             //Effect
             builder.Register<EnterEffectModel>(Lifetime.Singleton).AsSelf();
             builder.Register<EndEffectModel>(Lifetime.Singleton).AsSelf();
@@ -44,18 +75,19 @@ namespace gaw241201.Inject
 
             //Confiscate
             builder.Register<ConfiscateModel>(Lifetime.Singleton).AsSelf();
-            builder.Register<ConfiscateView>(Lifetime.Singleton).AsSelf();  
-            builder.RegisterComponentInHierarchy<LeftEyeRemovedable>().AsImplementedInterfaces().AsSelf() ;
+            builder.Register<ConfiscateView>(Lifetime.Singleton).AsSelf();
+            builder.RegisterComponentInHierarchy<LeftEyeRemovedable>().AsImplementedInterfaces().AsSelf();
 
             //Typing
             builder.Register<TypingModel>(Lifetime.Singleton).AsSelf();
             builder.Register<TypingMasterDataProvider>(Lifetime.Singleton).AsImplementedInterfaces();
             builder.Register<ModelArgsFactory<ITypingMaster>>(Lifetime.Singleton).AsSelf();
             builder.Register<TypingViewArgsFactory>(Lifetime.Singleton).AsSelf();
-            builder.RegisterComponentInHierarchy<TypingView>().AsSelf();
+            builder.Register<TypingView>(Lifetime.Singleton).AsSelf();
+            builder.RegisterComponentInHierarchy<TypingItemView>().AsSelf();
             builder.Register<RomanKeyInputJudger>(Lifetime.Singleton).AsImplementedInterfaces();
-            builder.Register<TypingConverter>(Lifetime.Singleton).AsImplementedInterfaces();
             builder.Register<QusetionTextGenerator>(Lifetime.Singleton).AsImplementedInterfaces();
+           // builder.Register<SimpleGroupMasterGetter<ITypingMaster>>(Lifetime.Singleton).AsImplementedInterfaces();
 
             //DeleteUi
             builder.Register<DeleteUiModel>(Lifetime.Singleton).AsSelf();
@@ -97,23 +129,9 @@ namespace gaw241201.Inject
             builder.Register<GraphicsType>(Lifetime.Singleton).AsSelf();
             builder.Register<GraphicsVendor>(Lifetime.Singleton).AsSelf();
             builder.Register<GraphicsVersion>(Lifetime.Singleton).AsSelf();
+            builder.Register<SimpleGroupMasterGetter<IConversationMaster>>(Lifetime.Singleton).AsImplementedInterfaces();
 
-            //Flow
-            builder.Register<FlowHundler>(Lifetime.Singleton).AsSelf().AsImplementedInterfaces();
-            builder.Register<FlowMasterDataDictionaryProvider>(Lifetime.Singleton).AsImplementedInterfaces();
-            builder.Register<FlowProvider>(Lifetime.Singleton).AsImplementedInterfaces();
-            builder.Register<ApplicationTimeKeyReplacer>(Lifetime.Singleton).AsSelf();
-            builder.Register<DiffSecondKeyReplacer>(Lifetime.Singleton).AsSelf();
-            builder.Register<RowKeyReplacer>(Lifetime.Singleton).AsSelf();
-            builder.Register<DeviceLowerKeyReplacer>(Lifetime.Singleton).AsSelf();
-            builder.Register<DeviceKeyReplacer>(Lifetime.Singleton).AsSelf();
 
-            //Flag
-            builder.Register<GlobalFlagContainer>(Lifetime.Singleton).AsImplementedInterfaces();
-            builder.Register<RegisterFlagOrderProcessor>(Lifetime.Singleton).AsSelf();
-
-            //Manager
-            builder.Register<AdapterToModel>(Lifetime.Singleton).AsImplementedInterfaces();
 
             builder.UseEntryPoints(Lifetime.Singleton, entryPoints =>
             {
@@ -126,6 +144,7 @@ namespace gaw241201.Inject
                 entryPoints.Add<EffectPresenter>();
                 entryPoints.Add<EndGamePresenter>();
                 entryPoints.Add<MonitorPresenter>();
+                entryPoints.Add<TypingRoguelikePresetner>();
 #if ENABLE_DEBUG
                 entryPoints.Add<DebugManager>();
 #endif

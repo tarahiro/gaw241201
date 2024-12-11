@@ -14,12 +14,13 @@ namespace gaw241201
     {
         public enum FlowMasterLabel
         {
-            MainFlow,
+            HorrorStoryMainFlow,
             TrueEndFlow,
             SaveDataExistFlow,
             ScreenShotFlow,
             TypingTestFlow,
             FreeInputTestFlow,
+            TypingRoguelikeMainFlow,
         }
     }
 }

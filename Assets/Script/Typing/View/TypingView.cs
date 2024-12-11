@@ -7,42 +7,109 @@ using Tarahiro;
 using VContainer;
 using VContainer.Unity;
 using UniRx;
+using TMPro;
 
 namespace gaw241201.View
 {
-    public class TypingView : MonoBehaviour
+    public class TypingView
     {
-        [Inject] IGazable _gazable;
         [Inject] IKeyInputJudger _keyInputJudger;
-        [Inject] IKeyCodeToCharConverter _keyToCharConverter;
         [Inject] IQuestionTextGenerator _questionTextGenerator;
+        [Inject] TypingItemView _item;
+        TypingViewArgs _viewArgsList;
 
-        TypingItemView _currentItem;
-        const string c_prefabPath = "Prefab/Typing/TypingItemView";
+        private readonly List<char> _questionCharList = new List<char>();
+
+        private int _charIndex;
+        bool _isEndLoop = false;
 
         Subject<Unit> _exited = new Subject<Unit>();
         public IObservable<Unit> Exited => _exited;
 
+        public void Initialize()
+        {
+            _questionTextGenerator.Initialize();
+        }
+
         public async UniTask Enter(TypingViewArgs args)
         {
-            Log.Comment(args.SampleText + "開始");
+            _viewArgsList = args;
 
-            _questionTextGenerator.Initialize();
+            //初期設定
+            _isEndLoop = false;
+            InitializeQuestion();
+            var v = args.CancellationToken.Register(OnExit);
 
+            //すべての文字が終わるまで待って、処理を返す
+            while (!_isEndLoop)
+            {
+                await UniTask.Yield(PlayerLoopTiming.Update, cancellationToken: args.CancellationToken);
+                CheckInput();
+            }
 
-            _currentItem = Instantiate(ResourceUtil.GetResource<TypingItemView>(c_prefabPath), transform);
-            _currentItem.Construct(args,_gazable, _keyInputJudger, _keyToCharConverter, _questionTextGenerator);
-            args.CancellationToken.Register(OnExit);
-
-            await _currentItem.Enter(args.CancellationToken);
-
+            v.Dispose();
             OnExit();
         }
 
         private void OnExit()
         {
-            Destroy(_currentItem.gameObject);
+            _item.ResetText();
             _exited.OnNext(Unit.Default);
+        }
+
+        void InitializeQuestion()
+        {
+            //初期化
+            _questionCharList.Clear();
+            _charIndex = 0;
+
+            // 問題の初期状態を設定
+            char[] characters = _viewArgsList.QuestionText.ToCharArray();
+            foreach (char character in characters)
+            {
+                _questionCharList.Add(character);
+            }
+            _questionCharList.Add('@');
+
+            //表示テキストを反映
+            _item.SetSampleText(_viewArgsList.SampleText);
+
+            //問題テキストを反映
+            UpdateQuestionText();
+        }
+
+        void UpdateQuestionText()
+        {
+            _item.SetQuestionText(_questionTextGenerator.GenerateQuestionText(_questionCharList, _charIndex),_charIndex,_questionCharList.Count);
+        }
+
+        void CheckInput()
+        {
+            if (IsMainInputAccept())
+            {
+
+                for (int i = 0; i < Input.inputString.Length; i++)
+                {
+                    if (_keyInputJudger.IsKeyInputCorrect(Input.inputString[i], _charIndex, _questionCharList))
+                    {
+                        _charIndex++;
+                        SoundManager.PlaySE("Key");
+                        if (_questionCharList[_charIndex] == '@') // 「@」がタイピングの終わりの判定となる。
+                        {
+                            _isEndLoop = true;
+                        }
+                        else
+                        {
+                            UpdateQuestionText();
+                        }
+                    }
+                }
+            }
+        }
+
+        bool IsMainInputAccept()
+        {
+            return true;
         }
     }
 }

@@ -23,6 +23,7 @@ namespace gaw241201
         [Inject] EndEffectModel _endEffectModel;
         [Inject] EndGameModel _endGameModel;
         [Inject] StartMonitorModel _startMonitorModel;
+        [Inject] TypingRoguelikeModel _typingRoguelikeModel;
 
         public IFlowModel GetFlowModel(FlowConst.Category category)
         {
@@ -62,6 +63,9 @@ namespace gaw241201
 
                 case FlowConst.Category.StartMonitor:
                     return _startMonitorModel;
+
+                case FlowConst.Category.TypingRoguelike:
+                    return _typingRoguelikeModel;
 
                 default:
                     Log.DebugAssert("不正なカテゴリー名です");

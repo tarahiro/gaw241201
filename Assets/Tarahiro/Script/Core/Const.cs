@@ -10,6 +10,9 @@ namespace Tarahiro
 {
     public static class Const
     {
+        public const string c_true = "True";
+        public const string c_false = "False";
+
         public enum OrderOnMonoCanvas
         {
             Fader = 10,

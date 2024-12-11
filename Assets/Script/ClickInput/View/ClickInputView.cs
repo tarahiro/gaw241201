@@ -25,10 +25,14 @@ namespace gaw241201.View
         Subject<int> _exited = new Subject<int>();
         public IObservable<int> Exited => _exited;
 
+        bool isExit = false;
+
         public async UniTask Enter(ClickInputArgs args)
         {
             Log.DebugLog("ClickInputViewŠJŽn");
             _itemList = new List<ClickInputItemView>();
+            isExit = false;
+            args.CancellationToken.Register(() => OnExit(0));
 
             for (int i = 0; i < args.LabelList.Count; i++)
             {
@@ -39,6 +43,8 @@ namespace gaw241201.View
                 item.Initialize();
                 _itemList.Add(item);
             }
+
+            await UniTask.WaitUntil(() => isExit, cancellationToken: args.CancellationToken);
         }
 
         private void OnExit(int i)
@@ -49,6 +55,7 @@ namespace gaw241201.View
             {
                 item.Exit();
             }
+            isExit = true;
 
         }
 
