@@ -30,7 +30,9 @@ namespace Tarahiro.OtherGame.Inject
                     return instance;
                 };
             }, Lifetime.Scoped);
-            builder.Register<OtherGameModel>(Lifetime.Singleton).AsImplementedInterfaces();
+
+            //通常はゲームコードを入れるが、このゲームは特例
+            builder.Register<OtherGameModel>(Lifetime.Singleton).WithParameter("Temp").AsImplementedInterfaces();
             builder.RegisterComponentInHierarchy<OtherGameAbstructView>().AsImplementedInterfaces();
             builder.RegisterComponentInHierarchy<OtherGameMenuView>().AsImplementedInterfaces();
             builder.RegisterComponentInHierarchy<OtherGameDetailView>().AsImplementedInterfaces();

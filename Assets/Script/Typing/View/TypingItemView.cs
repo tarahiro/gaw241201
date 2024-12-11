@@ -88,6 +88,10 @@ namespace gaw241201.View
         {
             if (IsMainInputAccept())
             {
+                if(Input.inputString.Length > 0)
+                {
+                    Log.DebugLog(Input.inputString);
+                }
                
                 for (int i = 0; i < Input.inputString.Length; i++)
                 {
@@ -98,6 +102,7 @@ namespace gaw241201.View
                         if (_questionCharList[_charIndex] == '@') // 「@」がタイピングの終わりの判定となる。
                         {
                             _isEndLoop = true;
+                            break;
                         }
                         else
                         {
