@@ -84,10 +84,12 @@ namespace gaw241201.Inject
             builder.Register<ModelArgsFactory<ITypingMaster>>(Lifetime.Singleton).AsSelf();
             builder.Register<TypingViewArgsFactory>(Lifetime.Singleton).AsSelf();
             builder.Register<TypingView>(Lifetime.Singleton).AsSelf();
-            builder.RegisterComponentInHierarchy<TypingItemView>().AsSelf();
+            builder.RegisterComponentInHierarchy<TypingTextView>().AsSelf();
             builder.Register<RomanKeyInputJudger>(Lifetime.Singleton).AsImplementedInterfaces();
             builder.Register<QusetionTextGenerator>(Lifetime.Singleton).AsImplementedInterfaces();
-           // builder.Register<SimpleGroupMasterGetter<ITypingMaster>>(Lifetime.Singleton).AsImplementedInterfaces();
+            // builder.Register<SimpleGroupMasterGetter<ITypingMaster>>(Lifetime.Singleton).AsImplementedInterfaces();
+            builder.Register<TypingViewInitializer>(Lifetime.Singleton).AsImplementedInterfaces();
+            builder.Register<QuestionInitializer>(Lifetime.Singleton).AsImplementedInterfaces();
 
             //DeleteUi
             builder.Register<DeleteUiModel>(Lifetime.Singleton).AsSelf();

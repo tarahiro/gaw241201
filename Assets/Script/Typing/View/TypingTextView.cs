@@ -14,7 +14,7 @@ using VContainer.Unity;
 
 namespace gaw241201.View
 {
-    public class TypingItemView : MonoBehaviour
+    public class TypingTextView : MonoBehaviour
     {
         [Inject] IGazable _gazable;
         [SerializeField] private TextMeshProUGUI _tmpSample; 
