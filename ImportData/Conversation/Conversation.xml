@@ -122,7 +122,7 @@
     <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">0</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">100010InitialConversation</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">100000InitialConversation</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">＜テスト＞＜テスト＞</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">……。</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">Bottom</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
@@ -1454,7 +1454,7 @@
    <Value>R141C5:R149C5</Value>
   </DataValidation>
   <ConditionalFormatting xmlns="urn:schemas-microsoft-com:office:excel">
-   <Range>R25C3:R29C3,R27C2:R29C2,R30C2:R31C3,R32C2:R44C2,R27C1:R44C1,R27C3:R44C5,R45C1:R74C5,R6C6:R74C7,R5C1:R5C7,R6C1:R26C5,R75C1:R132C7,R141C5:R149C5</Range>
+   <Range>R25C3:R29C3,R27C2:R29C2,R30C2:R31C3,R32C2:R44C2,R27C1:R44C1,R27C3:R44C5,R45C1:R74C5,R6C6:R74C7,R6C1:R26C5,R75C1:R132C7,R141C5:R149C5,R5C1:R5C7</Range>
    <Condition>
     <Value1>LEN(TRIM(RC))=0</Value1>
     <Format Style='background:#E7E6E6'/>
