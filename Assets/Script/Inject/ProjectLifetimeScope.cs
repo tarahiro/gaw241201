@@ -37,11 +37,11 @@ namespace gaw241201.Inject
             builder.Register<TypingViewInitializer>(Lifetime.Singleton).AsImplementedInterfaces();
             builder.Register<QuestionInitializer>(Lifetime.Singleton).AsImplementedInterfaces();
             builder.Register<SingleTextSequenceEnterer<ITypingMaster>>(Lifetime.Singleton).AsImplementedInterfaces();
+            builder.Register<SimpleCorrectInputHundler>(Lifetime.Singleton).AsImplementedInterfaces();
 
             //Flow
             builder.Register<FlowHundler>(Lifetime.Singleton).AsSelf().AsImplementedInterfaces();
             builder.Register<FlowMasterDataDictionaryProvider>(Lifetime.Singleton).AsImplementedInterfaces();
-          //  builder.Register<FlowProvider>(Lifetime.Singleton).AsImplementedInterfaces();
             builder.Register<ApplicationTimeKeyReplacer>(Lifetime.Singleton).AsSelf();
             builder.Register<DiffSecondKeyReplacer>(Lifetime.Singleton).AsSelf();
             builder.Register<RowKeyReplacer>(Lifetime.Singleton).AsSelf();

@@ -3,22 +3,22 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Tarahiro;
+using TMPro;
 using UniRx;
 using UnityEngine;
+using UnityEngine.UI;
 using VContainer;
 using VContainer.Unity;
-using gaw241201;
 
 namespace gaw241201.View
 {
-    public interface ITimerView
+    public class PointView : MonoBehaviour
     {
-        UniTask Enter(TimerArgs timerArgs);
+        [SerializeField] TextMeshProUGUI _tmp;
 
-        IObservable<Unit> TimeUped { get; }
-
-        IObservable<float> TimeRemained { get; }
-
-        void HaltTimer();
+        public void UpdatePoint(int point)
+        {
+            _tmp.text = point.ToString();
+        }
     }
 }

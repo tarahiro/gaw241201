@@ -7,18 +7,12 @@ using UniRx;
 using UnityEngine;
 using VContainer;
 using VContainer.Unity;
-using gaw241201;
 
 namespace gaw241201.View
 {
-    public interface ITimerView
+    //名前が適切でないかも。PointableよりCorrectableとか、正解の入力をしたときに何かがおこることが分かる名前にしたい
+    public interface IPointableView
     {
-        UniTask Enter(TimerArgs timerArgs);
-
-        IObservable<Unit> TimeUped { get; }
-
-        IObservable<float> TimeRemained { get; }
-
-        void HaltTimer();
+        IObservable<Unit> Pointed { get; }
     }
 }
