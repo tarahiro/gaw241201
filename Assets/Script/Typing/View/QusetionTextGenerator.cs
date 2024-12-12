@@ -23,6 +23,8 @@ namespace gaw241201.View
         const string c_typedStyle = c_startStylePrefix + c_typedName + c_startStyleSuffix;
         const string c_untypedStyle = c_startStylePrefix + c_untypedName + c_startStyleSuffix;
 
+        bool _isInitialized = false;
+
         static readonly Dictionary<char, string> replacingDictionary = new Dictionary<char, string>()
         {
             {' ',"space" }
@@ -30,16 +32,22 @@ namespace gaw241201.View
 
         TMP_StyleSheet styleSheet;
         List<TMP_Style> style;
-        public void Initialize()
+        void Initialize()
         {
             styleSheet = TMP_Settings.defaultStyleSheet;
             style = new List<TMP_Style>();
             style.Add(styleSheet.GetStyle(c_typedName));
             style.Add(styleSheet.GetStyle(c_untypedName));
+            _isInitialized = true;
         }
 
         public string GenerateQuestionText(List<char> questionCharList, int charIndex)
         {
+            if (!_isInitialized)
+            {
+                Initialize();
+            }
+
             //–â‘è•¶Žš—ñ‚ðUntyped‚Ætyped‚É•ª‚¯‚é
             string beforeReplaceText = c_typedStyle;
             for (int i = 0; i < questionCharList.Count; i++)

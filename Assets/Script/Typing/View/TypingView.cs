@@ -11,7 +11,7 @@ using TMPro;
 
 namespace gaw241201.View
 {
-    public class TypingView
+    public class TypingView : ITypingView
     {
         [Inject] IKeyInputJudger _keyInputJudger;
         [Inject] IQuestionTextGenerator _questionTextGenerator;
@@ -26,13 +26,10 @@ namespace gaw241201.View
         Subject<Unit> _exited = new Subject<Unit>();
         public IObservable<Unit> Exited => _exited;
 
-        public void Initialize()
-        {
-            _questionTextGenerator.Initialize();
-        }
 
         public async UniTask Enter(TypingViewArgs args)
         {
+            Log.Comment("TypingViewäJén");
 
             //èâä˙ê›íË
             _viewInitializer.InitializeView(args, out _isEndLoop, out _questionCharList, out _charIndex);
@@ -73,6 +70,7 @@ namespace gaw241201.View
 
         private void OnExit()
         {
+            Log.Comment("TypingViewèIóπ");
             _item.ResetText();
             _exited.OnNext(Unit.Default);
         }

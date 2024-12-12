@@ -12,6 +12,8 @@ namespace gaw241201
 {
     public class FlowProvider : IFlowProvider
     {
+        [Inject] LifetimeScope[] _scope;
+
         [Inject] ConversationModel _conversationModel;
         [Inject] FreeInputModel _freeInputModel;
         [Inject] RegisterFlagFlowModel _registerFlagFlowModel;
@@ -23,7 +25,7 @@ namespace gaw241201
         [Inject] EndEffectModel _endEffectModel;
         [Inject] EndGameModel _endGameModel;
         [Inject] StartMonitorModel _startMonitorModel;
-        [Inject] TypingRoguelikeModel _typingRoguelikeModel;
+     //   [Inject] TypingRoguelikeModel _typingRoguelikeModel;
 
         public IFlowModel GetFlowModel(FlowConst.Category category)
         {
@@ -65,7 +67,7 @@ namespace gaw241201
                     return _startMonitorModel;
 
                 case FlowConst.Category.TypingRoguelike:
-                    return _typingRoguelikeModel;
+                    return InjectUtil.GetInstance<TypingRoguelikeModel>(_scope);
 
                 default:
                     Log.DebugAssert("不正なカテゴリー名です");

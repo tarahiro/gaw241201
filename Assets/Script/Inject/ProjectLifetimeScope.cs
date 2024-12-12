@@ -16,23 +16,32 @@ namespace gaw241201.Inject
         {
             Log.Comment("ProjectLifetimeScope‚Ì“o˜^ŠJŽn");
 
+            //Manager
+            builder.Register<AdapterFactory<TypingTestStarter, SaveDataManager>>(Lifetime.Singleton).WithParameter<LifetimeScope[]>(FindObjectsOfType<LifetimeScope>).AsImplementedInterfaces();
+            builder.Register<FlowProvider>(Lifetime.Singleton).WithParameter<LifetimeScope[]>(FindObjectsOfType<LifetimeScope>).AsImplementedInterfaces();
+
 
             //Tarahiro
             builder.Register<PlatformInfoProvider>(Lifetime.Singleton).AsSelf();
 
-            //TypingRoguelike
-            builder.Register<TypingRoguelikeModel>(Lifetime.Singleton).AsSelf();
-            builder.Register<TypingRoguelikeMasterDataProvider>(Lifetime.Singleton).AsImplementedInterfaces();
-            builder.Register<MergedGroupMasterGetter<ITypingMaster, ITypingRoguelikeMaster>>(Lifetime.Singleton).AsImplementedInterfaces();
-            builder.Register<TypingRoguelikeView>(Lifetime.Singleton).AsSelf();
-
-            //Manager
-            builder.Register<AdapterFactory<TypingRoguelikeMainLoopStarter,SaveDataManager>>(Lifetime.Singleton).WithParameter<LifetimeScope[]>(FindObjectsOfType<LifetimeScope>).AsImplementedInterfaces();
+            //Typing
+            builder.Register<TypingModel>(Lifetime.Singleton).AsSelf();
+            builder.Register<TypingMasterDataProvider>(Lifetime.Singleton).AsImplementedInterfaces();
+            builder.Register<ModelArgsFactory<ITypingMaster>>(Lifetime.Singleton).AsSelf();
+            builder.Register<TypingViewArgsFactory>(Lifetime.Singleton).AsSelf();
+            builder.Register<TypingView>(Lifetime.Singleton).AsImplementedInterfaces();
+            builder.RegisterComponentInHierarchy<TypingTextView>().AsSelf();
+            builder.Register<RomanKeyInputJudger>(Lifetime.Singleton).AsImplementedInterfaces();
+            builder.Register<QusetionTextGenerator>(Lifetime.Singleton).AsImplementedInterfaces();
+            builder.Register<SimpleGroupMasterGetter<ITypingMaster>>(Lifetime.Singleton).AsImplementedInterfaces();
+            builder.Register<TypingViewInitializer>(Lifetime.Singleton).AsImplementedInterfaces();
+            builder.Register<QuestionInitializer>(Lifetime.Singleton).AsImplementedInterfaces();
+            builder.Register<SingleTextSequenceEnterer<ITypingMaster>>(Lifetime.Singleton).AsImplementedInterfaces();
 
             //Flow
             builder.Register<FlowHundler>(Lifetime.Singleton).AsSelf().AsImplementedInterfaces();
             builder.Register<FlowMasterDataDictionaryProvider>(Lifetime.Singleton).AsImplementedInterfaces();
-            builder.Register<FlowProvider>(Lifetime.Singleton).AsImplementedInterfaces();
+          //  builder.Register<FlowProvider>(Lifetime.Singleton).AsImplementedInterfaces();
             builder.Register<ApplicationTimeKeyReplacer>(Lifetime.Singleton).AsSelf();
             builder.Register<DiffSecondKeyReplacer>(Lifetime.Singleton).AsSelf();
             builder.Register<RowKeyReplacer>(Lifetime.Singleton).AsSelf();
@@ -78,19 +87,6 @@ namespace gaw241201.Inject
             builder.Register<ConfiscateView>(Lifetime.Singleton).AsSelf();
             builder.RegisterComponentInHierarchy<LeftEyeRemovedable>().AsImplementedInterfaces().AsSelf();
 
-            //Typing
-            builder.Register<TypingModel>(Lifetime.Singleton).AsSelf();
-            builder.Register<TypingMasterDataProvider>(Lifetime.Singleton).AsImplementedInterfaces();
-            builder.Register<ModelArgsFactory<ITypingMaster>>(Lifetime.Singleton).AsSelf();
-            builder.Register<TypingViewArgsFactory>(Lifetime.Singleton).AsSelf();
-            builder.Register<TypingView>(Lifetime.Singleton).AsSelf();
-            builder.RegisterComponentInHierarchy<TypingTextView>().AsSelf();
-            builder.Register<RomanKeyInputJudger>(Lifetime.Singleton).AsImplementedInterfaces();
-            builder.Register<QusetionTextGenerator>(Lifetime.Singleton).AsImplementedInterfaces();
-            // builder.Register<SimpleGroupMasterGetter<ITypingMaster>>(Lifetime.Singleton).AsImplementedInterfaces();
-            builder.Register<TypingViewInitializer>(Lifetime.Singleton).AsImplementedInterfaces();
-            builder.Register<QuestionInitializer>(Lifetime.Singleton).AsImplementedInterfaces();
-
             //DeleteUi
             builder.Register<DeleteUiModel>(Lifetime.Singleton).AsSelf();
             builder.Register<UiDeletableProvider>(Lifetime.Singleton).AsImplementedInterfaces();
@@ -132,6 +128,7 @@ namespace gaw241201.Inject
             builder.Register<GraphicsVendor>(Lifetime.Singleton).AsSelf();
             builder.Register<GraphicsVersion>(Lifetime.Singleton).AsSelf();
             builder.Register<SimpleGroupMasterGetter<IConversationMaster>>(Lifetime.Singleton).AsImplementedInterfaces();
+            builder.Register<SingleTextSequenceEnterer<IConversationMaster>>(Lifetime.Singleton).AsImplementedInterfaces();
 
 
 
@@ -146,7 +143,6 @@ namespace gaw241201.Inject
                 entryPoints.Add<EffectPresenter>();
                 entryPoints.Add<EndGamePresenter>();
                 entryPoints.Add<MonitorPresenter>();
-                entryPoints.Add<TypingRoguelikePresetner>();
 #if ENABLE_DEBUG
                 entryPoints.Add<DebugManager>();
 #endif

@@ -7,11 +7,14 @@ using UniRx;
 using UnityEngine;
 using VContainer;
 using VContainer.Unity;
+using gaw241201;
 
 namespace gaw241201.View
 {
-    public interface IQuestionTextGenerator
+    public interface ITimerView
     {
-        string GenerateQuestionText(List<char> questionCharList, int charIndex);
+        UniTask Enter(TimerArgs timerArgs);
+
+        IObservable<Unit> TimeUped { get; }
     }
 }

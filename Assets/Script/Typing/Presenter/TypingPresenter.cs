@@ -8,6 +8,7 @@ using VContainer;
 using VContainer.Unity;
 using UniRx;
 using gaw241201.View;
+using gaw241201.Model;
 
 
 namespace gaw241201.Presenter
@@ -15,17 +16,16 @@ namespace gaw241201.Presenter
     public class TypingPresenter : IPostInitializable
     {
         [Inject] TypingModel _model;
-        [Inject] TypingView _view;
+        [Inject] ITypingView _view;
+        [Inject] ISingleTextSequenceEnterable<ITypingMaster> _enterable;
         [Inject] TypingViewArgsFactory _argsFactory;
 
         CompositeDisposable _disposable = new CompositeDisposable();
 
         public void PostInitialize()
         {
-            _model.Entered.Subscribe(x => _view.Enter(_argsFactory.Create(x)).Forget()).AddTo(_disposable);
+            _enterable.Entered.Subscribe(x => _view.Enter(_argsFactory.Create(x)).Forget()).AddTo(_disposable);
             _view.Exited.Subscribe(_ => _model.EndSingle()).AddTo(_disposable);
-
-            _view.Initialize();
         }
     }
 }

@@ -12,7 +12,7 @@ namespace Tarahiro
     {
         public Const.Platform GetPlatform()
         {
-            Log.DebugLog("Fake Windowsしか返さない");
+           // Fake 今はWindowsしか返さない
             return Const.Platform.Windows;
         }
     }

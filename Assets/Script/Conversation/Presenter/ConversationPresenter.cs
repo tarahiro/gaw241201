@@ -16,6 +16,7 @@ namespace gaw241201.Presenter
     public class ConversationPresenter : IPostInitializable
     {
         [Inject] ConversationModel _model;
+        [Inject] ISingleTextSequenceEnterable<IConversationMaster> _enterable;
         [Inject] ConversationView _view;
         [Inject] ConversationViewArgsFactory _viewArgsFactory;
 
@@ -23,7 +24,7 @@ namespace gaw241201.Presenter
 
         public void PostInitialize()
         {
-            _model.Entered.Subscribe(x =>  _view.EnterConversation(_viewArgsFactory.Create(x)).Forget()).AddTo(_disposable);
+            _enterable.Entered.Subscribe(x =>  _view.EnterConversation(_viewArgsFactory.Create(x)).Forget()).AddTo(_disposable);
             _view.Completed.Subscribe(x => _model.EndSingle()).AddTo(_disposable);
         }
     }

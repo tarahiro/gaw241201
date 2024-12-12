@@ -19,17 +19,8 @@ namespace gaw241201.Inject
             T _mainLoopHundler = default;
             U _loadable = default;
 
-            foreach(var scope in _scope)
-            {
-                if(scope.Container.TryResolve<T>(out var mainLoopHundler))
-                {
-                    _mainLoopHundler = mainLoopHundler;
-                }
-                if (scope.Container.TryResolve<U>(out var loadable))
-                {
-                    _loadable = loadable;
-                }
-            }
+            _mainLoopHundler = InjectUtil.GetInstance<T>(_scope);
+            _loadable = InjectUtil.GetInstance<U>(_scope);
 
             return new AdapterToModel(_mainLoopHundler, _loadable);
         }

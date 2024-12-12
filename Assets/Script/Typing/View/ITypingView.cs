@@ -10,8 +10,9 @@ using VContainer.Unity;
 
 namespace gaw241201.View
 {
-    public interface IQuestionTextGenerator
+    public interface ITypingView
     {
-        string GenerateQuestionText(List<char> questionCharList, int charIndex);
+        UniTask Enter(TypingViewArgs args);
+        IObservable<Unit> Exited { get; }
     }
 }
