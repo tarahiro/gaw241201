@@ -11,7 +11,7 @@ using VContainer.Unity;
 
 namespace gaw241201.View
 {
-    public class TimerView : ITimerView
+    public class TimerView : MonoBehaviour, ITimerView
     {
         [SerializeField] Image _timerImage;
         float _time;
@@ -21,6 +21,7 @@ namespace gaw241201.View
 
         public async UniTask Enter(TimerArgs timerArgs)
         {
+            Log.Comment("タイマー開始");
             OnEnter(timerArgs);
 
             while (_time < timerArgs.Time)

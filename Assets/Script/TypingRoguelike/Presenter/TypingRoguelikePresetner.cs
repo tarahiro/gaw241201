@@ -17,6 +17,7 @@ namespace gaw241201.Presenter
     {
         [Inject] TypingRoguelikeModel _model;
         [Inject] ISingleTextSequenceEnterable<ITypingMaster> _enterable;
+        [Inject] ITimerStartableModel _timerStartable;
         [Inject] ITypingView _view;
         [Inject] TypingViewArgsFactory _argsFactory;
         [Inject] ITimerView _timerView;
@@ -28,6 +29,7 @@ namespace gaw241201.Presenter
         {
             Log.Comment("TypingRogueLikePresenter‚ÉEntry");
             _enterable.Entered.Subscribe(x => _view.Enter(_argsFactory.Create(x)).Forget()).AddTo(_disposable);
+            _timerStartable.TimerStarted.Subscribe(args  => _timerView.Enter(args).Forget()).AddTo(_disposable);
             _view.Exited.Subscribe(_ => _model.EndSingle()).AddTo(_disposable);
             _timerView.TimeUped.Subscribe(_ => _haltable.Halt()).AddTo(_disposable);
         }

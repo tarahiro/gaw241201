@@ -19,8 +19,8 @@ namespace gaw241201.Inject
             builder.Register<TypingRoguelikeModel>(Lifetime.Singleton).AsSelf();
             builder.Register<TypingRoguelikeMasterDataProvider>(Lifetime.Singleton).AsImplementedInterfaces();
             builder.Register<MergedGroupMasterGetter<ITypingMaster, ITypingRoguelikeMaster>>(Lifetime.Singleton).AsImplementedInterfaces();
-            builder.Register<SingleTextSequenceEnterer<ITypingMaster>>(Lifetime.Singleton).AsImplementedInterfaces();
-            builder.Register<TimerView>(Lifetime.Singleton).AsImplementedInterfaces();
+            builder.Register<TypingRoguelikeSingleSequenceStarter<ITypingMaster>>(Lifetime.Singleton).AsImplementedInterfaces();
+            builder.RegisterComponentInHierarchy<TimerView>().AsImplementedInterfaces();
             builder.Register<TypingRoguelikeView>(Lifetime.Singleton).AsImplementedInterfaces();
 
             builder.UseEntryPoints(Lifetime.Singleton, entryPoints =>
