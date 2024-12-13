@@ -10,8 +10,11 @@ using VContainer.Unity;
 
 namespace gaw241201.View
 {
-    public interface ICorrectInputHundlable
+    public interface ILeetDataUserView
     {
-        void OnCorrectInput(List<char> questionCharList, int charIndex, out bool isEndLoop);
+
+        void Initialize(List<LeetCharData> charDataList);
+
+
     }
 }

@@ -13,6 +13,7 @@ namespace gaw241201.View
     public interface ITypingView
     {
         UniTask Enter(TypingViewArgs args);
+        void EndLoop();
         IObservable<Unit> Exited { get; }
     }
 }

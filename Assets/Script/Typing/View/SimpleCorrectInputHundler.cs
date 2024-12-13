@@ -15,7 +15,7 @@ namespace gaw241201.View
         [Inject] TypingTextView _item;
         [Inject] IQuestionTextGenerator _questionTextGenerator;
 
-        public void OnCorrectnput(List<char> questionCharList, int charIndex, out bool isEndLoop)
+        public void OnCorrectInput(List<char> questionCharList, int charIndex, out bool isEndLoop)
         {
             SoundManager.PlaySE("Key");
             if (questionCharList[charIndex] == '@') // 「@」がタイピングの終わりの判定となる。

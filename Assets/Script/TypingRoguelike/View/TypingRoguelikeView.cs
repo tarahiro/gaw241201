@@ -16,6 +16,7 @@ namespace gaw241201.View
         [Inject] ITypingViewInitializer _viewInitializer;
         [Inject] IKeyInputJudger _keyInputJudger;
         [Inject] RoguelikeCorrectInputHundler _correctInputHundlable;
+        [Inject] TypingSentenceController _sentenceController;
 
         private List<char> _questionCharList = new List<char>();
 
@@ -32,6 +33,8 @@ namespace gaw241201.View
 
             //‰Šúİ’è
             _viewInitializer.InitializeView(args, out _isEndLoop, out _questionCharList, out _charIndex);
+            _sentenceController.Initialize(TypingUtil.ConvertToString(_questionCharList));
+
             var v = args.CancellationToken.Register(OnExit);
 
             //‚·‚×‚Ä‚Ì•¶š‚ªI‚í‚é‚Ü‚Å‘Ò‚Á‚ÄAˆ—‚ğ•Ô‚·
@@ -48,12 +51,21 @@ namespace gaw241201.View
         {
             for (int i = 0; i < Input.inputString.Length; i++)
             {
+                _sentenceController.EnterKey(Input.inputString[i]);
+
+                /*
                 if (_keyInputJudger.IsKeyInputCorrect(Input.inputString[i], _charIndex, _questionCharList))
                 {
                     _charIndex++;
                     _correctInputHundlable.OnCorrectnput(_questionCharList, _charIndex, out _isEndLoop);
                 }
+                */
             }
+        }
+
+        public void EndLoop()
+        {
+            _isEndLoop = true;
         }
 
         private void OnExit()

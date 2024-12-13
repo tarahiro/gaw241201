@@ -15,6 +15,13 @@ namespace gaw241201.Inject
             //starter
             builder.Register<TypingRoguelikeMainLoopStarter>(Lifetime.Singleton).AsSelf();
 
+            //Flag
+            builder.Register<AchievableMasterFlagContainer<ILeetMaster>>(Lifetime.Singleton).AsImplementedInterfaces();
+
+            //Leet
+            builder.Register<LeetMasterDataProvider>(Lifetime.Singleton).AsImplementedInterfaces();
+            builder.Register<AvaliableLeetMasterDataProvider>(Lifetime.Singleton).AsSelf();
+
             //TypingRoguelike
             //model
             builder.Register<TypingRoguelikeModel>(Lifetime.Singleton).AsSelf();
@@ -25,7 +32,12 @@ namespace gaw241201.Inject
             //view
             builder.Register<RoguelikeCorrectInputHundler>(Lifetime.Singleton).AsSelf().As<IPointableView>();
             builder.Register<TypingRoguelikeView>(Lifetime.Singleton).AsImplementedInterfaces();
+            builder.Register<LeetInputJudger>(Lifetime.Singleton).AsImplementedInterfaces();
             builder.RegisterComponentInHierarchy<TimerView>().AsImplementedInterfaces();
+            builder.Register<TypingSentenceController>(Lifetime.Singleton).AsSelf();
+
+            //presenter
+            builder.Register<LeetDataListFactory>(Lifetime.Singleton).AsSelf();
 
             //pointŠÖ˜A
             builder.Register<PointModel>(Lifetime.Singleton).AsSelf();

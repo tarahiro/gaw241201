@@ -8,10 +8,10 @@ using UnityEngine;
 using VContainer;
 using VContainer.Unity;
 
-namespace gaw241201.View
+namespace gaw241201
 {
-    public interface ICorrectInputHundlable
+    public interface IAchievableMasterFlagProvider<T> where T : IIndexable,IIdentifiable
     {
-        void OnCorrectInput(List<char> questionCharList, int charIndex, out bool isEndLoop);
+        bool IsContainskey(string Id);
     }
 }

@@ -28,6 +28,7 @@ namespace gaw241201.View
         public IObservable<Unit> Exited => _exited;
 
 
+
         public async UniTask Enter(TypingViewArgs args)
         {
             Log.Comment("TypingViewŠJŽn");
@@ -48,6 +49,12 @@ namespace gaw241201.View
             OnExit();
         }
 
+        public void EndLoop()
+        {
+            _isEndLoop = false;
+        }
+
+
         void CheckInput()
         {
             for (int i = 0; i < Input.inputString.Length; i++)
@@ -55,10 +62,11 @@ namespace gaw241201.View
                 if (_keyInputJudger.IsKeyInputCorrect(Input.inputString[i], _charIndex, _questionCharList))
                 {
                     _charIndex++;
-                    _correctInputHundlable.OnCorrectnput(_questionCharList, _charIndex, out _isEndLoop);
+                    _correctInputHundlable.OnCorrectInput(_questionCharList, _charIndex, out _isEndLoop);
                 }
             }
         }
+
 
         private void OnExit()
         {

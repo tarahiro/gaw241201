@@ -1,4 +1,5 @@
 using Cysharp.Threading.Tasks;
+using gaw241201.Model;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -8,10 +9,11 @@ using UnityEngine;
 using VContainer;
 using VContainer.Unity;
 
-namespace gaw241201.View
+namespace gaw241201
 {
-    public interface ICorrectInputHundlable
+
+    public interface ILeetMasterGettable
     {
-        void OnCorrectInput(List<char> questionCharList, int charIndex, out bool isEndLoop);
+        IObservable<List<ILeetMaster>> LeetMasterGetted { get; }
     }
 }

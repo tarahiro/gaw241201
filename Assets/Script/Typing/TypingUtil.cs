@@ -10,8 +10,11 @@ using VContainer.Unity;
 
 namespace gaw241201.View
 {
-    public interface ICorrectInputHundlable
+    public static class TypingUtil
     {
-        void OnCorrectInput(List<char> questionCharList, int charIndex, out bool isEndLoop);
+        public static string ConvertToString(List<char> charList)
+        {
+            return string.Concat(charList.ToArray());
+        }
     }
 }

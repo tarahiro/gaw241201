@@ -19,10 +19,10 @@ namespace gaw241201.View
 
 
 
-        public void OnCorrectnput(List<char> questionCharList, int charIndex, out bool isEndLoop)
+        public void OnCorrectInput(List<char> questionCharList, int charIndex, out bool isEndLoop)
         {
             _pointed.OnNext(Unit.Default);
-            _correctInputHundlable.OnCorrectnput(questionCharList, charIndex, out isEndLoop);
+            _correctInputHundlable.OnCorrectInput(questionCharList, charIndex, out isEndLoop);
         }
     }
 }

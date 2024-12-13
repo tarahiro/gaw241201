@@ -1,17 +1,14 @@
 {
-    "name": "gaw241201.TypingRoguelike.View",
-    "rootNamespace": "gaw241201.TypingRoguelike.View",
+    "name": "gaw241201.Leet",
+    "rootNamespace": "gaw241201.Leet",
     "references": [
         "GUID:0be27b54e10228743974a8df3dda3639",
         "GUID:560b04d1a97f54a4e82edc0cbbb69285",
         "GUID:f51ebe6a0ceec4240a699833d6309b23",
         "GUID:b0214a6008ed146ff8f122a6a9c2f6cc",
-        "GUID:6055be8ebefd69e48b49212b09b47b2f",
-        "GUID:ff9bbb5c6a57ca64b8eae62c7dda42bf",
-        "GUID:869514e06b3584849b8d2f9c50ea21a8",
-        "GUID:361a5bfcd5f1b874c9a87d82d3f4699f",
-        "GUID:7a528f049ddcba840bfb605492fbd012",
-        "GUID:722cfb9ab06ae5543946f47f8b82f7c4"
+        "GUID:eab71cc59d3b71e409a49c0566585d57",
+        "GUID:80730cb7ec02f6544bfe954bc465eae7",
+        "GUID:c0fcfd9d8206a764ab9c7d2e5867477d"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
