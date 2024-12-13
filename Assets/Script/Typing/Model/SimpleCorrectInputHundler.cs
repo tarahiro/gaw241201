@@ -12,10 +12,9 @@ namespace gaw241201.View
 {
     public class SimpleCorrectInputHundler : ICorrectInputHundlable
     {
-        [Inject] TypingTextView _item;
         [Inject] IQuestionTextGenerator _questionTextGenerator;
 
-        public void OnCorrectInput(List<char> questionCharList, int charIndex, out bool isEndLoop)
+        public void OnCorrectInput(string questionCharList, int charIndex, out bool isEndLoop)
         {
             SoundManager.PlaySE("Key");
             if (questionCharList[charIndex] == '@') // 「@」がタイピングの終わりの判定となる。
@@ -25,7 +24,7 @@ namespace gaw241201.View
             else
             {
                 isEndLoop = false;
-                _item.SetQuestionText(_questionTextGenerator.GenerateQuestionText(questionCharList, charIndex), charIndex, questionCharList.Count);
+                _questionTextGenerator.GenerateQuestionText(questionCharList, charIndex);
             }
         }
     }

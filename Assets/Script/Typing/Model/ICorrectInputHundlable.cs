@@ -10,8 +10,8 @@ using VContainer.Unity;
 
 namespace gaw241201.View
 {
-    public interface ITypingViewInitializer
+    public interface ICorrectInputHundlable
     {
-        void InitializeView(TypingViewArgs _viewArgsList,out bool isEndLoop, out List<char> questionCharList, out int charIndex);
+        void OnCorrectInput(string questionCharList, int charIndex, out bool isEndLoop);
     }
 }

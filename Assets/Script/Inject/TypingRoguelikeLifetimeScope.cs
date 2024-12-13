@@ -25,23 +25,21 @@ namespace gaw241201.Inject
             //TypingRoguelike
             //model
             builder.Register<TypingRoguelikeModel>(Lifetime.Singleton).AsSelf();
-            builder.Register<TypingRoguelikeSingleSequenceStarter<ITypingMaster>>(Lifetime.Singleton).AsImplementedInterfaces();
+            builder.Register<TypingRoguelikeSingleSequenceStarter>(Lifetime.Singleton).AsImplementedInterfaces();
             builder.Register<TypingRoguelikeMasterDataProvider>(Lifetime.Singleton).AsImplementedInterfaces();
             builder.Register<MergedGroupMasterGetter<ITypingMaster, ITypingRoguelikeMaster>>(Lifetime.Singleton).AsImplementedInterfaces();
+            builder.Register<QuestionInitializer>(Lifetime.Singleton).AsImplementedInterfaces();
 
             //view
-            builder.Register<RoguelikeRestrictInputHundler>(Lifetime.Singleton).AsSelf().As<IPenaltiableView>();
-            builder.Register<RoguelikeCorrectInputHundler>(Lifetime.Singleton).AsSelf().As<IPointableView>();
+            builder.Register<RoguelikeRestrictInputHundler>(Lifetime.Singleton).AsSelf();
+            builder.Register<RoguelikeCorrectInputHundler>(Lifetime.Singleton).AsSelf();
             builder.Register<TypingRoguelikeView>(Lifetime.Singleton).AsImplementedInterfaces();
             builder.RegisterComponentInHierarchy<TimerView>().AsImplementedInterfaces();
-            builder.Register<TypingSentenceController>(Lifetime.Singleton).AsSelf().AsImplementedInterfaces();
+            builder.Register<EnterKeyHundler>(Lifetime.Singleton).AsSelf().AsImplementedInterfaces();
             builder.Register<KeyInputProcesser>(Lifetime.Singleton).AsSelf();
 
-            //presenter
-            builder.Register<LeetDataListFactory>(Lifetime.Singleton).AsSelf();
-
             //pointŠÖ˜A
-            builder.Register<PointModel>(Lifetime.Singleton).AsSelf();
+            builder.Register<PointModel>(Lifetime.Singleton).AsImplementedInterfaces();
             builder.RegisterComponentInHierarchy<PointView>().AsSelf();
 
             builder.UseEntryPoints(Lifetime.Singleton, entryPoints =>

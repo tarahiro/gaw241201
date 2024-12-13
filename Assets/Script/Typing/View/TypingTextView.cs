@@ -37,5 +37,10 @@ namespace gaw241201.View
             _gazable.Gaze((Vector2)Camera.main.WorldToScreenPoint(_tmpQuestion.transform.position) +
     Vector2.right * _tmpQuestion.preferredWidth * (-0.5f + ((float)_charIndex) / _charListCount));
         }
+
+        public void SetQuestionText(string s)
+        {
+            _tmpQuestion.text = s;
+        }
     }
 }

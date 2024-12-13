@@ -2,6 +2,7 @@ using Cysharp.Threading.Tasks;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Reflection;
 using Tarahiro;
 using UniRx;
 using UnityEngine;
@@ -10,19 +11,18 @@ using VContainer.Unity;
 
 namespace gaw241201.View
 {
-    public class RoguelikeCorrectInputHundler : ICorrectInputHundlable,IPointableView
+    public class RoguelikeRestrictInputHundler : ICorrectInputHundlable
     {
         [Inject] ICorrectInputHundlable _correctInputHundlable;
-
-        Subject<Unit> _pointed = new Subject<Unit>();
-        public IObservable<Unit> Pointed => _pointed;
+        [Inject] IPointable _pointable;
 
 
 
-        public void OnCorrectInput(List<char> questionCharList, int charIndex, out bool isEndLoop)
+        public void OnCorrectInput(string questionCharList, int charIndex, out bool isEndLoop)
         {
-            _pointed.OnNext(Unit.Default);
+            _pointable.ReducePenaltyPoint();
             _correctInputHundlable.OnCorrectInput(questionCharList, charIndex, out isEndLoop);
         }
+
     }
 }

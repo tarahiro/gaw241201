@@ -10,7 +10,7 @@ using VContainer.Unity;
 
 namespace gaw241201
 {
-    public class PointModel
+    public class PointModel : IPointable
     {
         const int c_unitPoint = 100;
         const int c_penaltyPoint = 300;

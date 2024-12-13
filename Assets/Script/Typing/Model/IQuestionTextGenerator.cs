@@ -10,11 +10,9 @@ using VContainer.Unity;
 
 namespace gaw241201.View
 {
-    public interface ILeetDataUserView
+    public interface IQuestionTextGenerator
     {
-
-        void Initialize(List<LeetCharData> charDataList);
-
-
+        void GenerateQuestionText(string questionChar, int charIndex);
+        IObservable<string> CorrectInputted { get; }
     }
 }

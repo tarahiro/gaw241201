@@ -19,6 +19,8 @@ namespace gaw241201.Presenter
         [Inject] ITypingView _view;
         [Inject] ISingleTextSequenceEnterable<ITypingMaster> _enterable;
         [Inject] TypingViewArgsFactory _argsFactory;
+        [Inject] IQuestionTextGenerator _questionTextGenerator;
+        [Inject] TypingTextView _textView;
 
         CompositeDisposable _disposable = new CompositeDisposable();
 
@@ -26,6 +28,7 @@ namespace gaw241201.Presenter
         {
             _enterable.Entered.Subscribe(x => _view.Enter(_argsFactory.Create(x)).Forget()).AddTo(_disposable);
             _view.Exited.Subscribe(_ => _model.EndSingle()).AddTo(_disposable);
+            _questionTextGenerator.CorrectInputted.Subscribe(_textView.SetQuestionText);
         }
     }
 }

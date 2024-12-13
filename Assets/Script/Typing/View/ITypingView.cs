@@ -14,6 +14,7 @@ namespace gaw241201.View
     {
         UniTask Enter(TypingViewArgs args);
         void EndLoop();
+        IObservable<char> KeyEntered { get; }
         IObservable<Unit> Exited { get; }
     }
 }

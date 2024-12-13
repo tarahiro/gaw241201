@@ -1,5 +1,4 @@
 using Cysharp.Threading.Tasks;
-using gaw241201.Model;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -11,9 +10,11 @@ using VContainer.Unity;
 
 namespace gaw241201
 {
-
-    public interface ILeetMasterGettable
+    public interface IPointable
     {
-        IObservable<List<ILeetMaster>> LeetMasterGetted { get; }
+        void AddUnitPoint();
+        void ReducePenaltyPoint();
+        void AddRemainTimePoint(float remainTime);
+        IObservable<int> PointUpdated { get; }
     }
 }

@@ -13,16 +13,15 @@ namespace gaw241201.View
     public class TypingRoguelikeView : ITypingView, IHaltable
     {
         [Inject] TypingTextView _item;
-        [Inject] ITypingViewInitializer _viewInitializer;
-        [Inject] RoguelikeCorrectInputHundler _correctInputHundlable;
-        [Inject] TypingSentenceController _sentenceController;
 
         private List<char> _questionCharList = new List<char>();
 
         private int _charIndex;
         bool _isEndLoop = false;
 
+        Subject<char> _keyEntered = new Subject<char>();
         Subject<Unit> _exited = new Subject<Unit>();
+        public IObservable<char> KeyEntered => _keyEntered;
         public IObservable<Unit> Exited => _exited;
 
 
@@ -31,8 +30,7 @@ namespace gaw241201.View
             Log.Comment("TypingRoguelikeViewäJén");
 
             //èâä˙ê›íË
-            _viewInitializer.InitializeView(args, out _isEndLoop, out _questionCharList, out _charIndex);
-            _sentenceController.Initialize(TypingUtil.ConvertToString(_questionCharList));
+            _isEndLoop = false;
 
             var v = args.CancellationToken.Register(OnExit);
 
@@ -50,15 +48,7 @@ namespace gaw241201.View
         {
             for (int i = 0; i < Input.inputString.Length; i++)
             {
-                _sentenceController.EnterKey(Input.inputString[i]);
-
-                /*
-                if (_keyInputJudger.IsKeyInputCorrect(Input.inputString[i], _charIndex, _questionCharList))
-                {
-                    _charIndex++;
-                    _correctInputHundlable.OnCorrectnput(_questionCharList, _charIndex, out _isEndLoop);
-                }
-                */
+                _keyEntered.OnNext(Input.inputString[i]);
             }
         }
 

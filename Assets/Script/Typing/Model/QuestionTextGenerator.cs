@@ -10,10 +10,11 @@ using UniRx;
 using UnityEngine;
 using VContainer;
 using VContainer.Unity;
+using static gaw241201.View.TypingUtil;
 
 namespace gaw241201.View
 {
-    public class QusetionTextGenerator : IQuestionTextGenerator
+    public class QuestionTextGenerator : IQuestionTextGenerator
     {
         const string c_typedName = "typed";
         const string c_untypedName = "untyped";
@@ -24,6 +25,10 @@ namespace gaw241201.View
         const string c_untypedStyle = c_startStylePrefix + c_untypedName + c_startStyleSuffix;
 
         bool _isInitialized = false;
+
+        Subject<string> _correctInputted = new Subject<string>();
+        public IObservable<string> CorrectInputted => _correctInputted;
+
 
         static readonly Dictionary<char, string> replacingDictionary = new Dictionary<char, string>()
         {
@@ -41,33 +46,36 @@ namespace gaw241201.View
             _isInitialized = true;
         }
 
-        public string GenerateQuestionText(List<char> questionCharList, int charIndex)
+        public void GenerateQuestionText(string questionChar, int charIndex)
         {
             if (!_isInitialized)
             {
                 Initialize();
             }
 
+
+            int _viewIndex = charIndex - CountCharactersBetweenBrackets(questionChar, charIndex);
+            string _viewString = RemoveBracketsAndContents(questionChar);
+
+
             //–â‘è•¶Žš—ñ‚ðUntyped‚Ætyped‚É•ª‚¯‚é
             string beforeReplaceText = c_typedStyle;
-            for (int i = 0; i < questionCharList.Count; i++)
+            for (int i = 0; i < _viewString.Length; i++)
             {
-                if (questionCharList[i] == '@')
+                if (_viewString[i] == '@')
                 {
                     break;
                 }
 
-                if (i == charIndex)
+                if (i == _viewIndex)
                 {
                     beforeReplaceText += c_closeStyle + c_untypedStyle;
                 }
 
-                beforeReplaceText += questionCharList[i];
+                beforeReplaceText += _viewString[i];
             }
 
             beforeReplaceText += c_closeStyle;
-
-
 
 
 
@@ -98,8 +106,9 @@ namespace gaw241201.View
 
             }
 
-
-            return result;
+            //’Ê’m
+            Log.Comment("–â‘è•¶‚ÌXVŠ®—¹");
+            _correctInputted.OnNext(result);
         }
     }
 }

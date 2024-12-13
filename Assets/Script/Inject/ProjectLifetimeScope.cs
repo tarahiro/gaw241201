@@ -32,10 +32,8 @@ namespace gaw241201.Inject
             builder.Register<TypingView>(Lifetime.Singleton).AsImplementedInterfaces();
             builder.RegisterComponentInHierarchy<TypingTextView>().AsSelf();
             builder.Register<RomanKeyInputJudger>(Lifetime.Singleton).AsImplementedInterfaces();
-            builder.Register<QusetionTextGenerator>(Lifetime.Singleton).AsImplementedInterfaces();
+            builder.Register<QuestionTextGenerator>(Lifetime.Singleton).AsImplementedInterfaces();
             builder.Register<SimpleGroupMasterGetter<ITypingMaster>>(Lifetime.Singleton).AsImplementedInterfaces();
-            builder.Register<TypingViewInitializer>(Lifetime.Singleton).AsImplementedInterfaces();
-            builder.Register<QuestionInitializer>(Lifetime.Singleton).AsImplementedInterfaces();
             builder.Register<SingleTextSequenceEnterer<ITypingMaster>>(Lifetime.Singleton).AsImplementedInterfaces();
             builder.Register<SimpleCorrectInputHundler>(Lifetime.Singleton).AsImplementedInterfaces();
 
