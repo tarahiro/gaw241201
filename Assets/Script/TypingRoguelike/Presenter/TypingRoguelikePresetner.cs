@@ -24,6 +24,7 @@ namespace gaw241201.Presenter
         [Inject] ITimerView _timerView;
         [Inject] IHaltable _haltable;
         [Inject] IPointableView _pointableView;
+        [Inject] IPenaltiableView _penaltiableView;
         [Inject] ILeetDataUserView _leetDataUserView;
         [Inject] TypingSentenceController _sentenceController;
 
@@ -53,6 +54,7 @@ namespace gaw241201.Presenter
             _timerView.TimeUped.Subscribe(_ => _haltable.Halt()).AddTo(_disposable);
             _timerView.TimeRemained.Subscribe(time => _pointModel.AddRemainTimePoint(time)).AddTo(_disposable);
             _pointableView.Pointed.Subscribe(_ => _pointModel.AddUnitPoint()).AddTo(_disposable);
+            _penaltiableView.Penaltied.Subscribe(_ => _pointModel.ReducePenaltyPoint()).AddTo(_disposable);
 
             _pointModel.PointUpdated.Subscribe(_pointView.UpdatePoint).AddTo(_disposable);
         }

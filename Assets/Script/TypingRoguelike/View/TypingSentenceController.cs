@@ -11,10 +11,16 @@ using VContainer.Unity;
 
 namespace gaw241201.View
 {
-    public class TypingSentenceController
+    public class TypingSentenceController : ILeetDataUserView
     {
-        [Inject] IKeyInputJudger _keyInputJudger;
         [Inject] RoguelikeCorrectInputHundler _correctInputHundlable;
+        [Inject] RoguelikeRestrictInputHundler _restrictInputHundlable;
+        [Inject] KeyInputProcesser _keyInputProcesser;
+
+        List<SelectionData> selectionDataList = new List<SelectionData>();
+        List<LeetCharData> _charDataList;
+        List<WordData> _wordDataList = new List<WordData>() { new WordData("alive", "verb"), new WordData("dog", "animal") };
+        List<char> _restrictedChar = new List<char>() { 'a','c' };
 
         string _tagSentence;
         int _tagSentenceIndex;
@@ -24,6 +30,11 @@ namespace gaw241201.View
 
         const char c_tagStart = '<';
         const char c_tagEnd = '>';
+
+        public void Initialize(List<LeetCharData> charDataList)
+        {
+            _charDataList = charDataList;
+        }
 
         public void Initialize(string tagSentence)
         {
@@ -37,30 +48,68 @@ namespace gaw241201.View
         public void EnterKey(char c)
         {
             //入力が有効かを判定
-
-            List<char> _tempSentence = _tagSentence.ToList();
-            if(_keyInputJudger.IsKeyInputCorrect(c,_tagSentenceIndex, _tempSentence))
+            if(_keyInputProcesser.TryKeyProcess(c,_tagSentenceIndex, _tagSentence,selectionDataList, out var selected))
             {
-                //if 有効
-                _tagSentence = TypingUtil.ConvertToString(_tempSentence);
+                selectionDataList = new List<SelectionData>();
+
+                if (selected.Count > 0)
+                {
+                    Log.Comment("検出されたSelectedDataを処理");
+                    _tagSentence = ReplaceFirstOccurrence(_tagSentence, selected[0].ReplacedString, selected[0].StringReplaceTo, _tagSentenceIndex);
+                }
 
                 _tagSentenceIndex++;
+
+                //tag
                 if (_tagSentence[_tagSentenceIndex] == c_tagStart)
                 {
+                    int _index = _tagSentence.IndexOf(c_tagEnd, _tagSentenceIndex) + 1;
 
-                    Log.Comment("Todo:タグを読む");
-                    Log.DebugLog(ReadTag(_tagSentenceIndex, _tagSentence));
+                    if (_tagSentence[_tagSentenceIndex + 1] != '/')
+                    {
 
-                    Log.DebugLog("Todo;タグの結果を通知");
+                        string tag = ReadTag(_tagSentenceIndex, _tagSentence);
+                        string substring = _tagSentence.Substring(_index);
+                        string word = substring.Substring(0, substring.IndexOf(c_tagStart.ToString() + "/" + tag + c_tagEnd.ToString()));
 
-                    Log.DebugLog("Todo:タグ終了までindexを飛ばす");
-                    _tagSentenceIndex = _tagSentence.IndexOf(c_tagEnd, _tagSentenceIndex) + 1;
+                        Log.DebugLog(substring);
+
+                        foreach (var wordData in _wordDataList)
+                        {
+                            if (wordData.Tag == tag)
+                            {
+                                selectionDataList.Add(new SelectionData(word, wordData.StringReplaceTo));
+                            }
+                        }
+                    }
+                    _tagSentenceIndex = _index;
                 }
-                Log.DebugLog(_tagSentence[_tagSentenceIndex]);
+
+                //leet
+                for (int i = 0; i < _charDataList.Count; i++)
+                {
+                    if (_tagSentence[_tagSentenceIndex] == _charDataList[i].LeetedChar)
+                    {
+                        for (int j = 0; j < _charDataList[i].ReplaceToStringList.Count; j++)
+                        {
+                            selectionDataList.Add(new SelectionData(_charDataList[i].LeetedChar.ToString(), _charDataList[i].ReplaceToStringList[j]));
+                        }
+                    }
+                }
 
                 int _viewIndex = _tagSentenceIndex -  CountCharactersBetweenBrackets(_tagSentence, _tagSentenceIndex);
                 string _viewString = RemoveBracketsAndContents(_tagSentence);
-                _correctInputHundlable.OnCorrectInput(_viewString.ToCharArray().ToList(), _viewIndex, out var isEndLoop);
+
+
+                bool isEndLoop;
+                if (_restrictedChar.Contains(c))
+                {
+                    _restrictInputHundlable.OnCorrectInput(_viewString.ToCharArray().ToList(), _viewIndex, out isEndLoop);
+                }
+                else
+                {
+                    _correctInputHundlable.OnCorrectInput(_viewString.ToCharArray().ToList(), _viewIndex, out isEndLoop);
+                }
 
                 if (isEndLoop)
                 {
@@ -110,7 +159,6 @@ namespace gaw241201.View
                 }
             }
 
-            Log.DebugLog(count);
             return count;
         }
         string RemoveBracketsAndContents(string sentence)
@@ -135,6 +183,24 @@ namespace gaw241201.View
             }
 
             return result.ToString();
+        }
+        string ReplaceFirstOccurrence(string source, string oldValue, string newValue, int startIndex)
+        {
+            if (string.IsNullOrEmpty(source) || string.IsNullOrEmpty(oldValue))
+            {
+                return source;
+            }
+
+            int index = source.IndexOf(oldValue,startIndex);
+            if (index < 0)
+            {
+                Log.DebugAssert("置換先が見つかりません。 source : " + source + "oldValue : " +oldValue + "startIndex : " + startIndex );
+                return source; // "oldValue" が見つからない場合、元の文字列をそのまま返す
+            }
+
+            // 最初に見つかった部分を置き換える
+            Log.DebugLog("置換");
+            return source.Substring(0, index) + newValue + source.Substring(index + oldValue.Length);
         }
     }
 }

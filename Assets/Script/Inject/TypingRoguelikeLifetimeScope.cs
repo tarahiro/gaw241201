@@ -30,11 +30,12 @@ namespace gaw241201.Inject
             builder.Register<MergedGroupMasterGetter<ITypingMaster, ITypingRoguelikeMaster>>(Lifetime.Singleton).AsImplementedInterfaces();
 
             //view
+            builder.Register<RoguelikeRestrictInputHundler>(Lifetime.Singleton).AsSelf().As<IPenaltiableView>();
             builder.Register<RoguelikeCorrectInputHundler>(Lifetime.Singleton).AsSelf().As<IPointableView>();
             builder.Register<TypingRoguelikeView>(Lifetime.Singleton).AsImplementedInterfaces();
-            builder.Register<LeetInputJudger>(Lifetime.Singleton).AsImplementedInterfaces();
             builder.RegisterComponentInHierarchy<TimerView>().AsImplementedInterfaces();
-            builder.Register<TypingSentenceController>(Lifetime.Singleton).AsSelf();
+            builder.Register<TypingSentenceController>(Lifetime.Singleton).AsSelf().AsImplementedInterfaces();
+            builder.Register<KeyInputProcesser>(Lifetime.Singleton).AsSelf();
 
             //presenter
             builder.Register<LeetDataListFactory>(Lifetime.Singleton).AsSelf();

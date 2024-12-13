@@ -13,6 +13,7 @@ namespace gaw241201
     public class PointModel
     {
         const int c_unitPoint = 100;
+        const int c_penaltyPoint = 300;
         const float c_pointPerTime = 100f;
 
         int m_point = 0;
@@ -29,6 +30,10 @@ namespace gaw241201
         public void AddUnitPoint()
         {
             IncrementPoint(c_unitPoint);
+        }
+        public void ReducePenaltyPoint()
+        {
+            DecrementPoint(c_penaltyPoint);
         }
 
         public void AddRemainTimePoint(float remainTime)

@@ -14,7 +14,6 @@ namespace gaw241201.View
     {
         [Inject] TypingTextView _item;
         [Inject] ITypingViewInitializer _viewInitializer;
-        [Inject] IKeyInputJudger _keyInputJudger;
         [Inject] RoguelikeCorrectInputHundler _correctInputHundlable;
         [Inject] TypingSentenceController _sentenceController;
 
