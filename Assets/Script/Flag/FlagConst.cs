@@ -45,6 +45,12 @@ namespace gaw241201
             GraphicsDeviceVersion
         }
 
+        public enum ContainableMasterKey
+        {
+            Leet,
+            Word
+        }
+
         public static string InitialValue(Key key)
         {
             switch (key)

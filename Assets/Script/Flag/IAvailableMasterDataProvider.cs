@@ -10,10 +10,8 @@ using VContainer.Unity;
 
 namespace gaw241201
 {
-    public interface IAchievableMasterFlagProvider
+    public interface IAvailableMasterDataProvider<T> where T : IIdentifiable, IIndexable
     {
-        List<string> RegisteredId(FlagConst.ContainableMasterKey key);
-
-        bool IsContainskey(FlagConst.ContainableMasterKey key, string Id);
+        List<T> GetAvailableMasterDataList();
     }
 }

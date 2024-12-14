@@ -10,16 +10,32 @@ using VContainer.Unity;
 
 namespace gaw241201
 {
-    public class AchievableMasterFlagContainer<T> : IAchievableMasterFlagProvider<T> where T : IIndexable, IIdentifiable
+    public class AchievableMasterFlagContainer : IAchievableMasterFlagProvider
     {
-        List<string> _flagContainer = new List<string>()
+        Dictionary<FlagConst.ContainableMasterKey, List<string>> _dictionary = new Dictionary<FlagConst.ContainableMasterKey, List<string>>() {
+            { FlagConst.ContainableMasterKey.Leet,new List<string>()
         {
             "a","i"
+        } }, { FlagConst.ContainableMasterKey.Word,new List<string>()
+        {
+            "cat","alive"
+        } },
         };
 
-        public bool IsContainskey(string Id)
+        public List<string> RegisteredId(FlagConst.ContainableMasterKey key)
         {
-            return _flagContainer.Contains(Id);
+            return _dictionary[key];
         }
+
+        public bool IsContainskey(FlagConst.ContainableMasterKey key, string Id)
+        {
+            if (_dictionary.ContainsKey(key))
+            {
+                return _dictionary[key].Contains(Id);
+            }
+
+            return false;
+        }
+
     }
 }

@@ -5,6 +5,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Tarahiro;
+using Tarahiro.MasterData;
 using UniRx;
 using UnityEngine;
 using VContainer;
@@ -18,11 +19,12 @@ namespace gaw241201
         [Inject] RoguelikeCorrectInputHundler _correctInputHundlable;
         [Inject] RoguelikeRestrictInputHundler _restrictInputHundlable;
         [Inject] KeyInputProcesser _keyInputProcesser;
-        [Inject] AvaliableLeetMasterDataProvider _leetMasterDataProvider;
+        [Inject] IAvailableMasterDataProvider<IMasterDataRecord<ILeetMaster>> _leetMasterDataProvider;
+        [Inject] IAvailableMasterDataProvider<IMasterDataRecord<IWordMaster>> _wordMasterDataProvider;
 
         List<SelectionData> selectionDataList = new List<SelectionData>();
-        List<ILeetMaster> _charDataList;
-        List<WordData> _wordDataList = new List<WordData>() { new WordData("alive", "verb"), new WordData("dog", "animal") };
+        List<IMasterDataRecord<ILeetMaster>> _charDataList;
+        List<IMasterDataRecord<IWordMaster>> _wordDataList;
         List<char> _restrictedChar = new List<char>() { 'a','c' };
 
         string _tagSentence;
@@ -41,7 +43,8 @@ namespace gaw241201
             //indexÇèâä˙âªÇ∑ÇÈ
             _tagSentence = tagSentence;
             _tagSentenceIndex = 0;
-            _charDataList = _leetMasterDataProvider.GetAvailableLeetMasterDataList();
+            _charDataList = _leetMasterDataProvider.GetAvailableMasterDataList();
+            _wordDataList = _wordMasterDataProvider.GetAvailableMasterDataList();
 
             //Fake
             _restrictionDataLoaded.OnNext(_restrictedChar);
@@ -78,9 +81,9 @@ namespace gaw241201
 
                         foreach (var wordData in _wordDataList)
                         {
-                            if (wordData.Tag == tag)
+                            if (wordData.GetMaster().TagName == tag)
                             {
-                                selectionDataList.Add(new SelectionData(word, wordData.StringReplaceTo));
+                                selectionDataList.Add(new SelectionData(word, wordData.GetMaster().WordName));
                             }
                         }
                     }
@@ -90,11 +93,11 @@ namespace gaw241201
                 //leet
                 for (int i = 0; i < _charDataList.Count; i++)
                 {
-                    if (_tagSentence[_tagSentenceIndex] == _charDataList[i].LeetedChar)
+                    if (_tagSentence[_tagSentenceIndex] == _charDataList[i].GetMaster().LeetedChar)
                     {
-                        for (int j = 0; j < _charDataList[i].ReplaceToStringList.Length; j++)
+                        for (int j = 0; j < _charDataList[i].GetMaster().ReplaceToStringList.Length; j++)
                         {
-                            selectionDataList.Add(new SelectionData(_charDataList[i].LeetedChar.ToString(), _charDataList[i].ReplaceToStringList[j]));
+                            selectionDataList.Add(new SelectionData(_charDataList[i].GetMaster().LeetedChar.ToString(), _charDataList[i].GetMaster().ReplaceToStringList[j]));
                         }
                     }
                 }

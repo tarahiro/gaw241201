@@ -5,6 +5,7 @@ using gaw241201.Model.MasterData;
 using gaw241201.Presenter;
 using gaw241201.View;
 using gaw241201.Model;
+using Tarahiro.MasterData;
 
 namespace gaw241201.Inject
 {
@@ -16,11 +17,23 @@ namespace gaw241201.Inject
             builder.Register<TypingRoguelikeMainLoopStarter>(Lifetime.Singleton).AsSelf();
 
             //Flag
-            builder.Register<AchievableMasterFlagContainer<ILeetMaster>>(Lifetime.Singleton).AsImplementedInterfaces();
+            builder.Register<AchievableMasterFlagContainer>(Lifetime.Singleton).AsImplementedInterfaces();
+
+            //Word
+            builder.Register<WordMasterDataProvider>(Lifetime.Singleton).
+                As<IWordMasterDataProvider>().
+                As<IMasterDataProvider<IMasterDataRecord<IWordMaster>>>();
+            builder.Register<AvailableWordDataProvider>(Lifetime.Singleton).
+                As<AvaliableMasterDataProvider<IMasterDataRecord<IWordMaster>>>().
+                As<IAvailableMasterDataProvider<IMasterDataRecord<IWordMaster>>>();
 
             //Leet
-            builder.Register<LeetMasterDataProvider>(Lifetime.Singleton).AsImplementedInterfaces();
-            builder.Register<AvaliableLeetMasterDataProvider>(Lifetime.Singleton).AsSelf();
+            builder.Register<LeetMasterDataProvider>(Lifetime.Singleton).
+                As<ILeetMasterDataProvider>().
+                As<IMasterDataProvider<IMasterDataRecord<ILeetMaster>>>();
+            builder.Register<AvailableLeetDataProvider>(Lifetime.Singleton).
+                As<AvaliableMasterDataProvider<IMasterDataRecord<ILeetMaster>>>().
+                As<IAvailableMasterDataProvider<IMasterDataRecord<ILeetMaster>>>();
 
             //TypingRoguelike
             //model
