@@ -11,7 +11,7 @@ using gaw241201.Model;
 
 namespace gaw241201
 {
-    public class TypingRoguelikeModel : TextSequenceModel<ITypingMaster>
+    public class TypingRoguelikeModel : TextSequenceModel<ITypingRoguelikeSingleSequenceMaster>
     {
     }
 }

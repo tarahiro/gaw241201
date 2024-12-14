@@ -16,10 +16,10 @@ namespace gaw241201.Presenter
     public class TypingRoguelikePresetner : IPostInitializable
     {
         [Inject] TypingRoguelikeModel _model;
-        [Inject] ISingleTextSequenceEnterable<ITypingMaster> _enterable;
+        [Inject] ISingleTextSequenceEnterable<ITypingRoguelikeSingleSequenceMaster> _enterable;
         [Inject] ITimerStartableModel _timerStartable;
         [Inject] ITypingView _view;
-        [Inject] TypingViewArgsFactory _argsFactory;
+        [Inject] TypingRoguelikeViewArgsFactory _argsFactory;
         [Inject] ITimerView _timerView;
         [Inject] IHaltable _haltable;
         [Inject] EnterKeyHundler _enterKeyHundler;
