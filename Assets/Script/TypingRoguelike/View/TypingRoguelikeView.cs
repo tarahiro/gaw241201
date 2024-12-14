@@ -43,6 +43,7 @@ namespace gaw241201.View
 
             v.Dispose();
             OnExit();
+
         }
         void CheckInput()
         {

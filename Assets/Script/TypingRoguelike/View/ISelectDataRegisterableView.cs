@@ -10,9 +10,8 @@ using VContainer.Unity;
 
 namespace gaw241201.View
 {
-    public interface IQuestionTextGenerator
+    public interface ISelectDataRegisterableView
     {
-        void GenerateQuestionText(string questionChar, int charIndex);
-        IObservable<string> CorrectInputted { get; }
+        void RegisterSelectData(List<SelectionData> selectDataList);
     }
 }

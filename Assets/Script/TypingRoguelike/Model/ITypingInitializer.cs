@@ -1,4 +1,5 @@
 using Cysharp.Threading.Tasks;
+using gaw241201.Model;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -10,8 +11,9 @@ using VContainer.Unity;
 
 namespace gaw241201
 {
-    public interface ICorrectInputHundlable
+    public interface ITypingInitializer
     {
-        void OnCorrectInput(string questionCharList, int charIndex, out bool isEndLoop);
+        void InitializeQuestion(ITypingMaster master);
+        IObservable<string> SampleInputted { get; }
     }
 }

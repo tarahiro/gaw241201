@@ -16,7 +16,7 @@ namespace gaw241201
     public class TypingRoguelikeSingleSequenceStarter: ISingleTextSequenceEnterable<ITypingMaster>, ITimerStartableModel
     {
         [Inject] ModelArgsFactory<ITypingMaster> _modelArgsFactory;
-        [Inject] IQuestionInitializer _questionInitializer;
+        [Inject] ITypingInitializer _questionInitializer;
 
         Subject<ModelArgs<ITypingMaster>> _entered = new Subject<ModelArgs<ITypingMaster>>();
         Subject<TimerArgs> _timerStarted = new Subject<TimerArgs>();

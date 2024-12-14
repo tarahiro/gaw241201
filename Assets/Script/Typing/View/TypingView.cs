@@ -13,7 +13,6 @@ namespace gaw241201.View
 {
     public class TypingView : ITypingView
     {
-        [Inject] TypingTextView _item;
 
         private List<char> _questionCharList = new List<char>();
 
@@ -61,7 +60,6 @@ namespace gaw241201.View
         private void OnExit()
         {
             Log.Comment("TypingViewèIóπ");
-            _item.ResetText();
             _exited.OnNext(Unit.Default);
         }
 

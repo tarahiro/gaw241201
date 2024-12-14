@@ -3,13 +3,13 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Tarahiro;
+using TMPro;
 using UniRx;
 using UnityEngine;
 using VContainer;
 using VContainer.Unity;
 
-namespace gaw241201.View
-{
+namespace gaw241201 { 
     public static class TypingUtil
     {
         public const char c_tagStart = '<';
@@ -96,6 +96,23 @@ namespace gaw241201.View
             // Å‰‚ÉŒ©‚Â‚©‚Á‚½•”•ª‚ð’u‚«Š·‚¦‚é
             Log.DebugLog("’uŠ·");
             return source.Substring(0, index) + newValue + source.Substring(index + oldValue.Length);
+        }
+
+    }
+    public static class TMP_TextExtensionMethods
+    {
+        public static Vector3 GetCharacterLocalPosition
+        (
+            this TMP_Text self,
+            int index
+        )
+        {
+            var characterInfo = self.textInfo.characterInfo[index];
+
+            return !characterInfo.isVisible
+                    ? Vector3.zero
+                    : self.transform.localPosition + (characterInfo.topLeft + characterInfo.bottomLeft) * 0.5f
+                ;
         }
     }
 }

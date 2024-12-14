@@ -8,10 +8,10 @@ using UnityEngine;
 using VContainer;
 using VContainer.Unity;
 
-namespace gaw241201
+namespace gaw241201.View
 {
-    public interface ICorrectInputHundlable
+    public interface ICorrectInputEnterableView
     {
-        void OnCorrectInput(string questionCharList, int charIndex, out bool isEndLoop);
+        void EnterCorrectInput(int index);
     }
 }

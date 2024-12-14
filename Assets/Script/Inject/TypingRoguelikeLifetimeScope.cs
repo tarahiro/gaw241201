@@ -28,7 +28,7 @@ namespace gaw241201.Inject
             builder.Register<TypingRoguelikeSingleSequenceStarter>(Lifetime.Singleton).AsImplementedInterfaces();
             builder.Register<TypingRoguelikeMasterDataProvider>(Lifetime.Singleton).AsImplementedInterfaces();
             builder.Register<MergedGroupMasterGetter<ITypingMaster, ITypingRoguelikeMaster>>(Lifetime.Singleton).AsImplementedInterfaces();
-            builder.Register<QuestionInitializer>(Lifetime.Singleton).AsImplementedInterfaces();
+            builder.Register<TypingInitializer>(Lifetime.Singleton).AsImplementedInterfaces();
 
             //view
             builder.Register<RoguelikeRestrictInputHundler>(Lifetime.Singleton).AsSelf();
@@ -37,6 +37,7 @@ namespace gaw241201.Inject
             builder.RegisterComponentInHierarchy<TimerView>().AsImplementedInterfaces();
             builder.Register<EnterKeyHundler>(Lifetime.Singleton).AsSelf().AsImplementedInterfaces();
             builder.Register<KeyInputProcesser>(Lifetime.Singleton).AsSelf();
+            builder.RegisterComponentInHierarchy<TypingTextView>().AsImplementedInterfaces();
 
             //pointŠÖ˜A
             builder.Register<PointModel>(Lifetime.Singleton).AsImplementedInterfaces();

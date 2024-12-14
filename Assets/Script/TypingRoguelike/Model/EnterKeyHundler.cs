@@ -9,9 +9,9 @@ using UniRx;
 using UnityEngine;
 using VContainer;
 using VContainer.Unity;
-using static gaw241201.View.TypingUtil;
+using static gaw241201.TypingUtil;
 
-namespace gaw241201.View
+namespace gaw241201
 {
     public class EnterKeyHundler
     {
@@ -29,8 +29,11 @@ namespace gaw241201.View
         int _tagSentenceIndex;
 
         Subject<Unit> _ended = new Subject<Unit>();
+        Subject<List<SelectionData>> _selectionDataCreated = new Subject<List<SelectionData>>();
+        Subject<List<char>> _restrictionDataLoaded = new Subject<List<char>>();
         public IObservable<Unit> Ended => _ended;
-
+        public IObservable<List<SelectionData>> SelectionDataCreated => _selectionDataCreated;
+        public IObservable<List<char>> RestrictionDataLoaded => _restrictionDataLoaded;
 
         public void Initialize(string tagSentence)
         {
@@ -39,6 +42,9 @@ namespace gaw241201.View
             _tagSentence = tagSentence;
             _tagSentenceIndex = 0;
             _charDataList = _leetMasterDataProvider.GetAvailableLeetMasterDataList();
+
+            //Fake
+            _restrictionDataLoaded.OnNext(_restrictedChar);
         }
 
         public void EnterKey(char c)
@@ -93,6 +99,9 @@ namespace gaw241201.View
                     }
                 }
 
+                //入力完了処理
+                _selectionDataCreated.OnNext(selectionDataList);
+
                 bool isEndLoop;
                 if (_restrictedChar.Contains(c))
                 {
@@ -109,13 +118,6 @@ namespace gaw241201.View
                 }
 
             }
-
-            //  indexを一つ進める
-            //  if タグ開始がある
-            //      タグを読む
-            //      タグ開始を誰かに通知
-            //      タグ開始が終わるまでindexを飛ばす
-            //  TextViewに反映
         }
 
     }

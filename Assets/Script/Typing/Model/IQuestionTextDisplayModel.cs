@@ -10,8 +10,10 @@ using VContainer.Unity;
 
 namespace gaw241201
 {
-    public interface ICorrectInputHundlable
+    public interface IQuestionTextDisplayModel
     {
-        void OnCorrectInput(string questionCharList, int charIndex, out bool isEndLoop);
+        void GenerateQuestionText(string questionChar, int charIndex);
+        IObservable<string> TextUpdated { get; }
+        IObservable<int> CorrectInputted { get; }
     }
 }

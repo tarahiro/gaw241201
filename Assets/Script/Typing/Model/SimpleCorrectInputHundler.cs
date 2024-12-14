@@ -1,3 +1,5 @@
+
+
 using Cysharp.Threading.Tasks;
 using System;
 using System.Collections;
@@ -8,11 +10,11 @@ using UnityEngine;
 using VContainer;
 using VContainer.Unity;
 
-namespace gaw241201.View
+namespace gaw241201
 {
     public class SimpleCorrectInputHundler : ICorrectInputHundlable
     {
-        [Inject] IQuestionTextGenerator _questionTextGenerator;
+        [Inject] IQuestionTextDisplayModel _questionTextGenerator;
 
         public void OnCorrectInput(string questionCharList, int charIndex, out bool isEndLoop)
         {
