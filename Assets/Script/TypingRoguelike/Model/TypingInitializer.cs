@@ -14,18 +14,24 @@ namespace gaw241201.View
     public class TypingInitializer : ITypingInitializer
     {
         [Inject] EnterKeyHundler _enterKeyHundler;
-        [Inject] IQuestionTextDisplayModel _questionTextGenerator;
+        [Inject] IndexUpdater _indexUpdater;
+        [Inject] IQuestionDisplayTextModel _questionDisplayTextGenerator;
 
+        Subject<List<char>> _restrictionDataLoaded = new Subject<List<char>>();
         Subject<string> _sampleInputted = new Subject<string>();
         public IObservable<string> SampleInputted => _sampleInputted;
-        public void InitializeQuestion(ITypingMaster master)
+        public IObservable<List<char>> RestrictionDataLoaded => _restrictionDataLoaded;
+        public void InitializeQuestion(ITypingRoguelikeSingleSequenceMaster master)
         {
             _sampleInputted.OnNext(master.JpText);
             string romanText  = string.Concat(master.RomanText, "@");
 
-            _enterKeyHundler.Initialize(romanText);
+            _enterKeyHundler.Initialize(romanText,master.RestrictedCharList);
+            _indexUpdater.Initialize(romanText);
+            _restrictionDataLoaded.OnNext(master.RestrictedCharList);
 
-            _questionTextGenerator.GenerateQuestionText(romanText, 0);
+            _indexUpdater.UpdateIndex(0,romanText);
+            _questionDisplayTextGenerator.GenerateDisplayQuestionText(romanText,_indexUpdater.GetIndex());
         }
     }
 }

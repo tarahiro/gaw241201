@@ -26,7 +26,7 @@ namespace gaw241201 {
             return sentence.Substring(index + 1, endIndex - (index + 1));
         }
 
-        public static int CountCharactersBetweenBrackets(string sentence, int index)
+        public static int CountCharactersInBrackets(string sentence, int index)
         {
             if (index >= sentence.Length)
             {

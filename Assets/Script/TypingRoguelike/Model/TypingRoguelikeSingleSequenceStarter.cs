@@ -29,7 +29,7 @@ namespace gaw241201
             isEnded = false;
 
             _questionInitializer.InitializeQuestion(master);
-            _timerStarted.OnNext(new TimerArgs(20f, ct));
+            _timerStarted.OnNext(new TimerArgs(TypingUtil.RemoveBracketsAndContents(master.RomanText).Length * master.Time, ct));
             _entered.OnNext(_modelArgsFactory.Create(master, ct));
         }
     }

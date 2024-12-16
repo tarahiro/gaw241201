@@ -46,6 +46,20 @@ namespace gaw241201.View
             style.Add(styleSheet.GetStyle(c_untypedName));
         }
 
+        public void EnterCorrectInput(int index)
+        {
+            Log.Comment(index + "の文字表示開始");
+
+            _tmpQuestion.text = GetTextTaggedTyped(_textCache, index);
+            _textCache = "";
+
+            _gazable.Gaze((Vector2)Camera.main.WorldToScreenPoint(_tmpQuestion.transform.position) +
+    Vector2.right * _tmpQuestion.preferredWidth * (-0.5f + ((float)index) / _tmpQuestion.GetParsedText().Length));
+
+            SetSelectData(_tmpQuestion, _selectionDataCache, index);
+
+            SetRestriction(_tmpQuestion, _itemViewList, _restrictionList, index);
+        }
 
         public void ResetText()
         {
@@ -66,7 +80,7 @@ namespace gaw241201.View
 
         public void RegisterSelectData(List<SelectionData> selectDataList)
         {
-            Log.DebugAssert(_selectionDataCache.Count == 0);
+            Log.DebugAssert(_selectionDataCache == null);
             _selectionDataCache = selectDataList;
         }
 
@@ -75,18 +89,6 @@ namespace gaw241201.View
             _restrictionList = restrictionList;
         }
 
-        public void EnterCorrectInput(int index)
-        {
-            _tmpQuestion.text = GetTextTypedTagged(_textCache,index);
-            _textCache = "";
-
-            _gazable.Gaze((Vector2)Camera.main.WorldToScreenPoint(_tmpQuestion.transform.position) +
-    Vector2.right * _tmpQuestion.preferredWidth * (-0.5f + ((float)index) / _tmpQuestion.GetParsedText().Length));
-
-            SetSelectData(_tmpQuestion, _selectionDataCache, index);
-
-            SetRestriction(_tmpQuestion, _itemViewList, _restrictionList, index);
-        }
 
         const float c_yOffset = 50f;
         const float c_yInterval = 25f;
@@ -110,21 +112,23 @@ namespace gaw241201.View
                 itemView.transform.localPosition = _tmpQuestion.GetCharacterLocalPosition(charIndex) + Vector3.down * c_yInterval * i;
                 _itemViewList.Add(itemView);
             }
+
+            _selectionDataCache = null;
         }
 
         const string c_restrictedName = "Restricted";
 
-        void SetRestriction(TextMeshProUGUI parentText, List<SelectDataItemView> selectionDataList, List<char> restrictionList, int charIndex)
+        void SetRestriction(TextMeshProUGUI textView, List<SelectDataItemView> selectionDataList, List<char> restrictionList, int charIndex)
         {
             for (int i = 0; i < restrictionList.Count; i++)
             {
-                List<string> splitted = SplitAtUntypedTag(parentText.text);
+                List<string> splitted = SplitAtUntypedTag(textView.text);
 
                 string typedReplaceTo = GetTagString(c_typedName + c_restrictedName) + restrictionList[i] + c_closeStyle;
                 string untypedReplaceTo = GetTagString(c_untypedName + c_restrictedName) + restrictionList[i] + c_closeStyle;
                 splitted[0]  = ReplacedTextOutTag(splitted[0], restrictionList[i].ToString(), typedReplaceTo);
                 splitted[1] = ReplacedTextOutTag(splitted[1], restrictionList[i].ToString(), untypedReplaceTo);
-                parentText.text = ConcatSplittedTypingText(splitted);
+                textView.text = ConcatSplittedTypingText(splitted);
 
                 foreach(var item in selectionDataList)
                 {
@@ -133,7 +137,7 @@ namespace gaw241201.View
             }
         }
 
-        string GetTextTypedTagged(string _viewString, int _viewIndex)
+        string GetTextTaggedTyped(string _viewString, int _viewIndex)
 
         {  //問題文字列をUntypedとtypedに分ける
             string beforeReplaceText = GetTagString(c_typedName);
@@ -153,8 +157,6 @@ namespace gaw241201.View
             }
 
             beforeReplaceText += c_closeStyle;
-
-
 
             //与えられた文字列を別の文字列に置き換える処理
             List<string> splitted = SplitAtUntypedTag(beforeReplaceText);
@@ -189,7 +191,14 @@ namespace gaw241201.View
 
         List<string> SplitAtUntypedTag(string text)
         {
-            return text.Split(GetTagString(c_untypedName)).ToList();
+            List<string> returnable = text.Split(GetTagString(c_untypedName)).ToList();
+            
+            if(returnable.Count == 1)
+            {
+                returnable.Insert(0, "");
+            }
+            Log.DebugAssert(returnable.Count == 2);
+            return returnable;
         }
 
         string ConcatSplittedTypingText(List<string> splitted)

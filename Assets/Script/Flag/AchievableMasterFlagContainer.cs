@@ -18,7 +18,7 @@ namespace gaw241201
             "a","i"
         } }, { FlagConst.ContainableMasterKey.Word,new List<string>()
         {
-            "cat","alive"
+            "dog","alive"
         } },
         };
 

@@ -14,7 +14,7 @@ namespace gaw241201
 {
     public class SimpleCorrectInputHundler : ICorrectInputHundlable
     {
-        [Inject] IQuestionTextDisplayModel _questionTextGenerator;
+        [Inject] IQuestionDisplayTextModel _questionTextGenerator;
 
         public void OnCorrectInput(string questionCharList, int charIndex, out bool isEndLoop)
         {
@@ -26,7 +26,7 @@ namespace gaw241201
             else
             {
                 isEndLoop = false;
-                _questionTextGenerator.GenerateQuestionText(questionCharList, charIndex);
+                _questionTextGenerator.GenerateDisplayQuestionText(questionCharList, charIndex);
             }
         }
     }

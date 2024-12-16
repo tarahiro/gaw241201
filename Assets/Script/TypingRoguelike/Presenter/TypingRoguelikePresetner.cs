@@ -26,9 +26,10 @@ namespace gaw241201.Presenter
         [Inject] ITypingInitializer _questionInitializer;
         [Inject] ISelectDataRegisterableView _selectDataRegisterableView;
         [Inject] ITextRegisterableView _textView;
-        [Inject] IQuestionTextDisplayModel _questionTextGenerator;
+        [Inject] IQuestionDisplayTextModel _questionTextGenerator;
         [Inject] ICorrectInputEnterableView _correctInputEnterableView;
         [Inject] IRestrictionRegisterableView _restrictionRegisterableView;
+        [Inject] ISelectionDataSettable _selectionDataSettable;
 
         //----------point Œã‚Å•ª‚¯‚é‚©‚à------------------
         [Inject] IPointable _pointModel;
@@ -44,9 +45,9 @@ namespace gaw241201.Presenter
             _enterable.Entered.Subscribe(x => _view.Enter(_argsFactory.Create(x)).Forget()).AddTo(_disposable);
             _timerStartable.TimerStarted.Subscribe(args  => _timerView.Enter(args).Forget()).AddTo(_disposable);
             _view.KeyEntered.Subscribe(x => _enterKeyHundler.EnterKey(x)).AddTo(_disposable);
-            _enterKeyHundler.SelectionDataCreated.Subscribe(_selectDataRegisterableView.RegisterSelectData).AddTo(_disposable);
+            _selectionDataSettable.SelectionDataCreated.Subscribe(_selectDataRegisterableView.RegisterSelectData).AddTo(_disposable);
             _enterKeyHundler.Ended.Subscribe(_ => _view.EndLoop()).AddTo(_disposable);
-            _enterKeyHundler.RestrictionDataLoaded.Subscribe(_restrictionRegisterableView.RegisterRestriction).AddTo(_disposable);
+            _questionInitializer.RestrictionDataLoaded.Subscribe(_restrictionRegisterableView.RegisterRestriction).AddTo(_disposable);
             _questionInitializer.SampleInputted.Subscribe(_textView.SetSampleText);
             _questionTextGenerator.TextUpdated.Subscribe(_textView.RegisterText);
             _questionTextGenerator.CorrectInputted.Subscribe(_correctInputEnterableView.EnterCorrectInput);

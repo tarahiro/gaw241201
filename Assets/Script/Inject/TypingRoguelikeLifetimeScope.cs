@@ -46,6 +46,8 @@ namespace gaw241201.Inject
             builder.Register<TypingRoguelikeSingleSequenceMasterGetter>(Lifetime.Singleton).AsImplementedInterfaces();
             builder.Register<TypingInitializer>(Lifetime.Singleton).AsImplementedInterfaces();
             builder.Register<ModelArgsFactory<ITypingRoguelikeSingleSequenceMaster>>(Lifetime.Singleton).AsSelf();
+            builder.Register<IndexUpdater>(Lifetime.Singleton).AsSelf();
+            builder.Register<SelectionDataContainer>(Lifetime.Singleton).AsImplementedInterfaces();
 
             //view
             builder.Register<RoguelikeRestrictInputHundler>(Lifetime.Singleton).AsSelf();

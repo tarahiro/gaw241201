@@ -14,7 +14,7 @@ using static gaw241201.TypingUtil;
 
 namespace gaw241201
 {
-    public class QuestionTextDisplayModel : IQuestionTextDisplayModel
+    public class QuestionDisplayTextModel : IQuestionDisplayTextModel
     {
 
         bool _isInitialized = false;
@@ -25,15 +25,14 @@ namespace gaw241201
         public IObservable<int> CorrectInputted => _correctInputted;
 
 
-        public void GenerateQuestionText(string questionChar, int charIndex)
+        public void GenerateDisplayQuestionText(string questionChar, int charIndex)
         {
 
 
-            int _viewIndex = charIndex - CountCharactersBetweenBrackets(questionChar, charIndex);
+            int _viewIndex = charIndex - CountCharactersInBrackets(questionChar, charIndex);
             string _viewString = RemoveBracketsAndContents(questionChar);
-
-
-          
+            Log.DebugAssert(_viewIndex >= 0);
+            Log.DebugAssert(_viewIndex < _viewString.Length);
 
             //’Ê’m
             Log.Comment("–â‘è•¶‚ÌXVŠ®—¹");
