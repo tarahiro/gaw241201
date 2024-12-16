@@ -7,6 +7,7 @@ using Tarahiro;
 using VContainer;
 using VContainer.Unity;
 using UniRx;
+using gaw241201.Model;
 
 namespace gaw241201.Inject
 {
@@ -15,8 +16,6 @@ namespace gaw241201.Inject
     {
         [Inject] FlowHundler _flowHundler;
         [Inject] ISaveDeletable _saveDeletable;
-
-        string _initialCategory;
 
         public void Start()
         {
@@ -29,6 +28,7 @@ namespace gaw241201.Inject
             {
                 _flowHundler.ForceGetCurrentFlow().ForceEndFlow();
             }
+
 
             if (Input.GetKeyDown(KeyCode.LeftAlt))
             {
