@@ -9,7 +9,7 @@
   <Author>h t</Author>
   <LastAuthor>h t</LastAuthor>
   <Created>2021-10-25T13:58:26Z</Created>
-  <LastSaved>2024-12-16T02:06:05Z</LastSaved>
+  <LastSaved>2024-12-16T12:58:26Z</LastSaved>
   <Version>16.00</Version>
  </DocumentProperties>
  <OfficeDocumentSettings xmlns="urn:schemas-microsoft-com:office:office">
@@ -86,9 +86,18 @@
     ss:Color="#000000"/>
    <Interior ss:Color="#FFF2CC" ss:Pattern="Solid"/>
   </Style>
+  <Style ss:ID="s68">
+   <Borders>
+    <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1"/>
+    <Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="1"/>
+   </Borders>
+   <Font ss:FontName="游ゴシック" x:CharSet="128" x:Family="Modern" ss:Size="8"
+    ss:Color="#000000"/>
+   <Interior ss:Color="#FFF2CC" ss:Pattern="Solid"/>
+  </Style>
  </Styles>
  <Worksheet ss:Name="Script">
-  <Table ss:ExpandedColumnCount="7" ss:ExpandedRowCount="31" x:FullColumns="1"
+  <Table ss:ExpandedColumnCount="8" ss:ExpandedRowCount="30" x:FullColumns="1"
    x:FullRows="1" ss:DefaultColumnWidth="52.5" ss:DefaultRowHeight="18">
    <Column ss:AutoFitWidth="0" ss:Width="30"/>
    <Column ss:AutoFitWidth="0" ss:Width="93.5"/>
@@ -106,6 +115,7 @@
     <Cell ss:StyleID="s65"><Data ss:Type="String">SkillKey</Data></Cell>
     <Cell ss:StyleID="s65"><Data ss:Type="String">SkillStringArgs</Data></Cell>
     <Cell ss:StyleID="s65"><Data ss:Type="String">SkillFloatArg</Data></Cell>
+    <Cell><Data ss:Type="String">memo</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
     <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">0</Data></Cell>
@@ -115,6 +125,9 @@
     <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="s68"><PhoneticText
+      xmlns="urn:schemas-microsoft-com:office:excel">ムコウカ</PhoneticText><Data
+      ss:Type="String">デバフ無効化</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
     <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">1</Data></Cell>
@@ -124,6 +137,9 @@
     <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="s68"><PhoneticText
+      xmlns="urn:schemas-microsoft-com:office:excel">タンゴツカ</PhoneticText><Data
+      ss:Type="String">単語使うとポイント</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
     <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">2</Data></Cell>
@@ -133,6 +149,9 @@
     <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="s68"><PhoneticText
+      xmlns="urn:schemas-microsoft-com:office:excel">ムコウカ</PhoneticText><Data
+      ss:Type="String">デバフ無効化</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
     <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">3</Data></Cell>
@@ -142,6 +161,9 @@
     <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="s68"><PhoneticText
+      xmlns="urn:schemas-microsoft-com:office:excel">ゼンタイキョウカ</PhoneticText><Data
+      ss:Type="String">全体強化</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
     <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">4</Data></Cell>
@@ -196,6 +218,9 @@
     <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="s68"><PhoneticText
+      xmlns="urn:schemas-microsoft-com:office:excel">キョウカ</PhoneticText><Data
+      ss:Type="String">b強化</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
     <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">10</Data></Cell>
@@ -205,6 +230,9 @@
     <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="s68"><PhoneticText
+      xmlns="urn:schemas-microsoft-com:office:excel">キョウカ</PhoneticText><Data
+      ss:Type="String">e強化</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
     <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">11</Data></Cell>
@@ -250,6 +278,9 @@
     <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="s68"><PhoneticText
+      xmlns="urn:schemas-microsoft-com:office:excel">キョウカ</PhoneticText><Data
+      ss:Type="String">z強化</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
     <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">16</Data></Cell>
@@ -298,15 +329,6 @@
    </Row>
    <Row ss:AutoFitHeight="0">
     <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">21</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">sleep</Data></Cell>
-    <Cell ss:StyleID="s67" ss:Formula="=RC[-1]"><Data ss:Type="String">sleep</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">vt</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="Number">0</Data></Cell>
-   </Row>
-   <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">22</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">buffaloVt</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">buffalo</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">vt</Data></Cell>
@@ -315,7 +337,7 @@
     <Cell ss:StyleID="s67"><Data ss:Type="Number">0</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">23</Data></Cell>
+    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">22</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">help</Data></Cell>
     <Cell ss:StyleID="s67" ss:Formula="=RC[-1]"><Data ss:Type="String">help</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">vt</Data></Cell>
@@ -324,7 +346,7 @@
     <Cell ss:StyleID="s67"><Data ss:Type="Number">0</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">24</Data></Cell>
+    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">23</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">surrender</Data></Cell>
     <Cell ss:StyleID="s67" ss:Formula="=RC[-1]"><Data ss:Type="String">surrender</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">vt</Data></Cell>
@@ -333,7 +355,7 @@
     <Cell ss:StyleID="s67"><Data ss:Type="Number">0</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">25</Data></Cell>
+    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">24</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">punish</Data></Cell>
     <Cell ss:StyleID="s67" ss:Formula="=RC[-1]"><Data ss:Type="String">punish</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">vt</Data></Cell>
@@ -342,7 +364,7 @@
     <Cell ss:StyleID="s67"><Data ss:Type="Number">0</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">26</Data></Cell>
+    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">25</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">barrel</Data></Cell>
     <Cell ss:StyleID="s67" ss:Formula="=RC[-1]"><Data ss:Type="String">barrel</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">vt</Data></Cell>
@@ -371,15 +393,15 @@
    <Panes>
     <Pane>
      <Number>3</Number>
-     <ActiveRow>5</ActiveRow>
-     <ActiveCol>2</ActiveCol>
+     <ActiveRow>32</ActiveRow>
+     <ActiveCol>16</ActiveCol>
     </Pane>
    </Panes>
    <ProtectObjects>False</ProtectObjects>
    <ProtectScenarios>False</ProtectScenarios>
   </WorksheetOptions>
   <ConditionalFormatting xmlns="urn:schemas-microsoft-com:office:excel">
-   <Range>R21C3:R31C3,R5C1:R22C7,R13C5:R31C7,R24C1:R31C7,R23C1:R23C4</Range>
+   <Range>R5C1:R22C7,R23C1:R23C4,R21C3:R25C3,R13C5:R25C7,R24C1:R30C7,R14C8:R15C8,R20C8,R5C8:R8C8</Range>
    <Condition>
     <Value1>LEN(TRIM(RC))=0</Value1>
     <Format Style='background:#E7E6E6'/>
