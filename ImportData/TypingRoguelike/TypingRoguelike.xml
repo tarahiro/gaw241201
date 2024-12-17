@@ -9,7 +9,7 @@
   <Author>h t</Author>
   <LastAuthor>h t</LastAuthor>
   <Created>2021-10-25T13:58:26Z</Created>
-  <LastSaved>2024-12-17T04:50:10Z</LastSaved>
+  <LastSaved>2024-12-17T09:48:50Z</LastSaved>
   <Version>16.00</Version>
  </DocumentProperties>
  <OfficeDocumentSettings xmlns="urn:schemas-microsoft-com:office:office">
@@ -160,7 +160,6 @@
      <Number>3</Number>
      <ActiveRow>4</ActiveRow>
      <ActiveCol>2</ActiveCol>
-     <RangeSelection>R5C3:R7C3</RangeSelection>
     </Pane>
    </Panes>
    <ProtectObjects>False</ProtectObjects>
