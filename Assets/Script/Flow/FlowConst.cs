@@ -27,6 +27,7 @@ namespace gaw241201
             StartMonitor,
             TypingRoguelike,
             StartAct,
+            SkillAchieve,
         }
 
     }

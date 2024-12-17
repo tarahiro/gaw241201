@@ -1,0 +1,23 @@
+{
+    "name": "gaw241201.Skill.Presenter",
+    "rootNamespace": "gaw241201.Skill.Presenter",
+    "references": [
+        "GUID:0be27b54e10228743974a8df3dda3639",
+        "GUID:560b04d1a97f54a4e82edc0cbbb69285",
+        "GUID:f51ebe6a0ceec4240a699833d6309b23",
+        "GUID:b0214a6008ed146ff8f122a6a9c2f6cc",
+        "GUID:80730cb7ec02f6544bfe954bc465eae7",
+        "GUID:06bcd70755cf0024dbcab68f7f987f46",
+        "GUID:3c0f20d2cf295424e8503bb446d25da3",
+        "GUID:dd191ee3d62501e47853d3c9595d0ff3"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": false,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
