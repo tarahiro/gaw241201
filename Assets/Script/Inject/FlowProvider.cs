@@ -69,11 +69,16 @@ namespace gaw241201
                 case FlowConst.Category.TypingRoguelike:
                     return InjectUtil.GetInstance<TypingRoguelikeModel>(_scope);
 
+                case FlowConst.Category.StartAct:
+                    return InjectUtil.GetInstance<ActStartModel>(_scope);
+
                 default:
                     Log.DebugAssert("不正なカテゴリー名です");
                     return null;
             }
         }
+
+        
 
     }
 }

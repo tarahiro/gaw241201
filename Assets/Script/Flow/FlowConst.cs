@@ -26,6 +26,7 @@ namespace gaw241201
             EndGame,
             StartMonitor,
             TypingRoguelike,
+            StartAct,
         }
 
     }

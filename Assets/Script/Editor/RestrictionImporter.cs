@@ -67,7 +67,9 @@ namespace gaw241201.Editor
                         string id = sheet[row, (int)Columns.Id].String;
                         RestrictionDataList.Add(new RestrictionMasterData.Record(index, id)
                         {
-                            SettableRestrictedCharList = sheet[row, (int)Columns.RestrictedCharList].String.Split(',').Select(s => s[0]).ToArray()
+                            SettableRestrictedCharList = !(sheet[row, (int)Columns.RestrictedCharList].IsEmpty)?
+                            sheet[row, (int)Columns.RestrictedCharList].String.Split(',').Select(s => s[0]).ToArray():
+                            new char[0]
                         });
                     }
                 }

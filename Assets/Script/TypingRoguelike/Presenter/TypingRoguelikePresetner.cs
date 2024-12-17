@@ -30,6 +30,8 @@ namespace gaw241201.Presenter
         [Inject] ICorrectInputEnterableView _correctInputEnterableView;
         [Inject] IRestrictionRegisterableView _restrictionRegisterableView;
         [Inject] ISelectionDataSettable _selectionDataSettable;
+        [Inject] IRequiredScoreGeneratable _requiredScoreGeneratable;
+        [Inject] RequiredPointView _requiredPointView;
 
         //----------point Œã‚Å•ª‚¯‚é‚©‚à------------------
         [Inject] IPointable _pointModel;
@@ -63,6 +65,7 @@ namespace gaw241201.Presenter
             _timerView.TimeRemained.Subscribe(time => _pointModel.AddRemainTimePoint(time)).AddTo(_disposable);
             
             _pointModel.PointUpdated.Subscribe(_pointView.UpdatePoint).AddTo(_disposable);
+            _requiredScoreGeneratable.RequiredScoreGenerated.Subscribe(_requiredPointView.UpdatePoint).AddTo(_disposable);
         }
     }
 }

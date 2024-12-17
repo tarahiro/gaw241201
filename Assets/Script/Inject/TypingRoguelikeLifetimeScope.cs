@@ -18,8 +18,17 @@ namespace gaw241201.Inject
             //starter
             builder.Register<TypingRoguelikeMainLoopStarter>(Lifetime.Singleton).AsSelf();
 
+            //act
+            builder.Register<ActStartModel>(Lifetime.Singleton).AsSelf();
+            builder.Register<StageMasterListGetter>(Lifetime.Singleton).AsImplementedInterfaces();
+            builder.Register<ModelArgsFactory<IStageMasterRegisteredRestrictedCharList>>(Lifetime.Singleton).AsSelf();
+            builder.RegisterComponentInHierarchy<ActStartView>().AsSelf();
+            builder.Register<ActStartPresenter>(Lifetime.Singleton).AsSelf();
+            builder.Register<ActViewArgsListFactory>(Lifetime.Singleton).AsSelf();
+
             //flag
             builder.Register<AchievableMasterFlagContainer>(Lifetime.Singleton).AsImplementedInterfaces();
+            builder.Register<RestrictedCharContainer>(Lifetime.Singleton).AsImplementedInterfaces();
 
             //Restriction
             builder.Register<RestrictionMasterDataProvider>(Lifetime.Singleton).AsImplementedInterfaces();
@@ -42,7 +51,7 @@ namespace gaw241201.Inject
 
             //TypingRoguelike
             //model
-            builder.Register<TypingRoguelikeModel>(Lifetime.Singleton).AsSelf();
+            builder.Register<TypingRoguelikeModel>(Lifetime.Singleton).AsSelf().As<IRequiredScoreGeneratable>();
             builder.Register<TypingRoguelikeSingleSequenceStarter>(Lifetime.Singleton).AsImplementedInterfaces();
             builder.Register<TypingRoguelikeMasterDataProvider>(Lifetime.Singleton).AsImplementedInterfaces();
             builder.Register<TypingRoguelikeGroupMasterGetter>(Lifetime.Singleton).AsImplementedInterfaces();
@@ -51,6 +60,7 @@ namespace gaw241201.Inject
             builder.Register<IndexUpdater>(Lifetime.Singleton).AsSelf();
             builder.Register<SelectionDataContainer>(Lifetime.Singleton).AsImplementedInterfaces();
             builder.Register<TypingRoguelikeSingleSequenceMasterFactory>(Lifetime.Singleton).AsImplementedInterfaces();
+            builder.Register<RestrictionGenerator>(Lifetime.Singleton).AsImplementedInterfaces();
 
             //view
             builder.Register<RoguelikeRestrictInputHundler>(Lifetime.Singleton).AsSelf();
@@ -67,11 +77,13 @@ namespace gaw241201.Inject
             //pointŠÖ˜A
             builder.Register<PointModel>(Lifetime.Singleton).AsImplementedInterfaces();
             builder.RegisterComponentInHierarchy<PointView>().AsSelf();
+            builder.RegisterComponentInHierarchy<RequiredPointView>().AsSelf();
 
             builder.UseEntryPoints(Lifetime.Singleton, entryPoints =>
             {
                 entryPoints.Add<TypingRoguelikePresetner>();
                 entryPoints.Add<TypingRoguelikeDebugManager>();
+                entryPoints.Add<ActStartPresenter>();
             });
         }
     }

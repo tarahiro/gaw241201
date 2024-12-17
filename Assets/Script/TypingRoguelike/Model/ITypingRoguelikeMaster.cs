@@ -10,10 +10,14 @@ namespace gaw241201
     //---クラス作成時にやること---//
     //"TypingRoguelike" を置換
     //フィールドを追加
-    public interface ITypingRoguelikeMaster : IIdentifiable, IIndexable, IGroupListable
+    public interface ITypingRoguelikeMaster : IIdentifiable, IIndexable,IGroupable, IGroupListable
     {
-        string RestrictionId { get; }
+        string[] RestrictionIdList { get; }
 
         float TimePerChar { get; }
+
+        int WaveCount { get; }
+
+        float RequiredScorePerChar { get; }
     }
 }

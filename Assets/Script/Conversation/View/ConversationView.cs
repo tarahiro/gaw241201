@@ -53,7 +53,6 @@ namespace gaw241201.View
 
         void ProcessConversationEffect<T>(int key, int none, int prevKey, IConversationEffectChangable<T> effectChangable) where T : Enum
         {
-            Log.DebugLog(typeof(T) + " prevKey: " + prevKey + " key: " + key);
             if (prevKey != key)
             {
                 effectChangable.ResetEffect(EnumUtil.NoToType<T>(prevKey));

@@ -21,13 +21,20 @@ namespace gaw241201.View
         Subject<string> _sampleInputted = new Subject<string>();
         public IObservable<string> SampleInputted => _sampleInputted;
         public IObservable<List<char>> RestrictionDataLoaded => _restrictionDataLoaded;
-        public void InitializeQuestion(ITypingRoguelikeSingleSequenceMaster master)
+        public void InitializeTyping(ITypingRoguelikeSingleSequenceMaster master)
         {
             _sampleInputted.OnNext(master.JpText);
             string romanText  = string.Concat(master.RomanText, "@");
 
             _enterKeyHundler.Initialize(romanText,master.RestrictedCharList);
             _indexUpdater.Initialize(romanText);
+
+            string s = "RestrictionÇê›íË: ";
+            foreach(var c in master.RestrictedCharList)
+            {
+                s += c + ",";
+            }
+            Log.Comment(s);
             _restrictionDataLoaded.OnNext(master.RestrictedCharList);
 
             _indexUpdater.UpdateIndex(0,romanText);

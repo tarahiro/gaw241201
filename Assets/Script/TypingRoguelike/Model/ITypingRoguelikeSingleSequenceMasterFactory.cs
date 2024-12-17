@@ -13,6 +13,6 @@ namespace gaw241201
 {
     public interface ITypingRoguelikeSingleSequenceMasterFactory
     {
-        ITypingRoguelikeSingleSequenceMaster CreateSingleSequenceMaster(ITypingMaster typingMaster, ITypingRoguelikeMaster typingRoguelikeMaster, IRestrictionMaster restrictionMaster);
+        ITypingRoguelikeSingleSequenceMaster CreateSingleSequenceMaster(ITypingMaster typingMaster, ITypingRoguelikeMaster typingRoguelikeMaster,List<char> restrictionList);
     }
 }

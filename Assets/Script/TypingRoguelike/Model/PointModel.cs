@@ -10,11 +10,11 @@ using VContainer.Unity;
 
 namespace gaw241201
 {
-    public class PointModel : IPointable
+    public class PointModel : IPointable,IPointGettable
     {
         const int c_unitPoint = 100;
         const int c_penaltyPoint = 300;
-        const float c_pointPerTime = 100f;
+        const float c_pointPerTime = 30f;
 
         int m_point = 0;
 
@@ -22,7 +22,7 @@ namespace gaw241201
 
         public IObservable<int> PointUpdated => _pointUpdated;
 
-        public void InitializeModel()
+        public void InitializePoint()
         {
             DecrementPoint(m_point);
         }
@@ -39,6 +39,11 @@ namespace gaw241201
         public void AddRemainTimePoint(float remainTime)
         {
             IncrementPoint((int)(remainTime * c_pointPerTime));
+        }
+
+        public int GetPoint()
+        {
+            return m_point;
         }
 
         void IncrementPoint(int addedPoint)

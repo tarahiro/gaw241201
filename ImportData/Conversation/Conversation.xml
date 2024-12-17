@@ -9,16 +9,15 @@
   <Author>h t</Author>
   <LastAuthor>h t</LastAuthor>
   <Created>2021-10-25T13:58:26Z</Created>
-  <LastSaved>2024-12-16T12:58:26Z</LastSaved>
+  <LastSaved>2024-12-17T03:28:37Z</LastSaved>
   <Version>16.00</Version>
  </DocumentProperties>
  <OfficeDocumentSettings xmlns="urn:schemas-microsoft-com:office:office">
   <AllowPNG/>
  </OfficeDocumentSettings>
  <ExcelWorkbook xmlns="urn:schemas-microsoft-com:office:excel">
-  <WindowIconic/>
-  <WindowHeight>18740</WindowHeight>
-  <WindowWidth>32767</WindowWidth>
+  <WindowHeight>11745</WindowHeight>
+  <WindowWidth>28800</WindowWidth>
   <WindowTopX>32767</WindowTopX>
   <WindowTopY>32767</WindowTopY>
   <RefModeR1C1/>
@@ -98,22 +97,22 @@
   </Style>
  </Styles>
  <Worksheet ss:Name="Script">
-  <Table ss:ExpandedColumnCount="7" ss:ExpandedRowCount="149" x:FullColumns="1"
+  <Table ss:ExpandedColumnCount="7" ss:ExpandedRowCount="153" x:FullColumns="1"
    x:FullRows="1" ss:DefaultColumnWidth="52.5" ss:DefaultRowHeight="18">
    <Column ss:AutoFitWidth="0" ss:Width="30"/>
-   <Column ss:AutoFitWidth="0" ss:Width="163"/>
-   <Column ss:AutoFitWidth="0" ss:Width="188.5"/>
-   <Column ss:AutoFitWidth="0" ss:Width="308.5"/>
+   <Column ss:AutoFitWidth="0" ss:Width="162.75"/>
+   <Column ss:AutoFitWidth="0" ss:Width="188.25"/>
+   <Column ss:AutoFitWidth="0" ss:Width="308.25"/>
    <Column ss:AutoFitWidth="0" ss:Width="90" ss:Span="2"/>
-   <Row ss:AutoFitHeight="0" ss:Height="24.5" ss:StyleID="s62">
+   <Row ss:AutoFitHeight="0" ss:Height="24.5625" ss:StyleID="s62">
     <Cell ss:StyleID="s63" ss:ArrayRange="RC"
      ss:Formula="=MID( CELL(&quot;filename&quot;,R1C1),&#10;FIND(&quot;[&quot;, CELL(&quot;filename&quot;,R1C1)) +1,&#10;FIND(&quot;]&quot;, CELL(&quot;filename&quot;,R1C1)) - FIND(&quot;[&quot;, CELL(&quot;filename&quot;,R1C1)) -1)"><Data
       ss:Type="String">Conversation.xml</Data></Cell>
    </Row>
-   <Row ss:Index="4" ss:AutoFitHeight="0" ss:Height="17.5" ss:StyleID="s64">
+   <Row ss:Index="4" ss:AutoFitHeight="0" ss:Height="17.4375" ss:StyleID="s64">
     <Cell ss:StyleID="s65"><Data ss:Type="String">index</Data></Cell>
     <Cell ss:StyleID="s66"><Data ss:Type="String">Id</Data></Cell>
-    <Cell ss:StyleID="s66"><Data ss:Type="String">Category</Data></Cell>
+    <Cell ss:StyleID="s66"><Data ss:Type="String">Group</Data></Cell>
     <Cell ss:StyleID="s65"><Data ss:Type="String">Message</Data></Cell>
     <Cell ss:StyleID="s65"><Data ss:Type="String">EyePosition</Data></Cell>
     <Cell ss:StyleID="s65"><Data ss:Type="String">Facial</Data></Cell>
@@ -1382,6 +1381,50 @@
    </Row>
    <Row ss:AutoFitHeight="0">
     <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">127</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">900510RoguelikeTestConversation</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">900500RoguelikeTestConversation</Data></Cell>
+    <Cell ss:StyleID="s67"><PhoneticText
+      xmlns="urn:schemas-microsoft-com:office:excel">カイシ</PhoneticText><Data
+      ss:Type="String">ローグライクタイピング開始</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Center</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Mad</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">128</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">901510RoguelikeTestConversation</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">901500RoguelikeTestConversation</Data></Cell>
+    <Cell ss:StyleID="s67"><PhoneticText
+      xmlns="urn:schemas-microsoft-com:office:excel">シュウリョウ</PhoneticText><Data
+      ss:Type="String">ステージ1終了</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Center</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Mad</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">129</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">902510RoguelikeTestConversation</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">902500RoguelikeTestConversation</Data></Cell>
+    <Cell ss:StyleID="s67"><PhoneticText
+      xmlns="urn:schemas-microsoft-com:office:excel">シュウリョウ</PhoneticText><Data
+      ss:Type="String">ステージ2終了</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Center</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Mad</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">130</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">903510RoguelikeTestConversation</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">903500RoguelikeTestConversation</Data></Cell>
+    <Cell ss:StyleID="s67"><PhoneticText
+      xmlns="urn:schemas-microsoft-com:office:excel">シュウリョウ</PhoneticText><Data
+      ss:Type="String">ステージ3終了</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Center</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Mad</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">131</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">904000TrueEndConversation</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">904000TrueEndConversation</Data></Cell>
     <Cell ss:StyleID="s67"><PhoneticText
@@ -1391,7 +1434,7 @@
     <Cell ss:StyleID="s67"><Data ss:Type="String">Mad</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
    </Row>
-   <Row ss:Index="140" ss:AutoFitHeight="0">
+   <Row ss:Index="144" ss:AutoFitHeight="0">
     <Cell ss:Index="5" ss:StyleID="s65"><Data ss:Type="String">Facial</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
@@ -1438,24 +1481,23 @@
    <TabColorIndex>13</TabColorIndex>
    <Zoom>85</Zoom>
    <Selected/>
-   <TopRowVisible>98</TopRowVisible>
    <Panes>
     <Pane>
      <Number>3</Number>
-     <ActiveRow>127</ActiveRow>
-     <ActiveCol>14</ActiveCol>
+     <ActiveRow>3</ActiveRow>
+     <ActiveCol>2</ActiveCol>
     </Pane>
    </Panes>
    <ProtectObjects>False</ProtectObjects>
    <ProtectScenarios>False</ProtectScenarios>
   </WorksheetOptions>
   <DataValidation xmlns="urn:schemas-microsoft-com:office:excel">
-   <Range>R5C5:R132C5</Range>
+   <Range>R5C5:R136C5</Range>
    <Type>List</Type>
-   <Value>R141C5:R149C5</Value>
+   <Value>R145C5:R153C5</Value>
   </DataValidation>
   <ConditionalFormatting xmlns="urn:schemas-microsoft-com:office:excel">
-   <Range>R25C3:R29C3,R27C2:R29C2,R30C2:R31C3,R32C2:R44C2,R27C1:R44C1,R27C3:R44C5,R45C1:R74C5,R6C6:R74C7,R6C1:R26C5,R75C1:R132C7,R141C5:R149C5,R5C1:R5C7</Range>
+   <Range>R25C3:R29C3,R27C2:R29C2,R30C2:R31C3,R32C2:R44C2,R27C1:R44C1,R27C3:R44C5,R45C1:R74C5,R6C6:R74C7,R6C1:R26C5,R145C5:R153C5,R5C1:R5C7,R75C1:R136C7</Range>
    <Condition>
     <Value1>LEN(TRIM(RC))=0</Value1>
     <Format Style='background:#E7E6E6'/>
@@ -1464,8 +1506,8 @@
  </Worksheet>
  <Worksheet ss:Name="凡例">
   <Table ss:ExpandedColumnCount="5" ss:ExpandedRowCount="10" x:FullColumns="1"
-   x:FullRows="1" ss:DefaultColumnWidth="52" ss:DefaultRowHeight="18">
-   <Row ss:AutoFitHeight="0" ss:Height="17.5" ss:StyleID="s64">
+   x:FullRows="1" ss:DefaultColumnWidth="51.75" ss:DefaultRowHeight="18">
+   <Row ss:AutoFitHeight="0" ss:Height="17.4375" ss:StyleID="s64">
     <Cell ss:StyleID="s65"><Data ss:Type="String">index</Data></Cell>
     <Cell ss:StyleID="s66"><Data ss:Type="String">Id</Data></Cell>
     <Cell ss:StyleID="s66"><Data ss:Type="String">Category</Data></Cell>
@@ -1531,12 +1573,12 @@
    <Column ss:AutoFitWidth="0" ss:Width="30"/>
    <Column ss:AutoFitWidth="0" ss:Width="46.5"/>
    <Column ss:AutoFitWidth="0" ss:Width="90"/>
-   <Row ss:AutoFitHeight="0" ss:Height="24.5" ss:StyleID="s62">
+   <Row ss:AutoFitHeight="0" ss:Height="24.5625" ss:StyleID="s62">
     <Cell ss:StyleID="s63" ss:ArrayRange="RC"
      ss:Formula="=MID( CELL(&quot;filename&quot;,R1C1),&#10;FIND(&quot;[&quot;, CELL(&quot;filename&quot;,R1C1)) +1,&#10;FIND(&quot;]&quot;, CELL(&quot;filename&quot;,R1C1)) - FIND(&quot;[&quot;, CELL(&quot;filename&quot;,R1C1)) -1)"><Data
       ss:Type="String">Conversation.xml</Data></Cell>
    </Row>
-   <Row ss:Index="4" ss:AutoFitHeight="0" ss:Height="17.5" ss:StyleID="s64">
+   <Row ss:Index="4" ss:AutoFitHeight="0" ss:Height="17.4375" ss:StyleID="s64">
     <Cell ss:StyleID="s65"><Data ss:Type="String">index</Data></Cell>
     <Cell ss:StyleID="s66"><Data ss:Type="String">Id</Data></Cell>
     <Cell ss:StyleID="s65"><Data ss:Type="String">SePath</Data></Cell>

@@ -16,7 +16,7 @@ namespace gaw241201
     public class TypingRoguelikeSingleSequenceStarter: ISingleTextSequenceEnterable<ITypingRoguelikeSingleSequenceMaster>, ITimerStartableModel
     {
         [Inject] ModelArgsFactory<ITypingRoguelikeSingleSequenceMaster> _modelArgsFactory;
-        [Inject] ITypingInitializer _questionInitializer;
+        [Inject] ITypingInitializer _typingInitializer;
 
         Subject<ModelArgs<ITypingRoguelikeSingleSequenceMaster>> _entered = new Subject<ModelArgs<ITypingRoguelikeSingleSequenceMaster>>();
         Subject<TimerArgs> _timerStarted = new Subject<TimerArgs>();
@@ -28,7 +28,7 @@ namespace gaw241201
             Log.Comment(master.Id + "ŠJŽn");
             isEnded = false;
 
-            _questionInitializer.InitializeQuestion(master);
+            _typingInitializer.InitializeTyping(master);
             _timerStarted.OnNext(new TimerArgs(TypingUtil.RemoveBracketsAndContents(master.RomanText).Length * master.Time, ct));
             _entered.OnNext(_modelArgsFactory.Create(master, ct));
         }

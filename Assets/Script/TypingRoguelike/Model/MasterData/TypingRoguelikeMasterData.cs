@@ -29,22 +29,31 @@ namespace gaw241201.Model.MasterData
 
             [SerializeField] int m_Index;
             [SerializeField] string m_Id;
+            [SerializeField] string m_Group;
             [SerializeField] string[] m_GroupList;
-            [SerializeField] string m_RestrictionId;
+            [SerializeField] string[] m_RestrictionId;
             [SerializeField] float m_TimePerChar;
+            [SerializeField] int m_WaveCount;
+            [SerializeField] float m_RequiredScorePerChar;
 
             public int Index => m_Index;
             public string Id => m_Id;
+            public string Group => m_Group;
             public string[] GroupList => m_GroupList;
-            public string RestrictionId => m_RestrictionId;
+            public string[] RestrictionIdList => m_RestrictionId;
             public float TimePerChar => m_TimePerChar;
+            public int WaveCount => m_WaveCount;
+            public float RequiredScorePerChar => m_RequiredScorePerChar;
 
             public ITypingRoguelikeMaster GetMaster() => this;
 
 #if UNITY_EDITOR
+            public string SettableGroup { set => m_Group = value; }
             public string[] SettableGroupList { set => m_GroupList = value; }
-            public string SettableRestrictionId { set => m_RestrictionId = value; }
+            public string[] SettableRestrictionId { set => m_RestrictionId = value; }
             public float SettableTimePerChar { set => m_TimePerChar = value; }
+            public int SettableWaveCount { set => m_WaveCount = value; }
+            public float SettableRequiredScorePerChar { set => m_RequiredScorePerChar = value; }
 
 #endif
         }

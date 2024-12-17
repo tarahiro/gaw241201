@@ -13,13 +13,13 @@ using VContainer.Unity;
 
 namespace gaw241201
 {
-    public class TypingRoguelikeGroupMasterGetter : IGroupMasterGettable<ITypingRoguelikeSingleSequenceMaster>
+    public class TypingRoguelikeGroupMasterGetter : IGroupMasterGettable<ITypingRoguelikeSingleSequenceMaster>, IStageMasterRegisterable
     {
         [Inject] IMasterDataProvider<IMasterDataRecord<ITypingMaster>> _typingProvider;
         [Inject] IMasterDataProvider<IMasterDataRecord<ITypingRoguelikeMaster>> _typingRoguelikeProvider;
-        [Inject] IMasterDataProvider<IMasterDataRecord<IRestrictionMaster>> _restrictionProvider;
         [Inject] ITypingRoguelikeSingleSequenceMasterFactory _factory;
 
+        Dictionary<string, List<char>> _restrictedCharDictionary = new Dictionary<string, List<char>>();
         public List<ITypingRoguelikeSingleSequenceMaster> GetGroupMaster(string bodyId)
         {
             Log.Comment("TRlSingleSequenceMaster生成開始");
@@ -37,19 +37,29 @@ namespace gaw241201
                     }
 
                 }
+
                 Const.RandomIndexList(out var randomizeList, typingMasterAvailableList.Count);
 
-                for(int i = 0;i < typingMasterAvailableList.Count; i++)
+                for(int i = 0;i < _listableMaster.WaveCount; i++)
                 {
                     var typingMaster = typingMasterAvailableList[randomizeList[i]];
-                    _masterList.Add(_factory.CreateSingleSequenceMaster(typingMaster, _listableMaster, _restrictionProvider.TryGetFromId(_listableMaster.RestrictionId).GetMaster()));
+                    _masterList.Add(_factory.CreateSingleSequenceMaster(typingMaster, _listableMaster, 
+                       _restrictedCharDictionary[bodyId]));
                 }
-
-
             }
 
             Log.Comment("TRlSingleSequenceMaster生成終了。長さ：" + _masterList.Count);
             return _masterList;
+        }
+
+
+        public void ResetRegistration()
+        {
+            _restrictedCharDictionary = new Dictionary<string, List<char>>();
+        }
+        public void RegisterStageMaster(string stageId, List<char> addedRestrictedCharList)
+        {
+            _restrictedCharDictionary.Add(stageId, addedRestrictedCharList);
         }
     }
 }

@@ -26,9 +26,12 @@ namespace gaw241201.Editor
         {
             Index = 0,
             Id = 1,
-            GroupList = 2,
-            RestrictionId = 3,
-            TimePerChar = 4,
+            Group = 2,
+            GroupList = 3,
+            RestrictionId = 4,
+            TimePerChar = 5,
+            WaveCount = 6,
+            RequiredScorePerChar = 7,
         }
 
         //--------------------------------------------------------------------
@@ -68,10 +71,13 @@ namespace gaw241201.Editor
                         string id = sheet[row, (int)Columns.Id].String;
                         TypingRoguelikeDataList.Add(new TypingRoguelikeMasterData.Record(index, id)
                         {
-                            SettableGroupList = sheet[row, (int)Columns.GroupList].String.Split(','),
-                            SettableRestrictionId = sheet[row, (int)Columns.RestrictionId].String,
-                            SettableTimePerChar = sheet[row,(int)Columns.TimePerChar].Float
-                        });
+                            SettableGroup = sheet[row, (int)Columns.Group].String,
+                            SettableGroupList = EditorUtil.GetStringArray(sheet[row, (int)Columns.GroupList]),
+                            SettableRestrictionId = EditorUtil.GetStringArray(sheet[row, (int)Columns.RestrictionId]),
+                            SettableTimePerChar = sheet[row, (int)Columns.TimePerChar].Float,
+                            SettableWaveCount = sheet[row, (int)Columns.WaveCount].Int,
+                            SettableRequiredScorePerChar = sheet[row, (int)Columns.RequiredScorePerChar].Float
+                        });;
                     }
                 }
             }

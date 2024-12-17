@@ -30,7 +30,8 @@ namespace gaw241201
 
             foreach (var charData in _selectionData)
             {
-                if (inputChar == charData.StringReplaceTo[0])
+                if (inputChar == charData.StringReplaceTo[0] ||
+                    (char.IsUpper(charData.StringReplaceTo[0]) && inputChar == char.ToLower(charData.StringReplaceTo[0])))
                 {
                     Log.Comment("SelectedDataåüèo");
                     selected.Add(charData);
