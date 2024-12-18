@@ -72,6 +72,9 @@ namespace gaw241201
                 case FlowConst.Category.StartAct:
                     return InjectUtil.GetInstance<ActStartModel>(_scope);
 
+                case FlowConst.Category.SkillAchieve:
+                    return InjectUtil.GetInstance<SkillAchieveModel>(_scope);
+
                 default:
                     Log.DebugAssert("不正なカテゴリー名です");
                     return null;

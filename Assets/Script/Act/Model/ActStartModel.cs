@@ -54,12 +54,6 @@ namespace gaw241201
                     _thisGroup[i].AddedRestrictedCharIdList.ToList()
                     ));
 
-                string s = "restricted : ";
-                foreach (var c in list[i])
-                {
-                    s += c + ",";
-                }
-                Log.DebugLog(s);
             }
 
             List<List<char>> addableWholeList = new List<List<char>>();
@@ -76,12 +70,6 @@ namespace gaw241201
                     if (!removable.Contains(c)) addable.Add(c);
                 }
 
-                string s = "added : ";
-                foreach (var c in addable)
-                {
-                    s += c + ",";
-                }
-                Log.DebugLog(s);
                 addableWholeList.Add(addable);
                 _stageMasterRegisterable.RegisterStageMaster(_thisGroup[i].Id, addable);
             }

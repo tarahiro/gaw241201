@@ -17,16 +17,14 @@ namespace gaw241201
         [Inject] ILeetMasterDataProvider _leetProvider;
         [Inject] IWordMasterDataProvider _wordProvider;
         [Inject] IAchievableMasterFlagProvider _achievableMasterFlagProvider;
+        [Inject] IAchievableMasterFlagRegisterer _achievableMasterFlagRegisterer;
 
         const int c_selectedCount = 3;
-        /*
 
-        [Inject] EffectArgsFactory _argsFactory;
+        [Inject] SkillAchieveArgsDataFactory _argsFactory;
 
-        Subject<EffectArgs> _entered = new Subject<EffectArgs>();
-        public IObservable<EffectArgs> Entered => _entered;
-
-        */
+        Subject<SkillArgs> _entered = new Subject<SkillArgs>();
+        public IObservable<SkillArgs> Entered => _entered;
         CancellationTokenSource _cts;
         bool _isEnd;
 
@@ -47,7 +45,7 @@ namespace gaw241201
 
                 for (int i = 0; i < GetCount(key); i++)
                 {
-                    if (_achievableMasterFlagProvider.IsContainskey(key, GetMasterId(key, i))) {
+                    if (!_achievableMasterFlagProvider.IsContainskey(key, GetMasterId(key, i))) {
                         _availableIndexList[(int)key].Add(i);
                     }
                 }
@@ -57,17 +55,31 @@ namespace gaw241201
 
             Const.RandomIndexList(out var randomList, sum);
 
+            List<SkillArgs.Data> _enterableArgs = new List<SkillArgs.Data>();
 
+            for(int i = 0; i < c_selectedCount; i++)
+            {
+                if(randomList[i] < _availableIndexList[(int)FlagConst.ContainableMasterKey.Leet].Count)
+                {
+                    _enterableArgs.Add(_argsFactory.Create(_leetProvider.TryGetFromIndex(_availableIndexList[(int)FlagConst.ContainableMasterKey.Leet][randomList[i]]).GetMaster()));
 
+                }
+                else
+                {
+                    _enterableArgs.Add(_argsFactory.Create(_wordProvider.TryGetFromIndex(
+                        _availableIndexList[(int)FlagConst.ContainableMasterKey.Word][randomList[i] - _availableIndexList[(int)FlagConst.ContainableMasterKey.Leet].Count]).GetMaster()));
+                }
 
+            }
 
-        //    _entered.OnNext(_argsFactory.Create(bodyId, _cts.Token));
+            _entered.OnNext(new SkillArgs(_cts.Token, _enterableArgs));
 
             await UniTask.WaitUntil(() => _isEnd);
         }
 
-        public void End()
+        public void End(SkillArgs.Data args)
         {
+            _achievableMasterFlagRegisterer.RegisterFlag(args.Key, args.Id);
             _isEnd = true;
         }
 

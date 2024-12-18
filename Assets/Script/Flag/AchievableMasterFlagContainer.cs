@@ -14,13 +14,7 @@ namespace gaw241201
     public class AchievableMasterFlagContainer : IAchievableMasterFlagProvider, IAchievableMasterFlagRegisterer
     {
         Dictionary<FlagConst.ContainableMasterKey, List<string>> _dictionary = new Dictionary<FlagConst.ContainableMasterKey, List<string>>() {
-            { FlagConst.ContainableMasterKey.Leet,new List<string>()
-        {
-            "a","i"
-        } }, { FlagConst.ContainableMasterKey.Word,new List<string>()
-        {
-            "dog","alive"
-        } },
+            { FlagConst.ContainableMasterKey.Leet,new List<string>() }, { FlagConst.ContainableMasterKey.Word,new List<string>() },
         };
 
         public List<string> RegisteredId(FlagConst.ContainableMasterKey key)

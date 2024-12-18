@@ -18,6 +18,12 @@ namespace gaw241201.Inject
             //starter
             builder.Register<TypingRoguelikeMainLoopStarter>(Lifetime.Singleton).AsSelf();
 
+            //skill
+            builder.Register<SkillAchieveModel>(Lifetime.Singleton).AsSelf();
+            builder.Register<SkillAchieveArgsDataFactory>(Lifetime.Singleton).AsSelf();
+            builder.RegisterComponentInHierarchy<SkillAchieveView>().AsSelf();
+
+
             //act
             builder.Register<ActStartModel>(Lifetime.Singleton).AsSelf();
             builder.Register<StageMasterListGetter>(Lifetime.Singleton).AsImplementedInterfaces();
@@ -84,6 +90,7 @@ namespace gaw241201.Inject
                 entryPoints.Add<TypingRoguelikePresetner>();
                 entryPoints.Add<TypingRoguelikeDebugManager>();
                 entryPoints.Add<ActStartPresenter>();
+                entryPoints.Add<SkillPresenter>();
             });
         }
     }
