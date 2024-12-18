@@ -12,17 +12,19 @@ using gaw241201.View;
 
 namespace gaw241201.Presenter
 {
-    public class ActStartPresenter : IPostInitializable
+    public class ActPresenter : IPostInitializable
     {
         [Inject] ActStartModel _model;
-        [Inject] ActStartView _view;
+        [Inject] ActView _view;
         [Inject] ActViewArgsListFactory _factory;
+        [Inject] WaveClearModel _waveClearModel;
 
         CompositeDisposable disposables = new CompositeDisposable();
 
         public void PostInitialize()
         {
             _model.Entered.Subscribe(x => _view.Enter(_factory.Create(x))).AddTo(disposables);
+            _waveClearModel.WaveCleared.Subscribe(_ => _view.ClearWave()).AddTo(disposables);
         }
     }
 }

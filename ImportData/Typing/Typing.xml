@@ -16,8 +16,8 @@
   <AllowPNG/>
  </OfficeDocumentSettings>
  <ExcelWorkbook xmlns="urn:schemas-microsoft-com:office:excel">
-  <WindowHeight>7940</WindowHeight>
-  <WindowWidth>19200</WindowWidth>
+  <WindowHeight>7260</WindowHeight>
+  <WindowWidth>19770</WindowWidth>
   <WindowTopX>32767</WindowTopX>
   <WindowTopY>32767</WindowTopY>
   <RefModeR1C1/>
@@ -92,15 +92,15 @@
    x:FullRows="1" ss:DefaultColumnWidth="52.5" ss:DefaultRowHeight="18">
    <Column ss:AutoFitWidth="0" ss:Width="30"/>
    <Column ss:AutoFitWidth="0" ss:Width="75"/>
-   <Column ss:AutoFitWidth="0" ss:Width="83.5"/>
-   <Column ss:AutoFitWidth="0" ss:Width="437.5"/>
-   <Column ss:AutoFitWidth="0" ss:Width="308.5"/>
-   <Row ss:AutoFitHeight="0" ss:Height="24.5" ss:StyleID="s62">
+   <Column ss:AutoFitWidth="0" ss:Width="83.25"/>
+   <Column ss:AutoFitWidth="0" ss:Width="437.25"/>
+   <Column ss:AutoFitWidth="0" ss:Width="308.25"/>
+   <Row ss:AutoFitHeight="0" ss:Height="24.5625" ss:StyleID="s62">
     <Cell ss:StyleID="s63" ss:ArrayRange="RC"
      ss:Formula="=MID( CELL(&quot;filename&quot;,R1C1),&#10;FIND(&quot;[&quot;, CELL(&quot;filename&quot;,R1C1)) +1,&#10;FIND(&quot;]&quot;, CELL(&quot;filename&quot;,R1C1)) - FIND(&quot;[&quot;, CELL(&quot;filename&quot;,R1C1)) -1)"><Data
       ss:Type="String">Typing.xml</Data></Cell>
    </Row>
-   <Row ss:Index="4" ss:AutoFitHeight="0" ss:Height="17.5" ss:StyleID="s64">
+   <Row ss:Index="4" ss:AutoFitHeight="0" ss:Height="17.4375" ss:StyleID="s64">
     <Cell ss:StyleID="s65"><Data ss:Type="String">index</Data></Cell>
     <Cell ss:StyleID="s66"><Data ss:Type="String">Id</Data></Cell>
     <Cell ss:StyleID="s66"><Data ss:Type="String">Group</Data></Cell>
@@ -247,8 +247,8 @@
     <Cell ss:StyleID="s67"><Data ss:Type="String">501000Typing</Data></Cell>
     <Cell ss:StyleID="s67"><PhoneticText
       xmlns="urn:schemas-microsoft-com:office:excel">ワタシコロ</PhoneticText><Data
-      ss:Type="String">私　殺される。</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">&lt;vt&gt;kill&lt;/vt&gt; &lt;human&gt;me&lt;/human&gt;</Data></Cell>
+      ss:Type="String">私　殺して　ください。</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">please &lt;vt&gt;kill&lt;/vt&gt; &lt;human&gt;me&lt;/human&gt;</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
     <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">17</Data></Cell>
@@ -266,7 +266,7 @@
     <Cell ss:StyleID="s67"><PhoneticText
       xmlns="urn:schemas-microsoft-com:office:excel">チチオヤハハオヤデキシ</PhoneticText><Data
       ss:Type="String">アリスは　父親と　母親を　溺死させた。</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">alice &lt;vt&gt;drown&lt;/vt&gt;  her father and her mother.</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">alice &lt;vt&gt;drown&lt;/vt&gt; her father and her mother.</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
     <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">19</Data></Cell>
@@ -287,7 +287,7 @@
     <Cell ss:StyleID="s67"><Data ss:Type="String">501060Typing</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">501000Typing</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">あなたに　タイピングゲームを　して　ほしいのです。</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">&lt;human&gt;i&lt;/human&gt; &lt;vt&gt;hate&lt;/vt&gt; &lt;human&gt;you&lt;/human&gt; to &lt;vt&gt;hate&lt;/vt&gt; a typing game.</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">&lt;human&gt;i&lt;/human&gt; &lt;vt&gt;want&lt;/vt&gt; &lt;human&gt;you&lt;/human&gt; to &lt;vt&gt;play&lt;/vt&gt; a typing game.</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
     <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">22</Data></Cell>
@@ -391,12 +391,12 @@
    </Print>
    <TabColorIndex>13</TabColorIndex>
    <Selected/>
-   <TopRowVisible>1</TopRowVisible>
+   <TopRowVisible>11</TopRowVisible>
    <Panes>
     <Pane>
      <Number>3</Number>
-     <ActiveRow>36</ActiveRow>
-     <ActiveCol>10</ActiveCol>
+     <ActiveRow>29</ActiveRow>
+     <ActiveCol>4</ActiveCol>
     </Pane>
    </Panes>
    <ProtectObjects>False</ProtectObjects>
@@ -412,7 +412,7 @@
  </Worksheet>
  <Worksheet ss:Name="凡例">
   <Table ss:ExpandedColumnCount="3" ss:ExpandedRowCount="2" x:FullColumns="1"
-   x:FullRows="1" ss:DefaultColumnWidth="52" ss:DefaultRowHeight="18">
+   x:FullRows="1" ss:DefaultColumnWidth="51.75" ss:DefaultRowHeight="18">
    <Row ss:AutoFitHeight="0">
     <Cell ss:Index="3" ss:StyleID="s65"><Data ss:Type="String">SePath</Data></Cell>
    </Row>
@@ -444,12 +444,12 @@
    <Column ss:AutoFitWidth="0" ss:Width="30"/>
    <Column ss:AutoFitWidth="0" ss:Width="46.5"/>
    <Column ss:AutoFitWidth="0" ss:Width="90"/>
-   <Row ss:AutoFitHeight="0" ss:Height="24.5" ss:StyleID="s62">
+   <Row ss:AutoFitHeight="0" ss:Height="24.5625" ss:StyleID="s62">
     <Cell ss:StyleID="s63" ss:ArrayRange="RC"
      ss:Formula="=MID( CELL(&quot;filename&quot;,R1C1),&#10;FIND(&quot;[&quot;, CELL(&quot;filename&quot;,R1C1)) +1,&#10;FIND(&quot;]&quot;, CELL(&quot;filename&quot;,R1C1)) - FIND(&quot;[&quot;, CELL(&quot;filename&quot;,R1C1)) -1)"><Data
       ss:Type="String">Typing.xml</Data></Cell>
    </Row>
-   <Row ss:Index="4" ss:AutoFitHeight="0" ss:Height="17.5" ss:StyleID="s64">
+   <Row ss:Index="4" ss:AutoFitHeight="0" ss:Height="17.4375" ss:StyleID="s64">
     <Cell ss:StyleID="s65"><Data ss:Type="String">index</Data></Cell>
     <Cell ss:StyleID="s66"><Data ss:Type="String">Id</Data></Cell>
     <Cell ss:StyleID="s65"><Data ss:Type="String">SePath</Data></Cell>

@@ -20,6 +20,8 @@ namespace gaw241201
         [Inject] ITypingRoguelikeMasterDataProvider _masterDataProvider;
         [Inject] IPointGettable _pointGettable;
 
+        [Inject] WaveClearModel _waveClearModel;
+
 
         CancellationTokenSource _cts = new CancellationTokenSource();
 
@@ -47,6 +49,7 @@ namespace gaw241201
             {
                 _singleTextSequenceEnterable.EnterTextSequence(_thisGroup[i], _cts.Token, out _isEnded);
                 await UniTask.WaitUntil(() => _isEnded);
+                _waveClearModel.ClearWave();
             }
 
             Log.Comment(bodyId + "ÇÃGroupèIóπ");

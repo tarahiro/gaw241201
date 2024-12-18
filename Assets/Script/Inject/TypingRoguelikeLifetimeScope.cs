@@ -28,8 +28,8 @@ namespace gaw241201.Inject
             builder.Register<ActStartModel>(Lifetime.Singleton).AsSelf();
             builder.Register<StageMasterListGetter>(Lifetime.Singleton).AsImplementedInterfaces();
             builder.Register<ModelArgsFactory<IStageMasterRegisteredRestrictedCharList>>(Lifetime.Singleton).AsSelf();
-            builder.RegisterComponentInHierarchy<ActStartView>().AsSelf();
-            builder.Register<ActStartPresenter>(Lifetime.Singleton).AsSelf();
+            builder.RegisterComponentInHierarchy<ActView>().AsSelf();
+            builder.Register<ActPresenter>(Lifetime.Singleton).AsSelf();
             builder.Register<ActViewArgsListFactory>(Lifetime.Singleton).AsSelf();
 
             //flag
@@ -67,6 +67,7 @@ namespace gaw241201.Inject
             builder.Register<SelectionDataContainer>(Lifetime.Singleton).AsImplementedInterfaces();
             builder.Register<TypingRoguelikeSingleSequenceMasterFactory>(Lifetime.Singleton).AsImplementedInterfaces();
             builder.Register<RestrictionGenerator>(Lifetime.Singleton).AsImplementedInterfaces();
+            builder.Register<WaveClearModel>(Lifetime.Singleton).AsSelf();
 
             //view
             builder.Register<RoguelikeRestrictInputHundler>(Lifetime.Singleton).AsSelf();
@@ -89,7 +90,7 @@ namespace gaw241201.Inject
             {
                 entryPoints.Add<TypingRoguelikePresetner>();
                 entryPoints.Add<TypingRoguelikeDebugManager>();
-                entryPoints.Add<ActStartPresenter>();
+                entryPoints.Add<ActPresenter>();
                 entryPoints.Add<SkillPresenter>();
             });
         }

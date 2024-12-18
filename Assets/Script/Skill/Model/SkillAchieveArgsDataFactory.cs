@@ -20,7 +20,33 @@ namespace gaw241201
 
         public SkillArgs.Data Create(IWordMaster wordMaster)
         {
-            return new SkillArgs.Data(FlagConst.ContainableMasterKey.Word, wordMaster.Id, SkillConst.SkillCategory.Leet, wordMaster.WordName, wordMaster.Description);
+            SkillConst.SkillCategory category;
+            switch (wordMaster.TagName)
+            {
+                case "animal":
+                    category = SkillConst.SkillCategory.Animal;
+                    break;
+
+                case "human":
+                    category = SkillConst.SkillCategory.Human;
+                    break;
+
+                case "vi":
+                    category = SkillConst.SkillCategory.Vi;
+                    break;
+
+                case "vt":
+                    category = SkillConst.SkillCategory.Vt;
+                    break;
+
+                default:
+                    Log.DebugLog("tagNameÇ™ïsê≥Ç≈Ç∑:" + wordMaster.TagName);
+                    category = SkillConst.SkillCategory.Vt;
+                    break;
+            }
+
+
+            return new SkillArgs.Data(FlagConst.ContainableMasterKey.Word, wordMaster.Id, category, wordMaster.WordName, wordMaster.Description);
         }
 
     }

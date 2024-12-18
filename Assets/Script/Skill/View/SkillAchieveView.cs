@@ -37,6 +37,7 @@ namespace gaw241201.View
             {
                 SkillItemView item = Instantiate(_itemViewPrefab, _root);
                 item.SetData(args.DataList[i]);
+                item.FakeSetDescription((i + 1).ToString());
                 item.transform.localPosition = Vector2.right * (-1f + i) * c_intervalX;
                 item.Decided.Subscribe(OnDecide).AddTo(_disposable);
 
