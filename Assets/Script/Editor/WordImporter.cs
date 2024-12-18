@@ -29,9 +29,10 @@ namespace gaw241201.Editor
             Id = 1,
             WordName = 2,
             TagName = 3,
-            SkillKey = 4,
-            SkillStringArgs = 5,
-            SkillFloatArg = 6,
+            Description = 4,
+            SkillKey = 5,
+            SkillStringArgs = 6,
+            SkillFloatArg = 7,
         }
 
         //--------------------------------------------------------------------
@@ -73,6 +74,7 @@ namespace gaw241201.Editor
                         {
                             SettableWordName = sheet[row, (int)Columns.WordName].String,
                             SettableTagName = sheet[row, (int)Columns.TagName].String,
+                            SettableDescription = sheet[row, (int)Columns.Description].String,
                             SettableSkillKey = sheet[row, (int)Columns.SkillKey].String,
                             SettableSkillStringArgs = sheet[row, (int)Columns.SkillStringArgs].String.Split(','),
                             SettableSkillFloatArg = sheet[row, (int)Columns.SkillFloatArg].Float

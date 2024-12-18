@@ -9,15 +9,15 @@
   <Author>h t</Author>
   <LastAuthor>h t</LastAuthor>
   <Created>2021-10-25T13:58:26Z</Created>
-  <LastSaved>2024-12-16T12:58:26Z</LastSaved>
+  <LastSaved>2024-12-18T01:01:52Z</LastSaved>
   <Version>16.00</Version>
  </DocumentProperties>
  <OfficeDocumentSettings xmlns="urn:schemas-microsoft-com:office:office">
   <AllowPNG/>
  </OfficeDocumentSettings>
  <ExcelWorkbook xmlns="urn:schemas-microsoft-com:office:excel">
-  <WindowHeight>18740</WindowHeight>
-  <WindowWidth>32767</WindowWidth>
+  <WindowHeight>11745</WindowHeight>
+  <WindowWidth>28800</WindowWidth>
   <WindowTopX>32767</WindowTopX>
   <WindowTopY>32767</WindowTopY>
   <RefModeR1C1/>
@@ -97,21 +97,22 @@
   </Style>
  </Styles>
  <Worksheet ss:Name="Script">
-  <Table ss:ExpandedColumnCount="8" ss:ExpandedRowCount="30" x:FullColumns="1"
+  <Table ss:ExpandedColumnCount="9" ss:ExpandedRowCount="30" x:FullColumns="1"
    x:FullRows="1" ss:DefaultColumnWidth="52.5" ss:DefaultRowHeight="18">
    <Column ss:AutoFitWidth="0" ss:Width="30"/>
-   <Column ss:AutoFitWidth="0" ss:Width="93.5"/>
-   <Column ss:AutoFitWidth="0" ss:Width="90" ss:Span="4"/>
-   <Row ss:AutoFitHeight="0" ss:Height="24.5" ss:StyleID="s62">
+   <Column ss:AutoFitWidth="0" ss:Width="93.75"/>
+   <Column ss:AutoFitWidth="0" ss:Width="90" ss:Span="5"/>
+   <Row ss:AutoFitHeight="0" ss:Height="24.5625" ss:StyleID="s62">
     <Cell ss:StyleID="s63" ss:ArrayRange="RC"
      ss:Formula="=MID( CELL(&quot;filename&quot;,R1C1),&#10;FIND(&quot;[&quot;, CELL(&quot;filename&quot;,R1C1)) +1,&#10;FIND(&quot;]&quot;, CELL(&quot;filename&quot;,R1C1)) - FIND(&quot;[&quot;, CELL(&quot;filename&quot;,R1C1)) -1)"><Data
       ss:Type="String">Word.xml</Data></Cell>
    </Row>
-   <Row ss:Index="4" ss:AutoFitHeight="0" ss:Height="17.5" ss:StyleID="s64">
+   <Row ss:Index="4" ss:AutoFitHeight="0" ss:Height="17.4375" ss:StyleID="s64">
     <Cell ss:StyleID="s65"><Data ss:Type="String">index</Data></Cell>
     <Cell ss:StyleID="s66"><Data ss:Type="String">Id</Data></Cell>
     <Cell ss:StyleID="s65"><Data ss:Type="String">WordName</Data></Cell>
     <Cell ss:StyleID="s65"><Data ss:Type="String">tag</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">Description</Data></Cell>
     <Cell ss:StyleID="s65"><Data ss:Type="String">SkillKey</Data></Cell>
     <Cell ss:StyleID="s65"><Data ss:Type="String">SkillStringArgs</Data></Cell>
     <Cell ss:StyleID="s65"><Data ss:Type="String">SkillFloatArg</Data></Cell>
@@ -122,6 +123,8 @@
     <Cell ss:StyleID="s67"><Data ss:Type="String">dog</Data></Cell>
     <Cell ss:StyleID="s67" ss:Formula="=RC[-1]"><Data ss:Type="String">dog</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">animal</Data></Cell>
+    <Cell ss:StyleID="s67" ss:Formula="=CONCAT(&quot;FAKE:&quot;,RC[-2],&quot;の説明&quot;)"><Data
+      ss:Type="String">FAKE:dogの説明</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="Number">0</Data></Cell>
@@ -134,6 +137,8 @@
     <Cell ss:StyleID="s67"><Data ss:Type="String">cat</Data></Cell>
     <Cell ss:StyleID="s67" ss:Formula="=RC[-1]"><Data ss:Type="String">cat</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">animal</Data></Cell>
+    <Cell ss:StyleID="s67" ss:Formula="=CONCAT(&quot;FAKE:&quot;,RC[-2],&quot;の説明&quot;)"><Data
+      ss:Type="String">FAKE:catの説明</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="Number">0</Data></Cell>
@@ -146,6 +151,8 @@
     <Cell ss:StyleID="s67"><Data ss:Type="String">buffaloAnimal</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">buffalo</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">animal</Data></Cell>
+    <Cell ss:StyleID="s67" ss:Formula="=CONCAT(&quot;FAKE:&quot;,RC[-2],&quot;の説明&quot;)"><Data
+      ss:Type="String">FAKE:buffaloの説明</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="Number">0</Data></Cell>
@@ -158,6 +165,8 @@
     <Cell ss:StyleID="s67"><Data ss:Type="String">gorilla</Data></Cell>
     <Cell ss:StyleID="s67" ss:Formula="=RC[-1]"><Data ss:Type="String">gorilla</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">animal</Data></Cell>
+    <Cell ss:StyleID="s67" ss:Formula="=CONCAT(&quot;FAKE:&quot;,RC[-2],&quot;の説明&quot;)"><Data
+      ss:Type="String">FAKE:gorillaの説明</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="Number">0</Data></Cell>
@@ -170,6 +179,8 @@
     <Cell ss:StyleID="s67"><Data ss:Type="String">platypus</Data></Cell>
     <Cell ss:StyleID="s67" ss:Formula="=RC[-1]"><Data ss:Type="String">platypus</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">animal</Data></Cell>
+    <Cell ss:StyleID="s67" ss:Formula="=CONCAT(&quot;FAKE:&quot;,RC[-2],&quot;の説明&quot;)"><Data
+      ss:Type="String">FAKE:platypusの説明</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="Number">0</Data></Cell>
@@ -179,6 +190,8 @@
     <Cell ss:StyleID="s67"><Data ss:Type="String">whale</Data></Cell>
     <Cell ss:StyleID="s67" ss:Formula="=RC[-1]"><Data ss:Type="String">whale</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">animal</Data></Cell>
+    <Cell ss:StyleID="s67" ss:Formula="=CONCAT(&quot;FAKE:&quot;,RC[-2],&quot;の説明&quot;)"><Data
+      ss:Type="String">FAKE:whaleの説明</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="Number">0</Data></Cell>
@@ -188,6 +201,8 @@
     <Cell ss:StyleID="s67"><Data ss:Type="String">serval</Data></Cell>
     <Cell ss:StyleID="s67" ss:Formula="=RC[-1]"><Data ss:Type="String">serval</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">animal</Data></Cell>
+    <Cell ss:StyleID="s67" ss:Formula="=CONCAT(&quot;FAKE:&quot;,RC[-2],&quot;の説明&quot;)"><Data
+      ss:Type="String">FAKE:servalの説明</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="Number">0</Data></Cell>
@@ -197,6 +212,8 @@
     <Cell ss:StyleID="s67"><Data ss:Type="String">tiger</Data></Cell>
     <Cell ss:StyleID="s67" ss:Formula="=RC[-1]"><Data ss:Type="String">tiger</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">animal</Data></Cell>
+    <Cell ss:StyleID="s67" ss:Formula="=CONCAT(&quot;FAKE:&quot;,RC[-2],&quot;の説明&quot;)"><Data
+      ss:Type="String">FAKE:tigerの説明</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="Number">0</Data></Cell>
@@ -206,6 +223,8 @@
     <Cell ss:StyleID="s67"><Data ss:Type="String">Alice</Data></Cell>
     <Cell ss:StyleID="s67" ss:Formula="=RC[-1]"><Data ss:Type="String">Alice</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">human</Data></Cell>
+    <Cell ss:StyleID="s67" ss:Formula="=CONCAT(&quot;FAKE:&quot;,RC[-2],&quot;の説明&quot;)"><Data
+      ss:Type="String">FAKE:Aliceの説明</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="Number">0</Data></Cell>
@@ -215,6 +234,8 @@
     <Cell ss:StyleID="s67"><Data ss:Type="String">Bob</Data></Cell>
     <Cell ss:StyleID="s67" ss:Formula="=RC[-1]"><Data ss:Type="String">Bob</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">human</Data></Cell>
+    <Cell ss:StyleID="s67" ss:Formula="=CONCAT(&quot;FAKE:&quot;,RC[-2],&quot;の説明&quot;)"><Data
+      ss:Type="String">FAKE:Bobの説明</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="Number">0</Data></Cell>
@@ -227,6 +248,8 @@
     <Cell ss:StyleID="s67"><Data ss:Type="String">Eve</Data></Cell>
     <Cell ss:StyleID="s67" ss:Formula="=RC[-1]"><Data ss:Type="String">Eve</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">human</Data></Cell>
+    <Cell ss:StyleID="s67" ss:Formula="=CONCAT(&quot;FAKE:&quot;,RC[-2],&quot;の説明&quot;)"><Data
+      ss:Type="String">FAKE:Eveの説明</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="Number">0</Data></Cell>
@@ -239,6 +262,8 @@
     <Cell ss:StyleID="s67"><Data ss:Type="String">Isaac</Data></Cell>
     <Cell ss:StyleID="s67" ss:Formula="=RC[-1]"><Data ss:Type="String">Isaac</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">human</Data></Cell>
+    <Cell ss:StyleID="s67" ss:Formula="=CONCAT(&quot;FAKE:&quot;,RC[-2],&quot;の説明&quot;)"><Data
+      ss:Type="String">FAKE:Isaacの説明</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="Number">0</Data></Cell>
@@ -248,6 +273,8 @@
     <Cell ss:StyleID="s67"><Data ss:Type="String">Mallory</Data></Cell>
     <Cell ss:StyleID="s67" ss:Formula="=RC[-1]"><Data ss:Type="String">Mallory</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">human</Data></Cell>
+    <Cell ss:StyleID="s67" ss:Formula="=CONCAT(&quot;FAKE:&quot;,RC[-2],&quot;の説明&quot;)"><Data
+      ss:Type="String">FAKE:Malloryの説明</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="Number">0</Data></Cell>
@@ -257,6 +284,8 @@
     <Cell ss:StyleID="s67"><Data ss:Type="String">Oscar</Data></Cell>
     <Cell ss:StyleID="s67" ss:Formula="=RC[-1]"><Data ss:Type="String">Oscar</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">human</Data></Cell>
+    <Cell ss:StyleID="s67" ss:Formula="=CONCAT(&quot;FAKE:&quot;,RC[-2],&quot;の説明&quot;)"><Data
+      ss:Type="String">FAKE:Oscarの説明</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="Number">0</Data></Cell>
@@ -266,6 +295,8 @@
     <Cell ss:StyleID="s67"><Data ss:Type="String">Trudy</Data></Cell>
     <Cell ss:StyleID="s67" ss:Formula="=RC[-1]"><Data ss:Type="String">Trudy</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">human</Data></Cell>
+    <Cell ss:StyleID="s67" ss:Formula="=CONCAT(&quot;FAKE:&quot;,RC[-2],&quot;の説明&quot;)"><Data
+      ss:Type="String">FAKE:Trudyの説明</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="Number">0</Data></Cell>
@@ -275,6 +306,8 @@
     <Cell ss:StyleID="s67"><Data ss:Type="String">Zoe</Data></Cell>
     <Cell ss:StyleID="s67" ss:Formula="=RC[-1]"><Data ss:Type="String">Zoe</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">human</Data></Cell>
+    <Cell ss:StyleID="s67" ss:Formula="=CONCAT(&quot;FAKE:&quot;,RC[-2],&quot;の説明&quot;)"><Data
+      ss:Type="String">FAKE:Zoeの説明</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="Number">0</Data></Cell>
@@ -287,6 +320,8 @@
     <Cell ss:StyleID="s67"><Data ss:Type="String">alive</Data></Cell>
     <Cell ss:StyleID="s67" ss:Formula="=RC[-1]"><Data ss:Type="String">alive</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">vi</Data></Cell>
+    <Cell ss:StyleID="s67" ss:Formula="=CONCAT(&quot;FAKE:&quot;,RC[-2],&quot;の説明&quot;)"><Data
+      ss:Type="String">FAKE:aliveの説明</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="Number">0</Data></Cell>
@@ -296,6 +331,8 @@
     <Cell ss:StyleID="s67"><Data ss:Type="String">suicide</Data></Cell>
     <Cell ss:StyleID="s67" ss:Formula="=RC[-1]"><Data ss:Type="String">suicide</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">vi</Data></Cell>
+    <Cell ss:StyleID="s67" ss:Formula="=CONCAT(&quot;FAKE:&quot;,RC[-2],&quot;の説明&quot;)"><Data
+      ss:Type="String">FAKE:suicideの説明</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="Number">0</Data></Cell>
@@ -305,6 +342,8 @@
     <Cell ss:StyleID="s67"><Data ss:Type="String">blood</Data></Cell>
     <Cell ss:StyleID="s67" ss:Formula="=RC[-1]"><Data ss:Type="String">blood</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">vi</Data></Cell>
+    <Cell ss:StyleID="s67" ss:Formula="=CONCAT(&quot;FAKE:&quot;,RC[-2],&quot;の説明&quot;)"><Data
+      ss:Type="String">FAKE:bloodの説明</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="Number">0</Data></Cell>
@@ -314,6 +353,8 @@
     <Cell ss:StyleID="s67"><Data ss:Type="String">fear</Data></Cell>
     <Cell ss:StyleID="s67" ss:Formula="=RC[-1]"><Data ss:Type="String">fear</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">vi</Data></Cell>
+    <Cell ss:StyleID="s67" ss:Formula="=CONCAT(&quot;FAKE:&quot;,RC[-2],&quot;の説明&quot;)"><Data
+      ss:Type="String">FAKE:fearの説明</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="Number">0</Data></Cell>
@@ -323,6 +364,8 @@
     <Cell ss:StyleID="s67"><Data ss:Type="String">war</Data></Cell>
     <Cell ss:StyleID="s67" ss:Formula="=RC[-1]"><Data ss:Type="String">war</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">vi</Data></Cell>
+    <Cell ss:StyleID="s67" ss:Formula="=CONCAT(&quot;FAKE:&quot;,RC[-2],&quot;の説明&quot;)"><Data
+      ss:Type="String">FAKE:warの説明</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="Number">0</Data></Cell>
@@ -332,6 +375,8 @@
     <Cell ss:StyleID="s67"><Data ss:Type="String">buffaloVt</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">buffalo</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">vt</Data></Cell>
+    <Cell ss:StyleID="s67" ss:Formula="=CONCAT(&quot;FAKE:&quot;,RC[-2],&quot;の説明&quot;)"><Data
+      ss:Type="String">FAKE:buffaloの説明</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="Number">0</Data></Cell>
@@ -341,6 +386,8 @@
     <Cell ss:StyleID="s67"><Data ss:Type="String">help</Data></Cell>
     <Cell ss:StyleID="s67" ss:Formula="=RC[-1]"><Data ss:Type="String">help</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">vt</Data></Cell>
+    <Cell ss:StyleID="s67" ss:Formula="=CONCAT(&quot;FAKE:&quot;,RC[-2],&quot;の説明&quot;)"><Data
+      ss:Type="String">FAKE:helpの説明</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="Number">0</Data></Cell>
@@ -350,6 +397,8 @@
     <Cell ss:StyleID="s67"><Data ss:Type="String">surrender</Data></Cell>
     <Cell ss:StyleID="s67" ss:Formula="=RC[-1]"><Data ss:Type="String">surrender</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">vt</Data></Cell>
+    <Cell ss:StyleID="s67" ss:Formula="=CONCAT(&quot;FAKE:&quot;,RC[-2],&quot;の説明&quot;)"><Data
+      ss:Type="String">FAKE:surrenderの説明</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="Number">0</Data></Cell>
@@ -359,6 +408,8 @@
     <Cell ss:StyleID="s67"><Data ss:Type="String">punish</Data></Cell>
     <Cell ss:StyleID="s67" ss:Formula="=RC[-1]"><Data ss:Type="String">punish</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">vt</Data></Cell>
+    <Cell ss:StyleID="s67" ss:Formula="=CONCAT(&quot;FAKE:&quot;,RC[-2],&quot;の説明&quot;)"><Data
+      ss:Type="String">FAKE:punishの説明</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="Number">0</Data></Cell>
@@ -368,6 +419,8 @@
     <Cell ss:StyleID="s67"><Data ss:Type="String">barrel</Data></Cell>
     <Cell ss:StyleID="s67" ss:Formula="=RC[-1]"><Data ss:Type="String">barrel</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">vt</Data></Cell>
+    <Cell ss:StyleID="s67" ss:Formula="=CONCAT(&quot;FAKE:&quot;,RC[-2],&quot;の説明&quot;)"><Data
+      ss:Type="String">FAKE:barrelの説明</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="Number">0</Data></Cell>
@@ -389,19 +442,18 @@
    <TabColorIndex>13</TabColorIndex>
    <Zoom>115</Zoom>
    <Selected/>
-   <TopRowVisible>2</TopRowVisible>
    <Panes>
     <Pane>
      <Number>3</Number>
-     <ActiveRow>32</ActiveRow>
-     <ActiveCol>16</ActiveCol>
+     <ActiveRow>9</ActiveRow>
+     <ActiveCol>12</ActiveCol>
     </Pane>
    </Panes>
    <ProtectObjects>False</ProtectObjects>
    <ProtectScenarios>False</ProtectScenarios>
   </WorksheetOptions>
   <ConditionalFormatting xmlns="urn:schemas-microsoft-com:office:excel">
-   <Range>R5C1:R22C7,R23C1:R23C4,R21C3:R25C3,R13C5:R25C7,R24C1:R30C7,R14C8:R15C8,R20C8,R5C8:R8C8</Range>
+   <Range>R14C9:R15C9,R20C9,R5C9:R8C9,R5C1:R30C8</Range>
    <Condition>
     <Value1>LEN(TRIM(RC))=0</Value1>
     <Format Style='background:#E7E6E6'/>
@@ -410,7 +462,7 @@
  </Worksheet>
  <Worksheet ss:Name="凡例">
   <Table ss:ExpandedColumnCount="3" ss:ExpandedRowCount="2" x:FullColumns="1"
-   x:FullRows="1" ss:DefaultColumnWidth="52" ss:DefaultRowHeight="18">
+   x:FullRows="1" ss:DefaultColumnWidth="51.75" ss:DefaultRowHeight="18">
    <Row ss:AutoFitHeight="0">
     <Cell ss:Index="3" ss:StyleID="s65"><Data ss:Type="String">SePath</Data></Cell>
    </Row>
@@ -442,12 +494,12 @@
    <Column ss:AutoFitWidth="0" ss:Width="30"/>
    <Column ss:AutoFitWidth="0" ss:Width="46.5"/>
    <Column ss:AutoFitWidth="0" ss:Width="90"/>
-   <Row ss:AutoFitHeight="0" ss:Height="24.5" ss:StyleID="s62">
+   <Row ss:AutoFitHeight="0" ss:Height="24.5625" ss:StyleID="s62">
     <Cell ss:StyleID="s63" ss:ArrayRange="RC"
      ss:Formula="=MID( CELL(&quot;filename&quot;,R1C1),&#10;FIND(&quot;[&quot;, CELL(&quot;filename&quot;,R1C1)) +1,&#10;FIND(&quot;]&quot;, CELL(&quot;filename&quot;,R1C1)) - FIND(&quot;[&quot;, CELL(&quot;filename&quot;,R1C1)) -1)"><Data
       ss:Type="String">Word.xml</Data></Cell>
    </Row>
-   <Row ss:Index="4" ss:AutoFitHeight="0" ss:Height="17.5" ss:StyleID="s64">
+   <Row ss:Index="4" ss:AutoFitHeight="0" ss:Height="17.4375" ss:StyleID="s64">
     <Cell ss:StyleID="s65"><Data ss:Type="String">index</Data></Cell>
     <Cell ss:StyleID="s66"><Data ss:Type="String">Id</Data></Cell>
     <Cell ss:StyleID="s65"><Data ss:Type="String">SePath</Data></Cell>

@@ -66,12 +66,15 @@ namespace gaw241201
             //leet
             for (int i = 0; i < _charDataList.Count; i++)
             {
-                if (_tagSentence[_index] == _charDataList[i].GetMaster().LeetedChar)
+                for (int j = 0; j < _charDataList[i].GetMaster().ReplaceToStringList.Length; j++)
                 {
-                    Log.Comment("leet‚ðŒŸo");
-                    for (int j = 0; j < _charDataList[i].GetMaster().ReplaceToStringList.Length; j++)
+                    if (_tagSentence[_index] == _charDataList[i].GetMaster().ReplaceToStringList[j].ReplacedChar)
                     {
-                        selectionDataList.Add(new SelectionData(_charDataList[i].GetMaster().LeetedChar.ToString(), _charDataList[i].GetMaster().ReplaceToStringList[j]));
+                        Log.Comment("leet‚ðŒŸo");
+                        for (int k = 0; k < _charDataList[i].GetMaster().ReplaceToStringList[j].StringListReplaceTo.Count; k++)
+                        {
+                            selectionDataList.Add(new SelectionData(_charDataList[i].GetMaster().ReplaceToStringList[j].ReplacedChar.ToString(), _charDataList[i].GetMaster().ReplaceToStringList[j].StringListReplaceTo[k]));
+                        }
                     }
                 }
             }

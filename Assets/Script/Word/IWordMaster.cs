@@ -14,6 +14,7 @@ namespace gaw241201.Model
     {
         string WordName { get; }
         string TagName { get; }
+        string Description { get; }
         string SkillKey { get; }
         string[] SkillStringArgs { get; }
         float SkillFloatArg { get; }

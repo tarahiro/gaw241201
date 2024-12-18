@@ -29,20 +29,23 @@ namespace gaw241201.Model.MasterData
 
             [SerializeField] int m_Index;
             [SerializeField] string m_Id;
-            [SerializeField] char m_LeetedChar;
-            [SerializeField] string[] m_ReplaceToStringList;
+            [SerializeField] string m_Name;
+            [SerializeField] string m_Description;
+            [SerializeField] LeetReplaceData[] m_ReplaceToStringList;
 
 
             public int Index => m_Index;
             public string Id => m_Id;
-            public char LeetedChar => m_LeetedChar;
-            public string[] ReplaceToStringList => m_ReplaceToStringList;
+            public string Name => m_Name;
+            public string Description => m_Description;
+            public LeetReplaceData[] ReplaceToStringList => m_ReplaceToStringList;
 
             public ILeetMaster GetMaster() => this;
 
 #if UNITY_EDITOR
-            public char SettableLeetedChar { set => m_LeetedChar = value; }
-            public string[] SettableReplaceToStringList { set => m_ReplaceToStringList = value; }
+            public string SettableName { set => m_Name = value; }
+            public string SettableDescription { set => m_Description = value; }
+            public LeetReplaceData[] SettableReplaceToStringList { set => m_ReplaceToStringList = value; }
 
 #endif
         }

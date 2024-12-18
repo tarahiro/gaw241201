@@ -31,6 +31,7 @@ namespace gaw241201.Model.MasterData
             [SerializeField] string m_Id;
             [SerializeField] string m_WordName;
             [SerializeField] string m_TagName;
+            [SerializeField] string m_Description;
             [SerializeField] string m_SkillKey;
             [SerializeField] string[] m_SkillStringArgs;
             [SerializeField] float m_SkillFloatArg;
@@ -39,6 +40,7 @@ namespace gaw241201.Model.MasterData
             public string Id => m_Id;
             public string WordName => m_WordName;
             public string TagName => m_TagName;
+            public string Description => m_Description;
             public string SkillKey => m_SkillKey;
             public string[] SkillStringArgs => m_SkillStringArgs;
             public float SkillFloatArg => m_SkillFloatArg;
@@ -48,6 +50,7 @@ namespace gaw241201.Model.MasterData
 #if UNITY_EDITOR
             public string SettableWordName { set => m_WordName = value; }
             public string SettableTagName { set => m_TagName = value; }
+            public string SettableDescription { set => m_Description = value; }
             public string SettableSkillKey { set => m_SkillKey = value; }
             public string[] SettableSkillStringArgs { set => m_SkillStringArgs = value; }
             public float SettableSkillFloatArg { set => m_SkillFloatArg = value; }

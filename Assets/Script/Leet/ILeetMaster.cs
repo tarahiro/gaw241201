@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 using Tarahiro;
-using NUnit.Framework;
+using UnityEditor;
 
 namespace gaw241201.Model
 {
@@ -13,7 +13,8 @@ namespace gaw241201.Model
     //フィールドを追加
     public interface ILeetMaster : IIdentifiable, IIndexable
     {
-        char LeetedChar { get; }
-        string[] ReplaceToStringList { get; }
+        string Name { get; }
+        string Description { get; }
+        LeetReplaceData[] ReplaceToStringList { get; }
     }
 }

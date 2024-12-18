@@ -26,5 +26,24 @@ namespace Tarahiro.Editor
                 return cell.String.Split(',');
             }
         }
+
+        public static string[] GetStringArrayFromCells(IWorksheet sheet, int row, int startColumn, int columnInterval)
+        {
+            List<string> returnable = new List<string>();
+
+            for(int i = 0; startColumn + i * columnInterval < sheet.Width && !sheet[row,startColumn + i * columnInterval].IsEmpty; i++)
+            {
+                returnable.Add(sheet[row, startColumn + i * columnInterval].String);
+            }
+
+            return returnable.ToArray();
+        }
+
+
+        [System.Serializable]
+        public class ListWrapper<T>
+        {
+            public List<T> List;
+        }
     }
 }

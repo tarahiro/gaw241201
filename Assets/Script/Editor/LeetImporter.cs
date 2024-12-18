@@ -9,6 +9,7 @@ using gaw241201;
 using gaw241201.Model;
 using gaw241201.Model.MasterData;
 using Tarahiro.Editor;
+using System.Linq;
 
 namespace gaw241201.Editor
 {
@@ -26,8 +27,9 @@ namespace gaw241201.Editor
         {
             Index = 0,
             Id = 1,
-            LeetedChar = 2,
-            ReplaceToStringList = 3,
+            Name = 2,
+            Description = 3,
+            LeetedChar = 4,
         }
 
         //--------------------------------------------------------------------
@@ -67,15 +69,29 @@ namespace gaw241201.Editor
                         string id = sheet[row, (int)Columns.Id].String;
                         LeetDataList.Add(new LeetMasterData.Record(index, id)
                         {
-                            SettableLeetedChar = sheet[row, (int)Columns.LeetedChar].String[0],
-                            SettableReplaceToStringList = sheet[row, (int)Columns.ReplaceToStringList].String.Split(',')
-                        });
+                            SettableName = sheet[row, (int)Columns.Name].String,
+                            SettableDescription = sheet[row, (int)Columns.Description].String,
+                            SettableReplaceToStringList = GetLeetReplaceDataArray(sheet, row, (int)Columns.LeetedChar, 2)
+                        }); ;
                     }
                 }
             }
 
             // データ出力
             XmlImporter.ExportOrderedDictionary<LeetMasterData, LeetMasterData.Record, IMasterDataRecord<ILeetMaster>>(MasterDataConst.DataPath + LeetMasterData.c_DataName, LeetDataList);
+        }
+
+        public static LeetReplaceData[] GetLeetReplaceDataArray(IWorksheet sheet, int row, int startColumn, int columnInterval)
+        {
+            List<LeetReplaceData> returnable = new List<LeetReplaceData>();
+
+            for (int i = 0; startColumn +  1 + i*columnInterval < sheet.Width && !sheet[row, startColumn + i * columnInterval].IsEmpty; i++)
+            {
+                returnable.Add(new LeetReplaceData(sheet[row, startColumn + i * columnInterval].String[0], sheet[row, startColumn + 1 + i * columnInterval].String.Split(',').ToList()));
+            }
+
+            return returnable.ToArray();
+
         }
     }
 #endif
