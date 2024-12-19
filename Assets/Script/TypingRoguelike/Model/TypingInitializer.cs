@@ -3,6 +3,7 @@ using gaw241201.Model;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Tarahiro;
 using UniRx;
 using UnityEngine;
@@ -16,7 +17,8 @@ namespace gaw241201.View
         [Inject] EnterKeyHundler _enterKeyHundler;
         [Inject] IndexUpdater _indexUpdater;
         [Inject] IQuestionDisplayTextModel _questionDisplayTextGenerator;
-
+        [Inject] IRestrictedCharProvider _restrictedCharProvider;
+        [Inject] IRestrictedCharRegisterer _restrictedCharRegisterer;
         Subject<List<char>> _restrictionDataLoaded = new Subject<List<char>>();
         Subject<string> _sampleInputted = new Subject<string>();
         public IObservable<string> SampleInputted => _sampleInputted;
@@ -26,16 +28,19 @@ namespace gaw241201.View
             _sampleInputted.OnNext(master.JpText);
             string romanText  = string.Concat(master.RomanText, "@");
 
-            _enterKeyHundler.Initialize(romanText,master.RestrictedCharList);
+            _restrictedCharRegisterer.Register(master.RestrictedCharList);
+            List<char> restrictedCharList = _restrictedCharProvider.GetRestrictedChar();
+
+            _enterKeyHundler.Initialize(romanText, restrictedCharList);
             _indexUpdater.Initialize(romanText);
 
             string s = "RestrictionÇê›íË: ";
-            foreach(var c in master.RestrictedCharList)
+            foreach(var c in restrictedCharList)
             {
                 s += c + ",";
             }
             Log.Comment(s);
-            _restrictionDataLoaded.OnNext(master.RestrictedCharList);
+            _restrictionDataLoaded.OnNext(restrictedCharList);
 
             _indexUpdater.UpdateIndex(0,romanText);
             _questionDisplayTextGenerator.GenerateDisplayQuestionText(romanText,_indexUpdater.GetIndex());

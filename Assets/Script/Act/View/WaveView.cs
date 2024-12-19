@@ -19,7 +19,7 @@ namespace gaw241201.View
 
         public void WaveClear()
         {
-            _image.color = Color.black;
+            _image.color = Color.gray;
             IsCleared = true;
         }
     }

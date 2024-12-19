@@ -89,9 +89,11 @@ namespace gaw241201.Inject
             builder.UseEntryPoints(Lifetime.Singleton, entryPoints =>
             {
                 entryPoints.Add<TypingRoguelikePresetner>();
-                entryPoints.Add<TypingRoguelikeDebugManager>();
                 entryPoints.Add<ActPresenter>();
                 entryPoints.Add<SkillPresenter>();
+#if ENABLE_DEBUG
+                entryPoints.Add<TypingRoguelikeDebugManager>();
+#endif
             });
         }
     }

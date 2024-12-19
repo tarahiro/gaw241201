@@ -16,8 +16,8 @@
   <AllowPNG/>
  </OfficeDocumentSettings>
  <ExcelWorkbook xmlns="urn:schemas-microsoft-com:office:excel">
-  <WindowHeight>7260</WindowHeight>
-  <WindowWidth>19770</WindowWidth>
+  <WindowHeight>18740</WindowHeight>
+  <WindowWidth>32767</WindowWidth>
   <WindowTopX>32767</WindowTopX>
   <WindowTopY>32767</WindowTopY>
   <RefModeR1C1/>
@@ -100,14 +100,14 @@
   <Table ss:ExpandedColumnCount="9" ss:ExpandedRowCount="30" x:FullColumns="1"
    x:FullRows="1" ss:DefaultColumnWidth="52.5" ss:DefaultRowHeight="18">
    <Column ss:AutoFitWidth="0" ss:Width="30"/>
-   <Column ss:AutoFitWidth="0" ss:Width="93.75"/>
+   <Column ss:AutoFitWidth="0" ss:Width="94"/>
    <Column ss:AutoFitWidth="0" ss:Width="90" ss:Span="5"/>
-   <Row ss:AutoFitHeight="0" ss:Height="24.5625" ss:StyleID="s62">
+   <Row ss:AutoFitHeight="0" ss:Height="24.5" ss:StyleID="s62">
     <Cell ss:StyleID="s63" ss:ArrayRange="RC"
      ss:Formula="=MID( CELL(&quot;filename&quot;,R1C1),&#10;FIND(&quot;[&quot;, CELL(&quot;filename&quot;,R1C1)) +1,&#10;FIND(&quot;]&quot;, CELL(&quot;filename&quot;,R1C1)) - FIND(&quot;[&quot;, CELL(&quot;filename&quot;,R1C1)) -1)"><Data
       ss:Type="String">Word.xml</Data></Cell>
    </Row>
-   <Row ss:Index="4" ss:AutoFitHeight="0" ss:Height="17.4375" ss:StyleID="s64">
+   <Row ss:Index="4" ss:AutoFitHeight="0" ss:Height="17.5" ss:StyleID="s64">
     <Cell ss:StyleID="s65"><Data ss:Type="String">index</Data></Cell>
     <Cell ss:StyleID="s66"><Data ss:Type="String">Id</Data></Cell>
     <Cell ss:StyleID="s65"><Data ss:Type="String">WordName</Data></Cell>
@@ -320,8 +320,8 @@
     <Cell ss:StyleID="s67"><Data ss:Type="String">alive</Data></Cell>
     <Cell ss:StyleID="s67" ss:Formula="=RC[-1]"><Data ss:Type="String">alive</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">vi</Data></Cell>
-    <Cell ss:StyleID="s67" ss:Formula="=CONCAT(&quot;自動詞を&quot;,RC[-2],&quot;&quot;&quot;に置き換えられる&quot;)"><Data
-      ss:Type="String">自動詞をalive&quot;に置き換えられる</Data></Cell>
+    <Cell ss:StyleID="s67" ss:Formula="=CONCAT(&quot;自動詞を&quot;,RC[-2],&quot;に置き換えられる&quot;)"><Data
+      ss:Type="String">自動詞をaliveに置き換えられる</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="Number">0</Data></Cell>
@@ -331,8 +331,8 @@
     <Cell ss:StyleID="s67"><Data ss:Type="String">suicide</Data></Cell>
     <Cell ss:StyleID="s67" ss:Formula="=RC[-1]"><Data ss:Type="String">suicide</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">vi</Data></Cell>
-    <Cell ss:StyleID="s67" ss:Formula="=CONCAT(&quot;自動詞を&quot;,RC[-2],&quot;&quot;&quot;に置き換えられる&quot;)"><Data
-      ss:Type="String">自動詞をsuicide&quot;に置き換えられる</Data></Cell>
+    <Cell ss:StyleID="s67" ss:Formula="=CONCAT(&quot;自動詞を&quot;,RC[-2],&quot;に置き換えられる&quot;)"><Data
+      ss:Type="String">自動詞をsuicideに置き換えられる</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="Number">0</Data></Cell>
@@ -342,8 +342,8 @@
     <Cell ss:StyleID="s67"><Data ss:Type="String">blood</Data></Cell>
     <Cell ss:StyleID="s67" ss:Formula="=RC[-1]"><Data ss:Type="String">blood</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">vi</Data></Cell>
-    <Cell ss:StyleID="s67" ss:Formula="=CONCAT(&quot;自動詞を&quot;,RC[-2],&quot;&quot;&quot;に置き換えられる&quot;)"><Data
-      ss:Type="String">自動詞をblood&quot;に置き換えられる</Data></Cell>
+    <Cell ss:StyleID="s67" ss:Formula="=CONCAT(&quot;自動詞を&quot;,RC[-2],&quot;に置き換えられる&quot;)"><Data
+      ss:Type="String">自動詞をbloodに置き換えられる</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="Number">0</Data></Cell>
@@ -353,8 +353,8 @@
     <Cell ss:StyleID="s67"><Data ss:Type="String">fear</Data></Cell>
     <Cell ss:StyleID="s67" ss:Formula="=RC[-1]"><Data ss:Type="String">fear</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">vi</Data></Cell>
-    <Cell ss:StyleID="s67" ss:Formula="=CONCAT(&quot;自動詞を&quot;,RC[-2],&quot;&quot;&quot;に置き換えられる&quot;)"><Data
-      ss:Type="String">自動詞をfear&quot;に置き換えられる</Data></Cell>
+    <Cell ss:StyleID="s67" ss:Formula="=CONCAT(&quot;自動詞を&quot;,RC[-2],&quot;に置き換えられる&quot;)"><Data
+      ss:Type="String">自動詞をfearに置き換えられる</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="Number">0</Data></Cell>
@@ -364,8 +364,8 @@
     <Cell ss:StyleID="s67"><Data ss:Type="String">war</Data></Cell>
     <Cell ss:StyleID="s67" ss:Formula="=RC[-1]"><Data ss:Type="String">war</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">vi</Data></Cell>
-    <Cell ss:StyleID="s67" ss:Formula="=CONCAT(&quot;自動詞を&quot;,RC[-2],&quot;&quot;&quot;に置き換えられる&quot;)"><Data
-      ss:Type="String">自動詞をwar&quot;に置き換えられる</Data></Cell>
+    <Cell ss:StyleID="s67" ss:Formula="=CONCAT(&quot;自動詞を&quot;,RC[-2],&quot;に置き換えられる&quot;)"><Data
+      ss:Type="String">自動詞をwarに置き換えられる</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="Number">0</Data></Cell>
@@ -375,8 +375,8 @@
     <Cell ss:StyleID="s67"><Data ss:Type="String">buffaloVt</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">buffalo</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">vt</Data></Cell>
-    <Cell ss:StyleID="s67" ss:Formula="=CONCAT(&quot;他動詞を&quot;,RC[-2],&quot;&quot;&quot;に置き換えられる&quot;)"><Data
-      ss:Type="String">他動詞をbuffalo&quot;に置き換えられる</Data></Cell>
+    <Cell ss:StyleID="s67" ss:Formula="=CONCAT(&quot;自動詞を&quot;,RC[-2],&quot;に置き換えられる&quot;)"><Data
+      ss:Type="String">自動詞をbuffaloに置き換えられる</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="Number">0</Data></Cell>
@@ -386,8 +386,8 @@
     <Cell ss:StyleID="s67"><Data ss:Type="String">help</Data></Cell>
     <Cell ss:StyleID="s67" ss:Formula="=RC[-1]"><Data ss:Type="String">help</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">vt</Data></Cell>
-    <Cell ss:StyleID="s67" ss:Formula="=CONCAT(&quot;他動詞を&quot;,RC[-2],&quot;&quot;&quot;に置き換えられる&quot;)"><Data
-      ss:Type="String">他動詞をhelp&quot;に置き換えられる</Data></Cell>
+    <Cell ss:StyleID="s67" ss:Formula="=CONCAT(&quot;自動詞を&quot;,RC[-2],&quot;に置き換えられる&quot;)"><Data
+      ss:Type="String">自動詞をhelpに置き換えられる</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="Number">0</Data></Cell>
@@ -397,8 +397,8 @@
     <Cell ss:StyleID="s67"><Data ss:Type="String">surrender</Data></Cell>
     <Cell ss:StyleID="s67" ss:Formula="=RC[-1]"><Data ss:Type="String">surrender</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">vt</Data></Cell>
-    <Cell ss:StyleID="s67" ss:Formula="=CONCAT(&quot;他動詞を&quot;,RC[-2],&quot;&quot;&quot;に置き換えられる&quot;)"><Data
-      ss:Type="String">他動詞をsurrender&quot;に置き換えられる</Data></Cell>
+    <Cell ss:StyleID="s67" ss:Formula="=CONCAT(&quot;自動詞を&quot;,RC[-2],&quot;に置き換えられる&quot;)"><Data
+      ss:Type="String">自動詞をsurrenderに置き換えられる</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="Number">0</Data></Cell>
@@ -408,8 +408,8 @@
     <Cell ss:StyleID="s67"><Data ss:Type="String">punish</Data></Cell>
     <Cell ss:StyleID="s67" ss:Formula="=RC[-1]"><Data ss:Type="String">punish</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">vt</Data></Cell>
-    <Cell ss:StyleID="s67" ss:Formula="=CONCAT(&quot;他動詞を&quot;,RC[-2],&quot;&quot;&quot;に置き換えられる&quot;)"><Data
-      ss:Type="String">他動詞をpunish&quot;に置き換えられる</Data></Cell>
+    <Cell ss:StyleID="s67" ss:Formula="=CONCAT(&quot;自動詞を&quot;,RC[-2],&quot;に置き換えられる&quot;)"><Data
+      ss:Type="String">自動詞をpunishに置き換えられる</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="Number">0</Data></Cell>
@@ -419,8 +419,8 @@
     <Cell ss:StyleID="s67"><Data ss:Type="String">barrel</Data></Cell>
     <Cell ss:StyleID="s67" ss:Formula="=RC[-1]"><Data ss:Type="String">barrel</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">vt</Data></Cell>
-    <Cell ss:StyleID="s67" ss:Formula="=CONCAT(&quot;他動詞を&quot;,RC[-2],&quot;&quot;&quot;に置き換えられる&quot;)"><Data
-      ss:Type="String">他動詞をbarrel&quot;に置き換えられる</Data></Cell>
+    <Cell ss:StyleID="s67" ss:Formula="=CONCAT(&quot;自動詞を&quot;,RC[-2],&quot;に置き換えられる&quot;)"><Data
+      ss:Type="String">自動詞をbarrelに置き換えられる</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="Number">0</Data></Cell>
@@ -442,13 +442,12 @@
    <TabColorIndex>13</TabColorIndex>
    <Zoom>115</Zoom>
    <Selected/>
-   <TopRowVisible>17</TopRowVisible>
    <Panes>
     <Pane>
      <Number>3</Number>
-     <ActiveRow>25</ActiveRow>
+     <ActiveRow>20</ActiveRow>
      <ActiveCol>4</ActiveCol>
-     <RangeSelection>R26C5:R30C5</RangeSelection>
+     <RangeSelection>R21C5:R30C5</RangeSelection>
     </Pane>
    </Panes>
    <ProtectObjects>False</ProtectObjects>
@@ -464,7 +463,7 @@
  </Worksheet>
  <Worksheet ss:Name="凡例">
   <Table ss:ExpandedColumnCount="3" ss:ExpandedRowCount="2" x:FullColumns="1"
-   x:FullRows="1" ss:DefaultColumnWidth="51.75" ss:DefaultRowHeight="18">
+   x:FullRows="1" ss:DefaultColumnWidth="52" ss:DefaultRowHeight="18">
    <Row ss:AutoFitHeight="0">
     <Cell ss:Index="3" ss:StyleID="s65"><Data ss:Type="String">SePath</Data></Cell>
    </Row>
@@ -496,12 +495,12 @@
    <Column ss:AutoFitWidth="0" ss:Width="30"/>
    <Column ss:AutoFitWidth="0" ss:Width="46.5"/>
    <Column ss:AutoFitWidth="0" ss:Width="90"/>
-   <Row ss:AutoFitHeight="0" ss:Height="24.5625" ss:StyleID="s62">
+   <Row ss:AutoFitHeight="0" ss:Height="24.5" ss:StyleID="s62">
     <Cell ss:StyleID="s63" ss:ArrayRange="RC"
      ss:Formula="=MID( CELL(&quot;filename&quot;,R1C1),&#10;FIND(&quot;[&quot;, CELL(&quot;filename&quot;,R1C1)) +1,&#10;FIND(&quot;]&quot;, CELL(&quot;filename&quot;,R1C1)) - FIND(&quot;[&quot;, CELL(&quot;filename&quot;,R1C1)) -1)"><Data
       ss:Type="String">Word.xml</Data></Cell>
    </Row>
-   <Row ss:Index="4" ss:AutoFitHeight="0" ss:Height="17.4375" ss:StyleID="s64">
+   <Row ss:Index="4" ss:AutoFitHeight="0" ss:Height="17.5" ss:StyleID="s64">
     <Cell ss:StyleID="s65"><Data ss:Type="String">index</Data></Cell>
     <Cell ss:StyleID="s66"><Data ss:Type="String">Id</Data></Cell>
     <Cell ss:StyleID="s65"><Data ss:Type="String">SePath</Data></Cell>

@@ -47,9 +47,11 @@ namespace gaw241201.Inject
             builder.Register<DeviceKeyReplacer>(Lifetime.Singleton).AsSelf();
 
             builder.Register<HorrorStoryMainLoopStarter>(Lifetime.Singleton).AsSelf();
+#if ENABLE_DEBUG
+
             builder.Register<TypingTestStarter>(Lifetime.Singleton).AsSelf();
             builder.Register<FreeInputTestStarter>(Lifetime.Singleton).AsSelf();
-
+#endif
             //Flag
             builder.Register<GlobalFlagContainer>(Lifetime.Singleton).AsImplementedInterfaces();
             builder.Register<RegisterFlagOrderProcessor>(Lifetime.Singleton).AsSelf();
