@@ -50,6 +50,7 @@ namespace gaw241201.View
         {
             Log.Comment(index + "の文字表示開始");
 
+
             _tmpQuestion.text = GetTextTaggedTyped(_textCache, index);
             _textCache = "";
 
@@ -69,6 +70,8 @@ namespace gaw241201.View
 
         public void SetSampleText(string s)
         {
+            //fake 初期化処理をちゃんと実装したい SampleTextセットするとことかに
+            Show();
             _tmpSample.text = s;
         }
 
@@ -215,6 +218,26 @@ namespace gaw241201.View
             }
 
             return result;
+        }
+
+
+        GameObject _root;
+
+        void Start()
+        {
+            _root = transform.Find("Root").gameObject;
+            UnShow();
+        }
+
+        void Show()
+        {
+            _root.SetActive(true);
+        }
+
+        void UnShow()
+        {
+            _root.SetActive(false);
+
         }
     }
 }

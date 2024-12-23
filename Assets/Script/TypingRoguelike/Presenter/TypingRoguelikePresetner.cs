@@ -65,6 +65,7 @@ namespace gaw241201.Presenter
             _timerView.TimeRemained.Subscribe(time => _pointModel.AddRemainTimePoint(time)).AddTo(_disposable);
             
             _pointModel.PointUpdated.Subscribe(_pointView.UpdatePoint).AddTo(_disposable);
+            _pointModel.Initialized.Subscribe(_ => _pointView.Initialize()).AddTo(_disposable);
             _requiredScoreGeneratable.RequiredScoreGenerated.Subscribe(_requiredPointView.UpdatePoint).AddTo(_disposable);
         }
     }

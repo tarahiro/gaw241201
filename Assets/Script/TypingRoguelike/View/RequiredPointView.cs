@@ -17,7 +17,27 @@ namespace gaw241201.View
 
         public void UpdatePoint(int point)
         {
+            Show();
             _tmp.text = point.ToString();
+        }
+
+        GameObject _root;
+
+        void Start()
+        {
+            _root = transform.Find("Root").gameObject;
+            UnShow();
+        }
+
+        void Show()
+        {
+            _root.SetActive(true);
+        }
+
+        void UnShow()
+        {
+            _root.SetActive(false);
+
         }
     }
 }

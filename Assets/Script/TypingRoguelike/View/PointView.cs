@@ -20,5 +20,29 @@ namespace gaw241201.View
         {
             _tmp.text = point.ToString();
         }
+
+        public void Initialize()
+        {
+            Show();
+        }
+
+        GameObject _root;
+
+        void Start()
+        {
+            _root = transform.Find("Root").gameObject;
+            UnShow();
+        }
+
+        void Show()
+        {
+            _root.SetActive(true);
+        }
+
+        void UnShow()
+        {
+            _root.SetActive(false);
+
+        }
     }
 }

@@ -16,8 +16,9 @@ namespace gaw241201.Inject
         {
             Log.Comment("ProjectLifetimeScope‚Ì“o˜^ŠJŽn");
 
+            
             //Manager
-            builder.Register<AdapterFactory<TypingRoguelikeMainLoopStarter, SaveDataManager>>(Lifetime.Singleton).WithParameter<LifetimeScope[]>(FindObjectsOfType<LifetimeScope>).AsImplementedInterfaces();
+            builder.Register<AdapterFactory<ScreenShotStarter, SaveDataManager>>(Lifetime.Singleton).WithParameter<LifetimeScope[]>(FindObjectsOfType<LifetimeScope>).AsImplementedInterfaces();
             builder.Register<FlowProvider>(Lifetime.Singleton).WithParameter<LifetimeScope[]>(FindObjectsOfType<LifetimeScope>).AsImplementedInterfaces();
 
 
@@ -46,6 +47,8 @@ namespace gaw241201.Inject
             builder.Register<DeviceLowerKeyReplacer>(Lifetime.Singleton).AsSelf();
             builder.Register<DeviceKeyReplacer>(Lifetime.Singleton).AsSelf();
 
+            //starter
+            builder.Register<ScreenShotStarter>(Lifetime.Singleton).AsSelf();
             builder.Register<HorrorStoryMainLoopStarter>(Lifetime.Singleton).AsSelf();
 #if ENABLE_DEBUG
 

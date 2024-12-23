@@ -20,10 +20,14 @@ namespace gaw241201
 
         Subject<int> _pointUpdated = new Subject<int>();
 
+
+        Subject<Unit> _initialized = new Subject<Unit>();
         public IObservable<int> PointUpdated => _pointUpdated;
+        public IObservable<Unit> Initialized => _initialized;
 
         public void InitializePoint()
         {
+            _initialized.OnNext(Unit.Default);
             DecrementPoint(m_point);
         }
 

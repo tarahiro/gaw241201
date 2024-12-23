@@ -16,5 +16,6 @@ namespace gaw241201
         void ReducePenaltyPoint();
         void AddRemainTimePoint(float remainTime);
         IObservable<int> PointUpdated { get; }
+        IObservable<Unit> Initialized { get; }
     }
 }

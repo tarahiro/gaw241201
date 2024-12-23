@@ -26,6 +26,7 @@ namespace gaw241201.View
         public async UniTask Enter(TimerArgs timerArgs)
         {
             Log.Comment("タイマー開始");
+            Show();
             OnEnter(timerArgs);
 
             while (_time < timerArgs.Time && _isCountTime)
@@ -64,6 +65,26 @@ namespace gaw241201.View
         {
             _isCountTime = false;
             _timeRemained.OnNext(_args.Time - _time);
+        }
+
+
+        GameObject _root;
+
+        void Start()
+        {
+            _root = transform.Find("Root").gameObject;
+            UnShow();
+        }
+
+        void Show()
+        {
+            _root.SetActive(true);
+        }
+
+        void UnShow()
+        {
+            _root.SetActive(false);
+
         }
 
     }

@@ -16,11 +16,10 @@
   <AllowPNG/>
  </OfficeDocumentSettings>
  <ExcelWorkbook xmlns="urn:schemas-microsoft-com:office:excel">
-  <WindowHeight>15800</WindowHeight>
+  <WindowHeight>17300</WindowHeight>
   <WindowWidth>32767</WindowWidth>
   <WindowTopX>32767</WindowTopX>
   <WindowTopY>32767</WindowTopY>
-  <RefModeR1C1/>
   <ProtectStructure>False</ProtectStructure>
   <ProtectWindows>False</ProtectWindows>
  </ExcelWorkbook>
@@ -88,7 +87,7 @@
   </Style>
  </Styles>
  <Worksheet ss:Name="Script">
-  <Table ss:ExpandedColumnCount="6" ss:ExpandedRowCount="6" x:FullColumns="1"
+  <Table ss:ExpandedColumnCount="6" ss:ExpandedRowCount="5" x:FullColumns="1"
    x:FullRows="1" ss:DefaultColumnWidth="52.5" ss:DefaultRowHeight="18">
    <Column ss:AutoFitWidth="0" ss:Width="30"/>
    <Column ss:AutoFitWidth="0" ss:Width="128"/>
@@ -108,17 +107,9 @@
    </Row>
    <Row ss:AutoFitHeight="0">
     <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">0</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">903000NameFreeInput</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">FreeInput</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">NameFreeInput</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">Clear</Data></Cell>
-    <Cell ss:StyleID="s67" ss:Formula="=R[-3]C[-4]"><Data ss:Type="Number">0</Data></Cell>
-   </Row>
-   <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">1</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">904000TrueEndConversation</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">909000Test</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">Conversation</Data></Cell>
-    <Cell ss:StyleID="s67" ss:Formula="=RC[-2]"><Data ss:Type="String">904000TrueEndConversation</Data></Cell>
+    <Cell ss:StyleID="s67" ss:Formula="=RC[-2]"><Data ss:Type="String">909000Test</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
    </Row>
@@ -142,20 +133,13 @@
    <Panes>
     <Pane>
      <Number>3</Number>
-     <ActiveRow>16</ActiveRow>
-     <ActiveCol>10</ActiveCol>
+     <ActiveRow>4</ActiveRow>
+     <ActiveCol>1</ActiveCol>
     </Pane>
    </Panes>
    <ProtectObjects>False</ProtectObjects>
    <ProtectScenarios>False</ProtectScenarios>
   </WorksheetOptions>
-  <ConditionalFormatting xmlns="urn:schemas-microsoft-com:office:excel">
-   <Range>R6C1:R6C6</Range>
-   <Condition>
-    <Value1>LEN(TRIM(RC))=0</Value1>
-    <Format Style='background:#E7E6E6'/>
-   </Condition>
-  </ConditionalFormatting>
   <ConditionalFormatting xmlns="urn:schemas-microsoft-com:office:excel">
    <Range>R5C1:R5C6</Range>
    <Condition>
