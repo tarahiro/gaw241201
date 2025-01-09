@@ -1,5 +1,6 @@
 using Cysharp.Threading.Tasks;
 using gaw241201.Model;
+using gaw241201.View;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -17,6 +18,7 @@ namespace gaw241201.Inject
         [Inject] ILeetMasterDataProvider _leetMasterDataProvider;
         [Inject] IWordMasterDataProvider _wordMasterDataProvider;
         [Inject] IAchievableMasterFlagRegisterer _achievableMasterFlagRegisterer;
+        [Inject] StageBgView _stageBgView;
 
         public void Start()
         {
@@ -38,6 +40,16 @@ namespace gaw241201.Inject
                 {
                     _achievableMasterFlagRegisterer.RegisterFlag(FlagConst.ContainableMasterKey.Word, _wordMasterDataProvider.TryGetFromIndex(i).Id);
                 }
+            }
+
+            if (Input.GetKeyDown(KeyCode.Z))
+            {
+                _stageBgView.Enter(new StageBgViewArgs("Company", 10, new System.Threading.CancellationToken()));
+            }
+
+            if (Input.GetKeyDown(KeyCode.X))
+            {
+                _stageBgView.ToNext();
             }
         }
     }

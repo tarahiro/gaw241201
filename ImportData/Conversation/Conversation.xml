@@ -9,7 +9,7 @@
   <Author>h t</Author>
   <LastAuthor>h t</LastAuthor>
   <Created>2021-10-25T13:58:26Z</Created>
-  <LastSaved>2024-12-19T08:29:22Z</LastSaved>
+  <LastSaved>2024-12-26T10:32:24Z</LastSaved>
   <Version>16.00</Version>
  </DocumentProperties>
  <OfficeDocumentSettings xmlns="urn:schemas-microsoft-com:office:office">
@@ -20,6 +20,7 @@
   <WindowWidth>32767</WindowWidth>
   <WindowTopX>32767</WindowTopX>
   <WindowTopY>32767</WindowTopY>
+  <RefModeR1C1/>
   <ProtectStructure>False</ProtectStructure>
   <ProtectWindows>False</ProtectWindows>
  </ExcelWorkbook>
@@ -96,7 +97,7 @@
   </Style>
  </Styles>
  <Worksheet ss:Name="Script">
-  <Table ss:ExpandedColumnCount="7" ss:ExpandedRowCount="155" x:FullColumns="1"
+  <Table ss:ExpandedColumnCount="7" ss:ExpandedRowCount="156" x:FullColumns="1"
    x:FullRows="1" ss:DefaultColumnWidth="52.5" ss:DefaultRowHeight="18">
    <Column ss:AutoFitWidth="0" ss:Width="30"/>
    <Column ss:AutoFitWidth="0" ss:Width="163"/>
@@ -1451,7 +1452,80 @@
     <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
    </Row>
-   <Row ss:Index="146" ss:AutoFitHeight="0">
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">134</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">909110MemorialConversation</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">909100MemorialConversation</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">こんにちは。</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Center</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">135</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">909120MemorialConversation</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">909100MemorialConversation</Data></Cell>
+    <Cell ss:StyleID="s67"><PhoneticText
+      xmlns="urn:schemas-microsoft-com:office:excel">タノ</PhoneticText><Data
+      ss:Type="String">タイピングゲームを　たくさん　楽しんでいただけて、</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">RightTop</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">136</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">909130MemorialConversation</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">909100MemorialConversation</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">うれしいです。</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Right</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">137</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">909140MemorialConversation</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">909100MemorialConversation</Data></Cell>
+    <Cell ss:StyleID="s67"><PhoneticText
+      xmlns="urn:schemas-microsoft-com:office:excel">タノ</PhoneticText><Data
+      ss:Type="String">もっと　楽しんでいただけるよう、</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">LeftBottom</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">138</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">909150MemorialConversation</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">909100MemorialConversation</Data></Cell>
+    <Cell ss:StyleID="s67"><PhoneticText
+      xmlns="urn:schemas-microsoft-com:office:excel">ツク</PhoneticText><Data
+      ss:Type="String">あたらしい　タイピングゲームを　作っています。</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Center</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">139</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">909160MemorialConversation</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">909100MemorialConversation</Data></Cell>
+    <Cell ss:StyleID="s67"><PhoneticText
+      xmlns="urn:schemas-microsoft-com:office:excel">マ</PhoneticText><Data
+      ss:Type="String">お待ち　くださいね。</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Left</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">140</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">909170MemorialConversation</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">909100MemorialConversation</Data></Cell>
+    <Cell ss:StyleID="s67"><PhoneticText
+      xmlns="urn:schemas-microsoft-com:office:excel">ワス</PhoneticText><Data
+      ss:Type="String">&lt;style=highlight&gt;忘れさせませんよ。&lt;/style&gt;</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Center</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Mad</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Silent</Data></Cell>
+   </Row>
+   <Row ss:Index="147" ss:AutoFitHeight="0">
     <Cell ss:Index="5" ss:StyleID="s65"><Data ss:Type="String">Facial</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
@@ -1498,24 +1572,73 @@
    <TabColorIndex>13</TabColorIndex>
    <Zoom>85</Zoom>
    <Selected/>
-   <TopRowVisible>104</TopRowVisible>
+   <TopRowVisible>113</TopRowVisible>
    <Panes>
     <Pane>
      <Number>3</Number>
-     <ActiveRow>131</ActiveRow>
-     <ActiveCol>14</ActiveCol>
+     <ActiveRow>152</ActiveRow>
+     <ActiveCol>16</ActiveCol>
     </Pane>
    </Panes>
    <ProtectObjects>False</ProtectObjects>
    <ProtectScenarios>False</ProtectScenarios>
   </WorksheetOptions>
   <DataValidation xmlns="urn:schemas-microsoft-com:office:excel">
-   <Range>R5C5:R138C5</Range>
+   <Range>R5C5:R145C5</Range>
    <Type>List</Type>
-   <Value>R147C5:R155C5</Value>
+   <Value>R148C5:R156C5</Value>
   </DataValidation>
   <ConditionalFormatting xmlns="urn:schemas-microsoft-com:office:excel">
-   <Range>R25C3:R29C3,R27C2:R29C2,R30C2:R31C3,R32C2:R44C2,R27C1:R44C1,R27C3:R44C5,R45C1:R74C5,R6C6:R74C7,R6C1:R26C5,R147C5:R155C5,R5C1:R5C7,R75C1:R138C7</Range>
+   <Range>R25C3:R29C3,R27C2:R29C2,R30C2:R31C3,R32C2:R44C2,R27C1:R44C1,R27C3:R44C5,R45C1:R74C5,R6C6:R74C7,R6C1:R26C5,R148C5:R156C5,R5C1:R5C7,R75C1:R138C7</Range>
+   <Condition>
+    <Value1>LEN(TRIM(RC))=0</Value1>
+    <Format Style='background:#E7E6E6'/>
+   </Condition>
+  </ConditionalFormatting>
+  <ConditionalFormatting xmlns="urn:schemas-microsoft-com:office:excel">
+   <Range>R139C1:R139C4,R141C2,R143C2,R139C3:R145C3,R139C7</Range>
+   <Condition>
+    <Value1>LEN(TRIM(RC))=0</Value1>
+    <Format Style='background:#E7E6E6'/>
+   </Condition>
+  </ConditionalFormatting>
+  <ConditionalFormatting xmlns="urn:schemas-microsoft-com:office:excel">
+   <Range>R140C1,R140C3:R140C7</Range>
+   <Condition>
+    <Value1>LEN(TRIM(RC))=0</Value1>
+    <Format Style='background:#E7E6E6'/>
+   </Condition>
+  </ConditionalFormatting>
+  <ConditionalFormatting xmlns="urn:schemas-microsoft-com:office:excel">
+   <Range>R141C1:R142C1,R141C3:R142C7</Range>
+   <Condition>
+    <Value1>LEN(TRIM(RC))=0</Value1>
+    <Format Style='background:#E7E6E6'/>
+   </Condition>
+  </ConditionalFormatting>
+  <ConditionalFormatting xmlns="urn:schemas-microsoft-com:office:excel">
+   <Range>R143C1,R143C3:R143C7</Range>
+   <Condition>
+    <Value1>LEN(TRIM(RC))=0</Value1>
+    <Format Style='background:#E7E6E6'/>
+   </Condition>
+  </ConditionalFormatting>
+  <ConditionalFormatting xmlns="urn:schemas-microsoft-com:office:excel">
+   <Range>R144C1:R145C1,R144C3:R145C7</Range>
+   <Condition>
+    <Value1>LEN(TRIM(RC))=0</Value1>
+    <Format Style='background:#E7E6E6'/>
+   </Condition>
+  </ConditionalFormatting>
+  <ConditionalFormatting xmlns="urn:schemas-microsoft-com:office:excel">
+   <Range>R140C2,R142C2,R144C2:R145C2</Range>
+   <Condition>
+    <Value1>LEN(TRIM(RC))=0</Value1>
+    <Format Style='background:#E7E6E6'/>
+   </Condition>
+  </ConditionalFormatting>
+  <ConditionalFormatting xmlns="urn:schemas-microsoft-com:office:excel">
+   <Range>R139C5:R139C6</Range>
    <Condition>
     <Value1>LEN(TRIM(RC))=0</Value1>
     <Format Style='background:#E7E6E6'/>

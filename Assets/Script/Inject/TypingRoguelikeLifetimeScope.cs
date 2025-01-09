@@ -23,7 +23,6 @@ namespace gaw241201.Inject
             builder.Register<SkillAchieveArgsDataFactory>(Lifetime.Singleton).AsSelf();
             builder.RegisterComponentInHierarchy<SkillAchieveView>().AsSelf();
 
-
             //act
             builder.Register<ActStartModel>(Lifetime.Singleton).AsSelf();
             builder.Register<StageMasterListGetter>(Lifetime.Singleton).AsImplementedInterfaces();
@@ -85,6 +84,9 @@ namespace gaw241201.Inject
             builder.Register<PointModel>(Lifetime.Singleton).AsImplementedInterfaces();
             builder.RegisterComponentInHierarchy<PointView>().AsSelf();
             builder.RegisterComponentInHierarchy<RequiredPointView>().AsSelf();
+
+            //stageBg
+            builder.RegisterComponentInHierarchy<StageBgView>().AsSelf();
 
             builder.UseEntryPoints(Lifetime.Singleton, entryPoints =>
             {

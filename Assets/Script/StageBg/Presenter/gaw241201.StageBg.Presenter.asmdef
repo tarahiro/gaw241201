@@ -1,0 +1,21 @@
+{
+    "name": "gaw241201.StageBg.Presenter",
+    "rootNamespace": "gaw241201.StageBg.Presenter",
+    "references": [
+        "GUID:0be27b54e10228743974a8df3dda3639",
+        "GUID:560b04d1a97f54a4e82edc0cbbb69285",
+        "GUID:f51ebe6a0ceec4240a699833d6309b23",
+        "GUID:b0214a6008ed146ff8f122a6a9c2f6cc",
+        "GUID:71ad04b261c911b49a39c40a519607e9",
+        "GUID:66e6c51a05c0e8b4ca5de83ee1fc7cc4"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": false,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

@@ -36,16 +36,13 @@ namespace gaw241201.View
         {
             _tmp.text = "";
             SoundManager.PlaySE("TalkShort");
-            Log.Comment("TextView表示開始");
             await TextUtil.DisplayTextByCharacter(text, _tmp, "Talk", _decideKeys , ct,false);
             await UniTask.Yield(PlayerLoopTiming.Update,ct);
-            Log.Comment("TextView表示終了");
             _cursor.StartBlink();
             SetCursorPosition();
             await UniTask.WaitUntil(() => _decideKeys.Any(x => Input.GetKeyDown(x)) , cancellationToken:ct);
             _cursor.StopBlink();
             _cursor.EraseCursor();
-            Log.Comment("TextView決定終了");
         }
 
         void SetCursorPosition()
