@@ -9,19 +9,34 @@ using Tarahiro.MasterData;
 
 namespace gaw241201.Inject
 {
+
     public class TypingRoguelikeLifetimeScope : LifetimeScope
     {
         protected override void Configure(IContainerBuilder builder)
         {
-
-
-            //starter
-            builder.Register<TypingRoguelikeMainLoopStarter>(Lifetime.Singleton).AsSelf();
+           
+            /*
+            builder.UseEntryPoints(Lifetime.Singleton, entryPoints =>
+            {
+#if ENABLE_DEBUG
+                entryPoints.Add<TypingRoguelikeDebugManager>();
+#endif
+            });
+            */
+        }
+        void RegisterSkill(IContainerBuilder builder)
+        {
 
             //skill
             builder.Register<SkillAchieveModel>(Lifetime.Singleton).AsSelf();
             builder.Register<SkillAchieveArgsDataFactory>(Lifetime.Singleton).AsSelf();
             builder.RegisterComponentInHierarchy<SkillAchieveView>().AsSelf();
+
+            builder.RegisterEntryPoint<SkillPresenter>();
+        }
+
+        void RegisterAct(IContainerBuilder builder)
+        {
 
             //act
             builder.Register<ActStartModel>(Lifetime.Singleton).AsSelf();
@@ -30,13 +45,29 @@ namespace gaw241201.Inject
             builder.RegisterComponentInHierarchy<ActView>().AsSelf();
             builder.Register<ActPresenter>(Lifetime.Singleton).AsSelf();
             builder.Register<ActViewArgsListFactory>(Lifetime.Singleton).AsSelf();
+            builder.RegisterEntryPoint<ActPresenter>();
 
+
+        }
+
+        void RegisterFlag(IContainerBuilder builder)
+        {
             //flag
             builder.Register<AchievableMasterFlagContainer>(Lifetime.Singleton).AsImplementedInterfaces();
             builder.Register<RestrictedCharContainer>(Lifetime.Singleton).AsImplementedInterfaces();
 
+        }
+        
+        void RegisterRestriction(IContainerBuilder builder)
+        {
+
             //Restriction
             builder.Register<RestrictionMasterDataProvider>(Lifetime.Singleton).AsImplementedInterfaces();
+
+        }
+
+        void RegisterWord(IContainerBuilder builder)
+        {
 
             //Word
             builder.Register<WordMasterDataProvider>(Lifetime.Singleton).
@@ -45,6 +76,11 @@ namespace gaw241201.Inject
             builder.Register<AvailableWordDataProvider>(Lifetime.Singleton).
                 As<AvaliableMasterDataProvider<IMasterDataRecord<IWordMaster>>>().
                 As<IAvailableMasterDataProvider<IMasterDataRecord<IWordMaster>>>();
+        }
+
+        void RegisterLeet(IContainerBuilder builder)
+        {
+
 
             //Leet
             builder.Register<LeetMasterDataProvider>(Lifetime.Singleton).
@@ -53,6 +89,11 @@ namespace gaw241201.Inject
             builder.Register<AvailableLeetDataProvider>(Lifetime.Singleton).
                 As<AvaliableMasterDataProvider<IMasterDataRecord<ILeetMaster>>>().
                 As<IAvailableMasterDataProvider<IMasterDataRecord<ILeetMaster>>>();
+
+        }
+
+        void RegisterTypingRoguelike(IContainerBuilder builder)
+        {
 
             //TypingRoguelike
             //model
@@ -85,18 +126,16 @@ namespace gaw241201.Inject
             builder.RegisterComponentInHierarchy<PointView>().AsSelf();
             builder.RegisterComponentInHierarchy<RequiredPointView>().AsSelf();
 
+            builder.RegisterEntryPoint<TypingRoguelikePresetner > ();
+
+
+        }
+
+        void RegisterStageBg(IContainerBuilder builder)
+        {
             //stageBg
             builder.RegisterComponentInHierarchy<StageBgView>().AsSelf();
 
-            builder.UseEntryPoints(Lifetime.Singleton, entryPoints =>
-            {
-                entryPoints.Add<TypingRoguelikePresetner>();
-                entryPoints.Add<ActPresenter>();
-                entryPoints.Add<SkillPresenter>();
-#if ENABLE_DEBUG
-                entryPoints.Add<TypingRoguelikeDebugManager>();
-#endif
-            });
         }
     }
 }

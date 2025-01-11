@@ -12,7 +12,7 @@ using gaw241201.Model;
 namespace gaw241201.Inject
 {
 #if ENABLE_DEBUG
-    public class DebugManager : ITickable, IStartable
+    public class GlobalDebugManager : ITickable, IStartable
     {
         [Inject] FlowHundler _flowHundler;
         [Inject] ISaveDeletable _saveDeletable;

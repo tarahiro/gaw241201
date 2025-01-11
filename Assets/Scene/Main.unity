@@ -2383,7 +2383,7 @@ GameObject:
   - component: {fileID: 1360695889}
   - component: {fileID: 1360695886}
   - component: {fileID: 1360695888}
-  - component: {fileID: 1360695890}
+  - component: {fileID: 1360695891}
   m_Layer: 0
   m_Name: LifetimeScope
   m_TagString: Untagged
@@ -2458,8 +2458,13 @@ MonoBehaviour:
   parentReference:
     TypeName: 
   autoRun: 1
-  autoInjectGameObjects: []
---- !u!114 &1360695890
+  autoInjectGameObjects:
+  - {fileID: 1310494465}
+  - {fileID: 2117334746}
+  - {fileID: 1132458255}
+  - {fileID: 403598739}
+  - {fileID: 1306050618}
+--- !u!114 &1360695891
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2468,7 +2473,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1360695885}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2f703dbc0f1025c4692011e1f8dcb782, type: 3}
+  m_Script: {fileID: 11500000, guid: 6c3bfdc60cc21d244a7313b887d4b196, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   parentReference:

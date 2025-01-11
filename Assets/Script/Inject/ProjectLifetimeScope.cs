@@ -6,6 +6,7 @@ using gaw241201.Presenter;
 using gaw241201.View;
 using gaw241201.Model;
 using UnityEngine;
+using Tarahiro.MasterData;
 
 namespace gaw241201.Inject
 {
@@ -16,21 +17,21 @@ namespace gaw241201.Inject
         {
             Log.Comment("ProjectLifetimeScopeの登録開始");
 
-            RegisterManager(builder);
-            RegisterFlow(builder);
-            RegisterTyping(builder);
-            RegisterStarter(builder);
-            RegisterFlag(builder);
-            RegisterMonitor(builder);
-            RegisterEndGame(builder);
-            RegisterSave(builder);
-            RegisterEyes(builder);
-            RegisterEffect(builder);
-            RegisterConfiscate(builder);
-            RegisterDeleteUi(builder);
-            RegisterClickInput(builder);
-            RegisterFreeInput(builder);
-            RegisterConversation(builder);
+            CofigureManager(builder);
+            ConfigureFlow(builder);
+            ConfigureTyping(builder);
+            ConfigureStarter(builder);
+            ConfigureFlag(builder);
+            ConfigureMonitor(builder);
+            ConfigureEndGame(builder);
+            ConfigureSave(builder);
+            ConfigureEyes(builder);
+            ConfigureEffect(builder);
+            ConfigureConfiscate(builder);
+            ConfigureDeleteUi(builder);
+            ConfigureClickInput(builder);
+            ConfigureFreeInput(builder);
+            ConfigureConversation(builder);
 
             //Tarahiro
             builder.Register<PlatformInfoProvider>(Lifetime.Singleton).AsSelf();
@@ -38,15 +39,22 @@ namespace gaw241201.Inject
             //RegisterFlagFlow
             builder.Register<RegisterFlagFlowModel>(Lifetime.Singleton).AsSelf();
 
-            builder.UseEntryPoints(Lifetime.Singleton, entryPoints =>
-            {
-#if ENABLE_DEBUG
-                entryPoints.Add<DebugManager>();
-#endif
-            });
+            //以下、ローグライクから移植してきたもの
+
+            //starter
+            builder.Register<TypingRoguelikeMainLoopStarter>(Lifetime.Singleton).AsSelf();
+
+
+            ConfigureSkill(builder);
+            ConfigureAct(builder);
+            ConfigureRestriction(builder);
+            ConfigureWord(builder);
+            ConfigureLeet(builder);
+            ConfigureTypingRoguelike(builder);
+            ConfigureStageBg(builder);
         }
 
-        void RegisterManager(IContainerBuilder builder)
+        void CofigureManager(IContainerBuilder builder)
         {
             //Manager
             builder.Register<AdapterFactory<HorrorStoryMainLoopStarter, SaveDataManager>>(Lifetime.Singleton).WithParameter<LifetimeScope[]>(FindObjectsOfType<LifetimeScope>).AsImplementedInterfaces();
@@ -56,7 +64,7 @@ namespace gaw241201.Inject
 
         }
 
-        void RegisterFlow(IContainerBuilder builder)
+        void ConfigureFlow(IContainerBuilder builder)
         {
             //model
             builder.Register<FlowHundler>(Lifetime.Singleton).AsSelf().AsImplementedInterfaces();
@@ -68,7 +76,7 @@ namespace gaw241201.Inject
             builder.Register<DeviceKeyReplacer>(Lifetime.Singleton).AsSelf();
         }
 
-        void RegisterTyping(IContainerBuilder builder)
+        void ConfigureTyping(IContainerBuilder builder)
         {
             //model
             builder.Register<TypingModel>(Lifetime.Singleton).AsSelf();
@@ -87,7 +95,7 @@ namespace gaw241201.Inject
            builder.RegisterEntryPoint<TypingPresenter>();
         }
 
-        void RegisterStarter(IContainerBuilder builder)
+        void ConfigureStarter(IContainerBuilder builder)
         {
 
             //starter
@@ -100,16 +108,18 @@ namespace gaw241201.Inject
 #endif
         }
 
-        void RegisterFlag(IContainerBuilder builder)
+        void ConfigureFlag(IContainerBuilder builder)
         {
 
             //Flag
             builder.Register<GlobalFlagContainer>(Lifetime.Singleton).AsImplementedInterfaces();
             builder.Register<RegisterFlagOrderProcessor>(Lifetime.Singleton).AsSelf();
+            builder.Register<AchievableMasterFlagContainer>(Lifetime.Singleton).AsImplementedInterfaces();
+            builder.Register<RestrictedCharContainer>(Lifetime.Singleton).AsImplementedInterfaces();
 
         }
 
-        void RegisterMonitor(IContainerBuilder builder)
+        void ConfigureMonitor(IContainerBuilder builder)
         {
             //Monitor
             builder.Register<StartMonitorModel>(Lifetime.Singleton).AsSelf();
@@ -120,7 +130,7 @@ namespace gaw241201.Inject
 
         }
 
-        void RegisterEndGame(IContainerBuilder builder)
+        void ConfigureEndGame(IContainerBuilder builder)
         {
             //EndGame
             builder.Register<EndGameModel>(Lifetime.Singleton).AsSelf();
@@ -130,7 +140,7 @@ namespace gaw241201.Inject
 
         }
 
-        void RegisterSave(IContainerBuilder builder)
+        void ConfigureSave(IContainerBuilder builder)
         {
 
             //Save
@@ -140,7 +150,7 @@ namespace gaw241201.Inject
 
         }
 
-        void RegisterEyes(IContainerBuilder builder)
+        void ConfigureEyes(IContainerBuilder builder)
         {
             //View
             builder.RegisterComponentInHierarchy<EyesView>().AsImplementedInterfaces();
@@ -148,7 +158,7 @@ namespace gaw241201.Inject
 
         }
 
-        void RegisterEffect(IContainerBuilder builder)
+        void ConfigureEffect(IContainerBuilder builder)
         {
             //Effect
             builder.Register<EnterEffectModel>(Lifetime.Singleton).AsSelf();
@@ -164,7 +174,7 @@ namespace gaw241201.Inject
 
         }
 
-        void RegisterConfiscate(IContainerBuilder builder)
+        void ConfigureConfiscate(IContainerBuilder builder)
         {
             //Confiscate
             builder.Register<ConfiscateModel>(Lifetime.Singleton).AsSelf();
@@ -175,7 +185,7 @@ namespace gaw241201.Inject
             builder.RegisterEntryPoint<ConfiscatePresenter>();
         }
 
-        void RegisterDeleteUi(IContainerBuilder builder)
+        void ConfigureDeleteUi(IContainerBuilder builder)
         {
 
             //DeleteUi
@@ -183,7 +193,7 @@ namespace gaw241201.Inject
             builder.Register<UiDeletableProvider>(Lifetime.Singleton).AsImplementedInterfaces();
         }
 
-        void RegisterClickInput(IContainerBuilder builder)
+        void ConfigureClickInput(IContainerBuilder builder)
         {
             //Model
             builder.Register<ClickInputModel>(Lifetime.Singleton).AsSelf();
@@ -198,7 +208,7 @@ namespace gaw241201.Inject
             builder.RegisterEntryPoint<ClickInputPresenter>();
         }
 
-        void RegisterFreeInput(IContainerBuilder builder)
+        void ConfigureFreeInput(IContainerBuilder builder)
         {
 
             //FreeInput
@@ -212,7 +222,7 @@ namespace gaw241201.Inject
             builder.RegisterEntryPoint<FreeInputPresenter>();
         }
 
-        void RegisterConversation(IContainerBuilder builder)
+        void ConfigureConversation(IContainerBuilder builder)
         {
             //Conversation
             builder.Register<ConversationModel>(Lifetime.Singleton).AsSelf();
@@ -236,5 +246,114 @@ namespace gaw241201.Inject
 
             builder.RegisterEntryPoint<ConversationPresenter>();
         }
+
+        void ConfigureSkill(IContainerBuilder builder)
+        {
+
+            //skill
+            builder.Register<SkillAchieveModel>(Lifetime.Singleton).AsSelf();
+            builder.Register<SkillAchieveArgsDataFactory>(Lifetime.Singleton).AsSelf();
+            builder.RegisterComponentInHierarchy<SkillAchieveView>().AsSelf();
+
+            builder.RegisterEntryPoint<SkillPresenter>();
+        }
+
+        void ConfigureAct(IContainerBuilder builder)
+        {
+
+            //act
+            builder.Register<ActStartModel>(Lifetime.Singleton).AsSelf();
+            builder.Register<StageMasterListGetter>(Lifetime.Singleton).AsImplementedInterfaces();
+            builder.Register<ModelArgsFactory<IStageMasterRegisteredRestrictedCharList>>(Lifetime.Singleton).AsSelf();
+            builder.RegisterComponentInHierarchy<ActView>().AsSelf();
+            builder.Register<ActPresenter>(Lifetime.Singleton).AsSelf();
+            builder.Register<ActViewArgsListFactory>(Lifetime.Singleton).AsSelf();
+            builder.RegisterEntryPoint<ActPresenter>();
+
+
+        }
+        void ConfigureRestriction(IContainerBuilder builder)
+        {
+
+            //Restriction
+            builder.Register<RestrictionMasterDataProvider>(Lifetime.Singleton).AsImplementedInterfaces();
+
+        }
+
+        void ConfigureWord(IContainerBuilder builder)
+        {
+
+            //Word
+            builder.Register<WordMasterDataProvider>(Lifetime.Singleton).
+                As<IWordMasterDataProvider>().
+                As<IMasterDataProvider<IMasterDataRecord<IWordMaster>>>();
+            builder.Register<AvailableWordDataProvider>(Lifetime.Singleton).
+                As<AvaliableMasterDataProvider<IMasterDataRecord<IWordMaster>>>().
+                As<IAvailableMasterDataProvider<IMasterDataRecord<IWordMaster>>>();
+        }
+
+        void ConfigureLeet(IContainerBuilder builder)
+        {
+
+
+            //Leet
+            builder.Register<LeetMasterDataProvider>(Lifetime.Singleton).
+                As<ILeetMasterDataProvider>().
+                As<IMasterDataProvider<IMasterDataRecord<ILeetMaster>>>();
+            builder.Register<AvailableLeetDataProvider>(Lifetime.Singleton).
+                As<AvaliableMasterDataProvider<IMasterDataRecord<ILeetMaster>>>().
+                As<IAvailableMasterDataProvider<IMasterDataRecord<ILeetMaster>>>();
+
+        }
+
+        void ConfigureTypingRoguelike(IContainerBuilder builder)
+        {
+
+            //TypingRoguelike
+            //model
+            builder.Register<TypingRoguelikeModel>(Lifetime.Singleton).AsSelf().As<IRequiredScoreGeneratable>();
+            builder.Register<TypingRoguelikeSingleSequenceStarter>(Lifetime.Singleton).AsImplementedInterfaces();
+            builder.Register<TypingRoguelikeMasterDataProvider>(Lifetime.Singleton).AsImplementedInterfaces();
+            builder.Register<TypingRoguelikeGroupMasterGetter>(Lifetime.Singleton).AsImplementedInterfaces();
+            builder.Register<TypingInitializer>(Lifetime.Singleton).AsImplementedInterfaces();
+            builder.Register<ModelArgsFactory<ITypingRoguelikeSingleSequenceMaster>>(Lifetime.Singleton).AsSelf();
+            builder.Register<IndexUpdater>(Lifetime.Singleton).AsSelf();
+            builder.Register<SelectionDataContainer>(Lifetime.Singleton).AsImplementedInterfaces();
+            builder.Register<TypingRoguelikeSingleSequenceMasterFactory>(Lifetime.Singleton).AsImplementedInterfaces();
+            builder.Register<RestrictionGenerator>(Lifetime.Singleton).AsImplementedInterfaces();
+            builder.Register<WaveClearModel>(Lifetime.Singleton).AsSelf();
+            builder.Register<EnterKeyHundler>(Lifetime.Singleton).AsSelf().AsImplementedInterfaces();
+            builder.Register<SimpleCorrectInputHundler>(Lifetime.Singleton).AsSelf().AsImplementedInterfaces();
+            builder.Register<RoguelikeRestrictInputHundler>(Lifetime.Singleton).AsSelf();
+            builder.Register<RoguelikeCorrectInputHundler>(Lifetime.Singleton).AsSelf();
+
+            //view
+            builder.Register<TypingRoguelikeView>(Lifetime.Singleton).AsImplementedInterfaces();
+            builder.RegisterComponentInHierarchy<TimerView>().AsImplementedInterfaces();
+            builder.Register<KeyInputProcesser>(Lifetime.Singleton).AsSelf();
+            builder.RegisterComponentInHierarchy<TypingTextView>().AsImplementedInterfaces();
+
+            //presenter
+            builder.Register<TypingRoguelikeViewArgsFactory>(Lifetime.Singleton).AsSelf();
+
+            //point関連
+            builder.Register<PointModel>(Lifetime.Singleton).AsImplementedInterfaces();
+            builder.RegisterComponentInHierarchy<PointView>().AsSelf();
+            builder.RegisterComponentInHierarchy<RequiredPointView>().AsSelf();
+
+            builder.RegisterEntryPoint<TypingRoguelikePresetner>();
+
+
+        }
+
+        void ConfigureStageBg(IContainerBuilder builder)
+        {
+            //stageBg
+            builder.RegisterComponentInHierarchy<StageBgView>().AsSelf();
+
+        }
+
     }
+
+
 }
