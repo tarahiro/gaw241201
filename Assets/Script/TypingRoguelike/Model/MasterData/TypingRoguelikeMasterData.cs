@@ -69,7 +69,7 @@ namespace gaw241201.Model.MasterData
             public bool SettableIsEnableRestriction { set => m_IsEnableRestriction = value;}
             public bool SettableIsEnableTimeUp { set => m_IsEnableTimeUp = value;}
             public bool SettableIsEnableWave { set => m_IsEnableWave = value;}
-            public bool SettableIsEnableScore { set => m_IsEnableScore = value;}
+            public bool SettableIsEnableScore { set => m_IsEnableScore = value; }
 
 #endif
         }

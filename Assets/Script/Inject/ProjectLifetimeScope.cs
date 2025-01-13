@@ -57,7 +57,7 @@ namespace gaw241201.Inject
         void CofigureManager(IContainerBuilder builder)
         {
             //Manager
-            builder.Register<AdapterFactory<HorrorStoryMainLoopStarter, SaveDataManager>>(Lifetime.Singleton).WithParameter<LifetimeScope[]>(FindObjectsOfType<LifetimeScope>).AsImplementedInterfaces();
+            builder.Register<AdapterFactory<TypingRoguelikeMainLoopStarter, SaveDataManager>>(Lifetime.Singleton).WithParameter<LifetimeScope[]>(FindObjectsOfType<LifetimeScope>).AsImplementedInterfaces();
             builder.Register<FlowProvider>(Lifetime.Singleton).WithParameter<LifetimeScope[]>(FindObjectsOfType<LifetimeScope>).AsImplementedInterfaces();
 
             builder.RegisterEntryPoint<GameManager>();
@@ -326,6 +326,7 @@ namespace gaw241201.Inject
             builder.Register<SimpleCorrectInputHundler>(Lifetime.Singleton).AsSelf().AsImplementedInterfaces();
             builder.Register<RoguelikeRestrictInputHundler>(Lifetime.Singleton).AsSelf();
             builder.Register<RoguelikeCorrectInputHundler>(Lifetime.Singleton).AsSelf();
+            builder.Register<TypingRoguelikeConditionProvider>(Lifetime.Singleton).AsSelf();
 
             //view
             builder.Register<TypingRoguelikeView>(Lifetime.Singleton).AsImplementedInterfaces();

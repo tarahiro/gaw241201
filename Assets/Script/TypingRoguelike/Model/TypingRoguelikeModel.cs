@@ -20,6 +20,8 @@ namespace gaw241201
         [Inject] ITypingRoguelikeMasterDataProvider _masterDataProvider;
         [Inject] IPointGettable _pointGettable;
 
+        [Inject] TypingRoguelikeConditionProvider _conditionProvider;
+
         [Inject] WaveClearModel _waveClearModel;
 
 
@@ -41,8 +43,13 @@ namespace gaw241201
             List<ITypingRoguelikeSingleSequenceMaster> _thisGroup = _groupMasterGettable.GetGroupMaster(bodyId);
             /*ã§í ïîï™èIÇÌÇË*/
 
-            RegisterRequiredScore(_thisGroup,bodyId);
-            _pointGettable.InitializePoint();
+            var master = _masterDataProvider.TryGetFromId(bodyId).GetMaster();
+
+            if (_conditionProvider.IsEnableScore(master))
+            {
+                RegisterRequiredScore(_thisGroup, master);
+                _pointGettable.InitializePoint();
+            }
             
              /*TextSequenceModel<T>Ç∆ÇÃã§í ïîï™*/
             for (int i = 0; i < _thisGroup.Count && !_cts.IsCancellationRequested; i++)
@@ -56,9 +63,8 @@ namespace gaw241201
             /*ã§í ïîï™èIÇÌÇË*/
         }
 
-        void RegisterRequiredScore(List<ITypingRoguelikeSingleSequenceMaster> _thisGroup, string bodyId)
+        void RegisterRequiredScore(List<ITypingRoguelikeSingleSequenceMaster> _thisGroup, ITypingRoguelikeMaster master )
         {
-            var master = _masterDataProvider.TryGetFromId(bodyId).GetMaster();
             int textCount = 0;
 
             foreach (var singleSequence in _thisGroup)

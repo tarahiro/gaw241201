@@ -26,7 +26,6 @@ namespace gaw241201
         public List<char> RestrictedCharList { get; private set; }
 
         public float Time { get; private set; }
-
         public TypingRoguelikeSingleSequenceMaster(ITypingMaster typingMaster, List<char> restrictedCharList, float time)
         {
             Index = typingMaster.Index;
