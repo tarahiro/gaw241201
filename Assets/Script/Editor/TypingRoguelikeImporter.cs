@@ -32,6 +32,11 @@ namespace gaw241201.Editor
             TimePerChar = 5,
             WaveCount = 6,
             RequiredScorePerChar = 7,
+            SelectionMethod = 8,
+            IsEnableRestriction = 9,
+            IsEnableTimeUp = 10,
+            IsEnableWave = 11,
+            IsEnableScore = 12,
         }
 
         //--------------------------------------------------------------------
@@ -76,7 +81,12 @@ namespace gaw241201.Editor
                             SettableRestrictionId = EditorUtil.GetStringArray(sheet[row, (int)Columns.RestrictionId]),
                             SettableTimePerChar = sheet[row, (int)Columns.TimePerChar].Float,
                             SettableWaveCount = sheet[row, (int)Columns.WaveCount].Int,
-                            SettableRequiredScorePerChar = sheet[row, (int)Columns.RequiredScorePerChar].Float
+                            SettableRequiredScorePerChar = sheet[row, (int)Columns.RequiredScorePerChar].Float,
+                            SettableSelectionMethod = EnumUtil.KeyToType<TypingRoguelikeConst.SelectionMethod>(sheet[row,(int)Columns.SelectionMethod].String),
+                            SettableIsEnableRestriction = sheet[row,(int) Columns.IsEnableRestriction].Bool,
+                            SettableIsEnableTimeUp = sheet[row,(int)Columns.IsEnableTimeUp].Bool,
+                            SettableIsEnableWave = sheet[row,(int)Columns.IsEnableWave].Bool,
+                            SettableIsEnableScore = sheet[row,(int)Columns.IsEnableScore].Bool,
                         });;
                     }
                 }

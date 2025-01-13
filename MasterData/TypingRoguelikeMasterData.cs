@@ -35,11 +35,6 @@ namespace gaw241201.Model.MasterData
             [SerializeField] float m_TimePerChar;
             [SerializeField] int m_WaveCount;
             [SerializeField] float m_RequiredScorePerChar;
-            [SerializeField] TypingRoguelikeConst.SelectionMethod m_SelectionMethod;
-            [SerializeField] bool m_IsEnableRestriction;
-            [SerializeField] bool m_IsEnableTimeUp;
-            [SerializeField] bool m_IsEnableWave;
-            [SerializeField] bool m_IsEnableScore;
 
             public int Index => m_Index;
             public string Id => m_Id;
@@ -50,12 +45,6 @@ namespace gaw241201.Model.MasterData
             public int WaveCount => m_WaveCount;
             public float RequiredScorePerChar => m_RequiredScorePerChar;
 
-            public TypingRoguelikeConst.SelectionMethod SelectionMethod => m_SelectionMethod;
-            public bool IsEnableRestriction => m_IsEnableRestriction;
-            public bool IsEnableTimeUp => m_IsEnableTimeUp;
-            public bool IsEnableWave => m_IsEnableWave;
-            public bool IsEnableScore => m_IsEnableScore;
-
             public ITypingRoguelikeMaster GetMaster() => this;
 
 #if UNITY_EDITOR
@@ -65,11 +54,6 @@ namespace gaw241201.Model.MasterData
             public float SettableTimePerChar { set => m_TimePerChar = value; }
             public int SettableWaveCount { set => m_WaveCount = value; }
             public float SettableRequiredScorePerChar { set => m_RequiredScorePerChar = value; }
-            public TypingRoguelikeConst.SelectionMethod SettableSelectionMethod { set => m_SelectionMethod = value; }
-            public bool SettableIsEnableRestriction { set => m_IsEnableRestriction = value;}
-            public bool SettableIsEnableTimeUp { set => m_IsEnableTimeUp = value;}
-            public bool SettableIsEnableWave { set => m_IsEnableWave = value;}
-            public bool SettableIsEnableScore { set => m_IsEnableScore = value;}
 
 #endif
         }

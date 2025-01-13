@@ -19,5 +19,14 @@ namespace gaw241201
         int WaveCount { get; }
 
         float RequiredScorePerChar { get; }
+
+        TypingRoguelikeConst.SelectionMethod SelectionMethod { get; }
+
+        bool IsEnableRestriction { get; }
+        bool IsEnableTimeUp { get; }
+
+        bool IsEnableWave { get; }
+
+        bool IsEnableScore { get; }
     }
 }
