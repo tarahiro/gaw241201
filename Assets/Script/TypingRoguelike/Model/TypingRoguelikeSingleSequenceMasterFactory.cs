@@ -16,18 +16,12 @@ namespace gaw241201
     {
         [Inject] IRestrictionMasterDataProvider _restrictionMasterDataProvider;
 
+        [Inject] TypingRoguelikeConditionProvider _conditionProvider;
+
         public ITypingRoguelikeSingleSequenceMaster CreateSingleSequenceMaster(ITypingMaster typingMaster, ITypingRoguelikeMaster typingRoguelikeMaster, List<char> restrictionList)
         {
-            /*
-            for (int i = 0; i < 3; i++)
-            {
-                int num = UnityEngine.Random.Range(0, 26);
-                char letter = (char)('a' + num - 1); // 'a'のASCIIコードから計算
-                chars.Add(letter);
-            }
-            */
-            return new TypingRoguelikeSingleSequenceMaster(typingMaster, restrictionList, typingRoguelikeMaster.TimePerChar);
-
+            _conditionProvider.Initialize(typingRoguelikeMaster);
+            return new TypingRoguelikeSingleSequenceMaster(typingMaster, _conditionProvider, restrictionList, typingRoguelikeMaster.TimePerChar);
         }
     }
 }

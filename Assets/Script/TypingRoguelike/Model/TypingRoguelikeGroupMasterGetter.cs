@@ -19,6 +19,8 @@ namespace gaw241201
         [Inject] IMasterDataProvider<IMasterDataRecord<ITypingRoguelikeMaster>> _typingRoguelikeProvider;
         [Inject] ITypingRoguelikeSingleSequenceMasterFactory _factory;
 
+        [Inject] TypingRoguelikeConditionProvider _conditionProvider;
+
         Dictionary<string, List<char>> _restrictedCharDictionary = new Dictionary<string, List<char>>();
         public List<ITypingRoguelikeSingleSequenceMaster> GetGroupMaster(string bodyId)
         {

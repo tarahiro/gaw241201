@@ -17,5 +17,6 @@ namespace gaw241201
 
         float Time { get; }
 
+        TypingRoguelikeConditionProvider ConditionProvider { get; }
     }
 }

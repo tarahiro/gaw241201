@@ -26,7 +26,9 @@ namespace gaw241201
         public List<char> RestrictedCharList { get; private set; }
 
         public float Time { get; private set; }
-        public TypingRoguelikeSingleSequenceMaster(ITypingMaster typingMaster, List<char> restrictedCharList, float time)
+
+        public TypingRoguelikeConditionProvider ConditionProvider { get; private set; }
+        public TypingRoguelikeSingleSequenceMaster(ITypingMaster typingMaster, TypingRoguelikeConditionProvider conditionProvider, List<char> restrictedCharList, float time)
         {
             Index = typingMaster.Index;
             Id = typingMaster.Id;
@@ -35,6 +37,8 @@ namespace gaw241201
             RomanText = typingMaster.RomanText;
             RestrictedCharList = restrictedCharList;
             Time = time;
+
+            ConditionProvider = conditionProvider;
         }
     }
 }

@@ -44,8 +44,10 @@ namespace gaw241201
             /*ã§í ïîï™èIÇÌÇË*/
 
             var master = _masterDataProvider.TryGetFromId(bodyId).GetMaster();
+            _conditionProvider.Initialize(master);
 
-            if (_conditionProvider.IsEnableScore(master))
+
+            if (_conditionProvider.IsEnableScore())
             {
                 RegisterRequiredScore(_thisGroup, master);
                 _pointGettable.InitializePoint();
@@ -56,7 +58,10 @@ namespace gaw241201
             {
                 _singleTextSequenceEnterable.EnterTextSequence(_thisGroup[i], _cts.Token, out _isEnded);
                 await UniTask.WaitUntil(() => _isEnded);
-                _waveClearModel.ClearWave();
+                if (_conditionProvider.IsEnableWave())
+                {
+                    _waveClearModel.ClearWave();
+                }
             }
 
             Log.Comment(bodyId + "ÇÃGroupèIóπ");

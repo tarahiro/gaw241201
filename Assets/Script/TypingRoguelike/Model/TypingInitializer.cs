@@ -23,24 +23,25 @@ namespace gaw241201.View
         Subject<string> _sampleInputted = new Subject<string>();
         public IObservable<string> SampleInputted => _sampleInputted;
         public IObservable<List<char>> RestrictionDataLoaded => _restrictionDataLoaded;
-        public void InitializeTyping(ITypingRoguelikeSingleSequenceMaster master)
+        public void InitializeTyping(ITypingRoguelikeSingleSequenceMaster master, TypingRoguelikeConditionProvider conditionProvider)
         {
             _sampleInputted.OnNext(master.JpText);
             string romanText  = string.Concat(master.RomanText, "@");
 
-            _restrictedCharRegisterer.Register(master.RestrictedCharList);
-            List<char> restrictedCharList = _restrictedCharProvider.GetRestrictedChar();
+            if (conditionProvider.IsEnableRestriction())
+            {
+                _restrictedCharRegisterer.Register(master.RestrictedCharList);
+            }
 
+            List<char> restrictedCharList = _restrictedCharProvider.GetRestrictedChar();
+            
+            if (conditionProvider.IsEnableRestriction())
+            {
+                _restrictionDataLoaded.OnNext(restrictedCharList);
+            }
+            
             _enterKeyHundler.Initialize(romanText, restrictedCharList);
             _indexUpdater.Initialize(romanText);
-
-            string s = "RestrictionÇê›íË: ";
-            foreach(var c in restrictedCharList)
-            {
-                s += c + ",";
-            }
-            Log.Comment(s);
-            _restrictionDataLoaded.OnNext(restrictedCharList);
 
             _indexUpdater.UpdateIndex(0,romanText);
             _questionDisplayTextGenerator.GenerateDisplayQuestionText(romanText,_indexUpdater.GetIndex());

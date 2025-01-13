@@ -13,15 +13,22 @@ namespace gaw241201
     public class TypingRoguelikeConditionProvider
     {
 
-        public bool IsEnableRestriction(ITypingRoguelikeMaster master)
+        ITypingRoguelikeMaster _master;
+
+        public bool IsEnableRestriction()
         {
-            return master.IsEnableRestriction;
+            return _master.IsEnableRestriction;
         }
 
-        public bool IsEnableTimeUp(ITypingRoguelikeMaster master) { return master.IsEnableTimeUp; }
+        public bool IsEnableTimeUp() { return _master.IsEnableTimeUp; }
 
-        public bool IsEnableWave(ITypingRoguelikeMaster master) { return master.IsEnableWave; }
+        public bool IsEnableWave() { return _master.IsEnableWave; }
 
-        public bool IsEnableScore(ITypingRoguelikeMaster master) { return master.IsEnableScore; }
+        public bool IsEnableScore() { return _master.IsEnableScore; }
+
+        public void Initialize(ITypingRoguelikeMaster master)
+        {
+            _master = master;
+        }
     }
 }

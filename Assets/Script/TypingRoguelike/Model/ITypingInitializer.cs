@@ -13,7 +13,7 @@ namespace gaw241201
 {
     public interface ITypingInitializer
     {
-        void InitializeTyping(ITypingRoguelikeSingleSequenceMaster master);
+        void InitializeTyping(ITypingRoguelikeSingleSequenceMaster master, TypingRoguelikeConditionProvider conditionProvider);
         IObservable<string> SampleInputted { get; }
         IObservable<List<char>> RestrictionDataLoaded { get; }
     }

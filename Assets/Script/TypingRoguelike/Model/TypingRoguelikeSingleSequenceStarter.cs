@@ -23,13 +23,17 @@ namespace gaw241201
         public IObservable<ModelArgs<ITypingRoguelikeSingleSequenceMaster>> Entered => _entered;
         public IObservable<TimerArgs> TimerStarted => _timerStarted;
 
-        public void EnterTextSequence(ITypingRoguelikeSingleSequenceMaster master, CancellationToken ct, out bool isEnded)
+        public void EnterTextSequence(ITypingRoguelikeSingleSequenceMaster master,  CancellationToken ct, out bool isEnded)
         {
             Log.Comment(master.Id + "開始");
             isEnded = false;
 
-            _typingInitializer.InitializeTyping(master);
-            _timerStarted.OnNext(new TimerArgs(TypingUtil.RemoveBracketsAndContents(master.RomanText).Length * master.Time, ct));
+            _typingInitializer.InitializeTyping(master, master.ConditionProvider);
+            if (master.ConditionProvider.IsEnableTimeUp())
+            {
+                Log.Comment("タイマー開始");
+                _timerStarted.OnNext(new TimerArgs(TypingUtil.RemoveBracketsAndContents(master.RomanText).Length * master.Time, ct));
+            }
             _entered.OnNext(_modelArgsFactory.Create(master, ct));
         }
     }

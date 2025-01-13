@@ -152,7 +152,7 @@
     <Cell ss:StyleID="s67"><Data ss:Type="Number">90</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">Random</Data></Cell>
     <Cell ss:StyleID="s70"><Data ss:Type="Boolean">1</Data></Cell>
-    <Cell ss:StyleID="s70"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="Boolean">0</Data></Cell>
     <Cell ss:StyleID="s70"><Data ss:Type="Boolean">1</Data></Cell>
     <Cell ss:StyleID="s70"><Data ss:Type="Boolean">1</Data></Cell>
    </Row>
@@ -167,7 +167,7 @@
     <Cell ss:StyleID="s67"><Data ss:Type="Number">95</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">Random</Data></Cell>
     <Cell ss:StyleID="s70"><Data ss:Type="Boolean">1</Data></Cell>
-    <Cell ss:StyleID="s70"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="Boolean">0</Data></Cell>
     <Cell ss:StyleID="s70"><Data ss:Type="Boolean">1</Data></Cell>
     <Cell ss:StyleID="s70"><Data ss:Type="Boolean">1</Data></Cell>
    </Row>
@@ -182,7 +182,7 @@
     <Cell ss:StyleID="s67"><Data ss:Type="Number">100</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">Random</Data></Cell>
     <Cell ss:StyleID="s70"><Data ss:Type="Boolean">1</Data></Cell>
-    <Cell ss:StyleID="s70"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="Boolean">0</Data></Cell>
     <Cell ss:StyleID="s70"><Data ss:Type="Boolean">1</Data></Cell>
     <Cell ss:StyleID="s70"><Data ss:Type="Boolean">1</Data></Cell>
    </Row>
@@ -197,7 +197,7 @@
     <Cell ss:StyleID="s67"><Data ss:Type="Number">110</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">Random</Data></Cell>
     <Cell ss:StyleID="s70"><Data ss:Type="Boolean">1</Data></Cell>
-    <Cell ss:StyleID="s70"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="Boolean">0</Data></Cell>
     <Cell ss:StyleID="s70"><Data ss:Type="Boolean">1</Data></Cell>
     <Cell ss:StyleID="s70"><Data ss:Type="Boolean">1</Data></Cell>
    </Row>
@@ -212,7 +212,7 @@
     <Cell ss:StyleID="s67"><Data ss:Type="Number">90</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">Random</Data></Cell>
     <Cell ss:StyleID="s70"><Data ss:Type="Boolean">1</Data></Cell>
-    <Cell ss:StyleID="s70"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="Boolean">0</Data></Cell>
     <Cell ss:StyleID="s70"><Data ss:Type="Boolean">1</Data></Cell>
     <Cell ss:StyleID="s70"><Data ss:Type="Boolean">1</Data></Cell>
    </Row>
@@ -227,7 +227,7 @@
     <Cell ss:StyleID="s67"><Data ss:Type="Number">95</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">Random</Data></Cell>
     <Cell ss:StyleID="s70"><Data ss:Type="Boolean">1</Data></Cell>
-    <Cell ss:StyleID="s70"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="Boolean">0</Data></Cell>
     <Cell ss:StyleID="s70"><Data ss:Type="Boolean">1</Data></Cell>
     <Cell ss:StyleID="s70"><Data ss:Type="Boolean">1</Data></Cell>
    </Row>
@@ -242,7 +242,7 @@
     <Cell ss:StyleID="s67"><Data ss:Type="Number">100</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">Random</Data></Cell>
     <Cell ss:StyleID="s70"><Data ss:Type="Boolean">1</Data></Cell>
-    <Cell ss:StyleID="s70"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="Boolean">0</Data></Cell>
     <Cell ss:StyleID="s70"><Data ss:Type="Boolean">1</Data></Cell>
     <Cell ss:StyleID="s70"><Data ss:Type="Boolean">1</Data></Cell>
    </Row>
@@ -257,7 +257,7 @@
     <Cell ss:StyleID="s67"><Data ss:Type="Number">110</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">Random</Data></Cell>
     <Cell ss:StyleID="s70"><Data ss:Type="Boolean">1</Data></Cell>
-    <Cell ss:StyleID="s70"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s70"><Data ss:Type="Boolean">0</Data></Cell>
     <Cell ss:StyleID="s70"><Data ss:Type="Boolean">1</Data></Cell>
     <Cell ss:StyleID="s70"><Data ss:Type="Boolean">1</Data></Cell>
    </Row>
@@ -282,8 +282,9 @@
    <Panes>
     <Pane>
      <Number>3</Number>
-     <ActiveRow>11</ActiveRow>
-     <ActiveCol>7</ActiveCol>
+     <ActiveRow>4</ActiveRow>
+     <ActiveCol>10</ActiveCol>
+     <RangeSelection>R5C11:R12C11</RangeSelection>
     </Pane>
    </Panes>
    <ProtectObjects>False</ProtectObjects>
