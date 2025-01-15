@@ -282,9 +282,8 @@
    <Panes>
     <Pane>
      <Number>3</Number>
-     <ActiveRow>4</ActiveRow>
-     <ActiveCol>10</ActiveCol>
-     <RangeSelection>R5C11:R12C11</RangeSelection>
+     <ActiveRow>6</ActiveRow>
+     <ActiveCol>9</ActiveCol>
     </Pane>
    </Panes>
    <ProtectObjects>False</ProtectObjects>

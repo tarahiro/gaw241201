@@ -87,6 +87,11 @@ namespace gaw241201
         {
             Log.Comment("終了を検知");
             _isEnded = true;
+
+            if (_conditionProvider.IsEnableTimeUp())
+            {
+                //タイマーストップ処理
+            }
         }
 
         public void ForceEndFlow()
