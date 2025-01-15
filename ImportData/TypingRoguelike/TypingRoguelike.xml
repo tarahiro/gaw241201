@@ -16,8 +16,8 @@
   <AllowPNG/>
  </OfficeDocumentSettings>
  <ExcelWorkbook xmlns="urn:schemas-microsoft-com:office:excel">
-  <WindowHeight>9650</WindowHeight>
-  <WindowWidth>18770</WindowWidth>
+  <WindowHeight>17300</WindowHeight>
+  <WindowWidth>32767</WindowWidth>
   <WindowTopX>32767</WindowTopX>
   <WindowTopY>32767</WindowTopY>
   <RefModeR1C1/>
@@ -76,6 +76,17 @@
    <Interior ss:Color="#833C0C" ss:Pattern="Solid"/>
   </Style>
   <Style ss:ID="s67">
+   <Alignment ss:Horizontal="Left" ss:Vertical="Top"/>
+   <Borders>
+    <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1"/>
+    <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1"/>
+    <Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="1"/>
+   </Borders>
+   <Font ss:FontName="游ゴシック" x:CharSet="128" x:Family="Modern" ss:Size="8"
+    ss:Color="#FFFFFF" ss:Bold="1"/>
+   <Interior ss:Color="#833C0C" ss:Pattern="Solid"/>
+  </Style>
+  <Style ss:ID="s68">
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1"/>
     <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1"/>
@@ -87,17 +98,6 @@
    <Interior ss:Color="#FFF2CC" ss:Pattern="Solid"/>
   </Style>
   <Style ss:ID="s69">
-   <Alignment ss:Horizontal="Left" ss:Vertical="Top"/>
-   <Borders>
-    <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1"/>
-    <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1"/>
-    <Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="1"/>
-   </Borders>
-   <Font ss:FontName="游ゴシック" x:CharSet="128" x:Family="Modern" ss:Size="8"
-    ss:Color="#FFFFFF" ss:Bold="1"/>
-   <Interior ss:Color="#833C0C" ss:Pattern="Solid"/>
-  </Style>
-  <Style ss:ID="s70">
    <Alignment ss:Horizontal="Left" ss:Vertical="Center"/>
    <Borders>
     <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1"/>
@@ -136,130 +136,130 @@
     <Cell ss:StyleID="s65"><Data ss:Type="String">WaveCount</Data></Cell>
     <Cell ss:StyleID="s65"><Data ss:Type="String">RequiredScorePerChar</Data></Cell>
     <Cell ss:StyleID="s65"><Data ss:Type="String">SelectionMethod</Data></Cell>
-    <Cell ss:StyleID="s69"><Data ss:Type="String">IsEnableRestriction</Data></Cell>
-    <Cell ss:StyleID="s69"><Data ss:Type="String">IsEnableTimeUp</Data></Cell>
-    <Cell ss:StyleID="s69"><Data ss:Type="String">IsEnableWave</Data></Cell>
-    <Cell ss:StyleID="s69"><Data ss:Type="String">IsEnableScore</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">IsEnableRestriction</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">IsEnableTimeUp</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">IsEnableWave</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">IsEnableScore</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">0</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">901000Test</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">900000TestAct</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">501000Typing</Data></Cell>
-    <Cell ss:StyleID="s67"/>
-    <Cell ss:StyleID="s67"><Data ss:Type="Number">1</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="Number">2</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="Number">90</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">Random</Data></Cell>
-    <Cell ss:StyleID="s70"><Data ss:Type="Boolean">1</Data></Cell>
-    <Cell ss:StyleID="s70"><Data ss:Type="Boolean">0</Data></Cell>
-    <Cell ss:StyleID="s70"><Data ss:Type="Boolean">1</Data></Cell>
-    <Cell ss:StyleID="s70"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s68" ss:Formula="=ROW()-5"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="s68"><Data ss:Type="String">901000Test</Data></Cell>
+    <Cell ss:StyleID="s68"><Data ss:Type="String">900000TestAct</Data></Cell>
+    <Cell ss:StyleID="s68"><Data ss:Type="String">501000Typing</Data></Cell>
+    <Cell ss:StyleID="s68"/>
+    <Cell ss:StyleID="s68"><Data ss:Type="Number">1</Data></Cell>
+    <Cell ss:StyleID="s68"><Data ss:Type="Number">2</Data></Cell>
+    <Cell ss:StyleID="s68"><Data ss:Type="Number">90</Data></Cell>
+    <Cell ss:StyleID="s68"><Data ss:Type="String">Random</Data></Cell>
+    <Cell ss:StyleID="s69"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s69"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s69"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s69"><Data ss:Type="Boolean">1</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">1</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">902000Test</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">900000TestAct</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">501000Typing</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">FrequencyGroup3</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="Number">1</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="Number">2</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="Number">95</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">Random</Data></Cell>
-    <Cell ss:StyleID="s70"><Data ss:Type="Boolean">1</Data></Cell>
-    <Cell ss:StyleID="s70"><Data ss:Type="Boolean">0</Data></Cell>
-    <Cell ss:StyleID="s70"><Data ss:Type="Boolean">1</Data></Cell>
-    <Cell ss:StyleID="s70"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s68" ss:Formula="=ROW()-5"><Data ss:Type="Number">1</Data></Cell>
+    <Cell ss:StyleID="s68"><Data ss:Type="String">902000Test</Data></Cell>
+    <Cell ss:StyleID="s68"><Data ss:Type="String">900000TestAct</Data></Cell>
+    <Cell ss:StyleID="s68"><Data ss:Type="String">501000Typing</Data></Cell>
+    <Cell ss:StyleID="s68"><Data ss:Type="String">FrequencyGroup3</Data></Cell>
+    <Cell ss:StyleID="s68"><Data ss:Type="Number">1</Data></Cell>
+    <Cell ss:StyleID="s68"><Data ss:Type="Number">2</Data></Cell>
+    <Cell ss:StyleID="s68"><Data ss:Type="Number">95</Data></Cell>
+    <Cell ss:StyleID="s68"><Data ss:Type="String">Random</Data></Cell>
+    <Cell ss:StyleID="s69"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s69"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s69"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s69"><Data ss:Type="Boolean">1</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">2</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">903000Test</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">900000TestAct</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">501000Typing</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">FrequencyGroup2</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="Number">1</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="Number">2</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="Number">100</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">Random</Data></Cell>
-    <Cell ss:StyleID="s70"><Data ss:Type="Boolean">1</Data></Cell>
-    <Cell ss:StyleID="s70"><Data ss:Type="Boolean">0</Data></Cell>
-    <Cell ss:StyleID="s70"><Data ss:Type="Boolean">1</Data></Cell>
-    <Cell ss:StyleID="s70"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s68" ss:Formula="=ROW()-5"><Data ss:Type="Number">2</Data></Cell>
+    <Cell ss:StyleID="s68"><Data ss:Type="String">903000Test</Data></Cell>
+    <Cell ss:StyleID="s68"><Data ss:Type="String">900000TestAct</Data></Cell>
+    <Cell ss:StyleID="s68"><Data ss:Type="String">501000Typing</Data></Cell>
+    <Cell ss:StyleID="s68"><Data ss:Type="String">FrequencyGroup2</Data></Cell>
+    <Cell ss:StyleID="s68"><Data ss:Type="Number">1</Data></Cell>
+    <Cell ss:StyleID="s68"><Data ss:Type="Number">2</Data></Cell>
+    <Cell ss:StyleID="s68"><Data ss:Type="Number">100</Data></Cell>
+    <Cell ss:StyleID="s68"><Data ss:Type="String">Random</Data></Cell>
+    <Cell ss:StyleID="s69"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s69"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s69"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s69"><Data ss:Type="Boolean">1</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">3</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">904000Test</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">900000TestAct</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">501000Typing</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">FrequencyGroup1</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="Number">1</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="Number">3</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="Number">110</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">Random</Data></Cell>
-    <Cell ss:StyleID="s70"><Data ss:Type="Boolean">1</Data></Cell>
-    <Cell ss:StyleID="s70"><Data ss:Type="Boolean">0</Data></Cell>
-    <Cell ss:StyleID="s70"><Data ss:Type="Boolean">1</Data></Cell>
-    <Cell ss:StyleID="s70"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s68" ss:Formula="=ROW()-5"><Data ss:Type="Number">3</Data></Cell>
+    <Cell ss:StyleID="s68"><Data ss:Type="String">904000Test</Data></Cell>
+    <Cell ss:StyleID="s68"><Data ss:Type="String">900000TestAct</Data></Cell>
+    <Cell ss:StyleID="s68"><Data ss:Type="String">501000Typing</Data></Cell>
+    <Cell ss:StyleID="s68"><Data ss:Type="String">FrequencyGroup1</Data></Cell>
+    <Cell ss:StyleID="s68"><Data ss:Type="Number">1</Data></Cell>
+    <Cell ss:StyleID="s68"><Data ss:Type="Number">3</Data></Cell>
+    <Cell ss:StyleID="s68"><Data ss:Type="Number">110</Data></Cell>
+    <Cell ss:StyleID="s68"><Data ss:Type="String">Random</Data></Cell>
+    <Cell ss:StyleID="s69"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s69"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s69"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s69"><Data ss:Type="Boolean">1</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">4</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">911000Test</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">901000TestAct</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">502000Typing</Data></Cell>
-    <Cell ss:StyleID="s67"/>
-    <Cell ss:StyleID="s67"><Data ss:Type="Number">1</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="Number">2</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="Number">90</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">Random</Data></Cell>
-    <Cell ss:StyleID="s70"><Data ss:Type="Boolean">1</Data></Cell>
-    <Cell ss:StyleID="s70"><Data ss:Type="Boolean">0</Data></Cell>
-    <Cell ss:StyleID="s70"><Data ss:Type="Boolean">1</Data></Cell>
-    <Cell ss:StyleID="s70"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s68" ss:Formula="=ROW()-5"><Data ss:Type="Number">4</Data></Cell>
+    <Cell ss:StyleID="s68"><Data ss:Type="String">911000Test</Data></Cell>
+    <Cell ss:StyleID="s68"><Data ss:Type="String">901000TestAct</Data></Cell>
+    <Cell ss:StyleID="s68"><Data ss:Type="String">502000Typing</Data></Cell>
+    <Cell ss:StyleID="s68"/>
+    <Cell ss:StyleID="s68"><Data ss:Type="Number">1</Data></Cell>
+    <Cell ss:StyleID="s68"><Data ss:Type="Number">2</Data></Cell>
+    <Cell ss:StyleID="s68"><Data ss:Type="Number">90</Data></Cell>
+    <Cell ss:StyleID="s68"><Data ss:Type="String">Random</Data></Cell>
+    <Cell ss:StyleID="s69"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s69"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s69"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s69"><Data ss:Type="Boolean">1</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">5</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">912000Test</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">901000TestAct</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">502000Typing</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">FrequencyGroup3</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="Number">1</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="Number">2</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="Number">95</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">Random</Data></Cell>
-    <Cell ss:StyleID="s70"><Data ss:Type="Boolean">1</Data></Cell>
-    <Cell ss:StyleID="s70"><Data ss:Type="Boolean">0</Data></Cell>
-    <Cell ss:StyleID="s70"><Data ss:Type="Boolean">1</Data></Cell>
-    <Cell ss:StyleID="s70"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s68" ss:Formula="=ROW()-5"><Data ss:Type="Number">5</Data></Cell>
+    <Cell ss:StyleID="s68"><Data ss:Type="String">912000Test</Data></Cell>
+    <Cell ss:StyleID="s68"><Data ss:Type="String">901000TestAct</Data></Cell>
+    <Cell ss:StyleID="s68"><Data ss:Type="String">502000Typing</Data></Cell>
+    <Cell ss:StyleID="s68"><Data ss:Type="String">FrequencyGroup3</Data></Cell>
+    <Cell ss:StyleID="s68"><Data ss:Type="Number">1</Data></Cell>
+    <Cell ss:StyleID="s68"><Data ss:Type="Number">2</Data></Cell>
+    <Cell ss:StyleID="s68"><Data ss:Type="Number">95</Data></Cell>
+    <Cell ss:StyleID="s68"><Data ss:Type="String">Random</Data></Cell>
+    <Cell ss:StyleID="s69"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s69"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s69"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s69"><Data ss:Type="Boolean">1</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">6</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">913000Test</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">901000TestAct</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">502000Typing</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">FrequencyGroup2</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="Number">1</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="Number">2</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="Number">100</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">Random</Data></Cell>
-    <Cell ss:StyleID="s70"><Data ss:Type="Boolean">1</Data></Cell>
-    <Cell ss:StyleID="s70"><Data ss:Type="Boolean">0</Data></Cell>
-    <Cell ss:StyleID="s70"><Data ss:Type="Boolean">1</Data></Cell>
-    <Cell ss:StyleID="s70"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s68" ss:Formula="=ROW()-5"><Data ss:Type="Number">6</Data></Cell>
+    <Cell ss:StyleID="s68"><Data ss:Type="String">913000Test</Data></Cell>
+    <Cell ss:StyleID="s68"><Data ss:Type="String">901000TestAct</Data></Cell>
+    <Cell ss:StyleID="s68"><Data ss:Type="String">502000Typing</Data></Cell>
+    <Cell ss:StyleID="s68"><Data ss:Type="String">FrequencyGroup2</Data></Cell>
+    <Cell ss:StyleID="s68"><Data ss:Type="Number">1</Data></Cell>
+    <Cell ss:StyleID="s68"><Data ss:Type="Number">2</Data></Cell>
+    <Cell ss:StyleID="s68"><Data ss:Type="Number">100</Data></Cell>
+    <Cell ss:StyleID="s68"><Data ss:Type="String">Random</Data></Cell>
+    <Cell ss:StyleID="s69"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s69"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s69"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s69"><Data ss:Type="Boolean">1</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">7</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">914000Test</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">901000TestAct</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">502000Typing</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">FrequencyGroup1</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="Number">1</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="Number">3</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="Number">110</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">Random</Data></Cell>
-    <Cell ss:StyleID="s70"><Data ss:Type="Boolean">1</Data></Cell>
-    <Cell ss:StyleID="s70"><Data ss:Type="Boolean">0</Data></Cell>
-    <Cell ss:StyleID="s70"><Data ss:Type="Boolean">1</Data></Cell>
-    <Cell ss:StyleID="s70"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s68" ss:Formula="=ROW()-5"><Data ss:Type="Number">7</Data></Cell>
+    <Cell ss:StyleID="s68"><Data ss:Type="String">914000Test</Data></Cell>
+    <Cell ss:StyleID="s68"><Data ss:Type="String">901000TestAct</Data></Cell>
+    <Cell ss:StyleID="s68"><Data ss:Type="String">502000Typing</Data></Cell>
+    <Cell ss:StyleID="s68"><Data ss:Type="String">FrequencyGroup1</Data></Cell>
+    <Cell ss:StyleID="s68"><Data ss:Type="Number">1</Data></Cell>
+    <Cell ss:StyleID="s68"><Data ss:Type="Number">3</Data></Cell>
+    <Cell ss:StyleID="s68"><Data ss:Type="Number">110</Data></Cell>
+    <Cell ss:StyleID="s68"><Data ss:Type="String">Random</Data></Cell>
+    <Cell ss:StyleID="s69"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s69"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s69"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s69"><Data ss:Type="Boolean">1</Data></Cell>
    </Row>
   </Table>
   <WorksheetOptions xmlns="urn:schemas-microsoft-com:office:excel">
@@ -282,50 +282,16 @@
    <Panes>
     <Pane>
      <Number>3</Number>
-     <ActiveRow>6</ActiveRow>
-     <ActiveCol>9</ActiveCol>
+     <ActiveRow>4</ActiveRow>
+     <ActiveCol>10</ActiveCol>
+     <RangeSelection>R5C11:R12C11</RangeSelection>
     </Pane>
    </Panes>
    <ProtectObjects>False</ProtectObjects>
    <ProtectScenarios>False</ProtectScenarios>
   </WorksheetOptions>
   <ConditionalFormatting xmlns="urn:schemas-microsoft-com:office:excel">
-   <Range>R5C1:R12C8</Range>
-   <Condition>
-    <Value1>LEN(TRIM(RC))=0</Value1>
-    <Format Style='background:#E7E6E6'/>
-   </Condition>
-  </ConditionalFormatting>
-  <ConditionalFormatting xmlns="urn:schemas-microsoft-com:office:excel">
-   <Range>R5C10:R12C10</Range>
-   <Condition>
-    <Value1>LEN(TRIM(RC))=0</Value1>
-    <Format Style='background:#E7E6E6'/>
-   </Condition>
-  </ConditionalFormatting>
-  <ConditionalFormatting xmlns="urn:schemas-microsoft-com:office:excel">
-   <Range>R5C11:R12C11</Range>
-   <Condition>
-    <Value1>LEN(TRIM(RC))=0</Value1>
-    <Format Style='background:#E7E6E6'/>
-   </Condition>
-  </ConditionalFormatting>
-  <ConditionalFormatting xmlns="urn:schemas-microsoft-com:office:excel">
-   <Range>R5C13:R12C13</Range>
-   <Condition>
-    <Value1>LEN(TRIM(RC))=0</Value1>
-    <Format Style='background:#E7E6E6'/>
-   </Condition>
-  </ConditionalFormatting>
-  <ConditionalFormatting xmlns="urn:schemas-microsoft-com:office:excel">
-   <Range>R5C9:R12C9</Range>
-   <Condition>
-    <Value1>LEN(TRIM(RC))=0</Value1>
-    <Format Style='background:#E7E6E6'/>
-   </Condition>
-  </ConditionalFormatting>
-  <ConditionalFormatting xmlns="urn:schemas-microsoft-com:office:excel">
-   <Range>R5C12:R12C12</Range>
+   <Range>R5C1:R12C13</Range>
    <Condition>
     <Value1>LEN(TRIM(RC))=0</Value1>
     <Format Style='background:#E7E6E6'/>
@@ -377,33 +343,33 @@
     <Cell ss:StyleID="s65"><Data ss:Type="String">SePath</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s67"><Data ss:Type="Number">0</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">Enter</Data></Cell>
-    <Cell ss:StyleID="s67" ss:Formula="=CONCAT(凡例!R2C,Script!#REF!)"><Data
+    <Cell ss:StyleID="s68"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="s68"><Data ss:Type="String">Enter</Data></Cell>
+    <Cell ss:StyleID="s68" ss:Formula="=CONCAT(凡例!R2C,Script!#REF!)"><Data
       ss:Type="Error">#REF!</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s67"><Data ss:Type="Number">1</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">Walk</Data></Cell>
-    <Cell ss:StyleID="s67" ss:Formula="=CONCAT(凡例!R2C,Script!#REF!)"><Data
+    <Cell ss:StyleID="s68"><Data ss:Type="Number">1</Data></Cell>
+    <Cell ss:StyleID="s68"><Data ss:Type="String">Walk</Data></Cell>
+    <Cell ss:StyleID="s68" ss:Formula="=CONCAT(凡例!R2C,Script!#REF!)"><Data
       ss:Type="Error">#REF!</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s67"><Data ss:Type="Number">2</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">Text</Data></Cell>
-    <Cell ss:StyleID="s67" ss:Formula="=CONCAT(凡例!R2C,Script!#REF!)"><Data
+    <Cell ss:StyleID="s68"><Data ss:Type="Number">2</Data></Cell>
+    <Cell ss:StyleID="s68"><Data ss:Type="String">Text</Data></Cell>
+    <Cell ss:StyleID="s68" ss:Formula="=CONCAT(凡例!R2C,Script!#REF!)"><Data
       ss:Type="Error">#REF!</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s67"><Data ss:Type="Number">3</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">Cursor</Data></Cell>
-    <Cell ss:StyleID="s67" ss:Formula="=CONCAT(凡例!R2C,Script!#REF!)"><Data
+    <Cell ss:StyleID="s68"><Data ss:Type="Number">3</Data></Cell>
+    <Cell ss:StyleID="s68"><Data ss:Type="String">Cursor</Data></Cell>
+    <Cell ss:StyleID="s68" ss:Formula="=CONCAT(凡例!R2C,Script!#REF!)"><Data
       ss:Type="Error">#REF!</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s67"><Data ss:Type="Number">4</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">Telop</Data></Cell>
-    <Cell ss:StyleID="s67" ss:Formula="=CONCAT(凡例!R2C,Script!#REF!)"><Data
+    <Cell ss:StyleID="s68"><Data ss:Type="Number">4</Data></Cell>
+    <Cell ss:StyleID="s68"><Data ss:Type="String">Telop</Data></Cell>
+    <Cell ss:StyleID="s68" ss:Formula="=CONCAT(凡例!R2C,Script!#REF!)"><Data
       ss:Type="Error">#REF!</Data></Cell>
    </Row>
   </Table>

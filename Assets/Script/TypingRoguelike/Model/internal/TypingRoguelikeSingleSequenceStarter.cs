@@ -19,9 +19,9 @@ namespace gaw241201
         [Inject] ITypingInitializer _typingInitializer;
 
         Subject<ModelArgs<ITypingRoguelikeSingleSequenceMaster>> _entered = new Subject<ModelArgs<ITypingRoguelikeSingleSequenceMaster>>();
-        Subject<TimerArgs> _timerStarted = new Subject<TimerArgs>();
+        Subject<float> _timerStarted = new Subject<float>();
         public IObservable<ModelArgs<ITypingRoguelikeSingleSequenceMaster>> Entered => _entered;
-        public IObservable<TimerArgs> TimerStarted => _timerStarted;
+        public IObservable<float> TimerStarted => _timerStarted;
 
         public void EnterTextSequence(ITypingRoguelikeSingleSequenceMaster master,  CancellationToken ct, out bool isEnded)
         {
@@ -32,7 +32,7 @@ namespace gaw241201
             if (master.ConditionProvider.IsEnableTimeUp())
             {
                 Log.Comment("タイマー開始");
-                _timerStarted.OnNext(new TimerArgs(TypingUtil.RemoveBracketsAndContents(master.RomanText).Length * master.Time, ct));
+                _timerStarted.OnNext(TypingUtil.RemoveBracketsAndContents(master.RomanText).Length * master.Time);
             }
             _entered.OnNext(_modelArgsFactory.Create(master, ct));
         }

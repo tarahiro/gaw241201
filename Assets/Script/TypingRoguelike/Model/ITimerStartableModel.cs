@@ -12,6 +12,6 @@ namespace gaw241201
 {
     public interface ITimerStartableModel
     {
-        IObservable<TimerArgs> TimerStarted { get; }
+        IObservable<float> TimerStarted { get; }
     }
 }

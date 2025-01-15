@@ -13,12 +13,9 @@ namespace gaw241201.View
 {
     public interface ITimerView
     {
-        UniTask Enter(TimerArgs timerArgs);
+        void EnterTimer(TimerArgs args);
+        void UpdateTimer(float ratio);
 
-        IObservable<Unit> TimeUped { get; }
-
-        IObservable<float> TimeRemained { get; }
-
-        void HaltTimer();
+        void EndTimer();
     }
 }

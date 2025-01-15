@@ -10,7 +10,8 @@ using VContainer.Unity;
 
 namespace gaw241201
 {
-    public class TimerModel
+    public interface ITimerEndableModel
     {
+        IObservable<Unit> TimerEnded { get; }
     }
 }

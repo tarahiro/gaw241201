@@ -12,7 +12,7 @@ using gaw241201.Model;
 
 namespace gaw241201
 {
-    public class TypingRoguelikeModel : IFlowModel, IRequiredScoreGeneratable
+    public class TypingRoguelikeModel : IFlowModel, IRequiredScoreGeneratable, ITimerEndableModel
     {
         [Inject] IGroupMasterGettable<ITypingRoguelikeSingleSequenceMaster> _groupMasterGettable;
         [Inject] ISingleTextSequenceEnterable<ITypingRoguelikeSingleSequenceMaster> _singleTextSequenceEnterable;
@@ -29,7 +29,9 @@ namespace gaw241201
 
 
         Subject<int> _requiredScoreGenerated = new Subject<int>();
+        Subject<Unit> _timerEnded = new Subject<Unit>();
         public IObservable<int> RequiredScoreGenerated => _requiredScoreGenerated;
+        public IObservable<Unit> TimerEnded => _timerEnded;
 
         //UnitaskとSubjectの変換を使ってきれいにしたい
         bool _isEnded = false;
@@ -91,6 +93,7 @@ namespace gaw241201
             if (_conditionProvider.IsEnableTimeUp())
             {
                 //タイマーストップ処理
+                _timerEnded.OnNext(Unit.Default);
             }
         }
 
