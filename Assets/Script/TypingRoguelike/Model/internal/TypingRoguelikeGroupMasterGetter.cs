@@ -40,13 +40,35 @@ namespace gaw241201
 
                 }
 
-                Const.RandomIndexList(out var randomizeList, typingMasterAvailableList.Count);
-
-                for(int i = 0;i < _listableMaster.WaveCount; i++)
+                List<int> orderList;
+                if (_listableMaster.SelectionMethod == TypingRoguelikeConst.SelectionMethod.Random)
                 {
-                    var typingMaster = typingMasterAvailableList[randomizeList[i]];
-                    _masterList.Add(_factory.CreateSingleSequenceMaster(typingMaster, _listableMaster, 
-                       _restrictedCharDictionary[bodyId]));
+
+                    Const.RandomIndexList(out var randomizeList, typingMasterAvailableList.Count);
+                    orderList = new List<int>();
+
+                    for (int i = 0; i < _listableMaster.WaveCount; i++)
+                    {
+                        orderList.Add(randomizeList[i]);
+                    }
+
+
+                }
+                else
+                {
+                    orderList = new List<int>();
+
+                    for(int i = 0;  i< typingMasterAvailableList.Count;i++)
+                    {
+                        orderList.Add(i);
+                    }
+                }
+
+                for (int i = 0; i < orderList.Count; i++)
+                {
+                    var typingMaster = typingMasterAvailableList[orderList[i]];
+                    _masterList.Add(_factory.CreateSingleSequenceMaster(typingMaster, _listableMaster,
+                       _restrictedCharDictionary.TryGetValue(bodyId, out List<char> list) ? list : new List<char>()));
                 }
             }
 

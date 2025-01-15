@@ -253,7 +253,7 @@
    <Row ss:AutoFitHeight="0">
     <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">18</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">202000Typing</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">Typing</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">TypingRoguelike</Data></Cell>
     <Cell ss:StyleID="s67" ss:Formula="=RC[-2]"><Data ss:Type="String">202000Typing</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">Clear</Data></Cell>
     <Cell ss:StyleID="s67" ss:Formula="=R[-5]C[-4]"><Data ss:Type="String">110000ClickInput</Data></Cell>
@@ -269,7 +269,7 @@
    <Row ss:AutoFitHeight="0">
     <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">20</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">204000Typing</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">Typing</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">TypingRoguelike</Data></Cell>
     <Cell ss:StyleID="s67" ss:Formula="=RC[-2]"><Data ss:Type="String">204000Typing</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">Clear</Data></Cell>
     <Cell ss:StyleID="s67" ss:Formula="=R[-3]C[-4]"><Data ss:Type="String">201000TypingConversation</Data></Cell>
@@ -285,7 +285,7 @@
    <Row ss:AutoFitHeight="0">
     <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">22</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">206000Typing</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">Typing</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">TypingRoguelike</Data></Cell>
     <Cell ss:StyleID="s67" ss:Formula="=RC[-2]"><Data ss:Type="String">206000Typing</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">Clear</Data></Cell>
     <Cell ss:StyleID="s67" ss:Formula="=R[-4]C[-4]"><Data ss:Type="String">202000Typing</Data></Cell>
@@ -333,7 +333,7 @@
    <Row ss:AutoFitHeight="0">
     <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">28</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">208000Typing</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">Typing</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">TypingRoguelike</Data></Cell>
     <Cell ss:StyleID="s67" ss:Formula="=RC[-2]"><Data ss:Type="String">208000Typing</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">Clear</Data></Cell>
     <Cell ss:StyleID="s67" ss:Formula="=R[-11]C[-4]"><Data ss:Type="String">201000TypingConversation</Data></Cell>
@@ -349,7 +349,7 @@
    <Row ss:AutoFitHeight="0">
     <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">30</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">210000Typing</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">Typing</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">TypingRoguelike</Data></Cell>
     <Cell ss:StyleID="s67" ss:Formula="=RC[-2]"><Data ss:Type="String">210000Typing</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">Clear</Data></Cell>
     <Cell ss:StyleID="s67" ss:Formula="=R[-27]C[-4]"><Data ss:Type="String">102011ReadTimeRegisterFlag</Data></Cell>
@@ -397,7 +397,7 @@
    <Row ss:AutoFitHeight="0">
     <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">36</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">213000Typing</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">Typing</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">TypingRoguelike</Data></Cell>
     <Cell ss:StyleID="s67" ss:Formula="=RC[-2]"><Data ss:Type="String">213000Typing</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">Clear</Data></Cell>
     <Cell ss:StyleID="s67" ss:Formula="=R[-31]C[-4]"><Data ss:Type="String">102080DeleteUi</Data></Cell>
@@ -445,7 +445,7 @@
    <Row ss:AutoFitHeight="0">
     <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">42</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">215000Typing</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">Typing</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">TypingRoguelike</Data></Cell>
     <Cell ss:StyleID="s67" ss:Formula="=RC[-2]"><Data ss:Type="String">215000Typing</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">Clear</Data></Cell>
     <Cell ss:StyleID="s67" ss:Formula="=R[-35]C[-4]"><Data ss:Type="String">104000InitialConversation</Data></Cell>
@@ -571,12 +571,12 @@
    <TabColorIndex>13</TabColorIndex>
    <Zoom>115</Zoom>
    <Selected/>
-   <TopRowVisible>11</TopRowVisible>
+   <TopRowVisible>26</TopRowVisible>
    <Panes>
     <Pane>
      <Number>3</Number>
-     <ActiveRow>26</ActiveRow>
-     <ActiveCol>20</ActiveCol>
+     <ActiveRow>40</ActiveRow>
+     <ActiveCol>2</ActiveCol>
     </Pane>
    </Panes>
    <ProtectObjects>False</ProtectObjects>
