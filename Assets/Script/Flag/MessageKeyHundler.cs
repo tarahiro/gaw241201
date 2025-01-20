@@ -32,6 +32,19 @@ namespace gaw241201
             return returnMessage;
         }
 
+        //将来的にクラス分けるかも？
+        public ITranslatableText HundleKeyToTranslatableText(ITranslatableText text)
+        {
+            List<string> TextList = new List<string>();
+
+            for(int i = 0; i < LanguageConst.AvailableLanguageNumber; i++)
+            {
+                TextList.Add(HundleKey(text.GetTranslatedText(i)));
+            }
+
+            return new TranslatableText(TextList.ToArray());
+        }
+
        
 
         

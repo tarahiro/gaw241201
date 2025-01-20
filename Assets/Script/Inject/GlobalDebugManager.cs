@@ -16,6 +16,7 @@ namespace gaw241201.Inject
     {
         [Inject] FlowHundler _flowHundler;
         [Inject] ISaveDeletable _saveDeletable;
+        [Inject] LanguageModel _languageModel;
 
         public void Start()
         {
@@ -24,15 +25,25 @@ namespace gaw241201.Inject
 
         public void Tick()
         {
-            if (Input.GetKeyDown(KeyCode.Tab))
+
+            if (Input.GetKey(KeyCode.LeftControl))
             {
-                _flowHundler.ForceGetCurrentFlow().ForceEndFlow();
-            }
+                if (Input.GetKeyDown(KeyCode.Tab))
+                {
+                    _flowHundler.ForceGetCurrentFlow().ForceEndFlow();
+                }
 
 
-            if (Input.GetKeyDown(KeyCode.LeftAlt))
-            {
-                _saveDeletable.DeleteSaveData();
+                if (Input.GetKeyDown(KeyCode.Q))
+                {
+                    _saveDeletable.DeleteSaveData();
+                }
+
+                if (Input.GetKeyDown(KeyCode.W))
+                {
+                    _languageModel.SetLanguage(EnumUtil.NoToType<LanguageConst.AvailableLanguage>(((int)_languageModel.Language + 1) % LanguageConst.AvailableLanguageNumber));
+                }
+
             }
         }
     }

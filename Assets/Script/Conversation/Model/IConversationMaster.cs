@@ -12,8 +12,7 @@ namespace gaw241201
     //フィールドを追加
     public interface IConversationMaster : IIdentifiable, IIndexable, IGroupable
     {
-
-        string Message{ get; }
+        ITranslatableText Message{ get; }
 
         string EyePosition { get; }
         string Facial { get; }

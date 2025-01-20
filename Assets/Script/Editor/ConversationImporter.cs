@@ -26,11 +26,11 @@ namespace gaw241201.Editor
         {
             Index = 0,
             Id = 1,
-            ConversationGroup = 2,
-            Message = 3,
-            EyePosition = 4,
-            Facial = 5,
-            Impression = 6,
+            Message = 2,
+            ConversationGroup = Message + LanguageConst.AvailableLanguageNumber,
+            EyePosition = Message + LanguageConst.AvailableLanguageNumber + 1,
+            Facial = Message + LanguageConst.AvailableLanguageNumber + 2,
+            Impression = Message + LanguageConst.AvailableLanguageNumber + 3,
         }
 
         //--------------------------------------------------------------------
@@ -71,11 +71,11 @@ namespace gaw241201.Editor
                         ConversationDataList.Add(new ConversationMasterData.Record(index, id)
                         {
                             SettableConversationGroup = sheet[row, (int)Columns.ConversationGroup].String,
-                            SettableMessage = sheet[row, (int)Columns.Message].String,
-                            SettableEyePosition= sheet[row, (int)Columns.EyePosition].String,
+                            SettableMessage = EditorUtil.GetTranslatableText<LanguageConst.AvailableLanguage>(sheet,row,(int)Columns.Message),
+                            SettableEyePosition = sheet[row, (int)Columns.EyePosition].String,
                             SettableFacial = sheet[row, (int)Columns.Facial].String,
                             SettableImpression = sheet[row, (int)Columns.Impression].String,
-                        });
+                        });; ;
                     }
                 }
             }

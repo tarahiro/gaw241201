@@ -17,6 +17,8 @@ namespace gaw241201.View
     public class ConversationTextView : MonoBehaviour
     {
         TextMeshProUGUI _tmp;
+        ITranslationTextDisplayer _translationTextDisplayer;
+
         [SerializeField] BlinkableCursor _cursor;
         const float c_interval = 10f;
 
@@ -30,13 +32,14 @@ namespace gaw241201.View
         private void Start()
         {
             _tmp = GetComponent<TextMeshProUGUI>();
+            _translationTextDisplayer = GetComponent<ITranslationTextDisplayer>();
         }
 
-        public async UniTask Enter(string text,CancellationToken ct)
+        public async UniTask Enter(ITranslatableText text,CancellationToken ct)
         {
             _tmp.text = "";
             SoundManager.PlaySE("TalkShort");
-            await TextUtil.DisplayTextByCharacter(text, _tmp, "Talk", _decideKeys , ct,false);
+            await TextUtil.DisplayTextByCharacter(text.GetTranslatedText(_translationTextDisplayer.GetLanguageIndex()), _tmp, "Talk", _decideKeys , ct,false);
             await UniTask.Yield(PlayerLoopTiming.Update,ct);
             _cursor.StartBlink();
             SetCursorPosition();

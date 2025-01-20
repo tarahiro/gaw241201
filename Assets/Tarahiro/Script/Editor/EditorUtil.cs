@@ -39,6 +39,18 @@ namespace Tarahiro.Editor
             return returnable.ToArray();
         }
 
+        public static TranslatableText GetTranslatableText<T>(IWorksheet sheet, int row, int startColumn)
+        {
+            List<string> textString = new List<string>();
+
+            for(int i = 0; i < EnumUtil.GetTypeNum<T>(); i++)
+            {
+                textString.Add(sheet[row, startColumn + i].String);
+            }
+
+            return new TranslatableText(textString.ToArray());
+        }
+
 
         [System.Serializable]
         public class ListWrapper<T>

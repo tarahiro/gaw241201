@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4608008696644039956}
   - component: {fileID: 4304971184938017830}
   - component: {fileID: 5630747029008738834}
+  - component: {fileID: 7218292254594182456}
   m_Layer: 5
   m_Name: gaw241201Tmp
   m_TagString: Untagged
@@ -134,3 +135,22 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &7218292254594182456
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 211256672648796651}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3a0bbd3b17ad5e4a98160e065a18e67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tmp: {fileID: 5630747029008738834}
+  font:
+  - {fileID: 11400000, guid: e5a5d5a6d8ea9b647acde37b09c1a2c2, type: 2}
+  - {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  fontSizeCoeffFromJp:
+  - 1
+  - 0.5

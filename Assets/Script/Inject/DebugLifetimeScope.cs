@@ -13,6 +13,7 @@ namespace gaw241201.Inject
             {
                 entryPoints.Add<GlobalDebugManager>();
                 entryPoints.Add<TypingRoguelikeDebugManager>();
+                entryPoints.Add<ConstChecker>();
             });
 
         }

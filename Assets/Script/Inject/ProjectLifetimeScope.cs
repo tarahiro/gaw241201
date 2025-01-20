@@ -6,7 +6,10 @@ using gaw241201.Presenter;
 using gaw241201.View;
 using gaw241201.Model;
 using UnityEngine;
+using Tarahiro.Ui;
 using Tarahiro.MasterData;
+using VitalRouter;
+using VitalRouter.VContainer;
 
 namespace gaw241201.Inject
 {
@@ -51,12 +54,13 @@ namespace gaw241201.Inject
             ConfigureLeet(builder);
             ConfigureTypingRoguelike(builder);
             ConfigureStageBg(builder);
+            ConfigureLanguage(builder);
         }
 
         void CofigureManager(IContainerBuilder builder)
         {
             //Manager
-            builder.Register<AdapterFactory<TypingRoguelikeMainLoopStarter, SaveDataManager>>(Lifetime.Singleton).WithParameter<LifetimeScope[]>(FindObjectsOfType<LifetimeScope>).AsImplementedInterfaces();
+            builder.Register<AdapterFactory<HorrorStoryMainLoopStarter, SaveDataManager>>(Lifetime.Singleton).WithParameter<LifetimeScope[]>(FindObjectsOfType<LifetimeScope>).AsImplementedInterfaces();
             builder.Register<FlowProvider>(Lifetime.Singleton).WithParameter<LifetimeScope[]>(FindObjectsOfType<LifetimeScope>).AsImplementedInterfaces();
 
             builder.RegisterEntryPoint<GameManager>();
@@ -341,6 +345,24 @@ namespace gaw241201.Inject
             //stageBg
             builder.RegisterComponentInHierarchy<StageBgView>().AsSelf();
 
+        }
+
+        [SerializeField] TranslationTextDisplayer displayer;
+
+        void ConfigureLanguage(IContainerBuilder builder)
+        {
+            builder.Register<LanguageModel>(Lifetime.Singleton).AsSelf();
+            builder.Register<LanguageCommandProcessor>(Lifetime.Singleton).AsSelf();
+
+            builder.RegisterEntryPoint<LanguageInitializer>(Lifetime.Singleton).AsSelf();
+
+            builder.RegisterVitalRouter(routing =>
+            {
+                // w“Ç‘¤‚Í‚±‚Ì‚æ‚¤‚É“o˜^‚·‚éiMonoBehaviour‚Ìê‡j
+                // EffectController‚ª”jŠü‚³‚ê‚½‚èAVContainer‚ÌLifetimeScope‚ª”jŠü‚³‚ê‚½‚çƒCƒxƒ“ƒg‚Ìw“Ç‚à©“®“I‚É‰ğœiUnmapj‚³‚ê‚é
+
+                routing.MapComponentInHierarchy<TranslationTextDisplayer>();
+            });
         }
 
     }
