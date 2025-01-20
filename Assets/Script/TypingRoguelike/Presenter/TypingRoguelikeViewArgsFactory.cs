@@ -19,8 +19,8 @@ namespace gaw241201.Presenter
 
         public TypingViewArgs Create(ModelArgs<ITypingRoguelikeSingleSequenceMaster> modelArgs)
         {
-            return new TypingViewArgs(_messageKeyHundler.HundleKey(modelArgs.Master.JpText), 
-                _messageKeyHundler.HundleKey(modelArgs.Master.RomanText), modelArgs.CancellationToken);
+            return new TypingViewArgs(_messageKeyHundler.HundleKey(modelArgs.Master.DisplayText), 
+                _messageKeyHundler.HundleKey(modelArgs.Master.QuestionText), modelArgs.CancellationToken);
         }
     }
 }

@@ -14,6 +14,15 @@ namespace gaw241201
     {
         [Inject] RomanInputProcesser _romanInputProcesser;
 
+        bool _isEnableRoman = false;
+        bool _isEnableCapital = false;
+
+
+        public void Initialize(bool isEnableRoman, bool isEnableCapital)
+        {
+            _isEnableRoman = isEnableRoman;
+            _isEnableCapital= isEnableCapital;
+        }
 
         public bool TryKeyProcess(char inputChar, int _charIndex, string _questionString, List<ReplaceData> _replaceDataList, out List<ReplaceData> replacedList)
         {
@@ -37,11 +46,14 @@ namespace gaw241201
 
 
 
-                //ローマ字入力
-                ReplaceData romanReplaceData = _romanInputProcesser.IsKeyInputCorrect(inputChar, _charIndex, _questionString);
-                if (romanReplaceData != null)
+                if (_isEnableRoman)
                 {
-                    replacedList.Add(romanReplaceData);
+                    //ローマ字入力
+                    ReplaceData romanReplaceData = _romanInputProcesser.IsKeyInputCorrect(inputChar, _charIndex, _questionString);
+                    if (romanReplaceData != null)
+                    {
+                        replacedList.Add(romanReplaceData);
+                    }
                 }
 
 
@@ -56,11 +68,14 @@ namespace gaw241201
                     }
 
                     //大文字・小文字処理
-                    if (char.IsUpper(replaceData.StringReplaceTo[0]) && inputChar == char.ToLower(replaceData.StringReplaceTo[0]))
+                    if (_isEnableCapital)
                     {
-                        Log.Comment("SelectedData検出");
-                        replacedList.Add(replaceData);
-                        continue;
+                        if (char.IsUpper(replaceData.StringReplaceTo[0]) && inputChar == char.ToLower(replaceData.StringReplaceTo[0]))
+                        {
+                            Log.Comment("SelectedData検出");
+                            replacedList.Add(replaceData);
+                            continue;
+                        }
                     }
 
                 }

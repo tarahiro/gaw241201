@@ -76,7 +76,7 @@ namespace gaw241201
 
             foreach (var singleSequence in _thisGroup)
             {
-                textCount += TypingUtil.RemoveBracketsAndContents(singleSequence.RomanText).Length;
+                textCount += TypingUtil.RemoveBracketsAndContents(singleSequence.QuestionText).Length;
             }
 
             _requiredScoreGenerated.OnNext((int)(textCount * master.RequiredScorePerChar));

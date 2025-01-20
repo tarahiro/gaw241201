@@ -17,6 +17,7 @@ namespace gaw241201.View
         [Inject] EnterKeyHundler _enterKeyHundler;
         [Inject] IndexUpdater _indexUpdater;
         [Inject] MessageKeyHundler _messageKeyHundler;
+        [Inject] KeyInputProcesser _keyInputProcesser;
         [Inject] IQuestionDisplayTextModel _questionDisplayTextGenerator;
         [Inject] IRestrictedCharProvider _restrictedCharProvider;
         [Inject] IRestrictedCharRegisterer _restrictedCharRegisterer;
@@ -26,8 +27,9 @@ namespace gaw241201.View
         public IObservable<List<char>> RestrictionDataLoaded => _restrictionDataLoaded;
         public void InitializeTyping(ITypingRoguelikeSingleSequenceMaster master, TypingRoguelikeConditionProvider conditionProvider)
         {
-            _sampleInputted.OnNext(_messageKeyHundler.HundleKey(master.JpText));
-            string romanText  = string.Concat(_messageKeyHundler.HundleKey(master.RomanText), "@");
+
+            _sampleInputted.OnNext(_messageKeyHundler.HundleKey(master.DisplayText));
+            string romanText  = string.Concat(_messageKeyHundler.HundleKey(master.QuestionText), "@");
 
             if (conditionProvider.IsEnableRestriction())
             {
@@ -43,6 +45,7 @@ namespace gaw241201.View
             
             _enterKeyHundler.Initialize(romanText, restrictedCharList);
             _indexUpdater.Initialize(romanText);
+            _keyInputProcesser.Initialize(conditionProvider.IsEnableRoman(), conditionProvider.IsEnableCapital());
 
             _indexUpdater.UpdateIndex(0,romanText);
             _questionDisplayTextGenerator.GenerateDisplayQuestionText(romanText,_indexUpdater.GetIndex());

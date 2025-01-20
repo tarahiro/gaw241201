@@ -111,7 +111,7 @@
   </Style>
  </Styles>
  <Worksheet ss:Name="Script">
-  <Table ss:ExpandedColumnCount="13" ss:ExpandedRowCount="19" x:FullColumns="1"
+  <Table ss:ExpandedColumnCount="15" ss:ExpandedRowCount="19" x:FullColumns="1"
    x:FullRows="1" ss:DefaultColumnWidth="52.5" ss:DefaultRowHeight="18">
    <Column ss:AutoFitWidth="0" ss:Width="30"/>
    <Column ss:AutoFitWidth="0" ss:Width="75"/>
@@ -120,7 +120,7 @@
    <Column ss:AutoFitWidth="0" ss:Width="70" ss:Span="1"/>
    <Column ss:Index="8" ss:AutoFitWidth="0" ss:Width="109.5"/>
    <Column ss:AutoFitWidth="0" ss:Width="132" ss:Span="2"/>
-   <Column ss:Index="12" ss:AutoFitWidth="0" ss:Width="73.5" ss:Span="1"/>
+   <Column ss:Index="12" ss:AutoFitWidth="0" ss:Width="73.5" ss:Span="3"/>
    <Row ss:AutoFitHeight="0" ss:Height="24.5" ss:StyleID="s62">
     <Cell ss:StyleID="s63" ss:ArrayRange="RC"
      ss:Formula="=MID( CELL(&quot;filename&quot;,R1C1),&#10;FIND(&quot;[&quot;, CELL(&quot;filename&quot;,R1C1)) +1,&#10;FIND(&quot;]&quot;, CELL(&quot;filename&quot;,R1C1)) - FIND(&quot;[&quot;, CELL(&quot;filename&quot;,R1C1)) -1)"><Data
@@ -140,6 +140,8 @@
     <Cell ss:StyleID="s67"><Data ss:Type="String">IsEnableTimeUp</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">IsEnableWave</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">IsEnableScore</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">IsEnableRoman</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">IsEnableCapital</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
     <Cell ss:StyleID="s68" ss:Formula="=ROW()-5"><Data ss:Type="Number">0</Data></Cell>
@@ -155,6 +157,8 @@
     <Cell ss:StyleID="s69"><Data ss:Type="Boolean">0</Data></Cell>
     <Cell ss:StyleID="s69"><Data ss:Type="Boolean">0</Data></Cell>
     <Cell ss:StyleID="s69"><Data ss:Type="Boolean">0</Data></Cell>
+    <Cell ss:StyleID="s69"><Data ss:Type="Boolean">0</Data></Cell>
+    <Cell ss:StyleID="s69"><Data ss:Type="Boolean">1</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
     <Cell ss:StyleID="s68" ss:Formula="=ROW()-5"><Data ss:Type="Number">1</Data></Cell>
@@ -170,6 +174,8 @@
     <Cell ss:StyleID="s69"><Data ss:Type="Boolean">0</Data></Cell>
     <Cell ss:StyleID="s69"><Data ss:Type="Boolean">0</Data></Cell>
     <Cell ss:StyleID="s69"><Data ss:Type="Boolean">0</Data></Cell>
+    <Cell ss:StyleID="s69"><Data ss:Type="Boolean">0</Data></Cell>
+    <Cell ss:StyleID="s69"><Data ss:Type="Boolean">1</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
     <Cell ss:StyleID="s68" ss:Formula="=ROW()-5"><Data ss:Type="Number">2</Data></Cell>
@@ -185,6 +191,8 @@
     <Cell ss:StyleID="s69"><Data ss:Type="Boolean">0</Data></Cell>
     <Cell ss:StyleID="s69"><Data ss:Type="Boolean">0</Data></Cell>
     <Cell ss:StyleID="s69"><Data ss:Type="Boolean">0</Data></Cell>
+    <Cell ss:StyleID="s69"><Data ss:Type="Boolean">0</Data></Cell>
+    <Cell ss:StyleID="s69"><Data ss:Type="Boolean">1</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
     <Cell ss:StyleID="s68" ss:Formula="=ROW()-5"><Data ss:Type="Number">3</Data></Cell>
@@ -200,6 +208,8 @@
     <Cell ss:StyleID="s69"><Data ss:Type="Boolean">0</Data></Cell>
     <Cell ss:StyleID="s69"><Data ss:Type="Boolean">0</Data></Cell>
     <Cell ss:StyleID="s69"><Data ss:Type="Boolean">0</Data></Cell>
+    <Cell ss:StyleID="s69"><Data ss:Type="Boolean">0</Data></Cell>
+    <Cell ss:StyleID="s69"><Data ss:Type="Boolean">1</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
     <Cell ss:StyleID="s68" ss:Formula="=ROW()-5"><Data ss:Type="Number">4</Data></Cell>
@@ -215,6 +225,8 @@
     <Cell ss:StyleID="s69"><Data ss:Type="Boolean">0</Data></Cell>
     <Cell ss:StyleID="s69"><Data ss:Type="Boolean">0</Data></Cell>
     <Cell ss:StyleID="s69"><Data ss:Type="Boolean">0</Data></Cell>
+    <Cell ss:StyleID="s69"><Data ss:Type="Boolean">0</Data></Cell>
+    <Cell ss:StyleID="s69"><Data ss:Type="Boolean">1</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
     <Cell ss:StyleID="s68" ss:Formula="=ROW()-5"><Data ss:Type="Number">5</Data></Cell>
@@ -230,6 +242,8 @@
     <Cell ss:StyleID="s69"><Data ss:Type="Boolean">0</Data></Cell>
     <Cell ss:StyleID="s69"><Data ss:Type="Boolean">0</Data></Cell>
     <Cell ss:StyleID="s69"><Data ss:Type="Boolean">0</Data></Cell>
+    <Cell ss:StyleID="s69"><Data ss:Type="Boolean">0</Data></Cell>
+    <Cell ss:StyleID="s69"><Data ss:Type="Boolean">1</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
     <Cell ss:StyleID="s68" ss:Formula="=ROW()-5"><Data ss:Type="Number">6</Data></Cell>
@@ -245,6 +259,8 @@
     <Cell ss:StyleID="s69"><Data ss:Type="Boolean">0</Data></Cell>
     <Cell ss:StyleID="s69"><Data ss:Type="Boolean">0</Data></Cell>
     <Cell ss:StyleID="s69"><Data ss:Type="Boolean">0</Data></Cell>
+    <Cell ss:StyleID="s69"><Data ss:Type="Boolean">0</Data></Cell>
+    <Cell ss:StyleID="s69"><Data ss:Type="Boolean">1</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
     <Cell ss:StyleID="s68" ss:Formula="=ROW()-5"><Data ss:Type="Number">7</Data></Cell>
@@ -260,6 +276,8 @@
     <Cell ss:StyleID="s69"><Data ss:Type="Boolean">0</Data></Cell>
     <Cell ss:StyleID="s69"><Data ss:Type="Boolean">0</Data></Cell>
     <Cell ss:StyleID="s69"><Data ss:Type="Boolean">0</Data></Cell>
+    <Cell ss:StyleID="s69"><Data ss:Type="Boolean">0</Data></Cell>
+    <Cell ss:StyleID="s69"><Data ss:Type="Boolean">1</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
     <Cell ss:StyleID="s68" ss:Formula="=ROW()-5"><Data ss:Type="Number">8</Data></Cell>
@@ -271,6 +289,8 @@
     <Cell ss:StyleID="s68"><Data ss:Type="Number">2</Data></Cell>
     <Cell ss:StyleID="s68"><Data ss:Type="Number">90</Data></Cell>
     <Cell ss:StyleID="s68"><Data ss:Type="String">Descend</Data></Cell>
+    <Cell ss:StyleID="s69"><Data ss:Type="Boolean">0</Data></Cell>
+    <Cell ss:StyleID="s69"><Data ss:Type="Boolean">0</Data></Cell>
     <Cell ss:StyleID="s69"><Data ss:Type="Boolean">0</Data></Cell>
     <Cell ss:StyleID="s69"><Data ss:Type="Boolean">0</Data></Cell>
     <Cell ss:StyleID="s69"><Data ss:Type="Boolean">0</Data></Cell>
@@ -290,6 +310,8 @@
     <Cell ss:StyleID="s69"><Data ss:Type="Boolean">0</Data></Cell>
     <Cell ss:StyleID="s69"><Data ss:Type="Boolean">0</Data></Cell>
     <Cell ss:StyleID="s69"><Data ss:Type="Boolean">0</Data></Cell>
+    <Cell ss:StyleID="s69"><Data ss:Type="Boolean">0</Data></Cell>
+    <Cell ss:StyleID="s69"><Data ss:Type="Boolean">0</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
     <Cell ss:StyleID="s68" ss:Formula="=ROW()-5"><Data ss:Type="Number">10</Data></Cell>
@@ -301,6 +323,8 @@
     <Cell ss:StyleID="s68"><Data ss:Type="Number">2</Data></Cell>
     <Cell ss:StyleID="s68"><Data ss:Type="Number">90</Data></Cell>
     <Cell ss:StyleID="s68"><Data ss:Type="String">Descend</Data></Cell>
+    <Cell ss:StyleID="s69"><Data ss:Type="Boolean">0</Data></Cell>
+    <Cell ss:StyleID="s69"><Data ss:Type="Boolean">0</Data></Cell>
     <Cell ss:StyleID="s69"><Data ss:Type="Boolean">0</Data></Cell>
     <Cell ss:StyleID="s69"><Data ss:Type="Boolean">0</Data></Cell>
     <Cell ss:StyleID="s69"><Data ss:Type="Boolean">0</Data></Cell>
@@ -320,6 +344,8 @@
     <Cell ss:StyleID="s69"><Data ss:Type="Boolean">0</Data></Cell>
     <Cell ss:StyleID="s69"><Data ss:Type="Boolean">0</Data></Cell>
     <Cell ss:StyleID="s69"><Data ss:Type="Boolean">0</Data></Cell>
+    <Cell ss:StyleID="s69"><Data ss:Type="Boolean">0</Data></Cell>
+    <Cell ss:StyleID="s69"><Data ss:Type="Boolean">0</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
     <Cell ss:StyleID="s68" ss:Formula="=ROW()-5"><Data ss:Type="Number">12</Data></Cell>
@@ -331,6 +357,8 @@
     <Cell ss:StyleID="s68"><Data ss:Type="Number">2</Data></Cell>
     <Cell ss:StyleID="s68"><Data ss:Type="Number">90</Data></Cell>
     <Cell ss:StyleID="s68"><Data ss:Type="String">Descend</Data></Cell>
+    <Cell ss:StyleID="s69"><Data ss:Type="Boolean">0</Data></Cell>
+    <Cell ss:StyleID="s69"><Data ss:Type="Boolean">0</Data></Cell>
     <Cell ss:StyleID="s69"><Data ss:Type="Boolean">0</Data></Cell>
     <Cell ss:StyleID="s69"><Data ss:Type="Boolean">0</Data></Cell>
     <Cell ss:StyleID="s69"><Data ss:Type="Boolean">0</Data></Cell>
@@ -350,6 +378,8 @@
     <Cell ss:StyleID="s69"><Data ss:Type="Boolean">0</Data></Cell>
     <Cell ss:StyleID="s69"><Data ss:Type="Boolean">0</Data></Cell>
     <Cell ss:StyleID="s69"><Data ss:Type="Boolean">0</Data></Cell>
+    <Cell ss:StyleID="s69"><Data ss:Type="Boolean">0</Data></Cell>
+    <Cell ss:StyleID="s69"><Data ss:Type="Boolean">0</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
     <Cell ss:StyleID="s68" ss:Formula="=ROW()-5"><Data ss:Type="Number">14</Data></Cell>
@@ -361,6 +391,8 @@
     <Cell ss:StyleID="s68"><Data ss:Type="Number">2</Data></Cell>
     <Cell ss:StyleID="s68"><Data ss:Type="Number">90</Data></Cell>
     <Cell ss:StyleID="s68"><Data ss:Type="String">Descend</Data></Cell>
+    <Cell ss:StyleID="s69"><Data ss:Type="Boolean">0</Data></Cell>
+    <Cell ss:StyleID="s69"><Data ss:Type="Boolean">0</Data></Cell>
     <Cell ss:StyleID="s69"><Data ss:Type="Boolean">0</Data></Cell>
     <Cell ss:StyleID="s69"><Data ss:Type="Boolean">0</Data></Cell>
     <Cell ss:StyleID="s69"><Data ss:Type="Boolean">0</Data></Cell>
@@ -385,64 +417,23 @@
    <Panes>
     <Pane>
      <Number>3</Number>
-     <ActiveRow>12</ActiveRow>
-     <ActiveCol>1</ActiveCol>
+     <ActiveRow>11</ActiveRow>
+     <ActiveCol>13</ActiveCol>
+     <RangeSelection>R12C14:R19C14</RangeSelection>
     </Pane>
    </Panes>
    <ProtectObjects>False</ProtectObjects>
    <ProtectScenarios>False</ProtectScenarios>
   </WorksheetOptions>
   <ConditionalFormatting xmlns="urn:schemas-microsoft-com:office:excel">
-   <Range>R5C1:R12C13</Range>
+   <Range>R5C1:R19C13</Range>
    <Condition>
     <Value1>LEN(TRIM(RC))=0</Value1>
     <Format Style='background:#E7E6E6'/>
    </Condition>
   </ConditionalFormatting>
   <ConditionalFormatting xmlns="urn:schemas-microsoft-com:office:excel">
-   <Range>R13C1:R13C13</Range>
-   <Condition>
-    <Value1>LEN(TRIM(RC))=0</Value1>
-    <Format Style='background:#E7E6E6'/>
-   </Condition>
-  </ConditionalFormatting>
-  <ConditionalFormatting xmlns="urn:schemas-microsoft-com:office:excel">
-   <Range>R14C1:R14C13</Range>
-   <Condition>
-    <Value1>LEN(TRIM(RC))=0</Value1>
-    <Format Style='background:#E7E6E6'/>
-   </Condition>
-  </ConditionalFormatting>
-  <ConditionalFormatting xmlns="urn:schemas-microsoft-com:office:excel">
-   <Range>R15C1:R15C13</Range>
-   <Condition>
-    <Value1>LEN(TRIM(RC))=0</Value1>
-    <Format Style='background:#E7E6E6'/>
-   </Condition>
-  </ConditionalFormatting>
-  <ConditionalFormatting xmlns="urn:schemas-microsoft-com:office:excel">
-   <Range>R16C1:R16C13</Range>
-   <Condition>
-    <Value1>LEN(TRIM(RC))=0</Value1>
-    <Format Style='background:#E7E6E6'/>
-   </Condition>
-  </ConditionalFormatting>
-  <ConditionalFormatting xmlns="urn:schemas-microsoft-com:office:excel">
-   <Range>R17C1:R17C13</Range>
-   <Condition>
-    <Value1>LEN(TRIM(RC))=0</Value1>
-    <Format Style='background:#E7E6E6'/>
-   </Condition>
-  </ConditionalFormatting>
-  <ConditionalFormatting xmlns="urn:schemas-microsoft-com:office:excel">
-   <Range>R18C1:R18C13</Range>
-   <Condition>
-    <Value1>LEN(TRIM(RC))=0</Value1>
-    <Format Style='background:#E7E6E6'/>
-   </Condition>
-  </ConditionalFormatting>
-  <ConditionalFormatting xmlns="urn:schemas-microsoft-com:office:excel">
-   <Range>R19C1:R19C13</Range>
+   <Range>R5C14:R19C15</Range>
    <Condition>
     <Value1>LEN(TRIM(RC))=0</Value1>
     <Format Style='background:#E7E6E6'/>

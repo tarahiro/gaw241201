@@ -19,9 +19,9 @@ namespace gaw241201
 
         public string Group { get; private set; }
 
-        public string JpText { get; private set; }
+        public string DisplayText { get; private set; }
 
-        public string RomanText { get; private set; }
+        public string QuestionText { get; private set; }
 
         public List<char> RestrictedCharList { get; private set; }
 
@@ -33,8 +33,8 @@ namespace gaw241201
             Index = typingMaster.Index;
             Id = typingMaster.Id;
             Group = typingMaster.Group;
-            JpText = typingMaster.JpText;
-            RomanText = typingMaster.RomanText;
+            DisplayText = typingMaster.DisplayText;
+            QuestionText = typingMaster.QuestionText;
             RestrictedCharList = restrictedCharList;
             Time = time;
 

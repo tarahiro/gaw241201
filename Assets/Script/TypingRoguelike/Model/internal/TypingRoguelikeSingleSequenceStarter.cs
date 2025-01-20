@@ -32,7 +32,7 @@ namespace gaw241201
             if (master.ConditionProvider.IsEnableTimeUp())
             {
                 Log.Comment("タイマー開始");
-                _timerStarted.OnNext(TypingUtil.RemoveBracketsAndContents(master.RomanText).Length * master.Time);
+                _timerStarted.OnNext(TypingUtil.RemoveBracketsAndContents(master.QuestionText).Length * master.Time);
             }
             _entered.OnNext(_modelArgsFactory.Create(master, ct));
         }

@@ -37,8 +37,8 @@ namespace gaw241201.Model.MasterData
             public int Index => m_Index;
             public string Id => m_Id;
             public string Group => m_TypingGroup;
-            public string JpText => m_JpText;
-            public string RomanText => m_RomanText;
+            public string DisplayText => m_JpText;
+            public string QuestionText => m_RomanText;
 
             public ITypingMaster GetMaster() => this;
 

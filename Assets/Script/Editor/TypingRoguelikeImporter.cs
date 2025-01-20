@@ -37,6 +37,8 @@ namespace gaw241201.Editor
             IsEnableTimeUp = 10,
             IsEnableWave = 11,
             IsEnableScore = 12,
+            IsEnableRoman = 13,
+            IsEnableCapital = 14,
         }
 
         //--------------------------------------------------------------------
@@ -87,6 +89,8 @@ namespace gaw241201.Editor
                             SettableIsEnableTimeUp = sheet[row,(int)Columns.IsEnableTimeUp].Bool,
                             SettableIsEnableWave = sheet[row,(int)Columns.IsEnableWave].Bool,
                             SettableIsEnableScore = sheet[row,(int)Columns.IsEnableScore].Bool,
+                            SettableIsEnableRoman = sheet[row,(int)Columns.IsEnableRoman].Bool,
+                            SettableIsEnableCapital = sheet[row,(int )Columns.IsEnableCapital].Bool,
                         });;
                     }
                 }

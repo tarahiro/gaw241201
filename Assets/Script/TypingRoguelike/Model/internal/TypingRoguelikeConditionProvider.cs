@@ -26,6 +26,10 @@ namespace gaw241201
 
         public bool IsEnableScore() { return _master.IsEnableScore; }
 
+        public bool IsEnableRoman() { return _master.IsEnableRoman; }
+
+        public bool IsEnableCapital() { return _master.IsEnableCapital; }
+
         public void Initialize(ITypingRoguelikeMaster master)
         {
             _master = master;

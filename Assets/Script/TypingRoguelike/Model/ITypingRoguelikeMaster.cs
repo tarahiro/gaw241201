@@ -28,5 +28,8 @@ namespace gaw241201
         bool IsEnableWave { get; }
 
         bool IsEnableScore { get; }
+
+        bool IsEnableRoman { get; }
+        bool IsEnableCapital { get; }
     }
 }

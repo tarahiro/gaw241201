@@ -5,6 +5,7 @@ using System.Collections;
 using UnityEngine;
 using gaw241201;
 using gaw241201.Model;
+using JetBrains.Annotations;
 
 namespace gaw241201.Model.MasterData
 {
@@ -40,6 +41,8 @@ namespace gaw241201.Model.MasterData
             [SerializeField] bool m_IsEnableTimeUp;
             [SerializeField] bool m_IsEnableWave;
             [SerializeField] bool m_IsEnableScore;
+            [SerializeField] bool m_IsEnableRoman;
+            [SerializeField] bool m_IsEnableCapital;
 
             public int Index => m_Index;
             public string Id => m_Id;
@@ -55,6 +58,8 @@ namespace gaw241201.Model.MasterData
             public bool IsEnableTimeUp => m_IsEnableTimeUp;
             public bool IsEnableWave => m_IsEnableWave;
             public bool IsEnableScore => m_IsEnableScore;
+            public bool IsEnableRoman => m_IsEnableRoman;
+            public bool IsEnableCapital => m_IsEnableCapital;
 
             public ITypingRoguelikeMaster GetMaster() => this;
 
@@ -70,6 +75,8 @@ namespace gaw241201.Model.MasterData
             public bool SettableIsEnableTimeUp { set => m_IsEnableTimeUp = value;}
             public bool SettableIsEnableWave { set => m_IsEnableWave = value;}
             public bool SettableIsEnableScore { set => m_IsEnableScore = value; }
+            public bool SettableIsEnableRoman { set => m_IsEnableRoman = value;}
+            public bool SettableIsEnableCapital { set => m_IsEnableCapital = value;}
 
 #endif
         }

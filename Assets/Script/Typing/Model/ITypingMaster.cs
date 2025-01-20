@@ -17,7 +17,7 @@ namespace gaw241201.Model
         /// このデータのIDを取得します。
         /// </summary>
 
-        string JpText { get; }
-        string RomanText { get; }
+        string DisplayText { get; }
+        string QuestionText { get; }
     }
 }
