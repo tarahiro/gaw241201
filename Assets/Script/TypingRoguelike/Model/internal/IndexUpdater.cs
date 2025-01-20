@@ -34,33 +34,37 @@ namespace gaw241201
         {
             _index = targetIndex;
 
-            var selectionDataList = new List<SelectionData>();
+            var selectionDataList = new List<ReplaceData>();
 
             //tag
             if (_tagSentence[_index] == c_tagStart)
             {
-                Log.Comment("タグを検出");
-                int index = _tagSentence.IndexOf(c_tagEnd, _index) + 1;
-
-                if (_tagSentence[_index+ 1] != '/')
+                if (_tagSentence.Substring(_index).Contains(c_tagEnd))
                 {
 
-                    string tag = ReadTag(_index, _tagSentence);
-                    string substring = _tagSentence.Substring(index);
-                    string word = substring.Substring(0, substring.IndexOf(c_tagStart.ToString() + "/" + tag + c_tagEnd.ToString()));
+                    Log.Comment("タグを検出");
+                    int index = _tagSentence.IndexOf(c_tagEnd, _index) + 1;
 
-                    Log.DebugLog(substring);
-
-                    //word
-                    foreach (var wordData in _wordDataList)
+                    if (_tagSentence[_index + 1] != '/')
                     {
-                        if (wordData.GetMaster().TagName == tag)
+
+                        string tag = ReadTag(_index, _tagSentence);
+                        string substring = _tagSentence.Substring(index);
+                        string word = substring.Substring(0, substring.IndexOf(c_tagStart.ToString() + "/" + tag + c_tagEnd.ToString()));
+
+                        Log.DebugLog(substring);
+
+                        //word
+                        foreach (var wordData in _wordDataList)
                         {
-                            selectionDataList.Add(new SelectionData(word, wordData.GetMaster().WordName));
+                            if (wordData.GetMaster().TagName == tag)
+                            {
+                                selectionDataList.Add(new ReplaceData(word, wordData.GetMaster().WordName));
+                            }
                         }
                     }
+                    _index = index;
                 }
-                _index = index;
             }
 
             //leet
@@ -73,7 +77,7 @@ namespace gaw241201
                         Log.Comment("leetを検出");
                         for (int k = 0; k < _charDataList[i].GetMaster().ReplaceToStringList[j].StringListReplaceTo.Count; k++)
                         {
-                            selectionDataList.Add(new SelectionData(_charDataList[i].GetMaster().ReplaceToStringList[j].ReplacedChar.ToString(), _charDataList[i].GetMaster().ReplaceToStringList[j].StringListReplaceTo[k]));
+                            selectionDataList.Add(new ReplaceData(_charDataList[i].GetMaster().ReplaceToStringList[j].ReplacedChar.ToString(), _charDataList[i].GetMaster().ReplaceToStringList[j].StringListReplaceTo[k]));
                         }
                     }
                 }

@@ -10,12 +10,12 @@ using VContainer.Unity;
 
 namespace gaw241201
 {
-    public class SelectionData
+    public class ReplaceData
     {
         public string ReplacedString;
         public string StringReplaceTo;
 
-        public SelectionData(string ReplacedString, string StringReplaceTo)
+        public ReplaceData(string ReplacedString, string StringReplaceTo)
         {
             this.ReplacedString = ReplacedString;
             this.StringReplaceTo = StringReplaceTo;

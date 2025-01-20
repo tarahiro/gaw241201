@@ -40,18 +40,36 @@ namespace gaw241201 {
             {
                 if (sentence[i] == '<')
                 {
-                    count++;
-                    insideBrackets = true;
+                    if (!insideBrackets) // 新しい '<' を検出
+                    {
+                        insideBrackets = true;
+                        count++; // '<' をカウント
+                    }
+                    else
+                    {
+                        // 無効な二重 '<'、カウントを無効化
+                        insideBrackets = false;
+                        count = 0;
+                    }
                 }
                 else if (sentence[i] == '>')
                 {
-                    count++;
-                    insideBrackets = false;
+                    if (insideBrackets) // 対応する '>' が存在
+                    {
+                        count++; // '>' をカウント
+                        insideBrackets = false;
+                    }
                 }
                 else if (insideBrackets)
                 {
                     count++;
                 }
+            }
+
+            // ループ終了後、未閉じの '<' がある場合はカウントを無効化
+            if (insideBrackets)
+            {
+                count = 0;
             }
 
             return count;
@@ -60,21 +78,41 @@ namespace gaw241201 {
         {
             bool insideBrackets = false;
             var result = new System.Text.StringBuilder();
+            int openBracketCount = 0;
 
             foreach (char c in sentence)
             {
                 if (c == '<')
                 {
+                    if (!insideBrackets)
+                    {
+                        // 初めて '<' を見つけた場合
+                        openBracketCount++;
+                    }
                     insideBrackets = true;
                 }
                 else if (c == '>')
                 {
-                    insideBrackets = false;
+                    if (insideBrackets)
+                    {
+                        // '>' が見つかった場合
+                        openBracketCount--;
+                        if (openBracketCount == 0)
+                        {
+                            insideBrackets = false;
+                        }
+                    }
                 }
                 else if (!insideBrackets)
                 {
                     result.Append(c);
                 }
+            }
+
+            // '<' のみで終わる場合を考慮して結果を返す
+            if (openBracketCount > 0)
+            {
+                return sentence; // 入力のまま返す
             }
 
             return result.ToString();

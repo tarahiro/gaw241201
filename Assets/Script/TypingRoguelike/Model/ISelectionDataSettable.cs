@@ -12,9 +12,9 @@ namespace gaw241201
 {
     public interface ISelectionDataSettable
     {
-        void SetSelectionData(List<SelectionData> selectionData);
+        void SetSelectionData(List<ReplaceData> selectionData);
 
-        IObservable<List<SelectionData>> SelectionDataCreated { get; }
+        IObservable<List<ReplaceData>> SelectionDataCreated { get; }
 
     }
 }

@@ -12,6 +12,6 @@ namespace gaw241201
 {
     public interface ISelectionDataGettable
     {
-        List<SelectionData> GetSelectionData();
+        List<ReplaceData> GetSelectionData();
     }
 }

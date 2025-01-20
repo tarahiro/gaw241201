@@ -12,16 +12,16 @@ namespace gaw241201
 {
     public class SelectionDataContainer: ISelectionDataGettable, ISelectionDataSettable
     {
-        List<SelectionData> _selectionData;
+        List<ReplaceData> _selectionData;
 
-        Subject<List<SelectionData>> _selectionDataCreated = new Subject<List<SelectionData>>();
-        public IObservable<List<SelectionData>> SelectionDataCreated => _selectionDataCreated;
-        public void SetSelectionData(List<SelectionData> selectionData)
+        Subject<List<ReplaceData>> _selectionDataCreated = new Subject<List<ReplaceData>>();
+        public IObservable<List<ReplaceData>> SelectionDataCreated => _selectionDataCreated;
+        public void SetSelectionData(List<ReplaceData> selectionData)
         {
             _selectionData = selectionData;
             _selectionDataCreated.OnNext(selectionData);
         }
-        public List<SelectionData> GetSelectionData()
+        public List<ReplaceData> GetSelectionData()
         {
             return _selectionData;
         }

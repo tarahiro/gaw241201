@@ -14,5 +14,6 @@ namespace gaw241201
 { 
     public class TypingModel : TextSequenceModel<ITypingMaster>
     {
+
     }
 }

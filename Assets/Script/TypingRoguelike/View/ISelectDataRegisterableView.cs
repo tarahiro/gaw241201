@@ -12,6 +12,6 @@ namespace gaw241201.View
 {
     public interface ISelectDataRegisterableView
     {
-        void RegisterSelectData(List<SelectionData> selectDataList);
+        void RegisterSelectData(List<ReplaceData> selectDataList);
     }
 }

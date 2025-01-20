@@ -28,7 +28,7 @@ namespace gaw241201.View
         [SerializeField] private TextMeshProUGUI _tmpQuestion;
 
         string _textCache = "";
-        List<SelectionData> _selectionDataCache = null;
+        List<ReplaceData> _selectionDataCache = null;
         List<char> _restrictionList = new List<char>();
 
         static readonly Dictionary<char, string> replacingDictionary = new Dictionary<char, string>()
@@ -81,7 +81,7 @@ namespace gaw241201.View
             _textCache = text;
         }
 
-        public void RegisterSelectData(List<SelectionData> selectDataList)
+        public void RegisterSelectData(List<ReplaceData> selectDataList)
         {
             Log.Comment("selectData“o˜^");
             Log.DebugAssert(_selectionDataCache == null);
@@ -100,7 +100,7 @@ namespace gaw241201.View
         
         List<SelectDataItemView> _itemViewList = new List<SelectDataItemView>();
 
-        void SetSelectData(TextMeshProUGUI parentText, List<SelectionData> selectionDataList, int charIndex)
+        void SetSelectData(TextMeshProUGUI parentText, List<ReplaceData> selectionDataList, int charIndex)
         {
             for (int i = 0; i < _itemViewList.Count; i++)
             {
