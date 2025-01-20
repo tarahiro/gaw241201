@@ -16,8 +16,8 @@
   <AllowPNG/>
  </OfficeDocumentSettings>
  <ExcelWorkbook xmlns="urn:schemas-microsoft-com:office:excel">
-  <WindowHeight>17300</WindowHeight>
-  <WindowWidth>32767</WindowWidth>
+  <WindowHeight>6500</WindowHeight>
+  <WindowWidth>19200</WindowWidth>
   <WindowTopX>32767</WindowTopX>
   <WindowTopY>32767</WindowTopY>
   <RefModeR1C1/>
@@ -309,8 +309,8 @@
    <Row ss:AutoFitHeight="0">
     <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">25</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">206800ConfiscateLeftEye</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">Confiscate</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">LeftEye</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">EnterEffect</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">ConfiscateLeftEye</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">Clear</Data></Cell>
     <Cell ss:StyleID="s67" ss:Formula="=R[-10]C[-4]"><Data ss:Type="String">200000DeleteUi</Data></Cell>
    </Row>
@@ -571,12 +571,12 @@
    <TabColorIndex>13</TabColorIndex>
    <Zoom>115</Zoom>
    <Selected/>
-   <TopRowVisible>26</TopRowVisible>
+   <TopRowVisible>20</TopRowVisible>
    <Panes>
     <Pane>
      <Number>3</Number>
-     <ActiveRow>40</ActiveRow>
-     <ActiveCol>2</ActiveCol>
+     <ActiveRow>30</ActiveRow>
+     <ActiveCol>3</ActiveCol>
     </Pane>
    </Panes>
    <ProtectObjects>False</ProtectObjects>

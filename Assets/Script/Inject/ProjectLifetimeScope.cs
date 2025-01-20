@@ -27,7 +27,6 @@ namespace gaw241201.Inject
             ConfigureSave(builder);
             ConfigureEyes(builder);
             ConfigureEffect(builder);
-            ConfigureConfiscate(builder);
             ConfigureDeleteUi(builder);
             ConfigureClickInput(builder);
             ConfigureFreeInput(builder);
@@ -168,22 +167,13 @@ namespace gaw241201.Inject
             //View
             builder.RegisterComponentInHierarchy<EffectView>().AsImplementedInterfaces();
             builder.Register<EffectViewItemFactory>(Lifetime.Singleton).AsSelf();
+            builder.RegisterComponentInHierarchy<LeftEyeRemovedable>().AsImplementedInterfaces().AsSelf();
 
             //Confiscate
             builder.RegisterEntryPoint<EffectPresenter>();
 
         }
 
-        void ConfigureConfiscate(IContainerBuilder builder)
-        {
-            //Confiscate
-            builder.Register<ConfiscateModel>(Lifetime.Singleton).AsSelf();
-            builder.RegisterComponentInHierarchy<LeftEyeRemovedable>().AsImplementedInterfaces().AsSelf();
-
-            builder.Register<ConfiscateView>(Lifetime.Singleton).AsSelf();
-
-            builder.RegisterEntryPoint<ConfiscatePresenter>();
-        }
 
         void ConfigureDeleteUi(IContainerBuilder builder)
         {

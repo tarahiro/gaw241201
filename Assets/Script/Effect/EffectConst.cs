@@ -20,7 +20,8 @@ namespace gaw241201
             CmdError,
             CmdAnswer,
             CmdRm,
-            Wait
+            Wait,
+            ConfiscateLeftEye,
         }
     }
 }

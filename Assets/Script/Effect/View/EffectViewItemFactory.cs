@@ -15,9 +15,21 @@ namespace gaw241201
     {
         const string c_pathPrefix = "Prefab/EffectViewItem/";
 
+        [Inject] IRemovedable _removedable;
+        [Inject] IRobbable _robbable;
+
         public IEffectItemView Create(EffectConst.Key key, Transform parent)
         {
-            return GameObject.Instantiate<GameObject>(ResourceUtil.GetResource<GameObject>(c_pathPrefix + key), parent).GetComponent<IEffectItemView>();
+            if (key == EffectConst.Key.ConfiscateLeftEye)
+            {
+                ConfiscateLeftEyeView item = GameObject.Instantiate<ConfiscateLeftEyeView>(ResourceUtil.GetResource<ConfiscateLeftEyeView>(c_pathPrefix + key), parent);
+                return item.Construct(_removedable, _robbable);
+            }
+            else
+            {
+
+                return GameObject.Instantiate<GameObject>(ResourceUtil.GetResource<GameObject>(c_pathPrefix + key), parent).GetComponent<IEffectItemView>();
+            }
         }
     }
 }
