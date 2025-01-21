@@ -56,7 +56,7 @@ namespace gaw241201.Inject
         void CofigureManager(IContainerBuilder builder)
         {
             //Manager
-            builder.Register<AdapterFactory<HorrorStoryMainLoopStarter, SaveDataManager>>(Lifetime.Singleton).WithParameter<LifetimeScope[]>(FindObjectsOfType<LifetimeScope>).AsImplementedInterfaces();
+            builder.Register<AdapterFactory<TypingRoguelikeMainLoopStarter, SaveDataManager>>(Lifetime.Singleton).WithParameter<LifetimeScope[]>(FindObjectsOfType<LifetimeScope>).AsImplementedInterfaces();
             builder.Register<FlowProvider>(Lifetime.Singleton).WithParameter<LifetimeScope[]>(FindObjectsOfType<LifetimeScope>).AsImplementedInterfaces();
 
             builder.RegisterEntryPoint<GameManager>();
@@ -78,20 +78,15 @@ namespace gaw241201.Inject
         void ConfigureTyping(IContainerBuilder builder)
         {
             //model
-            builder.Register<TypingModel>(Lifetime.Singleton).AsSelf();
             builder.Register<TypingMasterDataProvider>(Lifetime.Singleton).AsImplementedInterfaces();
             builder.Register<ModelArgsFactory<ITypingMaster>>(Lifetime.Singleton).AsSelf();
-            builder.Register<RomanKeyInputJudger>(Lifetime.Singleton).AsImplementedInterfaces();
             builder.Register<QuestionDisplayTextModel>(Lifetime.Singleton).AsImplementedInterfaces();
             builder.Register<SimpleGroupMasterGetter<ITypingMaster>>(Lifetime.Singleton).AsImplementedInterfaces();
             builder.Register<SingleTextSequenceEnterer<ITypingMaster>>(Lifetime.Singleton).AsImplementedInterfaces();
 
             //view
-            builder.Register<TypingViewArgsFactory>(Lifetime.Singleton).AsSelf();
             builder.Register<TypingView>(Lifetime.Singleton).AsImplementedInterfaces();
             builder.RegisterComponentInHierarchy<TypingTextView>().AsSelf();
-
-           builder.RegisterEntryPoint<TypingPresenter>();
         }
 
         void ConfigureStarter(IContainerBuilder builder)

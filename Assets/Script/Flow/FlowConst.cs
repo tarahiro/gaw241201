@@ -19,7 +19,6 @@ namespace gaw241201
             RegisterFlag,
             DeleteUi,
             ClickInput,
-            Typing,
             EnterEffect,
             EndEffect,
             EndGame,

@@ -19,7 +19,6 @@ namespace gaw241201
         [Inject] RegisterFlagFlowModel _registerFlagFlowModel;
         [Inject] DeleteUiModel _deleteUiModel;
         [Inject] ClickInputModel _clickInputModel;
-        [Inject] TypingModel _typingModel;
         [Inject] EnterEffectModel _enterEffectModel;
         [Inject] EndEffectModel _endEffectModel;
         [Inject] EndGameModel _endGameModel;
@@ -46,9 +45,6 @@ namespace gaw241201
 
                 case FlowConst.Category.ClickInput:
                     return _clickInputModel;
-
-                case FlowConst.Category.Typing:
-                    return _typingModel;
 
                 case FlowConst.Category.EnterEffect:
                     return _enterEffectModel;

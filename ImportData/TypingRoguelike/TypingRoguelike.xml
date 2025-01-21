@@ -153,10 +153,10 @@
     <Cell ss:StyleID="s68"><Data ss:Type="Number">2</Data></Cell>
     <Cell ss:StyleID="s68"><Data ss:Type="Number">90</Data></Cell>
     <Cell ss:StyleID="s68"><Data ss:Type="String">Descend</Data></Cell>
-    <Cell ss:StyleID="s69"><Data ss:Type="Boolean">0</Data></Cell>
-    <Cell ss:StyleID="s69"><Data ss:Type="Boolean">0</Data></Cell>
-    <Cell ss:StyleID="s69"><Data ss:Type="Boolean">0</Data></Cell>
-    <Cell ss:StyleID="s69"><Data ss:Type="Boolean">0</Data></Cell>
+    <Cell ss:StyleID="s69"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s69"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s69"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s69"><Data ss:Type="Boolean">1</Data></Cell>
     <Cell ss:StyleID="s69"><Data ss:Type="Boolean">0</Data></Cell>
     <Cell ss:StyleID="s69"><Data ss:Type="Boolean">1</Data></Cell>
    </Row>
@@ -170,10 +170,10 @@
     <Cell ss:StyleID="s68"><Data ss:Type="Number">2</Data></Cell>
     <Cell ss:StyleID="s68"><Data ss:Type="Number">95</Data></Cell>
     <Cell ss:StyleID="s68"><Data ss:Type="String">Random</Data></Cell>
-    <Cell ss:StyleID="s69"><Data ss:Type="Boolean">0</Data></Cell>
-    <Cell ss:StyleID="s69"><Data ss:Type="Boolean">0</Data></Cell>
-    <Cell ss:StyleID="s69"><Data ss:Type="Boolean">0</Data></Cell>
-    <Cell ss:StyleID="s69"><Data ss:Type="Boolean">0</Data></Cell>
+    <Cell ss:StyleID="s69"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s69"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s69"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s69"><Data ss:Type="Boolean">1</Data></Cell>
     <Cell ss:StyleID="s69"><Data ss:Type="Boolean">0</Data></Cell>
     <Cell ss:StyleID="s69"><Data ss:Type="Boolean">1</Data></Cell>
    </Row>
@@ -187,10 +187,10 @@
     <Cell ss:StyleID="s68"><Data ss:Type="Number">2</Data></Cell>
     <Cell ss:StyleID="s68"><Data ss:Type="Number">100</Data></Cell>
     <Cell ss:StyleID="s68"><Data ss:Type="String">Random</Data></Cell>
-    <Cell ss:StyleID="s69"><Data ss:Type="Boolean">0</Data></Cell>
-    <Cell ss:StyleID="s69"><Data ss:Type="Boolean">0</Data></Cell>
-    <Cell ss:StyleID="s69"><Data ss:Type="Boolean">0</Data></Cell>
-    <Cell ss:StyleID="s69"><Data ss:Type="Boolean">0</Data></Cell>
+    <Cell ss:StyleID="s69"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s69"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s69"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s69"><Data ss:Type="Boolean">1</Data></Cell>
     <Cell ss:StyleID="s69"><Data ss:Type="Boolean">0</Data></Cell>
     <Cell ss:StyleID="s69"><Data ss:Type="Boolean">1</Data></Cell>
    </Row>
@@ -204,10 +204,10 @@
     <Cell ss:StyleID="s68"><Data ss:Type="Number">3</Data></Cell>
     <Cell ss:StyleID="s68"><Data ss:Type="Number">110</Data></Cell>
     <Cell ss:StyleID="s68"><Data ss:Type="String">Random</Data></Cell>
-    <Cell ss:StyleID="s69"><Data ss:Type="Boolean">0</Data></Cell>
-    <Cell ss:StyleID="s69"><Data ss:Type="Boolean">0</Data></Cell>
-    <Cell ss:StyleID="s69"><Data ss:Type="Boolean">0</Data></Cell>
-    <Cell ss:StyleID="s69"><Data ss:Type="Boolean">0</Data></Cell>
+    <Cell ss:StyleID="s69"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s69"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s69"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s69"><Data ss:Type="Boolean">1</Data></Cell>
     <Cell ss:StyleID="s69"><Data ss:Type="Boolean">0</Data></Cell>
     <Cell ss:StyleID="s69"><Data ss:Type="Boolean">1</Data></Cell>
    </Row>
@@ -221,10 +221,10 @@
     <Cell ss:StyleID="s68"><Data ss:Type="Number">2</Data></Cell>
     <Cell ss:StyleID="s68"><Data ss:Type="Number">90</Data></Cell>
     <Cell ss:StyleID="s68"><Data ss:Type="String">Random</Data></Cell>
-    <Cell ss:StyleID="s69"><Data ss:Type="Boolean">0</Data></Cell>
-    <Cell ss:StyleID="s69"><Data ss:Type="Boolean">0</Data></Cell>
-    <Cell ss:StyleID="s69"><Data ss:Type="Boolean">0</Data></Cell>
-    <Cell ss:StyleID="s69"><Data ss:Type="Boolean">0</Data></Cell>
+    <Cell ss:StyleID="s69"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s69"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s69"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s69"><Data ss:Type="Boolean">1</Data></Cell>
     <Cell ss:StyleID="s69"><Data ss:Type="Boolean">0</Data></Cell>
     <Cell ss:StyleID="s69"><Data ss:Type="Boolean">1</Data></Cell>
    </Row>
@@ -238,10 +238,10 @@
     <Cell ss:StyleID="s68"><Data ss:Type="Number">2</Data></Cell>
     <Cell ss:StyleID="s68"><Data ss:Type="Number">95</Data></Cell>
     <Cell ss:StyleID="s68"><Data ss:Type="String">Random</Data></Cell>
-    <Cell ss:StyleID="s69"><Data ss:Type="Boolean">0</Data></Cell>
-    <Cell ss:StyleID="s69"><Data ss:Type="Boolean">0</Data></Cell>
-    <Cell ss:StyleID="s69"><Data ss:Type="Boolean">0</Data></Cell>
-    <Cell ss:StyleID="s69"><Data ss:Type="Boolean">0</Data></Cell>
+    <Cell ss:StyleID="s69"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s69"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s69"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s69"><Data ss:Type="Boolean">1</Data></Cell>
     <Cell ss:StyleID="s69"><Data ss:Type="Boolean">0</Data></Cell>
     <Cell ss:StyleID="s69"><Data ss:Type="Boolean">1</Data></Cell>
    </Row>
@@ -255,10 +255,10 @@
     <Cell ss:StyleID="s68"><Data ss:Type="Number">2</Data></Cell>
     <Cell ss:StyleID="s68"><Data ss:Type="Number">100</Data></Cell>
     <Cell ss:StyleID="s68"><Data ss:Type="String">Random</Data></Cell>
-    <Cell ss:StyleID="s69"><Data ss:Type="Boolean">0</Data></Cell>
-    <Cell ss:StyleID="s69"><Data ss:Type="Boolean">0</Data></Cell>
-    <Cell ss:StyleID="s69"><Data ss:Type="Boolean">0</Data></Cell>
-    <Cell ss:StyleID="s69"><Data ss:Type="Boolean">0</Data></Cell>
+    <Cell ss:StyleID="s69"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s69"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s69"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s69"><Data ss:Type="Boolean">1</Data></Cell>
     <Cell ss:StyleID="s69"><Data ss:Type="Boolean">0</Data></Cell>
     <Cell ss:StyleID="s69"><Data ss:Type="Boolean">1</Data></Cell>
    </Row>
@@ -272,10 +272,10 @@
     <Cell ss:StyleID="s68"><Data ss:Type="Number">3</Data></Cell>
     <Cell ss:StyleID="s68"><Data ss:Type="Number">110</Data></Cell>
     <Cell ss:StyleID="s68"><Data ss:Type="String">Random</Data></Cell>
-    <Cell ss:StyleID="s69"><Data ss:Type="Boolean">0</Data></Cell>
-    <Cell ss:StyleID="s69"><Data ss:Type="Boolean">0</Data></Cell>
-    <Cell ss:StyleID="s69"><Data ss:Type="Boolean">0</Data></Cell>
-    <Cell ss:StyleID="s69"><Data ss:Type="Boolean">0</Data></Cell>
+    <Cell ss:StyleID="s69"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s69"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s69"><Data ss:Type="Boolean">1</Data></Cell>
+    <Cell ss:StyleID="s69"><Data ss:Type="Boolean">1</Data></Cell>
     <Cell ss:StyleID="s69"><Data ss:Type="Boolean">0</Data></Cell>
     <Cell ss:StyleID="s69"><Data ss:Type="Boolean">1</Data></Cell>
    </Row>
@@ -417,9 +417,9 @@
    <Panes>
     <Pane>
      <Number>3</Number>
-     <ActiveRow>11</ActiveRow>
-     <ActiveCol>13</ActiveCol>
-     <RangeSelection>R12C14:R19C14</RangeSelection>
+     <ActiveRow>4</ActiveRow>
+     <ActiveCol>9</ActiveCol>
+     <RangeSelection>R5C10:R12C13</RangeSelection>
     </Pane>
    </Panes>
    <ProtectObjects>False</ProtectObjects>
