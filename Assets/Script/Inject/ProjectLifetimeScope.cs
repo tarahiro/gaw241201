@@ -10,6 +10,8 @@ using Tarahiro.Ui;
 using Tarahiro.MasterData;
 using VitalRouter;
 using VitalRouter.VContainer;
+using System;
+using System.Linq;
 
 namespace gaw241201.Inject
 {
@@ -347,21 +349,22 @@ namespace gaw241201.Inject
 
         }
 
-        [SerializeField] TranslationTextDisplayer displayer;
+        [SerializeField] TranslationTextView[] textViewList;
 
         void ConfigureLanguage(IContainerBuilder builder)
         {
             builder.Register<LanguageModel>(Lifetime.Singleton).AsSelf();
             builder.Register<LanguageCommandProcessor>(Lifetime.Singleton).AsSelf();
+            builder.Register<LanguageMessageMasterDataProvider>(Lifetime.Singleton).AsImplementedInterfaces();
 
             builder.RegisterEntryPoint<LanguageInitializer>(Lifetime.Singleton).AsSelf();
 
             builder.RegisterVitalRouter(routing =>
             {
                 // w“Ç‘¤‚Í‚±‚Ì‚æ‚¤‚É“o˜^‚·‚éiMonoBehaviour‚Ìê‡j
-                // EffectController‚ª”jŠü‚³‚ê‚½‚èAVContainer‚ÌLifetimeScope‚ª”jŠü‚³‚ê‚½‚çƒCƒxƒ“ƒg‚Ìw“Ç‚à©“®“I‚É‰ğœiUnmapj‚³‚ê‚é
 
-                routing.MapComponentInHierarchy<TranslationTextDisplayer>();
+                routing.MapComponentInHierarchy<TranslationTextView>();
+                routing.MapComponentInHierarchy<EmbeddedTranslationTextView>();
             });
         }
 

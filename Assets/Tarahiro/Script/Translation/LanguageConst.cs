@@ -8,7 +8,7 @@ using UnityEngine;
 using VContainer;
 using VContainer.Unity;
 
-namespace gaw241201
+namespace Tarahiro
 {
     public static class LanguageConst
     {

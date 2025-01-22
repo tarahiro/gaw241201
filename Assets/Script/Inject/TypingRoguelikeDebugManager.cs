@@ -27,29 +27,32 @@ namespace gaw241201.Inject
 
         public void Tick()
         {
-
-            if (Input.GetKeyDown(KeyCode.Q))
+            if (Input.GetKey(KeyCode.LeftControl))
             {
-                Log.Comment("強制的に全デバッグコマンド追加");
 
-                for (int i = 0; i < _leetMasterDataProvider.Count; i++)
+                if (Input.GetKeyDown(KeyCode.A))
                 {
-                    _achievableMasterFlagRegisterer.RegisterFlag(FlagConst.ContainableMasterKey.Leet, _leetMasterDataProvider.TryGetFromIndex(i).Id);
+                    Log.Comment("強制的に全デバッグコマンド追加");
+
+                    for (int i = 0; i < _leetMasterDataProvider.Count; i++)
+                    {
+                        _achievableMasterFlagRegisterer.RegisterFlag(FlagConst.ContainableMasterKey.Leet, _leetMasterDataProvider.TryGetFromIndex(i).Id);
+                    }
+                    for (int i = 0; i < _wordMasterDataProvider.Count; i++)
+                    {
+                        _achievableMasterFlagRegisterer.RegisterFlag(FlagConst.ContainableMasterKey.Word, _wordMasterDataProvider.TryGetFromIndex(i).Id);
+                    }
                 }
-                for (int i = 0; i < _wordMasterDataProvider.Count; i++)
+
+                if (Input.GetKeyDown(KeyCode.Z))
                 {
-                    _achievableMasterFlagRegisterer.RegisterFlag(FlagConst.ContainableMasterKey.Word, _wordMasterDataProvider.TryGetFromIndex(i).Id);
+                    _stageBgView.Enter(new StageBgViewArgs("Company", 10, new System.Threading.CancellationToken()));
                 }
-            }
 
-            if (Input.GetKeyDown(KeyCode.Z))
-            {
-                _stageBgView.Enter(new StageBgViewArgs("Company", 10, new System.Threading.CancellationToken()));
-            }
-
-            if (Input.GetKeyDown(KeyCode.X))
-            {
-                _stageBgView.ToNext();
+                if (Input.GetKeyDown(KeyCode.X))
+                {
+                    _stageBgView.ToNext();
+                }
             }
         }
     }

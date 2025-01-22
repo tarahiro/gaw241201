@@ -20,16 +20,6 @@ namespace gaw241201
 
         public FlowMasterDataDictionaryProvider() {
             _dictionary = new Dictionary<FlowMasterConst.FlowMasterLabel, IFlowMasterDataProvider>();
-            /*
-            string prefix = ResourceUtil.ResourcePath() + FlowMasterData.c_DataPathPrefix;
-            var files = Directory.GetFiles(prefix, "*" + c_assetSuffix, SearchOption.TopDirectoryOnly);
-
-            foreach (var item in files)
-            {
-                string fileName = item.Replace(prefix, "").Replace(c_assetSuffix, "");
-                _dictionary.Add(fileName, new FlowMasterDataProvider(item.Replace(ResourceUtil.ResourcePath(),"").Replace(c_assetSuffix,"")));
-            }
-            */
 
             foreach(FlowMasterConst.FlowMasterLabel v in Enum.GetValues(typeof(FlowMasterConst.FlowMasterLabel)))
             {

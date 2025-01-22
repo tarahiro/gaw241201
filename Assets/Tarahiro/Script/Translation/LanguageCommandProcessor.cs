@@ -15,10 +15,12 @@ namespace Tarahiro
         [Inject]
         private ICommandPublisher _publisher;
 
+        [Inject] ILanguageMessageMasterDataProvider _masterDataProvider;
+
         public void On(int languageIndex)
         {
             Log.Comment("言語コマンド発行");
-            _publisher.PublishAsync(new NotifyLanguageCommand(languageIndex));
+            _publisher.PublishAsync(new NotifyLanguageCommand(languageIndex, _masterDataProvider));
         }
     }
 }

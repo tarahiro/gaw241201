@@ -12,7 +12,7 @@ using VitalRouter;
 namespace Tarahiro.Ui
 {
     [Routes]
-    public partial class TranslationTextDisplayer : MonoBehaviour, ITranslationTextDisplayer
+    public partial class TranslationTextView : MonoBehaviour, ITranslationTextDisplayer
     {
         [SerializeField] TextMeshProUGUI tmp;
         [SerializeField] List<TMP_FontAsset> font;
