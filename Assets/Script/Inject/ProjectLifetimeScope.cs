@@ -55,14 +55,13 @@ namespace gaw241201.Inject
             ConfigureWord(builder);
             ConfigureLeet(builder);
             ConfigureTypingRoguelike(builder);
-            ConfigureStageBg(builder);
             ConfigureLanguage(builder);
         }
 
         void CofigureManager(IContainerBuilder builder)
         {
             //Manager
-            builder.Register<AdapterFactory<HorrorStoryMainLoopStarter, SaveDataManager>>(Lifetime.Singleton).WithParameter<LifetimeScope[]>(FindObjectsOfType<LifetimeScope>).AsImplementedInterfaces();
+            builder.Register<AdapterFactory<TypingRoguelikeMainLoopStarter, SaveDataManager>>(Lifetime.Singleton).WithParameter<LifetimeScope[]>(FindObjectsOfType<LifetimeScope>).AsImplementedInterfaces();
             builder.Register<FlowProvider>(Lifetime.Singleton).WithParameter<LifetimeScope[]>(FindObjectsOfType<LifetimeScope>).AsImplementedInterfaces();
 
             builder.RegisterEntryPoint<GameManager>();
@@ -256,10 +255,13 @@ namespace gaw241201.Inject
             builder.Register<ActStartModel>(Lifetime.Singleton).AsSelf();
             builder.Register<StageMasterListGetter>(Lifetime.Singleton).AsImplementedInterfaces();
             builder.Register<ModelArgsFactory<IStageMasterRegisteredRestrictedCharList>>(Lifetime.Singleton).AsSelf();
-            builder.RegisterComponentInHierarchy<ActView>().AsSelf();
+            builder.RegisterComponentInHierarchy<ActUiView>().AsSelf();
             builder.Register<ActPresenter>(Lifetime.Singleton).AsSelf();
-            builder.Register<ActViewArgsListFactory>(Lifetime.Singleton).AsSelf();
+            builder.Register<ActUiViewArgsListFactory>(Lifetime.Singleton).AsSelf();
             builder.RegisterEntryPoint<ActPresenter>();
+
+            builder.RegisterComponentInHierarchy<StageBgView>().AsSelf().AsImplementedInterfaces();
+            builder.Register<ActMasterDataProvider>(Lifetime.Singleton).AsImplementedInterfaces();
 
 
         }
@@ -339,13 +341,6 @@ namespace gaw241201.Inject
             //timerŠÖ˜A
             builder.Register<TimerModel>(Lifetime.Singleton).AsImplementedInterfaces();
 
-
-        }
-
-        void ConfigureStageBg(IContainerBuilder builder)
-        {
-            //stageBg
-            builder.RegisterComponentInHierarchy<StageBgView>().AsSelf();
 
         }
 

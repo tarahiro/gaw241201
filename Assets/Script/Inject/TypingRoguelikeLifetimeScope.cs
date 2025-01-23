@@ -42,9 +42,9 @@ namespace gaw241201.Inject
             builder.Register<ActStartModel>(Lifetime.Singleton).AsSelf();
             builder.Register<StageMasterListGetter>(Lifetime.Singleton).AsImplementedInterfaces();
             builder.Register<ModelArgsFactory<IStageMasterRegisteredRestrictedCharList>>(Lifetime.Singleton).AsSelf();
-            builder.RegisterComponentInHierarchy<ActView>().AsSelf();
+            builder.RegisterComponentInHierarchy<ActUiView>().AsSelf();
             builder.Register<ActPresenter>(Lifetime.Singleton).AsSelf();
-            builder.Register<ActViewArgsListFactory>(Lifetime.Singleton).AsSelf();
+            builder.Register<ActUiViewArgsListFactory>(Lifetime.Singleton).AsSelf();
             builder.RegisterEntryPoint<ActPresenter>();
 
 

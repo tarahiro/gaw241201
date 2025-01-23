@@ -9,6 +9,7 @@ using VContainer;
 using VContainer.Unity;
 using UniRx;
 using System.Linq;
+using gaw241201.Model;
 
 namespace gaw241201
 {
@@ -18,16 +19,17 @@ namespace gaw241201
         [Inject] IRestrictedCharProvider _restrictedCharProvider;
         [Inject] IRestrictionGenerator _restrictionGenerator;
         [Inject] IStageMasterRegisterable _stageMasterRegisterable;
+        [Inject] IActMasterDataProvider _masterDataProvider;
 
         [Inject] ModelArgsFactory<IStageMasterRegisteredRestrictedCharList> _modelArgsFactory;
-        Subject<List<ModelArgs<IStageMasterRegisteredRestrictedCharList>>> _entered = new Subject<List<ModelArgs<IStageMasterRegisteredRestrictedCharList>>>();
 
-
+        Subject<List<ModelArgs<IStageMasterRegisteredRestrictedCharList>>> _waveInformationDecided = new Subject<List<ModelArgs<IStageMasterRegisteredRestrictedCharList>>>();
+        Subject<ActBgViewArgs> _bgDecided = new Subject<ActBgViewArgs>();
+        
+        
         CancellationTokenSource _cts = new CancellationTokenSource();
-
-        Subject<int> _requiredScoreGenerated = new Subject<int>();
-        public IObservable<int> RequiredScoreGenerated => _requiredScoreGenerated;
-        public IObservable<List<ModelArgs<IStageMasterRegisteredRestrictedCharList>>> Entered => _entered;
+        public IObservable<List<ModelArgs<IStageMasterRegisteredRestrictedCharList>>> WaveInformationDecided => _waveInformationDecided;
+        public IObservable<ActBgViewArgs> BgDecided => _bgDecided;
 
         //UnitaskとSubjectの変換を使ってきれいにしたい
         bool _isEnded = false;
@@ -38,7 +40,8 @@ namespace gaw241201
             Log.Comment(bodyId + "のGroup開始");
 
             _cts = new CancellationTokenSource();
-            List<IStageMaster> _thisGroup = _groupMasterGettable.GetGroupMaster(bodyId);
+            IActMaster _master = _masterDataProvider.TryGetFromId(bodyId).GetMaster();
+            List<IStageMaster> _thisGroup = _groupMasterGettable.GetGroupMaster(_master.StageGroupId);
             /*共通部分終わり*/
 
             Log.DebugLog(_thisGroup[1].Id);
@@ -92,7 +95,12 @@ namespace gaw241201
 
             }
 
-            _entered.OnNext(notifyList);
+            _waveInformationDecided.OnNext(notifyList);
+
+
+            //Bg情報取得
+            _bgDecided.OnNext(new ActBgViewArgs(_master.BgId, _thisGroup.Sum(x => x.WaveCount), _cts.Token));
+
         }
 
 

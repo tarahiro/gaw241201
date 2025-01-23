@@ -17,7 +17,7 @@ namespace gaw241201.View
         const float c_initialMergin = 2.6f;
         const float c_interval = 1f;
 
-        StageBgViewArgs _args;
+        ActBgViewArgs _args;
         float f = 0;
 
         [SerializeField] Transform _depthObjectRoot;
@@ -26,7 +26,7 @@ namespace gaw241201.View
         [SerializeField] StageBgDepthObject _bossDepthObject;
 
 
-        public StageBgItemView Construct(StageBgViewArgs args)
+        public StageBgItemView Construct(ActBgViewArgs args)
         {
             _args = args;
             Log.Comment(args.BodyId + "‚ÌItemView‚ðConstruct");

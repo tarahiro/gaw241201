@@ -11,13 +11,13 @@ using TMPro;
 
 namespace gaw241201.View
 {
-    public class StageBgView : MonoBehaviour
+    public class StageBgView : MonoBehaviour, IActBgView
     {
         const string c_prefabPath = "Prefab/StageBg/";
 
         StageBgItemView _currentItem;
 
-        public void Enter(StageBgViewArgs args)
+        public void Enter(ActBgViewArgs args)
         {
             _currentItem = Instantiate(ResourceUtil.GetResource<StageBgItemView>(c_prefabPath +  args.BodyId), transform).Construct(args);
             _currentItem.Initialize();

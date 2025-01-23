@@ -12,15 +12,15 @@ using VContainer.Unity;
 
 namespace gaw241201.Presenter
 {
-    public class ActViewArgsListFactory
+    public class ActUiViewArgsListFactory
     {
-        public List<ActViewArgs> Create(List<ModelArgs<IStageMasterRegisteredRestrictedCharList>> list)
+        public List<ActUiViewArgs> Create(List<ModelArgs<IStageMasterRegisteredRestrictedCharList>> list)
         {
-            var returnable = new List<ActViewArgs>();
+            var returnable = new List<ActUiViewArgs>();
 
             for(int i = 0; i < list.Count; i++)
             {
-                returnable.Add(new ActViewArgs(list[i].Master.WaveCount, list[i].Master.RestrictedCharList));
+                returnable.Add(new ActUiViewArgs(list[i].Master.WaveCount, list[i].Master.RestrictedCharList));
             }
 
             return returnable;

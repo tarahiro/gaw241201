@@ -46,7 +46,7 @@ namespace gaw241201.Inject
 
                 if (Input.GetKeyDown(KeyCode.Z))
                 {
-                    _stageBgView.Enter(new StageBgViewArgs("Company", 10, new System.Threading.CancellationToken()));
+                    _stageBgView.Enter(new ActBgViewArgs("Company", 10, new System.Threading.CancellationToken()));
                 }
 
                 if (Input.GetKeyDown(KeyCode.X))

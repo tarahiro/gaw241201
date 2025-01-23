@@ -10,7 +10,7 @@ using UniRx;
 
 namespace gaw241201.View
 {
-    public class ActView : MonoBehaviour
+    public class ActUiView : MonoBehaviour
     {
         const float _interval = 100f;
 
@@ -21,7 +21,7 @@ namespace gaw241201.View
         List<WaveView> _waveViewList;
         List<RestrictedCharView> _restrictedCharViewList;
 
-        public void Enter(List<ActViewArgs> _args)
+        public void Enter(List<ActUiViewArgs> _args)
         {
             _waveViewList = new List<WaveView>();
             _restrictedCharViewList = new List<RestrictedCharView>();
@@ -51,7 +51,7 @@ namespace gaw241201.View
             _root.localPosition = Vector2.left * virtualCursorX * .5f;
         }
 
-        public void ClearWave()
+        public void OnWaveClear()
         {
             for(int i = 0; i < _waveViewList.Count; i++)
             {

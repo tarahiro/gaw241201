@@ -10,12 +10,12 @@ using VContainer.Unity;
 
 namespace gaw241201.View
 {
-    public class ActViewArgs
+    public class ActUiViewArgs
     {
         public int WaveCount { get; private set; }
         public List<char> RestrictedCharList { get; private set; }
 
-        public ActViewArgs(int waveCount, List<char> restrictedCharList)
+        public ActUiViewArgs(int waveCount, List<char> restrictedCharList)
         {
             WaveCount = waveCount;
             RestrictedCharList = restrictedCharList;

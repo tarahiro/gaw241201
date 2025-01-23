@@ -9,9 +9,9 @@ using UnityEngine;
 using VContainer;
 using VContainer.Unity;
 
-namespace gaw241201.View
+namespace gaw241201
 {
-    public class StageBgViewArgs
+    public class ActBgViewArgs
     {
         public string BodyId { get; set; }
 
@@ -19,7 +19,7 @@ namespace gaw241201.View
 
         public CancellationToken CancellationToken { get; set; }
 
-        public StageBgViewArgs(string bodyId, int waveNumber, CancellationToken cancellationToken)
+        public ActBgViewArgs(string bodyId, int waveNumber, CancellationToken cancellationToken)
         {
             BodyId = bodyId;
             WaveNumber = waveNumber;
