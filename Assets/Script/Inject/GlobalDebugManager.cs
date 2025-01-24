@@ -17,6 +17,7 @@ namespace gaw241201.Inject
         [Inject] FlowHundler _flowHundler;
         [Inject] ISaveDeletable _saveDeletable;
         [Inject] LanguageModel _languageModel;
+        [Inject] EnterEffectModel _effectModel;
 
         public void Start()
         {
@@ -42,6 +43,10 @@ namespace gaw241201.Inject
                 if (Input.GetKeyDown(KeyCode.W))
                 {
                     _languageModel.SetLanguage(EnumUtil.NoToType<LanguageConst.AvailableLanguage>(((int)_languageModel.Language + 1) % LanguageConst.AvailableLanguageNumber));
+                }
+
+                if (Input.GetKeyDown(KeyCode.E)) {
+                    _effectModel.EnterFlow("GlitchLargeAutoEnd").Forget();
                 }
 
             }

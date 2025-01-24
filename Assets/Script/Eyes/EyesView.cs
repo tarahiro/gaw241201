@@ -10,12 +10,11 @@ using VContainer.Unity;
 
 namespace gaw241201.View
 {
-    public class EyesView : MonoBehaviour, IEyePositionChangable, IFacialChangable, IGazable, IRobbable
+    public class EyesView : MonoBehaviour, IEyePositionChangable, IFacialChangable, IGazable, IChangableEye
     {
         const float c_length = .2f;
 
         [SerializeField] List<EyeView> _eyeViewList;
-        [SerializeField] GameObject _lefteyeRobbedParts;
 
 
         public void SetEffect(ConversationViewConst.EyePosition facialKey)
@@ -132,9 +131,30 @@ namespace gaw241201.View
 
         }
 
-        public void RobParts()
+        public void ChangeParts(EffectConst.EyeParts parts, EffectConst.WhichEye whichEye)
         {
-            _lefteyeRobbedParts.SetActive(true);
+            switch (whichEye)
+            {
+                case EffectConst.WhichEye.Both:
+                    _eyeViewList[(int)EyeLR.Left].SetEyeParts(parts);
+                    _eyeViewList[(int)EyeLR.Right].SetEyeParts(parts);
+                    break;
+
+                case EffectConst.WhichEye.Left:
+                    _eyeViewList[(int)EyeLR.Left].SetEyeParts(parts);
+                    break;
+
+                case EffectConst.WhichEye.Right:
+                    _eyeViewList[(int)EyeLR.Right].SetEyeParts(parts);
+                    break;
+            }
+
+        }
+
+        enum EyeLR
+        {
+            Right,
+            Left,
         }
     }
 }

@@ -22,6 +22,21 @@ namespace gaw241201
             CmdRm,
             Wait,
             ConfiscateLeftEye,
+            SetGoatEye,
+        }
+
+        public enum EyeParts
+        {
+            Normal,
+            Goat,
+            Real,
+        }
+
+        public enum WhichEye
+        {
+            Both,
+            Left,
+            Right
         }
     }
 }

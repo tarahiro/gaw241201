@@ -11,26 +11,22 @@ using VContainer.Unity;
 
 namespace gaw241201.View
 {
-    public class ConfiscateLeftEyeView : MonoBehaviour, IEffectItemView
+    public class SetGoatEyeView : MonoBehaviour, IEffectItemView
     {
         public bool IsAutoEnd => true;
 
 
-        IRemovedable _removedable;
         IChangableEye _changable;
 
-        public ConfiscateLeftEyeView Construct(IRemovedable removedable, IChangableEye robbable)
+        public SetGoatEyeView Construct(IChangableEye robbable)
         {
-            _removedable = removedable;
             _changable = robbable;
 
             return this;
         }
-
-        public virtual async UniTask Enter(CancellationToken cancellationToken)
+        public async UniTask Enter(CancellationToken cancellationToken)
         {
-            _removedable.RemoveParts();
-            _changable.ChangeParts(EffectConst.EyeParts.Real, EffectConst.WhichEye.Left);
+            _changable.ChangeParts(EffectConst.EyeParts.Goat, EffectConst.WhichEye.Both);
         }
 
         public async UniTask End(CancellationToken cancellationToken)

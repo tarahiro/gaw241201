@@ -21,6 +21,9 @@ namespace gaw241201
             TypingTestFlow,
             FreeInputTestFlow,
             TypingRoguelikeMainFlow,
+
+            RealLeftEyeFlow,
+            GoatEyeFlow,
         }
     }
 }

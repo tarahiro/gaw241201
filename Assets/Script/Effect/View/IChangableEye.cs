@@ -10,8 +10,8 @@ using VContainer.Unity;
 
 namespace gaw241201.View
 {
-    public interface IRobbable
+    public interface IChangableEye
     {
-        void RobParts();
+        void ChangeParts(EffectConst.EyeParts eyeParts, EffectConst.WhichEye whichEye);
     }
 }
