@@ -22,7 +22,7 @@ namespace gaw241201
         [Inject] EnterEffectModel _enterEffectModel;
         [Inject] EndEffectModel _endEffectModel;
         [Inject] EndGameModel _endGameModel;
-        [Inject] StartMonitorModel _startMonitorModel;
+        [Inject] StartMonitorFlowModel _startMonitorModel;
      //   [Inject] TypingRoguelikeModel _typingRoguelikeModel;
 
         public IFlowModel GetFlowModel(FlowConst.Category category)

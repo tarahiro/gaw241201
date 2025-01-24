@@ -10,7 +10,7 @@ using VContainer.Unity;
 
 namespace gaw241201
 {
-    public class HaltModel
+    public class CmdHaltModel
     {
         [Inject] FlowHundler _flowHundler;
         public void Halt()

@@ -13,29 +13,12 @@ namespace gaw241201.View
 {
     public class MonitorView 
     {
-        bool _isMonitored = false;
+        [Inject] MonitorViewItemProvider _itemProvider;
 
-        Subject<Unit> _forceEnded = new Subject<Unit>();
-        public IObservable<Unit> ForceEnded => _forceEnded;
-
-        public async UniTask Monitor(CancellationToken ct)
+        public void Enter(MonitorArgs args) 
         {
-            while (!ct.IsCancellationRequested)
-            {
-                await UniTask.Yield(PlayerLoopTiming.Update);
-                if (KeyInputUtil.IsPressedCtrl())
-                {
-                    if (KeyInputUtil.IsKeyDown(KeyCode.C))
-                    {
-                        _forceEnded.OnNext(Unit.Default);
-                    }
-                }
-            }
+            _itemProvider.Create(args.BodyId).Monitor(args.CancellationToken).Forget();
         }
 
-        public void EndMonitor()
-        {
-            _isMonitored = false;
-        }
     }
 }

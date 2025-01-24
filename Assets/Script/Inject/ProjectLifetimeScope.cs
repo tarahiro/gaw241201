@@ -61,7 +61,7 @@ namespace gaw241201.Inject
         void CofigureManager(IContainerBuilder builder)
         {
             //Manager
-            builder.Register<AdapterFactory<SimpleLoopStarter, SaveDataManager>>(Lifetime.Singleton).WithParameter<LifetimeScope[]>(FindObjectsOfType<LifetimeScope>).AsImplementedInterfaces();
+            builder.Register<AdapterFactory<HorrorStoryMainLoopStarter, SaveDataManager>>(Lifetime.Singleton).WithParameter<LifetimeScope[]>(FindObjectsOfType<LifetimeScope>).AsImplementedInterfaces();
             builder.Register<FlowProvider>(Lifetime.Singleton).WithParameter<LifetimeScope[]>(FindObjectsOfType<LifetimeScope>).AsImplementedInterfaces();
 
             builder.Register<SimpleLoopStarter>(Lifetime.Singleton).AsSelf().WithParameter(FlowMasterConst.FlowMasterLabel.GoatEyeFlow);
@@ -123,9 +123,14 @@ namespace gaw241201.Inject
         void ConfigureMonitor(IContainerBuilder builder)
         {
             //Monitor
-            builder.Register<StartMonitorModel>(Lifetime.Singleton).AsSelf();
+            builder.Register<StartMonitorFlowModel>(Lifetime.Singleton).AsSelf();
             builder.Register<MonitorView>(Lifetime.Singleton).AsSelf();
-            builder.Register<HaltModel>(Lifetime.Singleton).AsSelf();
+            builder.Register<CmdHaltModel>(Lifetime.Singleton).AsSelf();
+            builder.Register<StartMonitorModel>(Lifetime.Singleton).AsSelf();
+
+            builder.Register<MonitorViewItemProvider>(Lifetime.Singleton).AsSelf();
+            builder.Register<CmdMonitorView>(Lifetime.Singleton).AsSelf();
+            builder.Register<SettingMonitorView>(Lifetime.Singleton).AsSelf();
             
             builder.RegisterEntryPoint<MonitorPresenter>();
 

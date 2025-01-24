@@ -16,13 +16,16 @@ namespace gaw241201.Presenter
     {
         [Inject] StartMonitorModel _startModel;
         [Inject] MonitorView _view;
-        [Inject] HaltModel _haltModel;
+        [Inject] CmdMonitorView _cmdMonitorView;
+        [Inject] SettingMonitorView _settingMonitorView;
+        [Inject] CmdHaltModel _haltModel;
 
         CompositeDisposable _disposable = new CompositeDisposable();
         public void PostInitialize()
         {
-            _startModel.Entered.Subscribe(ct => _view.Monitor(ct).Forget()).AddTo(_disposable);
-            _view.ForceEnded.Subscribe(_ => _haltModel.Halt()).AddTo(_disposable);
+            _startModel.Entered.Subscribe( _view.Enter).AddTo(_disposable);
+            _cmdMonitorView.Detected.Subscribe(_ => _haltModel.Halt()).AddTo(_disposable);
+            _settingMonitorView.Detected.Subscribe(_ => Log.DebugLog("SettingŠJŽn")).AddTo(_disposable) ;
         }
     }
 }
