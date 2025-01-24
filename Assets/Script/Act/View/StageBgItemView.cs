@@ -15,7 +15,7 @@ namespace gaw241201.View
     public class StageBgItemView : MonoBehaviour
     {
         const float c_initialMergin = 2.6f;
-        const float c_interval = 1f;
+        const float c_interval = 0.7f;
 
         ActBgViewArgs _args;
         float f = 0;
@@ -24,6 +24,8 @@ namespace gaw241201.View
 
         [SerializeField] StageBgDepthObject _normalDepthObject;
         [SerializeField] StageBgDepthObject _bossDepthObject;
+
+        [SerializeField] Color _bgColor;
 
 
         public StageBgItemView Construct(ActBgViewArgs args)
@@ -36,6 +38,7 @@ namespace gaw241201.View
         public void Initialize()
         {
             transform.position = new Vector3(0f,0f,Camera.main.transform.position.z);
+            Camera.main.backgroundColor = _bgColor;
 
             for (int i = 0; i < _args.WaveNumber; i++)
             {

@@ -88,7 +88,7 @@
   </Style>
  </Styles>
  <Worksheet ss:Name="Script">
-  <Table ss:ExpandedColumnCount="6" ss:ExpandedRowCount="7" x:FullColumns="1"
+  <Table ss:ExpandedColumnCount="6" ss:ExpandedRowCount="11" x:FullColumns="1"
    x:FullRows="1" ss:DefaultColumnWidth="52.5" ss:DefaultRowHeight="18">
    <Column ss:AutoFitWidth="0" ss:Width="30"/>
    <Column ss:AutoFitWidth="0" ss:Width="128"/>
@@ -123,12 +123,44 @@
     <Cell ss:StyleID="s67" ss:Formula="=R[-2]C[-4]"><Data ss:Type="String">Id</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">2</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">207000TypingConversation</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">Conversation</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">207000TypingConversation</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="Number">1</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">900800StartAct</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">StartAct</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">ForestAct</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">Clear</Data></Cell>
-    <Cell ss:StyleID="s67" ss:Formula="=R[-4]C[-4]"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="Number">0</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s67"><Data ss:Type="Number">3</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">901000Test</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">TypingRoguelike</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">901000Test</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Clear</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="Number">0</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s67"><Data ss:Type="Number">6</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">902000Test</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">TypingRoguelike</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">902000Test</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Clear</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="Number">0</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s67"><Data ss:Type="Number">9</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">903000Test</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">TypingRoguelike</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">903000Test</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Clear</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="Number">0</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s67"><Data ss:Type="Number">12</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">904000Test</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">TypingRoguelike</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">904000Test</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Clear</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="Number">0</Data></Cell>
    </Row>
   </Table>
   <WorksheetOptions xmlns="urn:schemas-microsoft-com:office:excel">
@@ -150,7 +182,7 @@
    <Panes>
     <Pane>
      <Number>3</Number>
-     <ActiveRow>5</ActiveRow>
+     <ActiveRow>6</ActiveRow>
      <ActiveCol>3</ActiveCol>
     </Pane>
    </Panes>
@@ -158,7 +190,7 @@
    <ProtectScenarios>False</ProtectScenarios>
   </WorksheetOptions>
   <ConditionalFormatting xmlns="urn:schemas-microsoft-com:office:excel">
-   <Range>R5C1:R7C6</Range>
+   <Range>R5C1:R11C6</Range>
    <Condition>
     <Value1>LEN(TRIM(RC))=0</Value1>
     <Format Style='background:#E7E6E6'/>
