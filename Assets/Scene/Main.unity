@@ -4000,6 +4000,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2954764663356926229, guid: 429c1ad891b74aa489789027d3e3854b, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 666a6adfa1420ac46b293036c2e99018, type: 3}
     - target: {fileID: 3911657726862362478, guid: 429c1ad891b74aa489789027d3e3854b, type: 3}
       propertyPath: m_Name
       value: LeftEyeView
@@ -4544,6 +4548,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2954764663356926229, guid: 429c1ad891b74aa489789027d3e3854b, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 93253875d6eb1c14281f3d8ebc7bbdeb, type: 3}
     - target: {fileID: 3911657726862362478, guid: 429c1ad891b74aa489789027d3e3854b, type: 3}
       propertyPath: m_Name
       value: RightEyeView
