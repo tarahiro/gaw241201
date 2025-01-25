@@ -61,7 +61,7 @@ namespace gaw241201.Inject
         void CofigureManager(IContainerBuilder builder)
         {
             //Manager
-            builder.Register<AdapterFactory<HorrorStoryMainLoopStarter, SaveDataManager>>(Lifetime.Singleton).WithParameter<LifetimeScope[]>(FindObjectsOfType<LifetimeScope>).AsImplementedInterfaces();
+            builder.Register<AdapterFactory<SimpleLoopStarter, SaveDataManager>>(Lifetime.Singleton).WithParameter<LifetimeScope[]>(FindObjectsOfType<LifetimeScope>).AsImplementedInterfaces();
             builder.Register<FlowProvider>(Lifetime.Singleton).WithParameter<LifetimeScope[]>(FindObjectsOfType<LifetimeScope>).AsImplementedInterfaces();
 
             builder.Register<SimpleLoopStarter>(Lifetime.Singleton).AsSelf().WithParameter(FlowMasterConst.FlowMasterLabel.GoatEyeFlow);
@@ -80,6 +80,7 @@ namespace gaw241201.Inject
             builder.Register<RowKeyReplacer>(Lifetime.Singleton).AsSelf();
             builder.Register<DeviceLowerKeyReplacer>(Lifetime.Singleton).AsSelf();
             builder.Register<DeviceKeyReplacer>(Lifetime.Singleton).AsSelf();
+            builder.Register<LoopInitializer>(Lifetime.Singleton).AsImplementedInterfaces();
         }
 
         void ConfigureTyping(IContainerBuilder builder)

@@ -14,6 +14,8 @@ namespace gaw241201.Presenter
 {
     public class MonitorPresenter : IPostInitializable
     {
+        [Inject] ILoopInitializer _loopInitializer;
+
         [Inject] StartMonitorModel _startModel;
         [Inject] MonitorView _view;
         [Inject] CmdMonitorView _cmdMonitorView;
@@ -23,6 +25,8 @@ namespace gaw241201.Presenter
         CompositeDisposable _disposable = new CompositeDisposable();
         public void PostInitialize()
         {
+            _loopInitializer.LoopInitialized.Subscribe(_ => _startModel.StartMonitor("Setting")).AddTo(_disposable);
+
             _startModel.Entered.Subscribe( _view.Enter).AddTo(_disposable);
             _cmdMonitorView.Detected.Subscribe(_ => _haltModel.Halt()).AddTo(_disposable);
             _settingMonitorView.Detected.Subscribe(_ => Log.DebugLog("SettingŠJn")).AddTo(_disposable) ;

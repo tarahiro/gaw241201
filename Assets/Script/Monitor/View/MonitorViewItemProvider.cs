@@ -20,7 +20,7 @@ namespace gaw241201.View
             switch (bodyId)
             {
                 case "Cmd": return _cmd;
-                case "Setting": return _cmd;
+                case "Setting": return _setting;
 
                 default: return null;
 

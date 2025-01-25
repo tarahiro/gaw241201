@@ -20,6 +20,8 @@ namespace gaw241201
 
         public void StartMonitor(string bodyId)
         {
+            Log.DebugLog(bodyId + "‚ÌMonitor‚ðModel‘¤‚ÅŠJŽn");
+
             _cts = new CancellationTokenSource();
             _entered.OnNext(new MonitorArgs(bodyId, _cts.Token));
         }

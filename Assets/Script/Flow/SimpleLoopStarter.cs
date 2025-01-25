@@ -14,9 +14,10 @@ namespace gaw241201
     {
         [Inject] IFlowHundler _flowHundler;
         [Inject] FlowMasterConst.FlowMasterLabel _flowMasterLabel;
+        [Inject] ILoopInitializer _loopInitializer;
         public void EnterMainLoop()
         {
-            SoundManager.PlayBGM("Main");
+            _loopInitializer.InitializeLoop();
             _flowHundler.EnterFlowLoop(_flowMasterLabel);
         }
     }

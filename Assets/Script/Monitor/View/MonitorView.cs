@@ -15,8 +15,9 @@ namespace gaw241201.View
     {
         [Inject] MonitorViewItemProvider _itemProvider;
 
-        public void Enter(MonitorArgs args) 
+        public void Enter(MonitorArgs args)
         {
+            Log.DebugLog(args.BodyId + "‚ÌMonitor‚ðView‘¤‚ÅŠJŽn");
             _itemProvider.Create(args.BodyId).Monitor(args.CancellationToken).Forget();
         }
 
