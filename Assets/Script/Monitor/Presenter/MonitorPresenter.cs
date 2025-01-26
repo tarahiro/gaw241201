@@ -22,6 +22,8 @@ namespace gaw241201.Presenter
         [Inject] SettingMonitorView _settingMonitorView;
         [Inject] CmdHaltModel _haltModel;
 
+        [Inject] SettingRootHundler _settingRootHundler;
+
         CompositeDisposable _disposable = new CompositeDisposable();
         public void PostInitialize()
         {
@@ -29,7 +31,7 @@ namespace gaw241201.Presenter
 
             _startModel.Entered.Subscribe( _view.Enter).AddTo(_disposable);
             _cmdMonitorView.Detected.Subscribe(_ => _haltModel.Halt()).AddTo(_disposable);
-            _settingMonitorView.Detected.Subscribe(_ => Log.DebugLog("SettingŠJŽn")).AddTo(_disposable) ;
+            _settingMonitorView.Detected.Subscribe(_ => _settingRootHundler.Enter().Forget()).AddTo(_disposable) ;
         }
     }
 }

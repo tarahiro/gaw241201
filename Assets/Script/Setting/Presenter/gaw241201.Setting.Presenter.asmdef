@@ -1,17 +1,15 @@
 {
-    "name": "gaw241201.Monitor.Presenter",
-    "rootNamespace": "gaw241201.Monitor.Presenter",
+    "name": "gaw241201.Setting.Presenter",
+    "rootNamespace": "gaw241201.Setting.Presenter",
     "references": [
         "GUID:0be27b54e10228743974a8df3dda3639",
         "GUID:560b04d1a97f54a4e82edc0cbbb69285",
         "GUID:f51ebe6a0ceec4240a699833d6309b23",
         "GUID:b0214a6008ed146ff8f122a6a9c2f6cc",
         "GUID:80730cb7ec02f6544bfe954bc465eae7",
-        "GUID:676be370002247b4eaa4d61287c469b7",
-        "GUID:4a24e36eb93b1b84dacf6c3c369bf0ba",
-        "GUID:b10d9735a6f2c754282dee130c0df18e",
-        "GUID:06bcd70755cf0024dbcab68f7f987f46",
-        "GUID:6e9ad0ff32462a54f9a52b956a2e03a2"
+        "GUID:c60cc76ea90af334c99f5db6b025e592",
+        "GUID:6e9ad0ff32462a54f9a52b956a2e03a2",
+        "GUID:4e203fd45bd10bb4cabf3ae2ef6e0a20"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

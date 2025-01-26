@@ -56,6 +56,7 @@ namespace gaw241201.Inject
             ConfigureLeet(builder);
             ConfigureTypingRoguelike(builder);
             ConfigureLanguage(builder);
+            ConfigureSetting(builder);
         }
 
         void CofigureManager(IContainerBuilder builder)
@@ -369,6 +370,16 @@ namespace gaw241201.Inject
                 routing.MapComponentInHierarchy<TranslationTextView>();
                 routing.MapComponentInHierarchy<EmbeddedTranslationTextView>();
             });
+        }
+
+        void ConfigureSetting(IContainerBuilder builder)
+        {
+            builder.Register<SettingRootHundler>(Lifetime.Singleton).AsSelf();
+            builder.Register<SettingStarter>(Lifetime.Singleton).AsSelf();
+            builder.Register<SettingExiter>(Lifetime.Singleton).AsSelf();
+            builder.RegisterComponentInHierarchy<SettingView>().AsSelf();
+
+            builder.RegisterEntryPoint<SettingPresenter>();
         }
 
     }
