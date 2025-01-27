@@ -10,9 +10,9 @@ using VContainer.Unity;
 
 namespace gaw241201
 {
-    public interface IFlowModel
+    public interface IConversationModel : ICategoryEnterableModel
     {
-       UniTask EnterFlow(string bodyId);
-        void ForceEndFlow();
+        void Initialize(Action<ModelArgs<IConversationMaster>> action, CompositeDisposable disposables);
+        void EndSingle();
     }
 }

@@ -14,7 +14,8 @@ namespace gaw241201
     {
         [Inject] LifetimeScope[] _scope;
 
-        [Inject] ConversationModel _conversationModel;
+        [Inject] ConversationModelProvider _conversationModelProvider;
+
         [Inject] FreeInputModel _freeInputModel;
         [Inject] RegisterFlagFlowModel _registerFlagFlowModel;
         [Inject] DeleteUiModel _deleteUiModel;
@@ -25,14 +26,14 @@ namespace gaw241201
         [Inject] StartMonitorFlowModel _startMonitorModel;
      //   [Inject] TypingRoguelikeModel _typingRoguelikeModel;
 
-        public IFlowModel GetFlowModel(FlowConst.Category category)
+        public ICategoryEnterableModel GetFlowModel(FlowConst.Category category)
         {
             Log.Comment("ÉtÉçÅ[éÊìæ");
 
             switch (category)
             {
                 case FlowConst.Category.Conversation:
-                    return _conversationModel;
+                    return _conversationModelProvider.MainConversationModel;
 
                 case FlowConst.Category.FreeInput:
                     return _freeInputModel;

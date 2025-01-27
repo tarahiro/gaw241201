@@ -13,7 +13,7 @@ using UnityEngine.SceneManagement;
 
 namespace gaw241201
 {
-    public class EndGameModel : IFlowModel
+    public class EndGameModel : ICategoryEnterableModel
     {
         [Inject] ISavable _savable;
 

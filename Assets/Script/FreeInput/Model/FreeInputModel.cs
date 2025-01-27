@@ -11,7 +11,7 @@ using VContainer.Unity;
 
 namespace gaw241201
 {
-    public class FreeInputModel : IFlowModel
+    public class FreeInputModel : ICategoryEnterableModel
     {
         [Inject] FreeInputValueRegisterer _valueRegisterer;
         [Inject] FlowViewArgsFactory _flowArgsFactory;

@@ -11,7 +11,7 @@ using System.Threading;
 
 namespace gaw241201
 {
-    public class ClickInputModel : IFlowModel
+    public class ClickInputModel : ICategoryEnterableModel
     {
         [Inject] ClickInputProccessorProvider _processorProvider;
 

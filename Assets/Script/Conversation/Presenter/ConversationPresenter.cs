@@ -15,25 +15,27 @@ namespace gaw241201.Presenter
 {
     public class ConversationPresenter : IPostInitializable
     {
-        [Inject] ConversationModel _model;
-        [Inject] ISingleTextSequenceEnterable<IConversationMaster> _enterable;
-
+        [Inject] ConversationModelProvider _modelProvider;
 
         IConversationView _mainConversationView;
-      //  ConversationView _settingConversationView;
+        IConversationView _settingConversationView;
 
         [Inject] IConversationViewFactory _conversationViewFactory;
-
         [Inject] ConversationViewArgsFactory _viewArgsFactory;
 
         CompositeDisposable _disposable = new CompositeDisposable();
 
         public void PostInitialize()
         {
-            _mainConversationView = _conversationViewFactory.CreateSettingConversation();
+            _modelProvider.Initialize();
+            _modelProvider.MainConversationModel.Initialize((x => _mainConversationView.EnterConversation(_viewArgsFactory.Create(x))), _disposable);
+            _modelProvider.SettingConversationModel.Initialize((x => _settingConversationView.EnterConversation(_viewArgsFactory.Create(x))), _disposable);
 
-            _enterable.Entered.Subscribe(x =>  _mainConversationView.EnterConversation(_viewArgsFactory.Create(x)).Forget()).AddTo(_disposable);
-            _mainConversationView.Completed.Subscribe(x => _model.EndSingle()).AddTo(_disposable);
+            _mainConversationView = _conversationViewFactory.CreateMainConversation();
+            _settingConversationView = _conversationViewFactory.CreateSettingConversation();
+
+            _mainConversationView.Completed.Subscribe(x => _modelProvider.MainConversationModel.EndSingle()).AddTo(_disposable);
+            _settingConversationView.Completed.Subscribe(x => _modelProvider.SettingConversationModel.EndSingle()).AddTo(_disposable);
         }
     }
 }

@@ -10,8 +10,9 @@ using VContainer.Unity;
 
 namespace gaw241201
 {
-    public interface IFlowProvider
+    public interface ICategoryEnterableModel
     {
-        ICategoryEnterableModel GetFlowModel(FlowConst.Category category);
+       UniTask EnterFlow(string bodyId);
+        void ForceEndFlow();
     }
 }

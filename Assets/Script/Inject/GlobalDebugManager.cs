@@ -18,6 +18,7 @@ namespace gaw241201.Inject
         [Inject] ISaveDeletable _saveDeletable;
         [Inject] LanguageModel _languageModel;
         [Inject] EnterEffectModel _effectModel;
+        [Inject] ConversationModelProvider _conversationModelProvider;
 
         public void Start()
         {
@@ -52,6 +53,12 @@ namespace gaw241201.Inject
                 if (Input.GetKeyDown(KeyCode.R))
                 {
                     _effectModel.EnterFlow("GlitchSmall").Forget();
+                }
+
+                if (Input.GetKeyDown(KeyCode.T))
+                {
+                    Log.DebugLog("デバッグ開始");
+                    _conversationModelProvider.SettingConversationModel.EnterFlow("940500GoatEyeConversation").Forget();
                 }
 
             }

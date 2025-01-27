@@ -13,7 +13,7 @@ using gaw241201.Model;
 
 namespace gaw241201
 {
-    public class ActStartModel : IFlowModel
+    public class ActStartModel : ICategoryEnterableModel
     {
         [Inject] IGroupMasterGettable<IStageMaster> _groupMasterGettable;
         [Inject] IRestrictedCharProvider _restrictedCharProvider;

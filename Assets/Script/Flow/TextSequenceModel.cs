@@ -12,7 +12,7 @@ using VContainer.Unity;
 
 namespace gaw241201
 {
-    public abstract class TextSequenceModel<T> : IFlowModel where T : IIdentifiable, IIndexable,IGroupable 
+    public abstract class TextSequenceModel<T> : ICategoryEnterableModel where T : IIdentifiable, IIndexable,IGroupable 
     {
         [Inject] IGroupMasterGettable<T> _groupMasterGettable;
         [Inject] ISingleTextSequenceEnterable<T> _singleTextSequenceEnterable;

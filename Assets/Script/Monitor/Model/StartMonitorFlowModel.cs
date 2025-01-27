@@ -11,7 +11,7 @@ using System.Threading;
 
 namespace gaw241201
 {
-    public class StartMonitorFlowModel : IFlowModel
+    public class StartMonitorFlowModel : ICategoryEnterableModel
     {
         [Inject] StartMonitorModel _monitorModel; 
 

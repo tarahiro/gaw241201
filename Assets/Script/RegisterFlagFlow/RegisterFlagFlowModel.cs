@@ -10,7 +10,7 @@ using VContainer.Unity;
 
 namespace gaw241201
 {
-    public class RegisterFlagFlowModel : IFlowModel
+    public class RegisterFlagFlowModel : ICategoryEnterableModel
     {
         [Inject] RegisterFlagOrderProcessor _flagRegisterProcessor;
 

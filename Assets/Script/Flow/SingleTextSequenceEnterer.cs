@@ -17,6 +17,12 @@ namespace gaw241201
         Subject<ModelArgs<T>> _entered = new Subject<ModelArgs<T>>();
         public IObservable<ModelArgs<T>> Entered => _entered;
 
+        [Inject]
+        public SingleTextSequenceEnterer(ModelArgsFactory<T> modelArgsFactory)
+        {
+            _modelArgsFactory = modelArgsFactory;
+        }
+
         public void EnterTextSequence(T master, CancellationToken ct, out bool isEnded)
         {
             Log.Comment(master.Id + "ŠJŽn");

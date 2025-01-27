@@ -12,7 +12,7 @@ using gaw241201.Model;
 
 namespace gaw241201
 {
-    public class TypingRoguelikeModel : IFlowModel, IRequiredScoreGeneratable, ITimerEndableModel
+    public class TypingRoguelikeModel : ICategoryEnterableModel, IRequiredScoreGeneratable, ITimerEndableModel
     {
         [Inject] IGroupMasterGettable<ITypingRoguelikeSingleSequenceMaster> _groupMasterGettable;
         [Inject] ISingleTextSequenceEnterable<ITypingRoguelikeSingleSequenceMaster> _singleTextSequenceEnterable;

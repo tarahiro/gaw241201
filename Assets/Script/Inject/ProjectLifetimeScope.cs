@@ -240,6 +240,10 @@ namespace gaw241201.Inject
             builder.Register<MessageKeyHundler>(Lifetime.Singleton).AsSelf();
             builder.Register<MessageKeyReplacerProvider>(Lifetime.Singleton).AsSelf();
 
+            builder.Register<ConversationModelFactory>(Lifetime.Singleton).AsSelf();
+            builder.Register<ConversationModelProvider>(Lifetime.Singleton).AsSelf();
+
+
             builder.Register<DeviceModelKeyReplacer>(Lifetime.Singleton).AsSelf();
             builder.Register<DeviceModelLowerKeyReplacer>(Lifetime.Singleton).AsSelf();
             builder.Register<DeviceTypeFake>(Lifetime.Singleton).AsSelf();

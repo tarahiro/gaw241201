@@ -11,7 +11,7 @@ using System.Threading;
 
 namespace gaw241201
 {
-    public class EffectModel : IFlowModel
+    public class EffectModel : ICategoryEnterableModel
     {
         [Inject] EffectArgsFactory _argsFactory;
 

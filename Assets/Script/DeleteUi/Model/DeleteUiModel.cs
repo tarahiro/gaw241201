@@ -10,7 +10,7 @@ using VContainer.Unity;
 
 namespace gaw241201
 {
-    public class DeleteUiModel : IFlowModel
+    public class DeleteUiModel : ICategoryEnterableModel
     {
         [Inject] IUiDeletableProvider _uiDeletableProvider;
         public async UniTask EnterFlow(string bodyId)

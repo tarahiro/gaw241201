@@ -19,7 +19,7 @@ namespace gaw241201
         [Inject] IGlobalFlagProvider _globalFlagProvider;
         [Inject] IFlowSwitchable_Fake _flowSwitchable;
 
-        IFlowModel _currentFlow;
+        ICategoryEnterableModel _currentFlow;
 
         CompositeDisposable _reserveDisposable;
         CancellationTokenSource _cancellationTokenSource;
@@ -88,7 +88,7 @@ namespace gaw241201
 
 
 #if ENABLE_DEBUG
-        public IFlowModel ForceGetCurrentFlow()
+        public ICategoryEnterableModel ForceGetCurrentFlow()
         {
             return _currentFlow;
         }

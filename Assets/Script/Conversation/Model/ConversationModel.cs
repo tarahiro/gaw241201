@@ -12,57 +12,55 @@ using VContainer.Unity;
 
 namespace gaw241201
 {
-    public class ConversationModel : TextSequenceModel<IConversationMaster> {
-        /*
-        [Inject] IConversationMasterDataProvider _masterDataProvider;
-        [Inject] ConversationModelArgsFactory _modelArgsFactory;
+    public class ConversationModel : IConversationModel
+    {
+        [Inject] IGroupMasterGettable<IConversationMaster> _groupMasterGettable;
+        
+        ISingleTextSequenceEnterable<IConversationMaster> _singleTextSequenceEnterable;
 
         CancellationTokenSource _cts = new CancellationTokenSource();
-        Subject<ConversationModelArgs> _entered = new Subject<ConversationModelArgs>();
-        public IObservable<ConversationModelArgs> Entered => _entered;
 
         //UnitaskとSubjectの変換を使ってきれいにしたい
         bool _isEnded = false;
 
+        [Inject]
+        public ConversationModel(ISingleTextSequenceEnterable<IConversationMaster> singleTextSequenceEnterable, IGroupMasterGettable<IConversationMaster> groupMasterGettable)
+        {
+            _singleTextSequenceEnterable = singleTextSequenceEnterable;
+            _groupMasterGettable = groupMasterGettable;
+        }
+
+        public void Initialize(Action<ModelArgs<IConversationMaster>> action, CompositeDisposable disposable)
+        {
+            _singleTextSequenceEnterable.Entered.Subscribe(action).AddTo(disposable);
+        }
+
         public async UniTask EnterFlow(string bodyId)
         {
-            Log.Comment(bodyId + "のConversationGroup開始");
+            Log.Comment(bodyId + "のGroup開始");
+
             _cts = new CancellationTokenSource();
-            List<IConversationMaster> _thisConversationGroup = new List<IConversationMaster>();
+            List<IConversationMaster> _thisGroup = _groupMasterGettable.GetGroupMaster(bodyId);
 
-            for (int i = 0; i < _masterDataProvider.Count; i++)
+            for (int i = 0; i < _thisGroup.Count && !_cts.IsCancellationRequested; i++)
             {
-                if(_masterDataProvider.TryGetFromIndex(i).GetMaster().Group == bodyId)
-                {
-                    _thisConversationGroup.Add(_masterDataProvider.TryGetFromIndex(i).GetMaster());
-                }
-            }
-
-            for (int i = 0; i < _thisConversationGroup.Count && !_cts.IsCancellationRequested; i++)
-            {
-                Log.Comment(_thisConversationGroup[i].Id + "のConversation開始");
-                _isEnded = false;
-
-                _entered.OnNext(_modelArgsFactory.Create(_thisConversationGroup[i],_cts.Token));
+                _singleTextSequenceEnterable.EnterTextSequence(_thisGroup[i], _cts.Token, out _isEnded);
                 await UniTask.WaitUntil(() => _isEnded);
             }
 
-            Log.Comment(bodyId + "のConversationGroup終了");
+            Log.Comment(bodyId + "のGroup終了");
         }
 
-        public void EndSIngle()
+        public void EndSingle()
         {
             Log.Comment("終了を検知");
             _isEnded = true;
         }
 
-#if ENABLE_DEBUG
         public void ForceEndFlow()
         {
             _cts.Cancel();
         }
 
-#endif
-        */
     }
 }

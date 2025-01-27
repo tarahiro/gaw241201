@@ -12,7 +12,7 @@ using gaw241201.Model;
 
 namespace gaw241201
 {
-    public class SkillAchieveModel : IFlowModel
+    public class SkillAchieveModel : ICategoryEnterableModel
     {
         [Inject] ILeetMasterDataProvider _leetProvider;
         [Inject] IWordMasterDataProvider _wordProvider;
