@@ -17,15 +17,23 @@ namespace gaw241201.Presenter
     {
         [Inject] ConversationModel _model;
         [Inject] ISingleTextSequenceEnterable<IConversationMaster> _enterable;
-        [Inject] ConversationView _view;
+
+
+        IConversationView _mainConversationView;
+      //  ConversationView _settingConversationView;
+
+        [Inject] IConversationViewFactory _conversationViewFactory;
+
         [Inject] ConversationViewArgsFactory _viewArgsFactory;
 
         CompositeDisposable _disposable = new CompositeDisposable();
 
         public void PostInitialize()
         {
-            _enterable.Entered.Subscribe(x =>  _view.EnterConversation(_viewArgsFactory.Create(x)).Forget()).AddTo(_disposable);
-            _view.Completed.Subscribe(x => _model.EndSingle()).AddTo(_disposable);
+            _mainConversationView = _conversationViewFactory.CreateSettingConversation();
+
+            _enterable.Entered.Subscribe(x =>  _mainConversationView.EnterConversation(_viewArgsFactory.Create(x)).Forget()).AddTo(_disposable);
+            _mainConversationView.Completed.Subscribe(x => _model.EndSingle()).AddTo(_disposable);
         }
     }
 }

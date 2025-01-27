@@ -22,7 +22,8 @@ namespace gaw241201.Inject
         {
             Log.Comment("ProjectLifetimeScope‚Ì“o˜^ŠJŽn");
 
-            CofigureManager(builder);
+            ConfigureGlobalFactory(builder);
+            ConfigureManager(builder);
             ConfigureFlow(builder);
             ConfigureTyping(builder);
             ConfigureStarter(builder);
@@ -59,7 +60,13 @@ namespace gaw241201.Inject
             ConfigureSetting(builder);
         }
 
-        void CofigureManager(IContainerBuilder builder)
+        void ConfigureGlobalFactory(IContainerBuilder builder)
+        {
+            builder.Register<ConversationViewFactory>(Lifetime.Singleton).AsImplementedInterfaces();
+            builder.RegisterComponentInHierarchy<ConversationTextViewProvider>().AsSelf();
+        }
+
+        void ConfigureManager(IContainerBuilder builder)
         {
             //Manager
             builder.Register<AdapterFactory<SimpleLoopStarter, SaveDataManager>>(Lifetime.Singleton).WithParameter<LifetimeScope[]>(FindObjectsOfType<LifetimeScope>).AsImplementedInterfaces();
@@ -161,8 +168,9 @@ namespace gaw241201.Inject
         void ConfigureEyes(IContainerBuilder builder)
         {
             //View
-            builder.RegisterComponentInHierarchy<EyesView>().AsImplementedInterfaces();
-            builder.Register<ImpressionView>(Lifetime.Singleton).AsImplementedInterfaces();
+            builder.RegisterComponentInHierarchy<MainEyesView>().AsSelf().AsImplementedInterfaces();
+            builder.RegisterComponentInHierarchy<SettingEyesView>().AsSelf().AsImplementedInterfaces();
+            builder.Register<ImpressionView>(Lifetime.Singleton).AsSelf();
 
         }
 
@@ -225,7 +233,6 @@ namespace gaw241201.Inject
         {
             //Conversation
             builder.Register<ConversationModel>(Lifetime.Singleton).AsSelf();
-            builder.Register<ConversationView>(Lifetime.Singleton).AsSelf();
             builder.Register<ConversationMasterDataProvider>(Lifetime.Singleton).AsImplementedInterfaces();
             builder.Register<ModelArgsFactory<IConversationMaster>>(Lifetime.Singleton).AsSelf();
             builder.Register<ConversationViewArgsFactory>(Lifetime.Singleton).AsSelf();

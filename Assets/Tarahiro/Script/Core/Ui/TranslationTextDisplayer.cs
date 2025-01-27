@@ -18,7 +18,7 @@ namespace Tarahiro.Ui
         [SerializeField] List<TMP_FontAsset> font;
         [SerializeField] List<float> fontSizeCoeffFromJp;
 
-        int _languageIndex = -1;
+        int _languageIndex = 0;
         float _initialFontSize;
 
         void Awake()

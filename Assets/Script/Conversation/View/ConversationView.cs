@@ -11,19 +11,25 @@ using VContainer.Unity;
 
 namespace gaw241201.View
 {
-    public class ConversationView
+    public class ConversationView : IConversationView
     {
         [Inject] ConversationTextView _textView;
 
         [Inject] IEyePositionChangable _eyePositionChangable;
-
         [Inject] IFacialChangable _facialChangable;
         [Inject] IImpressionChangable _impressionChangable;
 
         Subject<Unit> _completed = new Subject<Unit>();
         ConversationViewArgs? _prevArgs = null;
-        public Subject<Unit> Completed => _completed;
+        public IObservable<Unit> Completed => _completed;
 
+        public ConversationView(ConversationTextView textView, IEyePositionChangable eyePositionChangable, IFacialChangable facialChangable, IImpressionChangable impressionChangable)
+        {
+            _textView = textView;
+            _eyePositionChangable = eyePositionChangable;
+            _facialChangable = facialChangable;
+            _impressionChangable = impressionChangable;
+        }
 
         public async UniTask EnterConversation(ConversationViewArgs args)
         {

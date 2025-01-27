@@ -10,7 +10,7 @@ using VContainer.Unity;
 
 namespace gaw241201.View
 {
-    public class EyesView : MonoBehaviour, IEyePositionChangable, IFacialChangable, IGazable, IChangableEye
+    public class SettingEyesView : MonoBehaviour, IEyePositionChangable, IFacialChangable, IGazable, IChangableEye
     {
         const float c_length = .2f;
 
@@ -73,7 +73,7 @@ namespace gaw241201.View
             switch (facialKey)
             {
                 case ConversationViewConst.Facial.Mad:
-                    foreach(var eye in _eyeViewList)
+                    foreach (var eye in _eyeViewList)
                     {
                         eye.SetRotation(new Vector3(0, 0, 90f));
                     }
