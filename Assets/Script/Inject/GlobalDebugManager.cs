@@ -49,6 +49,11 @@ namespace gaw241201.Inject
                     _effectModel.EnterFlow("GlitchLargeAutoEnd").Forget();
                 }
 
+                if (Input.GetKeyDown(KeyCode.R))
+                {
+                    _effectModel.EnterFlow("GlitchSmall").Forget();
+                }
+
             }
         }
     }

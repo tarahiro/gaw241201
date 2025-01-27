@@ -65,7 +65,7 @@ namespace gaw241201.Inject
             builder.Register<AdapterFactory<SimpleLoopStarter, SaveDataManager>>(Lifetime.Singleton).WithParameter<LifetimeScope[]>(FindObjectsOfType<LifetimeScope>).AsImplementedInterfaces();
             builder.Register<FlowProvider>(Lifetime.Singleton).WithParameter<LifetimeScope[]>(FindObjectsOfType<LifetimeScope>).AsImplementedInterfaces();
 
-            builder.Register<SimpleLoopStarter>(Lifetime.Singleton).AsSelf().WithParameter(FlowMasterConst.FlowMasterLabel.GoatEyeFlow);
+            builder.Register<SimpleLoopStarter>(Lifetime.Singleton).AsSelf().WithParameter(FlowMasterConst.FlowMasterLabel.TypingRoguelikeMainFlow);
 
             builder.RegisterEntryPoint<GameManager>();
 
@@ -377,7 +377,15 @@ namespace gaw241201.Inject
             builder.Register<SettingRootHundler>(Lifetime.Singleton).AsSelf();
             builder.Register<SettingStarter>(Lifetime.Singleton).AsSelf();
             builder.Register<SettingExiter>(Lifetime.Singleton).AsSelf();
-            builder.RegisterComponentInHierarchy<SettingView>().AsSelf();
+            builder.RegisterComponentInHierarchy<SettingRootView>().AsSelf();
+            builder.Register<SettingInputView>(Lifetime.Singleton).AsSelf();
+
+            builder.Register<SettingUiModel>(Lifetime.Singleton).AsSelf();
+            builder.Register<SettingTabListFactory>(Lifetime.Singleton).AsSelf();
+            builder.Register<ProfileMenuModel>(Lifetime.Singleton).AsSelf();
+            builder.Register<AdvancedTabModel>(Lifetime.Singleton).AsSelf();
+
+            builder.RegisterComponentInHierarchy<SettingTabManager>().AsSelf();
 
             builder.RegisterEntryPoint<SettingPresenter>();
         }

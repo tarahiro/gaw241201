@@ -13,10 +13,16 @@ namespace gaw241201
 {
     public class SettingEnterArgs
     {
+        public int TabIndex { get; private set; }
+        public int MenuIndex { get; private set; }
+
+
         public CancellationToken CancellationToken { get; private set; }
 
-        public SettingEnterArgs(CancellationToken _cancellationToken)
+        public SettingEnterArgs(int _tabIndex, int _menuIndex, CancellationToken _cancellationToken)
         {
+            TabIndex = _tabIndex;
+            MenuIndex = _menuIndex;
             CancellationToken = _cancellationToken;
         }
     }

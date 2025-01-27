@@ -24,6 +24,8 @@ namespace gaw241201
 
             RealLeftEyeFlow,
             GoatEyeFlow,
+            CompanyFlow,
+            WishlistFlow,
         }
     }
 }

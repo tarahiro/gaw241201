@@ -19,7 +19,13 @@ namespace gaw241201.Presenter
         [Inject] SettingStarter _starter;
         [Inject] SettingExiter _exiter;
 
-        [Inject] SettingView _view;
+        [Inject] SettingUiModel _uiModel;
+        [Inject] AdvancedTabModel _advancedTabModel;
+        [Inject] ProfileMenuModel _profileMenuModel;
+
+        [Inject] SettingRootView _view;
+        [Inject] SettingInputView _inputView;
+        [Inject] SettingTabManager _tabManager;
 
         CompositeDisposable _disposable = new CompositeDisposable();
 
@@ -27,6 +33,14 @@ namespace gaw241201.Presenter
         {
             _starter.SettingStarted.Subscribe(x => _view.Enter(x).Forget()).AddTo(_disposable);
             _exiter.SettingStarted.Subscribe(x => _view.Exit(x).Forget()).AddTo(_disposable);
+
+            _advancedTabModel.FocusChanged.Subscribe(_tabManager.ChangeItemFocusOnCurrentTab).AddTo(_disposable);
+            _profileMenuModel.FocusChanged.Subscribe(_tabManager.ChangeItemFocusOnCurrentTab).AddTo(_disposable);
+
+            _inputView.CursorMoved.Subscribe(_uiModel.MoveFocus).AddTo(_disposable);
+            
+
+            _uiModel.Initialize();
         }
     }
 }

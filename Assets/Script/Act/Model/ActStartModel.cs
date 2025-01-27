@@ -44,8 +44,6 @@ namespace gaw241201
             List<IStageMaster> _thisGroup = _groupMasterGettable.GetGroupMaster(_master.StageGroupId);
             /*共通部分終わり*/
 
-            Log.DebugLog(_thisGroup[1].Id);
-
 
             //ステージ毎に何を制限するか算出
             List<List<char>> list = new List<List<char>>();

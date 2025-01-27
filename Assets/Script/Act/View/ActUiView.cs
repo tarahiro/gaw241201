@@ -27,7 +27,7 @@ namespace gaw241201.View
             _restrictedCharViewList = new List<RestrictedCharView>();
 
             float virtualCursorX = 0f;
-
+            /*
             for(int i = 0; i < _args.Count; i++)
             {
                 if(_args[i].RestrictedCharList.Count > 0)
@@ -47,6 +47,7 @@ namespace gaw241201.View
                 }
 
             }
+            */
 
             _root.localPosition = Vector2.left * virtualCursorX * .5f;
         }
