@@ -7,13 +7,11 @@ using UniRx;
 using UnityEngine;
 using TMPro;
 using VContainer;
-using VitalRouter;
 using MessagePipe;
 
 namespace Tarahiro.Ui
 {
-    [Routes]
-    public partial class TranslationTextView : MonoBehaviour, ITranslationTextDisplayer
+    public class TranslationTextView : MonoBehaviour, ITranslationTextDisplayer
     {
         [SerializeField] TextMeshProUGUI tmp;
         [SerializeField] List<TMP_FontAsset> font;
@@ -58,10 +56,5 @@ namespace Tarahiro.Ui
             return _languageIndex;
         }
 
-        public void OnChangeLanguage(NotifyLanguageCommand cmd)
-        {
-            Log.Comment("コマンド受け取り");
-            SetLanguage(cmd.LanguageIndex);
-        }
     }
 }

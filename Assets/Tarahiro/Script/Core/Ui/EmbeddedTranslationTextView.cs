@@ -7,13 +7,11 @@ using UniRx;
 using UnityEngine;
 using TMPro;
 using VContainer;
-using VitalRouter;
 using MessagePipe;
 
 namespace Tarahiro.Ui
 {
-    [Routes]
-    public partial class EmbeddedTranslationTextView : MonoBehaviour
+    public class EmbeddedTranslationTextView : MonoBehaviour
     {
         TextMeshProUGUI tmp;
         TranslationTextView textView;
@@ -48,15 +46,6 @@ namespace Tarahiro.Ui
             if(_translatableText != null)
             {
                 tmp.text = _translatableText.GetTranslatedText(languageIndex);
-            }
-        }
-
-        public void OnChangeLanguage(NotifyLanguageCommand cmd)
-        {
-            Log.Comment("EmbeddedTranslationTextView : コマンド受け取り");
-            if(cmd.TryGetMessage(Id, out var message))
-            {
-                tmp.text = message;
             }
         }
     }

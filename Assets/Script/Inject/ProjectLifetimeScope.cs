@@ -8,8 +8,6 @@ using gaw241201.Model;
 using UnityEngine;
 using Tarahiro.Ui;
 using Tarahiro.MasterData;
-using VitalRouter;
-using VitalRouter.VContainer;
 using System;
 using System.Linq;
 using MessagePipe;
@@ -377,14 +375,6 @@ namespace gaw241201.Inject
 
             builder.RegisterEntryPoint<LanguageInitializer>(Lifetime.Singleton).AsSelf();
             builder.RegisterEntryPoint<EmbeddedTextPresenter>(Lifetime.Singleton).AsSelf();
-
-            builder.RegisterVitalRouter(routing =>
-            {
-                // çwì«ë§ÇÕÇ±ÇÃÇÊÇ§Ç…ìoò^Ç∑ÇÈÅiMonoBehaviourÇÃèÍçáÅj
-
-                routing.MapComponentInHierarchy<TranslationTextView>();
-                routing.MapComponentInHierarchy<EmbeddedTranslationTextView>();
-            });
 
             var options = builder.RegisterMessagePipe(/* configure option */);
             builder.RegisterMessageBroker<int>(options);
