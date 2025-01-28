@@ -2,6 +2,7 @@ using Cysharp.Threading.Tasks;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using Tarahiro;
 using UniRx;
 using UnityEngine;
@@ -18,6 +19,9 @@ namespace gaw241201
 
         List<ISettingTabModel> _settingTabModelList = new List<ISettingTabModel>();
 
+        Subject<SettingTabEnterArgs> _tabChanged = new Subject<SettingTabEnterArgs>();
+        public IObservable<SettingTabEnterArgs> TabChanged => _tabChanged;
+
         public void Initialize()
         {
             _settingTabModelList = _settingTabListFactory.Create();
@@ -27,9 +31,24 @@ namespace gaw241201
             }
         }
 
-        public void MoveFocus(SettingConst.Direction direction)
+        public void MoveFocus(SettingConst.MenuDirection direction)
         {
             current.MoveFocus(direction);
+        }
+
+        CancellationTokenSource _tabChangeCts;
+
+        public void ChangeTab(SettingConst.TabDirection direction)
+        {
+            Log.DebugLog("ModelÇ≈TabêÿÇËë÷Ç¶");
+            var target = TabIndex + (int)direction;
+            if (target < 0) target += _settingTabModelList.Count;
+            if (target >= _settingTabModelList.Count) target -= _settingTabModelList.Count;
+
+            TabIndex = target;
+
+            _tabChangeCts = new CancellationTokenSource();
+            _tabChanged.OnNext(new SettingTabEnterArgs(target, current.ItemIndex, _tabChangeCts.Token));
         }
 
         ISettingTabModel current { get { return _settingTabModelList[TabIndex]; } }

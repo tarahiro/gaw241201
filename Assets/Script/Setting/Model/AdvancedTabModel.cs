@@ -27,7 +27,7 @@ namespace gaw241201
             _settingTabModel = tab;
         }
 
-        public void MoveFocus(SettingConst.Direction direction)
+        public void MoveFocus(SettingConst.MenuDirection direction)
         {
             _settingTabModel.MoveFocus(direction);
         }

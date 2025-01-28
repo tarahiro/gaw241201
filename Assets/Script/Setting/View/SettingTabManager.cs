@@ -12,18 +12,27 @@ namespace gaw241201.View
 {
     public class SettingTabManager : MonoBehaviour
     {
-       [SerializeField]  List<SettingTabView> _tabList;
+        [SerializeField] List<SettingTabView> _settingTabView;
 
         public SettingTabView Current { get; private set; }
 
-        public void Enter(SettingEnterArgs args)
+        public void EnterTab(SettingTabEnterArgs args)
         {
-            Current = _tabList[args.TabIndex];
+            Current = _settingTabView[args.TabIndex];
+            Current.Enter(args.MenuIndex).Forget();
         }
 
         public void ChangeItemFocusOnCurrentTab(int itemIndex)
         {
-            Current.ChangeFocus(itemIndex);
+            Current.SetFocus(itemIndex).Forget();
         }
+
+        public void ChangeTab(SettingTabEnterArgs args)
+        {
+            Log.DebugLog("ViewÇ≈TabêÿÇËë÷Ç¶");
+            Current.Exit().Forget();
+            EnterTab(args);
+        }
+
     }
 }

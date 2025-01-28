@@ -11,7 +11,7 @@ using System.Threading;
 
 namespace gaw241201
 {
-    public class SettingEnterArgs
+    public class SettingTabEnterArgs
     {
         public int TabIndex { get; private set; }
         public int MenuIndex { get; private set; }
@@ -19,7 +19,7 @@ namespace gaw241201
 
         public CancellationToken CancellationToken { get; private set; }
 
-        public SettingEnterArgs(int _tabIndex, int _menuIndex, CancellationToken _cancellationToken)
+        public SettingTabEnterArgs(int _tabIndex, int _menuIndex, CancellationToken _cancellationToken)
         {
             TabIndex = _tabIndex;
             MenuIndex = _menuIndex;

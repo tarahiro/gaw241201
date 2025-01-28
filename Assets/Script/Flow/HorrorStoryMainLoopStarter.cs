@@ -14,10 +14,11 @@ namespace gaw241201
     {
         [Inject] IFlowHundler _flowHundler;
         [Inject] IGlobalFlagProvider _globalFlagProvider;
+        [Inject] ILoopInitializer _loopInitializer;
 
         public void EnterMainLoop()
         {
-            SoundManager.PlayBGM("Main");
+            _loopInitializer.InitializeLoop();
             _flowHundler.Enter();
 
             if (_globalFlagProvider.GetFlag(FlagConst.Key.IsSaveDataExist) == Tarahiro.Const.c_false)

@@ -17,11 +17,18 @@ namespace gaw241201.View
 
         [SerializeField] GameObject _root;
 
-        public async UniTask Enter(SettingEnterArgs args)
+        
+        private void Start()
+        {
+            _root.SetActive(false);            
+        }
+        
+
+        public async UniTask Enter(SettingTabEnterArgs args)
         {
             _root.SetActive(true);
             _settingInputView.Enter().Forget();
-            _settingTabManager.Enter(args);
+            _settingTabManager.EnterTab(args);
         }
 
         public async UniTask Exit(SettingExitArgs args)

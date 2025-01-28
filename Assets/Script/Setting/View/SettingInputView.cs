@@ -12,8 +12,10 @@ namespace gaw241201.View
 {
     public class SettingInputView
     {
-        Subject<SettingConst.Direction> _cursorMoved = new Subject<SettingConst.Direction>();
-        public IObservable<SettingConst.Direction> CursorMoved => _cursorMoved;
+        Subject<SettingConst.MenuDirection> _cursorMoved = new Subject<SettingConst.MenuDirection>();
+        Subject<SettingConst.TabDirection> _lrInputted = new Subject<SettingConst.TabDirection>();
+        public IObservable<SettingConst.MenuDirection> CursorMoved => _cursorMoved;
+        public IObservable<SettingConst.TabDirection> LrInputted => _lrInputted;
 
         bool _isEnable = false;
 
@@ -37,11 +39,20 @@ namespace gaw241201.View
         {
             if (Input.GetKeyDown(KeyCode.UpArrow))
             {
-                _cursorMoved.OnNext(SettingConst.Direction.Up);
+                _cursorMoved.OnNext(SettingConst.MenuDirection.Up);
             }
             if (Input.GetKeyDown(KeyCode.DownArrow))
             {
-                _cursorMoved.OnNext(SettingConst.Direction.Down);
+                _cursorMoved.OnNext(SettingConst.MenuDirection.Down);
+            }
+
+            if (Input.GetKeyDown(KeyCode.LeftArrow))
+            {
+                _lrInputted.OnNext(SettingConst.TabDirection.Left);
+            }
+            if (Input.GetKeyDown(KeyCode.RightArrow))
+            {
+                _lrInputted.OnNext(SettingConst.TabDirection.Right);
             }
         }
     }

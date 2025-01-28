@@ -53,64 +53,7 @@ namespace gaw241201.View
         void UnShow()
         {
             _root.SetActive(false);
-
         }
-
-
-
-
-
-
-        /*
-
-
-        float _time;
-        bool _isCountTime = true;
-        TimerArgs _args;
-
-        Subject<Unit> _timeUped = new Subject<Unit>();
-        Subject<float> _timeRemained = new Subject<float>();
-        public IObservable<Unit> TimeUped => _timeUped;
-        public IObservable<float> TimeRemained => _timeRemained;
-
-        public async UniTask Enter(TimerArgs timerArgs)
-        {
-            Log.Comment("タイマー開始");
-            Show();
-            OnEnter(timerArgs);
-
-            while (_time < timerArgs.Time && _isCountTime)
-            {
-                await UniTask.Yield(PlayerLoopTiming.Update);
-                _time += Time.deltaTime;
-                UpdateTimer(_time, timerArgs.Time);
-            }
-
-            OnExit();
-        }
-
-        void OnEnter(TimerArgs timerArgs)
-        {
-            //初期化
-            _time = 0;
-            _args = timerArgs;
-            _isCountTime = true;
-            UpdateTimer(_time, timerArgs.Time);
-        }
-
-        void OnExit()
-        {
-            if (_time > _args.Time)
-            {
-                _timeUped.OnNext(Unit.Default);
-            }
-        }
-        public void HaltTimer()
-        {
-            _isCountTime = false;
-            _timeRemained.OnNext(_args.Time - _time);
-        }
-        */
 
     }
 }

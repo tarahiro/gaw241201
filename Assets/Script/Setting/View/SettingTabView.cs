@@ -10,14 +10,27 @@ using VContainer.Unity;
 
 namespace gaw241201.View
 {
-    public class SettingTabView : MonoBehaviour
+    public abstract class SettingTabView : MonoBehaviour
     {
-        [SerializeField] List<SettingItemView> _itemList;
-        [SerializeField] Cursor _cursor;
+        [SerializeField] SettingTabBodyView _bodyView;
+        [SerializeField] SettingTabIndex _indexView;
 
-        public async UniTask ChangeFocus(int itemIndex)
+        public virtual async UniTask Enter(int menuIndex)
         {
-            _cursor.transform.localPosition = _itemList[itemIndex].transform.localPosition;
+            await _bodyView.Enter();
+            await _bodyView.SetFocus(menuIndex);
+            _indexView.Highlight();
+        }
+
+        public virtual async UniTask SetFocus(int menuIndex)
+        {
+            await _bodyView.SetFocus(menuIndex);
+        }
+
+        public virtual async UniTask Exit()
+        {
+            await _bodyView.Exit();
+            _indexView.Lowlight();
         }
     }
 }

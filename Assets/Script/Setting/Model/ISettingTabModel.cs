@@ -16,7 +16,7 @@ namespace gaw241201
         public int MaxItemRange { get; }
         public IObservable<int> FocusChanged { get; }   
         public void Initialize();
-        public void MoveFocus(SettingConst.Direction direction);
+        public void MoveFocus(SettingConst.MenuDirection direction);
         public void Enter();
         public void Exit();
     }

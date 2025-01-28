@@ -15,8 +15,8 @@ namespace gaw241201
     {
         [Inject] SettingUiModel _uiModel;
 
-        Subject<SettingEnterArgs> _settingStarted = new Subject<SettingEnterArgs>();
-        public IObservable<SettingEnterArgs> SettingStarted => _settingStarted;
+        Subject<SettingTabEnterArgs> _settingStarted = new Subject<SettingTabEnterArgs>();
+        public IObservable<SettingTabEnterArgs> SettingStarted => _settingStarted;
 
         CancellationTokenSource _cts;
         public async UniTask Enter()
@@ -24,7 +24,7 @@ namespace gaw241201
             _cts = new CancellationTokenSource();
 
             _uiModel.GetSettingUiState(out var _tabIndex, out var _itemIndex);
-            _settingStarted.OnNext(new SettingEnterArgs(_tabIndex, _itemIndex, _cts.Token));
+            _settingStarted.OnNext(new SettingTabEnterArgs(_tabIndex, _itemIndex, _cts.Token));
         }
     }
 }

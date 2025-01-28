@@ -22,7 +22,7 @@ namespace gaw241201
         {
 
         }
-        public void MoveFocus(SettingConst.Direction direction)
+        public void MoveFocus(SettingConst.MenuDirection direction)
         {
             int target = ItemIndex + (int)direction;
             if (target < 0)

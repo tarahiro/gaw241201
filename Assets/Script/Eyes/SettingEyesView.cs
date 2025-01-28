@@ -14,8 +14,8 @@ namespace gaw241201.View
     {
         const float c_length = .2f;
 
-        [SerializeField] List<EyeView> _eyeViewList;
-
+        [SerializeField] List<SettingEyeView> _eyeViewList;
+        [SerializeField] Animator _animator;
 
         public void SetEffect(ConversationViewConst.EyePosition facialKey)
         {
@@ -82,7 +82,7 @@ namespace gaw241201.View
                 case ConversationViewConst.Facial.Big:
                     foreach (var eye in _eyeViewList)
                     {
-                        eye.SetScale(1.5f);
+                        eye.SetScale(3f);
                     }
                     break;
 
@@ -98,10 +98,7 @@ namespace gaw241201.View
             switch (facialKey)
             {
                 case ConversationViewConst.Facial.Mad:
-                    foreach (var eye in _eyeViewList)
-                    {
-                        eye.SetRotation(new Vector3(0, 0, 00f));
-                    }
+                    SetMad();
                     break;
 
                 case ConversationViewConst.Facial.Big:
@@ -149,6 +146,16 @@ namespace gaw241201.View
                     break;
             }
 
+        }
+
+        public void SetNormal()
+        {
+            _animator.SetTrigger("Normal");
+        }
+
+        public void SetMad()
+        {
+            _animator.SetTrigger("Mad");
         }
 
         enum EyeLR

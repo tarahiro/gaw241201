@@ -12,10 +12,16 @@ namespace gaw241201
 {
     public class SettingConst
     {
-        public enum Direction
+        public enum MenuDirection
         {
             Up = -1,
             Down = 1,
+        }
+
+        public enum TabDirection
+        {
+            Left = -1,
+            Right = 1,
         }
     }
 }
