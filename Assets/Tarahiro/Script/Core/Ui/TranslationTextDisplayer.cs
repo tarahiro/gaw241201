@@ -24,13 +24,20 @@ namespace Tarahiro.Ui
         int _languageIndex = 0;
         float _initialFontSize;
 
+        bool _isConstructed = false;
 
-        [Inject]public void Construct(ISubscriber<int> subscriber)
+        [Inject]
+        public void Construct(ISubscriber<int> subscriber)
         {
-            _subscriber = subscriber;
+            if (!_isConstructed)
+            {
+                _subscriber = subscriber;
 
-            _subscriber.Subscribe(x => SetLanguage(x));
-            _initialFontSize = tmp.fontSize;
+                _subscriber.Subscribe(x => SetLanguage(x));
+                _initialFontSize = tmp.fontSize;
+
+                _isConstructed = true;
+            }
         }
 
         void Awake()

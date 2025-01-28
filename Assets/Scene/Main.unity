@@ -4965,7 +4965,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1607533450
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7456,6 +7456,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 508181516}
     m_Modifications:
+    - target: {fileID: 164124339266279953, guid: d185f23ce8a61284b8257cbb2630d679, type: 3}
+      propertyPath: Id
+      value: Glitch
+      objectReference: {fileID: 0}
     - target: {fileID: 1390673775766564508, guid: d185f23ce8a61284b8257cbb2630d679, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

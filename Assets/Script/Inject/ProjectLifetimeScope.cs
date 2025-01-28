@@ -14,6 +14,7 @@ using System;
 using System.Linq;
 using MessagePipe;
 using MessagePipe.VContainer;
+using UnityEditor;
 
 namespace gaw241201.Inject
 {
@@ -375,6 +376,7 @@ namespace gaw241201.Inject
             builder.Register<LanguageMessageMasterDataProvider>(Lifetime.Singleton).AsImplementedInterfaces();
 
             builder.RegisterEntryPoint<LanguageInitializer>(Lifetime.Singleton).AsSelf();
+            builder.RegisterEntryPoint<EmbeddedTextPresenter>(Lifetime.Singleton).AsSelf();
 
             builder.RegisterVitalRouter(routing =>
             {
@@ -386,6 +388,8 @@ namespace gaw241201.Inject
 
             var options = builder.RegisterMessagePipe(/* configure option */);
             builder.RegisterMessageBroker<int>(options);
+
+            builder.Register<EmbeddedTextViewManager>(Lifetime.Singleton).AsSelf();
         }
 
         void ConfigureSetting(IContainerBuilder builder)
