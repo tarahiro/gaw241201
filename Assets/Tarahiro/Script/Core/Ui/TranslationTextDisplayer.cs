@@ -8,6 +8,7 @@ using UnityEngine;
 using TMPro;
 using VContainer;
 using VitalRouter;
+using MessagePipe;
 
 namespace Tarahiro.Ui
 {
@@ -18,16 +19,27 @@ namespace Tarahiro.Ui
         [SerializeField] List<TMP_FontAsset> font;
         [SerializeField] List<float> fontSizeCoeffFromJp;
 
+        ISubscriber<int> _subscriber;
+
         int _languageIndex = 0;
         float _initialFontSize;
 
+
+        [Inject]public void Construct(ISubscriber<int> subscriber)
+        {
+            _subscriber = subscriber;
+
+            _subscriber.Subscribe(x => SetLanguage(x));
+            _initialFontSize = tmp.fontSize;
+        }
+
         void Awake()
         {
-            _initialFontSize = tmp.fontSize;
         }
 
         public void SetLanguage(int languageIndex)
         {
+            Log.Comment("ViewがSetLanguage : " + languageIndex);
             _languageIndex = languageIndex;
             tmp.font = font[_languageIndex];
             tmp.fontSize = _initialFontSize * fontSizeCoeffFromJp[_languageIndex];

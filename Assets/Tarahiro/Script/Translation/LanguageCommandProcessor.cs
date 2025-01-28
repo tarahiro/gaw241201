@@ -10,14 +10,14 @@ using VitalRouter;
 
 namespace Tarahiro
 {
-    public class LanguageCommandProcessor
+    public class LanguageCommandProcessor : ILanguageEventPublisher
     {
         [Inject]
         private ICommandPublisher _publisher;
 
         [Inject] ILanguageMessageMasterDataProvider _masterDataProvider;
 
-        public void On(int languageIndex)
+        public void PublishEvent(int languageIndex)
         {
             Log.Comment("言語コマンド発行");
             _publisher.PublishAsync(new NotifyLanguageCommand(languageIndex, _masterDataProvider));

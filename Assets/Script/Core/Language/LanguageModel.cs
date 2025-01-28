@@ -12,7 +12,7 @@ namespace gaw241201
 {
     public class LanguageModel
     {
-        [Inject] LanguageCommandProcessor _languageCommandProcessor;
+        [Inject] ILanguageEventPublisher _eventPublisher;
 
         public LanguageConst.AvailableLanguage Language { get; private set; }
 
@@ -20,7 +20,7 @@ namespace gaw241201
         {
             Log.Comment("Œ¾Œêİ’è");
             Language = language;
-            _languageCommandProcessor.On((int)Language);
+            _eventPublisher.PublishEvent((int)Language);
         }
     }
 }

@@ -3,12 +3,14 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Tarahiro;
+using Tarahiro.Ui;
 using TMPro;
 using UniRx;
 using UnityEngine;
 using UnityEngine.UI;
 using VContainer;
 using VContainer.Unity;
+using MessagePipe;
 
 namespace gaw241201.View
 {
@@ -22,17 +24,22 @@ namespace gaw241201.View
 
         [SerializeField] Button _button;
         [SerializeField] TextMeshProUGUI _tmp;
+        [SerializeField] TranslationTextView _translationTextView;
 
-        public void Construct(int index, string s)
+        [Inject]
+        public void Construct(ISubscriber<int> subscriber)
+        {
+            _translationTextView.Construct(subscriber);
+        }
+
+
+        public void Initialize(int index, string s)
         {
             _index = index;
             _tmp.text = s;
-        }
-
-        public void Initialize()
-        {
             _button.onClick.AddListener(() => _onClicked.OnNext(_index));
         }
+
 
         public void Exit()
         {

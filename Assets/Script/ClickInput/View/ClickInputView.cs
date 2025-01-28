@@ -14,6 +14,7 @@ namespace gaw241201.View
     public class ClickInputView : MonoBehaviour, IUiViewDeletable
     {
         [Inject] IGazable _gazable;
+        [Inject] IObjectResolver _diContainer;
 
         [SerializeField] ClickInputItemView _itemPrefab;
 
@@ -36,11 +37,10 @@ namespace gaw241201.View
 
             for (int i = 0; i < args.LabelList.Count; i++)
             {
-                var item = Instantiate<ClickInputItemView> (_itemPrefab, transform);
-                item.Construct(i, args.LabelList[i]);
+                var item =  _diContainer.Instantiate<ClickInputItemView> (_itemPrefab, transform);
+                item.Initialize(i, args.LabelList[i]);
                 item.transform.localPosition = Vector2.right * (c_initialX + c_intervalX * i);
                 item.OnClicked.Subscribe(OnExit);
-                item.Initialize();
                 _itemList.Add(item);
             }
 

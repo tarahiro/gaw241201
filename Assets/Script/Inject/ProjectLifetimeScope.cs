@@ -12,6 +12,8 @@ using VitalRouter;
 using VitalRouter.VContainer;
 using System;
 using System.Linq;
+using MessagePipe;
+using MessagePipe.VContainer;
 
 namespace gaw241201.Inject
 {
@@ -69,7 +71,7 @@ namespace gaw241201.Inject
         void ConfigureManager(IContainerBuilder builder)
         {
             //Manager
-            builder.Register<AdapterFactory<SimpleLoopStarter, SaveDataManager>>(Lifetime.Singleton).WithParameter<LifetimeScope[]>(FindObjectsOfType<LifetimeScope>).AsImplementedInterfaces();
+            builder.Register<AdapterFactory<HorrorStoryMainLoopStarter, SaveDataManager>>(Lifetime.Singleton).WithParameter<LifetimeScope[]>(FindObjectsOfType<LifetimeScope>).AsImplementedInterfaces();
             builder.Register<FlowProvider>(Lifetime.Singleton).WithParameter<LifetimeScope[]>(FindObjectsOfType<LifetimeScope>).AsImplementedInterfaces();
 
             builder.Register<SimpleLoopStarter>(Lifetime.Singleton).AsSelf().WithParameter(FlowMasterConst.FlowMasterLabel.TypingRoguelikeMainFlow);
@@ -369,7 +371,7 @@ namespace gaw241201.Inject
         void ConfigureLanguage(IContainerBuilder builder)
         {
             builder.Register<LanguageModel>(Lifetime.Singleton).AsSelf();
-            builder.Register<LanguageCommandProcessor>(Lifetime.Singleton).AsSelf();
+            builder.Register<LanguagePublisher>(Lifetime.Singleton).AsImplementedInterfaces();
             builder.Register<LanguageMessageMasterDataProvider>(Lifetime.Singleton).AsImplementedInterfaces();
 
             builder.RegisterEntryPoint<LanguageInitializer>(Lifetime.Singleton).AsSelf();
@@ -381,6 +383,9 @@ namespace gaw241201.Inject
                 routing.MapComponentInHierarchy<TranslationTextView>();
                 routing.MapComponentInHierarchy<EmbeddedTranslationTextView>();
             });
+
+            var options = builder.RegisterMessagePipe(/* configure option */);
+            builder.RegisterMessageBroker<int>(options);
         }
 
         void ConfigureSetting(IContainerBuilder builder)
