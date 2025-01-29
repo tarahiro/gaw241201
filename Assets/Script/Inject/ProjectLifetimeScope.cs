@@ -170,7 +170,7 @@ namespace gaw241201.Inject
         {
             //View
             builder.RegisterComponentInHierarchy<MainEyesView>().AsSelf().AsImplementedInterfaces();
-            builder.RegisterComponentInHierarchy<SettingEyesView>().AsSelf().AsImplementedInterfaces();
+            builder.RegisterComponentInHierarchy<SettingEyesView>().AsSelf().AsImplementedInterfaces().As<ISettingOrnament>();
             builder.Register<ImpressionView>(Lifetime.Singleton).AsSelf();
 
         }

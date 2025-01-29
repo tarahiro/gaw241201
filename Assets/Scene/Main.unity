@@ -3794,6 +3794,7 @@ MonoBehaviour:
   - {fileID: 1132458255}
   - {fileID: 403598739}
   - {fileID: 1306050618}
+  - {fileID: 542683574}
   textViewList:
   - {fileID: 920876524}
   - {fileID: 403598741}
@@ -6285,6 +6286,7 @@ MonoBehaviour:
   _eyeViewList:
   - {fileID: 6654354033297136775}
   - {fileID: 1475278627}
+  _animator: {fileID: 2040686329}
 --- !u!95 &2040686329
 Animator:
   serializedVersion: 5
@@ -7092,7 +7094,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 164124339266279953, guid: d185f23ce8a61284b8257cbb2630d679, type: 3}
       propertyPath: Id
-      value: Glitch
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 1390673775766564508, guid: d185f23ce8a61284b8257cbb2630d679, type: 3}
       propertyPath: m_Pivot.x

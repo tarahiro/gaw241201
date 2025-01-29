@@ -12,5 +12,12 @@ namespace gaw241201.View
 {
     public class SettingTabProfile : SettingTabView
     {
+        [Inject] ISettingOrnament _ornament;
+
+        public override UniTask Enter(int menuIndex)
+        {
+            _ornament.SetNormal();
+            return base.Enter(menuIndex);
+        }
     }
 }
