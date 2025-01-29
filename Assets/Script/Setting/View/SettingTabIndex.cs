@@ -12,18 +12,15 @@ namespace gaw241201.View
 {
     public class SettingTabIndex : MonoBehaviour
     {
-        [SerializeField] GameObject HighlightedObject;
         [SerializeField] GameObject LowlightedObject;
 
         public void Highlight()
         {
-            HighlightedObject.SetActive(true);
             LowlightedObject.SetActive(false);
         }
 
         public void Lowlight()
         {
-            HighlightedObject.SetActive(false);
             LowlightedObject.SetActive(true);
         }
     }
