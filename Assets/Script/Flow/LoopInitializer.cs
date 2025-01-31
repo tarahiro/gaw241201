@@ -18,7 +18,7 @@ namespace gaw241201
         {
             Log.Comment("InitializeLoop");
 
-            SoundManager.PlayBGM("Main");
+           SoundManager.PlayBGM("Main");
             _loopInitialized.OnNext(Unit.Default);
         }
     }

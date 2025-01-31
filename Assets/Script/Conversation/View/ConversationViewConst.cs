@@ -29,7 +29,7 @@ namespace gaw241201
         {
             None,
             Big,
-            Mad
+            Mad,
         }
 
         public enum Impression

@@ -1194,7 +1194,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1542297527609182851, guid: a4b3769f32861a447b54d97baca45fda, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1282019610}
   m_SourcePrefab: {fileID: 100100000, guid: a4b3769f32861a447b54d97baca45fda, type: 3}
 --- !u!224 &451140578 stripped
 RectTransform:
@@ -1277,6 +1280,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1393390966}
     m_Modifications:
+    - target: {fileID: 164124339266279953, guid: d185f23ce8a61284b8257cbb2630d679, type: 3}
+      propertyPath: Id
+      value: SettingAdvancedDeveloper
+      objectReference: {fileID: 0}
     - target: {fileID: 1390673775766564508, guid: d185f23ce8a61284b8257cbb2630d679, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1496,6 +1503,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3089941595784300200}
     m_Modifications:
+    - target: {fileID: 164124339266279953, guid: d185f23ce8a61284b8257cbb2630d679, type: 3}
+      propertyPath: Id
+      value: SettingProfileBirth
+      objectReference: {fileID: 0}
     - target: {fileID: 1390673775766564508, guid: d185f23ce8a61284b8257cbb2630d679, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1579,6 +1590,10 @@ PrefabInstance:
     - target: {fileID: 1474291232272344449, guid: d185f23ce8a61284b8257cbb2630d679, type: 3}
       propertyPath: m_text
       value: "\u751F\u5E74\u6708"
+      objectReference: {fileID: 0}
+    - target: {fileID: 1811806353584365482, guid: d185f23ce8a61284b8257cbb2630d679, type: 3}
+      propertyPath: Id
+      value: FakeSettingProfileBirth
       objectReference: {fileID: 0}
     - target: {fileID: 3731031091937543188, guid: d185f23ce8a61284b8257cbb2630d679, type: 3}
       propertyPath: m_Name
@@ -2239,7 +2254,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 164124339266279953, guid: d185f23ce8a61284b8257cbb2630d679, type: 3}
       propertyPath: Id
-      value: Glitch
+      value: SettingAdvancedRoguelike
       objectReference: {fileID: 0}
     - target: {fileID: 1390673775766564508, guid: d185f23ce8a61284b8257cbb2630d679, type: 3}
       propertyPath: m_Pivot.x
@@ -2332,6 +2347,10 @@ PrefabInstance:
     - target: {fileID: 3731031091937543188, guid: d185f23ce8a61284b8257cbb2630d679, type: 3}
       propertyPath: m_Name
       value: SettingItem
+      objectReference: {fileID: 0}
+    - target: {fileID: 3731031091937543188, guid: d185f23ce8a61284b8257cbb2630d679, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3450,6 +3469,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3089941595784300200}
     m_Modifications:
+    - target: {fileID: 164124339266279953, guid: d185f23ce8a61284b8257cbb2630d679, type: 3}
+      propertyPath: Id
+      value: SettingProfileConsent
+      objectReference: {fileID: 0}
     - target: {fileID: 1390673775766564508, guid: d185f23ce8a61284b8257cbb2630d679, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -3533,6 +3556,10 @@ PrefabInstance:
     - target: {fileID: 1474291232272344449, guid: d185f23ce8a61284b8257cbb2630d679, type: 3}
       propertyPath: m_text
       value: "\u30B2\u30FC\u30E0\u5185\u3067\u53D7\u3051\u308B\u3042\u3089\u3086\u308B\u640D\u5BB3"
+      objectReference: {fileID: 0}
+    - target: {fileID: 1811806353584365482, guid: d185f23ce8a61284b8257cbb2630d679, type: 3}
+      propertyPath: Id
+      value: FakeSettingProfileConsent
       objectReference: {fileID: 0}
     - target: {fileID: 3731031091937543188, guid: d185f23ce8a61284b8257cbb2630d679, type: 3}
       propertyPath: m_Name
@@ -3826,6 +3853,24 @@ Transform:
   m_Children: []
   m_Father: {fileID: 844296473}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1282019606 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1542297527609182851, guid: a4b3769f32861a447b54d97baca45fda, type: 3}
+  m_PrefabInstance: {fileID: 451140577}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1282019610
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1282019606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06d65ec0b98359741bdf6b024c2bc3a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Id: SettingAdvancedCaution
 --- !u!1 &1306050618 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4653787814211111509, guid: 3648ec7bedb7d404f98f92fb0f3456a7, type: 3}
@@ -4212,6 +4257,10 @@ PrefabInstance:
     - target: {fileID: 4268134201494489253, guid: 8a542195e5f91d549abe9c7b94747a0b, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5115430696293847615, guid: 8a542195e5f91d549abe9c7b94747a0b, type: 3}
+      propertyPath: Id
+      value: SettingLabelAdvanced
       objectReference: {fileID: 0}
     - target: {fileID: 5561578701252304160, guid: 8a542195e5f91d549abe9c7b94747a0b, type: 3}
       propertyPath: m_Pivot.x
@@ -4783,6 +4832,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3089941595784300200}
     m_Modifications:
+    - target: {fileID: 164124339266279953, guid: d185f23ce8a61284b8257cbb2630d679, type: 3}
+      propertyPath: Id
+      value: SettingProfileSex
+      objectReference: {fileID: 0}
     - target: {fileID: 1390673775766564508, guid: d185f23ce8a61284b8257cbb2630d679, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -4867,6 +4920,10 @@ PrefabInstance:
       propertyPath: m_text
       value: SEX
       objectReference: {fileID: 0}
+    - target: {fileID: 1811806353584365482, guid: d185f23ce8a61284b8257cbb2630d679, type: 3}
+      propertyPath: Id
+      value: FakeSettingProfileSex
+      objectReference: {fileID: 0}
     - target: {fileID: 3731031091937543188, guid: d185f23ce8a61284b8257cbb2630d679, type: 3}
       propertyPath: m_Name
       value: SettingItem (2)
@@ -4904,6 +4961,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3089941595784300200}
     m_Modifications:
+    - target: {fileID: 164124339266279953, guid: d185f23ce8a61284b8257cbb2630d679, type: 3}
+      propertyPath: Id
+      value: SettingProfileEthnicity
+      objectReference: {fileID: 0}
     - target: {fileID: 1390673775766564508, guid: d185f23ce8a61284b8257cbb2630d679, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -4987,6 +5048,10 @@ PrefabInstance:
     - target: {fileID: 1474291232272344449, guid: d185f23ce8a61284b8257cbb2630d679, type: 3}
       propertyPath: m_text
       value: "\u6C11\u65CF"
+      objectReference: {fileID: 0}
+    - target: {fileID: 1811806353584365482, guid: d185f23ce8a61284b8257cbb2630d679, type: 3}
+      propertyPath: Id
+      value: FakeSettingProfileEthnicity
       objectReference: {fileID: 0}
     - target: {fileID: 3731031091937543188, guid: d185f23ce8a61284b8257cbb2630d679, type: 3}
       propertyPath: m_Name
@@ -5160,7 +5225,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1607533450
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7203,6 +7268,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6462015834739227002, guid: a4b3769f32861a447b54d97baca45fda, type: 3}
+      propertyPath: m_fontSize
+      value: 64
+      objectReference: {fileID: 0}
+    - target: {fileID: 6462015834739227002, guid: a4b3769f32861a447b54d97baca45fda, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 64
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7210,6 +7283,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1542297527609182851, guid: a4b3769f32861a447b54d97baca45fda, type: 3}
       insertIndex: -1
       addedObject: {fileID: 631747840730926812}
+    - targetCorrespondingSourceObject: {fileID: 1542297527609182851, guid: a4b3769f32861a447b54d97baca45fda, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 631747840730926816}
   m_SourcePrefab: {fileID: 100100000, guid: a4b3769f32861a447b54d97baca45fda, type: 3}
 --- !u!224 &631747840730926808 stripped
 RectTransform:
@@ -7229,6 +7305,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _cursor: {fileID: 1792954777}
+--- !u!114 &631747840730926816
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2082949901}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06d65ec0b98359741bdf6b024c2bc3a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Id: SettingTitle
 --- !u!1001 &1075898165962941581
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7345,6 +7434,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1923191282}
     m_Modifications:
+    - target: {fileID: 161441146404296115, guid: 429c1ad891b74aa489789027d3e3854b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 589395279077082346, guid: 429c1ad891b74aa489789027d3e3854b, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.7
@@ -7481,6 +7574,10 @@ PrefabInstance:
     - target: {fileID: 4268134201494489253, guid: 8a542195e5f91d549abe9c7b94747a0b, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5115430696293847615, guid: 8a542195e5f91d549abe9c7b94747a0b, type: 3}
+      propertyPath: Id
+      value: SettingLabelProfile
       objectReference: {fileID: 0}
     - target: {fileID: 5561578701252304160, guid: 8a542195e5f91d549abe9c7b94747a0b, type: 3}
       propertyPath: m_Pivot.x
@@ -7803,7 +7900,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 164124339266279953, guid: d185f23ce8a61284b8257cbb2630d679, type: 3}
       propertyPath: Id
-      value: 
+      value: SettingProfileName
       objectReference: {fileID: 0}
     - target: {fileID: 1390673775766564508, guid: d185f23ce8a61284b8257cbb2630d679, type: 3}
       propertyPath: m_Pivot.x
@@ -7884,6 +7981,10 @@ PrefabInstance:
     - target: {fileID: 1390673775766564508, guid: d185f23ce8a61284b8257cbb2630d679, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1811806353584365482, guid: d185f23ce8a61284b8257cbb2630d679, type: 3}
+      propertyPath: Id
+      value: FakeSettingProfileName
       objectReference: {fileID: 0}
     - target: {fileID: 3731031091937543188, guid: d185f23ce8a61284b8257cbb2630d679, type: 3}
       propertyPath: m_Name

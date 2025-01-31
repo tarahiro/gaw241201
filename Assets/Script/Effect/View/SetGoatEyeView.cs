@@ -15,17 +15,18 @@ namespace gaw241201.View
     {
         public bool IsAutoEnd => true;
 
-
         IChangableEye _changable;
 
         public SetGoatEyeView Construct(IChangableEye robbable)
         {
+            Log.Comment("SetGoatEyeView; Construct");
             _changable = robbable;
 
             return this;
         }
         public async UniTask Enter(CancellationToken cancellationToken)
         {
+            Log.Comment("SetGoatEyeView; Enter");
             _changable.ChangeParts(EffectConst.EyeParts.Goat, EffectConst.WhichEye.Both);
         }
 

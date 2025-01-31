@@ -133,6 +133,7 @@ namespace gaw241201.View
 
         public void ChangeParts(EffectConst.EyeParts parts, EffectConst.WhichEye whichEye)
         {
+            Log.Comment("MainEyesView: ChangeParts");
             switch (whichEye)
             {
                 case EffectConst.WhichEye.Both:
