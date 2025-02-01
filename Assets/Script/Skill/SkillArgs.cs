@@ -30,10 +30,10 @@ namespace gaw241201
         {
             public FlagConst.ContainableMasterKey Key { get; private set; }
             public string Id { get; private set; }
-            public SkillConst.SkillCategory Category { get; private set; }
+            public string Category { get; private set; }
             public string Name { get; private set; }
             public string Description { get; private set; }
-            public Data(FlagConst.ContainableMasterKey key, string id, SkillConst.SkillCategory category, string name, string description)
+            public Data(FlagConst.ContainableMasterKey key, string id, string category, string name, string description)
             {
                 Key = key;
                 Id = id;

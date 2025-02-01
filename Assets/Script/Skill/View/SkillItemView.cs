@@ -28,7 +28,7 @@ namespace gaw241201.View
         public void SetData(SkillArgs.Data args)
         {
             _args = args;
-            _name.text = GenerateLabel(args.Category) + args.Name;
+            _name.text = args.Category + args.Name;
             _description.text = args.Description;
             if(ResourceUtil.IsExist(c_picturePath + args.Id))
             {

@@ -14,9 +14,16 @@ namespace gaw241201
 {
     public class SkillAchieveArgsDataFactory
     {
+        const string messageName = "SkillCategory";
+
+        [Inject] ILanguageMessageMasterDataProvider _messageMasterDataProvider;
+
         public SkillArgs.Data Create(ILeetMaster leetMaster)
         {
-            return new SkillArgs.Data(FlagConst.ContainableMasterKey.Leet, leetMaster.Id, SkillConst.SkillCategory.Leet, leetMaster.Name, leetMaster.Description);
+            return new SkillArgs.Data(FlagConst.ContainableMasterKey.Leet, leetMaster.Id,
+                _messageMasterDataProvider.TryGetFromId(messageName + "Leet").GetMaster().Message.GetTranslatedText(_languageIndex),
+                leetMaster.DisplayName.GetTranslatedText(_languageIndex), 
+                leetMaster.Description.GetTranslatedText(_languageIndex));
         }
 
         public SkillArgs.Data Create(IWordMaster wordMaster)
@@ -47,7 +54,8 @@ namespace gaw241201
             }
 
 
-            return new SkillArgs.Data(FlagConst.ContainableMasterKey.Word, wordMaster.Id, category, 
+            return new SkillArgs.Data(FlagConst.ContainableMasterKey.Word, wordMaster.Id, 
+                _messageMasterDataProvider.TryGetFromId(messageName + wordMaster.TagName).GetMaster().Message.GetTranslatedText(_languageIndex),
                 wordMaster.DisplayName.GetTranslatedText(_languageIndex), 
                 wordMaster.Description.GetTranslatedText(_languageIndex));
         }

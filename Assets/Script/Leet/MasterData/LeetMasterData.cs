@@ -29,22 +29,22 @@ namespace gaw241201.Model.MasterData
 
             [SerializeField] int m_Index;
             [SerializeField] string m_Id;
-            [SerializeField] string m_Name;
-            [SerializeField] string m_Description;
+            [SerializeField] TranslatableText m_Name;
+            [SerializeField] TranslatableText m_Description;
             [SerializeField] LeetReplaceData[] m_ReplaceToStringList;
 
 
             public int Index => m_Index;
             public string Id => m_Id;
-            public string Name => m_Name;
-            public string Description => m_Description;
+            public TranslatableText DisplayName => m_Name;
+            public TranslatableText Description => m_Description;
             public LeetReplaceData[] ReplaceToStringList => m_ReplaceToStringList;
 
             public ILeetMaster GetMaster() => this;
 
 #if UNITY_EDITOR
-            public string SettableName { set => m_Name = value; }
-            public string SettableDescription { set => m_Description = value; }
+            public TranslatableText SettableName { set => m_Name = value; }
+            public TranslatableText SettableDescription { set => m_Description = value; }
             public LeetReplaceData[] SettableReplaceToStringList { set => m_ReplaceToStringList = value; }
 
 #endif

@@ -13,8 +13,8 @@ namespace gaw241201.Model
     //フィールドを追加
     public interface ILeetMaster : IIdentifiable, IIndexable
     {
-        string Name { get; }
-        string Description { get; }
+        TranslatableText DisplayName { get; }
+        TranslatableText Description { get; }
         LeetReplaceData[] ReplaceToStringList { get; }
     }
 }

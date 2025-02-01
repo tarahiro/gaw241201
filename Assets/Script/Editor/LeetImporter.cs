@@ -27,9 +27,9 @@ namespace gaw241201.Editor
         {
             Index = 0,
             Id = 1,
-            Name = 2,
-            Description = 3,
-            LeetedChar = 4,
+            DisplayName = 2,
+            Description = DisplayName + LanguageConst.AvailableLanguageNumber,
+            LeetedChar = Description + LanguageConst.AvailableLanguageNumber,
         }
 
         //--------------------------------------------------------------------
@@ -69,8 +69,8 @@ namespace gaw241201.Editor
                         string id = sheet[row, (int)Columns.Id].String;
                         LeetDataList.Add(new LeetMasterData.Record(index, id)
                         {
-                            SettableName = sheet[row, (int)Columns.Name].String,
-                            SettableDescription = sheet[row, (int)Columns.Description].String,
+                            SettableName = EditorUtil.GetTranslatableText<LanguageConst.AvailableLanguage>(sheet, row, (int)Columns.DisplayName),
+                            SettableDescription = EditorUtil.GetTranslatableText<LanguageConst.AvailableLanguage>(sheet, row, (int)Columns.Description),
                             SettableReplaceToStringList = GetLeetReplaceDataArray(sheet, row, (int)Columns.LeetedChar, 2)
                         }); ;
                     }

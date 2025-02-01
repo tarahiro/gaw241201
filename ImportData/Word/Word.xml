@@ -16,8 +16,8 @@
   <AllowPNG/>
  </OfficeDocumentSettings>
  <ExcelWorkbook xmlns="urn:schemas-microsoft-com:office:excel">
-  <WindowHeight>17300</WindowHeight>
-  <WindowWidth>32767</WindowWidth>
+  <WindowHeight>13100</WindowHeight>
+  <WindowWidth>10220</WindowWidth>
   <WindowTopX>32767</WindowTopX>
   <WindowTopY>32767</WindowTopY>
   <RefModeR1C1/>
@@ -131,7 +131,7 @@
     <Cell ss:StyleID="s67" ss:Formula="=CONCAT(&quot;動物名を&quot;,RC[-4],&quot;に置き換えられる&quot;)"><Data
       ss:Type="String">動物名をdogに置き換えられる</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">dog</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">animal</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Animal</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="Number">0</Data></Cell>
@@ -149,7 +149,7 @@
       ss:Type="String">&quot;CAT&quot;を打った時のポイントが10倍。</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">Points are multiplied by 10 when typing &quot;CAT.&quot;</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">cat</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">animal</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Animal</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="Number">0</Data></Cell>
@@ -167,7 +167,7 @@
     <Cell ss:StyleID="s67" ss:Formula="=CONCAT(&quot;動物名を&quot;,RC[-4],&quot;に置き換えられる&quot;)"><Data
       ss:Type="String">動物名をbuffaloAnimalに置き換えられる</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">buffaloAnimal</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">animal</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Animal</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="Number">0</Data></Cell>
@@ -185,7 +185,7 @@
     <Cell ss:StyleID="s67" ss:Formula="=CONCAT(&quot;動物名を&quot;,RC[-4],&quot;に置き換えられる&quot;)"><Data
       ss:Type="String">動物名をgorillaに置き換えられる</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">gorilla</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">animal</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Animal</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="Number">0</Data></Cell>
@@ -203,7 +203,7 @@
     <Cell ss:StyleID="s67" ss:Formula="=CONCAT(&quot;動物名を&quot;,RC[-4],&quot;に置き換えられる&quot;)"><Data
       ss:Type="String">動物名をplatypusに置き換えられる</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">platypus</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">animal</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Animal</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="Number">0</Data></Cell>
@@ -218,7 +218,7 @@
     <Cell ss:StyleID="s67" ss:Formula="=CONCAT(&quot;動物名を&quot;,RC[-4],&quot;に置き換えられる&quot;)"><Data
       ss:Type="String">動物名をwhaleに置き換えられる</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">whale</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">animal</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Animal</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="Number">0</Data></Cell>
@@ -233,7 +233,7 @@
     <Cell ss:StyleID="s67" ss:Formula="=CONCAT(&quot;動物名を&quot;,RC[-4],&quot;に置き換えられる&quot;)"><Data
       ss:Type="String">動物名をservalに置き換えられる</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">serval</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">animal</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Animal</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="Number">0</Data></Cell>
@@ -248,7 +248,7 @@
     <Cell ss:StyleID="s67" ss:Formula="=CONCAT(&quot;動物名を&quot;,RC[-4],&quot;に置き換えられる&quot;)"><Data
       ss:Type="String">動物名をtigerに置き換えられる</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">tiger</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">animal</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Animal</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="Number">0</Data></Cell>
@@ -263,7 +263,7 @@
       ss:Type="String">人名をAliceに置き換えられる。Aをタイプするとポイント2倍。</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">Names can be replaced with &quot;Alice.&quot; Typing &quot;A&quot; doubles the points.</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">Alice</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">human</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Human</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="Number">0</Data></Cell>
@@ -278,7 +278,7 @@
     <Cell ss:StyleID="s67" ss:Formula="=CONCAT(&quot;人名を&quot;,RC[-4],&quot;に置き換えられる&quot;)"><Data
       ss:Type="String">人名をBobに置き換えられる</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">Bob</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">human</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Human</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="Number">0</Data></Cell>
@@ -296,7 +296,7 @@
     <Cell ss:StyleID="s67" ss:Formula="=CONCAT(&quot;人名を&quot;,RC[-4],&quot;に置き換えられる&quot;)"><Data
       ss:Type="String">人名をEveに置き換えられる</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">Eve</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">human</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Human</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="Number">0</Data></Cell>
@@ -314,7 +314,7 @@
     <Cell ss:StyleID="s67" ss:Formula="=CONCAT(&quot;人名を&quot;,RC[-4],&quot;に置き換えられる&quot;)"><Data
       ss:Type="String">人名をIsaacに置き換えられる</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">Isaac</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">human</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Human</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="Number">0</Data></Cell>
@@ -329,7 +329,7 @@
     <Cell ss:StyleID="s67" ss:Formula="=CONCAT(&quot;人名を&quot;,RC[-4],&quot;に置き換えられる&quot;)"><Data
       ss:Type="String">人名をMalloryに置き換えられる</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">Mallory</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">human</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Human</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="Number">0</Data></Cell>
@@ -344,7 +344,7 @@
     <Cell ss:StyleID="s67" ss:Formula="=CONCAT(&quot;人名を&quot;,RC[-4],&quot;に置き換えられる&quot;)"><Data
       ss:Type="String">人名をOscarに置き換えられる</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">Oscar</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">human</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Human</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="Number">0</Data></Cell>
@@ -359,7 +359,7 @@
     <Cell ss:StyleID="s67" ss:Formula="=CONCAT(&quot;人名を&quot;,RC[-4],&quot;に置き換えられる&quot;)"><Data
       ss:Type="String">人名をTrudyに置き換えられる</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">Trudy</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">human</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Human</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="Number">0</Data></Cell>
@@ -374,7 +374,7 @@
     <Cell ss:StyleID="s67" ss:Formula="=CONCAT(&quot;人名を&quot;,RC[-4],&quot;に置き換えられる&quot;)"><Data
       ss:Type="String">人名をZoeに置き換えられる</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">Zoe</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">human</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Human</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="Number">0</Data></Cell>
@@ -392,7 +392,7 @@
     <Cell ss:StyleID="s67" ss:Formula="=CONCAT(&quot;自動詞を&quot;,RC[-4],&quot;に置き換えられる&quot;)"><Data
       ss:Type="String">自動詞をaliveに置き換えられる</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">alive</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">vi</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Vi</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="Number">0</Data></Cell>
@@ -407,7 +407,7 @@
     <Cell ss:StyleID="s67" ss:Formula="=CONCAT(&quot;自動詞を&quot;,RC[-4],&quot;に置き換えられる&quot;)"><Data
       ss:Type="String">自動詞をsuicideに置き換えられる</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">suicide</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">vi</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Vi</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="Number">0</Data></Cell>
@@ -422,7 +422,7 @@
     <Cell ss:StyleID="s67" ss:Formula="=CONCAT(&quot;自動詞を&quot;,RC[-4],&quot;に置き換えられる&quot;)"><Data
       ss:Type="String">自動詞をbloodに置き換えられる</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">blood</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">vi</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Vi</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="Number">0</Data></Cell>
@@ -437,7 +437,7 @@
     <Cell ss:StyleID="s67" ss:Formula="=CONCAT(&quot;自動詞を&quot;,RC[-4],&quot;に置き換えられる&quot;)"><Data
       ss:Type="String">自動詞をfearに置き換えられる</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">fear</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">vi</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Vi</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="Number">0</Data></Cell>
@@ -452,7 +452,7 @@
     <Cell ss:StyleID="s67" ss:Formula="=CONCAT(&quot;自動詞を&quot;,RC[-4],&quot;に置き換えられる&quot;)"><Data
       ss:Type="String">自動詞をwarに置き換えられる</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">war</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">vi</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Vi</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="Number">0</Data></Cell>
@@ -467,7 +467,7 @@
     <Cell ss:StyleID="s67" ss:Formula="=CONCAT(&quot;自動詞を&quot;,RC[-4],&quot;に置き換えられる&quot;)"><Data
       ss:Type="String">自動詞をbuffaloVtに置き換えられる</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">buffaloVt</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">vt</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Vt</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="Number">0</Data></Cell>
@@ -482,7 +482,7 @@
     <Cell ss:StyleID="s67" ss:Formula="=CONCAT(&quot;自動詞を&quot;,RC[-4],&quot;に置き換えられる&quot;)"><Data
       ss:Type="String">自動詞をhelpに置き換えられる</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">help</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">vt</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Vt</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="Number">0</Data></Cell>
@@ -497,7 +497,7 @@
     <Cell ss:StyleID="s67" ss:Formula="=CONCAT(&quot;自動詞を&quot;,RC[-4],&quot;に置き換えられる&quot;)"><Data
       ss:Type="String">自動詞をsurrenderに置き換えられる</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">surrender</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">vt</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Vt</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="Number">0</Data></Cell>
@@ -512,7 +512,7 @@
     <Cell ss:StyleID="s67" ss:Formula="=CONCAT(&quot;自動詞を&quot;,RC[-4],&quot;に置き換えられる&quot;)"><Data
       ss:Type="String">自動詞をpunishに置き換えられる</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">punish</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">vt</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Vt</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="Number">0</Data></Cell>
@@ -527,7 +527,7 @@
     <Cell ss:StyleID="s67" ss:Formula="=CONCAT(&quot;自動詞を&quot;,RC[-4],&quot;に置き換えられる&quot;)"><Data
       ss:Type="String">自動詞をbarrelに置き換えられる</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">barrel</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">vt</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Vt</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="Number">0</Data></Cell>
@@ -552,8 +552,9 @@
    <Panes>
     <Pane>
      <Number>3</Number>
-     <ActiveRow>13</ActiveRow>
-     <ActiveCol>5</ActiveCol>
+     <ActiveRow>19</ActiveRow>
+     <ActiveCol>7</ActiveCol>
+     <RangeSelection>R13C8:R20C8</RangeSelection>
     </Pane>
    </Panes>
    <ProtectObjects>False</ProtectObjects>
