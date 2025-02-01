@@ -17,7 +17,6 @@ namespace gaw241201.View
 
         [SerializeField] TextMeshProUGUI _name;
         [SerializeField] TextMeshProUGUI _description;
-        [SerializeField] TextMeshProUGUI _fakeDescription;
 
         Subject<SkillArgs.Data> _decided = new Subject<SkillArgs.Data>();
         public IObservable<SkillArgs.Data> Decided => _decided;
@@ -27,11 +26,6 @@ namespace gaw241201.View
             _args = args;
             _name.text = GenerateLabel(args.Category) + args.Name;
             _description.text = args.Description;
-        }
-
-        public void FakeSetDescription(string text)
-        {
-            _fakeDescription.text = text + "‚ðƒ^ƒCƒv‚µ‚ÄŠl“¾";
         }
 
 

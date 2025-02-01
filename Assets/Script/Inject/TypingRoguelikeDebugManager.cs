@@ -32,7 +32,7 @@ namespace gaw241201.Inject
 
                 if (Input.GetKeyDown(KeyCode.A))
                 {
-                    Log.Comment("強制的に全デバッグコマンド追加");
+                    Log.Comment("強制的に全スキル追加");
 
                     for (int i = 0; i < _leetMasterDataProvider.Count; i++)
                     {

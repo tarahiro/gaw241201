@@ -73,7 +73,7 @@ namespace gaw241201.Inject
             builder.Register<AdapterFactory<SimpleLoopStarter, SaveDataManager>>(Lifetime.Singleton).WithParameter<LifetimeScope[]>(FindObjectsOfType<LifetimeScope>).AsImplementedInterfaces();
             builder.Register<FlowProvider>(Lifetime.Singleton).WithParameter<LifetimeScope[]>(FindObjectsOfType<LifetimeScope>).AsImplementedInterfaces();
 
-            builder.Register<SimpleLoopStarter>(Lifetime.Singleton).AsSelf().WithParameter(FlowMasterConst.FlowMasterLabel.GoatEyeFlow);
+            builder.Register<SimpleLoopStarter>(Lifetime.Singleton).AsSelf().WithParameter(FlowMasterConst.FlowMasterLabel.TypingRoguelikeMainFlow);
 
             builder.RegisterEntryPoint<GameManager>();
 
@@ -240,6 +240,7 @@ namespace gaw241201.Inject
             builder.RegisterComponentInHierarchy<ConversationTextView>().AsSelf();
             builder.Register<MessageKeyHundler>(Lifetime.Singleton).AsSelf();
             builder.Register<MessageKeyReplacerProvider>(Lifetime.Singleton).AsSelf();
+            builder.Register<FakeSkillChoicesDecider>(Lifetime.Singleton).AsImplementedInterfaces();
 
             builder.Register<ConversationModelFactory>(Lifetime.Singleton).AsSelf();
             builder.Register<ConversationModelProvider>(Lifetime.Singleton).AsSelf();

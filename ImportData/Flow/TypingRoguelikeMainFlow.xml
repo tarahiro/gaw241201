@@ -9,15 +9,15 @@
   <Author>h t</Author>
   <LastAuthor>h t</LastAuthor>
   <Created>2021-10-25T13:58:26Z</Created>
-  <LastSaved>2025-01-23T14:20:31Z</LastSaved>
+  <LastSaved>2025-02-01T09:55:31Z</LastSaved>
   <Version>16.00</Version>
  </DocumentProperties>
  <OfficeDocumentSettings xmlns="urn:schemas-microsoft-com:office:office">
   <AllowPNG/>
  </OfficeDocumentSettings>
  <ExcelWorkbook xmlns="urn:schemas-microsoft-com:office:excel">
-  <WindowHeight>11660</WindowHeight>
-  <WindowWidth>28580</WindowWidth>
+  <WindowHeight>17300</WindowHeight>
+  <WindowWidth>32767</WindowWidth>
   <WindowTopX>32767</WindowTopX>
   <WindowTopY>32767</WindowTopY>
   <RefModeR1C1/>
@@ -126,7 +126,7 @@
     <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">2</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">900900SkillAchieve</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">SkillAchieve</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">900000TestAct</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Initial</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">Clear</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="Number">0</Data></Cell>
    </Row>
@@ -238,7 +238,7 @@
    <Panes>
     <Pane>
      <Number>3</Number>
-     <ActiveRow>5</ActiveRow>
+     <ActiveRow>6</ActiveRow>
      <ActiveCol>3</ActiveCol>
     </Pane>
    </Panes>
