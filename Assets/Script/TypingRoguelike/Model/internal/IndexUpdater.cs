@@ -59,7 +59,7 @@ namespace gaw241201
                         {
                             if (wordData.GetMaster().TagName == tag)
                             {
-                                selectionDataList.Add(new ReplaceData(word, wordData.GetMaster().WordName));
+                                selectionDataList.Add(new ReplaceData(word, wordData.GetMaster().ReplaceTo));
                             }
                         }
                     }

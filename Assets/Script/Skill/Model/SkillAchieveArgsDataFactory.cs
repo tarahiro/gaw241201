@@ -8,6 +8,7 @@ using UniRx;
 using UnityEngine;
 using VContainer;
 using VContainer.Unity;
+using MessagePipe;
 
 namespace gaw241201
 {
@@ -46,8 +47,20 @@ namespace gaw241201
             }
 
 
-            return new SkillArgs.Data(FlagConst.ContainableMasterKey.Word, wordMaster.Id, category, wordMaster.WordName, wordMaster.Description);
+            return new SkillArgs.Data(FlagConst.ContainableMasterKey.Word, wordMaster.Id, category, 
+                wordMaster.DisplayName.GetTranslatedText(_languageIndex), 
+                wordMaster.Description.GetTranslatedText(_languageIndex));
         }
 
+        [Inject] ISubscriber<int> _subscriber;
+        int _languageIndex = 0;
+        public void Initialize()
+        {
+            _subscriber.Subscribe(x => SetLanguage(x));
+        }
+        public void SetLanguage(int languageIndex)
+        {
+            _languageIndex = languageIndex;
+        }
     }
 }

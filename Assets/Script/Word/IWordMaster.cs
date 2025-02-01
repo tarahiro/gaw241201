@@ -12,9 +12,10 @@ namespace gaw241201.Model
     //フィールドを追加
     public interface IWordMaster : IIdentifiable, IIndexable
     {
-        string WordName { get; }
+        TranslatableText DisplayName { get; }
+        TranslatableText Description { get; }
+        string ReplaceTo { get; }
         string TagName { get; }
-        string Description { get; }
         string SkillKey { get; }
         string[] SkillStringArgs { get; }
         float SkillFloatArg { get; }

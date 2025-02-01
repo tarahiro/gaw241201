@@ -13,10 +13,14 @@ namespace gaw241201.View
 {
     public class SkillItemView : MonoBehaviour
     {
+        const string c_picturePath = "Prefab/CardPicture/";
         SkillArgs.Data _args;
 
         [SerializeField] TextMeshProUGUI _name;
         [SerializeField] TextMeshProUGUI _description;
+        [SerializeField] Transform _skillPictureLocator;
+
+        SkillPicture _skillPicture;
 
         Subject<SkillArgs.Data> _decided = new Subject<SkillArgs.Data>();
         public IObservable<SkillArgs.Data> Decided => _decided;
@@ -26,6 +30,11 @@ namespace gaw241201.View
             _args = args;
             _name.text = GenerateLabel(args.Category) + args.Name;
             _description.text = args.Description;
+            if(ResourceUtil.IsExist(c_picturePath + args.Id))
+            {
+                _skillPicture = Instantiate(ResourceUtil.GetResource<SkillPicture>(c_picturePath + args.Id), _skillPictureLocator);
+                _skillPicture.transform.localPosition = Vector3.zero;
+            }
         }
 
 

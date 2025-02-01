@@ -16,6 +16,7 @@ namespace gaw241201.Presenter
     {
         [Inject] SkillAchieveModel _model;
         [Inject] SkillAchieveView _view;
+        [Inject] SkillAchieveArgsDataFactory _factory;
 
         CompositeDisposable _disposable = new CompositeDisposable();
 
@@ -23,6 +24,8 @@ namespace gaw241201.Presenter
         {
             _model.Entered.Subscribe(x => _view.Enter(x).Forget()).AddTo(_disposable);
             _view.Ended.Subscribe(_model.End).AddTo(_disposable);
+
+            _factory.Initialize();
         }
     }
 }

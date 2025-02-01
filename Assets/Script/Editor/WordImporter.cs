@@ -27,12 +27,13 @@ namespace gaw241201.Editor
         {
             Index = 0,
             Id = 1,
-            WordName = 2,
-            TagName = 3,
-            Description = 4,
-            SkillKey = 5,
-            SkillStringArgs = 6,
-            SkillFloatArg = 7,
+            DisplayName = 2,
+            Description = DisplayName + LanguageConst.AvailableLanguageNumber,
+            ReplaceTo = Description + LanguageConst.AvailableLanguageNumber,
+            TagName = ReplaceTo + 1,
+            SkillKey = TagName + 1,
+            SkillStringArgs = SkillKey + 1,
+            SkillFloatArg = SkillStringArgs + 1,
         }
 
         //--------------------------------------------------------------------
@@ -72,9 +73,10 @@ namespace gaw241201.Editor
                         string id = sheet[row, (int)Columns.Id].String;
                         WordDataList.Add(new WordMasterData.Record(index, id)
                         {
-                            SettableWordName = sheet[row, (int)Columns.WordName].String,
+                            SettableDisplayName = EditorUtil.GetTranslatableText<LanguageConst.AvailableLanguage>(sheet,row, (int)Columns.DisplayName),
+                            SettableDescription = EditorUtil.GetTranslatableText<LanguageConst.AvailableLanguage>(sheet, row, (int)Columns.Description),
+                            SettableReplaceTo = sheet[row, (int)Columns.ReplaceTo].String,
                             SettableTagName = sheet[row, (int)Columns.TagName].String,
-                            SettableDescription = sheet[row, (int)Columns.Description].String,
                             SettableSkillKey = sheet[row, (int)Columns.SkillKey].String,
                             SettableSkillStringArgs = sheet[row, (int)Columns.SkillStringArgs].String.Split(','),
                             SettableSkillFloatArg = sheet[row, (int)Columns.SkillFloatArg].Float
