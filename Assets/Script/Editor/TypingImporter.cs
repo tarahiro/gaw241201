@@ -27,9 +27,9 @@ namespace gaw241201.Editor
         {
             Index = 0,
             Id = 1,
-            TypingGroup = 2,
-            JpText = 3,
-            RomanText = 4,
+            DisplayText = 2,
+            QuestionText =  DisplayText + LanguageConst.AvailableLanguageNumber,
+            TypingGroup = QuestionText + LanguageConst.AvailableLanguageNumber,
         }
 
         //--------------------------------------------------------------------
@@ -69,9 +69,9 @@ namespace gaw241201.Editor
                         string id = sheet[row, (int)Columns.Id].String;
                         TypingDataList.Add(new TypingMasterData.Record(index, id)
                         {
+                            SettableDisplayText = EditorUtil.GetTranslatableText<LanguageConst.AvailableLanguage>(sheet, row, (int)Columns.DisplayText),
+                            SettableQuestionText = EditorUtil.GetTranslatableText<LanguageConst.AvailableLanguage>(sheet, row, (int)Columns.QuestionText),
                             SettableTypingGroup = sheet[row, (int)Columns.TypingGroup].String,
-                            SettableJpText = sheet[row, (int)Columns.JpText].String,
-                            SettableRomanText = sheet[row, (int)Columns.RomanText].String,
                         });
                     }
                 }

@@ -1,6 +1,4 @@
 using Cysharp.Threading.Tasks;
-using gaw241201.Model;
-using gaw241201.View;
 using MessagePipe;
 using System;
 using System.Collections;
@@ -11,20 +9,17 @@ using UnityEngine;
 using VContainer;
 using VContainer.Unity;
 
-
-namespace gaw241201.Presenter
+namespace gaw241201
 {
-    public class TypingRoguelikeViewArgsFactory
+    public class TimerStarter : ITimerStartableModel
     {
-        [Inject] MessageKeyHundler _messageKeyHundler;
+        Subject<float> _timerStarted = new Subject<float>();
+        public IObservable<float> TimerStarted => _timerStarted;
 
-
-        public TypingViewArgs Create(ModelArgs<ITypingRoguelikeSingleSequenceMaster> modelArgs)
+        public void StartTimer(ITypingRoguelikeSingleSequenceMaster master)
         {
-            return new TypingViewArgs(_messageKeyHundler.HundleKey(modelArgs.Master.DisplayText.GetTranslatedText(_languageIndex)), 
-                _messageKeyHundler.HundleKey(modelArgs.Master.QuestionText.GetTranslatedText(_languageIndex)), modelArgs.CancellationToken);
+            _timerStarted.OnNext(TypingUtil.RemoveBracketsAndContents(master.QuestionText.GetTranslatedText(_languageIndex)).Length * master.Time);
         }
-
         [Inject] ISubscriber<int> _subscriber;
         int _languageIndex = 0;
         public void Initialize()

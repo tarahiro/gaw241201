@@ -11,9 +11,10 @@ using VContainer.Unity;
 
 namespace gaw241201
 {
-    public interface ITypingInitializer
+    public interface ITypingStarter
     {
-        void InitializeTyping(ITypingRoguelikeSingleSequenceMaster master, TypingRoguelikeConditionProvider conditionProvider);
+        void Initialize();
+        void StartTyping(ITypingRoguelikeSingleSequenceMaster master, TypingRoguelikeConditionProvider conditionProvider);
         IObservable<string> SampleInputted { get; }
         IObservable<List<char>> RestrictionDataLoaded { get; }
     }

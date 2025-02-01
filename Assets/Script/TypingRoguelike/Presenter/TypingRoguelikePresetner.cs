@@ -20,7 +20,7 @@ namespace gaw241201.Presenter
         [Inject] ITypingView _view;
         [Inject] TypingRoguelikeViewArgsFactory _argsFactory;
         [Inject] EnterKeyHundler _enterKeyHundler;
-        [Inject] ITypingInitializer _questionInitializer;
+        [Inject] ITypingStarter _typingInitializer;
         [Inject] ISelectDataRegisterableView _selectDataRegisterableView;
         [Inject] ITextRegisterableView _textView;
         [Inject] IQuestionDisplayTextModel _questionTextGenerator;
@@ -52,8 +52,8 @@ namespace gaw241201.Presenter
             _view.KeyEntered.Subscribe(x => _enterKeyHundler.EnterKey(x)).AddTo(_disposable);
             _selectionDataSettable.SelectionDataCreated.Subscribe(_selectDataRegisterableView.RegisterSelectData).AddTo(_disposable);
             _enterKeyHundler.Ended.Subscribe(_ => _view.EndLoop()).AddTo(_disposable);
-            _questionInitializer.RestrictionDataLoaded.Subscribe(_restrictionRegisterableView.RegisterRestriction).AddTo(_disposable);
-            _questionInitializer.SampleInputted.Subscribe(_textView.SetSampleText);
+            _typingInitializer.RestrictionDataLoaded.Subscribe(_restrictionRegisterableView.RegisterRestriction).AddTo(_disposable);
+            _typingInitializer.SampleInputted.Subscribe(_textView.SetSampleText);
             _questionTextGenerator.TextUpdated.Subscribe(_textView.RegisterText);
             _questionTextGenerator.CorrectInputted.Subscribe(_correctInputEnterableView.EnterCorrectInput);
 
@@ -76,6 +76,11 @@ namespace gaw241201.Presenter
             _pointModel.PointUpdated.Subscribe(_pointView.UpdatePoint).AddTo(_disposable);
             _pointModel.Initialized.Subscribe(_ => _pointView.Initialize()).AddTo(_disposable);
             _requiredScoreGeneratable.RequiredScoreGenerated.Subscribe(_requiredPointView.UpdatePoint).AddTo(_disposable);
+
+            _typingInitializer.Initialize();
+            _timerStartable.Initialize();
+            _requiredScoreGeneratable.Initialize();
+            _argsFactory.Initialize();
         }
     }
 }

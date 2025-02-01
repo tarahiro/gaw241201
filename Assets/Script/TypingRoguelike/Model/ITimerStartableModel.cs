@@ -12,6 +12,8 @@ namespace gaw241201
 {
     public interface ITimerStartableModel
     {
+        void Initialize();
+        void StartTimer(ITypingRoguelikeSingleSequenceMaster master);
         IObservable<float> TimerStarted { get; }
     }
 }

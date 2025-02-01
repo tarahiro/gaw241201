@@ -12,6 +12,8 @@ namespace gaw241201
 {
     public interface IRequiredScoreGeneratable
     {
+        void Initialize();
+        void RegisterRequiredScore(List<ITypingRoguelikeSingleSequenceMaster> _thisGroup, ITypingRoguelikeMaster master);
         IObservable<int> RequiredScoreGenerated { get; }
     }
 }

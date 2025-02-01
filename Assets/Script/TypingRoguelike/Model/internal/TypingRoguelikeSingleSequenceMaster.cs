@@ -19,9 +19,9 @@ namespace gaw241201
 
         public string Group { get; private set; }
 
-        public string DisplayText { get; private set; }
+        public TranslatableText DisplayText { get; private set; }
 
-        public string QuestionText { get; private set; }
+        public TranslatableText QuestionText { get; private set; }
 
         public List<char> RestrictedCharList { get; private set; }
 

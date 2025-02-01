@@ -30,22 +30,22 @@ namespace gaw241201.Model.MasterData
             [SerializeField] int m_Index;
             [SerializeField] string m_Id;
             [SerializeField] string m_TypingGroup;
-            [SerializeField] string m_JpText;
-            [SerializeField] string m_RomanText;
+            [SerializeField] TranslatableText m_DisplayText;
+            [SerializeField] TranslatableText m_QuestionText;
 
 
             public int Index => m_Index;
             public string Id => m_Id;
             public string Group => m_TypingGroup;
-            public string DisplayText => m_JpText;
-            public string QuestionText => m_RomanText;
+            public TranslatableText DisplayText => m_DisplayText;
+            public TranslatableText QuestionText => m_QuestionText;
 
             public ITypingMaster GetMaster() => this;
 
 #if UNITY_EDITOR
             public string SettableTypingGroup { set => m_TypingGroup = value; }
-            public string SettableJpText { set => m_JpText = value; }
-            public string SettableRomanText { set => m_RomanText = value; }
+            public TranslatableText SettableDisplayText { set => m_DisplayText = value; }
+            public TranslatableText SettableQuestionText  { set => m_QuestionText = value; }
 #endif
         }
     }

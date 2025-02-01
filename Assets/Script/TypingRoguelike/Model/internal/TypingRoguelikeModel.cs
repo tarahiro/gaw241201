@@ -12,13 +12,14 @@ using gaw241201.Model;
 
 namespace gaw241201
 {
-    public class TypingRoguelikeModel : ICategoryEnterableModel, IRequiredScoreGeneratable, ITimerEndableModel
+    public class TypingRoguelikeModel : ICategoryEnterableModel, ITimerEndableModel
     {
         [Inject] IGroupMasterGettable<ITypingRoguelikeSingleSequenceMaster> _groupMasterGettable;
         [Inject] ISingleTextSequenceEnterable<ITypingRoguelikeSingleSequenceMaster> _singleTextSequenceEnterable;
 
         [Inject] ITypingRoguelikeMasterDataProvider _masterDataProvider;
         [Inject] IPointGettable _pointGettable;
+        [Inject] IRequiredScoreGeneratable _scoreGeneratable;
 
         [Inject] TypingRoguelikeConditionProvider _conditionProvider;
 
@@ -27,10 +28,7 @@ namespace gaw241201
 
         CancellationTokenSource _cts = new CancellationTokenSource();
 
-
-        Subject<int> _requiredScoreGenerated = new Subject<int>();
         Subject<Unit> _timerEnded = new Subject<Unit>();
-        public IObservable<int> RequiredScoreGenerated => _requiredScoreGenerated;
         public IObservable<Unit> TimerEnded => _timerEnded;
 
         //UnitaskÇ∆SubjectÇÃïœä∑ÇégÇ¡ÇƒÇ´ÇÍÇ¢Ç…ÇµÇΩÇ¢
@@ -51,7 +49,7 @@ namespace gaw241201
 
             if (_conditionProvider.IsEnableScore())
             {
-                RegisterRequiredScore(_thisGroup, master);
+                _scoreGeneratable.RegisterRequiredScore(_thisGroup, master);
                 _pointGettable.InitializePoint();
             }
             
@@ -68,19 +66,6 @@ namespace gaw241201
 
             Log.Comment(bodyId + "ÇÃGroupèIóπ");
             /*ã§í ïîï™èIÇÌÇË*/
-        }
-
-        void RegisterRequiredScore(List<ITypingRoguelikeSingleSequenceMaster> _thisGroup, ITypingRoguelikeMaster master )
-        {
-            int textCount = 0;
-
-            foreach (var singleSequence in _thisGroup)
-            {
-                textCount += TypingUtil.RemoveBracketsAndContents(singleSequence.QuestionText).Length;
-            }
-
-            _requiredScoreGenerated.OnNext((int)(textCount * master.RequiredScorePerChar));
-
         }
 
 

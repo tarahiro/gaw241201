@@ -325,11 +325,11 @@ namespace gaw241201.Inject
 
             //TypingRoguelike
             //model
-            builder.Register<TypingRoguelikeModel>(Lifetime.Singleton).AsSelf().As<IRequiredScoreGeneratable>().As<ITimerEndableModel>();
+            builder.Register<TypingRoguelikeModel>(Lifetime.Singleton).AsSelf().As<ITimerEndableModel>();
             builder.Register<TypingRoguelikeSingleSequenceStarter>(Lifetime.Singleton).AsImplementedInterfaces();
             builder.Register<TypingRoguelikeMasterDataProvider>(Lifetime.Singleton).AsImplementedInterfaces();
             builder.Register<TypingRoguelikeGroupMasterGetter>(Lifetime.Singleton).AsImplementedInterfaces();
-            builder.Register<TypingInitializer>(Lifetime.Singleton).AsImplementedInterfaces();
+            builder.Register<TypingStarter>(Lifetime.Singleton).AsImplementedInterfaces();
             builder.Register<ModelArgsFactory<ITypingRoguelikeSingleSequenceMaster>>(Lifetime.Singleton).AsSelf();
             builder.Register<IndexUpdater>(Lifetime.Singleton).AsSelf();
             builder.Register<SelectionDataContainer>(Lifetime.Singleton).AsImplementedInterfaces();
@@ -361,7 +361,9 @@ namespace gaw241201.Inject
 
             //timerŠÖ˜A
             builder.Register<TimerModel>(Lifetime.Singleton).AsImplementedInterfaces();
+            builder.Register<TimerStarter>(Lifetime.Singleton).AsImplementedInterfaces();
 
+            builder.Register<RequiredScoreGenerator>(Lifetime.Singleton).AsImplementedInterfaces();
 
         }
 
