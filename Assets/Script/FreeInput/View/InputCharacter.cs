@@ -20,6 +20,8 @@ namespace gaw241201.View
 
         [SerializeField] TextMeshProUGUI _tmp;
         [SerializeField] BlinkableCursor _underBar;
+
+        [Inject] IFreeInputMessagePublisher _messagePublisher;
         
         CancellationTokenSource _cancellationTokenSource;
 
@@ -40,7 +42,8 @@ namespace gaw241201.View
             _cancellationTokenSource = new CancellationTokenSource();
             _underBar.StartBlink();
 
-            _gazable.Gaze(Camera.main.WorldToScreenPoint(transform.position));
+            _messagePublisher.OnType(Camera.main.WorldToScreenPoint(transform.position));
+           // _gazable.Gaze(Camera.main.WorldToScreenPoint(transform.position));
            
         }
 
@@ -52,9 +55,9 @@ namespace gaw241201.View
         }
 
 
-        public void Enter(IGazable gazable)
+        public void Enter(IFreeInputMessagePublisher messagePublisher)
         {
-            _gazable = gazable;
+            _messagePublisher = messagePublisher;
         }
 
         public bool TryGetCharacter(out char c)

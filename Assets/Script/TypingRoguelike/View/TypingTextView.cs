@@ -23,6 +23,7 @@ namespace gaw241201.View
         const string c_startStyleSuffix = ">";
         const string c_closeStyle = "</style>";
 
+        [Inject] ITypeMessagePublisher _messagePublisher;
         [Inject] IGazable _gazable;
         [SerializeField] private TextMeshProUGUI _tmpSample; 
         [SerializeField] private TextMeshProUGUI _tmpQuestion;
@@ -54,8 +55,12 @@ namespace gaw241201.View
             _tmpQuestion.text = GetTextTaggedTyped(_textCache, index);
             _textCache = "";
 
+            _messagePublisher.OnType((Vector2)Camera.main.WorldToScreenPoint(_tmpQuestion.transform.position) +
+    Vector2.right * _tmpQuestion.preferredWidth * (-0.5f + ((float)index) / _tmpQuestion.GetParsedText().Length));
+            /*
             _gazable.Gaze((Vector2)Camera.main.WorldToScreenPoint(_tmpQuestion.transform.position) +
     Vector2.right * _tmpQuestion.preferredWidth * (-0.5f + ((float)index) / _tmpQuestion.GetParsedText().Length));
+            */
 
             SetSelectData(_tmpQuestion, _selectionDataCache, index);
 

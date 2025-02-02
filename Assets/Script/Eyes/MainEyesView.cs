@@ -1,4 +1,5 @@
 using Cysharp.Threading.Tasks;
+using MessagePipe;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -14,8 +15,15 @@ namespace gaw241201.View
     {
         const float c_length = .2f;
 
-        [SerializeField] List<EyeView> _eyeViewList;
+        public GazeConst.GazingKey GazingKey { get; set; } = GazeConst.GazingKey.Main;
 
+        [SerializeField] List<EyeView> _eyeViewList;
+        [Inject] ISubscriber<GazeConst.GazingKey, Vector2> _subscriber;
+
+        void Start()
+        {
+            _subscriber.Subscribe(GazingKey, Gaze);
+        }
 
         public void SetEffect(ConversationViewConst.EyePosition facialKey)
         {

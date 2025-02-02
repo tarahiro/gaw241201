@@ -13,7 +13,7 @@ namespace gaw241201.View
 {
     public class FreeInputView : MonoBehaviour, IUiViewDeletable
     {
-        [Inject] IGazable _gazable;
+        [Inject] IFreeInputMessagePublisher _messagePublisher;
 
         FreeInputItemView _currentItem;
 
@@ -27,7 +27,7 @@ namespace gaw241201.View
         {
             Log.Comment(c_prefix + args.BodyId + "ÇÃprefabê∂ê¨");
             _currentItem = Instantiate(ResourceUtil.GetResource<FreeInputItemView>(c_prefix + args.BodyId), transform);
-            _currentItem.Construct(_gazable);
+            _currentItem.Construct(_messagePublisher);
 
             string value = "UnRegistered";
             _currentItem.Exited.Subscribe(x => value = x);

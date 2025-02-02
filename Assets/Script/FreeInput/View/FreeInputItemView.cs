@@ -19,7 +19,7 @@ namespace gaw241201.View
         protected int _index = 0;
         bool _isEndLoop = false;
         InputCharacter _currentItem => _inputCharacterList[_index];
-        IGazable _gazable;
+        IFreeInputMessagePublisher _messagePublisher;
 
         protected Subject<string> _exited = new Subject<string>();
         public IObservable<string> Exited => _exited;
@@ -50,16 +50,16 @@ namespace gaw241201.View
             _enterKeyObject.SetActive(false);
         }
 
-        public void Construct(IGazable gazable)
+        public void Construct(IFreeInputMessagePublisher messagePublisher)
         {
-            _gazable = gazable;
+            _messagePublisher = messagePublisher;
         }
 
         public async UniTask Enter(CancellationToken ct)
         {
             foreach (var item in _inputCharacterList)
             {
-                item.Enter(_gazable);
+                item.Enter(_messagePublisher);
             }
             _currentItem.Focus();
             ct.Register(() => Exit(ct));

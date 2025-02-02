@@ -10,13 +10,8 @@ using VContainer.Unity;
 
 namespace gaw241201.View
 {
-    public class GazeConst
+    public interface IFreeInputMessagePublisher
     {
-        public enum GazingKey
-        {
-            Main,
-            Setting,
-            Card,
-        }
+        public void OnType(Vector2 screenPosition);
     }
 }

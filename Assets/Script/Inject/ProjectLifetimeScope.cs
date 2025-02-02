@@ -172,6 +172,12 @@ namespace gaw241201.Inject
             builder.RegisterComponentInHierarchy<MainEyesView>().AsSelf().AsImplementedInterfaces();
             builder.RegisterComponentInHierarchy<SettingEyesView>().AsSelf().As<ISettingOrnament>();
             builder.Register<ImpressionView>(Lifetime.Singleton).AsSelf();
+            builder.Register<GazeMessagePublisher>(Lifetime.Singleton).AsImplementedInterfaces();
+
+            /*
+            var options = builder.RegisterMessagePipe();
+            builder.RegisterMessageBroker<GazeConst.GazingKey, Vector2>(options);
+            */
 
         }
 

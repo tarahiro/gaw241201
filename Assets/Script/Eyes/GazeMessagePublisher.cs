@@ -9,15 +9,15 @@ using VContainer;
 using VContainer.Unity;
 using MessagePipe;
 
-namespace gaw241201
+namespace gaw241201.View
 {
-    public class GazeMessagePublisher
+    public class GazeMessagePublisher :  ITypeMessagePublisher, IFreeInputMessagePublisher
     {
         [Inject] private IPublisher<GazeConst.GazingKey, Vector2> _publisher;
 
         public void PublishEvent(GazeConst.GazingKey key, Vector2 screenPosition)
         {
-            Log.Comment("言語コマンド発行");
+            Log.Comment("凝視コマンド発行");
             _publisher.Publish(key, screenPosition);
         }
         
