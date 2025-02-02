@@ -30,7 +30,7 @@ namespace gaw241201.Inject
             //skill
             builder.Register<SkillAchieveModel>(Lifetime.Singleton).AsSelf();
             builder.Register<SkillAchieveArgsDataFactory>(Lifetime.Singleton).AsSelf();
-            builder.RegisterComponentInHierarchy<SkillAchieveView>().AsSelf();
+            builder.RegisterComponentInHierarchy<SkillEnterView>().AsSelf();
 
             builder.RegisterEntryPoint<SkillPresenter>();
         }

@@ -11,18 +11,22 @@ using TMPro;
 
 namespace gaw241201.View
 {
-    public class SkillItemView : MonoBehaviour
+    public class SkillItemView : MonoBehaviour, IMenuItemView
     {
         const string c_picturePath = "Prefab/CardPicture/";
         SkillArgs.Data _args;
         [SerializeField] TextMeshProUGUI _description;
         [SerializeField] Transform _skillPictureLocator;
         [SerializeField] SkillItemHeaderView _header;
+        [SerializeField] Transform _root;
 
         SkillPicture _skillPicture;
 
         Subject<SkillArgs.Data> _decided = new Subject<SkillArgs.Data>();
         public IObservable<SkillArgs.Data> Decided => _decided;
+
+
+
 
         public void SetData(SkillArgs.Data args)
         {
@@ -36,30 +40,21 @@ namespace gaw241201.View
             }
         }
 
+        public void Focus()
+        {
+            _root.localScale = Vector3.one * 1.5f;
+        }
+
+        public void UnFocus()
+        {
+            _root.localScale = Vector3.one * 1f;
+        }
+
 
         public void Decide()
         {
             _decided.OnNext(_args);
         }
 
-        public string GenerateLabel(SkillConst.SkillCategory category)
-        {
-            switch (category)
-            {
-                case SkillConst.SkillCategory.Leet:
-                    return "Åyíuä∑Åz";
-                case SkillConst.SkillCategory.Animal:
-                    return "ÅyìÆï®Åz";
-                case SkillConst.SkillCategory.Human:
-                    return "ÅyêlñºÅz";
-                case SkillConst.SkillCategory.Vi:
-                    return "Åyé©ìÆéåÅz";
-                case SkillConst.SkillCategory.Vt:
-                    return "ÅyëºìÆéåÅz";
-                default:
-                    Log.DebugLog("Error: ïsê≥Ç»ÉJÉeÉSÉäÅ[Ç≈Ç∑: " + category);
-                    return "Error";
-            }
-        }
     }
 }

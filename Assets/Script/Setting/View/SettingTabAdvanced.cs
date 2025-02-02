@@ -13,6 +13,7 @@ namespace gaw241201.View
     public class SettingTabAdvanced : SettingTabView
     {
         [Inject] ISettingOrnament _ornament;
+        public override int MaxIndex { get; set; } = 2;
 
         public override UniTask Enter(int menuIndex)
         {

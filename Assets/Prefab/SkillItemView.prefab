@@ -179,6 +179,7 @@ MonoBehaviour:
   _description: {fileID: 2363791473843473236}
   _skillPictureLocator: {fileID: 3439845339819099558}
   _header: {fileID: 1115673699917726805}
+  _root: {fileID: 1708014929309957172}
 --- !u!1 &3105733022993335376
 GameObject:
   m_ObjectHideFlags: 0

@@ -10,7 +10,7 @@ using VContainer.Unity;
 
 namespace gaw241201
 {
-    public class SimpleSettingTabModel : ISettingTabModel
+    public class UiMenuModel : IUiMenuModel
     {
         Subject<int> _focusChanged = new Subject<int>();
         public IObservable<int> FocusChanged => _focusChanged;
@@ -22,19 +22,9 @@ namespace gaw241201
         {
 
         }
-        public void MoveFocus(SettingConst.MenuDirection direction)
+        public void MoveFocus(int menuIndex)
         {
-            int target = ItemIndex + (int)direction;
-            if (target < 0)
-            {
-                target += MaxItemRange;
-            }
-            else if (target >= MaxItemRange)
-            {
-                target -= MaxItemRange;
-            }
-
-            ItemIndex = target;
+            ItemIndex = menuIndex;
             Log.DebugLog("ItemIndex " + ItemIndex + "Ç…çXêV");
             _focusChanged.OnNext(ItemIndex);
         }

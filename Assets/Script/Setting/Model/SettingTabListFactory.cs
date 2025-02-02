@@ -15,9 +15,9 @@ namespace gaw241201
         [Inject] ProfileMenuModel _profileMenuModel;
         [Inject] AdvancedTabModel _advancedTabModel;
 
-        public List<ISettingTabModel> Create()
+        public List<IUiMenuModel> Create()
         {
-            var returnableList = new List<ISettingTabModel>();
+            var returnableList = new List<IUiMenuModel>();
             returnableList.Add(_profileMenuModel);
             returnableList.Add(_advancedTabModel);
 

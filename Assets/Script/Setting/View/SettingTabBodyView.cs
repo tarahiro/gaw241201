@@ -18,7 +18,7 @@ namespace gaw241201.View
 
         float cursorX = -320f;
 
-        private void Start()
+        private void Awake()
         {
             Exit().Forget();
         }

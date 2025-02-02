@@ -745,6 +745,7 @@ GameObject:
   m_Component:
   - component: {fileID: 361619343}
   - component: {fileID: 361619344}
+  - component: {fileID: 361619345}
   m_Layer: 5
   m_Name: SkillView
   m_TagString: Untagged
@@ -781,7 +782,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 361619342}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc61e2deeb9fd75498abfb1507ccbc9c, type: 3}
+  m_Script: {fileID: 11500000, guid: fce1543096e20b44890385b95affe73e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &361619345
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 361619342}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4cfb1a817d24e54cbf9e65b64d8a35a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _itemViewPrefab: {fileID: 4741906004470147799, guid: a77cb6aba6efe5c47971e7a556381a9c, type: 3}

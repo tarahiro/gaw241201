@@ -70,7 +70,7 @@ namespace gaw241201.Inject
         void ConfigureManager(IContainerBuilder builder)
         {
             //Manager
-            builder.Register<AdapterFactory<HorrorStoryMainLoopStarter, SaveDataManager>>(Lifetime.Singleton).WithParameter<LifetimeScope[]>(FindObjectsOfType<LifetimeScope>).AsImplementedInterfaces();
+            builder.Register<AdapterFactory<SimpleLoopStarter, SaveDataManager>>(Lifetime.Singleton).WithParameter<LifetimeScope[]>(FindObjectsOfType<LifetimeScope>).AsImplementedInterfaces();
             builder.Register<FlowProvider>(Lifetime.Singleton).WithParameter<LifetimeScope[]>(FindObjectsOfType<LifetimeScope>).AsImplementedInterfaces();
 
             builder.Register<SimpleLoopStarter>(Lifetime.Singleton).AsSelf().WithParameter(FlowMasterConst.FlowMasterLabel.TypingRoguelikeMainFlow);
@@ -271,7 +271,10 @@ namespace gaw241201.Inject
             //skill
             builder.Register<SkillAchieveModel>(Lifetime.Singleton).AsSelf();
             builder.Register<SkillAchieveArgsDataFactory>(Lifetime.Singleton).AsSelf();
-            builder.RegisterComponentInHierarchy<SkillAchieveView>().AsSelf();
+            builder.RegisterComponentInHierarchy<SkillEnterView>().AsSelf();
+            builder.Register<SkillIndexInputView>(Lifetime.Singleton).AsSelf();
+            builder.Register<SkillMenuModel>(Lifetime.Singleton).AsSelf();
+            builder.RegisterComponentInHierarchy<SkillMenuView>().AsSelf();
 
             builder.RegisterEntryPoint<SkillPresenter>();
         }

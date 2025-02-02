@@ -16,11 +16,12 @@ namespace gaw241201
     {
         [Inject] ISkillChoicesDecidable _skillChoicesDecideable;
         [Inject] IAchievableMasterFlagRegisterer _achievableMasterFlagRegisterer;
+        [Inject] SkillMenuModel _skillMenuModel;
 
 
+        Subject<Unit> _exited = new Subject<Unit>();
+        public IObservable<Unit> Exited => _exited;
 
-        Subject<SkillArgs> _entered = new Subject<SkillArgs>();
-        public IObservable<SkillArgs> Entered => _entered;
         CancellationTokenSource _cts;
         bool _isEnd;
 
@@ -30,15 +31,14 @@ namespace gaw241201
             _cts = new CancellationTokenSource();
             _isEnd = false;
 
-
-            _entered.OnNext(new SkillArgs(_cts.Token, _skillChoicesDecideable.DecideChoices(bodyId)));
-
+            _skillMenuModel.Enter(_cts.Token, _skillChoicesDecideable.DecideChoices(bodyId));
             await UniTask.WaitUntil(() => _isEnd);
         }
 
         public void End(SkillArgs.Data args)
         {
             _achievableMasterFlagRegisterer.RegisterFlag(args.Key, args.Id);
+            _exited.OnNext(Unit.Default);
             _isEnd = true;
         }
 

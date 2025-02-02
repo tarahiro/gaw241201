@@ -16,11 +16,13 @@ namespace gaw241201
     {
         public CancellationToken CancellationToken { get; private set; }
 
+        public int MenuItemIndex { get; private set; }
         public List<Data> DataList { get; private set; }
 
-        public SkillArgs(CancellationToken cancellationToken, List<Data> dataList)
+        public SkillArgs(CancellationToken cancellationToken,int menuItemIndex, List<Data> dataList)
         {
             CancellationToken = cancellationToken;
+            MenuItemIndex = menuItemIndex;
             DataList = dataList;
         }
 

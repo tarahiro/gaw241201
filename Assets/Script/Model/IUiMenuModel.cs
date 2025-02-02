@@ -10,13 +10,13 @@ using VContainer.Unity;
 
 namespace gaw241201
 {
-    public interface ISettingTabModel
+    public interface IUiMenuModel
     {
         public int ItemIndex { get; }
         public int MaxItemRange { get; }
-        public IObservable<int> FocusChanged { get; }   
+        public IObservable<int> FocusChanged { get; }
         public void Initialize();
-        public void MoveFocus(SettingConst.MenuDirection direction);
+        public void MoveFocus(int menuIndex);
         public void Enter();
         public void Exit();
     }

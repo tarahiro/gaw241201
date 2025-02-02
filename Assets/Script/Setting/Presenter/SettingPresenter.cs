@@ -37,7 +37,7 @@ namespace gaw241201.Presenter
             _advancedTabModel.FocusChanged.Subscribe(_tabManager.ChangeItemFocusOnCurrentTab).AddTo(_disposable);
             _profileMenuModel.FocusChanged.Subscribe(_tabManager.ChangeItemFocusOnCurrentTab).AddTo(_disposable);
 
-            _inputView.CursorMoved.Subscribe(_uiModel.MoveFocus).AddTo(_disposable);
+            _inputView.IndexerMoved.Subscribe(_uiModel.MoveFocus).AddTo(_disposable);
             _inputView.LrInputted.Subscribe(_uiModel.ChangeTab).AddTo(_disposable);
             
 

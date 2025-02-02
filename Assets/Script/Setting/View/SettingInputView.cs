@@ -10,11 +10,16 @@ using VContainer.Unity;
 
 namespace gaw241201.View
 {
-    public class SettingInputView
+    public class SettingInputView : IIndexerInputtableView
     {
-        Subject<SettingConst.MenuDirection> _cursorMoved = new Subject<SettingConst.MenuDirection>();
+        Subject<int> _indexerMoved = new Subject<int>();
+        public IObservable<int> IndexerMoved => _indexerMoved;
+        Subject<Unit> _decided = new Subject<Unit>();
+        public IObservable<Unit> Decided { get; }
+
+        [Inject] SettingTabManager _tabManager;
+
         Subject<SettingConst.TabDirection> _lrInputted = new Subject<SettingConst.TabDirection>();
-        public IObservable<SettingConst.MenuDirection> CursorMoved => _cursorMoved;
         public IObservable<SettingConst.TabDirection> LrInputted => _lrInputted;
 
         bool _isEnable = false;
@@ -39,11 +44,17 @@ namespace gaw241201.View
         {
             if (Input.GetKeyDown(KeyCode.UpArrow))
             {
-                _cursorMoved.OnNext(SettingConst.MenuDirection.Up);
+                int index = _tabManager.Current.MenuIndex;
+                index--;
+                if (index < 0) index = _tabManager.Current.MaxIndex - 1;
+                _indexerMoved.OnNext(index);
             }
             if (Input.GetKeyDown(KeyCode.DownArrow))
             {
-                _cursorMoved.OnNext(SettingConst.MenuDirection.Down);
+                int index = _tabManager.Current.MenuIndex;
+                index++;
+                if (index >= _tabManager.Current.MaxIndex) index = 0;
+                _indexerMoved.OnNext(index);
             }
 
             if (Input.GetKeyDown(KeyCode.LeftArrow))
