@@ -74,7 +74,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6182656983872579772, guid: 4730a312caaf91e4993cf493fcd27863, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 56.26
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6182656983872579772, guid: 4730a312caaf91e4993cf493fcd27863, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -90,7 +90,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6564583028599039653, guid: 4730a312caaf91e4993cf493fcd27863, type: 3}
       propertyPath: m_Name
-      value: Picture Variant
+      value: cat
+      objectReference: {fileID: 0}
+    - target: {fileID: 6996430636809908058, guid: 4730a312caaf91e4993cf493fcd27863, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 16.28
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

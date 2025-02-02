@@ -15,10 +15,9 @@ namespace gaw241201.View
     {
         const string c_picturePath = "Prefab/CardPicture/";
         SkillArgs.Data _args;
-
-        [SerializeField] TextMeshProUGUI _name;
         [SerializeField] TextMeshProUGUI _description;
         [SerializeField] Transform _skillPictureLocator;
+        [SerializeField] SkillItemHeaderView _header;
 
         SkillPicture _skillPicture;
 
@@ -28,7 +27,7 @@ namespace gaw241201.View
         public void SetData(SkillArgs.Data args)
         {
             _args = args;
-            _name.text = args.Category + args.Name;
+            _header.Set(args.Name, args.Category);
             _description.text = args.Description;
             if(ResourceUtil.IsExist(c_picturePath + args.Id))
             {
