@@ -16,7 +16,7 @@
   <AllowPNG/>
  </OfficeDocumentSettings>
  <ExcelWorkbook xmlns="urn:schemas-microsoft-com:office:excel">
-  <WindowHeight>17300</WindowHeight>
+  <WindowHeight>18740</WindowHeight>
   <WindowWidth>32767</WindowWidth>
   <WindowTopX>32767</WindowTopX>
   <WindowTopY>32767</WindowTopY>
@@ -1516,7 +1516,7 @@
     <Cell ss:StyleID="s67"><Data ss:Type="String">You are allowed to select one fragment.</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">900500RoguelikeTestConversation</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">Center</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">Mad</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
@@ -1755,7 +1755,7 @@
     <Pane>
      <Number>3</Number>
      <ActiveRow>132</ActiveRow>
-     <ActiveCol>13</ActiveCol>
+     <ActiveCol>6</ActiveCol>
     </Pane>
    </Panes>
    <ProtectObjects>False</ProtectObjects>

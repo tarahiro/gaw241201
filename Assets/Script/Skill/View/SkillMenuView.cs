@@ -13,6 +13,7 @@ namespace gaw241201.View
 {
     public class SkillMenuView : MonoBehaviour
     {
+        [Inject] IObjectResolver _diContainer;
         [SerializeField] SkillItemView _itemViewPrefab;
         [SerializeField] Transform _root;
 
@@ -28,7 +29,7 @@ namespace gaw241201.View
 
             for (int i = 0; i < args.DataList.Count; i++)
             {
-                SkillItemView item = Instantiate(_itemViewPrefab, _root);
+                SkillItemView item = _diContainer.Instantiate<SkillItemView>(_itemViewPrefab, _root);
                 item.SetData(args.DataList[i]);
                 item.transform.localPosition = Vector2.right * (-1f + i) * c_intervalX;
 

@@ -20,6 +20,8 @@ namespace gaw241201.View
         [SerializeField] SkillItemHeaderView _header;
         [SerializeField] Transform _root;
 
+        [Inject] ISkillCardGazePublisher _skillCardGazePublisher;
+
         SkillPicture _skillPicture;
 
         Subject<SkillArgs.Data> _decided = new Subject<SkillArgs.Data>();
@@ -43,6 +45,7 @@ namespace gaw241201.View
         public void Focus()
         {
             _root.localScale = Vector3.one * 1.5f;
+            _skillCardGazePublisher.OnSkillCardFocus(Camera.main.WorldToScreenPoint(transform.position));
         }
 
         public void UnFocus()

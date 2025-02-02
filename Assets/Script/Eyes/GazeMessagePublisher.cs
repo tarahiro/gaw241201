@@ -11,7 +11,7 @@ using MessagePipe;
 
 namespace gaw241201.View
 {
-    public class GazeMessagePublisher :  ITypeMessagePublisher, IFreeInputMessagePublisher
+    public class GazeMessagePublisher :  ITypeMessagePublisher, IFreeInputMessagePublisher, ISkillCardGazePublisher
     {
         [Inject] private IPublisher<GazeConst.GazingKey, Vector2> _publisher;
 
@@ -24,6 +24,12 @@ namespace gaw241201.View
         public void OnType(Vector2 screenPosition)
         {
             PublishEvent(GazeConst.GazingKey.Main, screenPosition);
+        }
+
+        public void OnSkillCardFocus(Vector2 screenPosition)
+        {
+            PublishEvent(GazeConst.GazingKey.Main, screenPosition);
+            PublishEvent(GazeConst.GazingKey.Card, screenPosition);
         }
     }
 }

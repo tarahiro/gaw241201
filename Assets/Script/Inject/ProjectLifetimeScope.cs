@@ -192,6 +192,8 @@ namespace gaw241201.Inject
             builder.RegisterComponentInHierarchy<EffectView>().AsImplementedInterfaces();
             builder.Register<EffectViewItemFactory>(Lifetime.Singleton).AsSelf();
             builder.RegisterComponentInHierarchy<LeftEyeRemovedable>().AsImplementedInterfaces().AsSelf();
+            builder.RegisterComponentInHierarchy<EyesPositionChangable>().AsSelf();
+            builder.RegisterComponentInHierarchy<ConversationTextPositionChangable>().AsSelf();
 
             //Confiscate
             builder.RegisterEntryPoint<EffectPresenter>();
