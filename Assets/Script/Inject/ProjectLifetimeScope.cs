@@ -70,10 +70,10 @@ namespace gaw241201.Inject
         void ConfigureManager(IContainerBuilder builder)
         {
             //Manager
-            builder.Register<AdapterFactory<SimpleLoopStarter, SaveDataManager>>(Lifetime.Singleton).WithParameter<LifetimeScope[]>(FindObjectsOfType<LifetimeScope>).AsImplementedInterfaces();
+            builder.Register<AdapterFactory<HorrorStoryMainLoopStarter, SaveDataManager>>(Lifetime.Singleton).WithParameter<LifetimeScope[]>(FindObjectsOfType<LifetimeScope>).AsImplementedInterfaces();
             builder.Register<FlowProvider>(Lifetime.Singleton).WithParameter<LifetimeScope[]>(FindObjectsOfType<LifetimeScope>).AsImplementedInterfaces();
 
-            builder.Register<SimpleLoopStarter>(Lifetime.Singleton).AsSelf().WithParameter(FlowMasterConst.FlowMasterLabel.TypingRoguelikeMainFlow);
+            builder.Register<SimpleLoopStarter>(Lifetime.Singleton).AsSelf().WithParameter(FlowMasterConst.FlowMasterLabel.CompanyFlow);
 
             builder.RegisterEntryPoint<GameManager>();
 
@@ -173,6 +173,8 @@ namespace gaw241201.Inject
             builder.RegisterComponentInHierarchy<SettingEyesView>().AsSelf().As<ISettingOrnament>();
             builder.Register<ImpressionView>(Lifetime.Singleton).AsSelf();
             builder.Register<GazeMessagePublisher>(Lifetime.Singleton).AsImplementedInterfaces();
+            builder.Register<FacialMessagePublisher>(Lifetime.Singleton).AsSelf();
+            builder.Register<ResetGazeMessagePublisher>(Lifetime.Singleton).AsSelf();
 
             /*
             var options = builder.RegisterMessagePipe();
@@ -387,7 +389,7 @@ namespace gaw241201.Inject
             builder.Register<LanguagePublisher>(Lifetime.Singleton).AsImplementedInterfaces();
             builder.Register<LanguageMessageMasterDataProvider>(Lifetime.Singleton).AsImplementedInterfaces();
 
-            builder.RegisterEntryPoint<LanguageInitializer>(Lifetime.Singleton).AsSelf();
+            builder.RegisterEntryPoint<LanguageInitializer>(Lifetime.Singleton).AsSelf().WithParameter<LanguageConst.AvailableLanguage>(LanguageConst.AvailableLanguage.English);
             builder.RegisterEntryPoint<EmbeddedTextPresenter>(Lifetime.Singleton).AsSelf();
 
             var options = builder.RegisterMessagePipe(/* configure option */);

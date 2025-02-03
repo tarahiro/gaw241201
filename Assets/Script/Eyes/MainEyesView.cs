@@ -19,10 +19,25 @@ namespace gaw241201.View
 
         [SerializeField] List<EyeView> _eyeViewList;
         [Inject] ISubscriber<GazeConst.GazingKey, Vector2> _subscriber;
+        [Inject] ISubscriber<GazeConst.GazingKey, ConversationViewConst.Facial> _facialSubscriber;
+        [Inject] ISubscriber<GazeConst.GazingKey, Unit> _gazeResetSubscriber;
 
         void Start()
         {
             _subscriber.Subscribe(GazingKey, Gaze);
+            _facialSubscriber.Subscribe(GazingKey, SetEffect);
+            _gazeResetSubscriber.Subscribe(GazingKey, _ => ResetGaze());
+        }
+
+        public void Gaze(Vector2 screenPosition)
+        {
+            Vector2 direction = screenPosition - (Vector2)Camera.main.WorldToScreenPoint(transform.position);
+            SetEyePosition(direction);
+        }
+
+        public void ResetGaze()
+        {
+            SetEyePosition(Vector2.zero);
         }
 
         public void SetEffect(ConversationViewConst.EyePosition facialKey)
@@ -120,12 +135,6 @@ namespace gaw241201.View
                     break;
 
             }
-        }
-
-        public void Gaze(Vector2 screenPosition)
-        {
-            Vector2 direction = screenPosition - (Vector2)Camera.main.WorldToScreenPoint(transform.position);
-            SetEyePosition(direction);
         }
 
         void SetEyePosition(Vector2 direction)

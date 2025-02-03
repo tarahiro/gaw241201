@@ -17,7 +17,7 @@ namespace gaw241201.View
 
         public void PublishEvent(GazeConst.GazingKey key, Vector2 screenPosition)
         {
-            Log.Comment("凝視コマンド発行");
+            Log.Comment("凝視コマンド発行 : " + key);
             _publisher.Publish(key, screenPosition);
         }
         

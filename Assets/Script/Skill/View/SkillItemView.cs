@@ -1,4 +1,5 @@
 using Cysharp.Threading.Tasks;
+using MessagePipe;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -15,6 +16,7 @@ namespace gaw241201.View
     {
         const string c_picturePath = "Prefab/CardPicture/";
         SkillArgs.Data _args;
+
         [SerializeField] TextMeshProUGUI _description;
         [SerializeField] Transform _skillPictureLocator;
         [SerializeField] SkillItemHeaderView _header;

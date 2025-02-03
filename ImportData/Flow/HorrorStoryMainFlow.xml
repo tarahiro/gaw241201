@@ -9,15 +9,15 @@
   <Author>h t</Author>
   <LastAuthor>h t</LastAuthor>
   <Created>2021-10-25T13:58:26Z</Created>
-  <LastSaved>2025-01-26T17:06:39Z</LastSaved>
+  <LastSaved>2025-02-02T09:26:52Z</LastSaved>
   <Version>16.00</Version>
  </DocumentProperties>
  <OfficeDocumentSettings xmlns="urn:schemas-microsoft-com:office:office">
   <AllowPNG/>
  </OfficeDocumentSettings>
  <ExcelWorkbook xmlns="urn:schemas-microsoft-com:office:excel">
-  <WindowHeight>11660</WindowHeight>
-  <WindowWidth>28580</WindowWidth>
+  <WindowHeight>18740</WindowHeight>
+  <WindowWidth>32767</WindowWidth>
   <WindowTopX>32767</WindowTopX>
   <WindowTopY>32767</WindowTopY>
   <RefModeR1C1/>
@@ -571,12 +571,12 @@
    <TabColorIndex>13</TabColorIndex>
    <Zoom>115</Zoom>
    <Selected/>
-   <TopRowVisible>32</TopRowVisible>
+   <TopRowVisible>14</TopRowVisible>
    <Panes>
     <Pane>
      <Number>3</Number>
-     <ActiveRow>51</ActiveRow>
-     <ActiveCol>3</ActiveCol>
+     <ActiveRow>30</ActiveRow>
+     <RangeSelection>R31</RangeSelection>
     </Pane>
    </Panes>
    <ProtectObjects>False</ProtectObjects>

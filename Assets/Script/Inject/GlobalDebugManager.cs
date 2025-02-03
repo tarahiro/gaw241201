@@ -8,6 +8,7 @@ using VContainer;
 using VContainer.Unity;
 using UniRx;
 using gaw241201.Model;
+using gaw241201.View;
 
 namespace gaw241201.Inject
 {
@@ -19,6 +20,8 @@ namespace gaw241201.Inject
         [Inject] LanguageModel _languageModel;
         [Inject] EnterEffectModel _effectModel;
         [Inject] ConversationModelProvider _conversationModelProvider;
+        [Inject] FacialMessagePublisher _facialMessagePublisher;
+        [Inject] ResetGazeMessagePublisher _resetGazeMessagePublisher;
 
         public void Start()
         {
@@ -59,6 +62,14 @@ namespace gaw241201.Inject
                 {
                     Log.DebugLog("デバッグ開始");
                     _conversationModelProvider.SettingConversationModel.EnterFlow("940500GoatEyeConversation").Forget();
+                }
+
+                if (Input.GetKeyDown(KeyCode.Y))
+                {
+                    _facialMessagePublisher.PublishEvent(GazeConst.GazingKey.Main, ConversationViewConst.Facial.Mad);
+                    _facialMessagePublisher.PublishEvent(GazeConst.GazingKey.Main, ConversationViewConst.Facial.Big);
+                    _resetGazeMessagePublisher.PublishEvent(GazeConst.GazingKey.Main, Unit.Default);
+                    _resetGazeMessagePublisher.PublishEvent(GazeConst.GazingKey.Card, Unit.Default);
                 }
 
             }

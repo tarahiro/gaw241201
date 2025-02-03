@@ -24,6 +24,7 @@ namespace gaw241201
             ConfiscateLeftEye,
             SetGoatEye,
             ChangeEyesPositionToMiddleUp,
+            ChangeEyesPositionToMiddleDown,
         }
 
         public enum EyeParts

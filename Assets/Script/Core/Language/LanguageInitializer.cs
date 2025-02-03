@@ -15,7 +15,7 @@ namespace gaw241201
         [Inject] LanguageModel _languageModel;
 
         //«—ˆ“I‚É‚ÍSteam‚ÌŒ¾Œêİ’è‚È‚Ç‚©‚çæ‚Á‚Ä‚­‚é
-        LanguageConst.AvailableLanguage _initialLanguage = LanguageConst.AvailableLanguage.Japanese;
+        [Inject] LanguageConst.AvailableLanguage _initialLanguage;
 
         public void Start()
         {

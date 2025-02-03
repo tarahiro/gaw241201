@@ -39,7 +39,7 @@ namespace gaw241201.View
                     return Vector3.up * 310f + offset;
 
                 case EyeMoveView.EyePositionKey.MiddleDown:
-                    return Vector3.up * 130f + offset;
+                    return Vector3.up * -400f + offset;
 
                 case EyeMoveView.EyePositionKey.Down:
                     return Vector3.up * 130f + offset;

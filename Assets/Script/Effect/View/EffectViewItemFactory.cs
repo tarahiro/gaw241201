@@ -36,6 +36,10 @@ namespace gaw241201
                     return GetInstance<EyeMoveView>("ChangeEyesPosition", parent)
                         .Construct(_eyePositionChangable,_conversationTextPositionChangable, EyeMoveView.EyePositionKey.MiddleUp);
 
+                case EffectConst.Key.ChangeEyesPositionToMiddleDown:
+                    return GetInstance<EyeMoveView>("ChangeEyesPosition", parent)
+                        .Construct(_eyePositionChangable, _conversationTextPositionChangable, EyeMoveView.EyePositionKey.MiddleDown);
+
 
                 default:
                     return GameObject.Instantiate<GameObject>(ResourceUtil.GetResource<GameObject>(c_pathPrefix + key), parent).GetComponent<IEffectItemView>();
