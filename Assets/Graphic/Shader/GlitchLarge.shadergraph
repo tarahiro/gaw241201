@@ -768,7 +768,7 @@
         "blit"
     ],
     "m_Precision": 0,
-    "m_PreviewExpanded": true,
+    "m_PreviewExpanded": false,
     "m_DismissedVersion": 0,
     "m_PreviewMode": 0,
     "m_CustomColors": {
@@ -1024,10 +1024,10 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -1246.66650390625,
-            "y": 224.0,
+            "x": -1351.33349609375,
+            "y": 221.99998474121095,
             "width": 209.3333740234375,
-            "height": 316.00018310546877
+            "height": 315.99993896484377
         }
     },
     "m_Slots": [
