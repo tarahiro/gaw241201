@@ -389,7 +389,7 @@ namespace gaw241201.Inject
             builder.Register<LanguagePublisher>(Lifetime.Singleton).AsImplementedInterfaces();
             builder.Register<LanguageMessageMasterDataProvider>(Lifetime.Singleton).AsImplementedInterfaces();
 
-            builder.RegisterEntryPoint<LanguageInitializer>(Lifetime.Singleton).AsSelf().WithParameter<LanguageConst.AvailableLanguage>(LanguageConst.AvailableLanguage.English);
+            builder.RegisterEntryPoint<LanguageInitializer>(Lifetime.Singleton).AsSelf().WithParameter<LanguageConst.AvailableLanguage>(LanguageConst.AvailableLanguage.Japanese);
             builder.RegisterEntryPoint<EmbeddedTextPresenter>(Lifetime.Singleton).AsSelf();
 
             var options = builder.RegisterMessagePipe(/* configure option */);
