@@ -27,6 +27,7 @@ namespace gaw241201.View
         [Inject] IGazable _gazable;
         [SerializeField] private TextMeshProUGUI _tmpSample; 
         [SerializeField] private TextMeshProUGUI _tmpQuestion;
+        [SerializeField] TextMover _textMover;
 
         string _textCache = "";
         List<ReplaceData> _selectionDataCache = null;
@@ -57,10 +58,15 @@ namespace gaw241201.View
 
             _messagePublisher.OnType((Vector2)Camera.main.WorldToScreenPoint(_tmpQuestion.transform.position) +
     Vector2.right * _tmpQuestion.preferredWidth * (-0.5f + ((float)index) / _tmpQuestion.GetParsedText().Length));
-            /*
-            _gazable.Gaze((Vector2)Camera.main.WorldToScreenPoint(_tmpQuestion.transform.position) +
-    Vector2.right * _tmpQuestion.preferredWidth * (-0.5f + ((float)index) / _tmpQuestion.GetParsedText().Length));
-            */
+
+            if (index > 0)
+            {
+                _textMover.HighlightText(index - 1);
+                if (index > 1)
+                {
+                    _textMover.LowlightText(index - 2);
+                }
+            }
 
             SetSelectData(_tmpQuestion, _selectionDataCache, index);
 

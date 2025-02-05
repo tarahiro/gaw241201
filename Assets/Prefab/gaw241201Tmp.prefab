@@ -12,7 +12,10 @@ GameObject:
   - component: {fileID: 4304971184938017830}
   - component: {fileID: 5630747029008738834}
   - component: {fileID: 7218292254594182456}
-  - component: {fileID: -3557193721754220034}
+  - component: {fileID: -334242470929001486}
+  - component: {fileID: -7899998554525598421}
+  - component: {fileID: -6509236557802883430}
+  - component: {fileID: 7504772590972617360}
   m_Layer: 5
   m_Name: gaw241201Tmp
   m_TagString: Untagged
@@ -155,7 +158,19 @@ MonoBehaviour:
   fontSizeCoeffFromJp:
   - 1
   - 0.8
---- !u!114 &-3557193721754220034
+--- !u!114 &-334242470929001486
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 211256672648796651}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e60ea0512294d5941a906516626cc40b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-7899998554525598421
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -170,6 +185,33 @@ MonoBehaviour:
   amp: 0.2
   speed: 10
   rotAmp: 1.5
-  sclAmp: 0.5
+  sclAmp: 0.2
   sclWaitMaxTime: 6
   sclWaitMinTime: 2
+--- !u!114 &-6509236557802883430
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 211256672648796651}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6b85151bf2928e4fb1df3d87e004a59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &7504772590972617360
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 211256672648796651}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d793d9c21755b234987909cb5ba7c04c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sclAmp: 2
+  sclChangeTime: 0.05
+  sclWaitTime: 0.5

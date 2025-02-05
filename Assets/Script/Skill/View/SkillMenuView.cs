@@ -18,9 +18,14 @@ namespace gaw241201.View
         [SerializeField] Transform _root;
 
         List<SkillItemView> _itemViewList;
-        const float c_intervalX = 480f;
+        const float c_intervalX = 540f;
 
         int _index = 0;
+
+        float[] _fakeInitialRotation = new float[]
+        {
+            -4f,6f,3f
+        };
 
         public async UniTask Enter(SkillArgs args)
         {
@@ -32,6 +37,7 @@ namespace gaw241201.View
                 SkillItemView item = _diContainer.Instantiate<SkillItemView>(_itemViewPrefab, _root);
                 item.SetData(args.DataList[i]);
                 item.transform.localPosition = Vector2.right * (-1f + i) * c_intervalX;
+                item.transform.localRotation = Quaternion.Euler(0, 0, _fakeInitialRotation[i]);
 
                 _itemViewList.Add(item);
             }
