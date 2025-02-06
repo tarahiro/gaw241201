@@ -14,7 +14,7 @@ namespace gaw241201.View
 {
     public class CardEyes : MonoBehaviour
     {
-        const float c_length = 6f;
+        [SerializeField] float _eyeMoveLength = 6f;
         public GazeConst.GazingKey GazingKey { get; set; } = GazeConst.GazingKey.Card;
 
         [SerializeField] List<EyeView> _eyeViewList;
@@ -52,7 +52,7 @@ namespace gaw241201.View
 
         void SetEyePosition(Vector2 direction)
         {
-            var position = direction.normalized * c_length;
+            var position = direction.normalized * _eyeMoveLength;
 
             foreach (var item in _eyeViewList)
             {
