@@ -14,6 +14,7 @@ namespace gaw241201.View
     {
         [Inject] SettingInputView _settingInputView;
         [Inject] SettingTabManager _settingTabManager;
+        [Inject] RendererHundler _rendererHundler;
 
         [SerializeField] GameObject _root;
 
@@ -27,6 +28,7 @@ namespace gaw241201.View
         public async UniTask Enter(SettingTabEnterArgs args)
         {
             _root.SetActive(true);
+            _rendererHundler.ActivateRendererFeature(RendererHundler.RendererFeature.ScanLine);
             _settingInputView.Enter().Forget();
             _settingTabManager.EnterTab(args);
         }
@@ -34,6 +36,7 @@ namespace gaw241201.View
         public async UniTask Exit(SettingExitArgs args)
         {
             _settingInputView.Exit();
+            _rendererHundler.DeactivateRendererFeature(RendererHundler.RendererFeature.ScanLine);
             _root.SetActive(false);
         }
     }

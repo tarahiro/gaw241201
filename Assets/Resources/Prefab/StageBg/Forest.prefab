@@ -47,8 +47,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _depthObjectRoot: {fileID: 7538522029688532693}
-  _normalDepthObject: {fileID: 969979651555448132, guid: b58d25a5d960efc4a85a2953aed80e4e, type: 3}
-  _bossDepthObject: {fileID: 969979651555448132, guid: b58d25a5d960efc4a85a2953aed80e4e, type: 3}
+  _normalDepthObject: {fileID: 6889174338142732697, guid: 687e4bbd479e2a24cacdc0199254be87, type: 3}
+  _bossDepthObject: {fileID: 6889174338142732697, guid: 687e4bbd479e2a24cacdc0199254be87, type: 3}
   _bgColor: {r: 0.003921569, g: 0.03137255, b: 0.003921569, a: 0}
 --- !u!1 &1577355803259975891
 GameObject:

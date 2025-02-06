@@ -59,6 +59,7 @@ namespace gaw241201.Inject
             ConfigureTypingRoguelike(builder);
             ConfigureLanguage(builder);
             ConfigureSetting(builder);
+            ConfigureRenderer(builder);
         }
 
         void ConfigureGlobalFactory(IContainerBuilder builder)
@@ -73,7 +74,7 @@ namespace gaw241201.Inject
             builder.Register<AdapterFactory<SimpleLoopStarter, SaveDataManager>>(Lifetime.Singleton).WithParameter<LifetimeScope[]>(FindObjectsOfType<LifetimeScope>).AsImplementedInterfaces();
             builder.Register<FlowProvider>(Lifetime.Singleton).WithParameter<LifetimeScope[]>(FindObjectsOfType<LifetimeScope>).AsImplementedInterfaces();
 
-            builder.Register<SimpleLoopStarter>(Lifetime.Singleton).AsSelf().WithParameter(FlowMasterConst.FlowMasterLabel.GoatEyeFlow);
+            builder.Register<SimpleLoopStarter>(Lifetime.Singleton).AsSelf().WithParameter(FlowMasterConst.FlowMasterLabel.TypingRoguelikeMainFlow);
 
             builder.RegisterEntryPoint<GameManager>();
 
@@ -414,6 +415,11 @@ namespace gaw241201.Inject
             builder.RegisterComponentInHierarchy<SettingTabManager>().AsSelf();
 
             builder.RegisterEntryPoint<SettingPresenter>();
+        }
+
+        void ConfigureRenderer(IContainerBuilder builder)
+        {
+            builder.RegisterComponentInHierarchy<RendererHundler>().AsSelf();
         }
 
     }
