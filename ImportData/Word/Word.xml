@@ -259,8 +259,8 @@
     <Cell ss:StyleID="s67"><Data ss:Type="String">ALICE</Data></Cell>
     <Cell ss:StyleID="s67" ss:Formula="=RC[-1]"><Data ss:Type="String">ALICE</Data></Cell>
     <Cell ss:StyleID="s67"><PhoneticText
-      xmlns="urn:schemas-microsoft-com:office:excel">ジンメイオカエシュクフクバイ</PhoneticText><Data
-      ss:Type="String">人名をALICEに置き換えられる。&quot;A&quot;から得る祝福が2倍。</Data></Cell>
+      xmlns="urn:schemas-microsoft-com:office:excel">ミガエシュクフクバイ</PhoneticText><Data
+      ss:Type="String">ALICEを身代わりにできる。&quot;A&quot;から得る祝福が2倍。</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">Names can be replaced with &quot;Alice.&quot; Typing &quot;A&quot; doubles the points.</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">Alice</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">Human</Data></Cell>
@@ -552,7 +552,7 @@
    <Panes>
     <Pane>
      <Number>3</Number>
-     <ActiveRow>32</ActiveRow>
+     <ActiveRow>12</ActiveRow>
      <ActiveCol>4</ActiveCol>
     </Pane>
    </Panes>

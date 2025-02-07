@@ -14,8 +14,7 @@ namespace gaw241201.View
 {
     public class TimerView : MonoBehaviour, ITimerView
     {
-
-        [SerializeField] Image _timerImage;
+        [SerializeField] RectTransform _timerNeedle;
         CancellationToken _ct;
 
         public void EnterTimer(TimerArgs args)
@@ -28,7 +27,7 @@ namespace gaw241201.View
 
         public void UpdateTimer(float ratio)
         {
-            _timerImage.fillAmount = ratio;
+            _timerNeedle.localRotation = Quaternion.Euler(0, 0, -360f * ratio);
         }
 
         public void EndTimer()

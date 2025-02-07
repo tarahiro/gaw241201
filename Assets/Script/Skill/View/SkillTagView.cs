@@ -23,7 +23,7 @@ namespace gaw241201.View
         public void Set(string text)
         {
             _text.text = text;
-            _image.rectTransform.sizeDelta = new Vector2(_text.preferredWidth + c_mergin * 2f, _text.preferredHeight + c_mergin * 2f);
+            _image.rectTransform.sizeDelta = new Vector2(_text.preferredWidth + c_mergin * 2f, _text.preferredHeight);
         }
         public float Width()
         {

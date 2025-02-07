@@ -22,6 +22,7 @@ namespace gaw241201.Inject
         [Inject] ConversationModelProvider _conversationModelProvider;
         [Inject] FacialMessagePublisher _facialMessagePublisher;
         [Inject] ResetGazeMessagePublisher _resetGazeMessagePublisher;
+        [Inject] AnimationPublisherFake _animationPublisherFake;
 
         public void Start()
         {
@@ -70,6 +71,7 @@ namespace gaw241201.Inject
                     _facialMessagePublisher.PublishEvent(GazeConst.GazingKey.Main, ConversationViewConst.Facial.Big);
                     _resetGazeMessagePublisher.PublishEvent(GazeConst.GazingKey.Main, Unit.Default);
                     _resetGazeMessagePublisher.PublishEvent(GazeConst.GazingKey.Card, Unit.Default);
+                    _animationPublisherFake.OnHorror("Horror");
                 }
 
             }

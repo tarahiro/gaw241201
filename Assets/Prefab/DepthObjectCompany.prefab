@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 810153289986157936}
   - component: {fileID: 2454700735547170983}
-  - component: {fileID: 4969503273345893707}
   m_Layer: 0
   m_Name: pc (6)
   m_TagString: Untagged
@@ -85,18 +84,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!210 &4969503273345893707
-SortingGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 336145259141682747}
-  m_Enabled: 1
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_SortAtRoot: 0
 --- !u!1 &624572933751634242
 GameObject:
   m_ObjectHideFlags: 0
@@ -107,7 +94,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7062475512149462643}
   - component: {fileID: 1660524768057420080}
-  - component: {fileID: 6478379558540685761}
   m_Layer: 0
   m_Name: pc
   m_TagString: Untagged
@@ -182,18 +168,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!210 &6478379558540685761
-SortingGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 624572933751634242}
-  m_Enabled: 1
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_SortAtRoot: 0
 --- !u!1 &817798130724306597
 GameObject:
   m_ObjectHideFlags: 0
@@ -204,7 +178,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2644845988611940995}
   - component: {fileID: 2627130096758856474}
-  - component: {fileID: 8391765460715413782}
   m_Layer: 0
   m_Name: pc (5)
   m_TagString: Untagged
@@ -279,18 +252,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!210 &8391765460715413782
-SortingGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 817798130724306597}
-  m_Enabled: 1
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_SortAtRoot: 0
 --- !u!1 &900339489311102240
 GameObject:
   m_ObjectHideFlags: 0
@@ -301,7 +262,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2580037691904899119}
   - component: {fileID: 915411769115884164}
-  - component: {fileID: 1775728352423145413}
   m_Layer: 0
   m_Name: pc (3)
   m_TagString: Untagged
@@ -376,18 +336,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!210 &1775728352423145413
-SortingGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 900339489311102240}
-  m_Enabled: 1
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_SortAtRoot: 0
 --- !u!1 &1381490867227190170
 GameObject:
   m_ObjectHideFlags: 0
@@ -398,7 +346,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2969742580922110462}
   - component: {fileID: 7583297427618856795}
-  - component: {fileID: 7137340874374548494}
   m_Layer: 0
   m_Name: pc (4)
   m_TagString: Untagged
@@ -473,18 +420,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!210 &7137340874374548494
-SortingGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1381490867227190170}
-  m_Enabled: 1
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_SortAtRoot: 0
 --- !u!1 &1790598397400901473
 GameObject:
   m_ObjectHideFlags: 0
@@ -495,7 +430,6 @@ GameObject:
   m_Component:
   - component: {fileID: 386389624165869997}
   - component: {fileID: 3898359941597459963}
-  - component: {fileID: 249289226945553401}
   m_Layer: 0
   m_Name: pc (1)
   m_TagString: Untagged
@@ -570,18 +504,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!210 &249289226945553401
-SortingGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1790598397400901473}
-  m_Enabled: 1
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_SortAtRoot: 0
 --- !u!1 &1993728259595927926
 GameObject:
   m_ObjectHideFlags: 0
@@ -592,7 +514,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1641624952165535172}
   - component: {fileID: 179416003399556335}
-  - component: {fileID: 345262606910087436}
   m_Layer: 0
   m_Name: pc (4)
   m_TagString: Untagged
@@ -667,18 +588,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!210 &345262606910087436
-SortingGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1993728259595927926}
-  m_Enabled: 1
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_SortAtRoot: 0
 --- !u!1 &2356371210187045578
 GameObject:
   m_ObjectHideFlags: 0
@@ -689,7 +598,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5194164481437180897}
   - component: {fileID: 5266270282243755689}
-  - component: {fileID: 2704728679789857812}
   m_Layer: 0
   m_Name: pc (3)
   m_TagString: Untagged
@@ -764,18 +672,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!210 &2704728679789857812
-SortingGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2356371210187045578}
-  m_Enabled: 1
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_SortAtRoot: 0
 --- !u!1 &2566190751165103205
 GameObject:
   m_ObjectHideFlags: 0
@@ -786,7 +682,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1801724927899631840}
   - component: {fileID: 7076104000544055982}
-  - component: {fileID: 6652541275317312745}
   m_Layer: 0
   m_Name: pc (3)
   m_TagString: Untagged
@@ -861,18 +756,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!210 &6652541275317312745
-SortingGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2566190751165103205}
-  m_Enabled: 1
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_SortAtRoot: 0
 --- !u!1 &3625518946681590441
 GameObject:
   m_ObjectHideFlags: 0
@@ -883,7 +766,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7965546775680666436}
   - component: {fileID: 7432968539038155030}
-  - component: {fileID: 8736972943350992204}
   m_Layer: 0
   m_Name: desk
   m_TagString: Untagged
@@ -958,18 +840,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!210 &8736972943350992204
-SortingGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3625518946681590441}
-  m_Enabled: 1
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_SortAtRoot: 0
 --- !u!1 &3637390347217832932
 GameObject:
   m_ObjectHideFlags: 0
@@ -980,7 +850,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2303175932828929341}
   - component: {fileID: 376773008459055078}
-  - component: {fileID: 5233846377112737600}
   m_Layer: 0
   m_Name: desk (5)
   m_TagString: Untagged
@@ -1055,18 +924,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!210 &5233846377112737600
-SortingGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3637390347217832932}
-  m_Enabled: 1
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_SortAtRoot: 0
 --- !u!1 &4069199660224830102
 GameObject:
   m_ObjectHideFlags: 0
@@ -1077,7 +934,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5931531532730470103}
   - component: {fileID: 7202533854669078371}
-  - component: {fileID: 4080753432157552708}
   m_Layer: 0
   m_Name: pc (2)
   m_TagString: Untagged
@@ -1152,18 +1008,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!210 &4080753432157552708
-SortingGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4069199660224830102}
-  m_Enabled: 1
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_SortAtRoot: 0
 --- !u!1 &4239515480353448341
 GameObject:
   m_ObjectHideFlags: 0
@@ -1174,7 +1018,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5855260178734223329}
   - component: {fileID: 4104505052737113883}
-  - component: {fileID: 6433884381707126736}
   m_Layer: 0
   m_Name: pc (2)
   m_TagString: Untagged
@@ -1249,18 +1092,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!210 &6433884381707126736
-SortingGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4239515480353448341}
-  m_Enabled: 1
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_SortAtRoot: 0
 --- !u!1 &4311404933357024740
 GameObject:
   m_ObjectHideFlags: 0
@@ -1271,7 +1102,6 @@ GameObject:
   m_Component:
   - component: {fileID: 185930963943754998}
   - component: {fileID: 1199367022624683414}
-  - component: {fileID: 8432971565296223428}
   m_Layer: 0
   m_Name: pc (4)
   m_TagString: Untagged
@@ -1346,18 +1176,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!210 &8432971565296223428
-SortingGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4311404933357024740}
-  m_Enabled: 1
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_SortAtRoot: 0
 --- !u!1 &5087361116897615093
 GameObject:
   m_ObjectHideFlags: 0
@@ -1368,7 +1186,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8948534700965915420}
   - component: {fileID: 2755005854890404284}
-  - component: {fileID: 1679527842118963143}
   m_Layer: 0
   m_Name: pc (7)
   m_TagString: Untagged
@@ -1443,18 +1260,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!210 &1679527842118963143
-SortingGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5087361116897615093}
-  m_Enabled: 1
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_SortAtRoot: 0
 --- !u!1 &5692465495166604478
 GameObject:
   m_ObjectHideFlags: 0
@@ -1465,7 +1270,6 @@ GameObject:
   m_Component:
   - component: {fileID: 814774335819529732}
   - component: {fileID: 4140429279276287690}
-  - component: {fileID: 4058126906328094687}
   m_Layer: 0
   m_Name: pc
   m_TagString: Untagged
@@ -1540,18 +1344,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!210 &4058126906328094687
-SortingGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5692465495166604478}
-  m_Enabled: 1
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_SortAtRoot: 0
 --- !u!1 &5841984272914525201
 GameObject:
   m_ObjectHideFlags: 0
@@ -1562,7 +1354,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4976877004176153985}
   - component: {fileID: 199283998186096208}
-  - component: {fileID: 1141217501383330783}
   m_Layer: 0
   m_Name: desk (3)
   m_TagString: Untagged
@@ -1637,18 +1428,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!210 &1141217501383330783
-SortingGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5841984272914525201}
-  m_Enabled: 1
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_SortAtRoot: 0
 --- !u!1 &5985379388343645195
 GameObject:
   m_ObjectHideFlags: 0
@@ -1659,7 +1438,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4542205257836158910}
   - component: {fileID: 2002710678377741086}
-  - component: {fileID: 2339256023873698571}
   m_Layer: 0
   m_Name: desk (2)
   m_TagString: Untagged
@@ -1734,18 +1512,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!210 &2339256023873698571
-SortingGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5985379388343645195}
-  m_Enabled: 1
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_SortAtRoot: 0
 --- !u!1 &6192448371164422655
 GameObject:
   m_ObjectHideFlags: 0
@@ -1756,7 +1522,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1654407427180369110}
   - component: {fileID: 641928352940487380}
-  - component: {fileID: 8077065557640310695}
   m_Layer: 0
   m_Name: pc (2)
   m_TagString: Untagged
@@ -1831,18 +1596,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!210 &8077065557640310695
-SortingGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6192448371164422655}
-  m_Enabled: 1
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_SortAtRoot: 0
 --- !u!1 &6290292499122751432
 GameObject:
   m_ObjectHideFlags: 0
@@ -1853,7 +1606,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3635639143120506905}
   - component: {fileID: 4803542618604861781}
-  - component: {fileID: 4262549931006757245}
   m_Layer: 0
   m_Name: pc (3)
   m_TagString: Untagged
@@ -1928,18 +1680,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!210 &4262549931006757245
-SortingGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6290292499122751432}
-  m_Enabled: 1
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_SortAtRoot: 0
 --- !u!1 &6316469317527074164
 GameObject:
   m_ObjectHideFlags: 0
@@ -1950,7 +1690,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2827288501176463678}
   - component: {fileID: 1534470733613023112}
-  - component: {fileID: 8883923923512547628}
   m_Layer: 0
   m_Name: pc (6)
   m_TagString: Untagged
@@ -2025,18 +1764,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!210 &8883923923512547628
-SortingGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6316469317527074164}
-  m_Enabled: 1
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_SortAtRoot: 0
 --- !u!1 &6451285326564433979
 GameObject:
   m_ObjectHideFlags: 0
@@ -2047,7 +1774,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7873959198053381653}
   - component: {fileID: 5370607676761988008}
-  - component: {fileID: 7511396582265350488}
   m_Layer: 0
   m_Name: desk (1)
   m_TagString: Untagged
@@ -2122,18 +1848,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!210 &7511396582265350488
-SortingGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6451285326564433979}
-  m_Enabled: 1
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_SortAtRoot: 0
 --- !u!1 &6516750171371787239
 GameObject:
   m_ObjectHideFlags: 0
@@ -2144,7 +1858,6 @@ GameObject:
   m_Component:
   - component: {fileID: 562859257640720497}
   - component: {fileID: 7328029849953605864}
-  - component: {fileID: 5056550192507702722}
   m_Layer: 0
   m_Name: pc (5)
   m_TagString: Untagged
@@ -2219,18 +1932,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!210 &5056550192507702722
-SortingGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6516750171371787239}
-  m_Enabled: 1
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_SortAtRoot: 0
 --- !u!1 &6709907030006643632
 GameObject:
   m_ObjectHideFlags: 0
@@ -2241,7 +1942,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8653841933388007322}
   - component: {fileID: 4850257509951053027}
-  - component: {fileID: 7577229494670001026}
   m_Layer: 0
   m_Name: desk (2)
   m_TagString: Untagged
@@ -2316,18 +2016,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!210 &7577229494670001026
-SortingGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6709907030006643632}
-  m_Enabled: 1
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_SortAtRoot: 0
 --- !u!1 &6865830499010268363
 GameObject:
   m_ObjectHideFlags: 0
@@ -2338,7 +2026,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5814126024927698771}
   - component: {fileID: 3917363822055931184}
-  - component: {fileID: 3243485631841728141}
   m_Layer: 0
   m_Name: desk (4)
   m_TagString: Untagged
@@ -2413,18 +2100,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!210 &3243485631841728141
-SortingGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6865830499010268363}
-  m_Enabled: 1
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_SortAtRoot: 0
 --- !u!1 &7842918681159132614
 GameObject:
   m_ObjectHideFlags: 0
@@ -2435,7 +2110,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2914464477836009983}
   - component: {fileID: 1605917798281996128}
-  - component: {fileID: 3667616293245431686}
   m_Layer: 0
   m_Name: pc
   m_TagString: Untagged
@@ -2510,18 +2184,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!210 &3667616293245431686
-SortingGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7842918681159132614}
-  m_Enabled: 1
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_SortAtRoot: 0
 --- !u!1 &7978078552860236569
 GameObject:
   m_ObjectHideFlags: 0
@@ -2532,7 +2194,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5228641973107229131}
   - component: {fileID: 6379245843983320849}
-  - component: {fileID: 4007076874760565729}
   m_Layer: 0
   m_Name: desk (3)
   m_TagString: Untagged
@@ -2607,18 +2268,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!210 &4007076874760565729
-SortingGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7978078552860236569}
-  m_Enabled: 1
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_SortAtRoot: 0
 --- !u!1 &8288018751339508175
 GameObject:
   m_ObjectHideFlags: 0
@@ -2629,7 +2278,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8504067910742322886}
   - component: {fileID: 99462391153935662}
-  - component: {fileID: 6286347548552064773}
   m_Layer: 0
   m_Name: pc (1)
   m_TagString: Untagged
@@ -2704,18 +2352,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!210 &6286347548552064773
-SortingGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8288018751339508175}
-  m_Enabled: 1
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_SortAtRoot: 0
 --- !u!1 &8515951694910134553
 GameObject:
   m_ObjectHideFlags: 0
@@ -2726,7 +2362,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4167365611340602755}
   - component: {fileID: 2515379662488264940}
-  - component: {fileID: 1186518480586107346}
   m_Layer: 0
   m_Name: pc (9)
   m_TagString: Untagged
@@ -2801,18 +2436,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!210 &1186518480586107346
-SortingGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8515951694910134553}
-  m_Enabled: 1
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_SortAtRoot: 0
 --- !u!1 &8526733727245894264
 GameObject:
   m_ObjectHideFlags: 0
@@ -2823,7 +2446,6 @@ GameObject:
   m_Component:
   - component: {fileID: 102510179691755823}
   - component: {fileID: 4661601533859842505}
-  - component: {fileID: 569061147699322486}
   m_Layer: 0
   m_Name: pc (8)
   m_TagString: Untagged
@@ -2898,18 +2520,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!210 &569061147699322486
-SortingGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8526733727245894264}
-  m_Enabled: 1
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_SortAtRoot: 0
 --- !u!1 &8941647093417067872
 GameObject:
   m_ObjectHideFlags: 0
@@ -2920,7 +2530,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3320688713626424475}
   - component: {fileID: 6191508601931881436}
-  - component: {fileID: 8787073635494755504}
   m_Layer: 0
   m_Name: pc (5)
   m_TagString: Untagged
@@ -2995,18 +2604,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!210 &8787073635494755504
-SortingGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8941647093417067872}
-  m_Enabled: 1
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_SortAtRoot: 0
 --- !u!1 &8960565735682571987
 GameObject:
   m_ObjectHideFlags: 0
@@ -3017,7 +2614,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1007486505600829435}
   - component: {fileID: 4376017336788803127}
-  - component: {fileID: 7021232059060521250}
   m_Layer: 0
   m_Name: pc (6)
   m_TagString: Untagged
@@ -3092,18 +2688,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!210 &7021232059060521250
-SortingGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8960565735682571987}
-  m_Enabled: 1
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_SortAtRoot: 0
 --- !u!1001 &3259355234541536625
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3112,6 +2696,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1476958486722304333, guid: b58d25a5d960efc4a85a2953aed80e4e, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1476958486722304333, guid: b58d25a5d960efc4a85a2953aed80e4e, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 1544090926245286419, guid: b58d25a5d960efc4a85a2953aed80e4e, type: 3}
       propertyPath: m_Name
       value: right
@@ -3120,9 +2712,33 @@ PrefabInstance:
       propertyPath: m_Name
       value: left
       objectReference: {fileID: 0}
+    - target: {fileID: 2657787596492910407, guid: b58d25a5d960efc4a85a2953aed80e4e, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2657787596492910407, guid: b58d25a5d960efc4a85a2953aed80e4e, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3761167032274905195, guid: b58d25a5d960efc4a85a2953aed80e4e, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3761167032274905195, guid: b58d25a5d960efc4a85a2953aed80e4e, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 4024613910018740077, guid: b58d25a5d960efc4a85a2953aed80e4e, type: 3}
       propertyPath: m_Name
       value: DepthObjectCompany
+      objectReference: {fileID: 0}
+    - target: {fileID: 4094808257256162368, guid: b58d25a5d960efc4a85a2953aed80e4e, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4094808257256162368, guid: b58d25a5d960efc4a85a2953aed80e4e, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 4403551904433551786, guid: b58d25a5d960efc4a85a2953aed80e4e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3164,13 +2780,45 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5249498515272472794, guid: b58d25a5d960efc4a85a2953aed80e4e, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5249498515272472794, guid: b58d25a5d960efc4a85a2953aed80e4e, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5707221159692232638, guid: b58d25a5d960efc4a85a2953aed80e4e, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5707221159692232638, guid: b58d25a5d960efc4a85a2953aed80e4e, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 7017561844496760660, guid: b58d25a5d960efc4a85a2953aed80e4e, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.549
       objectReference: {fileID: 0}
+    - target: {fileID: 8215350037457556428, guid: b58d25a5d960efc4a85a2953aed80e4e, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8215350037457556428, guid: b58d25a5d960efc4a85a2953aed80e4e, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 8540667027096323699, guid: b58d25a5d960efc4a85a2953aed80e4e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.518
+      objectReference: {fileID: 0}
+    - target: {fileID: 8928816916561188813, guid: b58d25a5d960efc4a85a2953aed80e4e, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8928816916561188813, guid: b58d25a5d960efc4a85a2953aed80e4e, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3271,7 +2919,10 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 5707221159692232638, guid: b58d25a5d960efc4a85a2953aed80e4e, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2827288501176463678}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8073693706758955464, guid: b58d25a5d960efc4a85a2953aed80e4e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7397914922679591000}
   m_SourcePrefab: {fileID: 100100000, guid: b58d25a5d960efc4a85a2953aed80e4e, type: 3}
 --- !u!4 &709833634178050614 stripped
 Transform:
@@ -3298,6 +2949,23 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8928816916561188813, guid: b58d25a5d960efc4a85a2953aed80e4e, type: 3}
   m_PrefabInstance: {fileID: 3259355234541536625}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &6714880201219908793 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8073693706758955464, guid: b58d25a5d960efc4a85a2953aed80e4e, type: 3}
+  m_PrefabInstance: {fileID: 3259355234541536625}
+  m_PrefabAsset: {fileID: 0}
+--- !u!210 &7397914922679591000
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6714880201219908793}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortAtRoot: 0
 --- !u!4 &6861593590713210557 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8215350037457556428, guid: b58d25a5d960efc4a85a2953aed80e4e, type: 3}

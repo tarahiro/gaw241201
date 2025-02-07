@@ -1,4 +1,5 @@
 using Cysharp.Threading.Tasks;
+using MessagePipe;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -20,6 +21,8 @@ namespace gaw241201.View
         List<SkillItemView> _itemViewList;
         const float c_intervalX = 540f;
 
+        [Inject] ISubscriber<string> _animationSubscriberFake;
+
         int _index = 0;
 
         float[] _fakeInitialRotation = new float[]
@@ -29,6 +32,10 @@ namespace gaw241201.View
 
         public async UniTask Enter(SkillArgs args)
         {
+            //Fake
+            _animationSubscriberFake.Subscribe(_ => HorrorFake());
+
+
             _itemViewList = new List<SkillItemView>();
             _index = args.MenuItemIndex;
 
@@ -61,6 +68,14 @@ namespace gaw241201.View
             Current().UnFocus();
             _index = index;
             Current().Focus();
+        }
+
+        void HorrorFake()
+        {
+            foreach(var item in _itemViewList)
+            {
+                item.transform.localRotation = Quaternion.identity;
+            }
         }
     }
 }

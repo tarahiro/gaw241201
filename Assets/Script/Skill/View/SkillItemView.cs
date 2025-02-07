@@ -21,8 +21,10 @@ namespace gaw241201.View
         [SerializeField] Transform _skillPictureLocator;
         [SerializeField] SkillItemHeaderView _header;
         [SerializeField] Transform _root;
+        [SerializeField] Animator _animator;
 
         [Inject] ISkillCardGazePublisher _skillCardGazePublisher;
+        [Inject] ISubscriber<string> _animationSubscriberFake;
 
         SkillPicture _skillPicture;
 
@@ -30,6 +32,10 @@ namespace gaw241201.View
         public IObservable<SkillArgs.Data> Decided => _decided;
 
 
+        void Start()
+        {
+            _animationSubscriberFake.Subscribe(SetAnimationFake);
+        }
 
 
         public void SetData(SkillArgs.Data args)
@@ -60,6 +66,12 @@ namespace gaw241201.View
         {
             _decided.OnNext(_args);
         }
+
+        public void SetAnimationFake(string s)
+        {
+            _animator.SetTrigger(s);
+        }
+       
 
     }
 }
