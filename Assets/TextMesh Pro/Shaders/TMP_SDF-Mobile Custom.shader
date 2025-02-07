@@ -200,7 +200,7 @@ SubShader {
 			half d = tex2D(_MainTex, input.texcoord0.xy).a * input.param.x;
 			d -= input.param.w;
 		//	d += sin(0.5 * 3.14 * _Time.y) * 0.2;
-			d = floor(d + 0.5);
+			d = floor(d);
 			half4 c = input.faceColor * saturate(d);
 
 			#ifdef OUTLINE_ON

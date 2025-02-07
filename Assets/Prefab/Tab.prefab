@@ -35,7 +35,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1000, y: 600}
+  m_SizeDelta: {x: 1440, y: 800}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5928658351979623022
 CanvasRenderer:
@@ -148,8 +148,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 112}
-  m_SizeDelta: {x: 640, y: 4}
+  m_AnchoredPosition: {x: 0, y: 161.99998}
+  m_SizeDelta: {x: 1020, y: 4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &144406494618453497
 CanvasRenderer:
@@ -441,11 +441,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2916978801283081852, guid: a4b3769f32861a447b54d97baca45fda, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: -189
       objectReference: {fileID: 0}
     - target: {fileID: 2916978801283081852, guid: a4b3769f32861a447b54d97baca45fda, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 150
+      value: 229
       objectReference: {fileID: 0}
     - target: {fileID: 2916978801283081852, guid: a4b3769f32861a447b54d97baca45fda, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -465,11 +465,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6462015834739227002, guid: a4b3769f32861a447b54d97baca45fda, type: 3}
       propertyPath: m_fontSize
-      value: 44
+      value: 64
       objectReference: {fileID: 0}
     - target: {fileID: 6462015834739227002, guid: a4b3769f32861a447b54d97baca45fda, type: 3}
       propertyPath: m_fontSizeBase
-      value: 44
+      value: 64
+      objectReference: {fileID: 0}
+    - target: {fileID: 6462015834739227002, guid: a4b3769f32861a447b54d97baca45fda, type: 3}
+      propertyPath: m_VerticalAlignment
+      value: 1024
       objectReference: {fileID: 0}
     - target: {fileID: 6462015834739227002, guid: a4b3769f32861a447b54d97baca45fda, type: 3}
       propertyPath: m_HorizontalAlignment

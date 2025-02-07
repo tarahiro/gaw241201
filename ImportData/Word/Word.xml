@@ -95,6 +95,18 @@
     ss:Color="#000000"/>
    <Interior ss:Color="#FFF2CC" ss:Pattern="Solid"/>
   </Style>
+  <Style ss:ID="s69">
+   <Alignment ss:Vertical="Center" ss:WrapText="1"/>
+   <Borders>
+    <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1"/>
+    <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1"/>
+    <Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="1"/>
+    <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1"/>
+   </Borders>
+   <Font ss:FontName="游ゴシック" x:CharSet="128" x:Family="Modern" ss:Size="8"
+    ss:Color="#000000"/>
+   <Interior ss:Color="#FFF2CC" ss:Pattern="Solid"/>
+  </Style>
  </Styles>
  <Worksheet ss:Name="Script">
   <Table ss:ExpandedColumnCount="12" ss:ExpandedRowCount="30" x:FullColumns="1"
@@ -258,9 +270,9 @@
     <Cell ss:StyleID="s67"><Data ss:Type="String">Alice</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">ALICE</Data></Cell>
     <Cell ss:StyleID="s67" ss:Formula="=RC[-1]"><Data ss:Type="String">ALICE</Data></Cell>
-    <Cell ss:StyleID="s67"><PhoneticText
+    <Cell ss:StyleID="s69"><PhoneticText
       xmlns="urn:schemas-microsoft-com:office:excel">ミガエシュクフクバイ</PhoneticText><Data
-      ss:Type="String">ALICEを身代わりにできる。&quot;A&quot;から得る祝福が2倍。</Data></Cell>
+      ss:Type="String">ALICEを身代わりにできる。&#10;&quot;A&quot;から得る祝福が2倍。</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">Names can be replaced with &quot;Alice.&quot; Typing &quot;A&quot; doubles the points.</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">Alice</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">Human</Data></Cell>

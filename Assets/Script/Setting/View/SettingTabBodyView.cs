@@ -16,7 +16,7 @@ namespace gaw241201.View
         [SerializeField] Cursor _cursor;
         [SerializeField] GameObject _root;
 
-        float cursorX = -320f;
+        float cursorX = -480f;
 
         private void Awake()
         {
