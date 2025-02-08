@@ -21,7 +21,6 @@ namespace gaw241201
 
         Subject<SettingTabEnterArgs> _tabChanged = new Subject<SettingTabEnterArgs>();
         public IObservable<SettingTabEnterArgs> TabChanged => _tabChanged;
-
         public void Initialize()
         {
             _settingTabModelList = _settingTabListFactory.Create();

@@ -14,8 +14,9 @@ namespace gaw241201.View
     {
         Subject<int> _indexerMoved = new Subject<int>();
         public IObservable<int> IndexerMoved => _indexerMoved;
+
         Subject<Unit> _decided = new Subject<Unit>();
-        public IObservable<Unit> Decided { get; }
+        public IObservable<Unit> Decided => _decided;
 
         [Inject] SettingTabManager _tabManager;
 

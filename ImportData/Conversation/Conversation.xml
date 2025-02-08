@@ -9,14 +9,13 @@
   <Author>h t</Author>
   <LastAuthor>h t</LastAuthor>
   <Created>2021-10-25T13:58:26Z</Created>
-  <LastSaved>2025-02-03T10:18:40Z</LastSaved>
+  <LastSaved>2025-02-07T08:58:33Z</LastSaved>
   <Version>16.00</Version>
  </DocumentProperties>
  <OfficeDocumentSettings xmlns="urn:schemas-microsoft-com:office:office">
   <AllowPNG/>
  </OfficeDocumentSettings>
  <ExcelWorkbook xmlns="urn:schemas-microsoft-com:office:excel">
-  <WindowIconic/>
   <WindowHeight>16940</WindowHeight>
   <WindowWidth>32767</WindowWidth>
   <WindowTopX>32767</WindowTopX>
@@ -1755,9 +1754,8 @@
    <Panes>
     <Pane>
      <Number>3</Number>
-     <ActiveRow>36</ActiveRow>
-     <ActiveCol>1</ActiveCol>
-     <RangeSelection>R37C2:R37C4</RangeSelection>
+     <ActiveRow>29</ActiveRow>
+     <ActiveCol>19</ActiveCol>
     </Pane>
    </Panes>
    <ProtectObjects>False</ProtectObjects>
