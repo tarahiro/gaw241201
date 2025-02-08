@@ -1,0 +1,22 @@
+{
+    "name": "gaw241201.Title.Presenter",
+    "rootNamespace": "gaw241201.Title.Presenter",
+    "references": [
+        "GUID:0be27b54e10228743974a8df3dda3639",
+        "GUID:560b04d1a97f54a4e82edc0cbbb69285",
+        "GUID:f51ebe6a0ceec4240a699833d6309b23",
+        "GUID:b0214a6008ed146ff8f122a6a9c2f6cc",
+        "GUID:80730cb7ec02f6544bfe954bc465eae7",
+        "GUID:ce0c41f70ae727e40a366223617d0b57",
+        "GUID:bf6a43003f26bbe4692760fd7408f706"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": false,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

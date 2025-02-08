@@ -10,12 +10,12 @@ using VContainer.Unity;
 
 namespace gaw241201
 {
-    public class AdapterToModel : IAdapterManagerToModel
+    public class AdapterToMainLoop : IAdapterManagerToModel
     {
         IMainLoopStarter _flowHundler;
         ILoadable _loadable;
 
-        public AdapterToModel(IMainLoopStarter mainLoopHundler, ILoadable loadable)
+        public AdapterToMainLoop(IMainLoopStarter mainLoopHundler, ILoadable loadable)
         {
             _flowHundler = mainLoopHundler;
             _loadable = loadable;

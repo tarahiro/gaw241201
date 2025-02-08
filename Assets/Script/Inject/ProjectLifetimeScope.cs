@@ -25,6 +25,7 @@ namespace gaw241201.Inject
 
             ConfigureGlobalFactory(builder);
             ConfigureManager(builder);
+            ConfigureTitle(builder);
             ConfigureFlow(builder);
             ConfigureTyping(builder);
             ConfigureStarter(builder);
@@ -70,18 +71,31 @@ namespace gaw241201.Inject
 
         void ConfigureManager(IContainerBuilder builder)
         {
+
+            builder.Register<AdapterToTitleFactory>(Lifetime.Singleton).AsImplementedInterfaces();
+            builder.Register<AdapterProvider>(Lifetime.Singleton).AsImplementedInterfaces();
+            //  builder.Register<AdapterToMainLoopFactory<FakeLoopStarter, SaveDataManager>>(Lifetime.Singleton).As<IAdapterToMainLoopFactory>();
+
+
             //Manager
-            builder.Register<AdapterFactory<SimpleLoopStarter, SaveDataManager>>(Lifetime.Singleton).WithParameter<LifetimeScope[]>(FindObjectsOfType<LifetimeScope>).AsImplementedInterfaces();
             builder.Register<FlowProvider>(Lifetime.Singleton).WithParameter<LifetimeScope[]>(FindObjectsOfType<LifetimeScope>).AsImplementedInterfaces();
-
-            builder.Register<SimpleLoopStarter>(Lifetime.Singleton).AsSelf().WithParameter(FlowMasterConst.FlowMasterLabel.TypingRoguelikeMainFlow);
-
+            builder.Register<FakeLoopStarter>(Lifetime.Singleton).AsSelf().WithParameter(FlowMasterConst.FlowMasterLabel.TypingRoguelikeMainFlow);
             builder.RegisterEntryPoint<GameManager>();
 
 
             //Debug
             builder.Register<AnimationPublisherFake>(Lifetime.Singleton).AsSelf();
 
+        }
+
+        void ConfigureTitle(IContainerBuilder builder)
+        {
+            builder.Register<TitleEnterModel>(Lifetime.Singleton).AsSelf();
+            builder.Register<TitleExitModel>(Lifetime.Singleton).AsSelf().WithParameter<IAdapterFactory>(Container.Resolve<IAdapterToMainLoopFactory>);
+            builder.RegisterComponentInHierarchy<TitleRootView>().AsSelf();
+            builder.Register<TitleInputView>(Lifetime.Singleton).AsSelf();
+
+            builder.RegisterEntryPoint<TitlePresenter>();
         }
 
         void ConfigureFlow(IContainerBuilder builder)
@@ -116,7 +130,7 @@ namespace gaw241201.Inject
 
             //starter
             builder.Register<ScreenShotStarter>(Lifetime.Singleton).AsSelf();
-            builder.Register<HorrorStoryMainLoopStarter>(Lifetime.Singleton).AsSelf();
+            builder.Register<MainLoopStarter>(Lifetime.Singleton).AsSelf();
 #if ENABLE_DEBUG
 
             builder.Register<TypingTestStarter>(Lifetime.Singleton).AsSelf();

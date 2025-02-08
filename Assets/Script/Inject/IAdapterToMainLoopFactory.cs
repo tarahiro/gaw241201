@@ -10,8 +10,7 @@ using VContainer.Unity;
 
 namespace gaw241201
 {
-    public interface IAdapterFactory
+    public interface IAdapterToMainLoopFactory : IAdapterFactory
     {
-        IAdapterManagerToModel CreateAdapter();
     }
 }

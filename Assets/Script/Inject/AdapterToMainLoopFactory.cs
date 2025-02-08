@@ -10,11 +10,11 @@ using VContainer.Unity;
 
 namespace gaw241201.Inject
 {
-    public class AdapterFactory<T,U> : IAdapterFactory where T : IMainLoopStarter where U:ILoadable
+    public class AdapterToMainLoopFactory<T,U> : IAdapterToMainLoopFactory where T : IMainLoopStarter where U:ILoadable
     {
         [Inject] LifetimeScope[] _scope;
 
-        public IAdapterManagerToModel Create()
+        public IAdapterManagerToModel CreateAdapter()
         {
             T _mainLoopHundler = default;
             U _loadable = default;
@@ -22,7 +22,7 @@ namespace gaw241201.Inject
             _mainLoopHundler = InjectUtil.GetInstance<T>(_scope);
             _loadable = InjectUtil.GetInstance<U>(_scope);
 
-            return new AdapterToModel(_mainLoopHundler, _loadable);
+            return new AdapterToMainLoop(_mainLoopHundler, _loadable);
         }
     }
 }

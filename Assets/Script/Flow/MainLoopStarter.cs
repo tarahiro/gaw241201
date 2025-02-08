@@ -10,13 +10,13 @@ using VContainer.Unity;
 
 namespace gaw241201
 {
-    public class HorrorStoryMainLoopStarter : IMainLoopStarter
+    public class MainLoopStarter : IAdapterManagerToModel
     {
         [Inject] IFlowHundler _flowHundler;
         [Inject] IGlobalFlagProvider _globalFlagProvider;
         [Inject] ILoopInitializer _loopInitializer;
 
-        public void EnterMainLoop()
+        public async UniTask Enter()
         {
             _loopInitializer.InitializeLoop();
             _flowHundler.Enter();

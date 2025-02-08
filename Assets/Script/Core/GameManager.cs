@@ -12,12 +12,13 @@ namespace gaw241201
 {
     public class GameManager : IPostStartable
     {
-        [Inject] IAdapterFactory _adapterFactory;
+        [Inject] IInitialAdapterProvider _initialAdapterProvider;
+
         public void PostStart()
         {
             Log.Comment("ÉQÅ[ÉÄäJén");
 
-            _adapterFactory.Create().Enter().Forget();
+            _initialAdapterProvider.ProvideInitialAdapter().Enter().Forget();
         }
     }
 }
