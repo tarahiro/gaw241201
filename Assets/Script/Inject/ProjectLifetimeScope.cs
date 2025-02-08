@@ -71,7 +71,7 @@ namespace gaw241201.Inject
 
         void ConfigureManager(IContainerBuilder builder)
         {
-
+            builder.Register<GameInitializer>(Lifetime.Singleton).AsImplementedInterfaces();
             builder.Register<AdapterToTitleFactory>(Lifetime.Singleton).AsImplementedInterfaces();
             builder.Register<AdapterProvider>(Lifetime.Singleton).AsImplementedInterfaces();
             //  builder.Register<AdapterToMainLoopFactory<FakeLoopStarter, SaveDataManager>>(Lifetime.Singleton).As<IAdapterToMainLoopFactory>();

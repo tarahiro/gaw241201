@@ -14,6 +14,9 @@ namespace gaw241201
     {
         [Inject] TitleEnterModel _toTitle;
         [Inject] FakeLoopStarter _initialLoopStarter;
+        [Inject] MainLoopStarter _mainLoopStarter;
+
+        bool _isFakeLoop = false;
 
         public IAdapterManagerToModel ProvideInitialAdapter()
         {
@@ -24,7 +27,14 @@ namespace gaw241201
 
         public IAdapterManagerToModel ProvideMainLoopAdapter()
         {
-            return _initialLoopStarter;
+            if (!_isFakeLoop)
+            {
+                return _mainLoopStarter;
+            }
+            else
+            {
+                return _initialLoopStarter;
+            }
         }
     }
 }
