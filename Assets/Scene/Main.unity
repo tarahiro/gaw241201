@@ -4555,6 +4555,8 @@ MonoBehaviour:
   - {fileID: 1306050618}
   - {fileID: 542683574}
   - {fileID: 2609348719531866388, guid: a77cb6aba6efe5c47971e7a556381a9c, type: 3}
+  _isFakeMainLoopEnabled: 1
+  _fakeMainLoop: 8
   textViewList:
   - {fileID: 920876524}
   - {fileID: 403598741}
@@ -5227,7 +5229,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1509127416}
-  m_LocalRotation: {x: 0, y: 0, z: -0.5072353, w: 0.8618076}
+  m_LocalRotation: {x: 0, y: 0, z: -0.1290345, w: 0.9916401}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0

@@ -18,6 +18,8 @@ namespace gaw241201.Inject
 {
     public class ProjectLifetimeScope : LifetimeScope
     {
+        [SerializeField] bool _isFakeMainLoopEnabled = false;
+        [SerializeField] FlowMasterConst.FlowMasterLabel _fakeMainLoop;
 
         protected override void Configure(IContainerBuilder builder)
         {
@@ -46,12 +48,6 @@ namespace gaw241201.Inject
             //RegisterFlagFlow
             builder.Register<RegisterFlagFlowModel>(Lifetime.Singleton).AsSelf();
 
-            //以下、ローグライクから移植してきたもの
-
-            //starter
-            builder.Register<TypingRoguelikeMainLoopStarter>(Lifetime.Singleton).AsSelf();
-
-
             ConfigureSkill(builder);
             ConfigureAct(builder);
             ConfigureRestriction(builder);
@@ -72,14 +68,13 @@ namespace gaw241201.Inject
         void ConfigureManager(IContainerBuilder builder)
         {
             builder.Register<GameInitializer>(Lifetime.Singleton).AsImplementedInterfaces();
-            builder.Register<AdapterToTitleFactory>(Lifetime.Singleton).AsImplementedInterfaces();
-            builder.Register<AdapterProvider>(Lifetime.Singleton).AsImplementedInterfaces();
+            builder.Register<AdapterProvider>(Lifetime.Singleton).AsImplementedInterfaces().WithParameter<bool>(_isFakeMainLoopEnabled);
             //  builder.Register<AdapterToMainLoopFactory<FakeLoopStarter, SaveDataManager>>(Lifetime.Singleton).As<IAdapterToMainLoopFactory>();
 
 
             //Manager
             builder.Register<FlowProvider>(Lifetime.Singleton).WithParameter<LifetimeScope[]>(FindObjectsOfType<LifetimeScope>).AsImplementedInterfaces();
-            builder.Register<FakeLoopStarter>(Lifetime.Singleton).AsSelf().WithParameter(FlowMasterConst.FlowMasterLabel.TypingRoguelikeMainFlow);
+            builder.Register<FakeLoopStarter>(Lifetime.Singleton).AsSelf().WithParameter(_fakeMainLoop);
             builder.RegisterEntryPoint<GameManager>();
 
 
@@ -91,7 +86,7 @@ namespace gaw241201.Inject
         void ConfigureTitle(IContainerBuilder builder)
         {
             builder.Register<TitleEnterModel>(Lifetime.Singleton).AsSelf();
-            builder.Register<TitleExitModel>(Lifetime.Singleton).AsSelf().WithParameter<IAdapterFactory>(Container.Resolve<IAdapterToMainLoopFactory>);
+            builder.Register<TitleExitModel>(Lifetime.Singleton).AsSelf();
             builder.RegisterComponentInHierarchy<TitleRootView>().AsSelf();
             builder.Register<TitleInputView>(Lifetime.Singleton).AsSelf();
 
@@ -129,13 +124,7 @@ namespace gaw241201.Inject
         {
 
             //starter
-            builder.Register<ScreenShotStarter>(Lifetime.Singleton).AsSelf();
             builder.Register<MainLoopStarter>(Lifetime.Singleton).AsSelf();
-#if ENABLE_DEBUG
-
-            builder.Register<TypingTestStarter>(Lifetime.Singleton).AsSelf();
-            builder.Register<FreeInputTestStarter>(Lifetime.Singleton).AsSelf();
-#endif
         }
 
         void ConfigureFlag(IContainerBuilder builder)

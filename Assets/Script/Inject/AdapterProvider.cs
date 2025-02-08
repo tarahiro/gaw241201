@@ -16,7 +16,7 @@ namespace gaw241201
         [Inject] FakeLoopStarter _initialLoopStarter;
         [Inject] MainLoopStarter _mainLoopStarter;
 
-        bool _isFakeLoop = false;
+        [Inject] bool _isFakeLoop;
 
         public IAdapterManagerToModel ProvideInitialAdapter()
         {

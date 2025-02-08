@@ -12,6 +12,7 @@ namespace gaw241201
 {
     public static class FlowMasterConst
     {
+        [System.Serializable]
         public enum FlowMasterLabel
         {
             HorrorStoryMainFlow,
