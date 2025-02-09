@@ -15,7 +15,6 @@ namespace gaw241201.View
     {
         UniTask Enter(CancellationToken token);
         void EndLoop();
-        IObservable<char> KeyEntered { get; }
         IObservable<Unit> Exited { get; }
     }
 }

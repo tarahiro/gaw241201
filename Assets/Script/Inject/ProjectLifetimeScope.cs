@@ -368,10 +368,12 @@ namespace gaw241201.Inject
             builder.Register<RomanInputProcesser>(Lifetime.Singleton).AsSelf();
 
             //view
-            builder.Register<TypingRoguelikeView>(Lifetime.Singleton).AsImplementedInterfaces();
+            builder.Register<TypingRoguelikeRootView>(Lifetime.Singleton).AsImplementedInterfaces();
             builder.RegisterComponentInHierarchy<TimerView>().AsImplementedInterfaces();
             builder.Register<KeyInputProcesser>(Lifetime.Singleton).AsSelf();
             builder.RegisterComponentInHierarchy<TypingTextView>().AsImplementedInterfaces();
+            builder.Register<TypingInputProcessor>(Lifetime.Singleton).AsSelf();
+            builder.Register<TypingInputView>(Lifetime.Singleton).AsSelf();
 
             //presenter
             builder.Register<TypingRoguelikeViewArgsFactory>(Lifetime.Singleton).AsSelf();

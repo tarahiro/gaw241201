@@ -112,7 +112,7 @@ namespace gaw241201.Inject
             //view
             builder.Register<RoguelikeRestrictInputHundler>(Lifetime.Singleton).AsSelf();
             builder.Register<RoguelikeCorrectInputHundler>(Lifetime.Singleton).AsSelf();
-            builder.Register<TypingRoguelikeView>(Lifetime.Singleton).AsImplementedInterfaces();
+            builder.Register<TypingRoguelikeRootView>(Lifetime.Singleton).AsImplementedInterfaces();
             builder.RegisterComponentInHierarchy<TimerView>().AsImplementedInterfaces();
             builder.Register<EnterKeyHundler>(Lifetime.Singleton).AsSelf().AsImplementedInterfaces();
             builder.Register<KeyInputProcesser>(Lifetime.Singleton).AsSelf();
