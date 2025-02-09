@@ -17,7 +17,11 @@ namespace gaw241201
 
         [Inject] ISubscriber<FlagConst.Key, string> _subscriber;
         [Inject] IGlobalFlagRegisterer _globalFlagRegisterer;
+        [Inject] FreeInputUnfixedText _freeInputUnfixedText;
+
+
         public IObservable<Unit> Entered => _uiMenuItemModel.Entered;
+        public IObservable<Unit> Exited => _uiMenuItemModel.Exited;
         public bool IsEnterable => _uiMenuItemModel.IsEnterable;
 
         Subject<string> _valueChanged = new Subject<string>();
@@ -38,19 +42,19 @@ namespace gaw241201
 
         public async UniTask Enter()
         {
+            Log.Comment("ProfileItemPlayerName‚ÉEnter");
+
+            //Initializer‚ð•ÊƒNƒ‰ƒX‚É•ª‚¯‚é‚©‚à
+            _freeInputUnfixedText.Enter(_playerName);
+
             await _uiMenuItemModel.Enter();
         }
 
         public void End()
         {
             _uiMenuItemModel.End();
+            _freeInputUnfixedText.Exit();
 
-        }
-
-        public void End(string name)
-        {
-            _globalFlagRegisterer.RegisterFlag(FlagConst.Key.Name, name);
-            End();
         }
 
         public void OnSetFlag(string s)
@@ -59,6 +63,12 @@ namespace gaw241201
 
             _playerName = s;
             _valueChanged.OnNext(s);
+        }
+
+        public void Decide(string text)
+        {
+            _globalFlagRegisterer.RegisterFlag(FlagConst.Key.Name, text);
+            End();
         }
     }
 }

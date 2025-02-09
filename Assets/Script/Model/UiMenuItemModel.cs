@@ -12,12 +12,11 @@ namespace gaw241201
 {
     public class UiMenuItemModel : IUiMenuItemModel
     {
-        [Inject]
-        ActiveLayerPublisher _activeLayerPublisher;
 
         Subject<Unit> _entered = new Subject<Unit>();
         public IObservable<Unit> Entered => _entered;
-        ActiveLayerConst.InputLayer _inputLayer = ActiveLayerConst.InputLayer.SettingMenuItem;
+        Subject<Unit> _exited = new Subject<Unit>();
+        public IObservable<Unit> Exited => _exited;
 
 
         public bool IsEnterable { get; private set; }
@@ -26,20 +25,18 @@ namespace gaw241201
 
 
         //Fake
-        public UiMenuItemModel(bool isEnterable, ActiveLayerPublisher activeLayerPublisher = null)
+        public UiMenuItemModel(bool isEnterable)
         {
             IsEnterable = isEnterable;
-            _activeLayerPublisher = activeLayerPublisher;
         }
 
         public async UniTask Enter()
         {
             _isEnd = true;
 
-            _activeLayerPublisher.PublishActiveLayer(_inputLayer);
             _entered.OnNext(Unit.Default);
             await UniTask.WaitUntil(() => !_isEnd);
-            _activeLayerPublisher.ResetActiveLayer();
+            _exited.OnNext(Unit.Default);
         }
 
         public void End()

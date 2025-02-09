@@ -19,6 +19,7 @@ namespace gaw241201
         [Inject] IGlobalFlagRegisterer _globalFlagRegisterer;
 
         public IObservable<Unit> Entered => _uiMenuItemModel.Entered;
+        public IObservable<Unit> Exited => _uiMenuItemModel.Exited;
         public bool IsEnterable => _uiMenuItemModel.IsEnterable;
 
         Subject<bool> _valueChanged = new Subject<bool>();
@@ -27,9 +28,9 @@ namespace gaw241201
         bool _isRoguelikeEnabled;
 
         [Inject]
-        public AdvancedItemRoguelike(ActiveLayerPublisher activeLayerPublisher)
+        public AdvancedItemRoguelike()
         {
-            _uiMenuItemModel = new UiMenuItemModel(true, activeLayerPublisher);
+            _uiMenuItemModel = new UiMenuItemModel(true);
         }
 
         public void Initialize() 

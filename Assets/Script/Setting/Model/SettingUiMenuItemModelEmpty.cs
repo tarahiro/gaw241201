@@ -15,6 +15,7 @@ namespace gaw241201
         IUiMenuItemModel _uiMenuItemModel;
 
         public IObservable<Unit> Entered => _uiMenuItemModel.Entered;
+        public IObservable<Unit> Exited => _uiMenuItemModel.Exited;
 
         public bool IsEnterable => _uiMenuItemModel.IsEnterable;
 

@@ -14,10 +14,18 @@ namespace gaw241201.View
     {
         [SerializeField] FreeInputTextDisplayView _freeInputTextDisplayView;
 
-        public void SetText(string text)
+        [Inject] FreeInputInputView _freeInputInputView;
+
+        public override async UniTask Enter()
         {
-            _freeInputTextDisplayView.SetText(text);
+            Log.Comment("FreeInputView‚ÉEnter");
+            await base.Enter();
+            _freeInputInputView.Enter().Forget();
         }
 
+        public void Exit()
+        {
+            _freeInputInputView.Exit();
+        }
     }
 }

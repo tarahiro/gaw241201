@@ -8,12 +8,13 @@ using UnityEngine;
 using VContainer;
 using VContainer.Unity;
 
-namespace gaw241201.View
+namespace gaw241201
 {
-    public class ProfileItemProvider: MonoBehaviour
+    public class PlayerNameInputJudger : ICharInputJudger
     {
-        public SettingFreeInputItemView PlayerNameView;
-
-        public FreeInputTextDisplayView PlayerNameDisplayView;
+        public bool IsCharAvailable(char c)
+        {
+            return char.IsLetterOrDigit(c);
+        }
     }
 }

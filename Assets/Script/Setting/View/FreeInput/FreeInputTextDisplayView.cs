@@ -13,7 +13,7 @@ namespace gaw241201.View
 {
     public class FreeInputTextDisplayView : MonoBehaviour
     {
-       [SerializeField]  List<InputCharacter> _characterList;
+        [SerializeField] List<InputCharacter> _characterList;
 
         public void SetText(string text)
         {
@@ -21,6 +21,17 @@ namespace gaw241201.View
             {
                 _characterList[i].SetCharacter(text[i]);
             }
+        }
+
+        public void Focus(int index)
+        {
+            Log.Comment("Focus");
+            _characterList[index].Focus();
+        }
+
+        public void Unfocus(int index)
+        {
+            _characterList[index].UnFocus();
         }
     }
 }

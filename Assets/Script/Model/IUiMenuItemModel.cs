@@ -13,6 +13,7 @@ namespace gaw241201
     public interface IUiMenuItemModel
     {
         public IObservable<Unit> Entered { get; }
+        public IObservable<Unit> Exited { get; }
         bool IsEnterable { get;}
 
         UniTask Enter();

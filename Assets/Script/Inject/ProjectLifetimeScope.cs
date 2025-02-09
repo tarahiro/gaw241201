@@ -428,10 +428,18 @@ namespace gaw241201.Inject
             builder.Register<AdvancedItemRoguelike>(Lifetime.Singleton).AsSelf();
             builder.Register<AdvancedMenuItemListFactory>(Lifetime.Singleton).AsSelf();
 
+            builder.Register<FreeInputInputView>(Lifetime.Singleton).AsSelf();
+            builder.Register<SettingFreeInputProcessor>(Lifetime.Singleton).AsSelf();
+
             builder.RegisterComponentInHierarchy<SettingTabManager>().AsSelf();
             builder.RegisterComponentInHierarchy<ProfileItemProvider>().AsSelf();
             builder.RegisterComponentInHierarchy<AdvancedItemProvider>().AsSelf();
 
+            //FreeInputModelŽü‚è
+            builder.Register<FreeInputCharHundler>(Lifetime.Singleton).AsSelf();
+            builder.Register<FreeInputIndexer>(Lifetime.Singleton).AsSelf();
+            builder.Register<PlayerNameInputJudger>(Lifetime.Singleton).AsImplementedInterfaces();
+            builder.Register<FreeInputUnfixedText>(Lifetime.Singleton).AsSelf();
 
 
 

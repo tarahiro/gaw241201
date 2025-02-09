@@ -24,11 +24,15 @@ namespace gaw241201.Presenter
         [Inject] ProfileMenuModel _profileMenuModel;
         [Inject] AdvancedItemRoguelike _advancedItemRoguelike;
         [Inject] ProfileItemPlayerName _profileItemPlayerName;
+        [Inject] FreeInputCharHundler _freeInputCharHundler;
+        [Inject] FreeInputIndexer _freeInputIndexer;
+        [Inject] FreeInputUnfixedText _freeInputUnfixedText;
 
         [Inject] SettingRootView _view;
         [Inject] SettingMenuInputView _inputView;
         [Inject] SettingTabManager _tabManager;
         [Inject] SettingMenuInputProcessor _inputProcessor;
+        [Inject] SettingFreeInputProcessor _freeInputProcessor;
 
         [Inject] ProfileItemProvider _profileItemProvider;
         [Inject] AdvancedItemProvider _advancedItemProvider;
@@ -40,20 +44,28 @@ namespace gaw241201.Presenter
             _starter.SettingStarted.Subscribe(x => _view.Enter(x).Forget()).AddTo(_disposable);
             _exiter.SettingStarted.Subscribe(x => _view.Exit(x).Forget()).AddTo(_disposable);
 
-            _advancedTabModel.FocusChanged.Subscribe(x =>  _tabManager.Current.SetFocus(x).Forget()).AddTo(_disposable);
+            _advancedTabModel.FocusChanged.Subscribe(x => _tabManager.Current.SetFocus(x).Forget()).AddTo(_disposable);
             _profileMenuModel.FocusChanged.Subscribe(x => _tabManager.Current.SetFocus(x).Forget()).AddTo(_disposable);
 
-            _inputProcessor.IndexerMoved.Subscribe(x =>  _uiModel.Current.MoveFocus(x)).AddTo(_disposable);
+            _inputProcessor.IndexerMoved.Subscribe(x => _uiModel.Current.MoveFocus(x)).AddTo(_disposable);
             _inputProcessor.LrInputted.Subscribe(x => _uiModel.ChangeTab(x)).AddTo(_disposable);
             _inputProcessor.Decided.Subscribe(_ => _uiModel.Current.Decide()).AddTo(_disposable);
 
             _uiModel.Initialize();
             _uiModel.TabChanged.Subscribe(_tabManager.ChangeTab).AddTo(_disposable);
-            _profileMenuModel.Decided.Subscribe(_ =>  _tabManager.Current.Decide(_).Forget()).AddTo(_disposable);
+            _profileMenuModel.Decided.Subscribe(_ => _tabManager.Current.Decide(_).Forget()).AddTo(_disposable);
             _advancedTabModel.Decided.Subscribe(_ => _tabManager.Current.Decide(_).Forget()).AddTo(_disposable);
 
 
-            _profileItemPlayerName.ValueChanged.Subscribe(_profileItemProvider.PlayerNameView.SetText).AddTo(_disposable);
+            _profileItemPlayerName.ValueChanged.Subscribe(_profileItemProvider.PlayerNameDisplayView.SetText).AddTo(_disposable);
+            _profileItemPlayerName.Entered.Subscribe(_ => _profileItemProvider.PlayerNameView.Enter().Forget()).AddTo(_disposable);
+            _profileItemPlayerName.Exited.Subscribe(_ => _profileItemProvider.PlayerNameView.Exit()).AddTo(_disposable);
+            _freeInputIndexer.Focused.Subscribe(_profileItemProvider.PlayerNameDisplayView.Focus).AddTo(_disposable);
+            _freeInputIndexer.Unfocused.Subscribe(_profileItemProvider.PlayerNameDisplayView.Unfocus).AddTo(_disposable);
+            _freeInputProcessor.KeyEntered.Subscribe(_freeInputCharHundler.CatchChar).AddTo(_disposable);
+            _freeInputProcessor.Decided.Subscribe(_ => _freeInputCharHundler.Decide()).AddTo(_disposable);
+            _freeInputCharHundler.Decided.Subscribe(_profileItemPlayerName.Decide).AddTo(_disposable);
+            _freeInputUnfixedText.Updated.Subscribe(_profileItemProvider.PlayerNameDisplayView.SetText).AddTo(_disposable);
 
             _advancedItemRoguelike.Entered.Subscribe(_ => _advancedItemProvider.RoguelikeCheck.Enter().Forget()).AddTo(_disposable);
             _advancedItemRoguelike.ValueChanged.Subscribe(_advancedItemProvider.RoguelikeCheck.SetValue).AddTo(_disposable);

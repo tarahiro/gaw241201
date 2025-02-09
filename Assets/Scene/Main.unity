@@ -1872,6 +1872,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerNameView: {fileID: 853926061}
+  PlayerNameDisplayView: {fileID: 1105243866}
 --- !u!1001 &570725413
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5084,7 +5085,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4268134201494489253, guid: 8a542195e5f91d549abe9c7b94747a0b, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5115430696293847615, guid: 8a542195e5f91d549abe9c7b94747a0b, type: 3}
       propertyPath: Id
@@ -5692,7 +5693,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1509127416}
-  m_LocalRotation: {x: 0, y: 0, z: -0.51011544, w: -0.86010593}
+  m_LocalRotation: {x: 0, y: 0, z: -0.9979238, w: 0.06440657}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -10071,6 +10072,10 @@ PrefabInstance:
     - target: {fileID: 1811806353584365482, guid: d185f23ce8a61284b8257cbb2630d679, type: 3}
       propertyPath: Id
       value: FakeSettingProfileName
+      objectReference: {fileID: 0}
+    - target: {fileID: 2377098650015330387, guid: d185f23ce8a61284b8257cbb2630d679, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3731031091937543188, guid: d185f23ce8a61284b8257cbb2630d679, type: 3}
       propertyPath: m_Name

@@ -69,5 +69,7 @@ namespace gaw241201
                     return "Null";
             }
         }
+
+        public const int c_NameMaxLength = 12;
     }
 }
