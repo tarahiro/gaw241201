@@ -28,8 +28,13 @@ namespace gaw241201
 
         public void Initialize()
         {
-            var uiMenuModel = new UiMenuModel();
-            uiMenuModel.SetMaxItemRange(MaxItemRange);
+            //ˆê’U‰¼
+            List<IUiMenuItemModel> list = new List<IUiMenuItemModel>();
+            list.Add(null);
+            list.Add(null);
+            list.Add(null);
+
+            var uiMenuModel = new UiMenuModel(list);
             uiMenuModel.FocusChanged.Subscribe(_focusChanged);
 
             _uiMenuModel = uiMenuModel;

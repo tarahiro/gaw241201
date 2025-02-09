@@ -21,12 +21,6 @@ namespace gaw241201.View
             Current = _settingTabView[args.TabIndex];
             Current.Enter(args.MenuIndex).Forget();
         }
-
-        public void ChangeItemFocusOnCurrentTab(int itemIndex)
-        {
-            Current.SetFocus(itemIndex).Forget();
-        }
-
         public void ChangeTab(SettingTabEnterArgs args)
         {
             Log.DebugLog("View‚ÅTabØ‚è‘Ö‚¦");

@@ -29,12 +29,6 @@ namespace gaw241201
                 tab.Initialize();
             }
         }
-
-        public void MoveFocus(int menuIndex)
-        {
-            current.MoveFocus(menuIndex);
-        }
-
         CancellationTokenSource _tabChangeCts;
 
         public void ChangeTab(SettingConst.TabDirection direction)
@@ -47,15 +41,15 @@ namespace gaw241201
             TabIndex = target;
 
             _tabChangeCts = new CancellationTokenSource();
-            _tabChanged.OnNext(new SettingTabEnterArgs(target, current.ItemIndex, _tabChangeCts.Token));
+            _tabChanged.OnNext(new SettingTabEnterArgs(target, Current.ItemIndex, _tabChangeCts.Token));
         }
 
-        IUiMenuModel current { get { return _settingTabModelList[TabIndex]; } }
+        public IUiMenuModel Current { get { return _settingTabModelList[TabIndex]; } }
 
         public void GetSettingUiState(out int _tabIndex, out int _itemIndex)
         {
             _tabIndex = TabIndex;
-            _itemIndex = current.ItemIndex;
+            _itemIndex = Current.ItemIndex;
         }
     }
 }

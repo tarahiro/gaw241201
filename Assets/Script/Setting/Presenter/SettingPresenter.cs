@@ -19,13 +19,16 @@ namespace gaw241201.Presenter
         [Inject] SettingStarter _starter;
         [Inject] SettingExiter _exiter;
 
-        [Inject] SettingUiModel _uiModel;
+        [Inject] SettingUiModel   _uiModel;
         [Inject] AdvancedTabModel _advancedTabModel;
         [Inject] ProfileMenuModel _profileMenuModel;
+        [Inject] AdvancedItemRoguelike _advancedItemRoguelike;
 
         [Inject] SettingRootView _view;
         [Inject] SettingInputView _inputView;
         [Inject] SettingTabManager _tabManager;
+
+        [Inject] SettingAdvancedItemProvider _advancedItemProvider;
 
         CompositeDisposable _disposable = new CompositeDisposable();
 
@@ -34,15 +37,19 @@ namespace gaw241201.Presenter
             _starter.SettingStarted.Subscribe(x => _view.Enter(x).Forget()).AddTo(_disposable);
             _exiter.SettingStarted.Subscribe(x => _view.Exit(x).Forget()).AddTo(_disposable);
 
-            _advancedTabModel.FocusChanged.Subscribe(_tabManager.ChangeItemFocusOnCurrentTab).AddTo(_disposable);
-            _profileMenuModel.FocusChanged.Subscribe(_tabManager.ChangeItemFocusOnCurrentTab).AddTo(_disposable);
+            _advancedTabModel.FocusChanged.Subscribe(x =>  _tabManager.Current.SetFocus(x).Forget()).AddTo(_disposable);
+            _profileMenuModel.FocusChanged.Subscribe(x => _tabManager.Current.SetFocus(x).Forget()).AddTo(_disposable);
 
-            _inputView.IndexerMoved.Subscribe(_uiModel.MoveFocus).AddTo(_disposable);
-            _inputView.LrInputted.Subscribe(_uiModel.ChangeTab).AddTo(_disposable);
-            
+            _inputView.IndexerMoved.Subscribe(x =>  _uiModel.Current.MoveFocus(x)).AddTo(_disposable);
+            _inputView.LrInputted.Subscribe(x => _uiModel.ChangeTab(x)).AddTo(_disposable);
+            _inputView.Decided.Subscribe(_ => _uiModel.Current.Decide()).AddTo(_disposable);
 
             _uiModel.Initialize();
             _uiModel.TabChanged.Subscribe(_tabManager.ChangeTab).AddTo(_disposable);
+            _profileMenuModel.Decided.Subscribe(_ =>  _tabManager.Current.Decide(_).Forget()).AddTo(_disposable);
+            _advancedTabModel.Decided.Subscribe(_ => _tabManager.Current.Decide(_).Forget()).AddTo(_disposable);
+
+            _advancedItemRoguelike.Entered.Subscribe(_ => _advancedItemProvider.RoguelikeCheck.Enter().Forget()).AddTo(_disposable);
         }
     }
 }

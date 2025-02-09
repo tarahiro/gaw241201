@@ -16,11 +16,19 @@ namespace gaw241201
         [Inject] FakeLoopStarter _initialLoopStarter;
         [Inject] MainLoopStarter _mainLoopStarter;
 
+        [Inject] InitialParameter.StartOptionKey _startOptionKey;
         [Inject] bool _isFakeLoop;
 
         public IAdapterManagerToModel ProvideInitialAdapter()
         {
-            return _toTitle;
+            if (_startOptionKey == InitialParameter.StartOptionKey.IsSkipTitle)
+            {
+                return ProvideMainLoopAdapter();
+            }
+            else
+            {
+                return _toTitle;
+            }
         }
 
         [Inject] 

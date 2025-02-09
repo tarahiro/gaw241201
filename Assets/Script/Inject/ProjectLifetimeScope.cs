@@ -18,8 +18,7 @@ namespace gaw241201.Inject
 {
     public class ProjectLifetimeScope : LifetimeScope
     {
-        [SerializeField] bool _isFakeMainLoopEnabled = false;
-        [SerializeField] FlowMasterConst.FlowMasterLabel _fakeMainLoop;
+        [SerializeField] InitialParameter _initialParameter;
 
         protected override void Configure(IContainerBuilder builder)
         {
@@ -68,13 +67,14 @@ namespace gaw241201.Inject
         void ConfigureManager(IContainerBuilder builder)
         {
             builder.Register<GameInitializer>(Lifetime.Singleton).AsImplementedInterfaces();
-            builder.Register<AdapterProvider>(Lifetime.Singleton).AsImplementedInterfaces().WithParameter<bool>(_isFakeMainLoopEnabled);
-            //  builder.Register<AdapterToMainLoopFactory<FakeLoopStarter, SaveDataManager>>(Lifetime.Singleton).As<IAdapterToMainLoopFactory>();
+            builder.Register<AdapterProvider>(Lifetime.Singleton).AsImplementedInterfaces().
+                WithParameter<bool>(_initialParameter.IsFakeMainLoopEnabled)
+                .WithParameter<InitialParameter.StartOptionKey>(_initialParameter.StartOption);
 
 
             //Manager
             builder.Register<FlowProvider>(Lifetime.Singleton).WithParameter<LifetimeScope[]>(FindObjectsOfType<LifetimeScope>).AsImplementedInterfaces();
-            builder.Register<FakeLoopStarter>(Lifetime.Singleton).AsSelf().WithParameter(_fakeMainLoop);
+            builder.Register<FakeLoopStarter>(Lifetime.Singleton).AsSelf().WithParameter(_initialParameter.FakeMainLoop);
             builder.RegisterEntryPoint<GameManager>();
 
 
@@ -397,7 +397,7 @@ namespace gaw241201.Inject
             builder.Register<LanguagePublisher>(Lifetime.Singleton).AsImplementedInterfaces();
             builder.Register<LanguageMessageMasterDataProvider>(Lifetime.Singleton).AsImplementedInterfaces();
 
-            builder.RegisterEntryPoint<LanguageInitializer>(Lifetime.Singleton).AsSelf().WithParameter<LanguageConst.AvailableLanguage>(LanguageConst.AvailableLanguage.Japanese);
+            builder.RegisterEntryPoint<LanguageInitializer>(Lifetime.Singleton).AsSelf().WithParameter<LanguageConst.AvailableLanguage>(_initialParameter.Language);
             builder.RegisterEntryPoint<EmbeddedTextPresenter>(Lifetime.Singleton).AsSelf();
 
             var options = builder.RegisterMessagePipe(/* configure option */);
@@ -417,9 +417,16 @@ namespace gaw241201.Inject
             builder.Register<SettingUiModel>(Lifetime.Singleton).AsSelf();
             builder.Register<SettingTabListFactory>(Lifetime.Singleton).AsSelf();
             builder.Register<ProfileMenuModel>(Lifetime.Singleton).AsSelf();
+            builder.Register<ProfileMenuItemListFactory>(Lifetime.Singleton).AsSelf();
             builder.Register<AdvancedTabModel>(Lifetime.Singleton).AsSelf();
+            builder.Register<AdvancedItemRoguelike>(Lifetime.Singleton).AsSelf();
+            builder.Register<AdvancedMenuItemListFactory>(Lifetime.Singleton).AsSelf();
 
             builder.RegisterComponentInHierarchy<SettingTabManager>().AsSelf();
+            builder.RegisterComponentInHierarchy<SettingAdvancedItemProvider>().AsSelf();
+
+
+
 
             builder.RegisterEntryPoint<SettingPresenter>();
         }

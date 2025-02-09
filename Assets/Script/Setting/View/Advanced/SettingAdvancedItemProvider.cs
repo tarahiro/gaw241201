@@ -10,11 +10,8 @@ using VContainer.Unity;
 
 namespace gaw241201.View
 {
-    public class SettingItemView : MonoBehaviour
+    public class SettingAdvancedItemProvider : MonoBehaviour
     {
-        public virtual async UniTask Enter()
-        {
-
-        }
+        public SettingItemViewCheck RoguelikeCheck;
     }
 }

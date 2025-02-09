@@ -14,6 +14,7 @@ namespace Tarahiro
     {
         public const int AvailableLanguageNumber = 2;
 
+        [System.Serializable]
         public enum AvailableLanguage
         {
             Japanese,

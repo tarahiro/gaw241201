@@ -34,6 +34,11 @@ namespace gaw241201.View
             _indexView.Lowlight();
         }
 
+        public virtual async UniTask Decide(int menuIndex)
+        {
+            await _bodyView.Decide(menuIndex);
+        }
+
         public virtual int MenuIndex { get; set; }
 
         public virtual int MaxIndex { get; set; }

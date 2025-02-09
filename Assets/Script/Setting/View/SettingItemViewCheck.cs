@@ -10,11 +10,14 @@ using VContainer.Unity;
 
 namespace gaw241201.View
 {
-    public class SettingItemView : MonoBehaviour
+    public class SettingItemViewCheck : SettingItemView
     {
-        public virtual async UniTask Enter()
-        {
+        [SerializeField] GameObject _checkObject;
 
+        public override async UniTask Enter()
+        {
+            _checkObject.SetActive(true);
+            await base.Enter();
         }
     }
 }

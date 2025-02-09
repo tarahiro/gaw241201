@@ -2,6 +2,7 @@ using Cysharp.Threading.Tasks;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 using Tarahiro;
 using UniRx;
 using UnityEngine;
@@ -15,8 +16,14 @@ namespace gaw241201
         Subject<int> _focusChanged = new Subject<int>();
         public IObservable<int> FocusChanged => _focusChanged;
         public int ItemIndex { get; private set; }
+        public int MaxItemRange => _uiMenuItemModelList.Count;
 
-        public int MaxItemRange { get; private set; }
+        List<IUiMenuItemModel> _uiMenuItemModelList;
+
+        public UiMenuModel(List<IUiMenuItemModel> uiMenuItemModelList)
+        {
+            _uiMenuItemModelList = uiMenuItemModelList;
+        }
 
         public void Initialize()
         {
@@ -38,9 +45,9 @@ namespace gaw241201
 
         }
 
-        public void SetMaxItemRange(int _max)
+        public void Decide()
         {
-            MaxItemRange = _max;
+            _uiMenuItemModelList[ItemIndex].Enter().Forget();
         }
     }
 }

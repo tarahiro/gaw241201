@@ -27,6 +27,13 @@ namespace gaw241201.View
             _cursor.transform.localPosition =
                 new Vector2(cursorX, _itemList[itemIndex].transform.localPosition.y);
         }
+        public async UniTask Decide(int itemIndex)
+        {
+
+            _cursor.transform.localPosition =
+                new Vector2(cursorX -100f, _itemList[itemIndex].transform.localPosition.y);
+
+        }
 
         public async UniTask Enter()
         {

@@ -19,5 +19,7 @@ namespace gaw241201
         public void MoveFocus(int menuIndex);
         public void Enter();
         public void Exit();
+
+        public void Decide();
     }
 }
