@@ -27,6 +27,7 @@ namespace gaw241201.Presenter
         [Inject] SettingRootView _view;
         [Inject] SettingMenuInputView _inputView;
         [Inject] SettingTabManager _tabManager;
+        [Inject] SettingMenuInputProcessor _inputProcessor;
 
         [Inject] SettingAdvancedItemProvider _advancedItemProvider;
 
@@ -40,9 +41,9 @@ namespace gaw241201.Presenter
             _advancedTabModel.FocusChanged.Subscribe(x =>  _tabManager.Current.SetFocus(x).Forget()).AddTo(_disposable);
             _profileMenuModel.FocusChanged.Subscribe(x => _tabManager.Current.SetFocus(x).Forget()).AddTo(_disposable);
 
-            _inputView.IndexerMoved.Subscribe(x =>  _uiModel.Current.MoveFocus(x)).AddTo(_disposable);
-            _inputView.LrInputted.Subscribe(x => _uiModel.ChangeTab(x)).AddTo(_disposable);
-            _inputView.Decided.Subscribe(_ => _uiModel.Current.Decide()).AddTo(_disposable);
+            _inputProcessor.IndexerMoved.Subscribe(x =>  _uiModel.Current.MoveFocus(x)).AddTo(_disposable);
+            _inputProcessor.LrInputted.Subscribe(x => _uiModel.ChangeTab(x)).AddTo(_disposable);
+            _inputProcessor.Decided.Subscribe(_ => _uiModel.Current.Decide()).AddTo(_disposable);
 
             _uiModel.Initialize();
             _uiModel.TabChanged.Subscribe(_tabManager.ChangeTab).AddTo(_disposable);
@@ -55,7 +56,6 @@ namespace gaw241201.Presenter
 
 
             _advancedItemRoguelike.Initialize();
-            _inputView.Initialize();
             
         }
     }

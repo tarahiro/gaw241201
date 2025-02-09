@@ -117,7 +117,6 @@ namespace gaw241201.Inject
             builder.Register<SingleTextSequenceEnterer<ITypingMaster>>(Lifetime.Singleton).AsImplementedInterfaces();
 
             //view
-            builder.Register<TypingView>(Lifetime.Singleton).AsImplementedInterfaces();
             builder.RegisterComponentInHierarchy<TypingTextView>().AsSelf();
         }
 
@@ -416,6 +415,7 @@ namespace gaw241201.Inject
             builder.Register<SettingExiter>(Lifetime.Singleton).AsSelf();
             builder.RegisterComponentInHierarchy<SettingRootView>().AsSelf();
             builder.Register<SettingMenuInputView>(Lifetime.Singleton).AsSelf();
+            builder.Register<SettingMenuInputProcessor>(Lifetime.Singleton).AsSelf().AsImplementedInterfaces();
 
             builder.Register<SettingUiModel>(Lifetime.Singleton).AsSelf();
             builder.Register<SettingTabListFactory>(Lifetime.Singleton).AsSelf();
@@ -442,6 +442,7 @@ namespace gaw241201.Inject
         void ConfigureInput(IContainerBuilder builder)
         {
             builder.Register<ActiveLayerPublisher>(Lifetime.Singleton).AsSelf();
+            builder.Register<InputViewFactory>(Lifetime.Singleton).AsSelf();
         }
     }
 

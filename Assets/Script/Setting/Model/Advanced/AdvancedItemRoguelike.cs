@@ -29,7 +29,7 @@ namespace gaw241201
         [Inject]
         public AdvancedItemRoguelike(ActiveLayerPublisher activeLayerPublisher)
         {
-            _uiMenuItemModel = new UiMenuItemModel(true,activeLayerPublisher);
+            _uiMenuItemModel = new UiMenuItemModel(true, activeLayerPublisher);
         }
 
         public void Initialize() 

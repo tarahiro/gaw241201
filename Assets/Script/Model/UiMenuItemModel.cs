@@ -34,9 +34,12 @@ namespace gaw241201
 
         public async UniTask Enter()
         {
-            _activeLayerPublisher.Publish(_inputLayer);
+            _isEnd = true;
+
+            _activeLayerPublisher.PublishActiveLayer(_inputLayer);
             _entered.OnNext(Unit.Default);
             await UniTask.WaitUntil(() => !_isEnd);
+            _activeLayerPublisher.ResetActiveLayer();
         }
 
         public void End()

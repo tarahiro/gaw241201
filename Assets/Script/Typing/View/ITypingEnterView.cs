@@ -7,12 +7,13 @@ using UniRx;
 using UnityEngine;
 using VContainer;
 using VContainer.Unity;
+using System.Threading;
 
 namespace gaw241201.View
 {
-    public interface ITypingView
+    public interface ITypingEnterView
     {
-        UniTask Enter(TypingViewArgs args);
+        UniTask Enter(CancellationToken token);
         void EndLoop();
         IObservable<char> KeyEntered { get; }
         IObservable<Unit> Exited { get; }

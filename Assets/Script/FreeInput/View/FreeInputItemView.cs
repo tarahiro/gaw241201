@@ -193,7 +193,7 @@ namespace gaw241201.View
 
         }
 
-     
+
 
 
 
@@ -201,53 +201,6 @@ namespace gaw241201.View
         protected char ConvertChar(char c)
         {
             return char.ToUpper(c);
-
-            /*
-            switch (keyCode)
-            {
-                case KeyCode.Alpha0: s = "0"; return true;
-                case KeyCode.Alpha1: s = "1"; return true;
-                case KeyCode.Alpha2: s = "2"; return true;
-                case KeyCode.Alpha3: s = "3"; return true;
-                case KeyCode.Alpha4: s =  "4"; return true;
-                case KeyCode.Alpha5: s =  "5"; return true;
-                case KeyCode.Alpha6: s =  "6"; return true;
-                case KeyCode.Alpha7: s =  "7"; return true;
-                case KeyCode.Alpha8: s =  "8"; return true;
-                case KeyCode.Alpha9: s =  "9"; return true;
-
-                case KeyCode.A: s =  "A"; return true;
-                case KeyCode.B: s =  "B"; return true;
-                case KeyCode.C: s =  "C"; return true;
-                case KeyCode.D: s =  "D"; return true;
-                case KeyCode.E: s =  "E"; return true;
-                case KeyCode.F: s =  "F"; return true;
-                case KeyCode.G: s =  "G"; return true;
-                case KeyCode.H: s =  "H"; return true;
-                case KeyCode.I: s =  "I"; return true;
-                case KeyCode.J: s =  "J"; return true;
-                case KeyCode.K: s =  "K"; return true;
-                case KeyCode.L: s =  "L"; return true;
-                case KeyCode.M: s =  "M"; return true;
-                case KeyCode.N: s =  "N"; return true;
-                case KeyCode.O: s =  "O"; return true;
-                case KeyCode.P: s =  "P"; return true;
-                case KeyCode.Q: s =  "Q"; return true;
-                case KeyCode.R: s =  "R"; return true;
-                case KeyCode.S: s =  "S"; return true;
-                case KeyCode.T: s =  "T"; return true;
-                case KeyCode.U: s =  "U"; return true;
-                case KeyCode.V: s =  "V"; return true;
-                case KeyCode.W: s =  "W"; return true;
-                case KeyCode.X: s =  "X"; return true;
-                case KeyCode.Y: s =  "Y"; return true;
-                case KeyCode.Z: s =  "Z"; return true;
-
-                default: 
-                    s = "error";
-                    return false;
-            }
-            */
         }
     }
 }

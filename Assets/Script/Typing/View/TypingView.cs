@@ -8,9 +8,11 @@ using VContainer;
 using VContainer.Unity;
 using UniRx;
 using TMPro;
+using System.Threading;
 
 namespace gaw241201.View
 {
+    /*
     public class TypingView : ITypingView
     {
 
@@ -25,19 +27,19 @@ namespace gaw241201.View
         public IObservable<Unit> Exited => _exited;
 
 
-        public async UniTask Enter(TypingViewArgs args)
+        public async UniTask Enter(CancellationToken token)
         {
             Log.Comment("TypingRoguelikeView開始");
 
             //初期設定
             _isEndLoop = false;
 
-            var v = args.CancellationToken.Register(OnExit);
+            var v = token.Register(OnExit);
 
             //すべての文字が終わるまで待って、処理を返す
             while (!_isEndLoop)
             {
-                await UniTask.Yield(PlayerLoopTiming.Update, cancellationToken: args.CancellationToken);
+                await UniTask.Yield(PlayerLoopTiming.Update, cancellationToken: token);
                 CheckInput();
             }
 
@@ -63,9 +65,6 @@ namespace gaw241201.View
             _exited.OnNext(Unit.Default);
         }
 
-        public void Halt()
-        {
-            _isEndLoop = true;
-        }
     }
+    */
 }

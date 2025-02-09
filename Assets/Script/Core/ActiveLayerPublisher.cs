@@ -15,15 +15,25 @@ namespace gaw241201
     {
         [Inject] IPublisher<ActiveLayerConst.InputLayer> _publisher;
 
-        ActiveLayerConst.InputLayer _prevLayer = ActiveLayerConst.InputLayer.None;
-        ActiveLayerConst.InputLayer _currentActiveLayer = ActiveLayerConst.InputLayer.None;
+        List<ActiveLayerConst.InputLayer> _layer = new List<ActiveLayerConst.InputLayer>() { ActiveLayerConst.InputLayer.None };
 
-        public void Publish(ActiveLayerConst.InputLayer layer)
+        public void PublishActiveLayer(ActiveLayerConst.InputLayer layer)
         {
-            _prevLayer = _currentActiveLayer;
-            _currentActiveLayer = layer;
-            _publisher.Publish(layer);
+            if (_layer[_layer.Count - 1] >= layer)
+            {
+                Log.DebugAssert("Ÿ‚ÌinputLayer‚ª¡‚Ì‚à‚ÌˆÈ‰º‚Å‚·");
+            }
+            else
+            {
+                _layer.Add(layer);
+                _publisher.Publish(layer);
+            }
         }
 
+        public void ResetActiveLayer()
+        {
+            _layer.RemoveAt(_layer.Count - 1);
+            _publisher.Publish(_layer[_layer.Count - 1]);
+        }
     }
 }
