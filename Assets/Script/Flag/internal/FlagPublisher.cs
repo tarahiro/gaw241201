@@ -11,13 +11,13 @@ using VContainer.Unity;
 
 namespace gaw241201
 {
-    public class RoguelikeEnableFlagPublisher
+    public class FlagPublisher
     {
-        [Inject] IPublisher<bool> _publisher;
+        [Inject] IPublisher<FlagConst.Key, string> _publisher;
 
-        public void PublishEvent(bool b)
+        public void PublishEvent(FlagConst.Key key, string value)
         {
-            _publisher.Publish(b);
+            _publisher.Publish(key, value);
         }
     }
 }

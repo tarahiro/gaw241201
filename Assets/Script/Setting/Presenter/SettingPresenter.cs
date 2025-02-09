@@ -23,13 +23,15 @@ namespace gaw241201.Presenter
         [Inject] AdvancedMenuModel _advancedTabModel;
         [Inject] ProfileMenuModel _profileMenuModel;
         [Inject] AdvancedItemRoguelike _advancedItemRoguelike;
+        [Inject] ProfileItemPlayerName _profileItemPlayerName;
 
         [Inject] SettingRootView _view;
         [Inject] SettingMenuInputView _inputView;
         [Inject] SettingTabManager _tabManager;
         [Inject] SettingMenuInputProcessor _inputProcessor;
 
-        [Inject] SettingAdvancedItemProvider _advancedItemProvider;
+        [Inject] ProfileItemProvider _profileItemProvider;
+        [Inject] AdvancedItemProvider _advancedItemProvider;
 
         CompositeDisposable _disposable = new CompositeDisposable();
 
@@ -50,11 +52,15 @@ namespace gaw241201.Presenter
             _profileMenuModel.Decided.Subscribe(_ =>  _tabManager.Current.Decide(_).Forget()).AddTo(_disposable);
             _advancedTabModel.Decided.Subscribe(_ => _tabManager.Current.Decide(_).Forget()).AddTo(_disposable);
 
+
+            _profileItemPlayerName.ValueChanged.Subscribe(_profileItemProvider.PlayerNameView.SetText).AddTo(_disposable);
+
             _advancedItemRoguelike.Entered.Subscribe(_ => _advancedItemProvider.RoguelikeCheck.Enter().Forget()).AddTo(_disposable);
             _advancedItemRoguelike.ValueChanged.Subscribe(_advancedItemProvider.RoguelikeCheck.SetValue).AddTo(_disposable);
             _advancedItemProvider.RoguelikeCheck.Exited.Subscribe(_ => _advancedItemRoguelike.End()).AddTo(_disposable);
 
 
+            _profileItemPlayerName.Initialize();
             _advancedItemRoguelike.Initialize();
             
         }

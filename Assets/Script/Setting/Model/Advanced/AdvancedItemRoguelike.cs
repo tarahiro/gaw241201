@@ -15,7 +15,7 @@ namespace gaw241201
     {
         IUiMenuItemModel _uiMenuItemModel;
 
-        [Inject] ISubscriber<bool> _subscriber;
+        [Inject] ISubscriber<FlagConst.Key, string> _subscriber;
         [Inject] IGlobalFlagRegisterer _globalFlagRegisterer;
 
         public IObservable<Unit> Entered => _uiMenuItemModel.Entered;
@@ -34,7 +34,7 @@ namespace gaw241201
 
         public void Initialize() 
         {
-            _subscriber.Subscribe(OnSetFlag);
+            _subscriber.Subscribe(FlagConst.Key.IsRoguelikeEnabled, OnSetFlag);
         }
 
         public async UniTask Enter()
@@ -57,9 +57,11 @@ namespace gaw241201
             }
         }
 
-        public void OnSetFlag(bool b)
+        public void OnSetFlag(string s)
         {
-            Log.DebugLog("メッセージ受け取り: " + b);
+            Log.DebugLog("メッセージ受け取り: " + s);
+
+            bool b = s == Tarahiro.Const.c_true;
             _isRoguelikeEnabled = b;
             _valueChanged.OnNext(b);
         }

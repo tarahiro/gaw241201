@@ -15,15 +15,18 @@ namespace gaw241201.View
     {
         [Inject] ISubscriber<ActiveLayerConst.InputLayer> _subscriber;
         [Inject] IInputProcessable _inputProcessable;
+        [Inject] ActiveLayerPublisher _publisher;
+
         ActiveLayerConst.InputLayer _layer;
 
         bool _isEnable = false;
 
 
         [Inject]
-        public InputView(ISubscriber<ActiveLayerConst.InputLayer> subscriber, IInputProcessable inputProcessable, ActiveLayerConst.InputLayer layer)
+        public InputView(ISubscriber<ActiveLayerConst.InputLayer> subscriber, ActiveLayerPublisher publisher, IInputProcessable inputProcessable, ActiveLayerConst.InputLayer layer)
         {
             _subscriber = subscriber;
+            _publisher = publisher;
             _inputProcessable = inputProcessable;
             _layer = layer;
 
@@ -33,6 +36,8 @@ namespace gaw241201.View
         public async UniTask Enter()
         {
             _isEnable = true;
+            _publisher.PublishActiveLayer(_layer);
+
             while (_isEnable)
             {
                 await UniTask.Yield(PlayerLoopTiming.Update);
@@ -46,6 +51,7 @@ namespace gaw241201.View
         public void Exit()
         {
             _isEnable = false;
+            _publisher.ResetActiveLayer();
         }
 
         ActiveLayerConst.InputLayer _activeLayer = ActiveLayerConst.InputLayer.None;

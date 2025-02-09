@@ -10,8 +10,8 @@ using VContainer.Unity;
 
 namespace gaw241201.View
 {
-    public class SettingAdvancedItemProvider : MonoBehaviour
+    public class ProfileItemProvider: MonoBehaviour
     {
-        public SettingItemViewCheck RoguelikeCheck;
+        public SettingFreeInputItemView PlayerNameView;
     }
 }

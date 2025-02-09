@@ -17,7 +17,7 @@ namespace gaw241201.View
         [Inject]
         public TypingInputView(InputViewFactory factory, TypingInputProcessor settingMenuInputProcessor)
         {
-            _inputView = factory.Create(settingMenuInputProcessor, ActiveLayerConst.InputLayer.SettingMenu);
+            _inputView = factory.Create(settingMenuInputProcessor, ActiveLayerConst.InputLayer.Typing);
         }
 
         public async UniTask Enter()

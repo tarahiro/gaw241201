@@ -136,7 +136,7 @@ namespace gaw241201.Inject
             builder.Register<AchievableMasterFlagContainer>(Lifetime.Singleton).AsImplementedInterfaces();
             builder.Register<RestrictedCharContainer>(Lifetime.Singleton).AsImplementedInterfaces();
 
-            builder.Register<RoguelikeEnableFlagPublisher>(Lifetime.Singleton).AsSelf();
+            builder.Register<FlagPublisher>(Lifetime.Singleton).AsSelf();
             builder.Register<FlagInitializer>(Lifetime.Singleton).AsImplementedInterfaces();
         }
 
@@ -418,6 +418,7 @@ namespace gaw241201.Inject
             builder.RegisterComponentInHierarchy<SettingRootView>().AsSelf();
             builder.Register<SettingMenuInputView>(Lifetime.Singleton).AsSelf();
             builder.Register<SettingMenuInputProcessor>(Lifetime.Singleton).AsSelf().AsImplementedInterfaces();
+            builder.Register<ProfileItemPlayerName>(Lifetime.Singleton).AsSelf();
 
             builder.Register<SettingUiModel>(Lifetime.Singleton).AsSelf();
             builder.Register<SettingTabListFactory>(Lifetime.Singleton).AsSelf();
@@ -428,7 +429,8 @@ namespace gaw241201.Inject
             builder.Register<AdvancedMenuItemListFactory>(Lifetime.Singleton).AsSelf();
 
             builder.RegisterComponentInHierarchy<SettingTabManager>().AsSelf();
-            builder.RegisterComponentInHierarchy<SettingAdvancedItemProvider>().AsSelf();
+            builder.RegisterComponentInHierarchy<ProfileItemProvider>().AsSelf();
+            builder.RegisterComponentInHierarchy<AdvancedItemProvider>().AsSelf();
 
 
 
