@@ -15,6 +15,9 @@ namespace gaw241201
     {
         Subject<int> _focusChanged = new Subject<int>();
         public IObservable<int> FocusChanged => _focusChanged;
+
+        Subject<int> _decided = new Subject<int>();
+        public IObservable<int> Decided => _decided;
         public int ItemIndex { get; private set; }
         public int MaxItemRange => _uiMenuItemModelList.Count;
 
@@ -23,11 +26,6 @@ namespace gaw241201
         public UiMenuModel(List<IUiMenuItemModel> uiMenuItemModelList)
         {
             _uiMenuItemModelList = uiMenuItemModelList;
-        }
-
-        public void Initialize()
-        {
-
         }
         public void MoveFocus(int menuIndex)
         {
@@ -47,6 +45,7 @@ namespace gaw241201
 
         public void Decide()
         {
+            _decided.OnNext(ItemIndex);
             _uiMenuItemModelList[ItemIndex].Enter().Forget();
         }
     }

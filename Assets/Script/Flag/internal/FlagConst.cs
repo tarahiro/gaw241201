@@ -20,6 +20,7 @@ namespace gaw241201
             NameLower,
             BirthDate,
             IsSaveDataExist,
+            IsRoguelikeEnabled,
         }
 
         public enum RegisterOrder
@@ -61,6 +62,7 @@ namespace gaw241201
                 case Key.NameLower: return "player";
                 case Key.BirthDate: return "BirthDate";
                 case Key.IsSaveDataExist: return Tarahiro.Const.c_false;
+                case Key.IsRoguelikeEnabled: return Tarahiro.Const.c_false;
 
                 default:
                     Log.DebugAssert(key + "‚Ì‰Šú’l‚ªw’è‚³‚ê‚Ä‚¢‚Ü‚¹‚ñ");

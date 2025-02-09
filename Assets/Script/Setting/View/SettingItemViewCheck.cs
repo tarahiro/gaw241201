@@ -14,10 +14,18 @@ namespace gaw241201.View
     {
         [SerializeField] GameObject _checkObject;
 
+        Subject<Unit> _exited = new Subject<Unit>();
+        public IObservable<Unit> Exited => _exited;
+
         public override async UniTask Enter()
         {
-            _checkObject.SetActive(true);
             await base.Enter();
+            _exited.OnNext(Unit.Default);
+        }
+
+        public void SetValue(bool b)
+        {
+            _checkObject.SetActive(b);
         }
     }
 }

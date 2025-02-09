@@ -56,6 +56,7 @@ namespace gaw241201.Inject
             ConfigureLanguage(builder);
             ConfigureSetting(builder);
             ConfigureRenderer(builder);
+            ConfigureInput(builder);
         }
 
         void ConfigureGlobalFactory(IContainerBuilder builder)
@@ -136,6 +137,8 @@ namespace gaw241201.Inject
             builder.Register<AchievableMasterFlagContainer>(Lifetime.Singleton).AsImplementedInterfaces();
             builder.Register<RestrictedCharContainer>(Lifetime.Singleton).AsImplementedInterfaces();
 
+            builder.Register<RoguelikeEnableFlagPublisher>(Lifetime.Singleton).AsSelf();
+            builder.Register<FlagInitializer>(Lifetime.Singleton).AsImplementedInterfaces();
         }
 
         void ConfigureMonitor(IContainerBuilder builder)
@@ -412,13 +415,13 @@ namespace gaw241201.Inject
             builder.Register<SettingStarter>(Lifetime.Singleton).AsSelf();
             builder.Register<SettingExiter>(Lifetime.Singleton).AsSelf();
             builder.RegisterComponentInHierarchy<SettingRootView>().AsSelf();
-            builder.Register<SettingInputView>(Lifetime.Singleton).AsSelf();
+            builder.Register<SettingMenuInputView>(Lifetime.Singleton).AsSelf();
 
             builder.Register<SettingUiModel>(Lifetime.Singleton).AsSelf();
             builder.Register<SettingTabListFactory>(Lifetime.Singleton).AsSelf();
             builder.Register<ProfileMenuModel>(Lifetime.Singleton).AsSelf();
             builder.Register<ProfileMenuItemListFactory>(Lifetime.Singleton).AsSelf();
-            builder.Register<AdvancedTabModel>(Lifetime.Singleton).AsSelf();
+            builder.Register<AdvancedMenuModel>(Lifetime.Singleton).AsSelf();
             builder.Register<AdvancedItemRoguelike>(Lifetime.Singleton).AsSelf();
             builder.Register<AdvancedMenuItemListFactory>(Lifetime.Singleton).AsSelf();
 
@@ -436,6 +439,10 @@ namespace gaw241201.Inject
             builder.RegisterComponentInHierarchy<RendererHundler>().AsSelf();
         }
 
+        void ConfigureInput(IContainerBuilder builder)
+        {
+            builder.Register<ActiveLayerPublisher>(Lifetime.Singleton).AsSelf();
+        }
     }
 
 

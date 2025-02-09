@@ -24,10 +24,6 @@ namespace gaw241201
         public void Initialize()
         {
             _settingTabModelList = _settingTabListFactory.Create();
-            foreach (var tab in _settingTabModelList)
-            {
-                tab.Initialize();
-            }
         }
         CancellationTokenSource _tabChangeCts;
 

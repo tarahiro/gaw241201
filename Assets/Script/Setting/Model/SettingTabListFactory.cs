@@ -13,7 +13,7 @@ namespace gaw241201
     public class SettingTabListFactory
     {
         [Inject] ProfileMenuModel _profileMenuModel;
-        [Inject] AdvancedTabModel _advancedTabModel;
+        [Inject] AdvancedMenuModel _advancedTabModel;
 
         public List<IUiMenuModel> Create()
         {

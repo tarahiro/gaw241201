@@ -27,7 +27,7 @@ namespace gaw241201.Presenter
         public void PostInitialize()
         {
             _menuModel.Entered.Subscribe(x => _view.Enter(x).Forget()).AddTo(_disposable);
-            _menuModel.Decided.Subscribe(_model.End).AddTo(_disposable);
+            _menuModel.DecidedSkill.Subscribe(_model.End).AddTo(_disposable);
 
             _inputView.IndexerMoved.Subscribe(_menuModel.MoveFocus).AddTo(_disposable);
             _inputView.Decided.Subscribe(_ => _menuModel.Decide()).AddTo(_disposable);

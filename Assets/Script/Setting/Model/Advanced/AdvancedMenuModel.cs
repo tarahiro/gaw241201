@@ -10,18 +10,18 @@ using VContainer.Unity;
 
 namespace gaw241201
 {
-    public class ProfileMenuModel : IUiMenuModel
+    public class AdvancedMenuModel : IUiMenuModel
     {
 
         IUiMenuModel _menuModel;
         public int ItemIndex => _menuModel.ItemIndex;
         public int MaxItemRange => _menuModel.MaxItemRange;
 
-        public IObservable<int> FocusChanged => _menuModel.FocusChanged;
+        public IObservable<int> FocusChanged =>_menuModel.FocusChanged;
         public IObservable<int> Decided => _menuModel.Decided;
 
         [Inject]
-        public ProfileMenuModel(ProfileMenuItemListFactory factory)
+        public AdvancedMenuModel(AdvancedMenuItemListFactory factory)
         {
             _menuModel = new UiMenuModel(factory.CreateList());
         }
@@ -34,11 +34,6 @@ namespace gaw241201
         public void Decide()
         {
             _menuModel.Decide();
-        }
-
-        public void Cancel()
-        {
-
         }
 
         public void Enter()

@@ -1,4 +1,5 @@
 using Cysharp.Threading.Tasks;
+using MessagePipe;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -10,8 +11,10 @@ using VContainer.Unity;
 
 namespace gaw241201.View
 {
-    public class SettingInputView : IIndexerInputtableView
+    public class SettingMenuInputView : IIndexerInputtableView
     {
+
+
         Subject<int> _indexerMoved = new Subject<int>();
         public IObservable<int> IndexerMoved => _indexerMoved;
 
@@ -31,7 +34,10 @@ namespace gaw241201.View
             while (_isEnable)
             {
                 await UniTask.Yield(PlayerLoopTiming.Update);
-                ProcessInput();
+                if (!_isBlocked())
+                {
+                    ProcessInput();
+                }
             }
         }
 
@@ -69,9 +75,29 @@ namespace gaw241201.View
 
             if(Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.Space))
             {
-                Log.Comment("Input‚ÅŒˆ’è‚ðŒŸ’m");
                 _decided.OnNext(Unit.Default);
             }
+        }
+
+
+        public void Initialize()
+        {
+            _subscriber.Subscribe(OnActiveLayerChanged);
+        }
+
+
+        [Inject] ISubscriber<ActiveLayerConst.InputLayer> _subscriber;
+        ActiveLayerConst.InputLayer _layer = ActiveLayerConst.InputLayer.SettingMenu;
+        ActiveLayerConst.InputLayer _activeLayer = ActiveLayerConst.InputLayer.None;
+
+        bool _isBlocked()
+        {
+            return _layer < _activeLayer;
+        }
+
+        void OnActiveLayerChanged (ActiveLayerConst.InputLayer layer)
+        {
+            _activeLayer = layer;
         }
     }
 }

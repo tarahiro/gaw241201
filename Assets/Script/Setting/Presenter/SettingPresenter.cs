@@ -20,12 +20,12 @@ namespace gaw241201.Presenter
         [Inject] SettingExiter _exiter;
 
         [Inject] SettingUiModel   _uiModel;
-        [Inject] AdvancedTabModel _advancedTabModel;
+        [Inject] AdvancedMenuModel _advancedTabModel;
         [Inject] ProfileMenuModel _profileMenuModel;
         [Inject] AdvancedItemRoguelike _advancedItemRoguelike;
 
         [Inject] SettingRootView _view;
-        [Inject] SettingInputView _inputView;
+        [Inject] SettingMenuInputView _inputView;
         [Inject] SettingTabManager _tabManager;
 
         [Inject] SettingAdvancedItemProvider _advancedItemProvider;
@@ -50,6 +50,13 @@ namespace gaw241201.Presenter
             _advancedTabModel.Decided.Subscribe(_ => _tabManager.Current.Decide(_).Forget()).AddTo(_disposable);
 
             _advancedItemRoguelike.Entered.Subscribe(_ => _advancedItemProvider.RoguelikeCheck.Enter().Forget()).AddTo(_disposable);
+            _advancedItemRoguelike.ValueChanged.Subscribe(_advancedItemProvider.RoguelikeCheck.SetValue).AddTo(_disposable);
+            _advancedItemProvider.RoguelikeCheck.Exited.Subscribe(_ => _advancedItemRoguelike.End()).AddTo(_disposable);
+
+
+            _advancedItemRoguelike.Initialize();
+            _inputView.Initialize();
+            
         }
     }
 }

@@ -12,7 +12,7 @@ namespace gaw241201.View
 {
     public class SettingRootView : MonoBehaviour
     {
-        [Inject] SettingInputView _settingInputView;
+        [Inject] SettingMenuInputView _settingInputView;
         [Inject] SettingTabManager _settingTabManager;
         [Inject] RendererHundler _rendererHundler;
 

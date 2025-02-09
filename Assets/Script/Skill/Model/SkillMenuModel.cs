@@ -23,7 +23,8 @@ namespace gaw241201
         public IObservable<SkillArgs> Entered => _entered;
 
         Subject<SkillArgs.Data> _decided = new Subject<SkillArgs.Data>();   
-        public IObservable<SkillArgs.Data> Decided => _decided;
+        public IObservable<SkillArgs.Data> DecidedSkill => _decided;
+         public IObservable<int> Decided => _uiMenuModel.Decided;
 
 
         public void Initialize()

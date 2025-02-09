@@ -12,6 +12,8 @@ namespace gaw241201
 {
     public class GlobalFlagContainer: IGlobalFlagProvider,IGlobalFlagRegisterer
     {
+        [Inject] RoguelikeEnableFlagPublisher _roguelikeEnableFlagPublisher;
+
         Dictionary<FlagConst.Key ,string> _dictionary = new Dictionary<FlagConst.Key, string>();
 
         public void RegisterFlag(FlagConst.Key key, string value)
@@ -24,6 +26,12 @@ namespace gaw241201
             else
             {
                 _dictionary[key] = value;
+            }
+
+            //別クラスに分けるかも。フラグの読み方をContainerが知るべきではないため
+            if(key == FlagConst.Key.IsRoguelikeEnabled)
+            {
+                _roguelikeEnableFlagPublisher.PublishEvent(value == Tarahiro.Const.c_true);
             }
         }
 

@@ -13,9 +13,11 @@ namespace gaw241201
     public class GameInitializer : IGameInitializer
     {
         [Inject] ILoadable _loadable;
+        [Inject] IFlagInitializable _flagInitializable;
         public void InitializeGame()
         {
             _loadable.Load();
+            _flagInitializable.InitializeFlag();
         }
     }
 }
