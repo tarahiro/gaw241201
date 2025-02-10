@@ -41,19 +41,6 @@ namespace gaw241201.View
 
         private void Update()
         {
-            /*
-            //ƒeƒXƒg
-            if(f > 5f)
-            {
-                f -= 5f;
-                _textHighlighter.StartHighlight(0);
-            }
-            else
-            {
-                f += Time.deltaTime;
-            }
-            */
-
             _idleTextMover.Tick();
             _textHighlighter.Tick();
         }

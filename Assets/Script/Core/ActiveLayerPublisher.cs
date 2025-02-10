@@ -32,8 +32,20 @@ namespace gaw241201
 
         public void ResetActiveLayer()
         {
-            _layer.RemoveAt(_layer.Count - 1);
-            _publisher.Publish(_layer[_layer.Count - 1]);
+            if (_layer.Count > 0)
+            {
+                _layer.RemoveAt(_layer.Count - 1);
+            }
+
+            if (_layer.Count > 0)
+            {
+                _publisher.Publish(_layer[_layer.Count - 1]);
+            }
+            else
+            {
+                _layer.Add(ActiveLayerConst.InputLayer.None);
+                _publisher.Publish(_layer[0]);
+            }
         }
     }
 }

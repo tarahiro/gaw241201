@@ -22,6 +22,7 @@ namespace gaw241201
         [Inject] RoguelikeRestrictInputHundler _restrictInputHundlable;
         [Inject] KeyInputProcesser _keyInputProcesser;
         [Inject] IndexUpdater _indexUpdater;
+        [Inject] TypedFlagRegisterer _typedFlagRegisterer;
         [Inject] ISelectionDataGettable _selectionDataGettable;
         string _tagSentence;
 
@@ -62,6 +63,9 @@ namespace gaw241201
         public void NotifyCorrectInput(char c, List<char> restrictedChar)
         {
             int index = _indexUpdater.GetIndex();
+
+            _typedFlagRegisterer.OnCharAdded(c);
+
             //“ü—ÍŠ®—¹ˆ—
             bool isEndLoop;
             if (restrictedChar.Contains(c))

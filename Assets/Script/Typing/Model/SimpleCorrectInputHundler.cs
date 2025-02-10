@@ -26,8 +26,8 @@ namespace gaw241201
             else
             {
                 isEndLoop = false;
-                _questionTextGenerator.GenerateDisplayQuestionText(questionCharList, charIndex);
             }
+            _questionTextGenerator.GenerateDisplayQuestionText(questionCharList, charIndex);
         }
     }
 }

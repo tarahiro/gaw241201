@@ -371,6 +371,7 @@ namespace gaw241201.Inject
             builder.Register<RoguelikeCorrectInputHundler>(Lifetime.Singleton).AsSelf();
             builder.Register<TypingRoguelikeConditionProvider>(Lifetime.Singleton).AsSelf();
             builder.Register<RomanInputProcesser>(Lifetime.Singleton).AsSelf();
+            builder.Register<TypedFlagRegisterer>(Lifetime.Singleton).AsSelf();
 
             //view
             builder.Register<TypingRoguelikeRootView>(Lifetime.Singleton).AsImplementedInterfaces();

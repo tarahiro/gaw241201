@@ -21,6 +21,8 @@ namespace gaw241201
         [Inject] IAvailableMasterDataProvider<IMasterDataRecord<ILeetMaster>> _leetMasterDataProvider;
         [Inject] IAvailableMasterDataProvider<IMasterDataRecord<IWordMaster>> _wordMasterDataProvider;
         [Inject] ISelectionDataSettable _selectionDataSettable;
+        [Inject] TypedFlagRegisterer _typedFlagRegisterer;
+
         List<IMasterDataRecord<ILeetMaster>> _charDataList;
 
 
@@ -37,7 +39,7 @@ namespace gaw241201
             var selectionDataList = new List<ReplaceData>();
 
             //tag
-            if (_tagSentence[_index] == c_tagStart)
+            while (_tagSentence[_index] == c_tagStart)
             {
                 if (_tagSentence.Substring(_index).Contains(c_tagEnd))
                 {
@@ -50,11 +52,10 @@ namespace gaw241201
 
                         string tag = ReadTag(_index, _tagSentence);
                         string substring = _tagSentence.Substring(index);
-                        string word = substring.Substring(0, substring.IndexOf(c_tagStart.ToString() + "/" + tag + c_tagEnd.ToString()));
 
-                        Log.DebugLog(substring);
 
                         //word
+                        string word = substring.Substring(0, substring.IndexOf(c_tagStart.ToString() + "/" + tag + c_tagEnd.ToString()));
                         foreach (var wordData in _wordDataList)
                         {
                             if (wordData.GetMaster().TagName == tag)
@@ -62,6 +63,27 @@ namespace gaw241201
                                 selectionDataList.Add(new ReplaceData(word, wordData.GetMaster().ReplaceTo));
                             }
                         }
+
+                        //register
+                        if (tag.StartsWith("fla:"))
+                        {
+                            string subtag = tag.Replace("fla:", "");
+                            _typedFlagRegisterer.StartRegister(subtag);
+                            Log.Comment("ìoò^äJén");
+                        }
+
+                    }
+                    else
+                    {
+                        string tag = ReadTag(_index, _tagSentence);
+                        //register
+                        if (tag.StartsWith("/fla:"))
+                        {
+                            string subtag = tag.Replace("/fla:", "");
+                            _typedFlagRegisterer.EndRegister(subtag);
+                            Log.Comment("ìoò^èIóπ");
+                        }
+
                     }
                     _index = index;
                 }
