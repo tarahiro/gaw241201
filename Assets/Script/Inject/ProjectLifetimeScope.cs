@@ -161,7 +161,12 @@ namespace gaw241201.Inject
             //EndGame
             builder.Register<EndGameModel>(Lifetime.Singleton).AsSelf();
             builder.RegisterComponentInHierarchy<EndGameView>().AsSelf();
-            
+
+
+            builder.Register<GameOverExhibitionInputView>(Lifetime.Singleton).AsSelf();
+            builder.Register<GameOverExhibitionInputProcessor>(Lifetime.Singleton).AsSelf();
+            builder.Register<ScenePublisher>(Lifetime.Singleton).AsSelf();
+
             builder.RegisterEntryPoint<EndGamePresenter>();
 
         }
@@ -429,7 +434,7 @@ namespace gaw241201.Inject
             builder.Register<AdvancedMenuItemListFactory>(Lifetime.Singleton).AsSelf();
 
             builder.Register<FreeInputInputView>(Lifetime.Singleton).AsSelf();
-            builder.Register<SettingFreeInputProcessor>(Lifetime.Singleton).AsSelf();
+            builder.Register<FreeInputProcessor>(Lifetime.Singleton).AsSelf();
 
             builder.RegisterComponentInHierarchy<SettingTabManager>().AsSelf();
             builder.RegisterComponentInHierarchy<ProfileItemProvider>().AsSelf();

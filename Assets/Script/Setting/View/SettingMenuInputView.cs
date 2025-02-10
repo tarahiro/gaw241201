@@ -3,6 +3,7 @@ using MessagePipe;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using Tarahiro;
 using UniRx;
 using UnityEngine;
@@ -21,9 +22,9 @@ namespace gaw241201.View
             _inputView = factory.Create(settingMenuInputProcessor, ActiveLayerConst.InputLayer.SettingMenu);
         }
 
-        public async UniTask Enter()
+        public async UniTask Enter(CancellationToken ct )
         {
-            await _inputView.Enter();
+            await _inputView.Enter(ct);
         }
 
         public void Exit() => _inputView.Exit();

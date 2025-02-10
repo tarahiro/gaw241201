@@ -34,7 +34,7 @@ namespace gaw241201.View
 
         public void ClearCharacter()
         {
-            _tmp.text = null;
+            _tmp.text = "";
         }
 
         public void Focus()

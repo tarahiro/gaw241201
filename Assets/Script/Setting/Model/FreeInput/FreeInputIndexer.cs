@@ -23,45 +23,70 @@ namespace gaw241201
 
         public void Enter(int textLength)
         {
-            UpdateFocus(false,textLength);
+            if (textLength < FlagConst.c_NameMaxLength)
+            {
+                UpdateFocus(false, textLength);
+            }
+            else
+            {
+                Index = FlagConst.c_NameMaxLength - 1;
+                IsFocusExist = false;
+            }
         }
 
-        int _index = 0;
+        public int Index { get; private set; } = 0;
+
+        public bool IsFocusExist { get; private set; } = true;
 
         void UpdateFocus(bool unfocusOption, int index)
         {
             if (unfocusOption)
             {
-                _unfocused.OnNext(_index);
+                _unfocused.OnNext(Index);
             }
 
             if (index < FlagConst.c_NameMaxLength)
             {
-                _index = index;
+                Index = index;
             }
             else
             {
-               _index = FlagConst.c_NameMaxLength - 1;
+               Index = FlagConst.c_NameMaxLength - 1;
             }
-            _focused.OnNext(_index);
+            IsFocusExist = true;
+            _focused.OnNext(Index);
         }
 
         public void Exit()
         {
-            _unfocused?.OnNext(_index);
-            _index = 0;
+            _unfocused?.OnNext(Index);
+            Index = 0;
         }
 
         public bool TryNextFocus()
         {
-            if(_index >= FlagConst.c_NameMaxLength - 1)
+            if(Index < FlagConst.c_NameMaxLength - 1)
             {
-                return false;
+                UpdateFocus(true, Index + 1);
+                return true;
             }
             else
             {
-                UpdateFocus(true, _index + 1);
-                return true;
+                _unfocused.OnNext(Index);
+                IsFocusExist = false;
+                return false;
+            }
+        }
+
+        public void PrevFocus()
+        {
+            if (IsFocusExist)
+            {
+                UpdateFocus(true, Index - 1);
+            }
+            else
+            {
+                UpdateFocus(false, Index);
             }
         }
 

@@ -10,29 +10,55 @@ using UniRx;
 using System.Threading;
 using gaw241201.View;
 using UnityEngine.SceneManagement;
+using MessagePipe;
 
 namespace gaw241201
 {
     public class EndGameModel : ICategoryEnterableModel
     {
-        [Inject] ISavable _savable;
+        ISavable _savable;
+        ISubscriber<Unit> _subscriber;
+        ScenePublisher _publisher;
 
-        Subject<EndGameConst.Key> _entered = new Subject<EndGameConst.Key> ();
-        public IObservable<EndGameConst.Key> Entered => _entered;
+        Subject<EndGameArgs> _entered = new Subject<EndGameArgs> ();
+        public IObservable<EndGameArgs> Entered => _entered;
+
+        CancellationTokenSource _cancellationTokenSource;
+
+        [Inject]
+        public EndGameModel(ISavable savable, ISubscriber<Unit> subscriber, ScenePublisher publisher)
+        {
+            _savable = savable;
+            _subscriber = subscriber;
+            _publisher = publisher;
+            _subscriber.Subscribe(OnSceneEnded);
+        }
+
         public async UniTask EnterFlow(string bodyId)
         {
             Log.DebugLog(bodyId + "ŠJŽn");
             _savable.Save();
-            _entered.OnNext(EnumUtil.KeyToType<EndGameConst.Key>(bodyId));
+            _cancellationTokenSource = new CancellationTokenSource();
+            _entered.OnNext(new EndGameArgs(_cancellationTokenSource.Token, EnumUtil.KeyToType<EndGameConst.Key>(bodyId)));
         }
 
         public void Exit()
         {
+            _publisher.Publish();
             SceneManager.LoadScene("Main");
         }
 
         public void ForceEndFlow()
         {
+        }
+
+        void OnSceneEnded(Unit unit)
+        {
+            Log.DebugLog("OnSceneEnd");
+            if (_cancellationTokenSource != null)
+            {
+                _cancellationTokenSource.Cancel();
+            }
         }
     }
 }

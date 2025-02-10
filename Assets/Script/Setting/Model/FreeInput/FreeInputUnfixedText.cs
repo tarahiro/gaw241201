@@ -32,6 +32,13 @@ namespace gaw241201
             _updated.OnNext(_unfixedText);
         }
 
+        public void DeleteCharacter()
+        {
+            _unfixedText = _unfixedText.Substring(0, _unfixedText.Length - 1);
+            _indexer.PrevFocus();
+            _updated.OnNext(_unfixedText);
+        }
+
         public string GetUnfixedText()
         {
             return _unfixedText;

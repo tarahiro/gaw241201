@@ -12,9 +12,18 @@ namespace gaw241201
 {
     public class PlayerNameInputJudger : ICharInputJudger
     {
+        [Inject] FreeInputIndexer _indexer;
+
         public bool IsCharAvailable(char c)
         {
-            return char.IsLetterOrDigit(c);
+            if (_indexer.IsFocusExist)
+            {
+                return char.IsLetterOrDigit(c);
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }

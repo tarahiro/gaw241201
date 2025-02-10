@@ -13,6 +13,8 @@ namespace gaw241201.View
 {
     public class EndGameView : MonoBehaviour
     {
+        [Inject] GameOverExhibitionInputView _gameOverExhibitionInputView;
+
         //[SerializeField] Button _button;
         [SerializeField] GameObject _root;
         [SerializeField] List<GameObject> _label;
@@ -30,11 +32,14 @@ namespace gaw241201.View
            // _button.onClick.AddListener(OnClick);
         }
 
-        public void Enter(EndGameConst.Key key)
+        public void Enter(EndGameArgs args)
         {
-            Log.Comment(key);
-            _label[(int)key].SetActive(true);
+            _label[(int)args.Key].SetActive(true);
             _root.SetActive(true);
+            if(args.Key == EndGameConst.Key.GameOverExhibition)
+            {
+                _gameOverExhibitionInputView.Enter(args.Ct).Forget();
+            }
         }
 
         void OnClick()

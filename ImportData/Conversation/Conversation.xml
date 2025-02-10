@@ -97,7 +97,7 @@
   </Style>
  </Styles>
  <Worksheet ss:Name="Script">
-  <Table ss:ExpandedColumnCount="8" ss:ExpandedRowCount="159" x:FullColumns="1"
+  <Table ss:ExpandedColumnCount="8" ss:ExpandedRowCount="160" x:FullColumns="1"
    x:FullRows="1" ss:DefaultColumnWidth="52.5" ss:DefaultRowHeight="18">
    <Column ss:AutoFitWidth="0" ss:Width="30"/>
    <Column ss:AutoFitWidth="0" ss:Width="163"/>
@@ -1703,7 +1703,17 @@
     <Cell ss:StyleID="s67"><Data ss:Type="String">Big</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
    </Row>
-   <Row ss:Index="150" ss:AutoFitHeight="0">
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">144</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">950510GameOverConversation</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">ゲームオーバー</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">I am on your side!</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">950500GameOverConversation</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Center</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Big</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
+   </Row>
+   <Row ss:Index="151" ss:AutoFitHeight="0">
     <Cell ss:Index="6" ss:StyleID="s65"><Data ss:Type="String">Facial</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
@@ -1748,26 +1758,26 @@
     <VerticalResolution>360</VerticalResolution>
    </Print>
    <TabColorIndex>13</TabColorIndex>
-   <Zoom>85</Zoom>
+   <Zoom>115</Zoom>
    <Selected/>
-   <TopRowVisible>11</TopRowVisible>
+   <TopRowVisible>119</TopRowVisible>
    <Panes>
     <Pane>
      <Number>3</Number>
-     <ActiveRow>29</ActiveRow>
-     <ActiveCol>19</ActiveCol>
+     <ActiveRow>148</ActiveRow>
+     <ActiveCol>4</ActiveCol>
     </Pane>
    </Panes>
    <ProtectObjects>False</ProtectObjects>
    <ProtectScenarios>False</ProtectScenarios>
   </WorksheetOptions>
   <DataValidation xmlns="urn:schemas-microsoft-com:office:excel">
-   <Range>R5C6:R148C6</Range>
+   <Range>R5C6:R149C6</Range>
    <Type>List</Type>
-   <Value>R151C6:R159C6</Value>
+   <Value>R152C6:R160C6</Value>
   </DataValidation>
   <ConditionalFormatting xmlns="urn:schemas-microsoft-com:office:excel">
-   <Range>R151C6:R159C6,R5C1:R148C8</Range>
+   <Range>R152C6:R160C6,R5C1:R149C8</Range>
    <Condition>
     <Value1>LEN(TRIM(RC))=0</Value1>
     <Format Style='background:#E7E6E6'/>

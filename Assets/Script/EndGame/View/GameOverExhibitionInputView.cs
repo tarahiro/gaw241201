@@ -11,14 +11,14 @@ using VContainer.Unity;
 
 namespace gaw241201.View
 {
-    public class TypingInputView : IInputView
+    public class GameOverExhibitionInputView : IInputView
     {
         IInputView _inputView;
 
         [Inject]
-        public TypingInputView(InputViewFactory factory, TypingInputProcessor settingMenuInputProcessor)
+        public GameOverExhibitionInputView(InputViewFactory factory, GameOverExhibitionInputProcessor settingMenuInputProcessor)
         {
-            _inputView = factory.Create(settingMenuInputProcessor, ActiveLayerConst.InputLayer.Typing);
+            _inputView = factory.Create(settingMenuInputProcessor, ActiveLayerConst.InputLayer.GameOver);
         }
 
         public async UniTask Enter(CancellationToken ct)

@@ -29,7 +29,7 @@ namespace gaw241201.View
         {
             _root.SetActive(true);
             _rendererHundler.ActivateRendererFeature(RendererHundler.RendererFeature.ScanLine);
-            _settingInputView.Enter().Forget();
+            _settingInputView.Enter(this.GetCancellationTokenOnDestroy()).Forget();
             _settingTabManager.EnterTab(args);
         }
 

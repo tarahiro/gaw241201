@@ -27,7 +27,7 @@ namespace gaw241201.View
 
             var v = token.Register(EndLoop);
 
-            _inputView.Enter().Forget();
+            _inputView.Enter(token).Forget();
         }
 
 

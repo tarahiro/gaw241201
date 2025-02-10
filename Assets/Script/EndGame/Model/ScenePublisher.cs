@@ -1,4 +1,5 @@
 using Cysharp.Threading.Tasks;
+using MessagePipe;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -10,18 +11,13 @@ using VContainer.Unity;
 
 namespace gaw241201
 {
-    public static class ActiveLayerConst
+    public class ScenePublisher
     {
+        [Inject] IPublisher<Unit> _publisher;
 
-        public enum InputLayer
+        public void Publish()
         {
-            None = 0,
-            FreeInput = 5,
-            Typing = 10,
-            SettingMenu = 100,
-            SettingMenuItem = 200,
-        
-            GameOver = 300
+            _publisher.Publish(Unit.Default);
         }
     }
 }

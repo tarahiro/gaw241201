@@ -33,5 +33,10 @@ namespace gaw241201
         {
             _decided.OnNext(_unfixedText.GetUnfixedText());
         }
+
+        public void Delete()
+        {
+            _unfixedText.DeleteCharacter();
+        }
     }
 }

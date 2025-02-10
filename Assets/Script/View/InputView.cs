@@ -3,6 +3,7 @@ using MessagePipe;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using Tarahiro;
 using UniRx;
 using UnityEngine;
@@ -33,14 +34,14 @@ namespace gaw241201.View
             _subscriber.Subscribe(OnActiveLayerChanged);
         }
 
-        public async UniTask Enter()
+        public async UniTask Enter(CancellationToken ct)
         {
             _isEnable = true;
             _publisher.PublishActiveLayer(_layer);
 
             while (_isEnable)
             {
-                await UniTask.Yield(PlayerLoopTiming.Update);
+                await UniTask.Yield(PlayerLoopTiming.Update,cancellationToken:ct);
                 if (!_isBlocked())
                 {
                     _inputProcessable.ProcessInput();

@@ -32,7 +32,7 @@ namespace gaw241201.Presenter
         [Inject] SettingMenuInputView _inputView;
         [Inject] SettingTabManager _tabManager;
         [Inject] SettingMenuInputProcessor _inputProcessor;
-        [Inject] SettingFreeInputProcessor _freeInputProcessor;
+        [Inject] FreeInputProcessor _freeInputProcessor;
 
         [Inject] ProfileItemProvider _profileItemProvider;
         [Inject] AdvancedItemProvider _advancedItemProvider;
@@ -64,6 +64,7 @@ namespace gaw241201.Presenter
             _freeInputIndexer.Unfocused.Subscribe(_profileItemProvider.PlayerNameDisplayView.Unfocus).AddTo(_disposable);
             _freeInputProcessor.KeyEntered.Subscribe(_freeInputCharHundler.CatchChar).AddTo(_disposable);
             _freeInputProcessor.Decided.Subscribe(_ => _freeInputCharHundler.Decide()).AddTo(_disposable);
+            _freeInputProcessor.Deleted.Subscribe(_ => _freeInputCharHundler.Delete()).AddTo(_disposable);
             _freeInputCharHundler.Decided.Subscribe(_profileItemPlayerName.Decide).AddTo(_disposable);
             _freeInputUnfixedText.Updated.Subscribe(_profileItemProvider.PlayerNameDisplayView.SetText).AddTo(_disposable);
 

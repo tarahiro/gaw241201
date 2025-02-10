@@ -17,9 +17,17 @@ namespace gaw241201.View
 
         public void SetText(string text)
         {
-            for (int i = 0; i < text.Length; i++)
+            for (int i = 0; i < _characterList.Count ; i++)
             {
-                _characterList[i].SetCharacter(text[i]);
+                if (i < text.Length)
+                {
+                    _characterList[i].SetCharacter(text[i]);
+                }
+                else
+                {
+                    //‚È‚º‚©ClearCharacter‚ÅãŽè‚­‚¢‚©‚È‚¢
+                    _characterList[i].SetCharacter(' ');
+                }
             }
         }
 

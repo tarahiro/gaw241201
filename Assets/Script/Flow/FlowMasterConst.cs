@@ -27,6 +27,7 @@ namespace gaw241201
             GoatEyeFlow,
             CompanyFlow,
             WishlistFlow,
+            GameoverFlow,
         }
     }
 }

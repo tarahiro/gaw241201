@@ -2,6 +2,7 @@ using Cysharp.Threading.Tasks;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using Tarahiro;
 using UniRx;
 using UnityEngine;
@@ -15,14 +16,14 @@ namespace gaw241201.View
         IInputView _inputView;
 
         [Inject]
-        public FreeInputInputView(InputViewFactory factory, SettingFreeInputProcessor settingMenuInputProcessor)
+        public FreeInputInputView(InputViewFactory factory, FreeInputProcessor settingMenuInputProcessor)
         {
             _inputView = factory.Create(settingMenuInputProcessor, ActiveLayerConst.InputLayer.SettingMenuItem);
         }
 
-        public async UniTask Enter()
+        public async UniTask Enter(CancellationToken ct)
         {
-            await _inputView.Enter();
+            await _inputView.Enter(ct);
         }
 
         public void Exit() => _inputView.Exit();
