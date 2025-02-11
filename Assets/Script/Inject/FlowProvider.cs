@@ -1,4 +1,5 @@
 using Cysharp.Threading.Tasks;
+using gaw241201.Switch.Model;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -67,6 +68,9 @@ namespace gaw241201
 
                 case FlowConst.Category.SkillAchieve:
                     return InjectUtil.GetInstance<SkillAchieveModel>(_scope);
+
+                case FlowConst.Category.SwitchByTypedFlag:
+                    return InjectUtil.GetInstance<SwitchByTypedFlag>(_scope);
 
                 default:
                     Log.DebugAssert("不正なカテゴリー名です");

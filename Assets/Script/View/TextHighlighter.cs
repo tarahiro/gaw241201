@@ -29,7 +29,7 @@ namespace gaw241201.View
         }
 
         public void StartHighlight(int textIndex)
-        {
+        { 
             time[textIndex] = 0;
             _isEnableList[textIndex] = true;
         }

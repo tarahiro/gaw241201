@@ -13,6 +13,7 @@ using System.Linq;
 using MessagePipe;
 using MessagePipe.VContainer;
 using UnityEditor;
+using gaw241201.Switch.Model;
 
 namespace gaw241201.Inject
 {
@@ -57,6 +58,7 @@ namespace gaw241201.Inject
             ConfigureSetting(builder);
             ConfigureRenderer(builder);
             ConfigureInput(builder);
+            ConfigureSwitch(builder);
         }
 
         void ConfigureGlobalFactory(IContainerBuilder builder)
@@ -105,6 +107,8 @@ namespace gaw241201.Inject
             builder.Register<DeviceLowerKeyReplacer>(Lifetime.Singleton).AsSelf();
             builder.Register<DeviceKeyReplacer>(Lifetime.Singleton).AsSelf();
             builder.Register<LoopInitializer>(Lifetime.Singleton).AsImplementedInterfaces();
+            builder.Register<FlowSwitchPublisher>(Lifetime.Singleton).AsSelf();
+
         }
 
         void ConfigureTyping(IContainerBuilder builder)
@@ -411,8 +415,14 @@ namespace gaw241201.Inject
             builder.RegisterEntryPoint<LanguageInitializer>(Lifetime.Singleton).AsSelf().WithParameter<LanguageConst.AvailableLanguage>(_initialParameter.Language);
             builder.RegisterEntryPoint<EmbeddedTextPresenter>(Lifetime.Singleton).AsSelf();
 
-            var options = builder.RegisterMessagePipe(/* configure option */);
+            builder.RegisterMessagePipe();
+
+            //var options = builder.RegisterMessagePipe(/* configure option */);
+
+            /*
             builder.RegisterMessageBroker<int>(options);
+            builder.RegisterMessageBroker<FlowSwitchArgs_Fake>(options);
+            */
 
             builder.Register<EmbeddedTextViewManager>(Lifetime.Singleton).AsSelf();
         }
@@ -462,6 +472,11 @@ namespace gaw241201.Inject
         {
             builder.Register<ActiveLayerPublisher>(Lifetime.Singleton).AsSelf();
             builder.Register<InputViewFactory>(Lifetime.Singleton).AsSelf();
+        }
+
+        void ConfigureSwitch(IContainerBuilder builder)
+        {
+            builder.Register<SwitchByTypedFlag>(Lifetime.Singleton).AsSelf();
         }
     }
 

@@ -1,5 +1,6 @@
 using Cysharp.Threading.Tasks;
 using gaw241201.Model;
+using MessagePipe;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -14,10 +15,11 @@ namespace gaw241201
 {
     public class FlowHundler : IFlowHundler
     {
-        [Inject] IFlowMasterDataDictionaryProvider _masterDataDictionaryProvider;
-        [Inject] IFlowProvider _flowProvider;
-        [Inject] IGlobalFlagProvider _globalFlagProvider;
-        [Inject] IFlowSwitchable_Fake _flowSwitchable;
+        IFlowMasterDataDictionaryProvider _masterDataDictionaryProvider;
+         IFlowProvider _flowProvider;
+        IGlobalFlagProvider _globalFlagProvider;
+        IFlowSwitchable_Fake _flowSwitchable;
+        ISubscriber<FlowSwitchArgs_Fake> _subject;
 
         ICategoryEnterableModel _currentFlow;
 
@@ -25,6 +27,23 @@ namespace gaw241201
         CancellationTokenSource _cancellationTokenSource;
 
         Subject<Unit> _onFlowExited = new Subject<Unit> ();
+
+        [Inject]
+        public FlowHundler(IFlowMasterDataDictionaryProvider flowMasterDataDictionaryProvider,
+            IFlowProvider flowProvider,
+            IGlobalFlagProvider globalFlagProvider,
+            IFlowSwitchable_Fake flowSwitchable,
+            ISubscriber<FlowSwitchArgs_Fake> subject)
+        {
+            _masterDataDictionaryProvider = flowMasterDataDictionaryProvider;
+            _flowProvider = flowProvider;
+            _globalFlagProvider = globalFlagProvider;
+            _flowSwitchable = flowSwitchable;
+            _subject = subject;
+
+            _subject.Subscribe(SwitchFlow);
+        }
+
 
         public void Enter()
         {
