@@ -10,7 +10,7 @@ using VContainer.Unity;
 
 namespace gaw241201
 {
-    public class SaveData
+    public class SaveData : ISaveData
     {
 
         public void SaveString(string key, string value)

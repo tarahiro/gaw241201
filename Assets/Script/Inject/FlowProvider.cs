@@ -72,6 +72,9 @@ namespace gaw241201
                 case FlowConst.Category.SwitchByTypedFlag:
                     return InjectUtil.GetInstance<SwitchByTypedFlag>(_scope);
 
+                case FlowConst.Category.NotifySave:
+                    return InjectUtil.GetInstance<NotifySave>(_scope);
+
                 default:
                     Log.DebugAssert("不正なカテゴリー名です");
                     return null;

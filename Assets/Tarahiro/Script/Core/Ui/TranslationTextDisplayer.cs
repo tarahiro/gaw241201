@@ -44,7 +44,6 @@ namespace Tarahiro.Ui
 
         public void SetLanguage(int languageIndex)
         {
-            Log.Comment("ViewがSetLanguage : " + languageIndex);
             _languageIndex = languageIndex;
             tmp.font = font[_languageIndex];
             tmp.fontSize = _initialFontSize * fontSizeCoeffFromJp[_languageIndex];

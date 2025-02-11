@@ -21,6 +21,7 @@ namespace gaw241201
             _loopInitializer.InitializeLoop();
             _flowHundler.Enter();
 
+            /*
             if (_globalFlagProvider.GetFlag(FlagConst.Key.IsSaveDataExist) == Tarahiro.Const.c_false)
             {
                 _flowHundler.EnterFlowLoop(FlowMasterConst.FlowMasterLabel.HorrorStoryMainFlow);
@@ -29,6 +30,18 @@ namespace gaw241201
             {
                 _flowHundler.EnterFlowLoop(FlowMasterConst.FlowMasterLabel.SaveDataExistFlow);
             }
+            */
+
+            if (_globalFlagProvider.IsContainskey(FlagConst.Key.RestartFlow))
+            {
+                _flowHundler.EnterFlowLoop(EnumUtil.KeyToType<FlowMasterConst.FlowMasterLabel>(_globalFlagProvider.GetFlag(FlagConst.Key.RestartFlow)));
+
+            }
+            else
+            {
+                _flowHundler.EnterFlowLoop(FlowMasterConst.FlowMasterLabel.HorrorStoryMainFlow);
+            }
+
         }
     }
 }

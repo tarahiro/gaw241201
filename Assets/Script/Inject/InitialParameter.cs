@@ -18,6 +18,11 @@ namespace gaw241201
         public LanguageConst.AvailableLanguage Language;
         public StartOptionKey StartOption;
 
+        public bool IsFakeSaveData = true;
+
+        [SerializeField]
+        public DummySaveData DummySaveData;
+
         [System.Serializable]
         public enum StartOptionKey
         {

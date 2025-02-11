@@ -15,6 +15,7 @@ namespace gaw241201
         [Inject] TitleEnterModel _toTitle;
         [Inject] FakeLoopStarter _initialLoopStarter;
         [Inject] MainLoopStarter _mainLoopStarter;
+        [Inject] IGlobalFlagProvider _globalFlagProvider;
 
         [Inject] InitialParameter.StartOptionKey _startOptionKey;
         [Inject] bool _isFakeLoop;

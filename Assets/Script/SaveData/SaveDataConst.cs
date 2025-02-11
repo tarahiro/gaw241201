@@ -22,6 +22,7 @@ namespace gaw241201
              FlagConst.Key. NameLower,
             FlagConst.Key.BirthDate,
             FlagConst.Key.IsSaveDataExist,
+            FlagConst.Key.RestartFlow,
         };
     }
 }

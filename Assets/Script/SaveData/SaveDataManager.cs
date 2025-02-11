@@ -12,7 +12,7 @@ namespace gaw241201
 {
     public class SaveDataManager : ILoadable, ISavable, ISaveDeletable
     {
-        [Inject] SaveData _saveData;
+        [Inject] ISaveDataProvider _dataProvider;
         [Inject] IGlobalFlagRegisterer _registerer;
         [Inject] IGlobalFlagProvider _provider;
 
@@ -21,7 +21,7 @@ namespace gaw241201
             Log.Comment("ロード開始");
             foreach(var key in SaveDataConst.SavableKeys)
             {
-                if(_saveData.TryGetString(key.ToString(), out var s))
+                if(_dataProvider.Provide().TryGetString(key.ToString(), out var s))
                 {
                     Log.Comment(key + "を登録");
                     _registerer.RegisterFlag(key, s);
@@ -47,14 +47,14 @@ namespace gaw241201
             foreach (var key in SaveDataConst.SavableKeys)
             {
                 Log.Comment(key + "をセーブ");
-                _saveData.SaveString(key.ToString(), _provider.GetFlag(key));
+                _dataProvider.Provide().SaveString(key.ToString(), _provider.GetFlag(key));
             }
         }
 
         public void DeleteSaveData()
         {
             Log.Comment("セーブ消去");
-            _saveData.DeleteSave();
+            _dataProvider.Provide().DeleteSave();
         }
     }
 }

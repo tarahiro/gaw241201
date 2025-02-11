@@ -59,6 +59,7 @@ namespace gaw241201.Inject
             ConfigureRenderer(builder);
             ConfigureInput(builder);
             ConfigureSwitch(builder);
+            ConfigureNotifySave(builder);
         }
 
         void ConfigureGlobalFactory(IContainerBuilder builder)
@@ -183,6 +184,7 @@ namespace gaw241201.Inject
             builder.Register<SaveDataManager>(Lifetime.Singleton).AsSelf().AsImplementedInterfaces();
             builder.Register<SaveData>(Lifetime.Singleton).AsSelf();
 
+            builder.Register<SaveDataProvider>(Lifetime.Singleton).AsImplementedInterfaces().WithParameter<InitialParameter>(_initialParameter);
 
         }
 
@@ -477,6 +479,11 @@ namespace gaw241201.Inject
         void ConfigureSwitch(IContainerBuilder builder)
         {
             builder.Register<SwitchByTypedFlag>(Lifetime.Singleton).AsSelf();
+        }
+
+        void ConfigureNotifySave(IContainerBuilder builder)
+        {
+            builder.Register<NotifySave>(Lifetime.Singleton).AsSelf();
         }
     }
 

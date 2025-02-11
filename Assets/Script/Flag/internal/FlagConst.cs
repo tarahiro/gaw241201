@@ -12,6 +12,7 @@ namespace gaw241201
 {
     public static class FlagConst
     {
+        [System.Serializable]
         public enum Key
         {
             ApplicationTime,
@@ -21,6 +22,7 @@ namespace gaw241201
             BirthDate,
             IsSaveDataExist,
             IsRoguelikeEnabled,
+            RestartFlow,
         }
 
         public enum RegisterOrder
@@ -63,6 +65,7 @@ namespace gaw241201
                 case Key.BirthDate: return "BirthDate";
                 case Key.IsSaveDataExist: return Tarahiro.Const.c_false;
                 case Key.IsRoguelikeEnabled: return Tarahiro.Const.c_false;
+                case Key.RestartFlow: return "TypingRoguelikeMainFlow";
 
                 default:
                     Log.DebugAssert(key + "‚Ì‰Šú’l‚ªw’è‚³‚ê‚Ä‚¢‚Ü‚¹‚ñ");

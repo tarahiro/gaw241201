@@ -1359,7 +1359,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_VertexColorAlwaysGammaSpace: 1
+  m_VertexColorAlwaysGammaSpace: 0
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
@@ -1411,8 +1411,12 @@ PrefabInstance:
       value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 420047074387865155, guid: a4b3769f32861a447b54d97baca45fda, type: 3}
+      propertyPath: rotAmp
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 420047074387865155, guid: a4b3769f32861a447b54d97baca45fda, type: 3}
       propertyPath: sclAmp
-      value: 0.5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 420047074387865155, guid: a4b3769f32861a447b54d97baca45fda, type: 3}
       propertyPath: sclWaitMaxTime
@@ -5566,7 +5570,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4268134201494489253, guid: 8a542195e5f91d549abe9c7b94747a0b, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5115430696293847615, guid: 8a542195e5f91d549abe9c7b94747a0b, type: 3}
       propertyPath: Id
@@ -6174,7 +6178,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1509127416}
-  m_LocalRotation: {x: 0, y: 0, z: -0.98320556, w: -0.18250155}
+  m_LocalRotation: {x: 0, y: 0, z: -0.21675502, w: 0.97622603}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -6938,7 +6942,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1607533450
 RectTransform:
   m_ObjectHideFlags: 0
