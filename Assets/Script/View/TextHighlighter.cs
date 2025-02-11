@@ -2,7 +2,9 @@ using Cysharp.Threading.Tasks;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Tarahiro;
+using TMPro;
 using UniRx;
 using UnityEngine;
 using UnityEngine.PlayerLoop;
@@ -28,7 +30,6 @@ namespace gaw241201.View
 
         public void StartHighlight(int textIndex)
         {
-            Log.Comment("テキストハイライト開始");
             time[textIndex] = 0;
             _isEnableList[textIndex] = true;
         }
@@ -39,9 +40,10 @@ namespace gaw241201.View
             _isEnableList[textIndex] = false;
         }
 
-        public void Tick()
+        public TMP_TextInfo Tick(TMP_TextInfo tmpInfo)
         {
-            for (int i = 0; i < _isEnableList.Length; i++)
+            int count = Mathf.Min(tmpInfo.characterCount, tmpInfo.characterInfo.Length, _isEnableList.Length);
+            for (int i = 0; i < count; i++)
             {
                 if (_isEnableList[i])
                 {
@@ -51,15 +53,15 @@ namespace gaw241201.View
                     if (t < sclChangeTime)
                     {
 
-                        _textScaleChanger.TextScaleChange(i, new Vector2(1f + sclAmp * .2f * (t / sclChangeTime), (1f + sclAmp * (t / sclChangeTime))));
+                       tmpInfo =  _textScaleChanger.TextScaleChange(tmpInfo, i, new Vector2(1f + sclAmp * .2f * (t / sclChangeTime), (1f + sclAmp * (t / sclChangeTime))));
                     }
                     else if (t < sclWaitTime + sclChangeTime)
                     {
-                        _textScaleChanger.TextScaleChange(i, new Vector2(1f + sclAmp * .2f, 1f + sclAmp));
+                        tmpInfo = _textScaleChanger.TextScaleChange(tmpInfo,i, new Vector2(1f + sclAmp * .2f, 1f + sclAmp));
                     }
                     else if (t < sclChangeTime * 2f + sclWaitTime)
                     {
-                        _textScaleChanger.TextScaleChange(i, new Vector2(1f + sclAmp * .2f * ((sclChangeTime * 2f + sclWaitTime - t) / sclChangeTime), 1f + sclAmp * ((sclChangeTime * 2f + sclWaitTime - t) / sclChangeTime)));
+                        tmpInfo = _textScaleChanger.TextScaleChange(tmpInfo,i, new Vector2(1f + sclAmp * .2f * ((sclChangeTime * 2f + sclWaitTime - t) / sclChangeTime), 1f + sclAmp * ((sclChangeTime * 2f + sclWaitTime - t) / sclChangeTime)));
                     }
                     else
                     {
@@ -67,6 +69,7 @@ namespace gaw241201.View
                     }
                 }
             }
+            return tmpInfo;
         }
         
     }

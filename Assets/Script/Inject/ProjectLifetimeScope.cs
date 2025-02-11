@@ -138,6 +138,7 @@ namespace gaw241201.Inject
 
             builder.Register<FlagPublisher>(Lifetime.Singleton).AsSelf();
             builder.Register<FlagInitializer>(Lifetime.Singleton).AsImplementedInterfaces();
+            builder.Register<TypedFlagContainer>(Lifetime.Singleton).AsSelf();
         }
 
         void ConfigureMonitor(IContainerBuilder builder)

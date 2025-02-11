@@ -22,6 +22,7 @@ namespace gaw241201
         [Inject] IRequiredScoreGeneratable _scoreGeneratable;
 
         [Inject] TypingRoguelikeConditionProvider _conditionProvider;
+        [Inject] TypedFlagRegisterer _typedFlagRegisterer;
 
         [Inject] WaveClearModel _waveClearModel;
 
@@ -75,6 +76,8 @@ namespace gaw241201
             Log.Comment("終了を検知");
             _isEnded = true;
 
+
+            _typedFlagRegisterer.End();
             if (_conditionProvider.IsEnableTimeUp())
             {
                 //タイマーストップ処理

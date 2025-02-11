@@ -15,6 +15,6 @@ namespace gaw241201.View
     {
         void Construct(TMP_Text tmpText);
         void Initialize();
-        void TextScaleChange(int textIndex, Vector2 scale);
+        TMP_TextInfo TextScaleChange(TMP_TextInfo tmpInfo,int textIndex, Vector2 scale);
     }
 }

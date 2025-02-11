@@ -53,7 +53,7 @@ namespace gaw241201.View
 
 
 
-       public void Initialize()
+        public void Initialize()
         {
             randomTime = new List<List<float>>();
 
@@ -80,11 +80,15 @@ namespace gaw241201.View
 
         }
 
-        public void Tick()
+        public TMP_TextInfo Tick(TMP_TextInfo tmpInfo)
         {
             if (_isEnabled)
             {
-                UpdateAnimation();
+                return UpdateAnimation(tmpInfo);
+            }
+            else
+            {
+                return tmpInfo;
             }
         }
 
@@ -96,10 +100,8 @@ namespace gaw241201.View
         List<float> scaleActiveTime;
 
 
-        private void UpdateAnimation()
+        private TMP_TextInfo UpdateAnimation(TMP_TextInfo tmpInfo)
         {
-            _tmpText.ForceMeshUpdate(true);
-            tmpInfo = _tmpText.textInfo;
 
             count = Mathf.Min(tmpInfo.characterCount, tmpInfo.characterInfo.Length);
             for (int i = 0; i < count; i++)
@@ -111,10 +113,10 @@ namespace gaw241201.View
                 int matIndex = charInfo.materialReferenceIndex;
                 int vertIndex = charInfo.vertexIndex;
 
-                
+
                 Vector3[] verts = tmpInfo.meshInfo[matIndex].vertices;
 
-                
+
                 //位置変動
                 Vector3 vec = new Vector3(
 Mathf.Sin((randomTime[0][i] + Time.realtimeSinceStartup) * Mathf.PI * speed) * amp,
@@ -125,12 +127,12 @@ Mathf.Sin((randomTime[0][i] + Time.realtimeSinceStartup) * Mathf.PI * speed) * a
                 verts[vertIndex + 1] += vec;
                 verts[vertIndex + 2] += vec;
                 verts[vertIndex + 3] += vec;
-                
+
 
                 //回転変動
                 var angle = Mathf.Sin((randomTime[2][i] + Time.realtimeSinceStartup) * Mathf.PI * speed) * rotAmp;
                 Vector3 center = Vector3.zero;
-                for(int k = 0; k < c_vertex; k++)
+                for (int k = 0; k < c_vertex; k++)
                 {
                     center += verts[vertIndex + k];
                 }
@@ -139,14 +141,14 @@ Mathf.Sin((randomTime[0][i] + Time.realtimeSinceStartup) * Mathf.PI * speed) * a
 
                 for (int k = 0; k < c_vertex; k++)
                 {
-                    verts[vertIndex + k] = center +  Quaternion.Euler(0, 0, angle) * (verts[vertIndex + k] - center);
+                    verts[vertIndex + k] = center + Quaternion.Euler(0, 0, angle) * (verts[vertIndex + k] - center);
                 }
 
                 //スケール変動
                 if (isScaleWait[i])
                 {
                     scaleWaitTime[i] -= Time.deltaTime;
-                    if(scaleWaitTime[i] < 0)
+                    if (scaleWaitTime[i] < 0)
                     {
                         isScaleWait[i] = false;
                         scaleActiveTime[i] = 0f;
@@ -156,7 +158,7 @@ Mathf.Sin((randomTime[0][i] + Time.realtimeSinceStartup) * Mathf.PI * speed) * a
                 {
                     float scale;
                     if (scaleActiveTime[i] < .5f / speed)
-                    { 
+                    {
                         scale = 1f + sclAmp * scaleActiveTime[i] / (.5f / speed);
 
                     }
@@ -164,27 +166,19 @@ Mathf.Sin((randomTime[0][i] + Time.realtimeSinceStartup) * Mathf.PI * speed) * a
                     {
                         scale = 1f + sclAmp * (1f / speed - scaleActiveTime[i]) / (.5f / speed);
 
-                        if(scale < 1f)
+                        if (scale < 1f)
                         {
                             isScaleWait[i] = true;
                             scaleWaitTime[i] = UnityEngine.Random.Range(sclWaitMinTime, sclWaitMaxTime);
                         }
                     }
 
-                    _textScaleChanger.TextScaleChange(i,new Vector2(1f, scale));
+                    tmpInfo = _textScaleChanger.TextScaleChange(tmpInfo, i, new Vector2(1f, scale));
                     scaleActiveTime[i] += Time.deltaTime;
                 }
             }
 
-            
-            for (int i = 0; i < tmpInfo.materialCount; i++)
-            {
-                if (tmpInfo.meshInfo[i].mesh == null) { continue; }
-
-                tmpInfo.meshInfo[i].mesh.vertices = tmpInfo.meshInfo[i].vertices;
-                _tmpText.UpdateGeometry(tmpInfo.meshInfo[i].mesh, i);
-            }
-            
+            return tmpInfo;
         }
     }
 }

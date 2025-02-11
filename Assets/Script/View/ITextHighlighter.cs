@@ -3,6 +3,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Tarahiro;
+using TMPro;
 using UniRx;
 using UnityEngine;
 using VContainer;
@@ -15,6 +16,6 @@ namespace gaw241201.View
         void Construct(ITextScaleChanger textScaleChanger);
         void StartHighlight(int textIndex);
         void StopHighlight(int textIndex);
-        void Tick();
+        TMP_TextInfo Tick(TMP_TextInfo info);
     }
 }

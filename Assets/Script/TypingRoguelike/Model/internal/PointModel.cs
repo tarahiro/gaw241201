@@ -54,14 +54,12 @@ namespace gaw241201
         {
             m_point += addedPoint;
             _pointUpdated.OnNext(m_point);
-            Log.DebugLog(m_point);
         }
 
         void DecrementPoint(int decrementedPoint)
         {
             m_point -= decrementedPoint;
             _pointUpdated.OnNext(m_point);
-            Log.DebugLog(m_point);
         }
     }
 }

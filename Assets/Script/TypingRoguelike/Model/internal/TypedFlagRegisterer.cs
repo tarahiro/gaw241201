@@ -13,37 +13,35 @@ namespace gaw241201
 {
     public class TypedFlagRegisterer
     {
-        List<Pair>  _registeringDictionary = new List<Pair>();
-        List<Pair> _fixedDictionary = new List<Pair>();
+        [Inject] TypedFlagContainer _typedFlagContainer;
+
+        List<Pair>  _registeringPair = new List<Pair>();
+        List<Pair> _fixedPair = new List<Pair>();
 
         public void StartRegister(string key)
         {
-            _registeringDictionary.Add(new Pair(key,""));
+            _registeringPair.Add(new Pair(EnumUtil.KeyToType<TypedFlagContainer.TypedKey>(key) ,""));
         }
 
         public void EndRegister(string key)
         {
-            var pair = _registeringDictionary.Find(x => x.key == key);
+            var Key = EnumUtil.KeyToType<TypedFlagContainer.TypedKey>(key);
+            var pair = _registeringPair.Find(x => x.key == Key);
             pair.IsPreparedFix = true;
-        }
-
-        public void End()
-        {
-            //“o˜^
         }
 
         public void OnCharAdded(char c)
         {
             List<Pair> _removePairList = new List<Pair>();
 
-            foreach (var pair in _registeringDictionary)
+            foreach (var pair in _registeringPair)
             {
                 if (pair.IsCatchedDummyChar)
                 {
                     pair.value = pair.value + c;
                     if (pair.IsPreparedFix)
                     {
-                        _fixedDictionary.Add(pair);
+                        _fixedPair.Add(pair);
                         Log.Comment("Fix:" + pair.key + pair.value);
 
                         _removePairList.Add(pair);
@@ -57,18 +55,40 @@ namespace gaw241201
 
             foreach (var pair in _removePairList)
             {
-                _registeringDictionary.Remove(pair);
+                _registeringPair.Remove(pair);
             }
+        }
+
+        public void End()
+        {
+            //“o˜^
+            for(int i = 0; i < _fixedPair.Count; i++)
+            {
+                switch (_fixedPair[i].key)
+                {
+                    case TypedFlagContainer.TypedKey _:
+                        _typedFlagContainer.RegisterTypedName(_fixedPair[i].value); 
+                        break;
+
+                    default:
+                        Log.DebugWarning("—LŒø‚ÈƒL[‚ª‚ ‚è‚Ü‚¹‚ñ");
+                        break;
+                }
+            }
+
+            Log.DebugAssert(_registeringPair.Count == 0);
+            _registeringPair = new List<Pair>();
+            _fixedPair = new List<Pair>();
         }
 
         private class Pair
         {
-            public string key;
+            public TypedFlagContainer.TypedKey key;
             public string value;
             public bool IsCatchedDummyChar;
             public bool IsPreparedFix;
 
-            public Pair(string key, string value)
+            public Pair(TypedFlagContainer.TypedKey key, string value)
             {
                 this.key = key;
                 this.value = value;

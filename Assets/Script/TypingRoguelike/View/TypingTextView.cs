@@ -50,7 +50,6 @@ namespace gaw241201.View
 
         public void EnterCorrectInput(int index)
         {
-            Log.Comment(index + "‚Ì•¶Žš•\Ž¦ŠJŽn");
 
 
             _tmpQuestion.text = GetTextTaggedTyped(_textCache, index);

@@ -21,6 +21,6 @@ namespace gaw241201.View
 
         void StopIdle();
 
-        void Tick();
+        TMP_TextInfo Tick(TMP_TextInfo info);
     }
 }

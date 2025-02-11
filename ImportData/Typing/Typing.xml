@@ -16,8 +16,8 @@
   <AllowPNG/>
  </OfficeDocumentSettings>
  <ExcelWorkbook xmlns="urn:schemas-microsoft-com:office:excel">
-  <WindowHeight>6140</WindowHeight>
-  <WindowWidth>19200</WindowWidth>
+  <WindowHeight>11300</WindowHeight>
+  <WindowWidth>10220</WindowWidth>
   <WindowTopX>32767</WindowTopX>
   <WindowTopY>32767</WindowTopY>
   <RefModeR1C1/>
@@ -507,7 +507,7 @@
       xmlns="urn:schemas-microsoft-com:office:excel">ワタシコロ</PhoneticText><Data
       ss:Type="String">私　殺して　ください。</Data></Cell>
     <Cell ss:StyleID="s67"/>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">please &lt;vt&gt;kill&lt;/vt&gt; &lt;fla:name&gt;&lt;human&gt;&lt;key=NameLower&gt;&lt;/human&gt;&lt;/fla:name&gt;</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">please &lt;vt&gt;kill&lt;/vt&gt; &lt;fla:TypedName&gt;&lt;human&gt;&lt;key=NameLower&gt;&lt;/human&gt;&lt;/fla:TypedName&gt;</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">please &lt;vt&gt;kill&lt;/vt&gt; &lt;human&gt;me&lt;/human&gt;</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">960000Typing</Data></Cell>
    </Row>
@@ -527,7 +527,7 @@
    </Print>
    <TabColorIndex>13</TabColorIndex>
    <Selected/>
-   <TopRowVisible>23</TopRowVisible>
+   <TopRowVisible>26</TopRowVisible>
    <Panes>
     <Pane>
      <Number>3</Number>
@@ -539,14 +539,7 @@
    <ProtectScenarios>False</ProtectScenarios>
   </WorksheetOptions>
   <ConditionalFormatting xmlns="urn:schemas-microsoft-com:office:excel">
-   <Range>R5C1:R43C7</Range>
-   <Condition>
-    <Value1>LEN(TRIM(RC))=0</Value1>
-    <Format Style='background:#E7E6E6'/>
-   </Condition>
-  </ConditionalFormatting>
-  <ConditionalFormatting xmlns="urn:schemas-microsoft-com:office:excel">
-   <Range>R44C1:R44C7</Range>
+   <Range>R5C1:R44C7</Range>
    <Condition>
     <Value1>LEN(TRIM(RC))=0</Value1>
     <Format Style='background:#E7E6E6'/>

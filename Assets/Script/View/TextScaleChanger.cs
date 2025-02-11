@@ -28,12 +28,11 @@ namespace gaw241201.View
         }
 
 
-        public void TextScaleChange(int textIndex, Vector2 scale)
+        public TMP_TextInfo TextScaleChange(TMP_TextInfo tmpInfo, int textIndex, Vector2 scale)
         {
-            tmpInfo = _tmpText.textInfo;
 
             var charInfo = tmpInfo.characterInfo[textIndex];
-            if (!charInfo.isVisible) return;
+            if (!charInfo.isVisible) return tmpInfo;
 
             int matIndex = charInfo.materialReferenceIndex;
             int vertIndex = charInfo.vertexIndex;
@@ -54,15 +53,7 @@ namespace gaw241201.View
             }
 
 
-            
-            for (int i = 0; i < tmpInfo.materialCount; i++)
-            {
-                if (tmpInfo.meshInfo[i].mesh == null) { continue; }
-
-                tmpInfo.meshInfo[i].mesh.vertices = tmpInfo.meshInfo[i].vertices;
-                _tmpText.UpdateGeometry(tmpInfo.meshInfo[i].mesh, i);
-            }
-            
+            return tmpInfo;
 
         }
 

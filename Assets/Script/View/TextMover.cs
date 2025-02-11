@@ -16,15 +16,18 @@ namespace gaw241201.View
         IIdleTextMover _idleTextMover;
         ITextScaleChanger _textScaleChanger;
         ITextHighlighter _textHighlighter;
+        TmpAnimationTickInitializer _tickInitializer;
         TMP_Text _tmpText;
 
         void Start()
         {
+            _tmpText = GetComponent<TMP_Text>();
+            _tickInitializer = new TmpAnimationTickInitializer(_tmpText);
+
             _idleTextMover = GetComponent<IIdleTextMover>();
             _textScaleChanger = GetComponent<ITextScaleChanger>();
             _textHighlighter = GetComponent<ITextHighlighter>();
 
-            _tmpText = GetComponent<TMP_Text>();
             
             _idleTextMover.Construct(_tmpText, _textScaleChanger);
             _textHighlighter.Construct(_textScaleChanger);
@@ -41,8 +44,10 @@ namespace gaw241201.View
 
         private void Update()
         {
-            _idleTextMover.Tick();
-            _textHighlighter.Tick();
+            var info = _tickInitializer.TickStart();
+            info =  _idleTextMover.Tick(info);
+            info =  _textHighlighter.Tick(info);
+            _tickInitializer.TickEnd(info);
         }
 
         public void HighlightText(int textIndex)
