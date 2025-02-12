@@ -29,6 +29,8 @@ namespace gaw241201
             WishlistFlow,
             GameoverFlow,
             KillTestFlow,
+            ExhibitionMainFlow,
+            ExhibitionForestFlow,
         }
     }
 }

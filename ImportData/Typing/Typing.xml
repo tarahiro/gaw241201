@@ -9,15 +9,15 @@
   <Author>h t</Author>
   <LastAuthor>h t</LastAuthor>
   <Created>2021-10-25T13:58:26Z</Created>
-  <LastSaved>2025-02-11T11:27:41Z</LastSaved>
+  <LastSaved>2025-02-12T07:16:22Z</LastSaved>
   <Version>16.00</Version>
  </DocumentProperties>
  <OfficeDocumentSettings xmlns="urn:schemas-microsoft-com:office:office">
   <AllowPNG/>
  </OfficeDocumentSettings>
  <ExcelWorkbook xmlns="urn:schemas-microsoft-com:office:excel">
-  <WindowHeight>11300</WindowHeight>
-  <WindowWidth>10220</WindowWidth>
+  <WindowHeight>16940</WindowHeight>
+  <WindowWidth>32767</WindowWidth>
   <WindowTopX>32767</WindowTopX>
   <WindowTopY>32767</WindowTopY>
   <RefModeR1C1/>
@@ -88,7 +88,7 @@
   </Style>
  </Styles>
  <Worksheet ss:Name="Script">
-  <Table ss:ExpandedColumnCount="7" ss:ExpandedRowCount="44" x:FullColumns="1"
+  <Table ss:ExpandedColumnCount="7" ss:ExpandedRowCount="57" x:FullColumns="1"
    x:FullRows="1" ss:DefaultColumnWidth="52.5" ss:DefaultRowHeight="18">
    <Column ss:AutoFitWidth="0" ss:Width="30"/>
    <Column ss:AutoFitWidth="0" ss:Width="75"/>
@@ -277,6 +277,149 @@
    </Row>
    <Row ss:AutoFitHeight="0">
     <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">16</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">304010Typing</Data></Cell>
+    <Cell ss:StyleID="s67"><PhoneticText
+      xmlns="urn:schemas-microsoft-com:office:excel">ツミツグナ</PhoneticText><Data
+      ss:Type="String">&lt;key=Name&gt;は　罪を　償うために、</Data></Cell>
+    <Cell ss:StyleID="s67"/>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">&lt;key=Name&gt; by atoning for sine</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">&quot;People feel a sense of familiarity with those who recognize them.&quot;</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">304000Typing</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">17</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">304020Typing</Data></Cell>
+    <Cell ss:StyleID="s67"><PhoneticText
+      xmlns="urn:schemas-microsoft-com:office:excel">シモリキ</PhoneticText><Data
+      ss:Type="String">死の森に　来ました。</Data></Cell>
+    <Cell ss:StyleID="s67"/>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">comes dying forest</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">&quot;People feel a sense of familiarity with those who recognize them.&quot;</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">304000Typing</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">18</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">304030Typing</Data></Cell>
+    <Cell ss:StyleID="s67"><PhoneticText
+      xmlns="urn:schemas-microsoft-com:office:excel">キギナ</PhoneticText><Data
+      ss:Type="String">木々が　泣いています。</Data></Cell>
+    <Cell ss:StyleID="s67"/>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Woods are crying.</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">&quot;People feel a sense of familiarity with those who recognize them.&quot;</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">304000Typing</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">19</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">304040Typing</Data></Cell>
+    <Cell ss:StyleID="s67"><PhoneticText
+      xmlns="urn:schemas-microsoft-com:office:excel">ドクチハ</PhoneticText><Data
+      ss:Type="String">毒トカゲが　地を這っています。</Data></Cell>
+    <Cell ss:StyleID="s67"/>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Lizard is crawling.</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">&quot;People feel a sense of familiarity with those who recognize them.&quot;</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">304000Typing</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">20</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">304050Typing</Data></Cell>
+    <Cell ss:StyleID="s67"><PhoneticText
+      xmlns="urn:schemas-microsoft-com:office:excel">メダマ</PhoneticText><Data
+      ss:Type="String">カラスが　&lt;key=Name&gt;の目玉を　えぐりました。</Data></Cell>
+    <Cell ss:StyleID="s67"/>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Bird Crushes &lt;key=Name&gt;'s eye.</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">&quot;People feel a sense of familiarity with those who recognize them.&quot;</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">304000Typing</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">21</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">308010Typing</Data></Cell>
+    <Cell ss:StyleID="s67"><PhoneticText
+      xmlns="urn:schemas-microsoft-com:office:excel">シタイコロ</PhoneticText><Data
+      ss:Type="String">リスの　死体が　転がっています。</Data></Cell>
+    <Cell ss:StyleID="s67"/>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Squirrel Corpse is lying.</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">&quot;People feel a sense of familiarity with those who recognize them.&quot;</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">308000Typing</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">22</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">308020Typing</Data></Cell>
+    <Cell ss:StyleID="s67"><PhoneticText
+      xmlns="urn:schemas-microsoft-com:office:excel">モリオクツ</PhoneticText><Data
+      ss:Type="String">&lt;key=Name&gt;は　森の　奥に　たどり着きました。</Data></Cell>
+    <Cell ss:StyleID="s67"/>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">&lt;key=Name&gt; is in center of the forest.</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">&quot;People feel a sense of familiarity with those who recognize them.&quot;</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">308000Typing</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">23</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">311010Typing</Data></Cell>
+    <Cell ss:StyleID="s67"><PhoneticText
+      xmlns="urn:schemas-microsoft-com:office:excel">アカメヤギミ</PhoneticText><Data
+      ss:Type="String">赤い目の　山羊が　こちらを見ています。</Data></Cell>
+    <Cell ss:StyleID="s67"/>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">A red-eyed goat is watching &lt;key=Name&gt;.</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">&quot;People feel a sense of familiarity with those who recognize them.&quot;</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">311000Typing</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">24</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">311020Typing</Data></Cell>
+    <Cell ss:StyleID="s67"><PhoneticText
+      xmlns="urn:schemas-microsoft-com:office:excel">シオウ</PhoneticText><Data
+      ss:Type="String">死の　王です。</Data></Cell>
+    <Cell ss:StyleID="s67"/>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">He is king of death.</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">&quot;People feel a sense of familiarity with those who recognize them.&quot;</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">311000Typing</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">25</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">311030Typing</Data></Cell>
+    <Cell ss:StyleID="s67"><PhoneticText
+      xmlns="urn:schemas-microsoft-com:office:excel">イ</PhoneticText><Data
+      ss:Type="String">JOHNは　言いました。</Data></Cell>
+    <Cell ss:StyleID="s67"/>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">&lt;key=Name&gt; said:</Data></Cell>
+    <Cell ss:StyleID="s67"/>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">311000Typing</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">26</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">311040Typing</Data></Cell>
+    <Cell ss:StyleID="s67"><PhoneticText
+      xmlns="urn:schemas-microsoft-com:office:excel">ツミツグナ</PhoneticText><Data
+      ss:Type="String">『罪を　償わせて　ください。』</Data></Cell>
+    <Cell ss:StyleID="s67"/>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Please let me atone for sine.</Data></Cell>
+    <Cell ss:StyleID="s67"/>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">311000Typing</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">27</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">311050Typing</Data></Cell>
+    <Cell ss:StyleID="s67"><PhoneticText
+      xmlns="urn:schemas-microsoft-com:office:excel">ツヅイ</PhoneticText><Data
+      ss:Type="String">続けて　言いました。</Data></Cell>
+    <Cell ss:StyleID="s67"/>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">&lt;key=Name&gt; also said:</Data></Cell>
+    <Cell ss:StyleID="s67"/>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">311000Typing</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">28</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">311060Typing</Data></Cell>
+    <Cell ss:StyleID="s67"><PhoneticText
+      xmlns="urn:schemas-microsoft-com:office:excel">コロ</PhoneticText><Data
+      ss:Type="String">『おろかな　JOHNを　殺してください。』</Data></Cell>
+    <Cell ss:StyleID="s67"/>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Please kill poor &lt;key=Name&gt;.</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">&quot;People feel a sense of familiarity with those who recognize them.&quot;</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">311000Typing</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">29</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">501010Typing</Data></Cell>
     <Cell ss:StyleID="s67"><PhoneticText
       xmlns="urn:schemas-microsoft-com:office:excel">ワタシコロ</PhoneticText><Data
@@ -287,7 +430,7 @@
     <Cell ss:StyleID="s67"><Data ss:Type="String">501000Typing</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">17</Data></Cell>
+    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">30</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">501020Typing</Data></Cell>
     <Cell ss:StyleID="s67"><PhoneticText
       xmlns="urn:schemas-microsoft-com:office:excel">カレネコカ</PhoneticText><Data
@@ -298,7 +441,7 @@
     <Cell ss:StyleID="s67"><Data ss:Type="String">501000Typing</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">18</Data></Cell>
+    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">31</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">501030Typing</Data></Cell>
     <Cell ss:StyleID="s67"><PhoneticText
       xmlns="urn:schemas-microsoft-com:office:excel">チチオヤハハオヤデキシ</PhoneticText><Data
@@ -309,7 +452,7 @@
     <Cell ss:StyleID="s67"><Data ss:Type="String">501000Typing</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">19</Data></Cell>
+    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">32</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">501040Typing</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">私　嘘が　とても　嫌いです。</Data></Cell>
     <Cell ss:StyleID="s67"/>
@@ -318,7 +461,7 @@
     <Cell ss:StyleID="s67"><Data ss:Type="String">501000Typing</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">20</Data></Cell>
+    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">33</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">501050Typing</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">あなたの　名前を　おしえてください。</Data></Cell>
     <Cell ss:StyleID="s67"/>
@@ -327,7 +470,7 @@
     <Cell ss:StyleID="s67"><Data ss:Type="String">501000Typing</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">21</Data></Cell>
+    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">34</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">501060Typing</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">あなたに　タイピングゲームを　して　ほしいのです。</Data></Cell>
     <Cell ss:StyleID="s67"/>
@@ -336,7 +479,7 @@
     <Cell ss:StyleID="s67"><Data ss:Type="String">501000Typing</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">22</Data></Cell>
+    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">35</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">501070Typing</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">私　許可がないと　動けないもので。</Data></Cell>
     <Cell ss:StyleID="s67"/>
@@ -345,7 +488,7 @@
     <Cell ss:StyleID="s67"><Data ss:Type="String">501000Typing</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">23</Data></Cell>
+    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">36</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">501080Typing</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">署名を　お願いします。</Data></Cell>
     <Cell ss:StyleID="s67"/>
@@ -354,7 +497,7 @@
     <Cell ss:StyleID="s67"><Data ss:Type="String">501000Typing</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">24</Data></Cell>
+    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">37</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">501090Typing</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">1から10までの数字の　和を　求めてみましょう。</Data></Cell>
     <Cell ss:StyleID="s67"/>
@@ -363,7 +506,7 @@
     <Cell ss:StyleID="s67"><Data ss:Type="String">501000Typing</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">25</Data></Cell>
+    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">38</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">501100Typing</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">頭を　使う必要は　まったく　ありません。</Data></Cell>
     <Cell ss:StyleID="s67"/>
@@ -372,7 +515,7 @@
     <Cell ss:StyleID="s67"><Data ss:Type="String">501000Typing</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">26</Data></Cell>
+    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">39</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">501110Typing</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">あなたの　すべてを　壊す　おまじないです。</Data></Cell>
     <Cell ss:StyleID="s67"/>
@@ -381,7 +524,7 @@
     <Cell ss:StyleID="s67"><Data ss:Type="String">501000Typing</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">27</Data></Cell>
+    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">40</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">501120Typing</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">近いうちに　また　会いましょう。</Data></Cell>
     <Cell ss:StyleID="s67"/>
@@ -390,7 +533,7 @@
     <Cell ss:StyleID="s67"><Data ss:Type="String">501000Typing</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">28</Data></Cell>
+    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">41</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">501130Typing</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">お噂はかねがね　聞いています。</Data></Cell>
     <Cell ss:StyleID="s67"/>
@@ -399,7 +542,7 @@
     <Cell ss:StyleID="s67"><Data ss:Type="String">501000Typing</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">29</Data></Cell>
+    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">42</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">501140Typing</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">珈琲でも飲みながら話そうか。</Data></Cell>
     <Cell ss:StyleID="s67"/>
@@ -408,7 +551,7 @@
     <Cell ss:StyleID="s67"><Data ss:Type="String">501000Typing</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">30</Data></Cell>
+    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">43</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">501150Typing</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">マスターの珈琲は世界一ですねっ！</Data></Cell>
     <Cell ss:StyleID="s67"/>
@@ -417,7 +560,7 @@
     <Cell ss:StyleID="s67"><Data ss:Type="String">501000Typing</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">31</Data></Cell>
+    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">44</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">501160Typing</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">こんなことになるなんて。</Data></Cell>
     <Cell ss:StyleID="s67"/>
@@ -426,7 +569,7 @@
     <Cell ss:StyleID="s67"><Data ss:Type="String">501000Typing</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">32</Data></Cell>
+    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">45</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">501170Typing</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">お仕事、お忙しそうですね。</Data></Cell>
     <Cell ss:StyleID="s67"/>
@@ -435,7 +578,7 @@
     <Cell ss:StyleID="s67"><Data ss:Type="String">501000Typing</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">33</Data></Cell>
+    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">46</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">501180Typing</Data></Cell>
     <Cell ss:StyleID="s67"><PhoneticText
       xmlns="urn:schemas-microsoft-com:office:excel">ヒサア</PhoneticText><Data
@@ -446,7 +589,7 @@
     <Cell ss:StyleID="s67"><Data ss:Type="String">501000Typing</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">34</Data></Cell>
+    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">47</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">502010Typing</Data></Cell>
     <Cell ss:StyleID="s67"><PhoneticText
       xmlns="urn:schemas-microsoft-com:office:excel">ワタシコロ</PhoneticText><Data
@@ -457,7 +600,7 @@
     <Cell ss:StyleID="s67"><Data ss:Type="String">502000Typing</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">35</Data></Cell>
+    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">48</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">502020Typing</Data></Cell>
     <Cell ss:StyleID="s67"><PhoneticText
       xmlns="urn:schemas-microsoft-com:office:excel">ワタシコロ</PhoneticText><Data
@@ -468,7 +611,7 @@
     <Cell ss:StyleID="s67"><Data ss:Type="String">502000Typing</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">36</Data></Cell>
+    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">49</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">502030Typing</Data></Cell>
     <Cell ss:StyleID="s67"><PhoneticText
       xmlns="urn:schemas-microsoft-com:office:excel">ワタシコロ</PhoneticText><Data
@@ -479,7 +622,7 @@
     <Cell ss:StyleID="s67"><Data ss:Type="String">502000Typing</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">37</Data></Cell>
+    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">50</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">922010Typing</Data></Cell>
     <Cell ss:StyleID="s67"><PhoneticText
       xmlns="urn:schemas-microsoft-com:office:excel">カイハツゲンバ</PhoneticText><Data
@@ -490,7 +633,7 @@
     <Cell ss:StyleID="s67"><Data ss:Type="String">922000Test</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">38</Data></Cell>
+    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">51</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">922020Typing</Data></Cell>
     <Cell ss:StyleID="s67"><PhoneticText
       xmlns="urn:schemas-microsoft-com:office:excel">ドナゴエキ</PhoneticText><Data
@@ -501,7 +644,7 @@
     <Cell ss:StyleID="s67"><Data ss:Type="String">922000Test</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">39</Data></Cell>
+    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">52</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">960010Typing</Data></Cell>
     <Cell ss:StyleID="s67"><PhoneticText
       xmlns="urn:schemas-microsoft-com:office:excel">ワタシコロ</PhoneticText><Data
@@ -527,11 +670,10 @@
    </Print>
    <TabColorIndex>13</TabColorIndex>
    <Selected/>
-   <TopRowVisible>14</TopRowVisible>
    <Panes>
     <Pane>
      <Number>3</Number>
-     <ActiveRow>43</ActiveRow>
+     <ActiveRow>32</ActiveRow>
      <ActiveCol>4</ActiveCol>
     </Pane>
    </Panes>
@@ -539,7 +681,7 @@
    <ProtectScenarios>False</ProtectScenarios>
   </WorksheetOptions>
   <ConditionalFormatting xmlns="urn:schemas-microsoft-com:office:excel">
-   <Range>R5C1:R44C7</Range>
+   <Range>R5C1:R57C7</Range>
    <Condition>
     <Value1>LEN(TRIM(RC))=0</Value1>
     <Format Style='background:#E7E6E6'/>
