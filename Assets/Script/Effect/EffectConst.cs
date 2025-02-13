@@ -22,6 +22,7 @@ namespace gaw241201
             CmdRm,
             Wait,
             ConfiscateLeftEye,
+            ConfiscateBothEye,
             SetGoatEye,
             ChangeEyesPositionToMiddleUp,
             ChangeEyesPositionToMiddleDown,

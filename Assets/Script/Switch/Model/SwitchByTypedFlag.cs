@@ -40,7 +40,7 @@ namespace gaw241201.Switch.Model
 
                 if (name == "my")
                 {
-                    _publisher.Publish(new FlowSwitchArgs_Fake(FlowMasterConst.FlowMasterLabel.GameoverFlow, ""));
+                    _publisher.Publish(new FlowSwitchArgs_Fake(FlowMasterConst.FlowMasterLabel.GameoverByEyeFlow, ""));
                 }
                 else
                 {

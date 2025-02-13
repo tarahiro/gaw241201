@@ -28,6 +28,7 @@ namespace gaw241201
             CompanyFlow,
             WishlistFlow,
             GameoverFlow,
+            GameoverByEyeFlow,
             KillTestFlow,
             ExhibitionMainFlow,
             ExhibitionForestFlow,

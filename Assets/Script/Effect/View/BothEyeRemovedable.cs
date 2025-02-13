@@ -10,7 +10,7 @@ using VContainer.Unity;
 
 namespace gaw241201.View
 {
-    public class LeftEyeRemovedable : MonoBehaviour, IRemovedable
+    public class BothEyeRemovedable : MonoBehaviour, IRemovedable
     {
         [SerializeField] GameObject _eyeBlank;
 

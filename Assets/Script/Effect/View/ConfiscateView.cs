@@ -11,15 +11,15 @@ using VContainer.Unity;
 
 namespace gaw241201.View
 {
-    public class ConfiscateLeftEyeView : MonoBehaviour, IEffectItemView
+    public class ConfiscateView : MonoBehaviour, IEffectItemView
     {
         public bool IsAutoEnd => true;
-
 
         IRemovedable _removedable;
         IChangableEye _changable;
 
-        public ConfiscateLeftEyeView Construct(IRemovedable removedable, IChangableEye robbable)
+        
+        public ConfiscateView Construct(IRemovedable removedable, IChangableEye robbable)
         {
             _removedable = removedable;
             _changable = robbable;
