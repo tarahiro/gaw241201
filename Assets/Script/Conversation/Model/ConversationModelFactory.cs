@@ -14,12 +14,12 @@ namespace gaw241201
     {
         [Inject] IGroupMasterGettable<IConversationMaster> _groupMasterGettable;
         [Inject] ModelArgsFactory<IConversationMaster> _modelArgsFactory;
-        public IConversationModel CreateMainModel()
+        public ConversationModel CreateMainModel()
         {
             return new ConversationModel(new SingleTextSequenceEnterer<IConversationMaster>(_modelArgsFactory), _groupMasterGettable);
         }
 
-        public IConversationModel CreateSettingModel()
+        public ConversationModel CreateSettingModel()
         {
             return new ConversationModel(new SingleTextSequenceEnterer<IConversationMaster>(_modelArgsFactory), _groupMasterGettable);
         }

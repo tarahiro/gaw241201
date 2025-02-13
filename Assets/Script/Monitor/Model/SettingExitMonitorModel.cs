@@ -12,7 +12,7 @@ using static gaw241201.SettingRootHundler;
 
 namespace gaw241201
 {
-    public class SettingMonitorModel
+    public class SettingExitMonitorModel
     {
         FlowSwitchPublisher _publisher;
 

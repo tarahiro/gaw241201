@@ -144,6 +144,7 @@ namespace gaw241201.Inject
             builder.Register<FlagPublisher>(Lifetime.Singleton).AsSelf();
             builder.Register<FlagInitializer>(Lifetime.Singleton).AsImplementedInterfaces();
             builder.Register<TypedFlagContainer>(Lifetime.Singleton).AsSelf();
+            builder.Register<RegisterKeyValuePair>(Lifetime.Singleton).AsSelf();
         }
 
         void ConfigureMonitor(IContainerBuilder builder)
@@ -152,15 +153,18 @@ namespace gaw241201.Inject
             builder.Register<StartMonitorFlowModel>(Lifetime.Singleton).AsSelf();
             builder.Register<MonitorView>(Lifetime.Singleton).AsSelf();
             builder.Register<CmdHaltModel>(Lifetime.Singleton).AsSelf();
-            builder.Register<StartMonitorModel>(Lifetime.Singleton).AsSelf();
+            builder.Register<MonitorModel>(Lifetime.Singleton).AsSelf();
             builder.RegisterComponentInHierarchy<SettingMonitorDisplayView>().AsSelf();
 
             builder.Register<MonitorViewItemProvider>(Lifetime.Singleton).AsSelf();
             builder.Register<CmdMonitorView>(Lifetime.Singleton).AsSelf();
             builder.Register<SettingMonitorInputView>(Lifetime.Singleton).AsSelf();
 
-            builder.Register<SettingMonitorModel>(Lifetime.Singleton).AsSelf();
-            
+            builder.Register<SettingExitMonitorModel>(Lifetime.Singleton).AsSelf();
+            builder.Register<SettingEnterMonitorHighlightModel>(Lifetime.Singleton).AsSelf();
+
+            builder.Register<StartHighlightFlowModel>(Lifetime.Singleton).AsSelf();
+
             builder.RegisterEntryPoint<MonitorPresenter>();
 
         }
@@ -459,7 +463,7 @@ namespace gaw241201.Inject
             builder.Register<PlayerNameInputJudger>(Lifetime.Singleton).AsImplementedInterfaces();
             builder.Register<FreeInputUnfixedText>(Lifetime.Singleton).AsSelf();
 
-
+            builder.Register<SettingEventCatcher>(Lifetime.Singleton).AsSelf();
 
             builder.RegisterEntryPoint<SettingPresenter>();
         }

@@ -11,6 +11,7 @@ using UniRx;
 using UnityEngine;
 using VContainer;
 using VContainer.Unity;
+using MessagePipe;
 
 namespace gaw241201.View
 {
@@ -20,6 +21,7 @@ namespace gaw241201.View
         ITranslationTextDisplayer _translationTextDisplayer;
 
         [SerializeField] BlinkableCursor _cursor;
+
         const float c_interval = 10f;
 
         KeyCode[] _decideKeys = new KeyCode[]
@@ -39,18 +41,53 @@ namespace gaw241201.View
         {
             _tmp.text = "";
             SoundManager.PlaySE("TalkShort");
+
+            _publisher.PublishActiveLayer(_layer);
+
             await TextUtil.DisplayTextByCharacter(text.GetTranslatedText(_translationTextDisplayer.GetLanguageIndex()), _tmp, "Talk", _decideKeys , ct,false);
+
             await UniTask.Yield(PlayerLoopTiming.Update,ct);
             _cursor.StartBlink();
             SetCursorPosition();
-            await UniTask.WaitUntil(() => _decideKeys.Any(x => Input.GetKeyDown(x)) , cancellationToken:ct);
+            await UniTask.WaitUntil(() => !_isBlocked() && _decideKeys.Any(x => Input.GetKeyDown(x)) , cancellationToken:ct);
+            await UniTask.Yield(PlayerLoopTiming.Update, ct);
             _cursor.StopBlink();
             _cursor.EraseCursor();
+            _publisher.ResetActiveLayer();
+
         }
 
         void SetCursorPosition()
         {
             _cursor.GetComponent<RectTransform>().anchoredPosition = Vector2.right * (_tmp.preferredWidth * .5f + c_interval);
         }
+
+
+        ISubscriber<ActiveLayerConst.InputLayer> _subscriber;
+        ActiveLayerPublisher _publisher;
+
+        [Inject]
+        public void Construct(ISubscriber<ActiveLayerConst.InputLayer> subscriber, ActiveLayerPublisher publisher)
+        {
+            _subscriber = subscriber;
+            _publisher = publisher;
+
+            _subscriber.Subscribe(OnActiveLayerChanged);
+        }
+
+
+        ActiveLayerConst.InputLayer _activeLayer;
+        [SerializeField] ActiveLayerConst.InputLayer _layer;
+
+        bool _isBlocked()
+        {
+            return _layer < _activeLayer;
+        }
+
+        void OnActiveLayerChanged(ActiveLayerConst.InputLayer layer)
+        {
+            _activeLayer = layer;
+        }
+
     }
 }

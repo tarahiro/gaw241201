@@ -12,7 +12,7 @@ using VContainer.Unity;
 
 namespace gaw241201
 {
-    public class StartMonitorModel
+    public class MonitorModel
     {
         Subject<MonitorArgs> _entered = new Subject<MonitorArgs>();
         public IObservable<MonitorArgs> Entered => _entered;
@@ -24,7 +24,7 @@ namespace gaw241201
         bool _isStartMonitorSetting = false;
 
         [Inject]
-        public StartMonitorModel( ISubscriber<FlagConst.Key, string> subscriber)
+        public MonitorModel( ISubscriber<FlagConst.Key, string> subscriber)
         {
             _subscriber = subscriber;
             _subscriber.Subscribe(FlagConst.Key.IsSettingEnable, OnFlagChanged);

@@ -12,7 +12,7 @@ namespace gaw241201.View
 {
     public class SettingEyesView : MonoBehaviour, IEyePositionChangable, IFacialChangable, IGazable, IChangableEye, ISettingOrnament
     {
-        const float c_length = .2f;
+        const float c_length = 10f;
 
         [SerializeField] List<SettingEyeView> _eyeViewList;
         [SerializeField] Animator _animator;

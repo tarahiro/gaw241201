@@ -29,6 +29,8 @@ namespace gaw241201
             SwitchByTypedFlag,
             NotifySave,
             GoOtherFlow,
+            StartHighlight,
+            RegisterKeyValuePair,
         }
 
     }

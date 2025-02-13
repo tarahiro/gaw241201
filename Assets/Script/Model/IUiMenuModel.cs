@@ -14,6 +14,7 @@ namespace gaw241201
     {
         public int ItemIndex { get; }
         public int MaxItemRange { get; }
+        public bool IsEnable { get; }
         public IObservable<int> FocusChanged { get; }
         public IObservable<int> Decided { get; }
         public void MoveFocus(int menuIndex);

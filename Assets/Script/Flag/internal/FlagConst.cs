@@ -25,11 +25,14 @@ namespace gaw241201
             RestartFlow,
 
             IsSettingEnable,
+            OnEnterSettingConversation,
+            IsAdvancedSettingEnabled,
         }
 
         public enum RegisterOrder
         {
-            ReadTime
+            ReadTime,
+            SettingEnable,
         }
 
         public enum MessageKey
@@ -69,6 +72,8 @@ namespace gaw241201
                 case Key.IsRoguelikeEnabled: return Tarahiro.Const.c_false;
                 case Key.RestartFlow: return "TypingRoguelikeMainFlow";
                 case Key.IsSettingEnable: return Tarahiro.Const.c_false;
+                case Key.OnEnterSettingConversation: return "";
+                case Key.IsAdvancedSettingEnabled: return Tarahiro.Const.c_false;
 
                 default:
                     Log.DebugAssert(key + "‚Ì‰Šú’l‚ªw’è‚³‚ê‚Ä‚¢‚Ü‚¹‚ñ");

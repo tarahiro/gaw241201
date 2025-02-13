@@ -13,5 +13,6 @@ namespace gaw241201.View
     public class AdvancedItemProvider : MonoBehaviour
     {
         public SettingItemViewCheck RoguelikeCheck;
+        public SettingTabIndex AdvancedTabIndex;
     }
 }

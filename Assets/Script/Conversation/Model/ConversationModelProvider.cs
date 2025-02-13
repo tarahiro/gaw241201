@@ -17,11 +17,16 @@ namespace gaw241201
         public IConversationModel MainConversationModel { get; private set; }
 
         public IConversationModel SettingConversationModel { get; private set; }
+
+        public ICategoryEnterableModel ConversationModel { get; private set; }
     
         public void Initialize()
         {
-            MainConversationModel = _factory.CreateMainModel();
+            var model = _factory.CreateMainModel();
+
+            MainConversationModel = model;
             SettingConversationModel = _factory.CreateSettingModel();
+            ConversationModel = model;
         }
     }
 }

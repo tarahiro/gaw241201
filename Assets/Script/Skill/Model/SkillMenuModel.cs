@@ -16,6 +16,7 @@ namespace gaw241201
         IUiMenuModel _uiMenuModel;
         public int ItemIndex => _uiMenuModel.ItemIndex;
         public int MaxItemRange => 3;
+        public bool IsEnable => _uiMenuModel.IsEnable;
         Subject<int> _focusChanged = new Subject<int>();
         public IObservable<int> FocusChanged => _focusChanged;
 

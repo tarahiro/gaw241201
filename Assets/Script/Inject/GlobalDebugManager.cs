@@ -62,7 +62,7 @@ namespace gaw241201.Inject
                 if (Input.GetKeyDown(KeyCode.T))
                 {
                     Log.DebugLog("デバッグ開始");
-                    _conversationModelProvider.SettingConversationModel.EnterFlow("940500GoatEyeConversation").Forget();
+                    _conversationModelProvider.SettingConversationModel.Enter("326000TypingConversation").Forget();
                 }
 
                 if (Input.GetKeyDown(KeyCode.Y))

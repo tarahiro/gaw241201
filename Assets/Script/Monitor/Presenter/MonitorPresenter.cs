@@ -16,11 +16,16 @@ namespace gaw241201.Presenter
     {
         [Inject] ILoopInitializer _loopInitializer;
 
-        [Inject] StartMonitorModel _startModel;
+        [Inject] MonitorModel _startModel;
         [Inject] MonitorView _view;
-        [Inject] CmdMonitorView _cmdMonitorView;
+
         [Inject] SettingMonitorInputView _settingMonitorView;
-        [Inject] SettingMonitorModel _settingMonitorModel;
+        [Inject] SettingEnterMonitorHighlightModel _settingEnterMonitorHighlightModel;
+        [Inject] SettingMonitorDisplayView _settingMonitorDisplayView;
+        [Inject] SettingExitMonitorModel _settingMonitorModel;
+
+
+        [Inject] CmdMonitorView _cmdMonitorView;
         [Inject] CmdHaltModel _haltModel;
         [Inject] IChangeValueMonitorBySettings _changeValueMonitorBySettings;
 
@@ -32,6 +37,10 @@ namespace gaw241201.Presenter
             _startModel.Entered.Subscribe( _view.Enter).AddTo(_disposable);
             _cmdMonitorView.Detected.Subscribe(_ => _haltModel.Halt()).AddTo(_disposable);
             _settingMonitorView.Detected.Subscribe(_ => _settingRootHundler.Enter().Forget()).AddTo(_disposable) ;
+
+            _settingEnterMonitorHighlightModel.Highlighted.Subscribe(_ => _settingMonitorDisplayView.Highlight()).AddTo(_disposable) ;
+            _settingEnterMonitorHighlightModel.Lowlighted.Subscribe(_ => _settingMonitorDisplayView.Lowlight()).AddTo(_disposable) ;
+
             _changeValueMonitorBySettings.OnChangedValue.Subscribe(_settingMonitorModel.OnChangeFlagsBySetting).AddTo(_disposable);
         }
     }

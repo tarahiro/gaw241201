@@ -18,10 +18,12 @@ namespace gaw241201
             None = 0,
             FreeInput = 5,
             Typing = 10,
+            Conversation = 20,
             SettingMenu = 100,
             SettingMenuItem = 200,
+            SettingConversation = 300,
         
-            GameOver = 300
+            GameOver = 1000
         }
     }
 }

@@ -1,4 +1,5 @@
 using Cysharp.Threading.Tasks;
+using MessagePipe;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -13,17 +14,22 @@ namespace gaw241201
     public class AdvancedMenuModel : IUiMenuModel
     {
 
-        IUiMenuModel _menuModel;
+        UiMenuModel _menuModel;
         public int ItemIndex => _menuModel.ItemIndex;
         public int MaxItemRange => _menuModel.MaxItemRange;
+        public bool IsEnable => _menuModel.IsEnable;
 
         public IObservable<int> FocusChanged =>_menuModel.FocusChanged;
         public IObservable<int> Decided => _menuModel.Decided;
 
+        ISubscriber<FlagConst.Key, string> _subscriber;
+
         [Inject]
-        public AdvancedMenuModel(AdvancedMenuItemListFactory factory)
+        public AdvancedMenuModel(AdvancedMenuItemListFactory factory, ISubscriber<FlagConst.Key, string> subscriber)
         {
             _menuModel = new UiMenuModel(factory.CreateList());
+            _subscriber = subscriber;
+            _subscriber.Subscribe(FlagConst.Key.IsAdvancedSettingEnabled, OnFlagValueChanged);
         }
 
         public void MoveFocus(int menuIndex)
@@ -43,6 +49,46 @@ namespace gaw241201
 
         public void Exit()
         {
+
+        }
+
+        Subject<bool> _settedEnable = new Subject<bool>();
+        public IObservable<bool> SettedEnable => _settedEnable;
+
+
+        string _value;
+
+        void OnFlagValueChanged(string value)
+        {
+            if (_value != value)
+            {
+                _value = value;
+
+                if(_value == Tarahiro.Const.c_true)
+                {
+                    if (!IsEnable)
+                    {
+                        SetEnable(true);
+                    }
+                }
+
+                if(_value == Tarahiro.Const.c_false)
+                {
+                    if (IsEnable)
+                    {
+                        SetEnable(false);
+                    }
+
+                }
+            }
+
+
+        }
+
+        void SetEnable(bool b)
+        {
+            _menuModel.SetEnable(b);
+            _settedEnable.OnNext(b);
 
         }
     }

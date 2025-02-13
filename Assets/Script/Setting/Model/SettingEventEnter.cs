@@ -10,10 +10,7 @@ using VContainer.Unity;
 
 namespace gaw241201
 {
-    public interface IConversationModel
+    public class SettingEventEnter : ISettingEvent
     {
-        UniTask Enter(string bodyId);
-        void Initialize(Action<ModelArgs<IConversationMaster>> action, CompositeDisposable disposables);
-        void EndSingle();
     }
 }

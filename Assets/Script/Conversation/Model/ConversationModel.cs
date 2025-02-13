@@ -6,13 +6,14 @@ using System.Collections.Generic;
 using System.Threading;
 using Tarahiro;
 using UniRx;
+using UnityEditor.Search;
 using UnityEngine;
 using VContainer;
 using VContainer.Unity;
 
 namespace gaw241201
 {
-    public class ConversationModel : IConversationModel
+    public class ConversationModel : IConversationModel, ICategoryEnterableModel
     {
         [Inject] IGroupMasterGettable<IConversationMaster> _groupMasterGettable;
         
@@ -35,7 +36,7 @@ namespace gaw241201
             _singleTextSequenceEnterable.Entered.Subscribe(action).AddTo(disposable);
         }
 
-        public async UniTask EnterFlow(string bodyId)
+        public async UniTask Enter(string bodyId)
         {
             Log.Comment(bodyId + "ÇÃGroupäJén");
 
@@ -49,6 +50,13 @@ namespace gaw241201
             }
 
             Log.Comment(bodyId + "ÇÃGroupèIóπ");
+
+        }
+
+
+        public async UniTask EnterFlow(string bodyId)
+        {
+            await Enter(bodyId);
         }
 
         public void EndSingle()

@@ -14,6 +14,8 @@ namespace gaw241201.View
     public class SettingMonitorDisplayView : MonoBehaviour
     {
         [SerializeField] GameObject _guide;
+        [SerializeField] Animator _animator;
+
 
         private void Start()
         {
@@ -23,6 +25,16 @@ namespace gaw241201.View
         public async UniTask Enter(CancellationToken ct)
         {
             _guide.SetActive(true);
+        }
+
+        public void Highlight()
+        {
+            _animator.SetTrigger("Highlight");
+        }
+
+        public void Lowlight()
+        {
+            _animator.SetTrigger("Idle");
         }
     }
 }

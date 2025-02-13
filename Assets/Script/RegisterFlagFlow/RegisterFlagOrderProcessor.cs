@@ -31,6 +31,10 @@ namespace gaw241201
                     _globalFlagRegisterer.RegisterFlag(FlagConst.Key.ApplicationTime, s);
                     break;
 
+                case FlagConst.RegisterOrder.SettingEnable:
+                    _globalFlagRegisterer.RegisterFlag(FlagConst.Key.IsSettingEnable, "True");
+                    break;
+
                 default:
                     Log.DebugAssert(order + "ÇÕïsê≥Ç»ílÇ≈Ç∑");
                     break;

@@ -23,5 +23,17 @@ namespace gaw241201.View
         {
             LowlightedObject.SetActive(true);
         }
+
+        public void OnSetEnabled(bool b)
+        {
+            if (b)
+            {
+                Highlight();
+            }
+            else
+            {
+                Lowlight();
+            }
+        }
     }
 }

@@ -34,7 +34,7 @@ namespace gaw241201
             switch (category)
             {
                 case FlowConst.Category.Conversation:
-                    return _conversationModelProvider.MainConversationModel;
+                    return _conversationModelProvider.ConversationModel;
 
                 case FlowConst.Category.FreeInput:
                     return _freeInputModel;
@@ -77,6 +77,12 @@ namespace gaw241201
 
                 case FlowConst.Category.GoOtherFlow:
                     return InjectUtil.GetInstance<GoOtherFlow>(_scope);
+
+                case FlowConst.Category.StartHighlight:
+                    return InjectUtil.GetInstance<StartHighlightFlowModel>(_scope);
+
+                case FlowConst.Category.RegisterKeyValuePair:
+                    return InjectUtil.GetInstance<RegisterKeyValuePair>(_scope);
 
                 default:
                     Log.DebugAssert("不正なカテゴリー名です");

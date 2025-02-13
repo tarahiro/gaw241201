@@ -30,14 +30,18 @@ namespace gaw241201
         public void ChangeTab(SettingConst.TabDirection direction)
         {
             Log.DebugLog("ModelÇ≈TabêÿÇËë÷Ç¶");
-            var target = TabIndex + (int)direction;
-            if (target < 0) target += _settingTabModelList.Count;
-            if (target >= _settingTabModelList.Count) target -= _settingTabModelList.Count;
 
-            TabIndex = target;
+            do
+            {
+                TabIndex = TabIndex + (int)direction;
+                if (TabIndex < 0) TabIndex += _settingTabModelList.Count;
+                if (TabIndex >= _settingTabModelList.Count) TabIndex -= _settingTabModelList.Count;
+
+            } while (!_settingTabModelList[TabIndex].IsEnable);
+
 
             _tabChangeCts = new CancellationTokenSource();
-            _tabChanged.OnNext(new SettingTabEnterArgs(target, Current.ItemIndex, _tabChangeCts.Token));
+            _tabChanged.OnNext(new SettingTabEnterArgs(TabIndex, Current.ItemIndex, _tabChangeCts.Token));
         }
 
         public IUiMenuModel Current { get { return _settingTabModelList[TabIndex]; } }
