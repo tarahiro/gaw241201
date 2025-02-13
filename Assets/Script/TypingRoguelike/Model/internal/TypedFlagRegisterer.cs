@@ -66,8 +66,12 @@ namespace gaw241201
             {
                 switch (_fixedPair[i].key)
                 {
-                    case TypedFlagContainer.TypedKey _:
+                    case TypedFlagContainer.TypedKey.TypedName:
                         _typedFlagContainer.RegisterTypedName(_fixedPair[i].value); 
+                        break;
+
+                    case TypedFlagContainer.TypedKey.Holder:
+                        _typedFlagContainer.RegisterHolder(_fixedPair[i].value);
                         break;
 
                     default:

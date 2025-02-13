@@ -75,6 +75,9 @@ namespace gaw241201
                 case FlowConst.Category.NotifySave:
                     return InjectUtil.GetInstance<NotifySave>(_scope);
 
+                case FlowConst.Category.GoOtherFlow:
+                    return InjectUtil.GetInstance<GoOtherFlow>(_scope);
+
                 default:
                     Log.DebugAssert("不正なカテゴリー名です");
                     return null;

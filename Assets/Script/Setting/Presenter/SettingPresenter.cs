@@ -42,7 +42,7 @@ namespace gaw241201.Presenter
         public void PostInitialize()
         {
             _starter.SettingStarted.Subscribe(x => _view.Enter(x).Forget()).AddTo(_disposable);
-            _exiter.SettingStarted.Subscribe(x => _view.Exit(x).Forget()).AddTo(_disposable);
+            _exiter.SettingExited.Subscribe(x => _view.Exit(x).Forget()).AddTo(_disposable);
 
             _advancedTabModel.FocusChanged.Subscribe(x => _tabManager.Current.SetFocus(x).Forget()).AddTo(_disposable);
             _profileMenuModel.FocusChanged.Subscribe(x => _tabManager.Current.SetFocus(x).Forget()).AddTo(_disposable);

@@ -16,8 +16,8 @@
   <AllowPNG/>
  </OfficeDocumentSettings>
  <ExcelWorkbook xmlns="urn:schemas-microsoft-com:office:excel">
-  <WindowHeight>18740</WindowHeight>
-  <WindowWidth>32767</WindowWidth>
+  <WindowHeight>11300</WindowHeight>
+  <WindowWidth>19820</WindowWidth>
   <WindowTopX>32767</WindowTopX>
   <WindowTopY>32767</WindowTopY>
   <RefModeR1C1/>
@@ -88,7 +88,7 @@
   </Style>
  </Styles>
  <Worksheet ss:Name="Script">
-  <Table ss:ExpandedColumnCount="6" ss:ExpandedRowCount="60" x:FullColumns="1"
+  <Table ss:ExpandedColumnCount="6" ss:ExpandedRowCount="24" x:FullColumns="1"
    x:FullRows="1" ss:DefaultColumnWidth="52.5" ss:DefaultRowHeight="18">
    <Column ss:AutoFitWidth="0" ss:Width="30"/>
    <Column ss:AutoFitWidth="0" ss:Width="128.5"/>
@@ -96,7 +96,7 @@
    <Row ss:AutoFitHeight="0" ss:Height="24.5" ss:StyleID="s62">
     <Cell ss:StyleID="s63" ss:ArrayRange="RC"
      ss:Formula="=MID( CELL(&quot;filename&quot;,R1C1),&#10;FIND(&quot;[&quot;, CELL(&quot;filename&quot;,R1C1)) +1,&#10;FIND(&quot;]&quot;, CELL(&quot;filename&quot;,R1C1)) - FIND(&quot;[&quot;, CELL(&quot;filename&quot;,R1C1)) -1)"><Data
-      ss:Type="String">HorrorStoryMainFlow.xml</Data></Cell>
+      ss:Type="String">ExhibitionMainFlow.xml</Data></Cell>
    </Row>
    <Row ss:Index="4" ss:AutoFitHeight="0" ss:Height="17.5" ss:StyleID="s64">
     <Cell ss:StyleID="s65"><Data ss:Type="String">index</Data></Cell>
@@ -260,299 +260,11 @@
    </Row>
    <Row ss:AutoFitHeight="0">
     <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">19</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">203000TypingConversation</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">Conversation</Data></Cell>
-    <Cell ss:StyleID="s67" ss:Formula="=RC[-2]"><Data ss:Type="String">203000TypingConversation</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">GoOtherFlow</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">GoOtherFlow</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">ExhibitionForestFlow</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">Clear</Data></Cell>
-    <Cell ss:StyleID="s67" ss:Formula="=R[-4]C[-4]"><Data ss:Type="String">200000DeleteUi</Data></Cell>
-   </Row>
-   <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">20</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">204000Typing</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">TypingRoguelike</Data></Cell>
-    <Cell ss:StyleID="s67" ss:Formula="=RC[-2]"><Data ss:Type="String">204000Typing</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">Clear</Data></Cell>
-    <Cell ss:StyleID="s67" ss:Formula="=R[-3]C[-4]"><Data ss:Type="String">201000TypingConversation</Data></Cell>
-   </Row>
-   <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">21</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">205000TypingConversation</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">Conversation</Data></Cell>
-    <Cell ss:StyleID="s67" ss:Formula="=RC[-2]"><Data ss:Type="String">205000TypingConversation</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">Clear</Data></Cell>
-    <Cell ss:StyleID="s67" ss:Formula="=R[-23]C[-4]"><Data ss:Type="Number">0</Data></Cell>
-   </Row>
-   <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">22</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">206000Typing</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">TypingRoguelike</Data></Cell>
-    <Cell ss:StyleID="s67" ss:Formula="=RC[-2]"><Data ss:Type="String">206000Typing</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">Clear</Data></Cell>
-    <Cell ss:StyleID="s67" ss:Formula="=R[-4]C[-4]"><Data ss:Type="String">202000Typing</Data></Cell>
-   </Row>
-   <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">23</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">206200TypingConversation</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">Conversation</Data></Cell>
-    <Cell ss:StyleID="s67" ss:Formula="=RC[-2]"><Data ss:Type="String">206200TypingConversation</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">Clear</Data></Cell>
-    <Cell ss:StyleID="s67" ss:Formula="=R[-23]C[-4]"><Data ss:Type="String">100000InitialConversation</Data></Cell>
-   </Row>
-   <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">24</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">206500EnterGlitchEffect</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">EnterEffect</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">GlitchLargeAutoEnd</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">Clear</Data></Cell>
-    <Cell ss:StyleID="s67" ss:Formula="=R[-3]C[-4]"><Data ss:Type="String">205000TypingConversation</Data></Cell>
-   </Row>
-   <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">25</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">206800ConfiscateLeftEye</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">EnterEffect</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">ConfiscateLeftEye</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">Clear</Data></Cell>
-    <Cell ss:StyleID="s67" ss:Formula="=R[-10]C[-4]"><Data ss:Type="String">200000DeleteUi</Data></Cell>
-   </Row>
-   <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">26</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">206900Wait</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">EnterEffect</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">Wait</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">Clear</Data></Cell>
-    <Cell ss:StyleID="s67" ss:Formula="=R[-3]C[-4]"><Data ss:Type="String">206200TypingConversation</Data></Cell>
-   </Row>
-   <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">27</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">207000TypingConversation</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">Conversation</Data></Cell>
-    <Cell ss:StyleID="s67" ss:Formula="=RC[-2]"><Data ss:Type="String">207000TypingConversation</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">Clear</Data></Cell>
-    <Cell ss:StyleID="s67" ss:Formula="=R[-26]C[-4]"><Data ss:Type="String">101010TimeFreeInput</Data></Cell>
-   </Row>
-   <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">28</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">208000Typing</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">TypingRoguelike</Data></Cell>
-    <Cell ss:StyleID="s67" ss:Formula="=RC[-2]"><Data ss:Type="String">208000Typing</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">Clear</Data></Cell>
-    <Cell ss:StyleID="s67" ss:Formula="=R[-11]C[-4]"><Data ss:Type="String">201000TypingConversation</Data></Cell>
-   </Row>
-   <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">29</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">209000TypingConversation</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">Conversation</Data></Cell>
-    <Cell ss:StyleID="s67" ss:Formula="=RC[-2]"><Data ss:Type="String">209000TypingConversation</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">Clear</Data></Cell>
-    <Cell ss:StyleID="s67" ss:Formula="=R[-27]C[-4]"><Data ss:Type="String">101900InitialConversation</Data></Cell>
-   </Row>
-   <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">30</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">210000Typing</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">TypingRoguelike</Data></Cell>
-    <Cell ss:StyleID="s67" ss:Formula="=RC[-2]"><Data ss:Type="String">210000Typing</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">Clear</Data></Cell>
-    <Cell ss:StyleID="s67" ss:Formula="=R[-27]C[-4]"><Data ss:Type="String">102011ReadTimeRegisterFlag</Data></Cell>
-   </Row>
-   <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">31</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">211000EnterCmdErrorEffect</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">EnterEffect</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">CmdError</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">Clear</Data></Cell>
-    <Cell ss:StyleID="s67" ss:Formula="=R[-6]C[-4]"><Data ss:Type="String">206800ConfiscateLeftEye</Data></Cell>
-   </Row>
-   <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">32</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">211500Wait</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">EnterEffect</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">Wait</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">Clear</Data></Cell>
-    <Cell ss:StyleID="s67" ss:Formula="=R[-3]C[-4]"><Data ss:Type="String">209000TypingConversation</Data></Cell>
-   </Row>
-   <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">33</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">212000TypingConversation</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">Conversation</Data></Cell>
-    <Cell ss:StyleID="s67" ss:Formula="=RC[-2]"><Data ss:Type="String">212000TypingConversation</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">Clear</Data></Cell>
-    <Cell ss:StyleID="s67" ss:Formula="=R[-29]C[-4]"><Data ss:Type="String">102000InitialConversation</Data></Cell>
-   </Row>
-   <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">34</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">212200EndCmdErrorEffect</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">EndEffect</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">CmdError</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">Clear</Data></Cell>
-    <Cell ss:StyleID="s67" ss:Formula="=R[-7]C[-4]"><Data ss:Type="String">207000TypingConversation</Data></Cell>
-   </Row>
-   <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">35</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">212500TypingConversation</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">Conversation</Data></Cell>
-    <Cell ss:StyleID="s67" ss:Formula="=RC[-2]"><Data ss:Type="String">212500TypingConversation</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">Clear</Data></Cell>
-    <Cell ss:StyleID="s67" ss:Formula="=R[-29]C[-4]"><Data ss:Type="String">103000NameFreeInput</Data></Cell>
-   </Row>
-   <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">36</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">213000Typing</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">TypingRoguelike</Data></Cell>
-    <Cell ss:StyleID="s67" ss:Formula="=RC[-2]"><Data ss:Type="String">213000Typing</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">Clear</Data></Cell>
-    <Cell ss:StyleID="s67" ss:Formula="=R[-31]C[-4]"><Data ss:Type="String">102080DeleteUi</Data></Cell>
-   </Row>
-   <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">37</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">213500EnterCmdAnswerEffect</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">EnterEffect</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">CmdAnswer</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">Clear</Data></Cell>
-    <Cell ss:StyleID="s67" ss:Formula="=R[9]C[-4]"><Data ss:Type="String">216000TypingConversation</Data></Cell>
-   </Row>
-   <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">38</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">213800Wait</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">EnterEffect</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">Wait</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">Clear</Data></Cell>
-    <Cell ss:StyleID="s67" ss:Formula="=R[-3]C[-4]"><Data ss:Type="String">212500TypingConversation</Data></Cell>
-   </Row>
-   <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">39</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">214000TypingConversation</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">Conversation</Data></Cell>
-    <Cell ss:StyleID="s67" ss:Formula="=RC[-2]"><Data ss:Type="String">214000TypingConversation</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">Clear</Data></Cell>
-    <Cell ss:StyleID="s67" ss:Formula="=R[-33]C[-4]"><Data ss:Type="String">103000NameFreeInput</Data></Cell>
-   </Row>
-   <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">40</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">214500EndCmdErrorEffect</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">EndEffect</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">CmdAnswer</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">Clear</Data></Cell>
-    <Cell ss:StyleID="s67" ss:Formula="=R[8]C[-4]"><Data ss:Type="String">218000TypingConversation</Data></Cell>
-   </Row>
-   <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">41</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">214800TypingConversation</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">Conversation</Data></Cell>
-    <Cell ss:StyleID="s67" ss:Formula="=RC[-2]"><Data ss:Type="String">214800TypingConversation</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">Clear</Data></Cell>
-    <Cell ss:StyleID="s67" ss:Formula="=R[-33]C[-4]"><Data ss:Type="String">105000DeleteUi</Data></Cell>
-   </Row>
-   <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">42</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">215000Typing</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">TypingRoguelike</Data></Cell>
-    <Cell ss:StyleID="s67" ss:Formula="=RC[-2]"><Data ss:Type="String">215000Typing</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">Clear</Data></Cell>
-    <Cell ss:StyleID="s67" ss:Formula="=R[-35]C[-4]"><Data ss:Type="String">104000InitialConversation</Data></Cell>
-   </Row>
-   <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">43</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">215800EnterCmdRmEffect</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">EnterEffect</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">CmdRm</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">Clear</Data></Cell>
-    <Cell ss:StyleID="s67" ss:Formula="=R[20]C[-4]"><Data ss:Type="Number">0</Data></Cell>
-   </Row>
-   <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">44</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">215850MonitorHalt</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">StartMonitor</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">Cmd</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">Clear</Data></Cell>
-    <Cell ss:StyleID="s67" ss:Formula="=R[20]C[-4]"><Data ss:Type="Number">0</Data></Cell>
-   </Row>
-   <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">45</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">215900Wait</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">EnterEffect</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">Wait</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">Clear</Data></Cell>
-    <Cell ss:StyleID="s67" ss:Formula="=R[-4]C[-4]"><Data ss:Type="String">214800TypingConversation</Data></Cell>
-   </Row>
-   <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">46</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">216000TypingConversation</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">Conversation</Data></Cell>
-    <Cell ss:StyleID="s67" ss:Formula="=RC[-2]"><Data ss:Type="String">216000TypingConversation</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">Clear</Data></Cell>
-    <Cell ss:StyleID="s67" ss:Formula="=R[18]C[-4]"><Data ss:Type="Number">0</Data></Cell>
-   </Row>
-   <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">47</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">217000EnterSmallGlitchEffect</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">EnterEffect</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">GlitchSmall</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">Clear</Data></Cell>
-    <Cell ss:StyleID="s67" ss:Formula="=R[37]C[-4]"><Data ss:Type="Number">0</Data></Cell>
-   </Row>
-   <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">48</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">218000TypingConversation</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">Conversation</Data></Cell>
-    <Cell ss:StyleID="s67" ss:Formula="=RC[-2]"><Data ss:Type="String">218000TypingConversation</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">Clear</Data></Cell>
-    <Cell ss:StyleID="s67" ss:Formula="=R[17]C[-4]"><Data ss:Type="Number">0</Data></Cell>
-   </Row>
-   <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">49</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">218500EndSmallGlitchEffect</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">EndEffect</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">GlitchSmall</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">Clear</Data></Cell>
-    <Cell ss:StyleID="s67" ss:Formula="=R[37]C[-4]"><Data ss:Type="Number">0</Data></Cell>
-   </Row>
-   <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">50</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">219000EnterLargeGlitchEffect</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">EnterEffect</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">GlitchLarge</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">Clear</Data></Cell>
-    <Cell ss:StyleID="s67" ss:Formula="=R[37]C[-4]"><Data ss:Type="Number">0</Data></Cell>
-   </Row>
-   <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">51</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">220000TypingConversation</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">Conversation</Data></Cell>
-    <Cell ss:StyleID="s67" ss:Formula="=RC[-2]"><Data ss:Type="String">220000TypingConversation</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">Clear</Data></Cell>
-    <Cell ss:StyleID="s67" ss:Formula="=R[15]C[-4]"><Data ss:Type="Number">0</Data></Cell>
-   </Row>
-   <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">52</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">220300Wait</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">EnterEffect</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">Wait</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">Clear</Data></Cell>
-    <Cell ss:StyleID="s67" ss:Formula="=R[-1]C[-4]"><Data ss:Type="String">220000TypingConversation</Data></Cell>
-   </Row>
-   <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">53</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">220500EndLargeGlitchEffect</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">EndEffect</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">GlitchLarge</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">Clear</Data></Cell>
-    <Cell ss:StyleID="s67" ss:Formula="=R[-20]C[-4]"><Data ss:Type="String">212000TypingConversation</Data></Cell>
-   </Row>
-   <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">54</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">220700EnterSmallGlitchEffect</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">EnterEffect</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">GlitchSmall</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">Clear</Data></Cell>
-    <Cell ss:StyleID="s67" ss:Formula="=R[-21]C[-4]"><Data ss:Type="String">212000TypingConversation</Data></Cell>
-   </Row>
-   <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">55</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">221000EndGameOver</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">EndGame</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">GameOver</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">Clear</Data></Cell>
-    <Cell ss:StyleID="s67" ss:Formula="=R[12]C[-4]"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="s67" ss:Formula="=R[-5]C[-4]"><Data ss:Type="String">111000GlitchEffect</Data></Cell>
    </Row>
   </Table>
   <WorksheetOptions xmlns="urn:schemas-microsoft-com:office:excel">
@@ -571,19 +283,26 @@
    <TabColorIndex>13</TabColorIndex>
    <Zoom>115</Zoom>
    <Selected/>
-   <TopRowVisible>14</TopRowVisible>
+   <TopRowVisible>8</TopRowVisible>
    <Panes>
     <Pane>
      <Number>3</Number>
-     <ActiveRow>30</ActiveRow>
-     <RangeSelection>R31</RangeSelection>
+     <ActiveRow>23</ActiveRow>
+     <ActiveCol>3</ActiveCol>
     </Pane>
    </Panes>
    <ProtectObjects>False</ProtectObjects>
    <ProtectScenarios>False</ProtectScenarios>
   </WorksheetOptions>
   <ConditionalFormatting xmlns="urn:schemas-microsoft-com:office:excel">
-   <Range>R5C1:R60C6</Range>
+   <Range>R5C1:R23C6</Range>
+   <Condition>
+    <Value1>LEN(TRIM(RC))=0</Value1>
+    <Format Style='background:#E7E6E6'/>
+   </Condition>
+  </ConditionalFormatting>
+  <ConditionalFormatting xmlns="urn:schemas-microsoft-com:office:excel">
+   <Range>R24C1:R24C6</Range>
    <Condition>
     <Value1>LEN(TRIM(RC))=0</Value1>
     <Format Style='background:#E7E6E6'/>
@@ -627,7 +346,7 @@
    <Row ss:AutoFitHeight="0" ss:Height="24.5" ss:StyleID="s62">
     <Cell ss:StyleID="s63" ss:ArrayRange="RC"
      ss:Formula="=MID( CELL(&quot;filename&quot;,R1C1),&#10;FIND(&quot;[&quot;, CELL(&quot;filename&quot;,R1C1)) +1,&#10;FIND(&quot;]&quot;, CELL(&quot;filename&quot;,R1C1)) - FIND(&quot;[&quot;, CELL(&quot;filename&quot;,R1C1)) -1)"><Data
-      ss:Type="String">HorrorStoryMainFlow.xml</Data></Cell>
+      ss:Type="String">ExhibitionMainFlow.xml</Data></Cell>
    </Row>
    <Row ss:Index="4" ss:AutoFitHeight="0" ss:Height="17.5" ss:StyleID="s64">
     <Cell ss:StyleID="s65"><Data ss:Type="String">index</Data></Cell>

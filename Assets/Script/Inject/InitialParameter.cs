@@ -18,7 +18,7 @@ namespace gaw241201
         public LanguageConst.AvailableLanguage Language;
         public StartOptionKey StartOption;
 
-        public bool IsFakeSaveData = true;
+        public bool UseDummySaveData = true;
 
         [SerializeField]
         public DummySaveData DummySaveData;

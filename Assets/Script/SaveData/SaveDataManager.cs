@@ -12,6 +12,7 @@ namespace gaw241201
 {
     public class SaveDataManager : ILoadable, ISavable, ISaveDeletable
     {
+        [Inject] FakeStaticSaveData fakeStaticSaveData;
         [Inject] ISaveDataProvider _dataProvider;
         [Inject] IGlobalFlagRegisterer _registerer;
         [Inject] IGlobalFlagProvider _provider;
@@ -46,8 +47,8 @@ namespace gaw241201
 
             foreach (var key in SaveDataConst.SavableKeys)
             {
-                Log.Comment(key + "をセーブ");
-                _dataProvider.Provide().SaveString(key.ToString(), _provider.GetFlag(key));
+                Log.Comment(key + "をセーブ : " + _provider.GetFlag(key));
+                fakeStaticSaveData.SaveString(key.ToString(), _provider.GetFlag(key));
             }
         }
 

@@ -24,10 +24,10 @@ namespace gaw241201.Presenter
         public void PostInitialize()
         {
             _model.Entered.Subscribe(_view.Enter).AddTo(disposables);
-            _view.Clicked.Subscribe(_ => _model.Exit()).AddTo(disposables);
+            _view.Clicked.Subscribe(_ => _model.ToTitle()).AddTo(disposables);
 
-            _processor.Decided.Subscribe(_ => _model.Exit()).AddTo(disposables);
-            _processor.Canceled.Subscribe(_ => _model.Exit()).AddTo(disposables);
+            _processor.Decided.Subscribe(_ => _model.Restart()).AddTo(disposables);
+            _processor.Canceled.Subscribe(_ => _model.ToTitle()).AddTo(disposables);
         }
 
         public void Dispose()

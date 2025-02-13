@@ -28,6 +28,7 @@ namespace gaw241201
             SkillAchieve,
             SwitchByTypedFlag,
             NotifySave,
+            GoOtherFlow,
         }
 
     }

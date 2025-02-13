@@ -15,11 +15,20 @@ namespace gaw241201
         bool _isTypedNameRegistered = false;
         string _typedName;
 
+        bool _isHolderegistered = false;
+        string _Holder;
+
         public void RegisterTypedName(string name)
         {
             Log.DebugLog("Register");
             _typedName = name;
             _isTypedNameRegistered = true;
+        }
+
+        public void RegisterHolder(string holder)
+        {
+            _Holder = holder;
+            _isHolderegistered = true;
         }
 
         public bool TryGetTypedName(out string typedName)
@@ -36,9 +45,24 @@ namespace gaw241201
             }
         }
 
+        public bool TryGetHolder(out string holder)
+        {
+            if (_isHolderegistered)
+            {
+                holder = _Holder;
+                return true;
+            }
+            else
+            {
+                holder = "";
+                return false;
+            }
+        }
+
         public enum TypedKey
         {
             TypedName,
+            Holder,
         }
     }
 }

@@ -9,7 +9,7 @@
   <Author>h t</Author>
   <LastAuthor>h t</LastAuthor>
   <Created>2021-10-25T13:58:26Z</Created>
-  <LastSaved>2025-02-01T12:33:43Z</LastSaved>
+  <LastSaved>2025-02-12T08:37:23Z</LastSaved>
   <Version>16.00</Version>
  </DocumentProperties>
  <OfficeDocumentSettings xmlns="urn:schemas-microsoft-com:office:office">
@@ -248,7 +248,7 @@
     <Cell ss:StyleID="s68"><PhoneticText
       xmlns="urn:schemas-microsoft-com:office:excel">ドウブツ</PhoneticText><Data
       ss:Type="String">動物</Data></Cell>
-    <Cell ss:StyleID="s68"><Data ss:Type="String">Ani</Data></Cell>
+    <Cell ss:StyleID="s68"><Data ss:Type="String">Ani.</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
     <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">18</Data></Cell>
@@ -256,7 +256,7 @@
     <Cell ss:StyleID="s67"><PhoneticText
       xmlns="urn:schemas-microsoft-com:office:excel">ヒト</PhoneticText><Data
       ss:Type="String">人</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">Human</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Hum.</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
     <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">19</Data></Cell>
@@ -291,12 +291,12 @@
    <TabColorIndex>13</TabColorIndex>
    <Zoom>115</Zoom>
    <Selected/>
-   <TopRowVisible>8</TopRowVisible>
+   <TopRowVisible>5</TopRowVisible>
    <Panes>
     <Pane>
      <Number>3</Number>
-     <ActiveRow>14</ActiveRow>
-     <ActiveCol>3</ActiveCol>
+     <ActiveRow>16</ActiveRow>
+     <ActiveCol>2</ActiveCol>
     </Pane>
    </Panes>
    <ProtectObjects>False</ProtectObjects>

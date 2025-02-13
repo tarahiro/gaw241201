@@ -13,14 +13,14 @@ namespace gaw241201
 {
     public class SettingExiter
     {
-        Subject<SettingExitArgs> _settingStarted = new Subject<SettingExitArgs>();
-        public IObservable<SettingExitArgs> SettingStarted => _settingStarted;
+        Subject<SettingExitArgs> _settingExited = new Subject<SettingExitArgs>();
+        public IObservable<SettingExitArgs> SettingExited => _settingExited;
 
         CancellationTokenSource _cts;
         public async UniTask Enter()
         {
             _cts = new CancellationTokenSource();
-            _settingStarted.OnNext(new SettingExitArgs(_cts.Token));
+            _settingExited.OnNext(new SettingExitArgs(_cts.Token));
         }
     }
 }

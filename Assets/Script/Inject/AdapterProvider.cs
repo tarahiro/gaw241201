@@ -20,9 +20,10 @@ namespace gaw241201
         [Inject] InitialParameter.StartOptionKey _startOptionKey;
         [Inject] bool _isFakeLoop;
 
+
         public IAdapterManagerToModel ProvideInitialAdapter()
         {
-            if (_startOptionKey == InitialParameter.StartOptionKey.IsSkipTitle)
+            if (GlobalStaticFlag.IsSkipTitle ||  _startOptionKey == InitialParameter.StartOptionKey.IsSkipTitle)
             {
                 return ProvideMainLoopAdapter();
             }
@@ -42,7 +43,14 @@ namespace gaw241201
             }
             else
             {
-                return _initialLoopStarter;
+                if (GlobalStaticFlag.IsSkipTitle)
+                {
+                    return _mainLoopStarter;
+                }
+                else
+                {
+                    return _initialLoopStarter;
+                }
             }
         }
     }

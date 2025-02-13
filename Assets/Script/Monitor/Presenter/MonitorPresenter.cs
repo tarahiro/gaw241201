@@ -20,7 +20,9 @@ namespace gaw241201.Presenter
         [Inject] MonitorView _view;
         [Inject] CmdMonitorView _cmdMonitorView;
         [Inject] SettingMonitorView _settingMonitorView;
+        [Inject] SettingMonitorModel _settingMonitorModel;
         [Inject] CmdHaltModel _haltModel;
+        [Inject] IChangeValueMonitorBySettings _changeValueMonitorBySettings;
 
         [Inject] SettingRootHundler _settingRootHundler;
 
@@ -32,6 +34,7 @@ namespace gaw241201.Presenter
             _startModel.Entered.Subscribe( _view.Enter).AddTo(_disposable);
             _cmdMonitorView.Detected.Subscribe(_ => _haltModel.Halt()).AddTo(_disposable);
             _settingMonitorView.Detected.Subscribe(_ => _settingRootHundler.Enter().Forget()).AddTo(_disposable) ;
+            _changeValueMonitorBySettings.OnChangedValue.Subscribe(_settingMonitorModel.OnChangeFlagsBySetting).AddTo(_disposable);
         }
     }
 }

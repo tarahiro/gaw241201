@@ -157,6 +157,8 @@ namespace gaw241201.Inject
             builder.Register<MonitorViewItemProvider>(Lifetime.Singleton).AsSelf();
             builder.Register<CmdMonitorView>(Lifetime.Singleton).AsSelf();
             builder.Register<SettingMonitorView>(Lifetime.Singleton).AsSelf();
+
+            builder.Register<SettingMonitorModel>(Lifetime.Singleton).AsSelf();
             
             builder.RegisterEntryPoint<MonitorPresenter>();
 
@@ -182,6 +184,7 @@ namespace gaw241201.Inject
 
             //Save
             builder.Register<SaveDataManager>(Lifetime.Singleton).AsSelf().AsImplementedInterfaces();
+            builder.Register<FakeStaticSaveData>(Lifetime.Singleton).AsSelf();
             builder.Register<SaveData>(Lifetime.Singleton).AsSelf();
 
             builder.Register<SaveDataProvider>(Lifetime.Singleton).AsImplementedInterfaces().WithParameter<InitialParameter>(_initialParameter);
@@ -419,19 +422,12 @@ namespace gaw241201.Inject
 
             builder.RegisterMessagePipe();
 
-            //var options = builder.RegisterMessagePipe(/* configure option */);
-
-            /*
-            builder.RegisterMessageBroker<int>(options);
-            builder.RegisterMessageBroker<FlowSwitchArgs_Fake>(options);
-            */
-
             builder.Register<EmbeddedTextViewManager>(Lifetime.Singleton).AsSelf();
         }
 
         void ConfigureSetting(IContainerBuilder builder)
         {
-            builder.Register<SettingRootHundler>(Lifetime.Singleton).AsSelf();
+            builder.Register<SettingRootHundler>(Lifetime.Singleton).AsSelf().AsImplementedInterfaces();
             builder.Register<SettingStarter>(Lifetime.Singleton).AsSelf();
             builder.Register<SettingExiter>(Lifetime.Singleton).AsSelf();
             builder.RegisterComponentInHierarchy<SettingRootView>().AsSelf();
@@ -479,6 +475,7 @@ namespace gaw241201.Inject
         void ConfigureSwitch(IContainerBuilder builder)
         {
             builder.Register<SwitchByTypedFlag>(Lifetime.Singleton).AsSelf();
+            builder.Register<GoOtherFlow>(Lifetime.Singleton).AsSelf();
         }
 
         void ConfigureNotifySave(IContainerBuilder builder)

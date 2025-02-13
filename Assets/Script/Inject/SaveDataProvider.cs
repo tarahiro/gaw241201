@@ -13,17 +13,25 @@ namespace gaw241201
     public class SaveDataProvider : ISaveDataProvider
     {
         [Inject] SaveData _saveData;
+        [Inject] FakeStaticSaveData _fakeStaticSaveData;
         [Inject] InitialParameter _initialParameter;
 
         public ISaveData Provide()
         {
-            if (!_initialParameter.IsFakeSaveData)
+            if (_initialParameter.UseDummySaveData)
             {
-                return _saveData;
+                if (GlobalStaticFlag.IsSkipTitle)
+                {
+                    return _fakeStaticSaveData;
+                }
+                else
+                {
+                    return _initialParameter.DummySaveData;
+                }
             }
             else
             {
-                return _initialParameter.DummySaveData;
+                return _fakeStaticSaveData;
             }
         }
     }

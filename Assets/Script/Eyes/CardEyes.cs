@@ -19,9 +19,10 @@ namespace gaw241201.View
 
         [SerializeField] List<EyeView> _eyeViewList;
         ISubscriber<GazeConst.GazingKey, Vector2> _subscriber;
-         ISubscriber<GazeConst.GazingKey, ConversationViewConst.Facial> _facialSubscriber;
+        ISubscriber<GazeConst.GazingKey, ConversationViewConst.Facial> _facialSubscriber;
         ISubscriber<GazeConst.GazingKey, Unit> _gazeResetSubscriber;
 
+       
 
 
         public void Construct(ISubscriber<GazeConst.GazingKey, Vector2> subscriber, ISubscriber<GazeConst.GazingKey, ConversationViewConst.Facial> facialSubscriber, ISubscriber<GazeConst.GazingKey, Unit> gazeResetSubscriber)
@@ -33,9 +34,9 @@ namespace gaw241201.View
 
         void Start()
         {
-            _subscriber.Subscribe(GazingKey, Gaze);
-            _facialSubscriber.Subscribe(GazingKey, SetEffect);
-            _gazeResetSubscriber.Subscribe(GazingKey, _ => ResetGaze());
+            _subscriber.Subscribe(GazingKey, Gaze).AddTo(this);
+            _facialSubscriber.Subscribe(GazingKey, SetEffect).AddTo(this);
+            _gazeResetSubscriber.Subscribe(GazingKey, _ => ResetGaze()).AddTo(this);
 
         }
 

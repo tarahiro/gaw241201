@@ -28,6 +28,22 @@ namespace gaw241201.Switch.Model
                 }
                 else
                 {
+                    _publisher.Publish(new FlowSwitchArgs_Fake(FlowMasterConst.FlowMasterLabel.ExhibitionForest2Flow, ""));
+                }
+
+                Log.DebugLog(name);
+            }
+
+            if (bodyId == "KillByEye")
+            {
+                _typedFlagContainer.TryGetHolder(out string name);
+
+                if (name == "my")
+                {
+                    _publisher.Publish(new FlowSwitchArgs_Fake(FlowMasterConst.FlowMasterLabel.GameoverFlow, ""));
+                }
+                else
+                {
                     _publisher.Publish(new FlowSwitchArgs_Fake(FlowMasterConst.FlowMasterLabel.TrueEndFlow, ""));
                 }
 
