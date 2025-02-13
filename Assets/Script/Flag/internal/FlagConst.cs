@@ -23,6 +23,8 @@ namespace gaw241201
             IsSaveDataExist,
             IsRoguelikeEnabled,
             RestartFlow,
+
+            IsSettingEnable,
         }
 
         public enum RegisterOrder
@@ -66,6 +68,7 @@ namespace gaw241201
                 case Key.IsSaveDataExist: return Tarahiro.Const.c_false;
                 case Key.IsRoguelikeEnabled: return Tarahiro.Const.c_false;
                 case Key.RestartFlow: return "TypingRoguelikeMainFlow";
+                case Key.IsSettingEnable: return Tarahiro.Const.c_false;
 
                 default:
                     Log.DebugAssert(key + "‚Ì‰Šú’l‚ªw’è‚³‚ê‚Ä‚¢‚Ü‚¹‚ñ");

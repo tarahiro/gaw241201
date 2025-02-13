@@ -1,4 +1,5 @@
 using Cysharp.Threading.Tasks;
+using MessagePipe;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -13,7 +14,9 @@ namespace gaw241201
 {
     public class SettingMonitorModel
     {
-        [Inject] FlowSwitchPublisher _publisher;
+        FlowSwitchPublisher _publisher;
+
+
 
         public void OnChangeFlagsBySetting(List<MoniteredChanged> list)
         {

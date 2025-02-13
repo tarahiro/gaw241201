@@ -153,10 +153,11 @@ namespace gaw241201.Inject
             builder.Register<MonitorView>(Lifetime.Singleton).AsSelf();
             builder.Register<CmdHaltModel>(Lifetime.Singleton).AsSelf();
             builder.Register<StartMonitorModel>(Lifetime.Singleton).AsSelf();
+            builder.RegisterComponentInHierarchy<SettingMonitorDisplayView>().AsSelf();
 
             builder.Register<MonitorViewItemProvider>(Lifetime.Singleton).AsSelf();
             builder.Register<CmdMonitorView>(Lifetime.Singleton).AsSelf();
-            builder.Register<SettingMonitorView>(Lifetime.Singleton).AsSelf();
+            builder.Register<SettingMonitorInputView>(Lifetime.Singleton).AsSelf();
 
             builder.Register<SettingMonitorModel>(Lifetime.Singleton).AsSelf();
             

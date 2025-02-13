@@ -605,6 +605,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 131709262}
+  - component: {fileID: 131709263}
   m_Layer: 5
   m_Name: EscapeView
   m_TagString: Untagged
@@ -632,6 +633,19 @@ RectTransform:
   m_AnchoredPosition: {x: 48, y: -48}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0, y: 1}
+--- !u!114 &131709263
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 131709261}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b7b2d17c1b29524f8f4cd193c51f476, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _guide: {fileID: 739247609}
 --- !u!1 &164536155
 GameObject:
   m_ObjectHideFlags: 0
@@ -1526,11 +1540,11 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 938131906}
   - {fileID: 403598738}
   - {fileID: 1310494466}
   - {fileID: 2117334747}
   - {fileID: 1132458254}
-  - {fileID: 938131906}
   - {fileID: 1306050619}
   - {fileID: 975826448}
   - {fileID: 1755200570}
@@ -3065,6 +3079,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &739247609 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2906685448933496902, guid: 8bbd993b500c4cb4dbd200d5db62bb2c, type: 3}
+  m_PrefabInstance: {fileID: 5489322660444215963}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &751579539
 PrefabInstance:
   m_ObjectHideFlags: 0

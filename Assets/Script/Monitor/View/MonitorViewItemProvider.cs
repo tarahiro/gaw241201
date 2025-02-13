@@ -13,7 +13,7 @@ namespace gaw241201.View
     public class MonitorViewItemProvider
     {
         [Inject] CmdMonitorView _cmd;
-        [Inject] SettingMonitorView _setting;
+        [Inject] SettingMonitorInputView _setting;
 
         public IMonitorViewItem Create(string bodyId)
         {
