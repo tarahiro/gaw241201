@@ -258,6 +258,13 @@ namespace gaw241201.Inject
             builder.RegisterComponentInHierarchy<ClickInputView>().AsSelf();
 
             builder.RegisterEntryPoint<ClickInputPresenter>();
+
+
+            builder.Register<SelectInputModelFake>(Lifetime.Singleton).AsSelf();
+            builder.Register<SelectInputView>(Lifetime.Singleton).AsSelf();
+            builder.Register<SelectInputInputView>(Lifetime.Singleton).AsSelf();
+            builder.Register<SelectInputProcessor>(Lifetime.Singleton).AsSelf();
+            builder.RegisterComponentInHierarchy<SelectInputDisplayView>().AsSelf();
         }
 
         void ConfigureFreeInput(IContainerBuilder builder)

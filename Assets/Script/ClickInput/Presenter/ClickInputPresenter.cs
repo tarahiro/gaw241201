@@ -19,6 +19,11 @@ namespace gaw241201.Presenter
         [Inject] ClickInputView _view;
         [Inject] DeleteClickInputUi _deleteUi;
 
+        [Inject] SelectInputModelFake _selectInputModelFake;
+        [Inject] SelectInputView _selectInputView;
+        [Inject] SelectInputDisplayView _selectInputDisplayView;
+        [Inject] SelectInputProcessor _selectInputProcessor;
+
         CompositeDisposable _compositeDisposable = new CompositeDisposable();
 
         public void PostInitialize()
@@ -26,6 +31,12 @@ namespace gaw241201.Presenter
             _model.Entered.Subscribe(x => _view.Enter(x).Forget()).AddTo(_compositeDisposable);
             _deleteUi.UiDeleted.Subscribe(x => _view.Delete()).AddTo(_compositeDisposable);
             _view.Exited.Subscribe(_model.End).AddTo(_compositeDisposable);
+
+            _selectInputModelFake.Entered.Subscribe(_selectInputView.Enter).AddTo(_compositeDisposable);
+            _selectInputProcessor.LrInputted.Subscribe(_selectInputModelFake.Focus).AddTo(_compositeDisposable);
+            _selectInputModelFake.Focused.Subscribe(_selectInputDisplayView.Focus).AddTo(_compositeDisposable);
+            _selectInputProcessor.Decided.Subscribe(_ => _selectInputModelFake.Exit()).AddTo(_compositeDisposable);
+            _selectInputModelFake.Exited.Subscribe(_ => _selectInputView.Exit()).AddTo(_compositeDisposable);
         }
     }
 }

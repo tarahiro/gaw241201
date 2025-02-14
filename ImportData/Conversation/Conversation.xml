@@ -9,7 +9,7 @@
   <Author>h t</Author>
   <LastAuthor>h t</LastAuthor>
   <Created>2021-10-25T13:58:26Z</Created>
-  <LastSaved>2025-02-14T09:11:51Z</LastSaved>
+  <LastSaved>2025-02-14T09:27:52Z</LastSaved>
   <Version>16.00</Version>
  </DocumentProperties>
  <OfficeDocumentSettings xmlns="urn:schemas-microsoft-com:office:office">
@@ -523,8 +523,8 @@
     <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">37</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">109130InitialConversation</Data></Cell>
     <Cell ss:StyleID="s67"><PhoneticText
-      xmlns="urn:schemas-microsoft-com:office:excel">デヘントウ</PhoneticText><Data
-      ss:Type="String">これから出る　ボタンを　クリックして　返答してくださいね。</Data></Cell>
+      xmlns="urn:schemas-microsoft-com:office:excel">デエラヘントウ</PhoneticText><Data
+      ss:Type="String">これから出る　ボタンを　選んで　返答してくださいね。</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">Please click the button that will appear next and respond.</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">109000InitialConversation</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">RightTop</Data></Cell>
@@ -1324,7 +1324,9 @@
    <Row ss:AutoFitHeight="0">
     <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">110</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">302550TypingConversation</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">&lt;style=highlight&gt;東京都港区海岸１−７−１&lt;/style&gt;　ですから。</Data></Cell>
+    <Cell ss:StyleID="s67"><PhoneticText
+      xmlns="urn:schemas-microsoft-com:office:excel">カイガン</PhoneticText><Data
+      ss:Type="String">東京都港区海岸1-7-1&lt;style=highlight&gt;産業貿易センター&lt;/style&gt;ですから。</Data></Cell>
     <Cell ss:StyleID="s67"/>
     <Cell ss:StyleID="s67"><Data ss:Type="String">302500TypingConversation</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">Center</Data></Cell>
@@ -1721,8 +1723,8 @@
     <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">145</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">345010TypingConversation</Data></Cell>
     <Cell ss:StyleID="s67"><PhoneticText
-      xmlns="urn:schemas-microsoft-com:office:excel">コウドセッテイヒラ</PhoneticText><Data
-      ss:Type="String">「高度な設定」タブを　開いたわ！</Data></Cell>
+      xmlns="urn:schemas-microsoft-com:office:excel">コウドセッテイカイホウ</PhoneticText><Data
+      ss:Type="String">「高度な設定」タブを　解放したわ！</Data></Cell>
     <Cell ss:StyleID="s67"/>
     <Cell ss:StyleID="s67"><Data ss:Type="String">345000TypingConversation</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">Center</Data></Cell>
@@ -2604,11 +2606,11 @@
    <TabColorIndex>13</TabColorIndex>
    <Zoom>115</Zoom>
    <Selected/>
-   <TopRowVisible>140</TopRowVisible>
+   <TopRowVisible>98</TopRowVisible>
    <Panes>
     <Pane>
      <Number>3</Number>
-     <ActiveRow>149</ActiveRow>
+     <ActiveRow>114</ActiveRow>
      <ActiveCol>2</ActiveCol>
     </Pane>
    </Panes>

@@ -31,6 +31,7 @@ namespace gaw241201
             GoOtherFlow,
             StartHighlight,
             RegisterKeyValuePair,
+            SelectInput,
         }
 
     }

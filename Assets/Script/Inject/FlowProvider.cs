@@ -84,6 +84,9 @@ namespace gaw241201
                 case FlowConst.Category.RegisterKeyValuePair:
                     return InjectUtil.GetInstance<RegisterKeyValuePair>(_scope);
 
+                case FlowConst.Category.SelectInput:
+                    return InjectUtil.GetInstance<SelectInputModelFake>(_scope);
+
                 default:
                     Log.DebugAssert("不正なカテゴリー名です");
                     return null;

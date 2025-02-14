@@ -19,7 +19,7 @@ namespace gaw241201.View
         {
             await _bodyView.Enter();
             await _bodyView.SetFocus(menuIndex);
-            //_indexView.Highlight();
+            _indexView.Highlight();
         }
 
         public virtual async UniTask SetFocus(int menuIndex)
@@ -31,7 +31,7 @@ namespace gaw241201.View
         public virtual async UniTask Exit()
         {
             await _bodyView.Exit();
-            //_indexView.Lowlight();
+            _indexView.Lowlight();
         }
 
         public virtual async UniTask Decide(int menuIndex)
