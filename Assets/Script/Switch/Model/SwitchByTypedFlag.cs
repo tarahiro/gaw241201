@@ -44,7 +44,7 @@ namespace gaw241201.Switch.Model
                 }
                 else
                 {
-                    _publisher.Publish(new FlowSwitchArgs_Fake(FlowMasterConst.FlowMasterLabel.TrueEndFlow, ""));
+                    _publisher.Publish(new FlowSwitchArgs_Fake(FlowMasterConst.FlowMasterLabel.ExhibitionClearFlow, ""));
                 }
 
                 Log.DebugLog(name);

@@ -36,6 +36,7 @@ namespace gaw241201
             ExhibitionForestRestartFlow,
             ExhibitionForest2RestartFlow,
             ExhibitionForestRoguelikeFlow,
+            ExhibitionClearFlow,
 
             GoOtherFlowTestFlow,
         }

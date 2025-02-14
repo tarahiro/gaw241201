@@ -13,12 +13,12 @@ namespace gaw241201.View
 {
     public class GlitchEffectAutoEndItemView : GlitchEffectItemView
     {
-        const float c_glitchTime = 2f;
+        [SerializeField] float _glitchTime = 2f;
         public override async UniTask Enter(CancellationToken cancellationToken)
         {
             await base.Enter(cancellationToken);
 
-            await UniTask.WaitForSeconds(c_glitchTime, cancellationToken: cancellationToken);
+            await UniTask.WaitForSeconds(_glitchTime, cancellationToken: cancellationToken);
         }
     }
 }

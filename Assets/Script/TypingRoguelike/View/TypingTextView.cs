@@ -174,7 +174,6 @@ namespace gaw241201.View
 
             //—^‚¦‚ç‚ê‚½•¶š—ñ‚ğ•Ê‚Ì•¶š—ñ‚É’u‚«Š·‚¦‚éˆ—
             List<string> splitted = SplitAtUntypedTag(beforeReplaceText);
-            /*
             
             foreach (KeyValuePair<char, string> keyValuePair in replacingDictionary)
             {
@@ -190,7 +189,6 @@ namespace gaw241201.View
                     splitted[j] = ReplacedTextOutTag(splitted[j], keyValuePair.Key.ToString(), replacedString[j]); 
                 }
             }
-            */
             
 
             return ConcatSplittedTypingText(splitted);

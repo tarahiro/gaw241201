@@ -14,6 +14,7 @@ namespace gaw241201
 {
     public class SettingExitMonitorModel
     {
+        [Inject]
         FlowSwitchPublisher _publisher;
 
 

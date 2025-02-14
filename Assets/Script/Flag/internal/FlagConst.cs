@@ -70,7 +70,7 @@ namespace gaw241201
                 case Key.BirthDate: return "BirthDate";
                 case Key.IsSaveDataExist: return Tarahiro.Const.c_false;
                 case Key.IsRoguelikeEnabled: return Tarahiro.Const.c_false;
-                case Key.RestartFlow: return "TypingRoguelikeMainFlow";
+                case Key.RestartFlow: return "ExhibitionMainFlow";
                 case Key.IsSettingEnable: return Tarahiro.Const.c_false;
                 case Key.OnEnterSettingConversation: return "";
                 case Key.IsAdvancedSettingEnabled: return Tarahiro.Const.c_false;
