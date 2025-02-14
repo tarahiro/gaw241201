@@ -16,8 +16,8 @@
   <AllowPNG/>
  </OfficeDocumentSettings>
  <ExcelWorkbook xmlns="urn:schemas-microsoft-com:office:excel">
-  <WindowHeight>11300</WindowHeight>
-  <WindowWidth>19820</WindowWidth>
+  <WindowHeight>16940</WindowHeight>
+  <WindowWidth>32767</WindowWidth>
   <WindowTopX>32767</WindowTopX>
   <WindowTopY>32767</WindowTopY>
   <RefModeR1C1/>
@@ -300,36 +300,36 @@
    </Row>
    <Row ss:AutoFitHeight="0">
     <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">18</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">304030Typing</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">304510Typing</Data></Cell>
     <Cell ss:StyleID="s67"><PhoneticText
       xmlns="urn:schemas-microsoft-com:office:excel">キギナ</PhoneticText><Data
       ss:Type="String">木々が　泣いています。</Data></Cell>
     <Cell ss:StyleID="s67"/>
     <Cell ss:StyleID="s67"><Data ss:Type="String">Woods are crying.</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">&quot;People feel a sense of familiarity with those who recognize them.&quot;</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">304000Typing</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">304500Typing</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
     <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">19</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">304040Typing</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">304520Typing</Data></Cell>
     <Cell ss:StyleID="s67"><PhoneticText
       xmlns="urn:schemas-microsoft-com:office:excel">ドクチハ</PhoneticText><Data
       ss:Type="String">毒トカゲが　地を這っています。</Data></Cell>
     <Cell ss:StyleID="s67"/>
     <Cell ss:StyleID="s67"><Data ss:Type="String">Lizard is crawling.</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">&quot;People feel a sense of familiarity with those who recognize them.&quot;</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">304000Typing</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">304500Typing</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
     <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">20</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">304050Typing</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">304530Typing</Data></Cell>
     <Cell ss:StyleID="s67"><PhoneticText
       xmlns="urn:schemas-microsoft-com:office:excel">メダマ</PhoneticText><Data
       ss:Type="String">カラスが　&lt;key=Name&gt;の目玉を　えぐりました。</Data></Cell>
     <Cell ss:StyleID="s67"/>
     <Cell ss:StyleID="s67"><Data ss:Type="String">Bird Crushes &lt;key=Name&gt;'s eye.</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">&quot;People feel a sense of familiarity with those who recognize them.&quot;</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">304000Typing</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">304500Typing</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
     <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">21</Data></Cell>
@@ -355,18 +355,18 @@
    </Row>
    <Row ss:AutoFitHeight="0">
     <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">23</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">311010Typing</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">308030Typing</Data></Cell>
     <Cell ss:StyleID="s67"><PhoneticText
       xmlns="urn:schemas-microsoft-com:office:excel">アカメヤギミ</PhoneticText><Data
       ss:Type="String">赤い目の　山羊が　こちらを見ています。</Data></Cell>
     <Cell ss:StyleID="s67"/>
     <Cell ss:StyleID="s67"><Data ss:Type="String">A red-eyed goat is watching &lt;key=Name&gt;.</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">&quot;People feel a sense of familiarity with those who recognize them.&quot;</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">311000Typing</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">308000Typing</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
     <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">24</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">311020Typing</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">311010Typing</Data></Cell>
     <Cell ss:StyleID="s67"><PhoneticText
       xmlns="urn:schemas-microsoft-com:office:excel">シオウ</PhoneticText><Data
       ss:Type="String">死の　王です。</Data></Cell>
@@ -377,7 +377,7 @@
    </Row>
    <Row ss:AutoFitHeight="0">
     <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">25</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">311030Typing</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">311020Typing</Data></Cell>
     <Cell ss:StyleID="s67"><PhoneticText
       xmlns="urn:schemas-microsoft-com:office:excel">イ</PhoneticText><Data
       ss:Type="String">&lt;key=Name&gt;は　言いました。</Data></Cell>
@@ -388,10 +388,10 @@
    </Row>
    <Row ss:AutoFitHeight="0">
     <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">26</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">311040Typing</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">311030Typing</Data></Cell>
     <Cell ss:StyleID="s67"><PhoneticText
       xmlns="urn:schemas-microsoft-com:office:excel">ツミツグナ</PhoneticText><Data
-      ss:Type="String">『罪を　償わせて　ください。』</Data></Cell>
+      ss:Type="String">「罪を　償わせて　ください。」</Data></Cell>
     <Cell ss:StyleID="s67"/>
     <Cell ss:StyleID="s67"><Data ss:Type="String">Please let me atone for sine.</Data></Cell>
     <Cell ss:StyleID="s67"/>
@@ -399,7 +399,7 @@
    </Row>
    <Row ss:AutoFitHeight="0">
     <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">27</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">311050Typing</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">311040Typing</Data></Cell>
     <Cell ss:StyleID="s67"><PhoneticText
       xmlns="urn:schemas-microsoft-com:office:excel">ツヅイ</PhoneticText><Data
       ss:Type="String">続けて　言いました。</Data></Cell>
@@ -410,10 +410,10 @@
    </Row>
    <Row ss:AutoFitHeight="0">
     <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">28</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">311060Typing</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">311050Typing</Data></Cell>
     <Cell ss:StyleID="s67"><PhoneticText
       xmlns="urn:schemas-microsoft-com:office:excel">コロ</PhoneticText><Data
-      ss:Type="String">『おろかな　&lt;key=Name&gt;を　殺してください。』</Data></Cell>
+      ss:Type="String">「おろかな　&lt;key=Name&gt;を　殺してください。」</Data></Cell>
     <Cell ss:StyleID="s67"/>
     <Cell ss:StyleID="s67"><Data ss:Type="String">Please kill poor &lt;key=Name&gt;.</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">&quot;People feel a sense of familiarity with those who recognize them.&quot;</Data></Cell>
@@ -737,12 +737,12 @@
    </Print>
    <TabColorIndex>13</TabColorIndex>
    <Selected/>
-   <TopRowVisible>22</TopRowVisible>
+   <TopRowVisible>11</TopRowVisible>
    <Panes>
     <Pane>
      <Number>3</Number>
-     <ActiveRow>38</ActiveRow>
-     <ActiveCol>4</ActiveCol>
+     <ActiveRow>27</ActiveRow>
+     <ActiveCol>6</ActiveCol>
     </Pane>
    </Panes>
    <ProtectObjects>False</ProtectObjects>

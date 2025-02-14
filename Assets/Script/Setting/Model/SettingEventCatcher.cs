@@ -27,5 +27,10 @@ namespace gaw241201
                 _globalFlagRegisterer.RegisterFlag(FlagConst.Key.OnEnterSettingConversation, "");
             }
         }
+
+        public void OnEnterDenied(string conversationId)
+        {
+            _conversationModelProvider.SettingConversationModel.Enter(conversationId);
+        }
     }
 }

@@ -40,6 +40,8 @@ namespace gaw241201.View
             transform.position = new Vector3(0f,0f,Camera.main.transform.position.z);
             Camera.main.backgroundColor = _bgColor;
 
+            Log.DebugLog("View‚ÌWaveNumber: "+_args.WaveNumber);
+
             for (int i = 0; i < _args.WaveNumber; i++)
             {
                 var obj = Instantiate(_normalDepthObject, _depthObjectRoot);

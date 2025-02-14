@@ -9,7 +9,7 @@
   <Author>h t</Author>
   <LastAuthor>h t</LastAuthor>
   <Created>2021-10-25T13:58:26Z</Created>
-  <LastSaved>2025-02-12T07:43:39Z</LastSaved>
+  <LastSaved>2025-02-14T09:11:51Z</LastSaved>
   <Version>16.00</Version>
  </DocumentProperties>
  <OfficeDocumentSettings xmlns="urn:schemas-microsoft-com:office:office">
@@ -88,7 +88,7 @@
   </Style>
  </Styles>
  <Worksheet ss:Name="Script">
-  <Table ss:ExpandedColumnCount="6" ss:ExpandedRowCount="9" x:FullColumns="1"
+  <Table ss:ExpandedColumnCount="6" ss:ExpandedRowCount="10" x:FullColumns="1"
    x:FullRows="1" ss:DefaultColumnWidth="52.5" ss:DefaultRowHeight="18">
    <Column ss:AutoFitWidth="0" ss:Width="30"/>
    <Column ss:AutoFitWidth="0" ss:Width="128.5"/>
@@ -108,14 +108,30 @@
    </Row>
    <Row ss:AutoFitHeight="0">
     <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">331500SetNormalEye</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">EnterEffect</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">SetNormalEye</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Clear</Data></Cell>
+    <Cell ss:StyleID="s67" ss:Formula="=R[-1]C[-4]"><Data ss:Type="String">Id</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">1</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">330000TypingConversation</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">Conversation</Data></Cell>
     <Cell ss:StyleID="s67" ss:Formula="=RC[-2]"><Data ss:Type="String">330000TypingConversation</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">Clear</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="Number">0</Data></Cell>
    </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">2</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">206800ConfiscateLeftEye</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">EnterEffect</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">SetGoatEye</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Clear</Data></Cell>
+    <Cell ss:StyleID="s67" ss:Formula="=R[-3]C[-4]"><Data ss:Type="String">Id</Data></Cell>
+   </Row>
    <Row ss:AutoFitHeight="0" ss:Height="18.5">
-    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">1</Data></Cell>
+    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">3</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">332000Typing</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">TypingRoguelike</Data></Cell>
     <Cell ss:StyleID="s67" ss:Formula="=RC[-2]"><Data ss:Type="String">332000Typing</Data></Cell>
@@ -123,15 +139,7 @@
     <Cell ss:StyleID="s67"><Data ss:Type="Number">0</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">2</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">334000TypingConversation</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">Conversation</Data></Cell>
-    <Cell ss:StyleID="s67" ss:Formula="=RC[-2]"><Data ss:Type="String">334000TypingConversation</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">Clear</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="Number">0</Data></Cell>
-   </Row>
-   <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">3</Data></Cell>
+    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">4</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">RegisterTest</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">NotifySave</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">ExhibitionForest2RestartFlow</Data></Cell>
@@ -139,12 +147,12 @@
     <Cell ss:StyleID="s67" ss:Formula="=R[12]C[-4]"><Data ss:Type="Number">0</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
-    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">4</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">314000EndGameOver</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">EndGame</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">GameOverExhibition</Data></Cell>
+    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">5</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">GoOtherFlow</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">GoOtherFlow</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">GameoverByEyeFlow</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">Clear</Data></Cell>
-    <Cell ss:StyleID="s67" ss:Formula="=R[12]C[-4]"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="s67" ss:Formula="=R[-3]C[-4]"><Data ss:Type="String">206800ConfiscateLeftEye</Data></Cell>
    </Row>
   </Table>
   <WorksheetOptions xmlns="urn:schemas-microsoft-com:office:excel">
@@ -166,22 +174,36 @@
    <Panes>
     <Pane>
      <Number>3</Number>
-     <ActiveRow>7</ActiveRow>
-     <ActiveCol>3</ActiveCol>
+     <ActiveRow>4</ActiveRow>
+     <RangeSelection>R5</RangeSelection>
     </Pane>
    </Panes>
    <ProtectObjects>False</ProtectObjects>
    <ProtectScenarios>False</ProtectScenarios>
   </WorksheetOptions>
   <ConditionalFormatting xmlns="urn:schemas-microsoft-com:office:excel">
-   <Range>R5C1:R7C6</Range>
+   <Range>R6C1:R9C6</Range>
    <Condition>
     <Value1>LEN(TRIM(RC))=0</Value1>
     <Format Style='background:#E7E6E6'/>
    </Condition>
   </ConditionalFormatting>
   <ConditionalFormatting xmlns="urn:schemas-microsoft-com:office:excel">
-   <Range>R8C1:R9C6</Range>
+   <Range>R7C1:R7C6</Range>
+   <Condition>
+    <Value1>LEN(TRIM(RC))=0</Value1>
+    <Format Style='background:#E7E6E6'/>
+   </Condition>
+  </ConditionalFormatting>
+  <ConditionalFormatting xmlns="urn:schemas-microsoft-com:office:excel">
+   <Range>R5C1:R5C6</Range>
+   <Condition>
+    <Value1>LEN(TRIM(RC))=0</Value1>
+    <Format Style='background:#E7E6E6'/>
+   </Condition>
+  </ConditionalFormatting>
+  <ConditionalFormatting xmlns="urn:schemas-microsoft-com:office:excel">
+   <Range>R10C1:R10C6</Range>
    <Condition>
     <Value1>LEN(TRIM(RC))=0</Value1>
     <Format Style='background:#E7E6E6'/>

@@ -27,6 +27,7 @@ namespace gaw241201
             ChangeEyesPositionToMiddleUp,
             ChangeEyesPositionToMiddleDown,
             GlitchMiddleAutoEnd,
+            SetNormalEye,
         }
 
         public enum EyeParts

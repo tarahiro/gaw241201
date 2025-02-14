@@ -20,6 +20,7 @@ namespace gaw241201
         [Inject] EyesPositionChangable _eyePositionChangable;
         [Inject] ConversationTextPositionChangable _conversationTextPositionChangable;
 
+        [Inject] ChangeEyeViewFactory _changeEyeViewFactory;
         [Inject] ConfiscateViewFactory _confiscateViewFactory;
 
         public IEffectItemView Create(EffectConst.Key key, Transform parent)
@@ -31,8 +32,8 @@ namespace gaw241201
                     return _confiscateViewFactory.Create(key, parent);
 
                 case EffectConst.Key.SetGoatEye:
-                    return GameObject.Instantiate<SetGoatEyeView>(ResourceUtil.GetResource<SetGoatEyeView>(c_pathPrefix + key), parent)
-                        .Construct(_robbable);
+                case EffectConst.Key.SetNormalEye:
+                    return _changeEyeViewFactory.Create(key, parent);
 
                 case EffectConst.Key.ChangeEyesPositionToMiddleUp:
                     return GetInstance<EyeMoveView>("ChangeEyesPosition", parent)

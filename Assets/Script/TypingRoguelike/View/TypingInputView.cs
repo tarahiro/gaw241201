@@ -14,6 +14,7 @@ namespace gaw241201.View
     public class TypingInputView : IInputView
     {
         IInputView _inputView;
+        public IObservable<bool> BlockEnabled => _inputView.BlockEnabled;
 
         [Inject]
         public TypingInputView(InputViewFactory factory, TypingInputProcessor settingMenuInputProcessor)

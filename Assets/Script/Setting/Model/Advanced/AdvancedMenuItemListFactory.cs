@@ -14,12 +14,13 @@ namespace gaw241201
     public class AdvancedMenuItemListFactory
     {
         [Inject] AdvancedItemRoguelike _advancedItemRogueLike;
+        [Inject] SettingUiMenuItemEmptyFactory _emptyFactory;
 
         public List<IUiMenuItemModel> CreateList()
         {
             var _returnable = new List<IUiMenuItemModel>();
             _returnable.Add(_advancedItemRogueLike);
-            _returnable.Add(new SettingUiMenuItemModelEmpty());
+            _returnable.Add(_emptyFactory.Create("ErrorConversationDeveloperMode"));
             return _returnable;
         }
     }

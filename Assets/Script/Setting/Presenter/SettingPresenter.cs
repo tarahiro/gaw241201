@@ -60,6 +60,7 @@ namespace gaw241201.Presenter
             _profileItemPlayerName.ValueChanged.Subscribe(_profileItemProvider.PlayerNameDisplayView.SetText).AddTo(_disposable);
             _profileItemPlayerName.Entered.Subscribe(_ => _profileItemProvider.PlayerNameView.Enter().Forget()).AddTo(_disposable);
             _profileItemPlayerName.Exited.Subscribe(_ => _profileItemProvider.PlayerNameView.Exit()).AddTo(_disposable);
+
             _freeInputIndexer.Focused.Subscribe(_profileItemProvider.PlayerNameDisplayView.Focus).AddTo(_disposable);
             _freeInputIndexer.Unfocused.Subscribe(_profileItemProvider.PlayerNameDisplayView.Unfocus).AddTo(_disposable);
             _freeInputProcessor.KeyEntered.Subscribe(_freeInputCharHundler.CatchChar).AddTo(_disposable);
@@ -76,6 +77,9 @@ namespace gaw241201.Presenter
             _profileItemPlayerName.Initialize();
             _advancedItemRoguelike.Initialize();
             
+            _inputView.BlockEnabled.Subscribe(_profileItemProvider.TabBodyView.OnInputBlockEnabled).AddTo(_disposable);
+            _inputView.BlockEnabled.Subscribe(_advancedItemProvider.TabBodyView.OnInputBlockEnabled).AddTo(_disposable);
+
         }
     }
 }

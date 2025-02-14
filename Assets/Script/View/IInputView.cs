@@ -15,5 +15,6 @@ namespace gaw241201.View
     {
         UniTask Enter(CancellationToken ct);
         void Exit();
+        IObservable<bool> BlockEnabled { get; }
     }
 }

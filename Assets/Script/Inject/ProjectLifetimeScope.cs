@@ -229,6 +229,8 @@ namespace gaw241201.Inject
             builder.RegisterComponentInHierarchy<ConversationTextPositionChangable>().AsSelf();
             builder.Register<ConfiscateViewFactory>(Lifetime.Singleton).AsSelf();
 
+            builder.Register<ChangeEyeViewFactory>(Lifetime.Singleton).AsSelf();
+
             //Confiscate
             builder.RegisterEntryPoint<EffectPresenter>();
 
@@ -449,6 +451,7 @@ namespace gaw241201.Inject
             builder.Register<AdvancedMenuModel>(Lifetime.Singleton).AsSelf();
             builder.Register<AdvancedItemRoguelike>(Lifetime.Singleton).AsSelf();
             builder.Register<AdvancedMenuItemListFactory>(Lifetime.Singleton).AsSelf();
+            builder.Register<SettingUiMenuItemEmptyFactory>(Lifetime.Singleton).AsSelf();
 
             builder.Register<FreeInputInputView>(Lifetime.Singleton).AsSelf();
             builder.Register<FreeInputProcessor>(Lifetime.Singleton).AsSelf();

@@ -11,23 +11,25 @@ using VContainer.Unity;
 
 namespace gaw241201.View
 {
-    public class SetGoatEyeView : MonoBehaviour, IEffectItemView
+    public class ChangeEyeView : MonoBehaviour, IEffectItemView
     {
         public bool IsAutoEnd => true;
 
         IChangableEye _changable;
+        EffectConst.EyeParts _eyeParts;
+        EffectConst.WhichEye _whichEye;
 
-        public SetGoatEyeView Construct(IChangableEye robbable)
+        public ChangeEyeView Construct(IChangableEye robbable, EffectConst.EyeParts eyeParts, EffectConst.WhichEye whichEye)
         {
-            Log.Comment("SetGoatEyeView; Construct");
             _changable = robbable;
+            _eyeParts = eyeParts;
+            _whichEye = whichEye;
 
             return this;
         }
         public async UniTask Enter(CancellationToken cancellationToken)
         {
-            Log.Comment("SetGoatEyeView; Enter");
-            _changable.ChangeParts(EffectConst.EyeParts.Goat, EffectConst.WhichEye.Both);
+            _changable.ChangeParts(_eyeParts, _whichEye);
         }
 
         public async UniTask End(CancellationToken cancellationToken)

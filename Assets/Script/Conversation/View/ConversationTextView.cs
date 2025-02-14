@@ -21,6 +21,7 @@ namespace gaw241201.View
         ITranslationTextDisplayer _translationTextDisplayer;
 
         [SerializeField] BlinkableCursor _cursor;
+        [SerializeField] string _startSe;
 
         const float c_interval = 10f;
 
@@ -40,7 +41,7 @@ namespace gaw241201.View
         public async UniTask Enter(ITranslatableText text,CancellationToken ct)
         {
             _tmp.text = "";
-            SoundManager.PlaySE("TalkShort");
+            SoundManager.PlaySE(_startSe);
 
             _publisher.PublishActiveLayer(_layer);
 

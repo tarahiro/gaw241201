@@ -6,6 +6,7 @@ using UnityEditor;
 using UnityEngine;
 namespace gaw241201.Editor
 {
+#if UNITY_EDITOR
     public class AllImporter
     {
         [MenuItem("Assets/Tables/Import gaw241201", false,0 )]
@@ -27,4 +28,5 @@ namespace gaw241201.Editor
             Log.DebugLog($"Message imported in {stopwatch.ElapsedMilliseconds / 1000.0f} seconds.");
         }
     }
+#endif
 }

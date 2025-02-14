@@ -7,7 +7,6 @@ using UniRx;
 using UnityEngine;
 using VContainer;
 using VContainer.Unity;
-using static Codice.Client.BaseCommands.Import.Commit;
 
 namespace gaw241201.View
 {

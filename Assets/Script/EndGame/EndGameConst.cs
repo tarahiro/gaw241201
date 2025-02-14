@@ -17,6 +17,7 @@ namespace gaw241201.View
             GameOver,
             GameClear,
             GameOverExhibition,
+            GameClearExhibition,
         }
     }
 }

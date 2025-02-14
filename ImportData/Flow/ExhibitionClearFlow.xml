@@ -142,7 +142,7 @@
     <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">4</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">221000EndGameOver</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">EndGame</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">GameOverExhibition</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">GameClearExhibition</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">Clear</Data></Cell>
     <Cell ss:StyleID="s67" ss:Formula="=R[12]C[-4]"><Data ss:Type="Number">0</Data></Cell>
    </Row>
@@ -166,8 +166,8 @@
    <Panes>
     <Pane>
      <Number>3</Number>
-     <ActiveRow>7</ActiveRow>
-     <ActiveCol>1</ActiveCol>
+     <ActiveRow>8</ActiveRow>
+     <ActiveCol>3</ActiveCol>
     </Pane>
    </Panes>
    <ProtectObjects>False</ProtectObjects>

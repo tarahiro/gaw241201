@@ -14,5 +14,7 @@ namespace gaw241201.View
     {
         public SettingItemViewCheck RoguelikeCheck;
         public SettingTabIndex AdvancedTabIndex;
+
+        public SettingTabBodyView TabBodyView;
     }
 }

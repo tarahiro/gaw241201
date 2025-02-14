@@ -44,6 +44,14 @@ namespace gaw241201
                     return true;
                 }
 
+                //‘å•¶šE¬•¶šˆ—
+                if (_isEnableCapital)
+                {
+                    if (char.IsUpper(currentChar) && inputChar == char.ToLower(currentChar))
+                    {
+                        return true;
+                    }
+                }
 
 
                 if (_isEnableRoman)

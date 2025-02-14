@@ -15,5 +15,7 @@ namespace gaw241201.View
         public SettingFreeInputItemView PlayerNameView;
 
         public FreeInputTextDisplayView PlayerNameDisplayView;
+
+        public SettingTabBodyView TabBodyView;
     }
 }

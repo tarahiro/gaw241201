@@ -20,6 +20,9 @@ namespace gaw241201.View
 
         ActiveLayerConst.InputLayer _layer;
 
+        Subject<bool> _blockEnabled = new Subject<bool>();
+        public IObservable<bool> BlockEnabled => _blockEnabled;
+
         bool _isEnable = false;
 
 
@@ -64,7 +67,18 @@ namespace gaw241201.View
 
         void OnActiveLayerChanged(ActiveLayerConst.InputLayer layer)
         {
+            if(_activeLayer <= _layer && layer > _layer)
+            {
+                _blockEnabled.OnNext(true);
+            }
+
+            if (_activeLayer > _layer && layer <= _layer)
+            {
+                _blockEnabled.OnNext(false);   
+            }
+
             _activeLayer = layer;
+            
         }
     }
 }

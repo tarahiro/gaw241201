@@ -19,17 +19,28 @@ namespace gaw241201
 
         public bool IsEnterable => _uiMenuItemModel.IsEnterable;
 
+        string _errorConversationId;
+        SettingEventCatcher _eventCatcher;
+
         [Inject]
-        public SettingUiMenuItemModelEmpty()
+        public SettingUiMenuItemModelEmpty(string errorConversationId, SettingEventCatcher eventCatcher)
         {
-            _uiMenuItemModel = new UiMenuItemModel(true);
+            _uiMenuItemModel = new UiMenuItemModel(false);
+            _errorConversationId = errorConversationId;
+            _eventCatcher = eventCatcher;
         }
 
         public async UniTask Enter()
         {
-            await _uiMenuItemModel.Enter();
+            if (IsEnterable)
+            {
+                await _uiMenuItemModel.Enter();
 
-            //Ç±Ç±Ç≈ÉtÉâÉOèàóù
+            }
+            else
+            {
+                _eventCatcher.OnEnterDenied(_errorConversationId);
+            }
         }
 
         public void End()

@@ -14,6 +14,7 @@ namespace gaw241201.View
     public class FreeInputTextDisplayView : MonoBehaviour
     {
         [SerializeField] List<InputCharacter> _characterList;
+        [SerializeField] GameObject _focusFrame;
 
         public void SetText(string text)
         {
@@ -35,11 +36,13 @@ namespace gaw241201.View
         {
             Log.Comment("Focus");
             _characterList[index].Focus();
+            _focusFrame.SetActive(true);
         }
 
         public void Unfocus(int index)
         {
             _characterList[index].UnFocus();
+            _focusFrame.SetActive(false);
         }
     }
 }

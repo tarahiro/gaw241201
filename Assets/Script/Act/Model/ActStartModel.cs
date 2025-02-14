@@ -42,6 +42,7 @@ namespace gaw241201
             _cts = new CancellationTokenSource();
             IActMaster _master = _masterDataProvider.TryGetFromId(bodyId).GetMaster();
             List<IStageMaster> _thisGroup = _groupMasterGettable.GetGroupMaster(_master.StageGroupId);
+            Log.DebugLog("groupMaster‚Å‚Ìæ“¾: " + _thisGroup.Count);
             /*‹¤’Ê•”•ªI‚í‚è*/
 
 

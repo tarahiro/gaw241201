@@ -1,7 +1,6 @@
 using Cysharp.Threading.Tasks;
 using LitMotion;
 using LitMotion.Extensions;
-using log4net.Util;
 using System;
 using System.Collections;
 using System.Collections.Generic;

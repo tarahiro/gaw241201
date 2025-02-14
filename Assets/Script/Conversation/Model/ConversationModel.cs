@@ -6,7 +6,6 @@ using System.Collections.Generic;
 using System.Threading;
 using Tarahiro;
 using UniRx;
-using UnityEditor.Search;
 using UnityEngine;
 using VContainer;
 using VContainer.Unity;

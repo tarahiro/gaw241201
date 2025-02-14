@@ -31,7 +31,7 @@ namespace gaw241201.View
         {
 
             _cursor.transform.localPosition =
-                new Vector2(cursorX -100f, _itemList[itemIndex].transform.localPosition.y);
+                new Vector2(cursorX +20f, _itemList[itemIndex].transform.localPosition.y);
 
         }
 
@@ -43,6 +43,11 @@ namespace gaw241201.View
         public async UniTask Exit()
         {
             _root.SetActive(false);
+        }
+
+        public void OnInputBlockEnabled(bool b)
+        {
+            _cursor.gameObject.SetActive(!b);
         }
     }
 }

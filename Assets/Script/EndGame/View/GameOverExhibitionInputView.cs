@@ -14,6 +14,7 @@ namespace gaw241201.View
     public class GameOverExhibitionInputView : IInputView
     {
         IInputView _inputView;
+        public IObservable<bool> BlockEnabled => _inputView.BlockEnabled;
 
         [Inject]
         public GameOverExhibitionInputView(InputViewFactory factory, GameOverExhibitionInputProcessor settingMenuInputProcessor)
