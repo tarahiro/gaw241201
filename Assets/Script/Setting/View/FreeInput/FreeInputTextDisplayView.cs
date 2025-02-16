@@ -32,17 +32,24 @@ namespace gaw241201.View
             }
         }
 
+        public async UniTask Enter()
+        {
+            _focusFrame.SetActive(true);
+        }
+
+        public async UniTask Exit()
+        {
+            _focusFrame.SetActive(false);
+        }
+
         public void Focus(int index)
         {
-            Log.Comment("Focus");
             _characterList[index].Focus();
-            _focusFrame.SetActive(true);
         }
 
         public void Unfocus(int index)
         {
             _characterList[index].UnFocus();
-            _focusFrame.SetActive(false);
         }
     }
 }

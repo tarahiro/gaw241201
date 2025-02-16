@@ -1,4 +1,5 @@
 using Cysharp.Threading.Tasks;
+using NUnit.Framework;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -50,8 +51,6 @@ namespace gaw241201.View
 
         public void EnterCorrectInput(int index)
         {
-
-
             _tmpQuestion.text = GetTextTaggedTyped(_textCache, index);
             _textCache = "";
 
@@ -70,6 +69,19 @@ namespace gaw241201.View
           //  SetSelectData(_tmpQuestion, _selectionDataCache, index);
 
             SetRestriction(_tmpQuestion, _itemViewList, _restrictionList, index);
+
+
+            //fake
+            if (_fakeIndexList.Count > 0)
+            {
+                Log.DebugLog(_fakeIndexList[0].Index);
+            }
+            Log.DebugLog(index);
+            if (_fakeIndexList.Exists(x => x.Index < index)){
+                OnReplacedListSelected(null);
+                _fakeIndexList = new List<SelectionDataWithIndex>();
+            }
+            
         }
 
         public void ResetText()
@@ -109,16 +121,29 @@ namespace gaw241201.View
         [SerializeField] SelectDataItemView _selectDataItemViewPrefab;
         
         List<SelectDataItemView> _itemViewList = new List<SelectDataItemView>();
+        List<SelectionDataWithIndex> _fakeIndexList = new List<SelectionDataWithIndex>();
 
         public void SetSelectionDataWithIndex(List<SelectionDataWithIndex> list) 
         {
+            _fakeIndexList = new List<SelectionDataWithIndex>();
 
             foreach(var item in list)
             {
+                _fakeIndexList.Add(item);
                 List<ReplaceData> fakeList = new List<ReplaceData>();
                 fakeList.Add(item.ReplaceData);
                 SetSelectData(_tmpQuestion, fakeList, item.Index);
             }
+        }
+
+        public void OnReplacedListSelected(List<ReplaceData> list)
+        {
+            //ébíËèàóù
+            for (int i = 0; i < _itemViewList.Count; i++)
+            {
+                Destroy(_itemViewList[i].gameObject);
+            }
+            _itemViewList = new List<SelectDataItemView>();
         }
 
         void SetSelectData(TextMeshProUGUI parentText, List<ReplaceData> selectionDataList, int charIndex)
@@ -134,9 +159,7 @@ namespace gaw241201.View
             {
                 var itemView = Instantiate<SelectDataItemView>(_selectDataItemViewPrefab, parentText.transform);
                 itemView.SetText(GetTagString(c_untypedName) + selectionDataList[i].StringReplaceTo + c_closeStyle);
-                itemView.SetPosition(_tmpQuestion,charIndex,Vector3.down * c_yInterval * i);
-                //ébíËëŒâû
-                //itemView.SetPosition(_tmpQuestion,charIndex,new Vector2(-36f, -54f));
+                itemView.SetPosition(_tmpQuestion,charIndex,Vector3.down * c_yInterval * 2);
                 _itemViewList.Add(itemView);
             }
 

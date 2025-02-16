@@ -13,5 +13,7 @@ namespace gaw241201.View
     public interface ISelectionDataWithIndexCatchableFake
     {
         void SetSelectionDataWithIndex(List<SelectionDataWithIndex> list);
+
+        void OnReplacedListSelected(List<ReplaceData> replaceDatas);
     }
 }

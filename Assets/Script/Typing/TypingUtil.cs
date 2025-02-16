@@ -34,6 +34,7 @@ namespace gaw241201 {
             }
 
             int count = 0;
+            int tmpCount = 0;
             bool insideBrackets = false;
 
             for (int i = 0; i <= index; i++)
@@ -43,33 +44,24 @@ namespace gaw241201 {
                     if (!insideBrackets) // 新しい '<' を検出
                     {
                         insideBrackets = true;
-                        count++; // '<' をカウント
                     }
-                    else
-                    {
-                        // 無効な二重 '<'、カウントを無効化
-                        insideBrackets = false;
-                        count = 0;
-                    }
+                    tmpCount = 0;
+                    tmpCount++; // '<' をカウント
                 }
                 else if (sentence[i] == '>')
                 {
                     if (insideBrackets) // 対応する '>' が存在
                     {
-                        count++; // '>' をカウント
+                        tmpCount++; // '>' をカウント
+                        count += tmpCount;
+                        tmpCount = 0;
                         insideBrackets = false;
                     }
                 }
                 else if (insideBrackets)
                 {
-                    count++;
+                    tmpCount++;
                 }
-            }
-
-            // ループ終了後、未閉じの '<' がある場合はカウントを無効化
-            if (insideBrackets)
-            {
-                count = 0;
             }
 
             return count;
@@ -147,10 +139,14 @@ namespace gaw241201 {
         {
             var characterInfo = self.textInfo.characterInfo[index];
 
+            /*
             return !characterInfo.isVisible
                     ? Vector3.zero
-                    : self.transform.localPosition*.5f + (characterInfo.topLeft + characterInfo.bottomLeft) * 0.5f
-                ;
+                    :  (characterInfo.topLeft + characterInfo.bottomLeft) * 0.5f
+            
+            */
+            return (characterInfo.topLeft + characterInfo.bottomLeft) * 0.5f;
+            ;
         }
     }
 }

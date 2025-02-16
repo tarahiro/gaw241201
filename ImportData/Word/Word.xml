@@ -16,8 +16,8 @@
   <AllowPNG/>
  </OfficeDocumentSettings>
  <ExcelWorkbook xmlns="urn:schemas-microsoft-com:office:excel">
-  <WindowHeight>11300</WindowHeight>
-  <WindowWidth>10220</WindowWidth>
+  <WindowHeight>13100</WindowHeight>
+  <WindowWidth>19820</WindowWidth>
   <WindowTopX>32767</WindowTopX>
   <WindowTopY>32767</WindowTopY>
   <RefModeR1C1/>
@@ -160,7 +160,7 @@
       xmlns="urn:schemas-microsoft-com:office:excel">ウトキシュクフクバイ</PhoneticText><Data
       ss:Type="String">&quot;CAT&quot;を打った時の祝福が10倍。</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">Blessings multiply by 10 when typing &quot;CAT&quot;.</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">cat</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">CAT</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">Animal</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
@@ -274,7 +274,7 @@
       xmlns="urn:schemas-microsoft-com:office:excel">ミガエシュクフクバイ</PhoneticText><Data
       ss:Type="String">ALICEを身代わりにできる。&#10;&quot;A&quot;から得る祝福が2倍。</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">You can use ALICE as a substitute. Blessings multiply by 2 when typing &quot;A&quot;.</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">Alice</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">ALICE's</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">Human</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
@@ -564,8 +564,8 @@
    <Panes>
     <Pane>
      <Number>3</Number>
-     <ActiveRow>12</ActiveRow>
-     <ActiveCol>5</ActiveCol>
+     <ActiveRow>5</ActiveRow>
+     <ActiveCol>6</ActiveCol>
     </Pane>
    </Panes>
    <ProtectObjects>False</ProtectObjects>

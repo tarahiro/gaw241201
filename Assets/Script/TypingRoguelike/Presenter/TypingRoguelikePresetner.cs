@@ -32,6 +32,7 @@ namespace gaw241201.Presenter
         [Inject] IRequiredScoreGeneratable _requiredScoreGeneratable;
         [Inject] ISelectionDataWithIndexCatchableFake _selectionDataWithIndexCatchableFake;
         [Inject] RequiredPointView _requiredPointView;
+        [Inject] KeyInputProcesser _keyInputProcesser;
 
         //----------point Œã‚Å•ª‚¯‚é‚©‚à------------------
         [Inject] IPointable _pointModel;
@@ -89,6 +90,7 @@ namespace gaw241201.Presenter
 
             //fake
             _selectionDataInitializer.SelectionDataInitialized.Subscribe(_selectionDataWithIndexCatchableFake.SetSelectionDataWithIndex).AddTo(_disposable);
+            // _keyInputProcesser.ReplaceDataSelected.Subscribe(_selectionDataWithIndexCatchableFake.OnReplacedListSelected).AddTo(_disposable);
         }
     }
 }

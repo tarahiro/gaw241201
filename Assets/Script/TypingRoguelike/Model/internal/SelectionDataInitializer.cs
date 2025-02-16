@@ -49,7 +49,8 @@ namespace gaw241201
                             {
                                 if (wordData.GetMaster().TagName == tag)
                                 {
-                                    selectionDataWithindexList.Add(new SelectionDataWithIndex(new ReplaceData(word, wordData.GetMaster().ReplaceTo), i));
+                                    
+                                    selectionDataWithindexList.Add(new SelectionDataWithIndex(new ReplaceData(word, wordData.GetMaster().ReplaceTo), i - TypingUtil.CountCharactersInBrackets(_tagSentence,i)));
                                 }
                             }
                         }

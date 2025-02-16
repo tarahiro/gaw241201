@@ -16,8 +16,8 @@
   <AllowPNG/>
  </OfficeDocumentSettings>
  <ExcelWorkbook xmlns="urn:schemas-microsoft-com:office:excel">
-  <WindowHeight>7260</WindowHeight>
-  <WindowWidth>19770</WindowWidth>
+  <WindowHeight>13100</WindowHeight>
+  <WindowWidth>19820</WindowWidth>
   <WindowTopX>32767</WindowTopX>
   <WindowTopY>32767</WindowTopY>
   <RefModeR1C1/>
@@ -92,16 +92,16 @@
    x:FullRows="1" ss:DefaultColumnWidth="52.5" ss:DefaultRowHeight="18">
    <Column ss:AutoFitWidth="0" ss:Width="30"/>
    <Column ss:AutoFitWidth="0" ss:Width="75"/>
-   <Column ss:AutoFitWidth="0" ss:Width="437.25"/>
+   <Column ss:AutoFitWidth="0" ss:Width="437.5"/>
    <Column ss:AutoFitWidth="0" ss:Width="97.5"/>
-   <Column ss:AutoFitWidth="0" ss:Width="308.25" ss:Span="1"/>
-   <Column ss:Index="7" ss:AutoFitWidth="0" ss:Width="83.25"/>
-   <Row ss:AutoFitHeight="0" ss:Height="24.5625" ss:StyleID="s62">
+   <Column ss:AutoFitWidth="0" ss:Width="308.5" ss:Span="1"/>
+   <Column ss:Index="7" ss:AutoFitWidth="0" ss:Width="83.5"/>
+   <Row ss:AutoFitHeight="0" ss:Height="24.5" ss:StyleID="s62">
     <Cell ss:StyleID="s63" ss:ArrayRange="RC"
      ss:Formula="=MID( CELL(&quot;filename&quot;,R1C1),&#10;FIND(&quot;[&quot;, CELL(&quot;filename&quot;,R1C1)) +1,&#10;FIND(&quot;]&quot;, CELL(&quot;filename&quot;,R1C1)) - FIND(&quot;[&quot;, CELL(&quot;filename&quot;,R1C1)) -1)"><Data
       ss:Type="String">Typing.xml</Data></Cell>
    </Row>
-   <Row ss:Index="4" ss:AutoFitHeight="0" ss:Height="17.4375" ss:StyleID="s64">
+   <Row ss:Index="4" ss:AutoFitHeight="0" ss:Height="17.5" ss:StyleID="s64">
     <Cell ss:StyleID="s65"><Data ss:Type="String">index</Data></Cell>
     <Cell ss:StyleID="s66"><Data ss:Type="String">Id</Data></Cell>
     <Cell ss:StyleID="s65"><Data ss:Type="String">DisplayTextJp</Data></Cell>
@@ -283,7 +283,7 @@
       xmlns="urn:schemas-microsoft-com:office:excel">ツミツグナ</PhoneticText><Data
       ss:Type="String">&lt;key=Name&gt;は　罪を　償うために、</Data></Cell>
     <Cell ss:StyleID="s67"/>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">&lt;key=Name&gt; by atoning for sine</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">&lt;key=Name&gt; by atoning for sine,</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">&quot;People feel a sense of familiarity with those who recognize them.&quot;</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">304000Typing</Data></Cell>
    </Row>
@@ -327,7 +327,7 @@
       xmlns="urn:schemas-microsoft-com:office:excel">メダマ</PhoneticText><Data
       ss:Type="String">カラスが　&lt;key=Name&gt;の目玉を　えぐりました。</Data></Cell>
     <Cell ss:StyleID="s67"/>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">Bird Crushes &lt;key=Name&gt;'s eye.</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Bird crushes &lt;key=Name&gt;'s eye.</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">&quot;People feel a sense of familiarity with those who recognize them.&quot;</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">304500Typing</Data></Cell>
    </Row>
@@ -338,7 +338,7 @@
       xmlns="urn:schemas-microsoft-com:office:excel">シタイコロ</PhoneticText><Data
       ss:Type="String">リスの　死体が　転がっています。</Data></Cell>
     <Cell ss:StyleID="s67"/>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">Squirrel Corpse is lying.</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Squirrel corpse is lying.</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">&quot;People feel a sense of familiarity with those who recognize them.&quot;</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">308000Typing</Data></Cell>
    </Row>
@@ -463,25 +463,25 @@
     <Cell ss:StyleID="s67"/>
     <Cell ss:StyleID="s67"><Data ss:Type="String">332000Typing</Data></Cell>
    </Row>
-   <Row ss:AutoFitHeight="0" ss:Height="18.5625">
+   <Row ss:AutoFitHeight="0" ss:Height="18.5">
     <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">33</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">332040Typing</Data></Cell>
     <Cell ss:StyleID="s67"><PhoneticText
-      xmlns="urn:schemas-microsoft-com:office:excel">ワタシミギメサア</PhoneticText><Data
-      ss:Type="String">『私の　右目を　差し上げます。』</Data></Cell>
+      xmlns="urn:schemas-microsoft-com:office:excel">ヤギシオウワタシミギメサア</PhoneticText><Data
+      ss:Type="String">『山羊と死の王よ、私の　右目を　差し上げます。』</Data></Cell>
     <Cell ss:StyleID="s67"/>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">I offer you my right eye.</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Goat and Death king, take my right eye.</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">&quot;People feel a sense of familiarity with those who recognize them.&quot;</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">332000Typing</Data></Cell>
    </Row>
-   <Row ss:AutoFitHeight="0" ss:Height="18.5625">
+   <Row ss:AutoFitHeight="0" ss:Height="18.5">
     <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">34</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">340010Typing</Data></Cell>
     <Cell ss:StyleID="s67"><PhoneticText
-      xmlns="urn:schemas-microsoft-com:office:excel">ワタシミギメサア</PhoneticText><Data
-      ss:Type="String">『私の　右目を　差し上げます。』</Data></Cell>
+      xmlns="urn:schemas-microsoft-com:office:excel">ヤギシオウワタシミギメサア</PhoneticText><Data
+      ss:Type="String">『山羊と死の王よ、私の　右目を　差し上げます。』</Data></Cell>
     <Cell ss:StyleID="s67"/>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">I offer you &lt;fla:Holder&gt;&lt;Human&gt;my&lt;/Human&gt;&lt;/fla:Holder&gt; right eye.</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">&lt;Animal&gt;Goat&lt;/Animal&gt; and Death king, take &lt;fla:Holder&gt;&lt;Human&gt;my&lt;/Human&gt;&lt;/fla:Holder&gt; right eye.</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">&quot;People feel a sense of familiarity with those who recognize them.&quot;</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">340000Typing</Data></Cell>
    </Row>
@@ -737,7 +737,7 @@
    </Print>
    <TabColorIndex>13</TabColorIndex>
    <Selected/>
-   <TopRowVisible>29</TopRowVisible>
+   <TopRowVisible>11</TopRowVisible>
    <Panes>
     <Pane>
      <Number>3</Number>
@@ -758,7 +758,7 @@
  </Worksheet>
  <Worksheet ss:Name="凡例">
   <Table ss:ExpandedColumnCount="3" ss:ExpandedRowCount="2" x:FullColumns="1"
-   x:FullRows="1" ss:DefaultColumnWidth="51.75" ss:DefaultRowHeight="18">
+   x:FullRows="1" ss:DefaultColumnWidth="52" ss:DefaultRowHeight="18">
    <Row ss:AutoFitHeight="0">
     <Cell ss:Index="3" ss:StyleID="s65"><Data ss:Type="String">SePath</Data></Cell>
    </Row>
@@ -790,12 +790,12 @@
    <Column ss:AutoFitWidth="0" ss:Width="30"/>
    <Column ss:AutoFitWidth="0" ss:Width="46.5"/>
    <Column ss:AutoFitWidth="0" ss:Width="90"/>
-   <Row ss:AutoFitHeight="0" ss:Height="24.5625" ss:StyleID="s62">
+   <Row ss:AutoFitHeight="0" ss:Height="24.5" ss:StyleID="s62">
     <Cell ss:StyleID="s63" ss:ArrayRange="RC"
      ss:Formula="=MID( CELL(&quot;filename&quot;,R1C1),&#10;FIND(&quot;[&quot;, CELL(&quot;filename&quot;,R1C1)) +1,&#10;FIND(&quot;]&quot;, CELL(&quot;filename&quot;,R1C1)) - FIND(&quot;[&quot;, CELL(&quot;filename&quot;,R1C1)) -1)"><Data
       ss:Type="String">Typing.xml</Data></Cell>
    </Row>
-   <Row ss:Index="4" ss:AutoFitHeight="0" ss:Height="17.4375" ss:StyleID="s64">
+   <Row ss:Index="4" ss:AutoFitHeight="0" ss:Height="17.5" ss:StyleID="s64">
     <Cell ss:StyleID="s65"><Data ss:Type="String">index</Data></Cell>
     <Cell ss:StyleID="s66"><Data ss:Type="String">Id</Data></Cell>
     <Cell ss:StyleID="s65"><Data ss:Type="String">SePath</Data></Cell>

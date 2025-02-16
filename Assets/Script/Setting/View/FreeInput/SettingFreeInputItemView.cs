@@ -21,11 +21,13 @@ namespace gaw241201.View
             Log.Comment("FreeInputView‚ÉEnter");
             await base.Enter();
             _freeInputInputView.Enter(this.GetCancellationTokenOnDestroy()).Forget();
+            _freeInputTextDisplayView.Enter().Forget();
         }
 
         public void Exit()
         {
             _freeInputInputView.Exit();
+            _freeInputTextDisplayView.Exit().Forget();
         }
     }
 }

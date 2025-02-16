@@ -14,6 +14,10 @@ namespace gaw241201
     {
         [Inject] RomanInputProcesser _romanInputProcesser;
 
+        Subject<List<ReplaceData>> _replacedDataSelected = new Subject<List<ReplaceData>>();
+        public IObservable<List<ReplaceData>> ReplaceDataSelected => _replacedDataSelected;
+
+
         bool _isEnableRoman = false;
         bool _isEnableCapital = false;
 
@@ -88,7 +92,15 @@ namespace gaw241201
 
                 }
 
-                return replacedList.Count > 0;
+                if(replacedList.Count > 0)
+                {
+                    _replacedDataSelected.OnNext(replacedList);
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
             }
             else
             {
