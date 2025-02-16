@@ -1734,7 +1734,7 @@
     <Cell ss:StyleID="s67"><Data ss:Type="String">345010TypingConversation</Data></Cell>
     <Cell ss:StyleID="s67"><PhoneticText
       xmlns="urn:schemas-microsoft-com:office:excel">コウドセッテイカイホウ</PhoneticText><Data
-      ss:Type="String">「高度な設定」タブを　解放したわ！</Data></Cell>
+      ss:Type="String">高度な設定　タブを　解放したわ！</Data></Cell>
     <Cell ss:StyleID="s67"/>
     <Cell ss:StyleID="s67"><Data ss:Type="String">345000TypingConversation</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">Center</Data></Cell>
@@ -2616,13 +2616,12 @@
    <TabColorIndex>13</TabColorIndex>
    <Zoom>115</Zoom>
    <Selected/>
-   <TopRowVisible>116</TopRowVisible>
-   <LeftColumnVisible>3</LeftColumnVisible>
+   <TopRowVisible>143</TopRowVisible>
    <Panes>
     <Pane>
      <Number>3</Number>
-     <ActiveRow>130</ActiveRow>
-     <ActiveCol>5</ActiveCol>
+     <ActiveRow>150</ActiveRow>
+     <ActiveCol>2</ActiveCol>
     </Pane>
    </Panes>
    <ProtectObjects>False</ProtectObjects>
