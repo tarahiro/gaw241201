@@ -149,7 +149,7 @@ namespace gaw241201 {
 
             return !characterInfo.isVisible
                     ? Vector3.zero
-                    : self.transform.localPosition + (characterInfo.topLeft + characterInfo.bottomLeft) * 0.5f
+                    : self.transform.localPosition*.5f + (characterInfo.topLeft + characterInfo.bottomLeft) * 0.5f
                 ;
         }
     }

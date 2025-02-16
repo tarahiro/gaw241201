@@ -15,7 +15,7 @@ using static gaw241201.TypingUtil;
 
 namespace gaw241201.View
 {
-    public class TypingTextView : MonoBehaviour, ITextRegisterableView, ICorrectInputEnterableView, IRestrictionRegisterableView, ISelectDataRegisterableView
+    public class TypingTextView : MonoBehaviour, ITextRegisterableView, ICorrectInputEnterableView, IRestrictionRegisterableView, ISelectDataRegisterableView, ISelectionDataWithIndexCatchableFake
     {
         const string c_typedName = "Typed";
         const string c_untypedName = "Untyped";
@@ -67,7 +67,7 @@ namespace gaw241201.View
                 }
             }
 
-            SetSelectData(_tmpQuestion, _selectionDataCache, index);
+          //  SetSelectData(_tmpQuestion, _selectionDataCache, index);
 
             SetRestriction(_tmpQuestion, _itemViewList, _restrictionList, index);
         }
@@ -110,6 +110,17 @@ namespace gaw241201.View
         
         List<SelectDataItemView> _itemViewList = new List<SelectDataItemView>();
 
+        public void SetSelectionDataWithIndex(List<SelectionDataWithIndex> list) 
+        {
+
+            foreach(var item in list)
+            {
+                List<ReplaceData> fakeList = new List<ReplaceData>();
+                fakeList.Add(item.ReplaceData);
+                SetSelectData(_tmpQuestion, fakeList, item.Index);
+            }
+        }
+
         void SetSelectData(TextMeshProUGUI parentText, List<ReplaceData> selectionDataList, int charIndex)
         {
             for (int i = 0; i < _itemViewList.Count; i++)
@@ -124,6 +135,8 @@ namespace gaw241201.View
                 var itemView = Instantiate<SelectDataItemView>(_selectDataItemViewPrefab, parentText.transform);
                 itemView.SetText(GetTagString(c_untypedName) + selectionDataList[i].StringReplaceTo + c_closeStyle);
                 itemView.SetPosition(_tmpQuestion,charIndex,Vector3.down * c_yInterval * i);
+                //Žb’è‘Î‰ž
+                //itemView.SetPosition(_tmpQuestion,charIndex,new Vector2(-36f, -54f));
                 _itemViewList.Add(itemView);
             }
 

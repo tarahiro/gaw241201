@@ -23,6 +23,8 @@ namespace gaw241201
         [Inject] IRestrictedCharProvider _restrictedCharProvider;
         [Inject] IRestrictedCharRegisterer _restrictedCharRegisterer;
         [Inject] ISubscriber<int> _subscriber;
+        [Inject] SelectionDataInitializer _selectionDataInitializer;
+
         int _languageIndex = 0;
 
         Subject<List<char>> _restrictionDataLoaded = new Subject<List<char>>();
@@ -59,6 +61,7 @@ namespace gaw241201
 
             _indexUpdater.UpdateIndex(0,romanText);
             _questionDisplayTextGenerator.GenerateDisplayQuestionText(romanText,_indexUpdater.GetIndex());
+            _selectionDataInitializer.Initialize(romanText);
         }
 
         public void SetLanguage(int languageIndex)

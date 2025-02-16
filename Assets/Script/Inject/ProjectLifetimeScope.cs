@@ -423,6 +423,9 @@ namespace gaw241201.Inject
 
             builder.Register<RequiredScoreGenerator>(Lifetime.Singleton).AsImplementedInterfaces();
 
+
+            //Fake
+            builder.Register<SelectionDataInitializer>(Lifetime.Singleton).AsSelf();
         }
 
         [SerializeField] TranslationTextView[] textViewList;

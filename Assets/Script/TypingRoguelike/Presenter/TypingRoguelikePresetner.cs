@@ -30,6 +30,7 @@ namespace gaw241201.Presenter
         [Inject] IRestrictionRegisterableView _restrictionRegisterableView;
         [Inject] ISelectionDataSettable _selectionDataSettable;
         [Inject] IRequiredScoreGeneratable _requiredScoreGeneratable;
+        [Inject] ISelectionDataWithIndexCatchableFake _selectionDataWithIndexCatchableFake;
         [Inject] RequiredPointView _requiredPointView;
 
         //----------point Œã‚Å•ª‚¯‚é‚©‚à------------------
@@ -42,6 +43,9 @@ namespace gaw241201.Presenter
         [Inject] ITimerModel _timerModel;
         [Inject] ITimerView _timerView;
         [Inject] IHaltable _haltable;
+
+        //fake
+        [Inject] SelectionDataInitializer _selectionDataInitializer;
 
 
         CompositeDisposable _disposable = new CompositeDisposable();
@@ -82,6 +86,9 @@ namespace gaw241201.Presenter
             _timerStartable.Initialize();
             _requiredScoreGeneratable.Initialize();
             _argsFactory.Initialize();
+
+            //fake
+            _selectionDataInitializer.SelectionDataInitialized.Subscribe(_selectionDataWithIndexCatchableFake.SetSelectionDataWithIndex).AddTo(_disposable);
         }
     }
 }
