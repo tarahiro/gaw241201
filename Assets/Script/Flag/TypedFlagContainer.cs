@@ -12,6 +12,33 @@ namespace gaw241201
 {
     public class TypedFlagContainer
     {
+
+        Dictionary<TypedKey,string> _typedFlagDictionary = new Dictionary<TypedKey,string>();
+
+        public void Register(TypedKey key, string value)
+        {
+            if (_typedFlagDictionary.ContainsKey(key))
+            {
+                _typedFlagDictionary[key] = value;
+            }
+            else
+            {
+                _typedFlagDictionary.Add(key, value);
+            }
+        }
+
+        public bool TryGetValue(TypedKey type, out string value)
+        {
+            return _typedFlagDictionary.TryGetValue(type, out value);
+        }
+
+
+        /*
+
+
+
+
+
         bool _isTypedNameRegistered = false;
         string _typedName;
 
@@ -101,13 +128,14 @@ namespace gaw241201
                 return false;
             }
         }
+        */
 
         public enum TypedKey
         {
-            TypedName,
+            Name,
             Holder,
             Animal,
-            Right,
+            Direction,
         }
     }
 }

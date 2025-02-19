@@ -94,8 +94,9 @@
    <Column ss:AutoFitWidth="0" ss:Width="75"/>
    <Column ss:AutoFitWidth="0" ss:Width="437.5"/>
    <Column ss:AutoFitWidth="0" ss:Width="97.5"/>
-   <Column ss:AutoFitWidth="0" ss:Width="308.5" ss:Span="1"/>
-   <Column ss:Index="7" ss:AutoFitWidth="0" ss:Width="83.5"/>
+   <Column ss:AutoFitWidth="0" ss:Width="602"/>
+   <Column ss:AutoFitWidth="0" ss:Width="308.5"/>
+   <Column ss:AutoFitWidth="0" ss:Width="83.5"/>
    <Row ss:AutoFitHeight="0" ss:Height="24.5" ss:StyleID="s62">
     <Cell ss:StyleID="s63" ss:ArrayRange="RC"
      ss:Formula="=MID( CELL(&quot;filename&quot;,R1C1),&#10;FIND(&quot;[&quot;, CELL(&quot;filename&quot;,R1C1)) +1,&#10;FIND(&quot;]&quot;, CELL(&quot;filename&quot;,R1C1)) - FIND(&quot;[&quot;, CELL(&quot;filename&quot;,R1C1)) -1)"><Data
@@ -426,7 +427,7 @@
       xmlns="urn:schemas-microsoft-com:office:excel">コロ</PhoneticText><Data
       ss:Type="String">『おろかな　&lt;key=Name&gt;を　殺してください。』</Data></Cell>
     <Cell ss:StyleID="s67"/>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">Please kill poor &lt;fla:TypedName&gt;&lt;key=Name&gt;&lt;/fla:TypedName&gt;.</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Please kill poor &lt;fla:Name&gt;&lt;key=Name&gt;&lt;/fla:Name&gt;.</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">Please kill poor &lt;fla:TypedName&gt;&lt;key=Name&gt;&lt;/fla:TypedName&gt;.</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">320000Typing</Data></Cell>
    </Row>
@@ -481,8 +482,8 @@
       xmlns="urn:schemas-microsoft-com:office:excel">ヤギシオウワタシミギメサア</PhoneticText><Data
       ss:Type="String">『山羊と死の王よ、私の　右目を　差し上げます。』</Data></Cell>
     <Cell ss:StyleID="s67"/>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">&lt;fla:Animal&gt;&lt;Animal&gt;Goat&lt;/Animal&gt;&lt;/fla:Animal&gt; and Death king, take &lt;fla:Holder&gt;&lt;Human&gt;my&lt;/Human&gt;&lt;/fla:Holder&gt; &lt;fla:Right&gt;right&lt;/fla:Right&gt; eye.</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">&lt;fla:Animal&gt;&lt;Animal&gt;Goat&lt;/Animal&gt;&lt;/fla:Animal&gt; and Death king, take &lt;fla:Holder&gt;&lt;Human&gt;my&lt;/Human&gt;&lt;/fla:Holder&gt; &lt;fla:Right&gt;right&lt;/fla:Right&gt; eye.</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">&lt;fla:Animal&gt;&lt;Animal&gt;Goat&lt;/Animal&gt;&lt;/fla:Animal&gt; and Death king, take &lt;fla:Holder&gt;&lt;Human&gt;my&lt;/Human&gt;&lt;/fla:Holder&gt; &lt;fla:Direction&gt;right&lt;/fla:Direction&gt; eye.</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">&lt;fla:Animal&gt;&lt;Animal&gt;Goat&lt;/Animal&gt;&lt;/fla:Animal&gt; and Death king, take &lt;fla:Holder&gt;&lt;Human&gt;my&lt;/Human&gt;&lt;/fla:Holder&gt; &lt;fla:Direction&gt;right&lt;/fla:Direction&gt; eye.</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">340000Typing</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
@@ -737,13 +738,12 @@
    </Print>
    <TabColorIndex>13</TabColorIndex>
    <Selected/>
-   <TopRowVisible>12</TopRowVisible>
+   <TopRowVisible>17</TopRowVisible>
    <Panes>
     <Pane>
      <Number>3</Number>
-     <ActiveRow>20</ActiveRow>
-     <ActiveCol>5</ActiveCol>
-     <RangeSelection>R21C6:R39C6</RangeSelection>
+     <ActiveRow>38</ActiveRow>
+     <ActiveCol>4</ActiveCol>
     </Pane>
    </Panes>
    <ProtectObjects>False</ProtectObjects>

@@ -64,26 +64,7 @@ namespace gaw241201
             //“o˜^
             for(int i = 0; i < _fixedPair.Count; i++)
             {
-                switch (_fixedPair[i].key)
-                {
-                    case TypedFlagContainer.TypedKey.TypedName:
-                        _typedFlagContainer.RegisterTypedName(_fixedPair[i].value); 
-                        break;
-
-                    case TypedFlagContainer.TypedKey.Holder:
-                        _typedFlagContainer.RegisterHolder(_fixedPair[i].value);
-                        break;
-                    case TypedFlagContainer.TypedKey.Animal:
-                        _typedFlagContainer.RegisterAnimal(_fixedPair[i].value);
-                        break;
-
-                    case TypedFlagContainer.TypedKey.Right:
-                        _typedFlagContainer.RegisterRight(_fixedPair[i].value);
-                        break;
-                    default:
-                        Log.DebugWarning("—LŒø‚ÈƒL[‚ª‚ ‚è‚Ü‚¹‚ñ");
-                        break;
-                }
+                _typedFlagContainer.Register(_fixedPair[i].key, _fixedPair[i].value);
             }
 
             Log.DebugAssert(_registeringPair.Count == 0);

@@ -30,7 +30,7 @@ namespace gaw241201
             GameoverFlow,
             GameoverByEyeFlow,
             GameoverByEyeWithAnimalFlow,
-            GameoberByEyeWithRightFlow,
+            GameoverByEyeWithLightFlow,
             KillTestFlow,
             ExhibitionMainFlow,
             ExhibitionForestFlow,

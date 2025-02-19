@@ -26,7 +26,7 @@ namespace gaw241201
             TypingRoguelike,
             StartAct,
             SkillAchieve,
-            SwitchByTypedFlag,
+            Switch,
             NotifySave,
             GoOtherFlow,
             StartHighlight,

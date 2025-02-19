@@ -23,6 +23,7 @@ namespace gaw241201.Editor
             TypingImporter.Import();
             TypingRoguelikeImporter.Import();
             WordImporter.Import();
+            SwitchImporter.Import();
 
             stopwatch.Stop();
             Log.DebugLog($"Message imported in {stopwatch.ElapsedMilliseconds / 1000.0f} seconds.");

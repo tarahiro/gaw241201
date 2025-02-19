@@ -9,7 +9,8 @@ using VContainer;
 
 namespace gaw241201.Switch.Model
 {
-    public class SwitchByTypedFlag : ICategoryEnterableModel
+    /*
+    public class SwitchByTypedFlag_OLD : ICategoryEnterableModel
     {
         [Inject] FlowSwitchPublisher _publisher;
         [Inject] TypedFlagContainer _typedFlagContainer;
@@ -47,7 +48,7 @@ namespace gaw241201.Switch.Model
                 }
                 else if (right == "light")
                 {
-                    _publisher.Publish(new FlowSwitchArgs(FlowMasterConst.FlowMasterLabel.GameoberByEyeWithRightFlow, ""));
+                    _publisher.Publish(new FlowSwitchArgs(FlowMasterConst.FlowMasterLabel.GameoverByEyeWithLightFlow, ""));
                 }
                 else if (holder.ToLower() == "my")
                 {
@@ -69,4 +70,5 @@ namespace gaw241201.Switch.Model
         }
 
     }
+    */
 }

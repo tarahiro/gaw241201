@@ -51,11 +51,5 @@ namespace Tarahiro.Editor
             return new TranslatableText(textString.ToArray());
         }
 
-
-        [System.Serializable]
-        public class ListWrapper<T>
-        {
-            public List<T> List;
-        }
     }
 }

@@ -13,7 +13,6 @@ using System.Linq;
 using MessagePipe;
 using MessagePipe.VContainer;
 using UnityEditor;
-using gaw241201.Switch.Model;
 
 namespace gaw241201.Inject
 {
@@ -494,8 +493,13 @@ namespace gaw241201.Inject
 
         void ConfigureSwitch(IContainerBuilder builder)
         {
-            builder.Register<SwitchByTypedFlag>(Lifetime.Singleton).AsSelf();
+            //builder.Register<SwitchByTypedFlag_OLD>(Lifetime.Singleton).AsSelf();
+            builder.Register<Switcher>(Lifetime.Singleton).AsSelf();
             builder.Register<GoOtherFlow>(Lifetime.Singleton).AsSelf();
+            builder.Register<ByStringGetterFactory>(Lifetime.Singleton).AsImplementedInterfaces();
+            builder.Register<CommandProcessorFactory>(Lifetime.Singleton).AsImplementedInterfaces();
+            builder.Register<ConditionJudgerFactory>(Lifetime.Singleton).AsImplementedInterfaces();
+            builder.Register<SwitchMasterDataProvider>(Lifetime.Singleton).AsImplementedInterfaces();
         }
 
         void ConfigureNotifySave(IContainerBuilder builder)

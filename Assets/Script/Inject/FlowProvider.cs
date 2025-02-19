@@ -1,5 +1,4 @@
 using Cysharp.Threading.Tasks;
-using gaw241201.Switch.Model;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -69,8 +68,8 @@ namespace gaw241201
                 case FlowConst.Category.SkillAchieve:
                     return InjectUtil.GetInstance<SkillAchieveModel>(_scope);
 
-                case FlowConst.Category.SwitchByTypedFlag:
-                    return InjectUtil.GetInstance<SwitchByTypedFlag>(_scope);
+                case FlowConst.Category.Switch:
+                    return InjectUtil.GetInstance<Switcher>(_scope);
 
                 case FlowConst.Category.NotifySave:
                     return InjectUtil.GetInstance<NotifySave>(_scope);
