@@ -10,11 +10,11 @@ using VContainer.Unity;
 
 namespace gaw241201
 {
-    public class TypedStringGetter : IByStringGetter
+    public class StringGetterTyped : IByStringGetter
     {
         TypedFlagContainer _container;
 
-        public TypedStringGetter(TypedFlagContainer container ) {
+        public StringGetterTyped(TypedFlagContainer container ) {
             _container = container;
         }
 

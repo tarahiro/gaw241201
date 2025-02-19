@@ -13,6 +13,7 @@ namespace gaw241201
     public class CommandProcessorFactory : ICommandProcessorFactory
     {
         [Inject] FlowSwitchPublisher _publisher;
+        [Inject] ConversationModelProvider _conversationModel;
 
         public ISwitchCommandProcessor Create(SwitchConst.TargetCategory targetCategory)
         {
@@ -20,6 +21,9 @@ namespace gaw241201
             {
                 case SwitchConst.TargetCategory.Flow:
                     return new CommandProcessorFlow(_publisher);
+                    
+                    case SwitchConst.TargetCategory.Conversation:
+                    return new CommandProcessorConversation(_conversationModel);
 
                 default:
                     Log.DebugAssert(targetCategory + "ÇÕïsê≥Ç»ílÇ≈Ç∑");
