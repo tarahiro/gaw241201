@@ -24,11 +24,11 @@ namespace gaw241201.Switch.Model
 
                 if(name.ToLower() == _globalFlagProvider.GetFlag(FlagConst.Key.Name).ToLower())
                 {
-                    _publisher.Publish(new FlowSwitchArgs_Fake(FlowMasterConst.FlowMasterLabel.GameoverFlow, ""));
+                    _publisher.Publish(new FlowSwitchArgs(FlowMasterConst.FlowMasterLabel.GameoverFlow, ""));
                 }
                 else
                 {
-                    _publisher.Publish(new FlowSwitchArgs_Fake(FlowMasterConst.FlowMasterLabel.ExhibitionForest2Flow, ""));
+                    _publisher.Publish(new FlowSwitchArgs(FlowMasterConst.FlowMasterLabel.ExhibitionForest2Flow, ""));
                 }
 
                 Log.DebugLog(name);
@@ -36,18 +36,31 @@ namespace gaw241201.Switch.Model
 
             if (bodyId == "KillByEye")
             {
-                _typedFlagContainer.TryGetHolder(out string name);
+                _typedFlagContainer.TryGetHolder(out string holder);
+                _typedFlagContainer.TryGetAnimal(out string animal);
+                _typedFlagContainer.TryGetRight(out string right);
 
-                if (name == "my")
+                if (animal.ToLower() == "at")
                 {
-                    _publisher.Publish(new FlowSwitchArgs_Fake(FlowMasterConst.FlowMasterLabel.GameoverByEyeFlow, ""));
+                    _publisher.Publish(new FlowSwitchArgs(FlowMasterConst.FlowMasterLabel.GameoverByEyeWithAnimalFlow, ""));
+
+                }
+                else if (right == "light")
+                {
+                    _publisher.Publish(new FlowSwitchArgs(FlowMasterConst.FlowMasterLabel.GameoberByEyeWithRightFlow, ""));
+                }
+                else if (holder.ToLower() == "my")
+                {
+                    _publisher.Publish(new FlowSwitchArgs(FlowMasterConst.FlowMasterLabel.GameoverByEyeFlow, ""));
+
                 }
                 else
                 {
-                    _publisher.Publish(new FlowSwitchArgs_Fake(FlowMasterConst.FlowMasterLabel.ExhibitionClearFlow, ""));
+                    _publisher.Publish(new FlowSwitchArgs(FlowMasterConst.FlowMasterLabel.ExhibitionClearFlow, ""));
+
                 }
 
-                Log.DebugLog(name);
+                Log.DebugLog(holder);
             }
         }
 

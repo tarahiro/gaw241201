@@ -11,12 +11,8 @@ using VContainer.Unity;
 
 namespace gaw241201
 {
-    public class Skippable : IClickInputProcessor, IFlowSwitchable_Fake
+    public class Skippable : IClickInputProcessor
     {
-        Subject<FlowSwitchArgs_Fake> _switchFlow = new Subject<FlowSwitchArgs_Fake>();
-        public IObservable<FlowSwitchArgs_Fake> SwitchFlow => _switchFlow;
-
-
         public ClickInputArgs CreateArgs(CancellationToken cancellationToken)
         {
             return new ClickInputArgs(new List<string>()
@@ -27,16 +23,20 @@ namespace gaw241201
 
         public void Process(int _argsIndex)
         {
+            //åªèÛìÆÇ©Ç»Ç¢
+
+            /*
             switch (_argsIndex)
             {
                 case 0:
-                    _switchFlow.OnNext(new FlowSwitchArgs_Fake(FlowMasterConst.FlowMasterLabel.HorrorStoryMainFlow, "205000TypingConversation"));
+                    _switchFlow.OnNext(new FlowSwitchArgs(FlowMasterConst.FlowMasterLabel.HorrorStoryMainFlow, "205000TypingConversation"));
                     break;
 
                 case 1:
-                    _switchFlow.OnNext(new FlowSwitchArgs_Fake(FlowMasterConst.FlowMasterLabel.HorrorStoryMainFlow, ""));
+                    _switchFlow.OnNext(new FlowSwitchArgs(FlowMasterConst.FlowMasterLabel.HorrorStoryMainFlow, ""));
                     break;
             }
+            */
         }
     }
 }

@@ -12,10 +12,11 @@ namespace gaw241201
 {
     public class CmdHaltModel
     {
+        [Inject] FlowSwitchPublisher _publisher;
         [Inject] FlowHundler _flowHundler;
         public void Halt()
         {
-            _flowHundler.SwitchFlow(new FlowSwitchArgs_Fake(FlowMasterConst.FlowMasterLabel.TrueEndFlow,""));
+            _publisher.Publish(new FlowSwitchArgs(FlowMasterConst.FlowMasterLabel.TrueEndFlow,""));
         }
     }
 }

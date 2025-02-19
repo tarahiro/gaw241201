@@ -28,7 +28,7 @@ namespace gaw241201
                     case FlagConst.Key.IsRoguelikeEnabled:
                         if(moniteredChanged.NowValue == Tarahiro.Const.c_true)
                         {
-                            _publisher.Publish(new FlowSwitchArgs_Fake(FlowMasterConst.FlowMasterLabel.ExhibitionForestRoguelikeFlow, ""));
+                            _publisher.Publish(new FlowSwitchArgs(FlowMasterConst.FlowMasterLabel.ExhibitionForestRoguelikeFlow, ""));
                         }
                         break;
 

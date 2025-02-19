@@ -18,6 +18,12 @@ namespace gaw241201
         bool _isHolderegistered = false;
         string _Holder;
 
+        bool _isAnimalegistered = false;
+        string _Animal;
+
+        bool _isRightegistered = false;
+        string _Right;
+
         public void RegisterTypedName(string name)
         {
             Log.DebugLog("Register");
@@ -29,6 +35,17 @@ namespace gaw241201
         {
             _Holder = holder;
             _isHolderegistered = true;
+        }
+
+        public void RegisterAnimal(string Animal)
+        {
+            _Animal = Animal;
+            _isAnimalegistered = true;
+        }
+        public void RegisterRight(string Right)
+        {
+            _Right = Right;
+            _isRightegistered = true;
         }
 
         public bool TryGetTypedName(out string typedName)
@@ -58,11 +75,39 @@ namespace gaw241201
                 return false;
             }
         }
+        public bool TryGetAnimal(out string Animal)
+        {
+            if (_isAnimalegistered)
+            {
+                Animal = _Animal;
+                return true;
+            }
+            else
+            {
+                Animal = "";
+                return false;
+            }
+        }
+        public bool TryGetRight(out string Right)
+        {
+            if (_isRightegistered)
+            {
+                Right = _Right;
+                return true;
+            }
+            else
+            {
+                Right = "";
+                return false;
+            }
+        }
 
         public enum TypedKey
         {
             TypedName,
             Holder,
+            Animal,
+            Right,
         }
     }
 }

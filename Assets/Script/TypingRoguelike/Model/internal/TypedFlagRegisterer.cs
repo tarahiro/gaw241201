@@ -73,7 +73,13 @@ namespace gaw241201
                     case TypedFlagContainer.TypedKey.Holder:
                         _typedFlagContainer.RegisterHolder(_fixedPair[i].value);
                         break;
+                    case TypedFlagContainer.TypedKey.Animal:
+                        _typedFlagContainer.RegisterAnimal(_fixedPair[i].value);
+                        break;
 
+                    case TypedFlagContainer.TypedKey.Right:
+                        _typedFlagContainer.RegisterRight(_fixedPair[i].value);
+                        break;
                     default:
                         Log.DebugWarning("óLå¯Ç»ÉLÅ[Ç™Ç†ÇËÇ‹ÇπÇÒ");
                         break;

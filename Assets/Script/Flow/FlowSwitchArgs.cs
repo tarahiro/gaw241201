@@ -10,12 +10,12 @@ using VContainer.Unity;
 
 namespace gaw241201
 {
-    public class FlowSwitchArgs_Fake
+    public class FlowSwitchArgs
     {
         public FlowMasterConst.FlowMasterLabel FlowName { get; set; }
         public string InitialFlowId {  get; set; }
 
-        public FlowSwitchArgs_Fake(FlowMasterConst.FlowMasterLabel flowName, string initialFlowId)
+        public FlowSwitchArgs(FlowMasterConst.FlowMasterLabel flowName, string initialFlowId)
         {
             FlowName = flowName;
             InitialFlowId = initialFlowId;

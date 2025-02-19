@@ -13,9 +13,9 @@ namespace gaw241201
 {
     public class FlowSwitchPublisher
     {
-        [Inject] IPublisher<FlowSwitchArgs_Fake> _publisher;
+        [Inject] IPublisher<FlowSwitchArgs> _publisher;
 
-        public void Publish(FlowSwitchArgs_Fake args)
+        public void Publish(FlowSwitchArgs args)
         {
             _publisher.Publish(args);
         }

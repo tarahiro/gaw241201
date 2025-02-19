@@ -13,32 +13,27 @@ using VContainer.Unity;
 
 namespace gaw241201
 {
-    public class FlowHundler : IFlowHundler
+    public class FlowHundler : IFlowHundler, IDisposable
     {
         IFlowMasterDataDictionaryProvider _masterDataDictionaryProvider;
          IFlowProvider _flowProvider;
         IGlobalFlagProvider _globalFlagProvider;
-        IFlowSwitchable_Fake _flowSwitchable;
-        ISubscriber<FlowSwitchArgs_Fake> _subject;
+        ISubscriber<FlowSwitchArgs> _subject;
 
         ICategoryEnterableModel _currentFlow;
 
         CompositeDisposable _reserveDisposable;
         CancellationTokenSource _cancellationTokenSource;
 
-        Subject<Unit> _onFlowExited = new Subject<Unit> ();
-
         [Inject]
         public FlowHundler(IFlowMasterDataDictionaryProvider flowMasterDataDictionaryProvider,
             IFlowProvider flowProvider,
             IGlobalFlagProvider globalFlagProvider,
-            IFlowSwitchable_Fake flowSwitchable,
-            ISubscriber<FlowSwitchArgs_Fake> subject)
+            ISubscriber<FlowSwitchArgs> subject)
         {
             _masterDataDictionaryProvider = flowMasterDataDictionaryProvider;
             _flowProvider = flowProvider;
             _globalFlagProvider = globalFlagProvider;
-            _flowSwitchable = flowSwitchable;
             _subject = subject;
 
             _subject.Subscribe(SwitchFlow);
@@ -47,11 +42,10 @@ namespace gaw241201
 
         public void Enter()
         {
-            _flowSwitchable.SwitchFlow.Subscribe(args => ReserveNextFlow(args, SwitchFlow));
         }
 
 
-        public void SwitchFlow(FlowSwitchArgs_Fake _args)
+        public void SwitchFlow(FlowSwitchArgs _args)
         {
             _cancellationTokenSource.Cancel();
 
@@ -95,14 +89,11 @@ namespace gaw241201
                 }
             }
 
-            _onFlowExited.OnNext(Unit.Default);
-            _onFlowExited.Dispose();
         }
 
-        void ReserveNextFlow(FlowSwitchArgs_Fake args, Action<FlowSwitchArgs_Fake> action)
+        public void Dispose()
         {
-            _reserveDisposable = new CompositeDisposable();
-            _onFlowExited.Subscribe(_=> action.Invoke(args)).AddTo(_reserveDisposable);
+
         }
 
 

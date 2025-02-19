@@ -16,8 +16,8 @@
   <AllowPNG/>
  </OfficeDocumentSettings>
  <ExcelWorkbook xmlns="urn:schemas-microsoft-com:office:excel">
-  <WindowHeight>13100</WindowHeight>
-  <WindowWidth>19820</WindowWidth>
+  <WindowHeight>18740</WindowHeight>
+  <WindowWidth>32767</WindowWidth>
   <WindowTopX>32767</WindowTopX>
   <WindowTopY>32767</WindowTopY>
   <RefModeR1C1/>
@@ -284,7 +284,7 @@
       ss:Type="String">&lt;key=Name&gt;は　罪を　償うために、</Data></Cell>
     <Cell ss:StyleID="s67"/>
     <Cell ss:StyleID="s67"><Data ss:Type="String">&lt;key=Name&gt; by atoning for sine,</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">&quot;People feel a sense of familiarity with those who recognize them.&quot;</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">&lt;key=Name&gt; by atoning for sine,</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">304000Typing</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
@@ -295,7 +295,7 @@
       ss:Type="String">死の森に　来ました。</Data></Cell>
     <Cell ss:StyleID="s67"/>
     <Cell ss:StyleID="s67"><Data ss:Type="String">comes dying forest.</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">&quot;People feel a sense of familiarity with those who recognize them.&quot;</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">comes dying forest.</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">304000Typing</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
@@ -306,7 +306,7 @@
       ss:Type="String">木々が　泣いています。</Data></Cell>
     <Cell ss:StyleID="s67"/>
     <Cell ss:StyleID="s67"><Data ss:Type="String">Woods are crying.</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">&quot;People feel a sense of familiarity with those who recognize them.&quot;</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Woods are crying.</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">304500Typing</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
@@ -317,7 +317,7 @@
       ss:Type="String">毒トカゲが　地を這っています。</Data></Cell>
     <Cell ss:StyleID="s67"/>
     <Cell ss:StyleID="s67"><Data ss:Type="String">Lizard is crawling.</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">&quot;People feel a sense of familiarity with those who recognize them.&quot;</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Lizard is crawling.</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">304500Typing</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
@@ -328,7 +328,7 @@
       ss:Type="String">カラスが　&lt;key=Name&gt;の目玉を　えぐりました。</Data></Cell>
     <Cell ss:StyleID="s67"/>
     <Cell ss:StyleID="s67"><Data ss:Type="String">Bird crushes &lt;key=Name&gt;'s eye.</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">&quot;People feel a sense of familiarity with those who recognize them.&quot;</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Bird crushes &lt;key=Name&gt;'s eye.</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">304500Typing</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
@@ -339,7 +339,7 @@
       ss:Type="String">リスの　死体が　転がっています。</Data></Cell>
     <Cell ss:StyleID="s67"/>
     <Cell ss:StyleID="s67"><Data ss:Type="String">Squirrel corpse is lying.</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">&quot;People feel a sense of familiarity with those who recognize them.&quot;</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Squirrel corpse is lying.</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">308000Typing</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
@@ -350,7 +350,7 @@
       ss:Type="String">&lt;key=Name&gt;は　森の　奥に　たどり着きました。</Data></Cell>
     <Cell ss:StyleID="s67"/>
     <Cell ss:StyleID="s67"><Data ss:Type="String">&lt;key=Name&gt; is in center of the forest.</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">&quot;People feel a sense of familiarity with those who recognize them.&quot;</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">&lt;key=Name&gt; is in center of the forest.</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">308000Typing</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
@@ -361,7 +361,7 @@
       ss:Type="String">赤い目の　山羊が　こちらを見ています。</Data></Cell>
     <Cell ss:StyleID="s67"/>
     <Cell ss:StyleID="s67"><Data ss:Type="String">A red-eyed goat is watching &lt;key=Name&gt;.</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">&quot;People feel a sense of familiarity with those who recognize them.&quot;</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">A red-eyed goat is watching &lt;key=Name&gt;.</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">308000Typing</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
@@ -372,7 +372,7 @@
       ss:Type="String">死の　王です。</Data></Cell>
     <Cell ss:StyleID="s67"/>
     <Cell ss:StyleID="s67"><Data ss:Type="String">He is king of death.</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">&quot;People feel a sense of familiarity with those who recognize them.&quot;</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">He is king of death.</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">311000Typing</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
@@ -383,7 +383,7 @@
       ss:Type="String">&lt;key=Name&gt;は　言いました。</Data></Cell>
     <Cell ss:StyleID="s67"/>
     <Cell ss:StyleID="s67"><Data ss:Type="String">&lt;key=Name&gt; said:</Data></Cell>
-    <Cell ss:StyleID="s67"/>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">&lt;key=Name&gt; said:</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">311000Typing</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
@@ -394,7 +394,7 @@
       ss:Type="String">「罪を　償わせて　ください。」</Data></Cell>
     <Cell ss:StyleID="s67"/>
     <Cell ss:StyleID="s67"><Data ss:Type="String">Please let me atone for sine.</Data></Cell>
-    <Cell ss:StyleID="s67"/>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Please let me atone for sine.</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">311000Typing</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
@@ -405,7 +405,7 @@
       ss:Type="String">続けて　言いました。</Data></Cell>
     <Cell ss:StyleID="s67"/>
     <Cell ss:StyleID="s67"><Data ss:Type="String">&lt;key=Name&gt; also said:</Data></Cell>
-    <Cell ss:StyleID="s67"/>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">&lt;key=Name&gt; also said:</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">311000Typing</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
@@ -416,7 +416,7 @@
       ss:Type="String">「おろかな　&lt;key=Name&gt;を　殺してください。」</Data></Cell>
     <Cell ss:StyleID="s67"/>
     <Cell ss:StyleID="s67"><Data ss:Type="String">Please kill poor &lt;key=Name&gt;.</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">&quot;People feel a sense of familiarity with those who recognize them.&quot;</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Please kill poor &lt;key=Name&gt;.</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">311000Typing</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
@@ -427,7 +427,7 @@
       ss:Type="String">『おろかな　&lt;key=Name&gt;を　殺してください。』</Data></Cell>
     <Cell ss:StyleID="s67"/>
     <Cell ss:StyleID="s67"><Data ss:Type="String">Please kill poor &lt;fla:TypedName&gt;&lt;key=Name&gt;&lt;/fla:TypedName&gt;.</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">&quot;People feel a sense of familiarity with those who recognize them.&quot;</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Please kill poor &lt;fla:TypedName&gt;&lt;key=Name&gt;&lt;/fla:TypedName&gt;.</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">320000Typing</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
@@ -438,7 +438,7 @@
       ss:Type="String">&lt;key=Name&gt; は　死の王の前に　立っています。</Data></Cell>
     <Cell ss:StyleID="s67"/>
     <Cell ss:StyleID="s67"><Data ss:Type="String">&lt;key=Name&gt; stands in front of king.</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">&quot;People feel a sense of familiarity with those who recognize them.&quot;</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">&lt;key=Name&gt; stands in front of king.</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">332000Typing</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
@@ -449,7 +449,7 @@
       ss:Type="String">&lt;key=Name&gt;は　言いました。</Data></Cell>
     <Cell ss:StyleID="s67"/>
     <Cell ss:StyleID="s67"><Data ss:Type="String">&lt;key=Name&gt; said:</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">&quot;People feel a sense of familiarity with those who recognize them.&quot;</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">&lt;key=Name&gt; said:</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">332000Typing</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
@@ -460,7 +460,7 @@
       ss:Type="String">『罪を　償わせて　ください。』</Data></Cell>
     <Cell ss:StyleID="s67"/>
     <Cell ss:StyleID="s67"><Data ss:Type="String">Please let me atone for sine.</Data></Cell>
-    <Cell ss:StyleID="s67"/>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Please let me atone for sine.</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">332000Typing</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="18.5">
@@ -471,7 +471,7 @@
       ss:Type="String">『山羊と死の王よ、私の　右目を　差し上げます。』</Data></Cell>
     <Cell ss:StyleID="s67"/>
     <Cell ss:StyleID="s67"><Data ss:Type="String">Goat and Death king, take my right eye.</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">&quot;People feel a sense of familiarity with those who recognize them.&quot;</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Goat and Death king, take my right eye.</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">332000Typing</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0" ss:Height="18.5">
@@ -481,8 +481,8 @@
       xmlns="urn:schemas-microsoft-com:office:excel">ヤギシオウワタシミギメサア</PhoneticText><Data
       ss:Type="String">『山羊と死の王よ、私の　右目を　差し上げます。』</Data></Cell>
     <Cell ss:StyleID="s67"/>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">&lt;Animal&gt;Goat&lt;/Animal&gt; and Death king, take &lt;fla:Holder&gt;&lt;Human&gt;my&lt;/Human&gt;&lt;/fla:Holder&gt; right eye.</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">&quot;People feel a sense of familiarity with those who recognize them.&quot;</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">&lt;fla:Animal&gt;&lt;Animal&gt;Goat&lt;/Animal&gt;&lt;/fla:Animal&gt; and Death king, take &lt;fla:Holder&gt;&lt;Human&gt;my&lt;/Human&gt;&lt;/fla:Holder&gt; &lt;fla:Right&gt;right&lt;/fla:Right&gt; eye.</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">&lt;fla:Animal&gt;&lt;Animal&gt;Goat&lt;/Animal&gt;&lt;/fla:Animal&gt; and Death king, take &lt;fla:Holder&gt;&lt;Human&gt;my&lt;/Human&gt;&lt;/fla:Holder&gt; &lt;fla:Right&gt;right&lt;/fla:Right&gt; eye.</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">340000Typing</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
@@ -737,12 +737,13 @@
    </Print>
    <TabColorIndex>13</TabColorIndex>
    <Selected/>
-   <TopRowVisible>11</TopRowVisible>
+   <TopRowVisible>12</TopRowVisible>
    <Panes>
     <Pane>
      <Number>3</Number>
-     <ActiveRow>38</ActiveRow>
-     <ActiveCol>4</ActiveCol>
+     <ActiveRow>20</ActiveRow>
+     <ActiveCol>5</ActiveCol>
+     <RangeSelection>R21C6:R39C6</RangeSelection>
     </Pane>
    </Panes>
    <ProtectObjects>False</ProtectObjects>

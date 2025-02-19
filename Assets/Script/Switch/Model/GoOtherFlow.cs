@@ -20,7 +20,7 @@ namespace gaw241201
         public async UniTask EnterFlow(string bodyId)
         {
             Log.DebugLog(bodyId + "ŠJŽn");
-            _publisher.Publish(new FlowSwitchArgs_Fake(EnumUtil.KeyToType<FlowMasterConst.FlowMasterLabel>(
+            _publisher.Publish(new FlowSwitchArgs(EnumUtil.KeyToType<FlowMasterConst.FlowMasterLabel>(
                 bodyId), ""));
         }
 

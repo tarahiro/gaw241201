@@ -157,8 +157,8 @@
     <Cell ss:StyleID="s67"><Data ss:Type="String">CAT</Data></Cell>
     <Cell ss:StyleID="s67" ss:Formula="=RC[-1]"><Data ss:Type="String">CAT</Data></Cell>
     <Cell ss:StyleID="s67"><PhoneticText
-      xmlns="urn:schemas-microsoft-com:office:excel">ウトキシュクフクバイ</PhoneticText><Data
-      ss:Type="String">&quot;CAT&quot;を打った時の祝福が10倍。</Data></Cell>
+      xmlns="urn:schemas-microsoft-com:office:excel">ドウブツオカウトキシュクフクバイ</PhoneticText><Data
+      ss:Type="String">動物をCATに置き換えられる。&quot;CAT&quot;を打った時の祝福が10倍。</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">Blessings multiply by 10 when typing &quot;CAT&quot;.</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">CAT</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">Animal</Data></Cell>
@@ -565,7 +565,7 @@
     <Pane>
      <Number>3</Number>
      <ActiveRow>5</ActiveRow>
-     <ActiveCol>6</ActiveCol>
+     <ActiveCol>4</ActiveCol>
     </Pane>
    </Panes>
    <ProtectObjects>False</ProtectObjects>
