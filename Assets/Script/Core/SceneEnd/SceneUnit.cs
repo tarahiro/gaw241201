@@ -10,11 +10,7 @@ using VContainer.Unity;
 
 namespace gaw241201
 {
-    public class ConditionJudgerSimple : ISwitchConditionJudger
+    public class SceneUnit : ISceneUnit
     {
-        public bool IsMatch(string conditionValue, string targetValue)
-        {
-            return conditionValue.ToLower() == targetValue.ToLower();
-        }
     }
 }

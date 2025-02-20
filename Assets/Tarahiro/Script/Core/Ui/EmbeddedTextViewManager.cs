@@ -18,7 +18,7 @@ namespace Tarahiro.Ui
 
         public void Initialize()
         {
-            var array = GameObject.FindObjectsOfType<EmbeddedTranslationTextView>();
+            var array = GameObject.FindObjectsByType<EmbeddedTranslationTextView>(FindObjectsInactive.Include, FindObjectsSortMode.None);
             foreach(var view in array)
             {
                 _finded.OnNext(view);

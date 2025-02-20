@@ -318,7 +318,7 @@
       ss:Type="String">毒トカゲが　地を這っています。</Data></Cell>
     <Cell ss:StyleID="s67"/>
     <Cell ss:StyleID="s67"><Data ss:Type="String">Lizard is crawling.</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">Lizard is crawling.</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">A lizard is crawling.</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">304500Typing</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
@@ -329,7 +329,7 @@
       ss:Type="String">カラスが　&lt;key=Name&gt;の目玉を　えぐりました。</Data></Cell>
     <Cell ss:StyleID="s67"/>
     <Cell ss:StyleID="s67"><Data ss:Type="String">Bird crushes &lt;key=Name&gt;'s eye.</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">Bird crushes &lt;key=Name&gt;'s eye.</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">A crow scoops out &lt;key=Name&gt;'s eye.</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">304500Typing</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
@@ -340,7 +340,7 @@
       ss:Type="String">リスの　死体が　転がっています。</Data></Cell>
     <Cell ss:StyleID="s67"/>
     <Cell ss:StyleID="s67"><Data ss:Type="String">Squirrel corpse is lying.</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">Squirrel corpse is lying.</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">A squirrel corpse is lying.</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">308000Typing</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
@@ -373,7 +373,7 @@
       ss:Type="String">死の　王です。</Data></Cell>
     <Cell ss:StyleID="s67"/>
     <Cell ss:StyleID="s67"><Data ss:Type="String">He is king of death.</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">He is king of death.</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">He is the king of death.</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">311000Typing</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
@@ -428,7 +428,7 @@
       ss:Type="String">『おろかな　&lt;key=Name&gt;を　殺してください。』</Data></Cell>
     <Cell ss:StyleID="s67"/>
     <Cell ss:StyleID="s67"><Data ss:Type="String">Please kill poor &lt;fla:Name&gt;&lt;key=Name&gt;&lt;/fla:Name&gt;.</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">Please kill poor &lt;fla:TypedName&gt;&lt;key=Name&gt;&lt;/fla:TypedName&gt;.</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Please kill poor &lt;fla:Name&gt;&lt;key=Name&gt;&lt;/fla:Name&gt;.</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">320000Typing</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
@@ -439,7 +439,7 @@
       ss:Type="String">&lt;key=Name&gt; は　死の王の前に　立っています。</Data></Cell>
     <Cell ss:StyleID="s67"/>
     <Cell ss:StyleID="s67"><Data ss:Type="String">&lt;key=Name&gt; stands in front of king.</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">&lt;key=Name&gt; stands in front of king.</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">&lt;key=Name&gt; stands in front of the king.</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">332000Typing</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
@@ -738,12 +738,12 @@
    </Print>
    <TabColorIndex>13</TabColorIndex>
    <Selected/>
-   <TopRowVisible>17</TopRowVisible>
+   <TopRowVisible>11</TopRowVisible>
    <Panes>
     <Pane>
      <Number>3</Number>
-     <ActiveRow>38</ActiveRow>
-     <ActiveCol>4</ActiveCol>
+     <ActiveRow>23</ActiveRow>
+     <ActiveCol>5</ActiveCol>
     </Pane>
    </Panes>
    <ProtectObjects>False</ProtectObjects>

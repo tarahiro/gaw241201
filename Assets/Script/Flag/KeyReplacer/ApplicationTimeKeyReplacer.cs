@@ -14,6 +14,8 @@ namespace gaw241201
     public class ApplicationTimeKeyReplacer : IKeyReplacer
     {
         [Inject] IGlobalFlagProvider _flagProvider;
+        [Inject] ILanguageMessageMasterDataProvider _languageMasterDataProvider;
+        [Inject] LanguageModel _languageModel;
         public string ReplaceTo(FlagConst.MessageKey key)
         {
             Log.Comment("ApplicationTimeèëÇ´ä∑Ç¶");
@@ -23,9 +25,11 @@ namespace gaw241201
 
             TimeInDay applicationTid = CreateTimeInDay(value);
 
-            replaceTo += applicationTid.Hour.ToString() + "éû";
-            replaceTo += applicationTid.Minute.ToString() + "ï™";
-            replaceTo += applicationTid.Second.ToString() + "ïb";
+            int _languageIndex = (int)_languageModel.Language;
+
+            replaceTo += applicationTid.Hour.ToString() + _languageMasterDataProvider.TryGetFromId("Hour").GetMaster().Message.GetTranslatedText(_languageIndex);
+            replaceTo += applicationTid.Minute.ToString() + _languageMasterDataProvider.TryGetFromId("Minute").GetMaster().Message.GetTranslatedText(_languageIndex);
+            replaceTo += applicationTid.Second.ToString() + _languageMasterDataProvider.TryGetFromId("Second").GetMaster().Message.GetTranslatedText(_languageIndex);
 
             return replaceTo;
         }

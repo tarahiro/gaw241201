@@ -22,6 +22,7 @@ namespace gaw241201.Presenter
 
         CompositeDisposable disposables = new CompositeDisposable();
 
+
         public void PostInitialize()
         {
             _model.WaveInformationDecided.Subscribe(x => _view.Enter(_factory.Create(x))).AddTo(disposables);

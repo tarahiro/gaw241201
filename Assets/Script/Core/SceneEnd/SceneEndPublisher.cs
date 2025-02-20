@@ -11,14 +11,13 @@ using VContainer.Unity;
 
 namespace gaw241201
 {
-    public class ScenePublisher
+    public class SceneEndPublisher
     {
-        [Inject] IPublisher<Unit> _publisher;
-        [Inject] IPublisher<ISceneUnit> _pPublisher;
+        [Inject] IPublisher<ISceneUnit> _publisher;
 
         public void Publish()
         {
-            _publisher.Publish(Unit.Default);
+            _publisher.Publish(new SceneUnit());
         }
     }
 }

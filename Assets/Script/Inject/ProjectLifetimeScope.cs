@@ -24,6 +24,9 @@ namespace gaw241201.Inject
         {
             Log.Comment("ProjectLifetimeScope‚Ì“o˜^ŠJŽn");
 
+            builder.Register<DisposablePure>(Lifetime.Transient).As<IDisposablePure>();
+
+
             ConfigureGlobalFactory(builder);
             ConfigureManager(builder);
             ConfigureTitle(builder);

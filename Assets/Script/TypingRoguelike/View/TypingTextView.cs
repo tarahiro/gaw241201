@@ -36,7 +36,7 @@ namespace gaw241201.View
 
         static readonly Dictionary<char, string> replacingDictionary = new Dictionary<char, string>()
         {
-            {' ',"space" }
+           {' ',"space" }
         };
 
         TMP_StyleSheet styleSheet;

@@ -24,10 +24,14 @@ namespace gaw241201
         bool _isStartMonitorSetting = false;
 
         [Inject]
-        public MonitorModel( ISubscriber<FlagConst.Key, string> subscriber)
+        IDisposablePure _disposablePure;
+
+        [Inject]
+        public MonitorModel(ISubscriber<FlagConst.Key, string> subscriber, IDisposablePure disposablePure)
         {
+            _disposablePure = disposablePure;
             _subscriber = subscriber;
-            _subscriber.Subscribe(FlagConst.Key.IsSettingEnable, OnFlagChanged);
+            _subscriber.Subscribe(FlagConst.Key.IsSettingEnable, OnFlagChanged).AddTo(_disposablePure);
         }
 
         void OnFlagChanged(string value)

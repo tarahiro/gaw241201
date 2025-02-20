@@ -11,7 +11,7 @@ namespace Tarahiro.Ui
 {
     public static class TextUtil
     {
-        const float c_defaultTextIntervalTime = .1f;
+        public const float c_defaultTextIntervalTime = .05f;
         public static async UniTask DisplayTextByCharacter(string text, TextMeshProUGUI textMeshProUGUI, string SeLabel, KeyCode[] decide, CancellationToken ct, bool isSeRun = true, float textIntervalTime = c_defaultTextIntervalTime)
         {
             ct.Register(() => ExitDisplayText(text, textMeshProUGUI, isSeRun));
