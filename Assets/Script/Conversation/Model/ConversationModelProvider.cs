@@ -12,7 +12,7 @@ namespace gaw241201
 {
     public class ConversationModelProvider
     {
-        [Inject] ConversationModelFactory _factory;
+        [Inject] IConversationModelFactory _factory;
 
         public IConversationModel MainConversationModel { get; private set; }
 

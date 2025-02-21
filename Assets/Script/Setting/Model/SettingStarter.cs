@@ -19,10 +19,10 @@ namespace gaw241201
         Subject<SettingTabEnterArgs> _settingStarted = new Subject<SettingTabEnterArgs>();
         public IObservable<SettingTabEnterArgs> SettingStarted => _settingStarted;
 
-        CancellationTokenSource _cts;
+        [Inject] ICancellationTokenPure _cts;
         public async UniTask Enter()
         {
-            _cts = new CancellationTokenSource();
+            _cts.SetNew();
 
             _uiModel.GetSettingUiState(out var _tabIndex, out var _itemIndex);
             _settingStarted.OnNext(new SettingTabEnterArgs(_tabIndex, _itemIndex, _cts.Token));

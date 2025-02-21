@@ -22,9 +22,11 @@ namespace gaw241201.View
         [SerializeField] BlinkableCursor _underBar;
 
         [Inject] IFreeInputMessagePublisher _messagePublisher;
-        
-        CancellationTokenSource _cancellationTokenSource;
 
+        private void Start()
+        {
+           // _cancellationTokenSource = this.GetCancellationTokenOnDestroy();
+        }
 
         public void SetCharacter(char c)
         {
@@ -39,26 +41,27 @@ namespace gaw241201.View
 
         public void Focus()
         {
-            _cancellationTokenSource = new CancellationTokenSource();
+            //_cancellationTokenSource.SetNew();
             _underBar.StartBlink();
 
             _messagePublisher.OnType(Camera.main.WorldToScreenPoint(transform.position));
-           // _gazable.Gaze(Camera.main.WorldToScreenPoint(transform.position));
            
         }
 
         public void UnFocus()
         {
-            _cancellationTokenSource.Cancel();
+           // _cancellationTokenSource.Cancel();
             _underBar.StopBlink();
 
         }
 
-
-        public void Enter(IFreeInputMessagePublisher messagePublisher)
+        public void Construct(IFreeInputMessagePublisher messagePublisher)
         {
             _messagePublisher = messagePublisher;
+
         }
+
+
 
         public bool TryGetCharacter(out char c)
         {

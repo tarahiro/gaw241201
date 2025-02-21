@@ -17,7 +17,7 @@ namespace gaw241201
         Subject<MonitorArgs> _entered = new Subject<MonitorArgs>();
         public IObservable<MonitorArgs> Entered => _entered;
 
-        CancellationTokenSource _cts;
+        [Inject]  ICancellationTokenPure _cts;
 
         ISubscriber<FlagConst.Key, string> _subscriber;
 
@@ -27,11 +27,13 @@ namespace gaw241201
         IDisposablePure _disposablePure;
 
         [Inject]
-        public MonitorModel(ISubscriber<FlagConst.Key, string> subscriber, IDisposablePure disposablePure)
+        public MonitorModel(ISubscriber<FlagConst.Key, string> subscriber, IDisposablePure disposablePure, ICancellationTokenPure cancellationTokenPure)
         {
             _disposablePure = disposablePure;
             _subscriber = subscriber;
             _subscriber.Subscribe(FlagConst.Key.IsSettingEnable, OnFlagChanged).AddTo(_disposablePure);
+
+            _cts = cancellationTokenPure;
         }
 
         void OnFlagChanged(string value)
@@ -49,7 +51,7 @@ namespace gaw241201
         public void StartMonitor(string bodyId)
         {
 
-            _cts = new CancellationTokenSource();
+            _cts.SetNew();
             _entered.OnNext(new MonitorArgs(bodyId, _cts.Token));
         }
     }

@@ -45,6 +45,11 @@ namespace gaw241201.View
             return true;
         }
 
+        private void Awake()
+        {
+
+        }
+
         private void Start()
         {
             _enterKeyObject.SetActive(false);
@@ -59,7 +64,7 @@ namespace gaw241201.View
         {
             foreach (var item in _inputCharacterList)
             {
-                item.Enter(_messagePublisher);
+                item.Construct(_messagePublisher);
             }
             _currentItem.Focus();
             ct.Register(() => Exit(ct));

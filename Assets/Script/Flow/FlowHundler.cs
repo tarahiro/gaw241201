@@ -13,7 +13,7 @@ using VContainer.Unity;
 
 namespace gaw241201
 {
-    public class FlowHundler : IFlowHundler, IDisposable
+    public class FlowHundler : IFlowHundler
     {
         IFlowMasterDataDictionaryProvider _masterDataDictionaryProvider;
          IFlowProvider _flowProvider;
@@ -23,20 +23,23 @@ namespace gaw241201
         ICategoryEnterableModel _currentFlow;
 
         CompositeDisposable _reserveDisposable;
-        CancellationTokenSource _cancellationTokenSource;
+        ICancellationTokenPure _cancellationTokenSource;
 
         [Inject]
         public FlowHundler(IFlowMasterDataDictionaryProvider flowMasterDataDictionaryProvider,
             IFlowProvider flowProvider,
             IGlobalFlagProvider globalFlagProvider,
-            ISubscriber<FlowSwitchArgs> subject)
+            ISubscriber<FlowSwitchArgs> subject,
+            IDisposablePure disposables,
+            ICancellationTokenPure cancellationTokenPure)
         {
             _masterDataDictionaryProvider = flowMasterDataDictionaryProvider;
             _flowProvider = flowProvider;
             _globalFlagProvider = globalFlagProvider;
             _subject = subject;
+            _cancellationTokenSource = cancellationTokenPure;
 
-            _subject.Subscribe(SwitchFlow);
+            _subject.Subscribe(SwitchFlow).AddTo(disposables);
         }
 
 
@@ -57,7 +60,7 @@ namespace gaw241201
 
         public void EnterFlowLoop(FlowMasterConst.FlowMasterLabel flowName, string specificId = "")
         {
-            _cancellationTokenSource = new CancellationTokenSource();
+            _cancellationTokenSource.SetNew();
             FlowLoop(flowName, _cancellationTokenSource.Token, specificId).Forget();
         }
 
@@ -90,13 +93,6 @@ namespace gaw241201
             }
 
         }
-
-
-        public void Dispose()
-        {
-
-        }
-
 
 #if ENABLE_DEBUG
         public ICategoryEnterableModel ForceGetCurrentFlow()

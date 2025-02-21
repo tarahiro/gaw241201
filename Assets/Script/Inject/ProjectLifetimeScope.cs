@@ -26,7 +26,7 @@ namespace gaw241201.Inject
 
             builder.Register<DisposablePure>(Lifetime.Transient).As<IDisposablePure>();
             builder.Register<CancellationTokenPure>(Lifetime.Transient).AsImplementedInterfaces();
-
+            
             ConfigureGlobalFactory(builder);
             ConfigureManager(builder);
             ConfigureTitle(builder);
@@ -295,7 +295,7 @@ namespace gaw241201.Inject
             builder.Register<MessageKeyReplacerProvider>(Lifetime.Singleton).AsSelf();
             builder.Register<FakeSkillChoicesDecider>(Lifetime.Singleton).AsImplementedInterfaces();
 
-            builder.Register<ConversationModelFactory>(Lifetime.Singleton).AsSelf();
+            builder.Register<ConversationModelFactory>(Lifetime.Singleton).AsImplementedInterfaces();
             builder.Register<ConversationModelProvider>(Lifetime.Singleton).AsSelf();
 
 

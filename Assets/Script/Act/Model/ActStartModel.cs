@@ -25,9 +25,9 @@ namespace gaw241201
 
         Subject<List<ModelArgs<IStageMasterRegisteredRestrictedCharList>>> _waveInformationDecided = new Subject<List<ModelArgs<IStageMasterRegisteredRestrictedCharList>>>();
         Subject<ActBgViewArgs> _bgDecided = new Subject<ActBgViewArgs>();
-        
-        
-        CancellationTokenSource _cts = new CancellationTokenSource();
+
+
+        [Inject] ICancellationTokenPure _cts;
         public IObservable<List<ModelArgs<IStageMasterRegisteredRestrictedCharList>>> WaveInformationDecided => _waveInformationDecided;
         public IObservable<ActBgViewArgs> BgDecided => _bgDecided;
 
@@ -39,7 +39,7 @@ namespace gaw241201
         {   /*TextSequenceModel<T>‚Æ‚Ì‹¤’Ê•”•ª*/
             Log.Comment(bodyId + "‚ÌGroupŠJŽn");
 
-            _cts = new CancellationTokenSource();
+            _cts.SetNew();
             IActMaster _master = _masterDataProvider.TryGetFromId(bodyId).GetMaster();
             List<IStageMaster> _thisGroup = _groupMasterGettable.GetGroupMaster(_master.StageGroupId);
             Log.DebugLog("groupMaster‚Å‚ÌŽæ“¾: " + _thisGroup.Count);

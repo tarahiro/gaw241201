@@ -17,7 +17,7 @@ namespace gaw241201
         [Inject] IGroupMasterGettable<T> _groupMasterGettable;
         [Inject] ISingleTextSequenceEnterable<T> _singleTextSequenceEnterable;
 
-        CancellationTokenSource _cts = new CancellationTokenSource();
+        [Inject] ICancellationTokenPure _cts;
 
         //Unitask‚ÆSubject‚Ì•ÏŠ·‚ðŽg‚Á‚Ä‚«‚ê‚¢‚É‚µ‚½‚¢
         bool _isEnded = false;
@@ -26,7 +26,7 @@ namespace gaw241201
         {
             Log.Comment(bodyId + "‚ÌGroupŠJŽn");
 
-            _cts = new CancellationTokenSource();
+            _cts.SetNew();
             List<T> _thisGroup = _groupMasterGettable.GetGroupMaster(bodyId);
 
             for (int i = 0; i < _thisGroup.Count && !_cts.IsCancellationRequested; i++)

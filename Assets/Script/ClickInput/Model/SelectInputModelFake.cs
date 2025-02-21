@@ -24,14 +24,14 @@ namespace gaw241201
         Subject<int> _focused = new Subject<int> ();
         public IObservable<int> Focused => _focused;
 
-        CancellationTokenSource _ct;
+        [Inject] ICancellationTokenPure _ct;
 
         bool _isEnded = false;
         public async UniTask EnterFlow(string bodyId)
         {
             Log.Comment("ClickInputModelŠJŽn");
             _isEnded = false;
-            _ct = new CancellationTokenSource();
+            _ct.SetNew();
 
             _entered.OnNext(_ct.Token);
 

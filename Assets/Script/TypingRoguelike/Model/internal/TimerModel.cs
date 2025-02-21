@@ -17,7 +17,7 @@ namespace gaw241201
         float _maxTime;
         bool _isCountTime = false;
         TimerArgs _args;
-        CancellationTokenSource _cts;
+        [Inject] ICancellationTokenPure _cts;
 
         Subject<TimerArgs> _entered = new Subject<TimerArgs>();
         Subject<float> _updated = new Subject<float>();
@@ -39,7 +39,7 @@ namespace gaw241201
             _isCountTime = true;
             _time = 0;
             _maxTime = maxTime;
-            _cts = new CancellationTokenSource();
+            _cts.SetNew();
 
             _entered.OnNext(new TimerArgs(_time, _cts.Token));
 

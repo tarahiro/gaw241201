@@ -18,16 +18,17 @@ namespace gaw241201
         
         ISingleTextSequenceEnterable<IConversationMaster> _singleTextSequenceEnterable;
 
-        CancellationTokenSource _cts = new CancellationTokenSource();
+        [Inject] ICancellationTokenPure _cts;
 
         //Unitask‚ÆSubject‚Ì•ÏŠ·‚ðŽg‚Á‚Ä‚«‚ê‚¢‚É‚µ‚½‚¢
         bool _isEnded = false;
 
         [Inject]
-        public ConversationModel(ISingleTextSequenceEnterable<IConversationMaster> singleTextSequenceEnterable, IGroupMasterGettable<IConversationMaster> groupMasterGettable)
+        public ConversationModel(ISingleTextSequenceEnterable<IConversationMaster> singleTextSequenceEnterable, IGroupMasterGettable<IConversationMaster> groupMasterGettable, ICancellationTokenPure cancellationTokenPure)
         {
             _singleTextSequenceEnterable = singleTextSequenceEnterable;
             _groupMasterGettable = groupMasterGettable;
+            _cts = cancellationTokenPure;
         }
 
         public void Initialize(Action<ModelArgs<IConversationMaster>> action, IDisposablePure disposable)
@@ -39,7 +40,7 @@ namespace gaw241201
         {
             Log.Comment(bodyId + "‚ÌGroupŠJŽn");
 
-            _cts = new CancellationTokenSource();
+            _cts.SetNew();
             List<IConversationMaster> _thisGroup = _groupMasterGettable.GetGroupMaster(bodyId);
 
             for (int i = 0; i < _thisGroup.Count && !_cts.IsCancellationRequested; i++)

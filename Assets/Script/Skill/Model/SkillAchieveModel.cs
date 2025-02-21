@@ -22,13 +22,13 @@ namespace gaw241201
         Subject<Unit> _exited = new Subject<Unit>();
         public IObservable<Unit> Exited => _exited;
 
-        CancellationTokenSource _cts;
+        [Inject] ICancellationTokenPure _cts;
         bool _isEnd;
 
         public async UniTask EnterFlow(string bodyId)
         {
             Log.DebugLog("スキル獲得開始");
-            _cts = new CancellationTokenSource();
+            _cts.SetNew();
             _isEnd = false;
 
             _skillMenuModel.Enter(_cts.Token, _skillChoicesDecideable.DecideChoices(bodyId));

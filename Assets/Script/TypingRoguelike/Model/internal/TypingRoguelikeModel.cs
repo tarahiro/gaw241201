@@ -27,7 +27,7 @@ namespace gaw241201
         [Inject] WaveClearModel _waveClearModel;
 
 
-        CancellationTokenSource _cts = new CancellationTokenSource();
+        [Inject] ICancellationTokenPure _cts;
 
         Subject<Unit> _timerEnded = new Subject<Unit>();
         public IObservable<Unit> TimerEnded => _timerEnded;
@@ -40,7 +40,7 @@ namespace gaw241201
         {   /*TextSequenceModel<T>‚Æ‚Ì‹¤’Ê•”•ª*/
             Log.Comment(bodyId + "‚ÌGroupŠJn");
 
-            _cts = new CancellationTokenSource();
+            _cts.SetNew();
             List<ITypingRoguelikeSingleSequenceMaster> _thisGroup = _groupMasterGettable.GetGroupMaster(bodyId);
             /*‹¤’Ê•”•ªI‚í‚è*/
 

@@ -23,7 +23,7 @@ namespace gaw241201.View
 
         const int c_maxDisplayLineNumber = 17;
 
-        CancellationTokenSource ContinuousCts;
+        [Inject] ICancellationTokenPure ContinuousCts;
 
         public async UniTask Enter(CancellationToken cancellationToken)
         {
@@ -48,7 +48,7 @@ namespace gaw241201.View
 
         void OnExit()
         {
-            ContinuousCts = new CancellationTokenSource();
+            ContinuousCts.SetNew();
             ContinuousLineLoop(ContinuousCts.Token).Forget();
         }
 

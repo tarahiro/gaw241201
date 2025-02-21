@@ -16,10 +16,10 @@ namespace gaw241201
         Subject<SettingExitArgs> _settingExited = new Subject<SettingExitArgs>();
         public IObservable<SettingExitArgs> SettingExited => _settingExited;
 
-        CancellationTokenSource _cts;
+        [Inject] ICancellationTokenPure _cts;
         public async UniTask Enter()
         {
-            _cts = new CancellationTokenSource();
+            _cts.SetNew();
             _settingExited.OnNext(new SettingExitArgs(_cts.Token));
         }
     }

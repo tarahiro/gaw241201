@@ -27,13 +27,7 @@ namespace gaw241201
             }
 
         }
-        public CancellationToken Token
-        {
-            get
-            {
-                return _cancellationTokenSource.Token;
-            }
-        }
+        public CancellationToken Token => _cancellationTokenSource.Token;
 
         public CancellationTokenPure(ISubscriber<SceneEndConst.SceneEndOrder, ISceneUnit> subscriber,IDisposablePure disposable)
         {
@@ -45,6 +39,8 @@ namespace gaw241201
         {
             _cancellationTokenSource = new CancellationTokenSource();
         }
+
+        public bool IsCancellationRequested => _cancellationTokenSource.IsCancellationRequested;
 
     }
 }

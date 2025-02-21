@@ -19,7 +19,7 @@ namespace gaw241201
         Subject<ClickInputArgs> _entered = new Subject<ClickInputArgs>();
         public IObservable<ClickInputArgs> Entered => _entered;
 
-        CancellationTokenSource _ct;
+        [Inject] ICancellationTokenPure _ct;
 
         bool _isEnded = false;
         IClickInputProcessor _currentProcessor;
@@ -29,7 +29,7 @@ namespace gaw241201
         {
             Log.Comment("ClickInputModelŠJŽn");
             _isEnded = false;
-            _ct = new CancellationTokenSource();
+            _ct.SetNew();
 
             _currentProcessor = _processorProvider.Create(EnumUtil.KeyToType<ClickInputConst.Key>(bodyId));
 

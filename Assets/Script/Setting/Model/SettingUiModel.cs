@@ -25,7 +25,7 @@ namespace gaw241201
         {
             _settingTabModelList = _settingTabListFactory.Create();
         }
-        CancellationTokenSource _tabChangeCts;
+        [Inject] ICancellationTokenPure _tabChangeCts;
 
         public void ChangeTab(SettingConst.TabDirection direction)
         {
@@ -40,7 +40,7 @@ namespace gaw241201
             } while (!_settingTabModelList[TabIndex].IsEnable);
 
 
-            _tabChangeCts = new CancellationTokenSource();
+            _tabChangeCts.SetNew();
             _tabChanged.OnNext(new SettingTabEnterArgs(TabIndex, Current.ItemIndex, _tabChangeCts.Token));
         }
 

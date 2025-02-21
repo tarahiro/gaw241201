@@ -22,7 +22,6 @@ namespace gaw241201.Presenter
         [Inject] IUiViewDeletable _uiViewDeletable;
 
         [Inject] IDisposablePure _disposable;
-        CancellationTokenSource cancellationTokenSource = new CancellationTokenSource();
 
         public void PostInitialize()
         {

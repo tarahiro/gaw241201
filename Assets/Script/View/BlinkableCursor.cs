@@ -18,7 +18,7 @@ namespace gaw241201.View
         [SerializeField] float _activeTime = .5f;
         [SerializeField] float _waitTime = .2f;
 
-        CancellationTokenSource cancellationTokenSource = null;
+        CancellationTokenSource cancellationTokenSource;
 
         private void LateStart()
         {
@@ -28,7 +28,6 @@ namespace gaw241201.View
         public void StartBlink()
         {
             cancellationTokenSource = new CancellationTokenSource();
-
             Main(cancellationTokenSource.Token).Forget();
         }
 
@@ -60,6 +59,11 @@ namespace gaw241201.View
         {
             Log.DebugAssert(cancellationTokenSource == null || cancellationTokenSource.IsCancellationRequested);
             _cursor.SetActive(false);
+        }
+
+        private void OnDestroy()
+        {
+            cancellationTokenSource?.Cancel();
         }
     }
 }

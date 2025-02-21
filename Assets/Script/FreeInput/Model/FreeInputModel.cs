@@ -18,7 +18,7 @@ namespace gaw241201
 
         bool _isEnded = false;
         string _bodyId;
-        CancellationTokenSource _cts;
+        [Inject] ICancellationTokenPure _cts;
         Subject<FlowArgs> _entered  = new Subject<FlowArgs>();
 
         public IObservable<FlowArgs> Entered => _entered;
@@ -26,7 +26,7 @@ namespace gaw241201
         public async UniTask EnterFlow(string bodyId)
         {
             Log.Comment(bodyId + "‚ÌFreeInputŠJŽn");
-            _cts = new CancellationTokenSource();
+            _cts.SetNew();
             _bodyId = bodyId;
             _isEnded = false;
 
