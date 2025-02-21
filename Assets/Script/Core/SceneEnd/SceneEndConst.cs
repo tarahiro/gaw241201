@@ -10,10 +10,15 @@ using VContainer.Unity;
 
 namespace gaw241201
 {
-    public interface IConversationModel
+    public class SceneEndConst
     {
-        UniTask Enter(string bodyId);
-        void Initialize(Action<ModelArgs<IConversationMaster>> action, IDisposablePure disposables);
-        void EndSingle();
+        public enum SceneEndOrder
+        {
+            Awake,
+            PostInitialize,
+            Initialize,
+            Start,
+            PostStart
+        }
     }
 }

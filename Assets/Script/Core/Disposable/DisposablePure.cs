@@ -15,14 +15,14 @@ namespace gaw241201
     {
         CompositeDisposable _disposable;
 
-        [Inject] ISubscriber<ISceneUnit> _subscriber;
+        [Inject] ISubscriber<SceneEndConst.SceneEndOrder, ISceneUnit> _subscriber;
 
         public void Add(IDisposable item) => _disposable.Add(item);
         public bool Remove(IDisposable item) => _disposable.Remove(item);
         public bool Contains(IDisposable item) => _disposable.Contains(item);
         public void Clear() => _disposable.Clear();
         public void Dispose() 
-        { 
+        {
             _disposable.Dispose();
         }
         public void CopyTo(IDisposable[] array, int arrayIndex) => _disposable.CopyTo(array, arrayIndex);
@@ -31,11 +31,11 @@ namespace gaw241201
         public int Count => _disposable.Count;
         public bool IsReadOnly => _disposable.IsReadOnly;
 
-        public DisposablePure(ISubscriber<ISceneUnit> subscriber)
+        public DisposablePure(ISubscriber<SceneEndConst.SceneEndOrder, ISceneUnit> subscriber)
         {
             _disposable = new CompositeDisposable();
             _subscriber = subscriber;
-            _subscriber.Subscribe(_ => Dispose()).AddTo(_disposable);
+            _subscriber.Subscribe(SceneEndConst.SceneEndOrder.Start, _ => Dispose()).AddTo(_disposable);
         }
 
     }

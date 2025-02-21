@@ -16,7 +16,6 @@ namespace gaw241201
 
         public string HundleKey(string message)
         {
-            Log.Comment("Message“à‚ÌKey‚ÌŒŸõŠJn");
             string returnMessage = message;
 
             foreach(FlagConst.MessageKey key in Enum.GetValues(typeof(FlagConst.MessageKey))) 

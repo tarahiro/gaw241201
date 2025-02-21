@@ -49,7 +49,7 @@ namespace gaw241201.Presenter
         [Inject] SelectionDataInitializer _selectionDataInitializer;
 
 
-        CompositeDisposable _disposable = new CompositeDisposable();
+        [Inject] IDisposablePure _disposable;
 
         public void PostInitialize()
         {

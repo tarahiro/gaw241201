@@ -20,15 +20,15 @@ namespace gaw241201.Presenter
         [Inject] IEffectViewEnterable _enterView;
         [Inject] IEffectViewEndable _endView;
 
-        CompositeDisposable _compositeDisposable = new CompositeDisposable();
+        [Inject] IDisposablePure _disposable;
 
         public void PostInitialize()
         {
-            _enterModel.Entered.Subscribe(x =>  _enterView.Enter(x).Forget()).AddTo(_compositeDisposable);
-            _enterView.EnterExited.Subscribe(_ => _enterModel.End()).AddTo(_compositeDisposable);
+            _enterModel.Entered.Subscribe(x =>  _enterView.Enter(x).Forget()).AddTo(_disposable);
+            _enterView.EnterExited.Subscribe(_ => _enterModel.End()).AddTo(_disposable);
 
-            _endModel.Entered.Subscribe(x => _endView.End(x).Forget()).AddTo(_compositeDisposable);
-            _endView.EndExited.Subscribe(_ => _endModel.End()).AddTo(_compositeDisposable);
+            _endModel.Entered.Subscribe(x => _endView.End(x).Forget()).AddTo(_disposable);
+            _endView.EndExited.Subscribe(_ => _endModel.End()).AddTo(_disposable);
         }
     }
 }

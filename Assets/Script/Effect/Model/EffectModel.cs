@@ -11,20 +11,19 @@ using System.Threading;
 
 namespace gaw241201
 {
-    public class EffectModel : ICategoryEnterableModel
+    public class EffectModel : ICategoryEnterableModel, IDisposable
     {
         [Inject] EffectArgsFactory _argsFactory;
+        [Inject] ICancellationTokenPure _cts;
 
         Subject<EffectArgs> _entered = new Subject<EffectArgs>();
         public IObservable<EffectArgs> Entered => _entered;
 
-        CancellationTokenSource _cts;
         bool _isEnd;
 
         public async UniTask EnterFlow(string bodyId)
         {
-            Log.DebugLog(bodyId + "のエフェクト開始");
-            _cts = new CancellationTokenSource();
+            _cts.SetNew();
             _isEnd = false;
             _entered.OnNext(_argsFactory.Create(bodyId, _cts.Token));
 
@@ -42,5 +41,16 @@ namespace gaw241201
             _cts.Cancel();
         }
 
+        public void Dispose()
+        {
+            /*
+            Log.DebugLog("Dispose");
+            if (_cts != null)
+            {
+                Log.DebugLog("Dispose");
+                _cts.Dispose();
+            }
+            */
+        }
     }
 }

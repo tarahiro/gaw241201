@@ -30,7 +30,7 @@ namespace gaw241201
             _groupMasterGettable = groupMasterGettable;
         }
 
-        public void Initialize(Action<ModelArgs<IConversationMaster>> action, CompositeDisposable disposable)
+        public void Initialize(Action<ModelArgs<IConversationMaster>> action, IDisposablePure disposable)
         {
             _singleTextSequenceEnterable.Entered.Subscribe(action).AddTo(disposable);
         }

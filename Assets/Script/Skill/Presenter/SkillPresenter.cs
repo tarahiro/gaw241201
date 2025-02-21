@@ -22,7 +22,7 @@ namespace gaw241201.Presenter
         [Inject] SkillMenuModel _menuModel;
         [Inject] SkillIndexInputView _inputView;
 
-        CompositeDisposable _disposable = new CompositeDisposable();
+        [Inject] IDisposablePure _disposable;
 
         public void PostInitialize()
         {

@@ -14,12 +14,15 @@ namespace gaw241201
     public class ScenePublisher
     {
         [Inject] IPublisher<Unit> _publisher;
-        [Inject] IPublisher<ISceneUnit> _scenePublisher;
+        [Inject] IPublisher<SceneEndConst.SceneEndOrder, ISceneUnit> _scenePublisher;
 
         public void Publish()
         {
             _publisher.Publish(Unit.Default);
-            _scenePublisher.Publish(new SceneUnit());
+            for (int i = 0; i < EnumUtil.GetTypeNum<SceneEndConst.SceneEndOrder>(); i++)
+            {
+                _scenePublisher.Publish((SceneEndConst.SceneEndOrder)i, new SceneUnit());
+            }
         }
     }
 }

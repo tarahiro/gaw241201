@@ -26,8 +26,6 @@ namespace gaw241201.View
 
         public async UniTask Enter(EffectArgs args)
         {
-            Log.DebugLog(args.Key + "‚ÌEffectViewŠJŽn");
-
             var item = _itemFactory.Create(args.Key,transform);
             args.CancellationToken.Register(() => Exit(item,args).Forget());
             _itemDictionary.Add(args.Key, item);

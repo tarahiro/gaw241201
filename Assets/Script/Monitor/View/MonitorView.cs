@@ -17,7 +17,6 @@ namespace gaw241201.View
 
         public void Enter(MonitorArgs args)
         {
-            Log.DebugLog(args.BodyId + "‚ÌMonitor‚ðView‘¤‚ÅŠJŽn");
             _itemProvider.Create(args.BodyId).Monitor(args.CancellationToken).Forget();
         }
 

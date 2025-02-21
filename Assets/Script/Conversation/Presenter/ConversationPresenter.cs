@@ -22,8 +22,7 @@ namespace gaw241201.Presenter
 
         [Inject] IConversationViewFactory _conversationViewFactory;
         [Inject] ConversationViewArgsFactory _viewArgsFactory;
-
-        CompositeDisposable _disposable = new CompositeDisposable();
+        [Inject] IDisposablePure _disposable;
 
         public void PostInitialize()
         {

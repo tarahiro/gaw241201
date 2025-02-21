@@ -33,7 +33,6 @@ namespace gaw241201.View
 
         public async UniTask EnterConversation(ConversationViewArgs args)
         {
-            Log.Comment(args.Message + " " + args.EyePosition + "のConversation表示開始");
 
             var registration = args.CancellationToken.Register(() => OnExit(args));
 
@@ -51,7 +50,6 @@ namespace gaw241201.View
 
         void OnExit(ConversationViewArgs args)
         {
-            Log.Comment(args.Message + " " + args.EyePosition + "のConversation表示終了");
             _prevArgs = args;
             _completed.OnNext(Unit.Default);
 

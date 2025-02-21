@@ -24,19 +24,19 @@ namespace gaw241201.Presenter
         [Inject] SelectInputDisplayView _selectInputDisplayView;
         [Inject] SelectInputProcessor _selectInputProcessor;
 
-        CompositeDisposable _compositeDisposable = new CompositeDisposable();
+        [Inject] IDisposablePure _disposable;
 
         public void PostInitialize()
         {
-            _model.Entered.Subscribe(x => _view.Enter(x).Forget()).AddTo(_compositeDisposable);
-            _deleteUi.UiDeleted.Subscribe(x => _view.Delete()).AddTo(_compositeDisposable);
-            _view.Exited.Subscribe(_model.End).AddTo(_compositeDisposable);
+            _model.Entered.Subscribe(x => _view.Enter(x).Forget()).AddTo(_disposable);
+            _deleteUi.UiDeleted.Subscribe(x => _view.Delete()).AddTo(_disposable);
+            _view.Exited.Subscribe(_model.End).AddTo(_disposable);
 
-            _selectInputModelFake.Entered.Subscribe(_selectInputView.Enter).AddTo(_compositeDisposable);
-            _selectInputProcessor.LrInputted.Subscribe(_selectInputModelFake.Focus).AddTo(_compositeDisposable);
-            _selectInputModelFake.Focused.Subscribe(_selectInputDisplayView.Focus).AddTo(_compositeDisposable);
-            _selectInputProcessor.Decided.Subscribe(_ => _selectInputModelFake.Exit()).AddTo(_compositeDisposable);
-            _selectInputModelFake.Exited.Subscribe(_ => _selectInputView.Exit()).AddTo(_compositeDisposable);
+            _selectInputModelFake.Entered.Subscribe(_selectInputView.Enter).AddTo(_disposable);
+            _selectInputProcessor.LrInputted.Subscribe(_selectInputModelFake.Focus).AddTo(_disposable);
+            _selectInputModelFake.Focused.Subscribe(_selectInputDisplayView.Focus).AddTo(_disposable);
+            _selectInputProcessor.Decided.Subscribe(_ => _selectInputModelFake.Exit()).AddTo(_disposable);
+            _selectInputModelFake.Exited.Subscribe(_ => _selectInputView.Exit()).AddTo(_disposable);
         }
     }
 }

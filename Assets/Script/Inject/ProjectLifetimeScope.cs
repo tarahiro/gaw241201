@@ -25,7 +25,7 @@ namespace gaw241201.Inject
             Log.Comment("ProjectLifetimeScope‚Ì“o˜^ŠJŽn");
 
             builder.Register<DisposablePure>(Lifetime.Transient).As<IDisposablePure>();
-
+            builder.Register<CancellationTokenPure>(Lifetime.Transient).AsImplementedInterfaces();
 
             ConfigureGlobalFactory(builder);
             ConfigureManager(builder);

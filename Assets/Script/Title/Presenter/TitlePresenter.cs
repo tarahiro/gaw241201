@@ -19,16 +19,13 @@ namespace gaw241201.Presenter
         [Inject] TitleRootView _rootView;
         [Inject] TitleInputView _inputView;
 
-        CompositeDisposable _compositeDisposable = new CompositeDisposable();
+        [Inject] IDisposablePure _compositeDisposable;
 
         public void PostInitialize()
         {
-            Log.DebugLog("TitlePresenter: InitializeäJén");
             _enterModel.Entered.Subscribe(_ =>  _rootView.Enter().Forget()).AddTo(_compositeDisposable);
             _inputView.Decided.Subscribe(_ => _exitModel.ExitTitle()).AddTo(_compositeDisposable);
             _exitModel.Exited.Subscribe(_ => _rootView.Exit().Forget()).AddTo(_compositeDisposable);
-
-            Log.DebugLog("TitlePresenter: InitializeèIóπ");
         }
     }
 }

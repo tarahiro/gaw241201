@@ -31,7 +31,7 @@ namespace gaw241201.Presenter
 
         [Inject] SettingRootHundler _settingRootHundler;
 
-        CompositeDisposable _disposable = new CompositeDisposable();
+        [Inject] IDisposablePure _disposable;
         public void PostInitialize()
         {
             _startModel.Entered.Subscribe( _view.Enter).AddTo(_disposable);

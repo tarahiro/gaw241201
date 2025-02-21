@@ -20,7 +20,7 @@ namespace gaw241201.Presenter
         [Inject] WaveClearModel _waveClearModel;
         [Inject] IActBgView _bgView;
 
-        CompositeDisposable disposables = new CompositeDisposable();
+        [Inject] IDisposablePure disposables;
 
 
         public void PostInitialize()

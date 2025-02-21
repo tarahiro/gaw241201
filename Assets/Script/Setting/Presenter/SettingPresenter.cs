@@ -37,7 +37,7 @@ namespace gaw241201.Presenter
         [Inject] ProfileItemProvider _profileItemProvider;
         [Inject] AdvancedItemProvider _advancedItemProvider;
 
-        CompositeDisposable _disposable = new CompositeDisposable();
+        [Inject] IDisposablePure _disposable;
 
         public void PostInitialize()
         {

@@ -21,7 +21,7 @@ namespace gaw241201.Presenter
         [Inject] IUiDeletable _uiDeletable;
         [Inject] IUiViewDeletable _uiViewDeletable;
 
-        CompositeDisposable _disposable = new CompositeDisposable();
+        [Inject] IDisposablePure _disposable;
         CancellationTokenSource cancellationTokenSource = new CancellationTokenSource();
 
         public void PostInitialize()
