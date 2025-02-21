@@ -24,9 +24,9 @@ namespace gaw241201.View
 
         void Start()
         {
-            _subscriber.Subscribe(GazingKey, Gaze);
-            _facialSubscriber.Subscribe(GazingKey, SetEffect);
-            _gazeResetSubscriber.Subscribe(GazingKey, _ => ResetGaze());
+            _subscriber.Subscribe(GazingKey, Gaze).AddTo(this);
+            _facialSubscriber.Subscribe(GazingKey, SetEffect).AddTo(this);
+            _gazeResetSubscriber.Subscribe(GazingKey, _ => ResetGaze()).AddTo(this);
         }
 
         public void Gaze(Vector2 screenPosition)

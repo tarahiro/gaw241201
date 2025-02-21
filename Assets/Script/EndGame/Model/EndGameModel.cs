@@ -26,12 +26,12 @@ namespace gaw241201
         CancellationTokenSource _cancellationTokenSource;
 
         [Inject]
-        public EndGameModel(ISavable savable, ISubscriber<Unit> subscriber, ScenePublisher publisher)
+        public EndGameModel(ISavable savable, ISubscriber<Unit> subscriber, ScenePublisher publisher, IDisposablePure disposables)
         {
             _savable = savable;
             _subscriber = subscriber;
             _publisher = publisher;
-            _subscriber.Subscribe(OnSceneEnded);
+            _subscriber.Subscribe(OnSceneEnded).AddTo(disposables);
         }
 
         public async UniTask EnterFlow(string bodyId)

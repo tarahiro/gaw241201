@@ -38,10 +38,6 @@ namespace Tarahiro.Ui
             {
                 findedView.SetTranslatableText(master.GetMaster().Message);
             }
-            else
-            {
-                Log.DebugAssert(findedView.Id + "がマスターに存在しません");
-            }
         }
     }
 }

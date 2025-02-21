@@ -25,11 +25,11 @@ namespace gaw241201
         ISubscriber<FlagConst.Key, string> _subscriber;
 
         [Inject]
-        public AdvancedMenuModel(AdvancedMenuItemListFactory factory, ISubscriber<FlagConst.Key, string> subscriber)
+        public AdvancedMenuModel(AdvancedMenuItemListFactory factory, ISubscriber<FlagConst.Key, string> subscriber, IDisposablePure disposable)
         {
             _menuModel = new UiMenuModel(factory.CreateList());
             _subscriber = subscriber;
-            _subscriber.Subscribe(FlagConst.Key.IsAdvancedSettingEnabled, OnFlagValueChanged);
+            _subscriber.Subscribe(FlagConst.Key.IsAdvancedSettingEnabled, OnFlagValueChanged).AddTo(disposable);
         }
 
         public void MoveFocus(int menuIndex)

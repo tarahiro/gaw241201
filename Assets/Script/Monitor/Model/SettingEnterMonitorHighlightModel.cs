@@ -38,10 +38,10 @@ namespace gaw241201
         }
 
         [Inject]
-        public SettingEnterMonitorHighlightModel(ISubscriber<FlagConst.Key, string> subscriber)
+        public SettingEnterMonitorHighlightModel(ISubscriber<FlagConst.Key, string> subscriber, IDisposablePure disposablePure)
         {
             _subscriber = subscriber;
-            _subscriber.Subscribe(FlagConst.Key.OnEnterSettingConversation, OnChangeFlag);
+            _subscriber.Subscribe(FlagConst.Key.OnEnterSettingConversation, OnChangeFlag).AddTo(disposablePure);
         }
 
         string _value = "";

@@ -24,6 +24,8 @@ namespace gaw241201
 
         Subject<bool> _valueChanged = new Subject<bool>();
         public IObservable<bool> ValueChanged => _valueChanged;
+        [Inject]
+        IDisposablePure _disposablePure;
 
         bool _isRoguelikeEnabled;
 
@@ -35,7 +37,7 @@ namespace gaw241201
 
         public void Initialize() 
         {
-            _subscriber.Subscribe(FlagConst.Key.IsRoguelikeEnabled, OnSetFlag);
+            _subscriber.Subscribe(FlagConst.Key.IsRoguelikeEnabled, OnSetFlag).AddTo(_disposablePure);
         }
 
         public async UniTask Enter()

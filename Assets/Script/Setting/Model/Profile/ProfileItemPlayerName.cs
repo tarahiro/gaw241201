@@ -29,15 +29,17 @@ namespace gaw241201
 
         string _playerName;
 
+        IDisposablePure _disposablePure;
+
         [Inject]
-        public ProfileItemPlayerName()
+        public ProfileItemPlayerName( IDisposablePure disposablePure)
         {
             _uiMenuItemModel = new UiMenuItemModel(true);
-
+            _disposablePure = disposablePure;
         }
         public void Initialize()
         {
-            _subscriber.Subscribe(FlagConst.Key.Name, OnSetFlag);
+            _subscriber.Subscribe(FlagConst.Key.Name, OnSetFlag).AddTo(_disposablePure);
         }
 
         public async UniTask Enter()
