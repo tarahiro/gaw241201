@@ -10,7 +10,7 @@ using VContainer.Unity;
 
 namespace gaw241201.View
 {
-    public class SettingTabBodyView : MonoBehaviour
+    public class SettingTabBodyView : MonoBehaviour, IMenuView
     {
         [SerializeField] List<SettingItemView> _itemList;
         [SerializeField] Cursor _cursor;
@@ -35,9 +35,10 @@ namespace gaw241201.View
 
         }
 
-        public async UniTask Enter()
+        public async UniTask Enter(int menuIndex)
         {
             _root.SetActive(true);
+            await SetFocus(menuIndex);
         }
 
         public async UniTask Exit()

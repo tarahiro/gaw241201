@@ -8,11 +8,12 @@ using UnityEngine;
 using VContainer;
 using VContainer.Unity;
 
-namespace gaw241201
+namespace gaw241201.View
 {
-    public interface IMenuModelStartable
+    public interface IMenuRootView
     {
-        void MenuStart();
-        public IObservable<Unit> Started { get; }
+        public void EnterRoot();
+
+        public void EndRoot();
     }
 }

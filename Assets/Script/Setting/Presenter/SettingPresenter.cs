@@ -16,19 +16,14 @@ namespace gaw241201.Presenter
 
     public class SettingPresenter : IPostInitializable
     {
-        [Inject] SettingStarter _starter;
-        [Inject] SettingExiter _exiter;
-
         [Inject] SettingUiModel   _uiModel;
         [Inject] AdvancedMenuModel _advancedTabModel;
-        [Inject] ProfileMenuModel _profileMenuModel;
         [Inject] AdvancedItemRoguelike _advancedItemRoguelike;
         [Inject] ProfileItemPlayerName _profileItemPlayerName;
         [Inject] FreeInputCharHundler _freeInputCharHundler;
         [Inject] FreeInputIndexer _freeInputIndexer;
         [Inject] FreeInputUnfixedText _freeInputUnfixedText;
 
-        [Inject] SettingRootView _view;
         [Inject] SettingMenuInputView _inputView;
         [Inject] SettingTabManager _tabManager;
         [Inject] SettingMenuInputProcessor _inputProcessor;
@@ -41,23 +36,6 @@ namespace gaw241201.Presenter
 
         public void PostInitialize()
         {
-            //Setting開始の紐づけ
-            _starter.MenuStarted.Subscribe(x => _view.Enter(x).Forget()).AddTo(_disposable);
-            _exiter.MenuEnded.Subscribe(x => _view.Exit(x).Forget()).AddTo(_disposable);
-
-
-            /*
-            //InputProcessorと、UIModelの紐づけ
-            _inputProcessor.IndexerMoved.Subscribe(x => _uiModel.MoveFocus(x)).AddTo(_disposable);
-            _inputProcessor.Decided.Subscribe(_ => _uiModel.Decide()).AddTo(_disposable);
-            */
-
-            //MenuModelと、ViewのCurrentの紐づけ
-            _profileMenuModel.Decided.Subscribe(index => _tabManager.Current.Decide(index).Forget()).AddTo(_disposable);
-            _profileMenuModel.FocusChanged.Subscribe(x => _tabManager.Current.SetFocus(x).Forget()).AddTo(_disposable);
-            _advancedTabModel.Decided.Subscribe(index => _tabManager.Current.Decide(index).Forget()).AddTo(_disposable);
-            _advancedTabModel.FocusChanged.Subscribe(x => _tabManager.Current.SetFocus(x).Forget()).AddTo(_disposable);
-
             //InputのBlockと、Viewの紐づけ
             _inputView.BlockEnabled.Subscribe(_profileItemProvider.TabBodyView.OnInputBlockEnabled).AddTo(_disposable);
             _inputView.BlockEnabled.Subscribe(_advancedItemProvider.TabBodyView.OnInputBlockEnabled).AddTo(_disposable);
@@ -69,6 +47,7 @@ namespace gaw241201.Presenter
 
             //Modelのタブ切り替えと、Viewの紐づけ
             _uiModel.TabChanged.Subscribe(_tabManager.ChangeTab).AddTo(_disposable);
+            _uiModel.TabEntered.Subscribe(_tabManager.EnterTab).AddTo(_disposable);
 
 
             //Settingのプレイヤー名のModelと、Viewの紐づけ
@@ -87,9 +66,6 @@ namespace gaw241201.Presenter
             _freeInputUnfixedText.Updated.Subscribe(_profileItemProvider.PlayerNameDisplayView.SetText).AddTo(_disposable);
 
             _profileItemPlayerName.Initialize();
-
-
-
 
             //高度な設定タブの有効無効と、Viewの紐づけ
             _advancedTabModel.SettedEnable.Subscribe(_advancedItemProvider.AdvancedTabIndex.OnSetEnabled).AddTo(_disposable);

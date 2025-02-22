@@ -6,7 +6,7 @@ using Tarahiro;
 using UniRx;
 using UnityEngine;
 
-namespace Tarahiro
+namespace Tarahiro.UI
 {
     public interface IMenuItemView : ITransform
     {

@@ -18,6 +18,10 @@ namespace gaw241201
 
         Subject<int> _decided = new Subject<int>();
         public IObservable<int> Decided => _decided;
+
+        Subject<int> _entered = new Subject<int>();
+        public IObservable<int> Entered => _entered;
+
         public bool IsEnable { get; private set; } = true;
         public int ItemIndex { get; private set; }
         public int MaxItemRange => _uiMenuItemModelList.Count;
@@ -36,7 +40,7 @@ namespace gaw241201
         }
         public void Enter()
         {
-
+            _entered.OnNext(ItemIndex);
         }
 
         public void Exit()

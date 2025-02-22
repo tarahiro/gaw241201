@@ -19,13 +19,15 @@ namespace gaw241201
 
         List<IUiMenuModel> _settingTabModelList = new List<IUiMenuModel>();
 
-        Subject<SettingTabEnterArgs> _tabChanged = new Subject<SettingTabEnterArgs>();
-        public IObservable<SettingTabEnterArgs> TabChanged => _tabChanged;
+        Subject<int> _tabChanged = new Subject<int>();
+        public IObservable<int> TabChanged => _tabChanged;
+
+        Subject<int> _tabEntered = new Subject<int>();
+        public IObservable<int> TabEntered => _tabEntered;
         public void Initialize()
         {
             _settingTabModelList = _settingTabListFactory.Create();
         }
-        [Inject] ICancellationTokenPure _tabChangeCts;
 
         public void ChangeTab(SettingConst.TabDirection direction)
         {
@@ -40,8 +42,13 @@ namespace gaw241201
             } while (!_settingTabModelList[TabIndex].IsEnable);
 
 
-            _tabChangeCts.SetNew();
-            _tabChanged.OnNext(new SettingTabEnterArgs(TabIndex, Current.ItemIndex, _tabChangeCts.Token));
+            _tabChanged.OnNext(TabIndex);
+            Enter();
+        }
+
+        public void EnterTab()
+        {
+            _tabEntered.OnNext(TabIndex);
         }
 
 
@@ -58,6 +65,7 @@ namespace gaw241201
         public bool IsEnable => Current.IsEnable;
         public IObservable<int> FocusChanged => Current.FocusChanged;
         public IObservable<int> Decided => Current.Decided;
+        public IObservable<int> Entered => Current.Entered;
         public void MoveFocus(int menuIndex) => Current.MoveFocus(menuIndex);
         public void Enter() => Current.Enter();
         public void Exit() => Current.Exit();

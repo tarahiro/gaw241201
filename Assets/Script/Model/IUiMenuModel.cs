@@ -17,6 +17,7 @@ namespace gaw241201
         public bool IsEnable { get; }
         public IObservable<int> FocusChanged { get; }
         public IObservable<int> Decided { get; }
+        public IObservable<int> Entered { get; }
         public void MoveFocus(int menuIndex);
         public void Enter();
         public void Exit();

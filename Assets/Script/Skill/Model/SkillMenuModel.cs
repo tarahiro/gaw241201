@@ -21,7 +21,8 @@ namespace gaw241201
         public IObservable<int> FocusChanged => _focusChanged;
 
         Subject<SkillArgs> _entered = new Subject<SkillArgs>();
-        public IObservable<SkillArgs> Entered => _entered;
+        public IObservable<SkillArgs> ArgsSetted => _entered;
+        public IObservable<int> Entered => _uiMenuModel.Entered;
 
         Subject<SkillArgs.Data> _decided = new Subject<SkillArgs.Data>();   
         public IObservable<SkillArgs.Data> DecidedSkill => _decided;

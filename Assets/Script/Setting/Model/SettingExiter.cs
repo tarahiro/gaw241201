@@ -13,14 +13,14 @@ namespace gaw241201
 {
     public class SettingExiter : IMenuModelEndable
     {
-        Subject<SettingExitArgs> _settingExited = new Subject<SettingExitArgs>();
-        public IObservable<SettingExitArgs> MenuEnded => _settingExited;
+        Subject<Unit> _settingExited = new Subject<Unit>();
+        public IObservable<Unit> MenuEnded => _settingExited;
 
         [Inject] ICancellationTokenPure _cts;
         public void MenuEnd()
         {
             _cts.SetNew();
-            _settingExited.OnNext(new SettingExitArgs(_cts.Token));
+            _settingExited.OnNext(Unit.Default);
         }
     }
 }

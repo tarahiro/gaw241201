@@ -13,5 +13,7 @@ namespace gaw241201
     public interface IMenuModelEndable
     {
         void MenuEnd();
+
+        IObservable<Unit> MenuEnded { get; }
     }
 }
