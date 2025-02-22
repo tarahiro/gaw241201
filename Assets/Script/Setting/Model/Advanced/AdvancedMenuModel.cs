@@ -32,25 +32,13 @@ namespace gaw241201
             _subscriber.Subscribe(FlagConst.Key.IsAdvancedSettingEnabled, OnFlagValueChanged).AddTo(disposable);
         }
 
-        public void MoveFocus(int menuIndex)
-        {
-            _menuModel.MoveFocus(menuIndex);
-        }
+        public void MoveFocus(int menuIndex) => _menuModel.MoveFocus(menuIndex);
 
-        public void Decide()
-        {
-            _menuModel.Decide();
-        }
+        public void Decide() => _menuModel.Decide();
 
-        public void Enter()
-        {
+        public void Enter() => _menuModel.Enter();
 
-        }
-
-        public void Exit()
-        {
-
-        }
+        public void Exit() => _menuModel.Exit();
 
         Subject<bool> _settedEnable = new Subject<bool>();
         public IObservable<bool> SettedEnable => _settedEnable;

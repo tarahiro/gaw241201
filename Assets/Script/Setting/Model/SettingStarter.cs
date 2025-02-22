@@ -11,25 +11,26 @@ using VContainer.Unity;
 
 namespace gaw241201
 {
-    public class SettingStarter
+    public class SettingStarter : IMenuModelStartable
     {
         [Inject] SettingUiModel _uiModel;
         [Inject] SettingEventCatcher _eventCatcher;
 
         Subject<SettingTabEnterArgs> _settingStarted = new Subject<SettingTabEnterArgs>();
-        public IObservable<SettingTabEnterArgs> SettingStarted => _settingStarted;
+        public IObservable<SettingTabEnterArgs> MenuStarted => _settingStarted;
 
         [Inject] ICancellationTokenPure _cts;
-        public async UniTask Enter()
+
+        public void MenuStart()
         {
             _cts.SetNew();
 
             _uiModel.GetSettingUiState(out var _tabIndex, out var _itemIndex);
             _settingStarted.OnNext(new SettingTabEnterArgs(_tabIndex, _itemIndex, _cts.Token));
             CountFake().Forget();
-
         }
 
+        //Fake: CancellationToken‚ª•K—v
         async UniTask CountFake()
         {
             await UniTask.WaitForSeconds(1f);

@@ -27,29 +27,18 @@ namespace gaw241201
             _menuModel = new UiMenuModel(factory.CreateList());
         }
 
-        public void MoveFocus(int menuIndex)
-        {
-            _menuModel.MoveFocus(menuIndex);
-        }
+        public void MoveFocus(int i) => _menuModel.MoveFocus(i);
 
-        public void Decide()
-        {
-            _menuModel.Decide();
-        }
+        public void Decide() => _menuModel.Decide();
+
+        public void Enter() => _menuModel.Enter();
+
+        public void Exit() => _menuModel.Exit();
 
         public void Cancel()
         {
 
         }
 
-        public void Enter()
-        {
-
-        }
-
-        public void Exit()
-        {
-
-        }
     }
 }

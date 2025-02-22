@@ -11,7 +11,7 @@ using VContainer.Unity;
 
 namespace gaw241201
 {
-    public class SettingUiModel
+    public class SettingUiModel:IUiMenuModel
     {
         [Inject] SettingTabListFactory _settingTabListFactory;
 
@@ -44,12 +44,23 @@ namespace gaw241201
             _tabChanged.OnNext(new SettingTabEnterArgs(TabIndex, Current.ItemIndex, _tabChangeCts.Token));
         }
 
-        public IUiMenuModel Current { get { return _settingTabModelList[TabIndex]; } }
 
         public void GetSettingUiState(out int _tabIndex, out int _itemIndex)
         {
             _tabIndex = TabIndex;
             _itemIndex = Current.ItemIndex;
         }
+
+
+        public IUiMenuModel Current { get { return _settingTabModelList[TabIndex]; } }
+        public int ItemIndex => Current.ItemIndex;
+        public int MaxItemRange => Current.MaxItemRange;
+        public bool IsEnable => Current.IsEnable;
+        public IObservable<int> FocusChanged => Current.FocusChanged;
+        public IObservable<int> Decided => Current.Decided;
+        public void MoveFocus(int menuIndex) => Current.MoveFocus(menuIndex);
+        public void Enter() => Current.Enter();
+        public void Exit() => Current.Exit();
+        public void Decide() => Current.Decide();
     }
 }

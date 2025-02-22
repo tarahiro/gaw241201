@@ -36,7 +36,7 @@ namespace gaw241201.Presenter
         {
             _startModel.Entered.Subscribe( _view.Enter).AddTo(_disposable);
             _cmdMonitorView.Detected.Subscribe(_ => _haltModel.Halt()).AddTo(_disposable);
-            _settingMonitorView.Detected.Subscribe(_ => _settingRootHundler.Enter().Forget()).AddTo(_disposable) ;
+            _settingMonitorView.Detected.Subscribe(_ => _settingRootHundler.Enter()).AddTo(_disposable) ;
 
             _settingEnterMonitorHighlightModel.Highlighted.Subscribe(_ => _settingMonitorDisplayView.Highlight()).AddTo(_disposable) ;
             _settingEnterMonitorHighlightModel.Lowlighted.Subscribe(_ => _settingMonitorDisplayView.Lowlight()).AddTo(_disposable) ;

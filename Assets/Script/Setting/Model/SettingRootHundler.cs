@@ -25,7 +25,7 @@ namespace gaw241201
 
 
 
-        public async UniTask Enter()
+        public void Enter()
         {
             if (!_isSettingStarted)
             {
@@ -34,7 +34,7 @@ namespace gaw241201
                 {
                     dictionary.Add(key, _globalFlagProvider.GetFlag(key));
                 }
-                await _starter.Enter();
+                _starter.MenuStart();
                 _isSettingStarted = true;
             }
             else
@@ -48,7 +48,7 @@ namespace gaw241201
                     }
                 }
                 _onChangedValue.OnNext(_moniteredChanged);
-                await _exiter.Enter();
+                _exiter.MenuEnd();
                 _isSettingStarted = false;
             }
         }

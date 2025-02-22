@@ -481,6 +481,7 @@ namespace gaw241201.Inject
             builder.Register<SettingEventCatcher>(Lifetime.Singleton).AsSelf();
 
             builder.RegisterEntryPoint<SettingPresenter>();
+            builder.RegisterEntryPoint<SettingPresenterCoreFactory>();
         }
 
         void ConfigureRenderer(IContainerBuilder builder)

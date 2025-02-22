@@ -8,11 +8,10 @@ using UnityEngine;
 using VContainer;
 using VContainer.Unity;
 
-namespace gaw241201.View
+namespace gaw241201
 {
-    public interface IIndexerInputtableView
+    public interface IMenuModelEndable
     {
-        IObservable<int> IndexerMoved { get; }
-        IObservable<Unit> Decided { get; }
+        void MenuEnd();
     }
 }
