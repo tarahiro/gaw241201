@@ -12,15 +12,13 @@ using gaw241201.Model;
 
 namespace gaw241201
 {
-    public class SkillAchieveModel : ICategoryEnterableModel
+    public class SkillAchieveModel : ICategoryEnterableModel, IMenuModelStartable, IMenuModelEndable
     {
         [Inject] ISkillChoicesDecidable _skillChoicesDecideable;
         [Inject] IAchievableMasterFlagRegisterer _achievableMasterFlagRegisterer;
         [Inject] SkillMenuModel _skillMenuModel;
 
 
-        Subject<Unit> _exited = new Subject<Unit>();
-        public IObservable<Unit> Exited => _exited;
 
         [Inject] ICancellationTokenPure _cts;
         bool _isEnd;
@@ -32,6 +30,7 @@ namespace gaw241201
             _isEnd = false;
 
             _skillMenuModel.Enter(_cts.Token, _skillChoicesDecideable.DecideChoices(bodyId));
+            MenuStart();
             await UniTask.WaitUntil(() => _isEnd);
         }
 
@@ -39,7 +38,7 @@ namespace gaw241201
         {
             _achievableMasterFlagRegisterer.RegisterFlag(args.Key, args.Id);
             _skillMenuModel.Exit();
-            _exited.OnNext(Unit.Default);
+            MenuEnd();
             _isEnd = true;
         }
 
@@ -48,5 +47,21 @@ namespace gaw241201
         {
             _cts.Cancel();
         }
+
+
+        public void MenuStart()
+        {
+            _started.OnNext(Unit.Default);
+        }
+        Subject<Unit> _started = new Subject<Unit>();
+        public IObservable<Unit> Started => _started;
+
+        public void MenuEnd()
+        {
+            _exited.OnNext(Unit.Default);
+        }
+        Subject<Unit> _exited = new Subject<Unit>();
+        public IObservable<Unit> MenuEnded => _exited;
+
     }
 }

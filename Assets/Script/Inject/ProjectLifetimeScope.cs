@@ -327,6 +327,7 @@ namespace gaw241201.Inject
 
 
             builder.RegisterEntryPoint<SkillPresenter>();
+            builder.RegisterEntryPoint<UiPresenterCoreSkillFactory>();
         }
 
         void ConfigureAct(IContainerBuilder builder)
