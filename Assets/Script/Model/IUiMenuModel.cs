@@ -18,10 +18,10 @@ namespace gaw241201
         public IObservable<int> FocusChanged { get; }
         public IObservable<int> Decided { get; }
         public IObservable<int> Entered { get; }
+        public IObservable<Unit> Exited { get; }
         public void MoveFocus(int menuIndex);
         public void Enter();
         public void Exit();
-
         public void Decide();
     }
 }

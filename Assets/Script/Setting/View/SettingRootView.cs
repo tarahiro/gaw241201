@@ -13,7 +13,6 @@ namespace gaw241201.View
     public class SettingRootView : MonoBehaviour, IMenuRootView
     {
         [Inject] SettingMenuInputView _settingInputView;
-        [Inject] SettingTabManager _settingTabManager;
         [Inject] RendererHundler _rendererHundler;
 
         [SerializeField] GameObject _root;

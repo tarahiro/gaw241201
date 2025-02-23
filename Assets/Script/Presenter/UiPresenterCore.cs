@@ -63,6 +63,7 @@ namespace gaw241201
                 item.Entered.Subscribe(x => _menuView.Enter(x).Forget()).AddTo(_disposable);
                 item.Decided.Subscribe(x => _menuView.Decide(x).Forget()).AddTo(_disposable);
                 item.FocusChanged.Subscribe(x => _menuView.SetFocus(x).Forget()).AddTo(_disposable);
+                item.Exited.Subscribe(_ => _menuView.Exit().Forget()).AddTo(_disposable);
             }
 
         }

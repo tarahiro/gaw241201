@@ -14,15 +14,10 @@ namespace gaw241201
     //IAchievableSkill‚È‚Ç‚ğILeetMaster‚È‚Ç‚ÉŒp³‚³‚¹‚ÄAArgs‚ğ”r‚µ‚Ä‚à‚¢‚¢‚Æv‚Á‚½‚ªAKey‚Ìˆ—‚ª‚â‚â–Ê“|H
     public class SkillArgs
     {
-        public CancellationToken CancellationToken { get; private set; }
-
-        public int MenuItemIndex { get; private set; }
         public List<Data> DataList { get; private set; }
 
-        public SkillArgs(CancellationToken cancellationToken,int menuItemIndex, List<Data> dataList)
+        public SkillArgs(List<Data> dataList)
         {
-            CancellationToken = cancellationToken;
-            MenuItemIndex = menuItemIndex;
             DataList = dataList;
         }
 

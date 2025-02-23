@@ -17,29 +17,36 @@ namespace gaw241201.Presenter
         [Inject] SkillAchieveModel _model;
         [Inject] SkillEnterView _view;
         [Inject] SkillAchieveArgsDataFactory _factory;
+        [Inject] SkillInputProcessor _inputProcessor;
+
         [Inject] SkillMenuView _menuView;
 
         [Inject] SkillMenuModel _menuModel;
         [Inject] SkillIndexInputView _inputView;
+        [Inject] IndexVariantHundlerSkill _indexVariantHundler;
 
         [Inject] IDisposablePure _disposable;
 
         public void PostInitialize()
         {
-            _menuModel.ArgsSetted.Subscribe(x => _view.Enter(x).Forget()).AddTo(_disposable);
-            _menuModel.DecidedSkill.Subscribe(_model.End).AddTo(_disposable);
 
-            _inputView.IndexerMoved.Subscribe(_menuModel.MoveFocus).AddTo(_disposable);
-            _inputView.Decided.Subscribe(_ => _menuModel.Decide()).AddTo(_disposable);
-            _menuModel.FocusChanged.Subscribe(x =>
+            _inputProcessor.IndexerMoved.Subscribe(_menuModel.MoveFocus).AddTo(_disposable);
+            _inputProcessor.Decided.Subscribe(_ => _menuModel.Decide()).AddTo(_disposable);
+
+            _menuModel.Entered.Subscribe(_ => _view.EnterRoot()).AddTo(_disposable);
+            _menuModel.DecidedSkill.Subscribe(_model.End).AddTo(_disposable);
+            _menuModel.FocusChanged.Subscribe(x => _menuView.SetFocus(x).Forget()).AddTo(_disposable);
+            _menuModel.Exited.Subscribe(_ => _menuView.Exit().Forget()).AddTo(_disposable);
+
+            _model.Exited.Subscribe(x => _view.EndRoot()).AddTo(_disposable);
+
+            _menuModel.ArgsSetted.Subscribe(x =>
             {
-                _inputView.ChangeFocus(x);
-                _menuView.ChangeFocus(x);
+                _menuView.SetData(x.DataList);
+                _indexVariantHundler.SetMaxNumber(x.DataList.Count);
             }).AddTo(_disposable);
 
             _factory.Initialize();
-            _menuModel.Initialize();
-            _model.Exited.Subscribe(x => _view.Exit().Forget()).AddTo(_disposable);
         }
     }
 }

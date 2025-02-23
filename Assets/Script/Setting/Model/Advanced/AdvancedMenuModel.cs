@@ -22,6 +22,7 @@ namespace gaw241201
         public IObservable<int> FocusChanged =>_menuModel.FocusChanged;
         public IObservable<int> Decided => _menuModel.Decided;
         public IObservable<int> Entered => _menuModel.Entered;
+        public IObservable<Unit> Exited => _menuModel.Exited;
 
         ISubscriber<FlagConst.Key, string> _subscriber;
 

@@ -322,6 +322,9 @@ namespace gaw241201.Inject
             builder.Register<SkillIndexInputView>(Lifetime.Singleton).AsSelf();
             builder.Register<SkillMenuModel>(Lifetime.Singleton).AsSelf();
             builder.RegisterComponentInHierarchy<SkillMenuView>().AsSelf();
+            builder.Register<SkillInputProcessor>(Lifetime.Singleton).AsSelf();
+            builder.Register<IndexVariantHundlerSkill>(Lifetime.Singleton).AsSelf();
+
 
             builder.RegisterEntryPoint<SkillPresenter>();
         }
@@ -479,6 +482,8 @@ namespace gaw241201.Inject
             builder.Register<FreeInputUnfixedText>(Lifetime.Singleton).AsSelf();
 
             builder.Register<SettingEventCatcher>(Lifetime.Singleton).AsSelf();
+
+            builder.Register<IndexVariantHundlerSettings>(Lifetime.Singleton).AsSelf();
 
             builder.RegisterEntryPoint<SettingPresenter>();
             builder.RegisterEntryPoint<SettingPresenterCoreFactory>();

@@ -14,22 +14,15 @@ namespace gaw241201
     public class SkillMenuModel : IUiMenuModel
     {
         IUiMenuModel _uiMenuModel;
-        public int ItemIndex => _uiMenuModel.ItemIndex;
-        public int MaxItemRange => 3;
-        public bool IsEnable => _uiMenuModel.IsEnable;
-        Subject<int> _focusChanged = new Subject<int>();
-        public IObservable<int> FocusChanged => _focusChanged;
 
-        Subject<SkillArgs> _entered = new Subject<SkillArgs>();
-        public IObservable<SkillArgs> ArgsSetted => _entered;
-        public IObservable<int> Entered => _uiMenuModel.Entered;
+        Subject<SkillArgs> _argsSetted = new Subject<SkillArgs>();
+        public IObservable<SkillArgs> ArgsSetted => _argsSetted;
 
-        Subject<SkillArgs.Data> _decided = new Subject<SkillArgs.Data>();   
-        public IObservable<SkillArgs.Data> DecidedSkill => _decided;
-         public IObservable<int> Decided => _uiMenuModel.Decided;
+        Subject<SkillArgs.Data> _decidedSkill = new Subject<SkillArgs.Data>();   
+        public IObservable<SkillArgs.Data> DecidedSkill => _decidedSkill;
 
-
-        public void Initialize()
+        [Inject]
+        public SkillMenuModel()
         {
             //ˆê’U‰¼
             List<IUiMenuItemModel> list = new List<IUiMenuItemModel>();
@@ -37,42 +30,42 @@ namespace gaw241201
             list.Add(null);
             list.Add(null);
 
-            var uiMenuModel = new UiMenuModel(list);
-            uiMenuModel.FocusChanged.Subscribe(_focusChanged);
 
-            _uiMenuModel = uiMenuModel;
+            _uiMenuModel = new UiMenuModel(list);
         }
+
 
         List<SkillArgs.Data> _data;
 
         public void Enter(CancellationToken ct, List<SkillArgs.Data> data)
         {
             _data = data;
-            _entered.OnNext(new SkillArgs(ct, ItemIndex, data));
+            _argsSetted.OnNext(new SkillArgs(data));
             Enter();
             MoveFocus(ItemIndex);
 
         }
 
+
+        public int ItemIndex => _uiMenuModel.ItemIndex;
+        public int MaxItemRange => 3;
+        public bool IsEnable => _uiMenuModel.IsEnable;
+        public IObservable<int> FocusChanged => _uiMenuModel.FocusChanged;
+        public IObservable<int> Entered => _uiMenuModel.Entered;
+        public IObservable<int> Decided => _uiMenuModel.Decided;
+        public IObservable<Unit> Exited => _uiMenuModel.Exited;
+        public void Enter() => _uiMenuModel.Enter();
+
+        public void Exit() => _uiMenuModel.Exit();
+
         public void MoveFocus(int menuIndex)
         {
             _uiMenuModel.MoveFocus(menuIndex);
         }
-
-        public void Enter()
-        {
-            _uiMenuModel.Enter();
-
-        }
-
-        public void Exit()
-        {
-            _uiMenuModel.Exit();
-        }
-
         public void Decide()
         {
-            _decided.OnNext(_data[ItemIndex]);
+            _decidedSkill.OnNext(_data[ItemIndex]);
+            _uiMenuModel.Decide();
         }
     }
 }

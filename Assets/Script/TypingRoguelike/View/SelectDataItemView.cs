@@ -16,8 +16,6 @@ namespace gaw241201.View
     {
         [SerializeField] TextMeshProUGUI _tmp;
 
-        [Inject] ICancellationTokenPure _cancellationTokenSource;
-
         public string GetText()
         {
             return _tmp.text;
@@ -37,14 +35,8 @@ namespace gaw241201.View
 
         async UniTask LateSetPosition(TextMeshProUGUI tmp, int index, Vector3 offset)
         {
-            _cancellationTokenSource.SetNew();
-            await UniTask.Yield(PlayerLoopTiming.LastPostLateUpdate, _cancellationTokenSource.Token);
+            await UniTask.Yield(PlayerLoopTiming.LastPostLateUpdate, this.GetCancellationTokenOnDestroy());
             transform.localPosition = tmp.GetCharacterLocalPosition(index) + offset;
-        }
-
-        private void OnDestroy()
-        {
-            _cancellationTokenSource.Cancel();
         }
     }
 }

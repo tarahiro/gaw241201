@@ -38,6 +38,7 @@ namespace gaw241201
         public void End(SkillArgs.Data args)
         {
             _achievableMasterFlagRegisterer.RegisterFlag(args.Key, args.Id);
+            _skillMenuModel.Exit();
             _exited.OnNext(Unit.Default);
             _isEnd = true;
         }

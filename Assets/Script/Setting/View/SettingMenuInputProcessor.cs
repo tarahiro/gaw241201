@@ -12,8 +12,7 @@ namespace gaw241201.View
 {
     public class SettingMenuInputProcessor : IInputProcessable,IIndexerInputtableView
     {
-
-        [Inject] SettingTabManager _tabManager;
+        [Inject] IndexVariantHundlerSettings _indexVariantHundler;
 
         Subject<int> _indexerMoved = new Subject<int>();
         Subject<Unit> _decided = new Subject<Unit>();
@@ -26,19 +25,14 @@ namespace gaw241201.View
 
         public void ProcessInput()
         {
+            
             if (Input.GetKeyDown(KeyCode.UpArrow))
             {
-                int index = _tabManager.Current.MenuIndex;
-                index--;
-                if (index < 0) index = _tabManager.Current.MaxIndex - 1;
-                _indexerMoved.OnNext(index);
+                _indexerMoved.OnNext(_indexVariantHundler.IndexVariant(CursorInputUtil.GetCursorDirection(KeyCode.UpArrow)));
             }
             if (Input.GetKeyDown(KeyCode.DownArrow))
             {
-                int index = _tabManager.Current.MenuIndex;
-                index++;
-                if (index >= _tabManager.Current.MaxIndex) index = 0;
-                _indexerMoved.OnNext(index);
+                _indexerMoved.OnNext(_indexVariantHundler.IndexVariant(CursorInputUtil.GetCursorDirection(KeyCode.DownArrow)));
             }
 
             if (Input.GetKeyDown(KeyCode.LeftArrow))

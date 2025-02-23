@@ -19,6 +19,7 @@ namespace gaw241201
             FreeInput = 5,
             Typing = 10,
             Conversation = 20,
+            Skill = 30,
             SettingMenu = 100,
             SettingMenuItem = 200,
             SettingConversation = 300,

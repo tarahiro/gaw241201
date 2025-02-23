@@ -66,6 +66,7 @@ namespace gaw241201
         public IObservable<int> FocusChanged => Current.FocusChanged;
         public IObservable<int> Decided => Current.Decided;
         public IObservable<int> Entered => Current.Entered;
+        public IObservable<Unit> Exited => Current.Exited;
         public void MoveFocus(int menuIndex) => Current.MoveFocus(menuIndex);
         public void Enter() => Current.Enter();
         public void Exit() => Current.Exit();

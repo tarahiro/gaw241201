@@ -10,10 +10,11 @@ using UniRx;
 
 namespace gaw241201.View
 {
-    public class SkillEnterView : MonoBehaviour
+    public class SkillEnterView : MonoBehaviour, IMenuRootView
     {
         [Inject] SkillIndexInputView _inputView;
         [Inject] SkillMenuView _menuView;
+        [Inject] IndexVariantHundlerSkill _indexVariantHundlerSkill;
 
         CompositeDisposable _disposable;
 
@@ -24,18 +25,25 @@ namespace gaw241201.View
         public IObservable<SkillArgs.Data> Ended => _ended;
 
 
+        /*
         public async UniTask Enter(SkillArgs args)
         {
 
             await _menuView.Enter(args);
             await _inputView.Enter(args.MenuItemIndex, args.DataList.Count, args.CancellationToken);
         }
+        */
 
-        public async UniTask Exit()
+        public void EnterRoot()
+        {
+            _inputView.Enter(this.GetCancellationTokenOnDestroy()).Forget();
+        }
+
+        public void EndRoot()
         {
             _inputView.Exit();
-            await _menuView.Exit();
         }
+
 
     }
 }
