@@ -15,7 +15,8 @@ namespace gaw241201.View
         [SerializeField] FreeInputTextDisplayView _freeInputTextDisplayView;
 
         [Inject] FreeInputInputView _freeInputInputView;
-
+        
+        List<IInputExecutor> _executorList;
         public override async UniTask Enter()
         {
             Log.Comment("FreeInputView‚ÉEnter");

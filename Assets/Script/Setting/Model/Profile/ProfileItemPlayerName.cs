@@ -13,50 +13,40 @@ namespace gaw241201
 {
     public class ProfileItemPlayerName : IUiMenuItemModel
     {
-        IUiMenuItemModel _uiMenuItemModel;
-
         [Inject] ISubscriber<FlagConst.Key, string> _subscriber;
         [Inject] IGlobalFlagRegisterer _globalFlagRegisterer;
         [Inject] FreeInputUnfixedText _freeInputUnfixedText;
+        [Inject] IDisposablePure _disposablePure;
 
-
-        public IObservable<Unit> Entered => _uiMenuItemModel.Entered;
-        public IObservable<Unit> Exited => _uiMenuItemModel.Exited;
-        public bool IsEnterable => _uiMenuItemModel.IsEnterable;
+        Subject<Unit> _entered = new Subject<Unit>();
+        public IObservable<Unit> Entered => _entered;
+        Subject<Unit> _exited = new Subject<Unit>();
+        public IObservable<Unit> Exited => _exited;
 
         Subject<string> _valueChanged = new Subject<string>();
         public IObservable<string> ValueChanged => _valueChanged;
 
         string _playerName;
 
-        IDisposablePure _disposablePure;
 
-        [Inject]
-        public ProfileItemPlayerName( IDisposablePure disposablePure)
-        {
-            _uiMenuItemModel = new UiMenuItemModel(true);
-            _disposablePure = disposablePure;
-        }
         public void Initialize()
         {
             _subscriber.Subscribe(FlagConst.Key.Name, OnSetFlag).AddTo(_disposablePure);
         }
 
-        public async UniTask Enter()
+        public void  Enter()
         {
             Log.Comment("ProfileItemPlayerName‚ÉEnter");
 
             //Initializer‚ð•ÊƒNƒ‰ƒX‚É•ª‚¯‚é‚©‚à
             _freeInputUnfixedText.Enter(_playerName);
-
-            await _uiMenuItemModel.Enter();
+            _entered.OnNext(Unit.Default);
         }
 
         public void End()
         {
-            _uiMenuItemModel.End();
             _freeInputUnfixedText.Exit();
-
+            _exited.OnNext(Unit.Default);
         }
 
         public void OnSetFlag(string s)
@@ -69,6 +59,7 @@ namespace gaw241201
 
         public void Decide(string text)
         {
+            Log.DebugLog("ProfileItemPlayeName:Decide");
             _globalFlagRegisterer.RegisterFlag(FlagConst.Key.Name, text);
             End();
         }

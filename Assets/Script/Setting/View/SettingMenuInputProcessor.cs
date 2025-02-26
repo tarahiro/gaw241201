@@ -23,6 +23,18 @@ namespace gaw241201.View
 
         public IObservable<SettingConst.TabDirection> LrInputted => _lrInputted;
 
+        List<IInputExecutor> _executorList;
+
+        [Inject] public SettingMenuInputProcessor(CommandInputExecutor executor)
+        {
+            _executorList = new List<IInputExecutor>();
+
+            executor.Initialize(InputConst.Command.Decide);
+            executor.Inputted.Subscribe(_ => _decided.OnNext(default));
+            _executorList.Add(executor);
+
+        }
+
         public void ProcessInput()
         {
             
@@ -44,10 +56,16 @@ namespace gaw241201.View
                 _lrInputted.OnNext(SettingConst.TabDirection.Right);
             }
 
+            foreach(var item in _executorList)
+            {
+                item.TryExecute();
+            }
+            /*
             if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.Space))
             {
                 _decided.OnNext(Unit.Default);
             }
+            */
         }
 
     }

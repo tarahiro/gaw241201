@@ -8,10 +8,15 @@ using UnityEngine;
 using VContainer;
 using VContainer.Unity;
 
-namespace gaw241201
+namespace gaw241201.View
 {
-    public interface IUiMenuItemModel
+    public static class InputConst
     {
-        void Enter();
+        public enum Command
+        {
+            None,
+            Decide,
+            Cancel,
+        }
     }
 }

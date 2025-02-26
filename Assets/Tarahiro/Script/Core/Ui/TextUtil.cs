@@ -6,6 +6,7 @@ using Cysharp.Threading.Tasks;
 using System.Threading;
 using System.Linq;
 using static SoundManager;
+using Tarahiro.TInput;
 
 namespace Tarahiro.Ui
 {
@@ -34,8 +35,9 @@ namespace Tarahiro.Ui
             {
                 await UniTask.Yield(PlayerLoopTiming.Update);
 
-                if (decide.Any(x => Input.GetKeyDown(x)))
+                if (decide.Any(x => Tkey.GetInstance().IsKeyDown(x)))
                 {
+                    TInput.TInput.GetInstance().AvailableInputted();
                     _isEnd = true;
                 }
 

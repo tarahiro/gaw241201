@@ -36,5 +36,7 @@ namespace Tarahiro
                 GameObject.DontDestroyOnLoad(g);
             }
         }
+
+       
     }
 }

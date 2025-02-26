@@ -31,6 +31,7 @@ namespace gaw241201
 
         public void Decide()
         {
+            Log.DebugLog("FreeInputCharHundler: Enter");
             _decided.OnNext(_unfixedText.GetUnfixedText());
         }
 

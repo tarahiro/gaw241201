@@ -499,6 +499,8 @@ namespace gaw241201.Inject
         {
             builder.Register<ActiveLayerPublisher>(Lifetime.Singleton).AsSelf();
             builder.Register<InputViewFactory>(Lifetime.Singleton).AsSelf();
+            builder.Register<CommandInputExecutor>(Lifetime.Transient).AsSelf();
+            builder.Register<InputHundlerCommand>(Lifetime.Singleton).AsImplementedInterfaces();
         }
 
         void ConfigureSwitch(IContainerBuilder builder)
@@ -516,6 +518,7 @@ namespace gaw241201.Inject
         {
             builder.Register<NotifySave>(Lifetime.Singleton).AsSelf();
         }
+
     }
 
 

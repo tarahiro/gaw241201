@@ -13,14 +13,13 @@ namespace gaw241201
 {
     public class AdvancedItemRoguelike : IUiMenuItemModel
     {
-        IUiMenuItemModel _uiMenuItemModel;
 
         [Inject] ISubscriber<FlagConst.Key, string> _subscriber;
         [Inject] IGlobalFlagRegisterer _globalFlagRegisterer;
 
-        public IObservable<Unit> Entered => _uiMenuItemModel.Entered;
-        public IObservable<Unit> Exited => _uiMenuItemModel.Exited;
-        public bool IsEnterable => _uiMenuItemModel.IsEnterable;
+        Subject<Unit> _entered = new Subject<Unit>();
+        public IObservable<Unit> Entered => _entered;
+        public bool IsEnterable;
 
         Subject<bool> _valueChanged = new Subject<bool>();
         public IObservable<bool> ValueChanged => _valueChanged;
@@ -29,26 +28,19 @@ namespace gaw241201
 
         bool _isRoguelikeEnabled;
 
-        [Inject]
-        public AdvancedItemRoguelike()
-        {
-            _uiMenuItemModel = new UiMenuItemModel(true);
-        }
 
         public void Initialize() 
         {
             _subscriber.Subscribe(FlagConst.Key.IsRoguelikeEnabled, OnSetFlag).AddTo(_disposablePure);
         }
 
-        public async UniTask Enter()
+        public void Enter()
         {
-            await _uiMenuItemModel.Enter();
+            _entered.OnNext(Unit.Default);
         }
 
         public void End()
         {
-            _uiMenuItemModel.End();
-
             if (_isRoguelikeEnabled)
             {
                 _globalFlagRegisterer.RegisterFlag(FlagConst.Key.IsRoguelikeEnabled, Tarahiro.Const.c_false);

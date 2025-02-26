@@ -54,7 +54,7 @@ namespace gaw241201
         public void Decide()
         {
             _decided.OnNext(ItemIndex);
-            _uiMenuItemModelList[ItemIndex].Enter().Forget();
+            _uiMenuItemModelList[ItemIndex].Enter();
         }
 
         public void SetEnable(bool b)

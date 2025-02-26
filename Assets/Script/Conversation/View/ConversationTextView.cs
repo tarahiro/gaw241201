@@ -12,6 +12,7 @@ using UnityEngine;
 using VContainer;
 using VContainer.Unity;
 using MessagePipe;
+using Tarahiro.TInput;
 
 namespace gaw241201.View
 {
@@ -50,8 +51,13 @@ namespace gaw241201.View
             await UniTask.Yield(PlayerLoopTiming.Update,ct);
             _cursor.StartBlink();
             SetCursorPosition();
-            await UniTask.WaitUntil(() => !_isBlocked() && _decideKeys.Any(x => Input.GetKeyDown(x)) , cancellationToken:ct);
-            await UniTask.Yield(PlayerLoopTiming.Update, ct);
+
+            // fake –{—ˆ‚ÍinputExecutor‚Æ‚©‚ðŠš‚Ü‚¹‚é
+            await UniTask.WaitUntil(() => !_isBlocked() && _decideKeys.Any(x => Tkey.GetInstance().IsKeyDown(x)) , cancellationToken:ct);
+            Log.DebugLog("‰ï˜b‚ÅŒˆ’è‚ð‰Ÿ‚µ‚½");
+            TInput.GetInstance().AvailableInputted();
+
+          //  await UniTask.Yield(PlayerLoopTiming.Update, ct);
             _cursor.StopBlink();
             _cursor.EraseCursor();
             _publisher.ResetActiveLayer();
