@@ -21,6 +21,8 @@ namespace gaw241201.View
         TextMeshProUGUI _tmp;
         ITranslationTextDisplayer _translationTextDisplayer;
 
+        [Inject] PureSingletonInput _input;
+        [Inject] PureSingletonKey _key;
         [SerializeField] BlinkableCursor _cursor;
         [SerializeField] string _startSe;
 
@@ -46,16 +48,16 @@ namespace gaw241201.View
 
             _publisher.PublishActiveLayer(_layer);
 
-            await TextUtil.DisplayTextByCharacter(text.GetTranslatedText(_translationTextDisplayer.GetLanguageIndex()), _tmp, "Talk", _decideKeys , ct,false);
+            await TextUtil.DisplayTextByCharacter(text.GetTranslatedText(_translationTextDisplayer.GetLanguageIndex()), _tmp, "Talk", _decideKeys , ct, _input, _key,false);
 
             await UniTask.Yield(PlayerLoopTiming.Update,ct);
             _cursor.StartBlink();
             SetCursorPosition();
 
             // fake –{—ˆ‚ÍinputExecutor‚Æ‚©‚ðŠš‚Ü‚¹‚é
-            await UniTask.WaitUntil(() => !_isBlocked() && _decideKeys.Any(x => Tkey.GetInstance().IsKeyDown(x)) , cancellationToken:ct);
+            await UniTask.WaitUntil(() => !_isBlocked() && _decideKeys.Any(x => _key.IsKeyDown(x)) , cancellationToken:ct);
             Log.DebugLog("‰ï˜b‚ÅŒˆ’è‚ð‰Ÿ‚µ‚½");
-            TInput.GetInstance().AvailableInputted();
+            _input.AvailableInputted();
 
           //  await UniTask.Yield(PlayerLoopTiming.Update, ct);
             _cursor.StopBlink();

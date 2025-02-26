@@ -16,8 +16,8 @@
   <AllowPNG/>
  </OfficeDocumentSettings>
  <ExcelWorkbook xmlns="urn:schemas-microsoft-com:office:excel">
-  <WindowHeight>18740</WindowHeight>
-  <WindowWidth>32767</WindowWidth>
+  <WindowHeight>7220</WindowHeight>
+  <WindowWidth>19200</WindowWidth>
   <WindowTopX>32767</WindowTopX>
   <WindowTopY>32767</WindowTopY>
   <RefModeR1C1/>
@@ -1325,8 +1325,8 @@
     <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">110</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">302550TypingConversation</Data></Cell>
     <Cell ss:StyleID="s67"><PhoneticText
-      xmlns="urn:schemas-microsoft-com:office:excel">オオサカシニシクホンマチサンギョウ</PhoneticText><Data
-      ss:Type="String">大阪市西区靱本町1-12-6&lt;style=highlight&gt;マツモト産業ビル&lt;/style&gt;ですから。</Data></Cell>
+      xmlns="urn:schemas-microsoft-com:office:excel">キョウトシサキョウクオカザキセイカチデラマチバンチ</PhoneticText><Data
+      ss:Type="String">京都市左京区岡崎成勝寺町9番地の1&lt;style=highlight&gt;みやこめっせ&lt;/style&gt;ですから。</Data></Cell>
     <Cell ss:StyleID="s67"/>
     <Cell ss:StyleID="s67"><Data ss:Type="String">302500TypingConversation</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">Center</Data></Cell>
@@ -2662,12 +2662,12 @@
    <TabColorIndex>13</TabColorIndex>
    <Zoom>115</Zoom>
    <Selected/>
-   <TopRowVisible>17</TopRowVisible>
+   <TopRowVisible>104</TopRowVisible>
    <Panes>
     <Pane>
      <Number>3</Number>
-     <ActiveRow>30</ActiveRow>
-     <ActiveCol>3</ActiveCol>
+     <ActiveRow>114</ActiveRow>
+     <ActiveCol>2</ActiveCol>
     </Pane>
    </Panes>
    <ProtectObjects>False</ProtectObjects>

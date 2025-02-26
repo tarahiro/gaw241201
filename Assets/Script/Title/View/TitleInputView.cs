@@ -17,13 +17,25 @@ namespace gaw241201.View
         Subject<Unit> _decided = new Subject<Unit>();
         public IObservable<Unit> Decided => _decided;
 
+        List<IInputExecutor> _executorList;
+
+        [Inject]
+        public TitleInputView(CommandInputExecutor executor)
+        {
+            _executorList = new List<IInputExecutor>();
+
+            executor.Initialize(InputConst.Command.Decide);
+            executor.Inputted.Subscribe(_ => _decided.OnNext(default));
+            _executorList.Add(executor);
+
+        }
 
         public async UniTask Enter()
         {
             _isEnable = true;
             while (_isEnable)
             {
-                await UniTask.Yield(PlayerLoopTiming.Update);
+                await UniTask.Yield(PlayerLoopTiming.PostLateUpdate);
                 ProcessInput();
             }
         }
@@ -36,9 +48,9 @@ namespace gaw241201.View
 
         void ProcessInput()
         {
-            if(Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.Space))
+            foreach (var item in _executorList)
             {
-                _decided.OnNext(Unit.Default);
+                item.TryExecute();
             }
         }
     }

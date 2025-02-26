@@ -28,10 +28,13 @@ namespace gaw241201.View
            // _cancellationTokenSource = this.GetCancellationTokenOnDestroy();
         }
 
-        public void SetCharacter(char c)
+        public void SetCharacter(char c, bool isSeEnable = true)
         {
-            SoundManager.PlaySE("Key");
             _tmp.text = c.ToString();
+            if (isSeEnable)
+            {
+                SoundManager.PlaySE("Key");
+            }
         }
 
         public void ClearCharacter()

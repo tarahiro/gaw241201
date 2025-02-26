@@ -22,14 +22,19 @@ namespace gaw241201.View
             {
                 if (i < text.Length)
                 {
-                    _characterList[i].SetCharacter(text[i]);
+                    _characterList[i].SetCharacter(text[i],false);
                 }
                 else
                 {
                     //‚È‚º‚©ClearCharacter‚ÅãŽè‚­‚¢‚©‚È‚¢
-                    _characterList[i].SetCharacter(' ');
+                    _characterList[i].SetCharacter(' ',false);
                 }
             }
+        }
+
+        public void SetCharacter(FreeInputArgs args)
+        {
+            _characterList[args.Index].SetCharacter(args.Character);
         }
 
         public async UniTask Enter()

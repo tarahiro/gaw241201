@@ -12,15 +12,15 @@ namespace Tarahiro.Ui
 {
     public static class TextUtil
     {
-        public const float c_defaultTextIntervalTime = .05f;
-        public static async UniTask DisplayTextByCharacter(string text, TextMeshProUGUI textMeshProUGUI, string SeLabel, KeyCode[] decide, CancellationToken ct, bool isSeRun = true, float textIntervalTime = c_defaultTextIntervalTime)
+        public const float c_defaultTextIntervalTime = .1f;
+        public static async UniTask DisplayTextByCharacter(string text, TextMeshProUGUI textMeshProUGUI, string SeLabel, KeyCode[] decide, CancellationToken ct, PureSingletonInput input, PureSingletonKey key, bool isSeRun = true, float textIntervalTime = c_defaultTextIntervalTime)
         {
             ct.Register(() => ExitDisplayText(text, textMeshProUGUI, isSeRun));
-            await TextCount(text,textMeshProUGUI, SeLabel, decide, ct,isSeRun, textIntervalTime);
+            await TextCount(text,textMeshProUGUI, SeLabel, decide, ct,input,key, isSeRun, textIntervalTime);
             ExitDisplayText(text, textMeshProUGUI, isSeRun);
         }
 
-        static async UniTask TextCount(string text, TextMeshProUGUI textMeshProUGUI, string seLabel, KeyCode[] decide, CancellationToken ct, bool isSeRun, float textIntervalTime)
+        static async UniTask TextCount(string text, TextMeshProUGUI textMeshProUGUI, string seLabel, KeyCode[] decide, CancellationToken ct, PureSingletonInput input, PureSingletonKey key, bool isSeRun, float textIntervalTime)
         {
             if (isSeRun) {
                 SoundManager.PlaySEWithLoop(seLabel);
@@ -35,9 +35,9 @@ namespace Tarahiro.Ui
             {
                 await UniTask.Yield(PlayerLoopTiming.Update);
 
-                if (decide.Any(x => Tkey.GetInstance().IsKeyDown(x)))
+                if (decide.Any(x => key.IsKeyDown(x)))
                 {
-                    TInput.TInput.GetInstance().AvailableInputted();
+                    input.AvailableInputted();
                     _isEnd = true;
                 }
 

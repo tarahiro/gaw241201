@@ -11,20 +11,25 @@ using VContainer;
 using VContainer.Unity;
 using Tarahiro.TInput;
 using static gaw241201.View.InputConst;
+using UnityEngine.Windows;
 
 namespace gaw241201.View
 {
     public class InputHundlerCommand : IInputHundlerCommand
     {
+        [Inject] PureSingletonInput _input;
+        [Inject] PureSingletonKey _key;
+
+
 
         public bool IsInputtedCommand(Command command)
         {
             switch (command)
             {
                 case Command.Decide:
-                    return Tkey.GetInstance().IsKeyDown(KeyCode.Return) || Tkey.GetInstance().IsKeyDown(KeyCode.Space);
+                    return _key.IsKeyDown(KeyCode.Return) || _key.IsKeyDown(KeyCode.Space);
                 case Command.Cancel:
-                    return Tkey.GetInstance().IsKeyDown(KeyCode.Backspace);
+                    return _key.IsKeyDown(KeyCode.Backspace);
                 default:
                     Log.DebugAssert("‘Î‰ž‚µ‚Ä‚¢‚È‚¢ƒRƒ}ƒ“ƒh‚Å‚·:" + command);
                     return false;
@@ -34,7 +39,7 @@ namespace gaw241201.View
         public void NotifyUse(Command command)
         {
             Log.DebugLog("NotifyUse: " + command);
-            TInput.GetInstance().AvailableInputted();
+            _input.AvailableInputted();
         }
 
 

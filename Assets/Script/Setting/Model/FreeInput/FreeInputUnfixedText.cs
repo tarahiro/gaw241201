@@ -14,8 +14,8 @@ namespace gaw241201
     {
         [Inject] FreeInputIndexer _indexer;
 
-        Subject<string> _updated = new Subject<string>();
-        public IObservable<string> Updated => _updated;
+        Subject<FreeInputArgs> _updated = new Subject<FreeInputArgs>();
+        public IObservable<FreeInputArgs> Updated => _updated;
 
         string _unfixedText;
 
@@ -29,7 +29,7 @@ namespace gaw241201
         {
             _unfixedText += c;
             _indexer.TryNextFocus();
-            _updated.OnNext(_unfixedText);
+            _updated.OnNext(new FreeInputArgs(c, _unfixedText.Length - 1));
         }
 
         public void DeleteCharacter()
@@ -38,7 +38,7 @@ namespace gaw241201
             {
                 _unfixedText = _unfixedText.Substring(0, _unfixedText.Length - 1);
                 _indexer.PrevFocus();
-                _updated.OnNext(_unfixedText);
+                _updated.OnNext(new FreeInputArgs(' ', _unfixedText.Length));
             }
         }
 
