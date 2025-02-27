@@ -23,8 +23,8 @@ namespace gaw241201.Inject
                 entryPoints.Add<TCanvas>();
                 */
 
-                entryPoints.Add<PureSingletonInput>();
-                entryPoints.Add<PureSingletonKey>();
+                entryPoints.Add<PureSingletonInputUpdater>();
+                entryPoints.Add<PureSingletonKeyUpdater>();
 
 #if ENABLE_VIRTUAL_CURSOR
                 entryPoints.Add<TVIrtualCursor>();

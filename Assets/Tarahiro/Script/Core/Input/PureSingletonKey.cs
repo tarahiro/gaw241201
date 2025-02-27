@@ -7,73 +7,64 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using VContainer;
 using VContainer.Unity;
+using System.Linq;
 
 namespace Tarahiro
 {
-    public class PureSingletonKey : ITickable
+    public class PureSingletonKey
     {
-        List<KeyCode> _keyListDowned = new List<KeyCode>();
-        List<KeyCode> _keyListKeyed = new List<KeyCode>();
-        List<KeyCode> _keyListUped = new List<KeyCode>();
+        Dictionary<KeyInputState, List<KeyCode>> _keyListArray = new Dictionary<KeyInputState, List<KeyCode>>();
 
         [Inject] PureSingletonInput _input;
 
 
-        public void Tick()
+        public void Initialize()
         {
-            if (_keyListDowned.Count > 0)
-            {
-                Log.DebugLog("keydownのリストをリセット" + Time.time);
-                _keyListDowned = new List<KeyCode>();
-            }
-            _keyListKeyed = new List<KeyCode>();
-            _keyListUped = new List<KeyCode>();
+            TryReset();
+        }
 
-            foreach (KeyCode key in InputtableKeyList)
+
+        public void TryReset()
+        {
+            foreach (KeyInputState key in Enum.GetValues(typeof(KeyInputState)))
             {
-                if (Input.GetKeyDown(key))
+                if (!_keyListArray.ContainsKey(key))
                 {
-                    Log.DebugLog(key + "のKeyDownを登録 :" + Time.time);
-                    _keyListDowned.Add(key);
+                    _keyListArray.Add(key, new List<KeyCode>());
                 }
-                if (Input.GetKey(key)) _keyListKeyed.Add(key);
-                if (Input.GetKeyUp(key)) _keyListUped.Add(key);
+                else if (_keyListArray[key].Count > 0)
+                {
+                    _keyListArray[key] = new List<KeyCode>();
+                }
             }
+        }
+
+        public void AddKey(KeyInputState inputState, KeyCode keycode)
+        {
+            _keyListArray[inputState].Add(keycode);
         }
 
         public bool IsKeyDown(KeyCode key)
         {
-            if (_input.IsAnyAvailableInputted)
-            {
-                Log.DebugLog("すでにインプット消化済み" + key);
-                return false;
-            }
-            else
-            {
-                if (_keyListDowned.Any(x => x == key))
-                {
-                    Log.DebugLog(key + "がKeyDownされていることを取得");
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
-            }
+            return IsKeyState(KeyInputState.Down, key);
         }
 
         public bool IsKey(KeyCode key)
         {
-            if (_input.IsAnyAvailableInputted) return false;
-
-            return _keyListKeyed.Any(x => x == key);
+            return IsKeyState(KeyInputState.Key, key);
         }
 
         public bool IsKeyUp(KeyCode key)
         {
+            return IsKeyState(KeyInputState.Up, key);
+        }
+
+        bool IsKeyState(KeyInputState inputState, KeyCode key)
+        {
             if (_input.IsAnyAvailableInputted) return false;
 
-            return _keyListUped.Any(x => x == key);
+            return _keyListArray[inputState].Any(x => x == key);
+
         }
 
 
@@ -132,6 +123,13 @@ namespace Tarahiro
             KeyCode.Return,
             KeyCode.Space,
         };
+
+        public enum KeyInputState
+        {
+            Down,
+            Key,
+            Up
+        }
 
     }
 }

@@ -8,16 +8,8 @@ using VContainer.Unity;
 
 namespace Tarahiro
 {
-    public class PureSingletonInput : ITickable
+    public class PureSingletonInput
     {
-        public void Tick()
-        {
-            if (IsAnyAvailableInputted)
-            {
-                Log.DebugLog("IsAnyAvailableInputtedをリセット");
-                IsAnyAvailableInputted = false;
-            }
-        }
 
         public bool IsAnyAvailableInputted { get; private set; } = false;
 
@@ -25,6 +17,11 @@ namespace Tarahiro
         {
             Log.DebugLog("IsAnyAvailableInputtedをセット");
             IsAnyAvailableInputted = true;
+        }
+
+        public void ResetInputtedStatus()
+        {
+            IsAnyAvailableInputted = false;
         }
     }
 }

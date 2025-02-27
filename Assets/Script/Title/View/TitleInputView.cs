@@ -20,7 +20,7 @@ namespace gaw241201.View
         List<IInputExecutor> _executorList;
 
         [Inject]
-        public TitleInputView(CommandInputExecutor executor)
+        public TitleInputView(InputExecutorCommand executor)
         {
             _executorList = new List<IInputExecutor>();
 
@@ -35,7 +35,7 @@ namespace gaw241201.View
             _isEnable = true;
             while (_isEnable)
             {
-                await UniTask.Yield(PlayerLoopTiming.PostLateUpdate);
+                await UniTask.Yield(PlayerLoopTiming.PreUpdate);
                 ProcessInput();
             }
         }

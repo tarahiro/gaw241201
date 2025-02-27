@@ -12,7 +12,7 @@ using static gaw241201.View.InputConst;
 
 namespace gaw241201.View
 {
-    public class CommandInputExecutor : IInputExecutor
+    public class InputExecutorCommand : IInputExecutor
     {
         IInputHundlerCommand _hundler;
 
@@ -22,7 +22,7 @@ namespace gaw241201.View
         public IObservable<Unit> Inputted => _inputted;
 
         [Inject]
-        public CommandInputExecutor(IInputHundlerCommand hundler)
+        public InputExecutorCommand(IInputHundlerCommand hundler)
         {
             _hundler = hundler;
         }

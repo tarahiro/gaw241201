@@ -499,7 +499,7 @@ namespace gaw241201.Inject
         {
             builder.Register<ActiveLayerPublisher>(Lifetime.Singleton).AsSelf();
             builder.Register<InputViewFactory>(Lifetime.Singleton).AsSelf();
-            builder.Register<CommandInputExecutor>(Lifetime.Transient).AsSelf();
+            builder.Register<InputExecutorCommand>(Lifetime.Transient).AsSelf();
             builder.Register<InputHundlerCommand>(Lifetime.Singleton).AsImplementedInterfaces();
         }
 

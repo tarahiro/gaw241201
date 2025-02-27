@@ -25,7 +25,7 @@ namespace gaw241201.View
 
         List<IInputExecutor> _executorList;
 
-        [Inject] public SettingMenuInputProcessor(CommandInputExecutor executor)
+        [Inject] public SettingMenuInputProcessor(InputExecutorCommand executor)
         {
             _executorList = new List<IInputExecutor>();
 

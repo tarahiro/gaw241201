@@ -22,7 +22,7 @@ namespace gaw241201.View
         List<IInputExecutor> _executorList;
 
         [Inject]
-        public GameOverExhibitionInputProcessor(CommandInputExecutor executor)
+        public GameOverExhibitionInputProcessor(InputExecutorCommand executor)
         {
             _executorList = new List<IInputExecutor>();
 

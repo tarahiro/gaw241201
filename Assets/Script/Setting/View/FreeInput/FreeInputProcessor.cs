@@ -25,7 +25,7 @@ namespace gaw241201.View
         List<IInputExecutor> _executorList;
 
         [Inject]
-        public FreeInputProcessor(CommandInputExecutor executor)
+        public FreeInputProcessor(InputExecutorCommand executor)
         {
             _executorList = new List<IInputExecutor>();
 
