@@ -25,33 +25,26 @@ namespace gaw241201.View
         List<IInputExecutor> _executorList;
 
         [Inject]
-        public FreeInputProcessor(InputExecutorCommand executor)
+        public FreeInputProcessor(InputExecutorCommand decide, InputExecutorCommand cancel,InputExecutorKeyStroke keyStroke,
+            IDisposablePure disposable)
         {
             _executorList = new List<IInputExecutor>();
 
-            executor.Initialize(InputConst.Command.Decide);
-            executor.Inputted.Subscribe(_ => _decided.OnNext(default));
-            _executorList.Add(executor);
+            decide.Initialize(InputConst.Command.Decide);
+            decide.Inputted.Subscribe(_ => _decided.OnNext(default)).AddTo(disposable);
+            _executorList.Add(decide);
+
+            cancel.Initialize(InputConst.Command.Cancel);
+            cancel.Inputted.Subscribe(_ => _deleted.OnNext(default)).AddTo(disposable);
+            _executorList.Add(cancel);
+
+            keyStroke.Inputted.Subscribe(_keyEntered).AddTo(disposable);
+            _executorList.Add(keyStroke);
 
         }
         public void ProcessInput()
         {
-            for (int i = 0; i < Input.inputString.Length; i++)
-            {
-                _keyEntered.OnNext(Input.inputString[i]);
-            }
-            /*
-            if(Input.GetKeyDown(KeyCode.Space)|| Input.GetKeyDown(KeyCode.Return))
-            {
-                Log.DebugLog("FreeInputProcessor: Enter");
-                _decided.OnNext(Unit.Default);
-            }
-            */
 
-            if (Input.GetKeyDown(KeyCode.Backspace))
-            {
-                _deleted.OnNext(Unit.Default);
-            }
             foreach (var item in _executorList)
             {
                 item.TryExecute();

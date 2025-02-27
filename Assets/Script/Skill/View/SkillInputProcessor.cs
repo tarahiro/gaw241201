@@ -21,20 +21,31 @@ namespace gaw241201.View
         public IObservable<int> IndexerMoved => _indexerMoved;
 
         public IObservable<Unit> Decided => _decided;
+
+        List<IInputExecutor> _executorList;
+        [Inject]
+        public SkillInputProcessor(InputExecutorCommand command,
+          InputExecutorDiscreteDirectionHorizontal horizontal,
+          IDisposablePure disposable)
+        {
+            _executorList = new List<IInputExecutor>();
+
+            command.Initialize(InputConst.Command.Decide);
+            command.Inputted.Subscribe(_ => _decided.OnNext(default)).AddTo(disposable);
+            _executorList.Add(command);
+
+
+            horizontal.Inputted.Subscribe(x =>
+            _indexerMoved.OnNext(_indexVariantHundler.IndexVariant(Vector2Int.right * x))).AddTo(disposable);
+            _executorList.Add(horizontal);
+
+        }
+
         public void ProcessInput()
         {
-            if (Input.GetKeyDown(KeyCode.LeftArrow))
+            foreach (var item in _executorList)
             {
-                _indexerMoved.OnNext(_indexVariantHundler.IndexVariant(CursorInputUtil.GetCursorDirection(KeyCode.LeftArrow)));
-            }
-            if (Input.GetKeyDown(KeyCode.RightArrow))
-            {
-                _indexerMoved.OnNext(_indexVariantHundler.IndexVariant(CursorInputUtil.GetCursorDirection(KeyCode.RightArrow)));
-            }
-
-            if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.Space))
-            {
-                _decided.OnNext(Unit.Default);
+                item.TryExecute();
             }
         }
     }

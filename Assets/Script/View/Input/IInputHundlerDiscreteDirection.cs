@@ -10,9 +10,9 @@ using VContainer.Unity;
 
 namespace gaw241201.View
 {
-    public interface IInputHundlerDirection
+    public interface IInputHundlerDiscreteDirection
     {
-        Vector2 InputtedDirection();
+        Vector2Int InputtedDiscreteDirection();
 
         void NotifyUse(Vector2Int vec);
     }

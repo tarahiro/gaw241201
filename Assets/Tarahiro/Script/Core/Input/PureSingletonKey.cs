@@ -8,6 +8,7 @@ using UnityEngine.SceneManagement;
 using VContainer;
 using VContainer.Unity;
 using System.Linq;
+using UnityEngine.UIElements;
 
 namespace Tarahiro
 {
@@ -15,6 +16,10 @@ namespace Tarahiro
     {
         Dictionary<KeyInputState, List<KeyCode>> _keyListArray = new Dictionary<KeyInputState, List<KeyCode>>();
 
+        Dictionary<KeyCode, float> _pressingTimeSince = new Dictionary<KeyCode, float>();
+
+        string _strokedKey { get; set; }
+ 
         [Inject] PureSingletonInput _input;
 
 
@@ -37,11 +42,24 @@ namespace Tarahiro
                     _keyListArray[key] = new List<KeyCode>();
                 }
             }
+
+            _strokedKey = "";
         }
 
-        public void AddKey(KeyInputState inputState, KeyCode keycode)
+
+        public void AddKeyDown(KeyCode keycode)
         {
-            _keyListArray[inputState].Add(keycode);
+            RegisterKey(KeyInputState.Down, keycode);
+            _pressingTimeSince.Add(keycode, Time.time);
+        }
+        public void AddKey(KeyCode keycode)
+        {
+            RegisterKey(KeyInputState.Key, keycode);
+        }
+        public void AddKeyUp(KeyCode keycode)
+        {
+            RegisterKey(KeyInputState.Up, keycode);
+            _pressingTimeSince.Remove(keycode);
         }
 
         public bool IsKeyDown(KeyCode key)
@@ -57,6 +75,35 @@ namespace Tarahiro
         public bool IsKeyUp(KeyCode key)
         {
             return IsKeyState(KeyInputState.Up, key);
+        }
+        public bool TryGetPressingTimeSince(KeyCode key, out float sinceTime)
+        {
+            if (_pressingTimeSince.ContainsKey(key))
+            {
+                sinceTime = _pressingTimeSince[key];
+                return true;
+            }
+            else
+            {
+                sinceTime = 0f;
+                return false;
+            }
+        }
+
+        public string GetStrokedKey()
+        {
+            if (_input.IsAnyAvailableInputted) return "";
+            return _strokedKey;
+        }
+
+        public void SetStrokedKey(string strokedKey)
+        {
+            _strokedKey = strokedKey;
+        }
+
+        void RegisterKey(KeyInputState inputState, KeyCode keycode)
+        {
+            _keyListArray[inputState].Add(keycode);
         }
 
         bool IsKeyState(KeyInputState inputState, KeyCode key)
@@ -122,6 +169,10 @@ namespace Tarahiro
             KeyCode.Backspace,
             KeyCode.Return,
             KeyCode.Space,
+            KeyCode.RightArrow,
+            KeyCode.LeftArrow,
+            KeyCode.DownArrow,
+            KeyCode.UpArrow,
         };
 
         public enum KeyInputState

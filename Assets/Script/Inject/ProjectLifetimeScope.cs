@@ -499,8 +499,15 @@ namespace gaw241201.Inject
         {
             builder.Register<ActiveLayerPublisher>(Lifetime.Singleton).AsSelf();
             builder.Register<InputViewFactory>(Lifetime.Singleton).AsSelf();
+
             builder.Register<InputExecutorCommand>(Lifetime.Transient).AsSelf();
+            builder.Register<InputExecutorDiscreteDirectionHorizontal>(Lifetime.Transient).AsSelf();
+            builder.Register<InputExecutorDiscreteDirectionVertical>(Lifetime.Transient).AsSelf();
+            builder.Register<InputExecutorKeyStroke>(Lifetime.Transient).AsSelf();
+
             builder.Register<InputHundlerCommand>(Lifetime.Singleton).AsImplementedInterfaces();
+            builder.Register<InputHundlerDiscreteDirection>(Lifetime.Singleton).AsImplementedInterfaces();
+            builder.Register<InputHundlerKeyStroke>(Lifetime.Singleton).AsImplementedInterfaces();
         }
 
         void ConfigureSwitch(IContainerBuilder builder)

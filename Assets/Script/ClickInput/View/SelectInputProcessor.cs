@@ -17,23 +17,28 @@ namespace gaw241201.View
 
         Subject<Unit>  _decided = new Subject<Unit>();
         public IObservable<Unit> Decided => _decided;
+        List<IInputExecutor> _executorList = new List<IInputExecutor>();
+
+        [Inject]
+        public SelectInputProcessor(InputExecutorCommand command,
+            InputExecutorDiscreteDirectionHorizontal horizontal)
+        {
+            command.Initialize(InputConst.Command.Decide);
+            command.Inputted.Subscribe(_ => _decided.OnNext(default));
+            _executorList.Add(command);
+
+            horizontal.Inputted.Subscribe(x => _lrInputted.OnNext(x));
+            _executorList.Add(horizontal);
+        }
+
 
         public void ProcessInput()
         {
-            if (Input.GetKeyDown(KeyCode.RightArrow))
+            foreach (var item in _executorList)
             {
-                _lrInputted.OnNext(1);
+                item.TryExecute();
             }
 
-            if (Input.GetKeyDown(KeyCode.LeftArrow))
-            {
-                _lrInputted.OnNext(-1);
-            }
-
-            if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.Space))
-            {
-                _decided.OnNext(Unit.Default);
-            }
         }
     }
 }

@@ -10,7 +10,7 @@ using VContainer.Unity;
 
 namespace gaw241201.View
 {
-    public class SettingMenuInputProcessor : IInputProcessable,IIndexerInputtableView
+    public class SettingMenuInputProcessor : IInputProcessable, IIndexerInputtableView
     {
         [Inject] IndexVariantHundlerSettings _indexVariantHundler;
 
@@ -25,47 +25,34 @@ namespace gaw241201.View
 
         List<IInputExecutor> _executorList;
 
-        [Inject] public SettingMenuInputProcessor(InputExecutorCommand executor)
+        [Inject]
+        public SettingMenuInputProcessor(InputExecutorCommand command,
+            InputExecutorDiscreteDirectionHorizontal horizontal,
+            InputExecutorDiscreteDirectionVertical vertical,
+            IDisposablePure disposable)
         {
             _executorList = new List<IInputExecutor>();
 
-            executor.Initialize(InputConst.Command.Decide);
-            executor.Inputted.Subscribe(_ => _decided.OnNext(default));
-            _executorList.Add(executor);
+            command.Initialize(InputConst.Command.Decide);
+            command.Inputted.Subscribe(_ => _decided.OnNext(default)).AddTo(disposable);
+            _executorList.Add(command);
+
+
+            horizontal.Inputted.Subscribe(x => _lrInputted.OnNext((SettingConst.TabDirection)x)).AddTo(disposable);
+            _executorList.Add(horizontal);
+
+            vertical.Inputted.Subscribe(x =>
+            _indexerMoved.OnNext(_indexVariantHundler.IndexVariant(Vector2Int.up * x))).AddTo(disposable);
+            _executorList.Add(vertical);
 
         }
 
         public void ProcessInput()
         {
-            
-            if (Input.GetKeyDown(KeyCode.UpArrow))
-            {
-                _indexerMoved.OnNext(_indexVariantHundler.IndexVariant(CursorInputUtil.GetCursorDirection(KeyCode.UpArrow)));
-            }
-            if (Input.GetKeyDown(KeyCode.DownArrow))
-            {
-                _indexerMoved.OnNext(_indexVariantHundler.IndexVariant(CursorInputUtil.GetCursorDirection(KeyCode.DownArrow)));
-            }
-
-            if (Input.GetKeyDown(KeyCode.LeftArrow))
-            {
-                _lrInputted.OnNext(SettingConst.TabDirection.Left);
-            }
-            if (Input.GetKeyDown(KeyCode.RightArrow))
-            {
-                _lrInputted.OnNext(SettingConst.TabDirection.Right);
-            }
-
             foreach(var item in _executorList)
             {
                 item.TryExecute();
             }
-            /*
-            if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.Space))
-            {
-                _decided.OnNext(Unit.Default);
-            }
-            */
         }
 
     }

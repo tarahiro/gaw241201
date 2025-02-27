@@ -15,11 +15,27 @@ namespace gaw241201.View
         Subject<char> _keyEntered = new Subject<char>();
         public IObservable<char> KeyEntered => _keyEntered;
 
+
+        List<IInputExecutor> _executorList;
+
+        [Inject]
+        public TypingInputProcessor(InputExecutorKeyStroke keyStroke,
+            IDisposablePure disposable)
+        {
+            _executorList = new List<IInputExecutor>();
+
+            keyStroke.Inputted.Subscribe(_keyEntered).AddTo(disposable);
+            _executorList.Add(keyStroke);
+
+        }
+
+
         public void ProcessInput()
         {
-            for (int i = 0; i < Input.inputString.Length; i++)
+
+            foreach (var item in _executorList)
             {
-                _keyEntered.OnNext(Input.inputString[i]);
+                item.TryExecute();
             }
         }
     }

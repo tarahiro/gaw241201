@@ -28,11 +28,13 @@ namespace Tarahiro
             {
                 if (Input.GetKeyDown(key))
                 {
-                    _key.AddKey(PureSingletonKey.KeyInputState.Down, key);
+                    _key.AddKeyDown(key);
                 }
-                if (Input.GetKey(key)) _key.AddKey(PureSingletonKey.KeyInputState.Key, key);
-                if (Input.GetKeyUp(key)) _key.AddKey(PureSingletonKey.KeyInputState.Up, key);
+                if (Input.GetKey(key)) _key.AddKey(key);
+                if (Input.GetKeyUp(key)) _key.AddKeyUp(key);
             }
+
+            _key.SetStrokedKey(Input.inputString);
         }
 
     }

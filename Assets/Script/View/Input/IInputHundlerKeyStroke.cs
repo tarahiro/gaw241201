@@ -10,11 +10,8 @@ using VContainer.Unity;
 
 namespace gaw241201.View
 {
-    public class InputExecutorDirectionVertical : IInputExecutor
+    public interface IInputHundlerKeyStroke
     {
-        public void TryExecute()
-        {
-
-        }
+        public string StrokedKey();
     }
 }
