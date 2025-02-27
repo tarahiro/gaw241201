@@ -324,6 +324,7 @@ namespace gaw241201.Inject
             builder.RegisterComponentInHierarchy<SkillMenuView>().AsSelf();
             builder.Register<SkillInputProcessor>(Lifetime.Singleton).AsSelf();
             builder.Register<IndexVariantHundlerSkill>(Lifetime.Singleton).AsSelf();
+            builder.Register<SkillMenuItemProvider>(Lifetime.Singleton).AsSelf().AsImplementedInterfaces();
 
 
             builder.RegisterEntryPoint<SkillPresenter>();

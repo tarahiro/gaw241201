@@ -18,7 +18,7 @@ namespace gaw241201.View
         [SerializeField] SkillItemView _itemViewPrefab;
         [SerializeField] Transform _root;
 
-        List<SkillItemView> _itemViewList;
+        List<SkillItemView> _itemViewList = new List<SkillItemView>();
         const float c_intervalX = 540f;
 
         [Inject] ISubscriber<string> _animationSubscriberFake;
@@ -30,40 +30,21 @@ namespace gaw241201.View
             -4f,6f,3f
         };
 
-        public void SetData(List<SkillArgs.Data> dataList)
+        public void SetData(SkillArgs.Data data)
         {
-            //Fake
-            _animationSubscriberFake.Subscribe(_ => HorrorFake());
 
-            _itemViewList = new List<SkillItemView>();
-            for (int i = 0; i < dataList.Count; i++)
-            {
-                SkillItemView item = _diContainer.Instantiate<SkillItemView>(_itemViewPrefab, _root);
-                item.SetData(dataList[i]);
-                item.transform.localPosition = Vector2.right * (-1f + i) * c_intervalX;
-                item.transform.localRotation = Quaternion.Euler(0, 0, _fakeInitialRotation[i]);
+            SkillItemView item = _diContainer.Instantiate<SkillItemView>(_itemViewPrefab, _root);
+            item.SetData(data);
+            item.transform.localPosition = Vector2.right * (-1f + _itemViewList.Count ) * c_intervalX;
+            item.transform.localRotation = Quaternion.Euler(0, 0, _fakeInitialRotation[_itemViewList.Count]);
 
-                _itemViewList.Add(item);
-            }
+            _itemViewList.Add(item);
+
         }
 
         public async UniTask Enter(int index)
         {
             await SetFocus(_index);
-
-            /*
-            _itemViewList = new List<SkillItemView>();
-
-            for (int i = 0; i < args.DataList.Count; i++)
-            {
-                SkillItemView item = _diContainer.Instantiate<SkillItemView>(_itemViewPrefab, _root);
-                item.SetData(args.DataList[i]);
-                item.transform.localPosition = Vector2.right * (-1f + i) * c_intervalX;
-                item.transform.localRotation = Quaternion.Euler(0, 0, _fakeInitialRotation[i]);
-
-                _itemViewList.Add(item);
-            }
-            */
         }
 
         public async UniTask Exit()
@@ -72,6 +53,8 @@ namespace gaw241201.View
             {
                 Destroy(_itemViewList[i].gameObject);
             }
+
+            _itemViewList = new List<SkillItemView>();
         }
 
         public IMenuItemView Current()

@@ -24,8 +24,8 @@ namespace gaw241201
         }
 
         public void Enter()
-        {
-                _eventCatcher.OnEnterDenied(_errorConversationId);
+        {  
+            _eventCatcher.OnEnterDenied(_errorConversationId);
         }
 
     }

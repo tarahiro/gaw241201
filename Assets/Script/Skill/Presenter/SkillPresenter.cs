@@ -25,31 +25,20 @@ namespace gaw241201.Presenter
         [Inject] SkillIndexInputView _inputView;
         [Inject] IndexVariantHundlerSkill _indexVariantHundler;
 
+        [Inject] SkillMenuItemProvider _provider;
+
         [Inject] IDisposablePure _disposable;
 
         public void PostInitialize()
         {
 
-            /*
-            _inputProcessor.IndexerMoved.Subscribe(_menuModel.MoveFocus).AddTo(_disposable);
-            _inputProcessor.Decided.Subscribe(_ => _menuModel.Decide()).AddTo(_disposable);
-
-
-            _menuModel.Entered.Subscribe(x => _menuView.Enter(x).Forget()).AddTo(_disposable);
-            _menuModel.FocusChanged.Subscribe(x => _menuView.SetFocus(x).Forget()).AddTo(_disposable);
-            _menuModel.Exited.Subscribe(_ => _menuView.Exit().Forget()).AddTo(_disposable);
-
-            _menuModel.Entered.Subscribe(_ => _rootView.EnterRoot()).AddTo(_disposable);
-            _model.MenuEnded.Subscribe(x => _rootView.EndRoot()).AddTo(_disposable);
-            */
-
-
-            _menuModel.DecidedSkill.Subscribe(_model.End).AddTo(_disposable);
-            _menuModel.ArgsSetted.Subscribe(x =>
+            for(int i = 0; i < _provider.Count; i++)
             {
-                _menuView.SetData(x.DataList);
-                _indexVariantHundler.SetMaxNumber(x.DataList.Count);
-            }).AddTo(_disposable);
+                _provider.ProvideRaw(i).Setted.Subscribe(_menuView.SetData).AddTo(_disposable);
+                _provider.ProvideRaw(i).Entered.Subscribe(_model.End).AddTo(_disposable);
+            }
+
+            _model.OnNumberDecided.Subscribe(_indexVariantHundler.SetMaxNumber).AddTo(_disposable);
 
             _factory.Initialize();
         }

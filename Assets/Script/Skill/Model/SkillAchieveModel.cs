@@ -17,6 +17,7 @@ namespace gaw241201
         [Inject] ISkillChoicesDecidable _skillChoicesDecideable;
         [Inject] IAchievableMasterFlagRegisterer _achievableMasterFlagRegisterer;
         [Inject] SkillMenuModel _skillMenuModel;
+        [Inject] SkillMenuItemProvider _itemProvider;
 
 
 
@@ -29,7 +30,16 @@ namespace gaw241201
             _cts.SetNew();
             _isEnd = false;
 
-            _skillMenuModel.Enter(_cts.Token, _skillChoicesDecideable.DecideChoices(bodyId));
+
+            List<SkillArgs.Data> list = _skillChoicesDecideable.DecideChoices(bodyId);
+
+            for(int i = 0; i < list.Count; i++)
+            {
+                _itemProvider.ProvideRaw(i).SetData(list[i]);
+            }
+
+            _onNumberDecided.OnNext(list.Count);
+            _skillMenuModel.Enter();
             MenuStart();
             await UniTask.WaitUntil(() => _isEnd);
         }
@@ -62,6 +72,10 @@ namespace gaw241201
         }
         Subject<Unit> _exited = new Subject<Unit>();
         public IObservable<Unit> MenuEnded => _exited;
+
+
+        Subject<int> _onNumberDecided = new Subject<int>();
+        public IObservable<int> OnNumberDecided => _onNumberDecided;
 
     }
 }
