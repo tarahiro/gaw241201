@@ -8,16 +8,13 @@ using UnityEngine;
 using VContainer;
 using VContainer.Unity;
 
-namespace gaw241201.View
+namespace gaw241201
 {
-    public interface IMenuView
+    public class UiMenuItemModelTemplate : IUiMenuItemModel
     {
-        UniTask SetFocus(int itemIndex);
+        public void Enter()
+        {
 
-        UniTask Decide(int itemIndex);
-
-        UniTask Enter(int itemIndex);
-
-        UniTask Exit();
+        }
     }
 }

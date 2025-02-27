@@ -44,6 +44,7 @@ namespace gaw241201.View
 
         public async UniTask Enter(int index)
         {
+            _index = index;
             await SetFocus(_index);
         }
 
