@@ -8,7 +8,7 @@ using VContainer;
 using VContainer.Unity;
 using UniRx;
 
-namespace gaw241201.View
+namespace gaw241201
 {
     public static class EndGameConst
     {

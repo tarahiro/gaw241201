@@ -182,6 +182,14 @@ namespace gaw241201.Inject
             builder.Register<GameOverExhibitionInputProcessor>(Lifetime.Singleton).AsSelf();
             builder.Register<ScenePublisher>(Lifetime.Singleton).AsSelf();
 
+
+            builder.Register<EndGameCore_Old>(Lifetime.Singleton).AsSelf();
+            builder.Register<EndGameCoreModelProvider>(Lifetime.Singleton).AsSelf();
+            builder.Register<SceneExecutor>(Lifetime.Singleton).AsSelf();
+
+
+
+
             builder.RegisterEntryPoint<EndGamePresenter>();
 
         }

@@ -15,19 +15,20 @@ namespace gaw241201.Presenter
 {
     public class EndGamePresenter : IPostInitializable
     {
-        [Inject] EndGameModel _model;
+        [Inject] EndGameCore_Old _oldModel;
         [Inject] EndGameView _view;
+        [Inject] SceneExecutor _sceneExecutor;
 
         [Inject] GameOverExhibitionInputProcessor _processor;
 
         [Inject] IDisposablePure disposables;
         public void PostInitialize()
         {
-            _model.Entered.Subscribe(_view.Enter).AddTo(disposables);
-            _view.Clicked.Subscribe(_ => _model.ToTitle()).AddTo(disposables);
+            _oldModel.Entered.Subscribe(_view.Enter).AddTo(disposables);
+            _view.Clicked.Subscribe(_ => _sceneExecutor.ToTitle()).AddTo(disposables);
 
-            _processor.Decided.Subscribe(_ => _model.Restart()).AddTo(disposables);
-            _processor.Canceled.Subscribe(_ => _model.ToTitle()).AddTo(disposables);
+            _processor.Decided.Subscribe(_ => _sceneExecutor.Restart()).AddTo(disposables);
+            _processor.Canceled.Subscribe(_ => _sceneExecutor.ToTitle()).AddTo(disposables);
         }
     }
 }
