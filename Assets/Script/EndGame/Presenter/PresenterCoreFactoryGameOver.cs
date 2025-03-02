@@ -12,13 +12,13 @@ using VContainer.Unity;
 
 namespace gaw241201
 {
-    public class PresenterCoreFactoryTemplate : IPostInitializable
+    public class PresenterCoreFactoryGameOver : IPostInitializable
     {
         [Inject] MenuRootModelGameover _achieveModel;
-        [Inject] UiEnterViewTemplate _rootView;
-        [Inject] UiInputProcessorTemplate _inputProcessor;
+        [Inject] RestartEnterView _rootView;
+        [Inject] RestartInputProcessor _inputProcessor;
         [Inject] UiMenuModelGameover _menuModel;
-        [Inject] UiMenuViewTemplate _menuView;
+        [Inject] RestartMenuViewFake _menuView;
         [Inject] IDisposablePure _disposable;
 
         public void PostInitialize()

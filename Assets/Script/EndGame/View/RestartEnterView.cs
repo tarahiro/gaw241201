@@ -10,9 +10,9 @@ using VContainer.Unity;
 
 namespace gaw241201.View
 {
-    public class UiEnterViewTemplate : MonoBehaviour, IMenuRootView
+    public class RestartEnterView : MonoBehaviour, IMenuRootView
     {
-        [Inject] IInputView _inputView;
+        [Inject] RestartInputView _inputView;
 
         public void EnterRoot()
         {

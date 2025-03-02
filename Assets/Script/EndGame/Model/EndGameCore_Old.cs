@@ -16,10 +16,10 @@ namespace gaw241201
 
         Subject<EndGameArgs> _entered = new Subject<EndGameArgs>();
         public IObservable<EndGameArgs> Entered => _entered;
-        public void Enter(string bodyId)
+        public void Enter(EndGameConst.Key bodyId)
         {
             _cancellationTokenSource.SetNew();
-            _entered.OnNext(new EndGameArgs(_cancellationTokenSource.Token, EnumUtil.KeyToType<EndGameConst.Key>(bodyId)));
+            _entered.OnNext(new EndGameArgs(_cancellationTokenSource.Token, EnumUtil.KeyToType<EndGameConst.Key>(bodyId.ToString())));
 
         }
     }

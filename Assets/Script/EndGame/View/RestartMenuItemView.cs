@@ -8,10 +8,9 @@ using UnityEngine;
 using VContainer;
 using VContainer.Unity;
 
-namespace gaw241201
+namespace gaw241201.View
 {
-    public interface IEndGameCore
+    public class RestartMenuItemView
     {
-        public void Enter(EndGameConst.Key key);
     }
 }

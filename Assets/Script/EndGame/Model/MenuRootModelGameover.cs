@@ -12,7 +12,7 @@ namespace gaw241201
 {
     public class MenuRootModelGameover : IMenuModelStartable, IMenuModelEndable, IEndGameCore
     {
-        public void Enter(string bodyId)
+        public void Enter(EndGameConst.Key bodyId)
         {
             MenuStart();
         }

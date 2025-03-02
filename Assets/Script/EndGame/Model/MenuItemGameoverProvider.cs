@@ -8,9 +8,13 @@ using UnityEngine;
 using VContainer;
 using VContainer.Unity;
 
-namespace gaw241201.View
+namespace gaw241201
 {
-    public class UiMenuItemViewTemplate
+    public class MenuItemGameoverProvider : IMenuItemGameoverProvider
     {
+        public IUiMenuItemModel Provide()
+        {
+            return new UiMenuItemModelGameover();
+        }
     }
 }

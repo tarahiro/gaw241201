@@ -11,15 +11,15 @@ using System.Threading;
 
 namespace gaw241201.View
 {
-    public class UiInputViewTemplate : IInputView
+    public class RestartInputView : IInputView
     {
         IInputView _inputView;
         public IObservable<bool> BlockEnabled => _inputView.BlockEnabled;
 
         [Inject]
-        public UiInputViewTemplate(InputViewFactory factory, UiInputProcessorTemplate skillInputProcessor)
+        public RestartInputView(InputViewFactory factory, RestartInputProcessor skillInputProcessor)
         {
-            _inputView = factory.Create(skillInputProcessor, ActiveLayerConst.InputLayer.Skill);
+            _inputView = factory.Create(skillInputProcessor, ActiveLayerConst.InputLayer.GameOver);
         }
 
         public async UniTask Enter(CancellationToken ct)

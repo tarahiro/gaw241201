@@ -15,7 +15,7 @@ namespace gaw241201
         IUiMenuModel _uiMenuModel;
 
         [Inject]
-        public UiMenuModelGameover(IMenuItemTemplateProvider provider)
+        public UiMenuModelGameover(IMenuItemGameoverProvider provider)
         {
             List<IUiMenuItemModel> list = new List<IUiMenuItemModel>();
 

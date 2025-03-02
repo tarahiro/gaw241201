@@ -10,7 +10,7 @@ using VContainer.Unity;
 
 namespace gaw241201
 {
-    public interface IMenuItemTemplateProvider
+    public interface IMenuItemGameoverProvider
     {
         public IUiMenuItemModel Provide();
     }

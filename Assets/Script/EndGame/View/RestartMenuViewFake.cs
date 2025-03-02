@@ -10,7 +10,7 @@ using VContainer.Unity;
 
 namespace gaw241201.View
 {
-    public class UiMenuViewTemplate : MonoBehaviour, IMenuView
+    public class RestartMenuViewFake :/* MonoBehaviour,*/ IMenuView
     {
 
         List<IMenuItemView> _itemViewList = new List<IMenuItemView>();
