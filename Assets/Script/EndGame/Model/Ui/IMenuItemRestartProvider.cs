@@ -10,11 +10,10 @@ using VContainer.Unity;
 
 namespace gaw241201
 {
-    public class UiMenuItemModelGameover : IUiMenuItemModel
+    public interface IMenuItemRestartProvider
     {
-        public void Enter()
-        {
+        public IUiMenuItemModel Provide(int index);
 
-        }
+        public int Count { get; }
     }
 }

@@ -14,11 +14,11 @@ namespace gaw241201
 {
     public class PresenterCoreFactoryGameOver : IPostInitializable
     {
-        [Inject] MenuRootModelGameover _achieveModel;
+        [Inject] MenuRootModelRestart _achieveModel;
         [Inject] RestartEnterView _rootView;
         [Inject] RestartInputProcessor _inputProcessor;
-        [Inject] UiMenuModelGameover _menuModel;
-        [Inject] RestartMenuViewFake _menuView;
+        [Inject] UiMenuModelRestart _menuModel;
+        [Inject] RestartMenuView _menuView;
         [Inject] IDisposablePure _disposable;
 
         public void PostInitialize()

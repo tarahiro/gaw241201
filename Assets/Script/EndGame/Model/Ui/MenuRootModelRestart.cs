@@ -10,7 +10,7 @@ using VContainer.Unity;
 
 namespace gaw241201
 {
-    public class MenuRootModelGameover : IMenuModelStartable, IMenuModelEndable, IEndGameCore
+    public class MenuRootModelRestart : IMenuModelStartable, IMenuModelEndable, IEndGameCore
     {
         public void Enter(EndGameConst.Key bodyId)
         {

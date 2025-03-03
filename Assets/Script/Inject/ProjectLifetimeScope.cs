@@ -187,13 +187,13 @@ namespace gaw241201.Inject
             builder.Register<EndGameCoreModelProvider>(Lifetime.Singleton).AsSelf();
             builder.Register<SceneExecutor>(Lifetime.Singleton).AsSelf();
 
-            builder.Register<MenuRootModelGameover>(Lifetime.Singleton).AsSelf();
+            builder.Register<MenuRootModelRestart>(Lifetime.Singleton).AsSelf();
             builder.RegisterComponentInHierarchy<RestartEnterView>().AsSelf();
             builder.Register<RestartInputView>(Lifetime.Singleton).AsSelf();
             builder.Register<RestartInputProcessor>(Lifetime.Singleton).AsSelf();
-            builder.Register<UiMenuModelGameover>(Lifetime.Singleton).AsSelf();
-            builder.Register<RestartMenuViewFake>(Lifetime.Singleton).AsSelf();
-            builder.Register<MenuItemGameoverProvider>(Lifetime.Singleton).AsImplementedInterfaces();
+            builder.Register<UiMenuModelRestart>(Lifetime.Singleton).AsSelf();
+            builder.Register<RestartMenuView>(Lifetime.Singleton).AsSelf();
+            builder.Register<MenuItemRestartProvider>(Lifetime.Singleton).AsImplementedInterfaces();
 
 
             builder.RegisterEntryPoint<PresenterCoreFactoryGameOver>();

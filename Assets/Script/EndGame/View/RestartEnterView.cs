@@ -14,14 +14,23 @@ namespace gaw241201.View
     {
         [Inject] RestartInputView _inputView;
 
+        [SerializeField] GameObject _root;
+
+        void Start()
+        {
+            _root.SetActive(false);
+        }
+
         public void EnterRoot()
         {
             _inputView.Enter(this.GetCancellationTokenOnDestroy()).Forget();
+            _root.SetActive(true);
         }
 
         public void EndRoot()
         {
             _inputView.Exit();
+            _root.SetActive(false);
         }
     }
 }
