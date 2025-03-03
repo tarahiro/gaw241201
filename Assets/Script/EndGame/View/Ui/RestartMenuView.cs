@@ -33,7 +33,7 @@ namespace gaw241201.View
             Current().UnFocus();
 
             _index = index;
-            _cursor.transform.localPosition = Current().transform.localPosition + c_offset;
+            SetCursor();
             Current().Focus();
         }
 
@@ -48,6 +48,10 @@ namespace gaw241201.View
         public IMenuItemView Current()
         {
             return _itemViewList[_index];
+        }
+        void SetCursor()
+        {
+            _cursor.transform.localPosition = Current().transform.localPosition + c_offset;
         }
 
         public int Index => _index;
