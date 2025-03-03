@@ -10,7 +10,15 @@ using VContainer.Unity;
 
 namespace gaw241201.View
 {
-    public class RestartMenuItemView
+    public class RestartMenuItemView : MonoBehaviour,IMenuItemView
     {
+        public void Focus()
+        {
+
+        }
+        public void UnFocus()
+        {
+
+        }
     }
 }

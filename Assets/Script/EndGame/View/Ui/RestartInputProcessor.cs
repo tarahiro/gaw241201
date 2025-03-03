@@ -12,6 +12,7 @@ namespace gaw241201.View
 {
     public class RestartInputProcessor : IInputProcessable, IIndexerInputtableView
     {
+        [Inject] IndexVariantHundlerRestart _indexVariantHundler;
 
 
         Subject<Unit> _decided = new Subject<Unit>();
@@ -28,7 +29,9 @@ namespace gaw241201.View
         public IObservable<int> IndexerMoved => _indexerMoved;
 
         [Inject]
-        public RestartInputProcessor(InputExecutorCommand executor)
+        public RestartInputProcessor(InputExecutorCommand executor,
+            InputExecutorDiscreteDirectionVertical vertical,
+            IDisposablePure disposable)
         {
             _executorList = new List<IInputExecutor>();
 
@@ -36,20 +39,14 @@ namespace gaw241201.View
             executor.Inputted.Subscribe(_ => _decided.OnNext(default));
             _executorList.Add(executor);
 
+            vertical.Inputted.Subscribe(x =>
+            _indexerMoved.OnNext(_indexVariantHundler.IndexVariant(Vector2Int.up * x))).AddTo(disposable);
+            _executorList.Add(vertical);
+
         }
 
         public void ProcessInput()
         {
-            /*
-            if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Return))
-            {
-                _decided.OnNext(Unit.Default);
-            }*/
-
-            if (Input.GetKeyDown(KeyCode.Backspace))
-            {
-                _canceled.OnNext(Unit.Default);
-            }
 
             foreach (var item in _executorList)
             {

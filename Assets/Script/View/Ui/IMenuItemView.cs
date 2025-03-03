@@ -10,7 +10,7 @@ using VContainer.Unity;
 
 namespace gaw241201.View
 {
-    public interface IMenuItemView
+    public interface IMenuItemView : ITransform
     {
         void Focus();
 

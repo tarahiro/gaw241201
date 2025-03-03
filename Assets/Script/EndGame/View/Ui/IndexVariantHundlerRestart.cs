@@ -12,11 +12,11 @@ namespace gaw241201.View
 {
     public class IndexVariantHundlerRestart : IIndexVariantHundler
     {
-
+        [Inject] RestartMenuView _menuView;
 
         public int IndexVariant(Vector2Int cursorDirection)
         {
-            int index = _tabManager.Current.MenuIndex;
+            int index = _menuView.Index;
             if (cursorDirection.y == 1)
             {
                 index--;
@@ -28,8 +28,8 @@ namespace gaw241201.View
             }
 
 
-            if (index < 0) index = _tabManager.Current.MaxIndex - 1;
-            if (index >= _tabManager.Current.MaxIndex) index = 0;
+            if (index < 0) index = _menuView.Count - 1;
+            if (index >= _menuView.Count) index = 0;
 
             return index;
         }

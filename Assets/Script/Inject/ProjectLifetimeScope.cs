@@ -192,7 +192,8 @@ namespace gaw241201.Inject
             builder.Register<RestartInputView>(Lifetime.Singleton).AsSelf();
             builder.Register<RestartInputProcessor>(Lifetime.Singleton).AsSelf();
             builder.Register<UiMenuModelRestart>(Lifetime.Singleton).AsSelf();
-            builder.Register<RestartMenuView>(Lifetime.Singleton).AsSelf();
+            builder.RegisterComponentInHierarchy<RestartMenuView>().AsSelf();
+            builder.Register<IndexVariantHundlerRestart>(Lifetime.Singleton).AsSelf();
             builder.Register<MenuItemRestartProvider>(Lifetime.Singleton).AsImplementedInterfaces();
 
 

@@ -2,6 +2,7 @@ using Cysharp.Threading.Tasks;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Tarahiro;
 using UniRx;
 using UnityEngine;
@@ -12,19 +13,27 @@ namespace gaw241201.View
 {
     public class RestartMenuView : MonoBehaviour, IMenuView
     {
-
-        List<IMenuItemView> _itemViewList = new List<IMenuItemView>();
+        [SerializeField] List<IMenuItemView> _itemViewList;
         int _index = 0;
+        [SerializeField] GameObject _cursor;
+
+        Vector3 c_offset = 50f * Vector3.left;
+
+        void Start()
+        {
+            _itemViewList = GetComponentsInChildren<IMenuItemView>(true).ToList();
+        }
+
         public async UniTask Decide(int index)
         {
 
         }
         public async UniTask SetFocus(int index)
         {
-            Log.Comment("SkillMenuView: SetFocus");
-
             Current().UnFocus();
+
             _index = index;
+            _cursor.transform.localPosition = Current().transform.localPosition + c_offset;
             Current().Focus();
         }
 
