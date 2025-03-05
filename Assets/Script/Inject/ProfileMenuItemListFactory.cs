@@ -10,7 +10,7 @@ using VContainer.Unity;
 
 namespace gaw241201
 {
-    public class ProfileMenuItemListFactory
+    public class ProfileMenuItemListFactory : IMenuItemListFactory
     {
         [Inject] ProfileItemPlayerName _playerName;
         [Inject] SettingUiMenuItemEmptyFactory _emptyFactory;

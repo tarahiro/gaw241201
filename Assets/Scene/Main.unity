@@ -2699,11 +2699,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 542683574}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8615bda79bbe50748a01f81ea3ad6be9, type: 3}
+  m_Script: {fileID: 11500000, guid: 595756196708c544b9f0088901473eab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerNameView: {fileID: 853926061}
-  PlayerNameDisplayView: {fileID: 1105243866}
   TabBodyView: {fileID: 508181517}
 --- !u!1 &548798932
 GameObject:
@@ -4765,7 +4764,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 853926060}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e6e168f309450dc48b9134c2912b9534, type: 3}
+  m_Script: {fileID: 11500000, guid: b23a9251d27272d4cbe375b5ab83eb2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _freeInputTextDisplayView: {fileID: 1105243866}
@@ -5837,7 +5836,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1105243864}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 923cc382a01b52445aaf8ee36a126258, type: 3}
+  m_Script: {fileID: 11500000, guid: 31267f10d70992748924ff7a82a8a24e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _characterList:
@@ -8697,7 +8696,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1607533450
 RectTransform:
   m_ObjectHideFlags: 0

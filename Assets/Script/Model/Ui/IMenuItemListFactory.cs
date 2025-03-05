@@ -8,18 +8,10 @@ using UnityEngine;
 using VContainer;
 using VContainer.Unity;
 
-namespace gaw241201.View
+namespace gaw241201
 {
-    public class SettingItemView : MonoBehaviour
+    public interface IMenuItemListFactory
     {
-        public virtual async UniTask Enter()
-        {
-
-        }
-
-        public virtual void Exit()
-        {
-
-        }
+        public List<IUiMenuItemModel> CreateList();
     }
 }

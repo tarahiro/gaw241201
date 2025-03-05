@@ -22,6 +22,8 @@ namespace gaw241201
         public void Enter(string text)
         {
             _unfixedText = text;
+            Log.DebugAssert(_indexer != null);
+            Log.DebugAssert(_unfixedText != null);
             _indexer.Enter(text.Length);
         }
 

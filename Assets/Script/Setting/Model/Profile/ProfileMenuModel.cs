@@ -12,22 +12,20 @@ namespace gaw241201
 {
     public class ProfileMenuModel : IUiMenuModel
     {
+        [Inject]
+        public ProfileMenuModel(IMenuItemListFactory factory)
+        {
+            _menuModel = new UiMenuModel(factory.CreateList());
+        }
 
         IUiMenuModel _menuModel;
         public int ItemIndex => _menuModel.ItemIndex;
         public int MaxItemRange => _menuModel.MaxItemRange;
         public bool IsEnable => _menuModel.IsEnable;
-
         public IObservable<int> FocusChanged => _menuModel.FocusChanged;
         public IObservable<int> Decided => _menuModel.Decided;
         public IObservable<int> Entered => _menuModel.Entered;
         public IObservable<Unit> Exited => _menuModel.Exited;
-
-        [Inject]
-        public ProfileMenuModel(ProfileMenuItemListFactory factory)
-        {
-            _menuModel = new UiMenuModel(factory.CreateList());
-        }
 
         public void MoveFocus(int i) => _menuModel.MoveFocus(i);
 

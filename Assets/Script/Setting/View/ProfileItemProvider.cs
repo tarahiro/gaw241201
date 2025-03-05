@@ -12,9 +12,7 @@ namespace gaw241201.View
 {
     public class ProfileItemProvider: MonoBehaviour
     {
-        public SettingFreeInputItemView PlayerNameView;
-
-        public FreeInputTextDisplayView PlayerNameDisplayView;
+        public SettingItemView PlayerNameView;
 
         public SettingTabBodyView TabBodyView;
     }

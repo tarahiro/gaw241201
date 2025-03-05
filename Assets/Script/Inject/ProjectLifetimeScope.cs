@@ -297,6 +297,7 @@ namespace gaw241201.Inject
             builder.Register<FlowViewArgsFactory>(Lifetime.Singleton).AsSelf();
 
             builder.RegisterEntryPoint<FreeInputPresenter>();
+            builder.RegisterEntryPoint<FreeInputPresenterSetting>();
         }
 
         void ConfigureConversation(IContainerBuilder builder)
@@ -479,13 +480,17 @@ namespace gaw241201.Inject
 
             builder.Register<SettingUiModel>(Lifetime.Singleton).AsSelf();
             builder.Register<SettingTabListFactory>(Lifetime.Singleton).AsSelf();
+
+            //Fake ProfileMenuModelのFactoryを実装するか、スコープされたLifetimeScopeを実装する必要がある
+            builder.Register<ProfileMenuItemListFactory>(Lifetime.Singleton).AsSelf().AsImplementedInterfaces();
             builder.Register<ProfileMenuModel>(Lifetime.Singleton).AsSelf();
-            builder.Register<ProfileMenuItemListFactory>(Lifetime.Singleton).AsSelf();
             builder.Register<AdvancedMenuModel>(Lifetime.Singleton).AsSelf();
             builder.Register<AdvancedItemRoguelike>(Lifetime.Singleton).AsSelf();
             builder.Register<AdvancedMenuItemListFactory>(Lifetime.Singleton).AsSelf();
             builder.Register<SettingUiMenuItemEmptyFactory>(Lifetime.Singleton).AsSelf();
 
+            builder.RegisterComponentInHierarchy<SettingFreeInputItemView>().AsSelf();
+            builder.RegisterComponentInHierarchy<FreeInputTextDisplayView>().AsSelf();
             builder.Register<FreeInputInputView>(Lifetime.Singleton).AsSelf();
             builder.Register<FreeInputProcessor>(Lifetime.Singleton).AsSelf();
 

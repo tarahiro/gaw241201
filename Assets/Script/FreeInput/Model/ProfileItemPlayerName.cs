@@ -26,7 +26,7 @@ namespace gaw241201
         Subject<string> _valueChanged = new Subject<string>();
         public IObservable<string> ValueChanged => _valueChanged;
 
-        string _playerName;
+        string _playerName = "Error";
 
 
         public void Initialize()
