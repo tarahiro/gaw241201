@@ -9,15 +9,15 @@
   <Author>h t</Author>
   <LastAuthor>h t</LastAuthor>
   <Created>2021-10-25T13:58:26Z</Created>
-  <LastSaved>2025-02-20T07:44:53Z</LastSaved>
+  <LastSaved>2025-03-07T08:22:56Z</LastSaved>
   <Version>16.00</Version>
  </DocumentProperties>
  <OfficeDocumentSettings xmlns="urn:schemas-microsoft-com:office:office">
   <AllowPNG/>
  </OfficeDocumentSettings>
  <ExcelWorkbook xmlns="urn:schemas-microsoft-com:office:excel">
-  <WindowHeight>7220</WindowHeight>
-  <WindowWidth>19200</WindowWidth>
+  <WindowHeight>12380</WindowHeight>
+  <WindowWidth>19820</WindowWidth>
   <WindowTopX>32767</WindowTopX>
   <WindowTopY>32767</WindowTopY>
   <RefModeR1C1/>
@@ -97,7 +97,7 @@
   </Style>
  </Styles>
  <Worksheet ss:Name="Script">
-  <Table ss:ExpandedColumnCount="8" ss:ExpandedRowCount="240" x:FullColumns="1"
+  <Table ss:ExpandedColumnCount="8" ss:ExpandedRowCount="252" x:FullColumns="1"
    x:FullRows="1" ss:DefaultColumnWidth="52.5" ss:DefaultRowHeight="18">
    <Column ss:AutoFitWidth="0" ss:Width="30"/>
    <Column ss:AutoFitWidth="0" ss:Width="163"/>
@@ -2615,7 +2615,127 @@
     <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
    </Row>
-   <Row ss:Index="231" ss:AutoFitHeight="0">
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">225</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">909210MemorialConversation</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">こんばんは。</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Hello.</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">909200MemorialConversation</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Center</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">226</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">909220MemorialConversation</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">プロトタイプを　２５万回も　遊んでいただけて、</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">I’m glad you enjoyed </Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">909200MemorialConversation</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">RightTop</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">227</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">909230MemorialConversation</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">とても　うれしいです。</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">the typing game a lot.</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">909200MemorialConversation</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Top</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">228</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">909240MemorialConversation</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">いま、</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">To make it even more enjoyable,</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">909200MemorialConversation</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Bottom</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">229</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">909250MemorialConversation</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">あたらしい　バージョンを</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">To make it even more enjoyable,</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">909200MemorialConversation</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Left</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">230</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">909260MemorialConversation</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Steam向けに　作っています。</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">I'm working on a new typing game.</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">909200MemorialConversation</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Right</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">231</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">909270MemorialConversation</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">ウィッシュリストの　登録、</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Hello.</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">909200MemorialConversation</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">LeftTop</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">232</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">909280MemorialConversation</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">お願いしますね。</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">I’m glad you enjoyed </Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">909200MemorialConversation</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Center</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">233</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">909290MemorialConversation</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">多くの　皆さんに、</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">the typing game a lot.</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">909200MemorialConversation</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">RightTop</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Big</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">234</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">909300MemorialConversation</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">タイピングゲームを、</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">To make it even more enjoyable,</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">909200MemorialConversation</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">LeftTop</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Mad</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">235</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">909310MemorialConversation</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">めいっぱい、</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">I'm working on a new typing game.</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">909300MemorialConversation</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">LeftBottom</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">236</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">909410MemorialConversation</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">楽しんで　もらいたいですから。</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">I'm working on a new typing game.</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">909400MemorialConversation</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">Center</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">None</Data></Cell>
+   </Row>
+   <Row ss:Index="243" ss:AutoFitHeight="0">
     <Cell ss:Index="6" ss:StyleID="s65"><Data ss:Type="String">Facial</Data></Cell>
    </Row>
    <Row ss:AutoFitHeight="0">
@@ -2662,24 +2782,24 @@
    <TabColorIndex>13</TabColorIndex>
    <Zoom>115</Zoom>
    <Selected/>
-   <TopRowVisible>104</TopRowVisible>
+   <TopRowVisible>202</TopRowVisible>
    <Panes>
     <Pane>
      <Number>3</Number>
-     <ActiveRow>114</ActiveRow>
-     <ActiveCol>2</ActiveCol>
+     <ActiveRow>232</ActiveRow>
+     <ActiveCol>5</ActiveCol>
     </Pane>
    </Panes>
    <ProtectObjects>False</ProtectObjects>
    <ProtectScenarios>False</ProtectScenarios>
   </WorksheetOptions>
   <DataValidation xmlns="urn:schemas-microsoft-com:office:excel">
-   <Range>R5C6:R229C6</Range>
+   <Range>R5C6:R241C6</Range>
    <Type>List</Type>
-   <Value>R232C6:R240C6</Value>
+   <Value>R244C6:R252C6</Value>
   </DataValidation>
   <ConditionalFormatting xmlns="urn:schemas-microsoft-com:office:excel">
-   <Range>R232C6:R240C6,R5C1:R229C8</Range>
+   <Range>R244C6:R252C6,R5C1:R241C8</Range>
    <Condition>
     <Value1>LEN(TRIM(RC))=0</Value1>
     <Format Style='background:#E7E6E6'/>
