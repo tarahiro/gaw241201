@@ -25,7 +25,7 @@ namespace gaw241201.View
             _freeInputTextDisplayView.Enter().Forget();
         }
 
-        public void Exit()
+        public override void Exit()
         {
             _freeInputInputView.Exit();
             _freeInputTextDisplayView.Exit().Forget();

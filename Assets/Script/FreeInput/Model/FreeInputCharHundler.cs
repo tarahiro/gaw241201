@@ -17,8 +17,8 @@ namespace gaw241201
         [Inject] FreeInputUnfixedText _unfixedText;
 
 
-        Subject<string> _decided = new Subject<string>();
-        public IObservable<string> Decided => _decided;
+        Subject<string> _ended = new Subject<string>();
+        public IObservable<string> Ended => _ended;
 
 
         public void CatchChar(char c)
@@ -29,10 +29,10 @@ namespace gaw241201
             }
         }
 
-        public void Decide()
+        public void End()
         {
             Log.DebugLog("FreeInputCharHundler: Enter");
-            _decided.OnNext(_unfixedText.GetUnfixedText());
+            _ended.OnNext(_unfixedText.GetUnfixedText());
         }
 
         public void Delete()

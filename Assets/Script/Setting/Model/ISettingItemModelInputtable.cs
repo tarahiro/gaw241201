@@ -10,8 +10,9 @@ using VContainer.Unity;
 
 namespace gaw241201
 {
-    public interface IMenuItemListFactory
+    public interface ISettingItemModelInputtable : IUiMenuItemModel
     {
-        public List<IUiMenuItemModel> CreateList();
+        public IObservable<Unit> Entered { get; }
+        public IObservable<Unit> Exited { get; }
     }
 }

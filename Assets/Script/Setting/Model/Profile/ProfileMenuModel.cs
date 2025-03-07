@@ -13,9 +13,9 @@ namespace gaw241201
     public class ProfileMenuModel : IUiMenuModel
     {
         [Inject]
-        public ProfileMenuModel(IMenuItemListFactory factory)
+        public ProfileMenuModel(ISettingProfileItemListProvider factory)
         {
-            _menuModel = new UiMenuModel(factory.CreateList());
+            _menuModel = new UiMenuModel(factory.ProvideList());
         }
 
         IUiMenuModel _menuModel;
@@ -34,11 +34,6 @@ namespace gaw241201
         public void Enter() => _menuModel.Enter();
 
         public void Exit() => _menuModel.Exit();
-
-        public void Cancel()
-        {
-
-        }
 
     }
 }

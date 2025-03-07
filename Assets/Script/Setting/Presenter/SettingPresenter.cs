@@ -20,6 +20,8 @@ namespace gaw241201.Presenter
         [Inject] AdvancedMenuModel _advancedTabModel;
         [Inject] AdvancedItemRoguelike _advancedItemRoguelike;
 
+        [Inject] ISettingProfileItemListProvider _profileItemListProvider;
+
         [Inject] SettingMenuInputView _inputView;
         [Inject] SettingTabManager _tabManager;
         [Inject] SettingMenuInputProcessor _inputProcessor;
@@ -53,6 +55,10 @@ namespace gaw241201.Presenter
             _advancedItemProvider.RoguelikeCheck.Exited.Subscribe(_ => _advancedItemRoguelike.End()).AddTo(_disposable);
 
             _inputView.BlockEnabled.Subscribe(_profileItemProvider.TabBodyView.OnInputBlockEnabled).AddTo(_disposable);
+
+            //Model‚ÆAView‚Ì•R‚Ã‚¯
+            _profileItemListProvider.GetPlayerName().Entered.Subscribe(_ => _profileItemProvider.PlayerNameView.Enter().Forget()).AddTo(_disposable);
+            _profileItemListProvider.GetPlayerName().Exited.Subscribe(_ => _profileItemProvider.PlayerNameView.Exit()).AddTo(_disposable);
 
             _advancedItemRoguelike.Initialize();
             

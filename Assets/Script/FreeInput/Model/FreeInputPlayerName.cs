@@ -11,11 +11,17 @@ using VContainer.Unity;
 
 namespace gaw241201
 {
-    public class ProfileItemPlayerName : IUiMenuItemModel
+    public class FreeInputPlayerName : ISettingItemModelInputtable, IStringDecidable
     {
+        //Œ»ó‚ÌÓ–±
+        //MenuItem‚Æ‚µ‚Ä‚ÌEnter‚ğó‚¯æ‚éÓ–±
+        //PlayerName‚Ì•ÏX‚ğó‚¯æ‚éÓ–±
+        //FreeInput‚ÌŒˆ’è‚ğó‚¯æ‚éÓ–±
+
+
+        [Inject] FreeInputUnfixedText _freeInputUnfixedText;
         [Inject] ISubscriber<FlagConst.Key, string> _subscriber;
         [Inject] IGlobalFlagRegisterer _globalFlagRegisterer;
-        [Inject] FreeInputUnfixedText _freeInputUnfixedText;
         [Inject] IDisposablePure _disposablePure;
 
         Subject<Unit> _entered = new Subject<Unit>();
