@@ -27,6 +27,9 @@ namespace gaw241201.Presenter
         [Inject] SettingMenuInputProcessor _inputProcessor;
         [Inject] AdvancedItemProvider _advancedItemProvider;
 
+        [Inject] PlayerNameDisplayModel _playerNameDisplayModel;
+        [Inject] IPlayerNameSettable _playerNameSettable;
+
         [Inject] ProfileItemProvider _profileItemProvider;
 
         [Inject] IDisposablePure _disposable;
@@ -60,8 +63,11 @@ namespace gaw241201.Presenter
             _profileItemListProvider.GetPlayerName().Entered.Subscribe(_ => _profileItemProvider.PlayerNameView.Enter().Forget()).AddTo(_disposable);
             _profileItemListProvider.GetPlayerName().Exited.Subscribe(_ => _profileItemProvider.PlayerNameView.Exit()).AddTo(_disposable);
 
+            _playerNameDisplayModel.ValueChanged.Subscribe(_playerNameSettable.SetText).AddTo(_disposable);
+
             _advancedItemRoguelike.Initialize();
-            
+            _playerNameDisplayModel.Initialize();
+
 
         }
     }

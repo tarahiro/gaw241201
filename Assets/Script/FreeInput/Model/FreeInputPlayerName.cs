@@ -20,32 +20,23 @@ namespace gaw241201
 
 
         [Inject] FreeInputUnfixedText _freeInputUnfixedText;
-        [Inject] ISubscriber<FlagConst.Key, string> _subscriber;
+        [Inject] IGlobalFlagProvider _globalFlagProvider;
         [Inject] IGlobalFlagRegisterer _globalFlagRegisterer;
-        [Inject] IDisposablePure _disposablePure;
 
         Subject<Unit> _entered = new Subject<Unit>();
         public IObservable<Unit> Entered => _entered;
         Subject<Unit> _exited = new Subject<Unit>();
         public IObservable<Unit> Exited => _exited;
 
-        Subject<string> _valueChanged = new Subject<string>();
-        public IObservable<string> ValueChanged => _valueChanged;
-
-        string _playerName = "Error";
 
 
-        public void Initialize()
-        {
-            _subscriber.Subscribe(FlagConst.Key.Name, OnSetFlag).AddTo(_disposablePure);
-        }
 
         public void  Enter()
         {
             Log.Comment("ProfileItemPlayerNameにEnter");
 
             //Initializerを別クラスに分けるかも
-            _freeInputUnfixedText.Enter(_playerName);
+            _freeInputUnfixedText.Enter(_globalFlagProvider.GetFlag(FlagConst.Key.Name));
             _entered.OnNext(Unit.Default);
         }
 
@@ -55,13 +46,6 @@ namespace gaw241201
             _exited.OnNext(Unit.Default);
         }
 
-        public void OnSetFlag(string s)
-        {
-            Log.DebugLog("メッセージ受け取り:" + s);
-
-            _playerName = s;
-            _valueChanged.OnNext(s);
-        }
 
         public void Decide(string text)
         {

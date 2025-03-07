@@ -488,6 +488,8 @@ namespace gaw241201.Inject
             builder.Register<AdvancedItemRoguelike>(Lifetime.Singleton).AsSelf();
             builder.Register<AdvancedMenuItemListFactory>(Lifetime.Singleton).AsSelf();
             builder.Register<SettingUiMenuItemEmptyFactory>(Lifetime.Singleton).AsSelf();
+            builder.Register<PlayerNameSetter>(Lifetime.Singleton).AsImplementedInterfaces();
+            builder.Register<PlayerNameDisplayModel>(Lifetime.Singleton).AsSelf();
 
             builder.RegisterComponentInHierarchy<SettingFreeInputItemView>().AsSelf();
             builder.RegisterComponentInHierarchy<FreeInputTextDisplayView>().AsSelf();
