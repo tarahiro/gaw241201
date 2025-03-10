@@ -297,7 +297,7 @@ namespace gaw241201.Inject
             builder.Register<FlowViewArgsFactory>(Lifetime.Singleton).AsSelf();
 
             builder.RegisterEntryPoint<FreeInputPresenter>();
-            builder.RegisterEntryPoint<FreeInputPresenterSetting>();
+            builder.RegisterEntryPoint<FreeInputPresenterCore>();
         }
 
         void ConfigureConversation(IContainerBuilder builder)
