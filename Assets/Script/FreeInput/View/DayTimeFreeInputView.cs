@@ -11,7 +11,7 @@ using VContainer.Unity;
 
 namespace gaw241201.View
 {
-    public class DayTimeFreeInputView : FreeInputItemView
+    public class DayTimeFreeInputView : FreeInputItemView_Fake
     {
         protected override string defaultValue { get; set; } = "000000";
 

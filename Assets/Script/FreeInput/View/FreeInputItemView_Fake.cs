@@ -11,7 +11,7 @@ using VContainer.Unity;
 
 namespace gaw241201.View
 {
-    public abstract class FreeInputItemView : MonoBehaviour
+    public abstract class FreeInputItemView_Fake : MonoBehaviour
     {
         [SerializeField] protected List<InputCharacter> _inputCharacterList;
         [SerializeField] GameObject _enterKeyObject;

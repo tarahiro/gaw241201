@@ -10,7 +10,8 @@ using VContainer.Unity;
 
 namespace gaw241201
 {
-    public interface ISettingProfileItemListProvider : IMenuItemListProvider
+    public interface IPlayerNameInputtableModel
     {
+        public void Enter();
     }
 }

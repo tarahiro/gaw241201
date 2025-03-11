@@ -11,7 +11,7 @@ using VContainer.Unity;
 namespace gaw241201.View
 {
 
-    public class NameFreeInputView : FreeInputItemView
+    public class NameFreeInputView : FreeInputItemView_Fake
     {
         protected override string defaultValue { get; set; } = "NAME";
         protected override bool IsInputCharValid(int index, char key)

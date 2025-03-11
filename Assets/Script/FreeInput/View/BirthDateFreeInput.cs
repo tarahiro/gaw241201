@@ -11,7 +11,7 @@ using VContainer.Unity;
 
 namespace gaw241201.View
 {
-    public class BirthDateFreeInput : FreeInputItemView
+    public class BirthDateFreeInput : FreeInputItemView_Fake
     {
         protected override string defaultValue { get; set; } = "190000";
         protected override bool IsInputCharValid(int index, char key)

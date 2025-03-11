@@ -13,7 +13,7 @@ using VContainer.Unity;
 
 namespace gaw241201.Presenter
 {
-    public class FreeInputPresenterCore
+    public class FreeInputPresenterCore : IPostInitializable
     {
         //Model
         FreeInputUnfixedText _freeInputUnfixedText;
@@ -24,8 +24,12 @@ namespace gaw241201.Presenter
 
         //View
         FreeInputTextDisplayView _playerNameDisplayView;
+       IDisposablePure _disposable;
 
-        IDisposablePure _disposable;
+        //要inject
+        [Inject] IEnterTimingNotifiable _enterTimingNotifiable;
+        [Inject] FreeInputEntererView _freeInputItemView;
+
 
         [Inject]
         public FreeInputPresenterCore(FreeInputUnfixedText freeInputUnfixedText, FreeInputIndexer freeInputIndexer, FreeInputProcessor freeInputProcessor, FreeInputCharHundler freeInputCharHundler, IStringDecidable stringDecidable, FreeInputTextDisplayView playerNameDisplayView, IDisposablePure disposable)
@@ -54,6 +58,9 @@ namespace gaw241201.Presenter
             //これをSetting側に逃がすかは要検討、IDecidableとかを用意して、FreeInput外のpresenterから繋げてもいいかも
             _freeInputCharHundler.Ended.Subscribe(_stringDecidable.Decide).AddTo(_disposable);
 
+            //要Inject
+            _enterTimingNotifiable.Entered.Subscribe(_ => _freeInputItemView.Enter().Forget()).AddTo(_disposable);
+            _enterTimingNotifiable.Exited.Subscribe(_ => _freeInputItemView.Exit()).AddTo(_disposable);
         }
     }
 }

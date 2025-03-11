@@ -15,7 +15,7 @@ namespace gaw241201.View
     {
         [Inject] IFreeInputMessagePublisher _messagePublisher;
 
-        FreeInputItemView _currentItem;
+        FreeInputItemView_Fake _currentItem;
 
         const string c_prefix = "Prefab/FreeInput/";
 
@@ -26,7 +26,7 @@ namespace gaw241201.View
         public async UniTask Enter(FlowArgs args)
         {
             Log.Comment(c_prefix + args.BodyId + "ÇÃprefabê∂ê¨");
-            _currentItem = Instantiate(ResourceUtil.GetResource<FreeInputItemView>(c_prefix + args.BodyId), transform);
+            _currentItem = Instantiate(ResourceUtil.GetResource<FreeInputItemView_Fake>(c_prefix + args.BodyId), transform);
             _currentItem.Construct(_messagePublisher);
 
             string value = "UnRegistered";

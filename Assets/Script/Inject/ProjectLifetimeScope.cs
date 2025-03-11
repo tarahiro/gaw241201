@@ -476,7 +476,8 @@ namespace gaw241201.Inject
             builder.RegisterComponentInHierarchy<SettingRootView>().AsSelf();
             builder.Register<SettingMenuInputView>(Lifetime.Singleton).AsSelf();
             builder.Register<SettingMenuInputProcessor>(Lifetime.Singleton).AsSelf().AsImplementedInterfaces();
-            builder.Register<FreeInputPlayerName>(Lifetime.Singleton).AsSelf().As<ISettingItemModelInputtable>().As<IStringDecidable>();
+            builder.Register<SettingMenuItemModelPlayerName>(Lifetime.Singleton).AsSelf();
+            builder.Register<FreeInputPlayerNameModel>(Lifetime.Singleton).AsSelf().As<IEnterTimingNotifiable>().As<IStringDecidable>().As<IPlayerNameInputtableModel>();
 
             builder.Register<SettingUiModel>(Lifetime.Singleton).AsSelf();
             builder.Register<SettingTabListFactory>(Lifetime.Singleton).AsSelf();
@@ -509,6 +510,9 @@ namespace gaw241201.Inject
             builder.Register<SettingEventCatcher>(Lifetime.Singleton).AsSelf();
 
             builder.Register<IndexVariantHundlerSettings>(Lifetime.Singleton).AsSelf();
+
+            //FreeInputViewŽü‚è
+            builder.RegisterComponentInHierarchy<FreeInputEntererView>().AsSelf();
 
             builder.RegisterEntryPoint<SettingPresenter>();
             builder.RegisterEntryPoint<SettingPresenterCoreFactory>();

@@ -13,7 +13,9 @@ using VContainer.Unity;
 
 namespace gaw241201.Presenter
 {
-    public class FreeInputPresenterCoreFactorySetting
+    /*
+    public class FreeInputPresenterCoreFactorySetting : IPostInitializable
     {
     }
+    */
 }

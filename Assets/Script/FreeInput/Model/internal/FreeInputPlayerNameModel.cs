@@ -1,5 +1,4 @@
 using Cysharp.Threading.Tasks;
-using MessagePipe;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -11,10 +10,9 @@ using VContainer.Unity;
 
 namespace gaw241201
 {
-    public class FreeInputPlayerName : ISettingItemModelInputtable, IStringDecidable
+    public class FreeInputPlayerNameModel : IEnterTimingNotifiable, IStringDecidable, IPlayerNameInputtableModel
     {
         //Œ»ó‚ÌÓ–±
-        //MenuItem‚Æ‚µ‚Ä‚ÌEnter‚ğó‚¯æ‚éÓ–±
         //PlayerName‚Ì•ÏX‚ğó‚¯æ‚éÓ–±
         //FreeInput‚ÌŒˆ’è‚ğó‚¯æ‚éÓ–±
 
@@ -31,7 +29,7 @@ namespace gaw241201
 
 
 
-        public void  Enter()
+        public void Enter()
         {
             Log.Comment("ProfileItemPlayerName‚ÉEnter");
 
@@ -40,18 +38,14 @@ namespace gaw241201
             _entered.OnNext(Unit.Default);
         }
 
-        public void End()
-        {
-            _freeInputUnfixedText.Exit();
-            _exited.OnNext(Unit.Default);
-        }
 
 
         public void Decide(string text)
         {
             Log.DebugLog("ProfileItemPlayeName:Decide");
             _globalFlagRegisterer.RegisterFlag(FlagConst.Key.Name, text);
-            End();
+            _freeInputUnfixedText.Exit();
+            _exited.OnNext(Unit.Default);
         }
     }
 }

@@ -12,7 +12,7 @@ namespace gaw241201
 {
     public class ProfileMenuItemListFactory : ISettingProfileItemListProvider
     {
-        [Inject] ISettingItemModelInputtable _playerName;
+        [Inject] SettingMenuItemModelPlayerName _playerName;
         [Inject] SettingUiMenuItemEmptyFactory _emptyFactory;
 
         public List<IUiMenuItemModel> ProvideList()
@@ -24,9 +24,5 @@ namespace gaw241201
             return _returnable;
         }
 
-        public ISettingItemModelInputtable GetPlayerName()
-        {
-            return _playerName;
-        }
     }
 }

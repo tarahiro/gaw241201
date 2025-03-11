@@ -10,7 +10,7 @@ using VContainer.Unity;
 
 namespace gaw241201
 {
-    public interface ISettingItemModelInputtable : IUiMenuItemModel
+    public interface IEnterTimingNotifiable
     {
         public IObservable<Unit> Entered { get; }
         public IObservable<Unit> Exited { get; }

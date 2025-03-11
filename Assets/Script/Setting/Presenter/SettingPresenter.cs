@@ -60,8 +60,10 @@ namespace gaw241201.Presenter
             _inputView.BlockEnabled.Subscribe(_profileItemProvider.TabBodyView.OnInputBlockEnabled).AddTo(_disposable);
 
             //Model‚ÆAView‚Ì•R‚Ã‚¯
-            _profileItemListProvider.GetPlayerName().Entered.Subscribe(_ => _profileItemProvider.PlayerNameView.Enter().Forget()).AddTo(_disposable);
-            _profileItemListProvider.GetPlayerName().Exited.Subscribe(_ => _profileItemProvider.PlayerNameView.Exit()).AddTo(_disposable);
+            /*
+            _profileItemListProvider.GetPlayerNameModel().Entered.Subscribe(_ => _profileItemProvider.PlayerNameView.Enter().Forget()).AddTo(_disposable);
+            _profileItemListProvider.GetPlayerNameModel().Exited.Subscribe(_ => _profileItemProvider.PlayerNameView.Exit()).AddTo(_disposable);
+            */
 
             _playerNameDisplayModel.ValueChanged.Subscribe(_playerNameSettable.SetText).AddTo(_disposable);
 
