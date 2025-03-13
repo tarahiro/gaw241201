@@ -20,8 +20,6 @@ namespace gaw241201.Presenter
         [Inject] AdvancedMenuModel _advancedTabModel;
         [Inject] AdvancedItemRoguelike _advancedItemRoguelike;
 
-        [Inject] ISettingProfileItemListProvider _profileItemListProvider;
-
         [Inject] SettingMenuInputView _inputView;
         [Inject] SettingTabManager _tabManager;
         [Inject] SettingMenuInputProcessor _inputProcessor;

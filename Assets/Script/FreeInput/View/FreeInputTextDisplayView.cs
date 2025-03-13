@@ -11,7 +11,7 @@ using VContainer.Unity;
 
 namespace gaw241201.View
 {
-    public class FreeInputTextDisplayView : MonoBehaviour
+    public class FreeInputTextDisplayView : MonoBehaviour, IFreeInputTextDisplayView
     {
         [SerializeField] List<InputCharacter> _characterList;
         [SerializeField] GameObject _focusFrame;

@@ -8,10 +8,14 @@ using UnityEngine;
 using VContainer;
 using VContainer.Unity;
 
-namespace gaw241201
+namespace gaw241201.View
 {
-    public interface IStringDecidable
+    public interface IFreeInputTextDisplayView
     {
-        public void Decide(string value);
+        public void SetCharacter(FreeInputArgs args);
+
+        public void Focus(int index);
+
+        public void Unfocus(int index);
     }
 }

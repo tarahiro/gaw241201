@@ -16,51 +16,48 @@ namespace gaw241201.Presenter
     public class FreeInputPresenterCore : IPostInitializable
     {
         //Model
+        IFreeInputCharHundler _freeInputCharHundler;
+        IFreeInputGateModel _freeInputGateModel;
         FreeInputUnfixedText _freeInputUnfixedText;
         FreeInputIndexer _freeInputIndexer;
-        FreeInputProcessor _freeInputProcessor;
-        FreeInputCharHundler _freeInputCharHundler;
-        IStringDecidable _stringDecidable;
 
         //View
-        FreeInputTextDisplayView _playerNameDisplayView;
-       IDisposablePure _disposable;
+        IFreeInputTextDisplayView _freeInputTextDisplayView;
+        IFreeInputProcessor _freeInputProcessor;
+        FreeInputEntererView _freeInputEntererView;
 
-        //要inject
-        [Inject] IEnterTimingNotifiable _enterTimingNotifiable;
-        [Inject] FreeInputEntererView _freeInputItemView;
-
+        IDisposablePure _disposable;
 
         [Inject]
-        public FreeInputPresenterCore(FreeInputUnfixedText freeInputUnfixedText, FreeInputIndexer freeInputIndexer, FreeInputProcessor freeInputProcessor, FreeInputCharHundler freeInputCharHundler, IStringDecidable stringDecidable, FreeInputTextDisplayView playerNameDisplayView, IDisposablePure disposable)
+        public FreeInputPresenterCore(FreeInputUnfixedText freeInputUnfixedText, FreeInputIndexer freeInputIndexer, FreeInputProcessor freeInputProcessor, FreeInputCharHundler freeInputCharHundler, IFreeInputGateModel stringDecidable, FreeInputTextDisplayView playerNameDisplayView, FreeInputEntererView freeInputEntererView, IDisposablePure disposable)
         {
             _freeInputUnfixedText = freeInputUnfixedText;
             _freeInputIndexer = freeInputIndexer;
             _freeInputProcessor = freeInputProcessor;
             _freeInputCharHundler = freeInputCharHundler;
-            _stringDecidable = stringDecidable;
-            _playerNameDisplayView = playerNameDisplayView;
+            _freeInputGateModel = stringDecidable;
+            _freeInputTextDisplayView = playerNameDisplayView;
+            _freeInputEntererView = freeInputEntererView;
             _disposable = disposable;
         }
 
         public void PostInitialize()
         {
+            //開始、終了処理
+            _freeInputGateModel.Entered.Subscribe(_ => _freeInputEntererView.Enter().Forget()).AddTo(_disposable);
+            _freeInputGateModel.Exited.Subscribe(_ => _freeInputEntererView.Exit()).AddTo(_disposable);
 
-            _freeInputUnfixedText.Updated.Subscribe(_playerNameDisplayView.SetCharacter).AddTo(_disposable);
-            _freeInputIndexer.Focused.Subscribe(_playerNameDisplayView.Focus).AddTo(_disposable);
-            _freeInputIndexer.Unfocused.Subscribe(_playerNameDisplayView.Unfocus).AddTo(_disposable);
+            _freeInputUnfixedText.Updated.Subscribe(_freeInputTextDisplayView.SetCharacter).AddTo(_disposable);
+            _freeInputIndexer.Focused.Subscribe(_freeInputTextDisplayView.Focus).AddTo(_disposable);
+            _freeInputIndexer.Unfocused.Subscribe(_freeInputTextDisplayView.Unfocus).AddTo(_disposable);
 
             //InputProcessorとCharHundlerの紐づけ
             _freeInputProcessor.KeyEntered.Subscribe(_freeInputCharHundler.CatchChar).AddTo(_disposable);
             _freeInputProcessor.Decided.Subscribe(_ => _freeInputCharHundler.End()).AddTo(_disposable);
             _freeInputProcessor.Deleted.Subscribe(_ => _freeInputCharHundler.Delete()).AddTo(_disposable);
 
-            //これをSetting側に逃がすかは要検討、IDecidableとかを用意して、FreeInput外のpresenterから繋げてもいいかも
-            _freeInputCharHundler.Ended.Subscribe(_stringDecidable.Decide).AddTo(_disposable);
+            _freeInputCharHundler.Ended.Subscribe(_freeInputGateModel.Decide).AddTo(_disposable);
 
-            //要Inject
-            _enterTimingNotifiable.Entered.Subscribe(_ => _freeInputItemView.Enter().Forget()).AddTo(_disposable);
-            _enterTimingNotifiable.Exited.Subscribe(_ => _freeInputItemView.Exit()).AddTo(_disposable);
         }
     }
 }

@@ -10,7 +10,7 @@ using VContainer.Unity;
 
 namespace gaw241201
 {
-    public class FreeInputPlayerNameModel : IEnterTimingNotifiable, IStringDecidable, IPlayerNameInputtableModel
+    public class FreeInputPlayerNameModel :IFreeInputGateModel, IPlayerNameInputtableModel
     {
         //Œ»ó‚ÌÓ–±
         //PlayerName‚Ì•ÏX‚ğó‚¯æ‚éÓ–±
@@ -23,6 +23,7 @@ namespace gaw241201
 
         Subject<Unit> _entered = new Subject<Unit>();
         public IObservable<Unit> Entered => _entered;
+
         Subject<Unit> _exited = new Subject<Unit>();
         public IObservable<Unit> Exited => _exited;
 

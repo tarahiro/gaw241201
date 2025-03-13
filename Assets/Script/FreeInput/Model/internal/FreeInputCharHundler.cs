@@ -10,10 +10,9 @@ using VContainer.Unity;
 
 namespace gaw241201
 {
-    public class FreeInputCharHundler
+    public class FreeInputCharHundler : IFreeInputCharHundler
     {
         [Inject] ICharInputJudger _judger;
-        [Inject] FreeInputIndexer _indexer;
         [Inject] FreeInputUnfixedText _unfixedText;
 
 

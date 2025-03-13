@@ -10,7 +10,7 @@ using VContainer.Unity;
 
 namespace gaw241201.View
 {
-    public class FreeInputProcessor : IInputProcessable
+    public class FreeInputProcessor : IInputProcessable, IFreeInputProcessor
     {
         Subject<char> _keyEntered = new Subject<char>();
         public IObservable<char> KeyEntered => _keyEntered;

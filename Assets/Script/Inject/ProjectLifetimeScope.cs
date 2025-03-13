@@ -477,7 +477,7 @@ namespace gaw241201.Inject
             builder.Register<SettingMenuInputView>(Lifetime.Singleton).AsSelf();
             builder.Register<SettingMenuInputProcessor>(Lifetime.Singleton).AsSelf().AsImplementedInterfaces();
             builder.Register<SettingMenuItemModelPlayerName>(Lifetime.Singleton).AsSelf();
-            builder.Register<FreeInputPlayerNameModel>(Lifetime.Singleton).AsSelf().As<IEnterTimingNotifiable>().As<IStringDecidable>().As<IPlayerNameInputtableModel>();
+            builder.Register<FreeInputPlayerNameModel>(Lifetime.Singleton).AsSelf().As<IEnterTimingNotifiable>().As<IFreeInputGateModel>().As<IPlayerNameInputtableModel>();
 
             builder.Register<SettingUiModel>(Lifetime.Singleton).AsSelf();
             builder.Register<SettingTabListFactory>(Lifetime.Singleton).AsSelf();
@@ -493,16 +493,16 @@ namespace gaw241201.Inject
             builder.Register<PlayerNameDisplayModel>(Lifetime.Singleton).AsSelf();
 
             builder.RegisterComponentInHierarchy<SettingFreeInputItemView>().AsSelf();
-            builder.RegisterComponentInHierarchy<FreeInputTextDisplayView>().AsSelf();
+            builder.RegisterComponentInHierarchy<FreeInputTextDisplayView>().AsSelf().AsImplementedInterfaces();
             builder.Register<FreeInputInputView>(Lifetime.Singleton).AsSelf();
-            builder.Register<FreeInputProcessor>(Lifetime.Singleton).AsSelf();
+            builder.Register<FreeInputProcessor>(Lifetime.Singleton).AsSelf().As<IFreeInputProcessor>();
 
             builder.RegisterComponentInHierarchy<SettingTabManager>().AsSelf();
             builder.RegisterComponentInHierarchy<ProfileItemProvider>().AsSelf();
             builder.RegisterComponentInHierarchy<AdvancedItemProvider>().AsSelf();
 
             //FreeInputModelŽü‚è
-            builder.Register<FreeInputCharHundler>(Lifetime.Singleton).AsSelf();
+            builder.Register<FreeInputCharHundler>(Lifetime.Singleton).AsSelf().As<IFreeInputCharHundler>();
             builder.Register<FreeInputIndexer>(Lifetime.Singleton).AsSelf();
             builder.Register<PlayerNameInputJudger>(Lifetime.Singleton).AsImplementedInterfaces();
             builder.Register<FreeInputUnfixedText>(Lifetime.Singleton).AsSelf();
