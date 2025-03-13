@@ -37,9 +37,15 @@ namespace gaw241201.View
             while (!ct.IsCancellationRequested)
             {
                 await UniTask.Yield(PlayerLoopTiming.Update, ct);
-                if (KeyInputUtil.IsKeyDown(KeyCode.Escape) && !IsBlocked())
+                if (KeyInputUtil.IsKeyDown(KeyCode.Escape))
                 {
-                    _detected.OnNext(Unit.Default);
+                    Log.DebugLog("EscapeをSettingMonitorで検知");
+                    if (!IsBlocked())
+                    {
+                        Log.DebugLog("SettingMonitorがブロックされていないことを検知");
+                        _detected.OnNext(Unit.Default);
+
+                    }
                 }
             }
         }

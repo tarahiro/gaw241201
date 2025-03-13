@@ -27,6 +27,7 @@ namespace gaw241201
 
         public void Enter()
         {
+            Log.DebugLog("SettingRootHundler‚ÉEnter");
             if (!_isSettingStarted)
             {
                 dictionary = new Dictionary<FlagConst.Key, string>();

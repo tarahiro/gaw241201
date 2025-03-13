@@ -14,7 +14,7 @@ namespace gaw241201.Presenter
 {
 
 
-    public class SettingPresenter : IStartable
+    public class SettingPresenter : IPostInitializable
     {
         [Inject] SettingUiModel   _uiModel;
         [Inject] AdvancedMenuModel _advancedTabModel;
@@ -29,14 +29,11 @@ namespace gaw241201.Presenter
         [Inject] IPlayerNameSettable _playerNameSettable;
 
         [Inject] ProfileItemProvider _profileItemProvider;
-        [Inject] ProfileMenuModel _profileMenuModel;
 
         [Inject] IDisposablePure _disposable;
 
-        public void Start()
+        public void PostInitialize()
         {
-            Log.DebugLog("Start: SettingPresenter");
-
             //InputÇÃBlockÇ∆ÅAViewÇÃïRÇ√ÇØ
             _inputView.BlockEnabled.Subscribe(_advancedItemProvider.TabBodyView.OnInputBlockEnabled).AddTo(_disposable);
 
@@ -68,7 +65,6 @@ namespace gaw241201.Presenter
 
             _playerNameDisplayModel.ValueChanged.Subscribe(_playerNameSettable.SetText).AddTo(_disposable);
 
-            _profileMenuModel.Initialize();
             _advancedItemRoguelike.Initialize();
             _playerNameDisplayModel.Initialize();
 
