@@ -22,6 +22,7 @@ namespace Tarahiro
 
         public void Initialize()
         {
+            Log.DebugLog("Initialize");
             TryGetInstance();
         }
 

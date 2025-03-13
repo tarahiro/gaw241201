@@ -12,10 +12,20 @@ namespace gaw241201
 {
     public class ProfileMenuModel : IUiMenuModel
     {
+        ISettingProfileItemListProvider _factory;
+
         [Inject]
         public ProfileMenuModel(ISettingProfileItemListProvider factory)
         {
-            _menuModel = new UiMenuModel(factory.ProvideList());
+            Log.DebugLog("Construct:ProfileMenuModel");
+            _factory = factory;
+
+        }
+
+        public void Initialize()
+        {
+            Log.DebugLog("Initialize:ProfileMenuModel");
+            _menuModel = new UiMenuModel(_factory.ProvideList());
         }
 
         IUiMenuModel _menuModel;

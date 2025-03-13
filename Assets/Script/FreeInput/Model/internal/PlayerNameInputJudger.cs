@@ -12,7 +12,12 @@ namespace gaw241201
 {
     public class PlayerNameInputJudger : ICharInputJudger
     {
-        [Inject] FreeInputIndexer _indexer;
+        FreeInputIndexer _indexer;
+
+        public PlayerNameInputJudger(FreeInputIndexer indexer)
+        {
+            _indexer = indexer;
+        }
 
         public bool IsCharAvailable(char c)
         {

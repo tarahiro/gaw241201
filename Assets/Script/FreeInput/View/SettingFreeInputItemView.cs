@@ -12,18 +12,18 @@ namespace gaw241201.View
 {
     public class SettingFreeInputItemView: SettingItemView
     {
-        [SerializeField] FreeInputEntererView _freeInputItemView;
+       // [SerializeField] FreeInputEntererView _freeInputItemView;
 
         public override async UniTask Enter()
         {
             await base.Enter();
-            await _freeInputItemView.Enter();
+            //await _freeInputItemView.Enter();
         }
 
         public override void Exit()
         {
             base.Exit();
-            _freeInputItemView.Exit();
+            //_freeInputItemView.Exit();
         }
     }
 }

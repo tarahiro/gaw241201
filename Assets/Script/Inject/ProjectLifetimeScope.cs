@@ -297,7 +297,6 @@ namespace gaw241201.Inject
             builder.Register<FlowViewArgsFactory>(Lifetime.Singleton).AsSelf();
 
             builder.RegisterEntryPoint<FreeInputPresenter>();
-            builder.RegisterEntryPoint<FreeInputPresenterCore>();
         }
 
         void ConfigureConversation(IContainerBuilder builder)
@@ -476,13 +475,11 @@ namespace gaw241201.Inject
             builder.RegisterComponentInHierarchy<SettingRootView>().AsSelf();
             builder.Register<SettingMenuInputView>(Lifetime.Singleton).AsSelf();
             builder.Register<SettingMenuInputProcessor>(Lifetime.Singleton).AsSelf().AsImplementedInterfaces();
-            builder.Register<SettingMenuItemModelPlayerName>(Lifetime.Singleton).AsSelf();
-            builder.Register<FreeInputPlayerNameModel>(Lifetime.Singleton).AsSelf().As<IEnterTimingNotifiable>().As<IFreeInputGateModel>().As<IPlayerNameInputtableModel>();
 
             builder.Register<SettingUiModel>(Lifetime.Singleton).AsSelf();
             builder.Register<SettingTabListFactory>(Lifetime.Singleton).AsSelf();
 
-            //Fake ProfileMenuModelのFactoryを実装するか、スコープされたLifetimeScopeを実装する必要がある
+            Log.DebugLog("ProfileMenuItemListFactory");
             builder.Register<ProfileMenuItemListFactory>(Lifetime.Singleton).AsSelf().AsImplementedInterfaces();
             builder.Register<ProfileMenuModel>(Lifetime.Singleton).AsSelf();
             builder.Register<AdvancedMenuModel>(Lifetime.Singleton).AsSelf();
@@ -492,39 +489,30 @@ namespace gaw241201.Inject
             builder.Register<PlayerNameSetter>(Lifetime.Singleton).AsImplementedInterfaces();
             builder.Register<PlayerNameDisplayModel>(Lifetime.Singleton).AsSelf();
 
-            builder.RegisterComponentInHierarchy<SettingFreeInputItemView>().AsSelf();
             builder.RegisterComponentInHierarchy<FreeInputTextDisplayView>().AsSelf().AsImplementedInterfaces();
-            builder.Register<FreeInputInputView>(Lifetime.Singleton).AsSelf();
-            builder.Register<FreeInputProcessor>(Lifetime.Singleton).AsSelf().As<IFreeInputProcessor>();
+            //builder.RegisterComponentInHierarchy<SettingFreeInputItemView>().AsSelf();
 
             builder.RegisterComponentInHierarchy<SettingTabManager>().AsSelf();
             builder.RegisterComponentInHierarchy<ProfileItemProvider>().AsSelf();
             builder.RegisterComponentInHierarchy<AdvancedItemProvider>().AsSelf();
 
-            //FreeInputModel周り
-            builder.Register<FreeInputCharHundler>(Lifetime.Singleton).AsSelf().As<IFreeInputCharHundler>();
-            builder.Register<FreeInputIndexer>(Lifetime.Singleton).AsSelf();
-            builder.Register<PlayerNameInputJudger>(Lifetime.Singleton).AsImplementedInterfaces();
-            builder.Register<FreeInputUnfixedText>(Lifetime.Singleton).AsSelf();
 
             builder.Register<SettingEventCatcher>(Lifetime.Singleton).AsSelf();
-
             builder.Register<IndexVariantHundlerSettings>(Lifetime.Singleton).AsSelf();
-
-            //FreeInputView周り
-            builder.RegisterComponentInHierarchy<FreeInputEntererView>().AsSelf();
-
+            builder.Register<SettingFreeInputFactory>(Lifetime.Singleton).AsSelf();
+            builder.RegisterEntryPoint<SettingFreeInputEntryPoint>();
             builder.RegisterEntryPoint<SettingPresenter>();
-            builder.RegisterEntryPoint<SettingPresenterCoreFactory>();
         }
 
         void ConfigureRenderer(IContainerBuilder builder)
         {
+            Log.DebugLog("SettingRenderer");
             builder.RegisterComponentInHierarchy<RendererHundler>().AsSelf();
         }
 
         void ConfigureInput(IContainerBuilder builder)
         {
+            Log.DebugLog("SettingInput");
             builder.Register<ActiveLayerPublisher>(Lifetime.Singleton).AsSelf();
             builder.Register<InputViewFactory>(Lifetime.Singleton).AsSelf();
 
@@ -540,6 +528,7 @@ namespace gaw241201.Inject
 
         void ConfigureSwitch(IContainerBuilder builder)
         {
+            Log.DebugLog("SettingSwitch");
             //builder.Register<SwitchByTypedFlag_OLD>(Lifetime.Singleton).AsSelf();
             builder.Register<Switcher>(Lifetime.Singleton).AsSelf();
             builder.Register<GoOtherFlow>(Lifetime.Singleton).AsSelf();

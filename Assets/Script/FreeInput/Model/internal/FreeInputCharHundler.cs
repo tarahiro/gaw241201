@@ -12,8 +12,15 @@ namespace gaw241201
 {
     public class FreeInputCharHundler : IFreeInputCharHundler
     {
-        [Inject] ICharInputJudger _judger;
-        [Inject] FreeInputUnfixedText _unfixedText;
+        ICharInputJudger _judger;
+        FreeInputUnfixedText _unfixedText;
+
+        public FreeInputCharHundler(ICharInputJudger judger, FreeInputUnfixedText unfixedText)
+        {
+            _judger = judger;
+            _unfixedText = unfixedText;
+        }
+
 
 
         Subject<string> _ended = new Subject<string>();

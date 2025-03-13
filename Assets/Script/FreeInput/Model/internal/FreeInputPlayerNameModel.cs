@@ -12,14 +12,17 @@ namespace gaw241201
 {
     public class FreeInputPlayerNameModel :IFreeInputGateModel, IPlayerNameInputtableModel
     {
-        //Œ»ó‚ÌÓ–±
-        //PlayerName‚Ì•ÏX‚ğó‚¯æ‚éÓ–±
-        //FreeInput‚ÌŒˆ’è‚ğó‚¯æ‚éÓ–±
+        FreeInputUnfixedText _freeInputUnfixedText;
+        IGlobalFlagProvider _globalFlagProvider;
+        IGlobalFlagRegisterer _globalFlagRegisterer;
 
+        public FreeInputPlayerNameModel(FreeInputUnfixedText freeInputUnfixedText, IGlobalFlagProvider globalFlagProvider, IGlobalFlagRegisterer globalFlagRegisterer)
+        {
+            _freeInputUnfixedText = freeInputUnfixedText;
+            _globalFlagProvider = globalFlagProvider;
+            _globalFlagRegisterer = globalFlagRegisterer;
+        }
 
-        [Inject] FreeInputUnfixedText _freeInputUnfixedText;
-        [Inject] IGlobalFlagProvider _globalFlagProvider;
-        [Inject] IGlobalFlagRegisterer _globalFlagRegisterer;
 
         Subject<Unit> _entered = new Subject<Unit>();
         public IObservable<Unit> Entered => _entered;

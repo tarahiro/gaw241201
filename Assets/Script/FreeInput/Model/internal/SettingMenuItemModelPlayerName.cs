@@ -13,13 +13,12 @@ namespace gaw241201
 {
     public class SettingMenuItemModelPlayerName : IUiMenuItemModel
     {
-        //Œ»ó‚ÌÓ–±
-        //MenuItem‚Æ‚µ‚Ä‚ÌEnter‚ğó‚¯æ‚éÓ–±
-        //PlayerName‚Ì•ÏX‚ğó‚¯æ‚éÓ–±
-        //FreeInput‚ÌŒˆ’è‚ğó‚¯æ‚éÓ–±
+        IPlayerNameInputtableModel _playerNameInputtableModel;
 
-        [Inject] IPlayerNameInputtableModel _playerNameInputtableModel;
-
+        public SettingMenuItemModelPlayerName(IPlayerNameInputtableModel playerNameInputtableModel)
+        {
+            _playerNameInputtableModel = playerNameInputtableModel;
+        }
 
         public void  Enter()
         {

@@ -13,13 +13,13 @@ using VContainer.Unity;
 
 namespace gaw241201.Presenter
 {
-    public class FreeInputPresenterCore : IPostInitializable
+    public class FreeInputPresenterCore
     {
         //Model
+        FreeInputIndexer _freeInputIndexer;
+        FreeInputUnfixedText _freeInputUnfixedText;
         IFreeInputCharHundler _freeInputCharHundler;
         IFreeInputGateModel _freeInputGateModel;
-        FreeInputUnfixedText _freeInputUnfixedText;
-        FreeInputIndexer _freeInputIndexer;
 
         //View
         IFreeInputTextDisplayView _freeInputTextDisplayView;
@@ -29,7 +29,15 @@ namespace gaw241201.Presenter
         IDisposablePure _disposable;
 
         [Inject]
-        public FreeInputPresenterCore(FreeInputUnfixedText freeInputUnfixedText, FreeInputIndexer freeInputIndexer, FreeInputProcessor freeInputProcessor, FreeInputCharHundler freeInputCharHundler, IFreeInputGateModel stringDecidable, FreeInputTextDisplayView playerNameDisplayView, FreeInputEntererView freeInputEntererView, IDisposablePure disposable)
+        public FreeInputPresenterCore(
+            FreeInputIndexer freeInputIndexer, 
+            FreeInputUnfixedText freeInputUnfixedText,
+            FreeInputCharHundler freeInputCharHundler,
+            IFreeInputGateModel stringDecidable, 
+            FreeInputTextDisplayView playerNameDisplayView,
+            FreeInputProcessor freeInputProcessor, 
+             FreeInputEntererView freeInputEntererView, 
+             IDisposablePure disposable)
         {
             _freeInputUnfixedText = freeInputUnfixedText;
             _freeInputIndexer = freeInputIndexer;

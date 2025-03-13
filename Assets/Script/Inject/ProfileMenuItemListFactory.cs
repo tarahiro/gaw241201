@@ -1,4 +1,5 @@
 using Cysharp.Threading.Tasks;
+using gaw241201.Inject;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -7,22 +8,24 @@ using UniRx;
 using UnityEngine;
 using VContainer;
 using VContainer.Unity;
+using gaw241201.Presenter;
 
 namespace gaw241201
 {
     public class ProfileMenuItemListFactory : ISettingProfileItemListProvider
     {
-        [Inject] SettingMenuItemModelPlayerName _playerName;
+        SettingMenuItemModelPlayerName _playerName;
         [Inject] SettingUiMenuItemEmptyFactory _emptyFactory;
+        [Inject] SettingFreeInputFactory _freeInputFactory;
+
 
         public List<IUiMenuItemModel> ProvideList()
         {
             var _returnable = new List<IUiMenuItemModel>();
             _returnable.Add(_emptyFactory.Create("ErrorConversationSignature"));
-            _returnable.Add(_playerName);
+            _returnable.Add(_freeInputFactory.Get());
             _returnable.Add(_emptyFactory.Create("ErrorConversationSex"));
             return _returnable;
         }
-
     }
 }

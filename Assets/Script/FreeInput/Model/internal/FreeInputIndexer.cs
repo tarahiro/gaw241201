@@ -12,6 +12,12 @@ namespace gaw241201
 {
     public class FreeInputIndexer
     {
+        public FreeInputIndexer()
+        {
+
+        }
+
+
         Subject<int> _focused = new Subject<int>();
         public IObservable<int> Focused => _focused;
 

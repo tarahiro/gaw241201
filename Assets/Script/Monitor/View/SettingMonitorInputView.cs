@@ -56,11 +56,5 @@ namespace gaw241201.View
         {
             return !(_layer >= _activeLayer);
         }
-        /*
-        IInputView _inputView;
-        public IObservable<bool> BlockEnabled => _inputView.BlockEnabled;
-        [Inject]
-        public SettingMonitorDisplayView(InputViewFactory _factory,)
-        */
     }
 }

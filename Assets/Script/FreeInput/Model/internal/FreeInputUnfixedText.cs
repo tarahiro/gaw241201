@@ -12,7 +12,13 @@ namespace gaw241201
 {
     public class FreeInputUnfixedText
     {
-        [Inject] FreeInputIndexer _indexer;
+        FreeInputIndexer _indexer;
+
+        public FreeInputUnfixedText(FreeInputIndexer indexer)
+        {
+            _indexer = indexer;
+        }
+
 
         Subject<FreeInputArgs> _updated = new Subject<FreeInputArgs>();
         public IObservable<FreeInputArgs> Updated => _updated;

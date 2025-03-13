@@ -40,7 +40,6 @@ namespace gaw241201.View
 
             keyStroke.Inputted.Subscribe(_keyEntered).AddTo(disposable);
             _executorList.Add(keyStroke);
-
         }
         public void ProcessInput()
         {
