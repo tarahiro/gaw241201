@@ -285,7 +285,7 @@ namespace gaw241201.Inject
             builder.RegisterComponentInHierarchy<SelectInputDisplayView>().AsSelf();
         }
 
-        [SerializeField] FreeInputTextDisplayView _freeInputTextDisplayViewSetting;
+        [SerializeField] SettingFreeInputDisplayView _freeInputTextDisplayViewSetting;
 
         void ConfigureFreeInput(IContainerBuilder builder)
         {
@@ -298,8 +298,11 @@ namespace gaw241201.Inject
             builder.Register<FreeInputView>(Lifetime.Singleton).AsImplementedInterfaces();
             builder.Register<FlowViewArgsFactory>(Lifetime.Singleton).AsSelf();
 
+            builder.Register<FreeInputFlowModelProvider>(Lifetime.Singleton).AsImplementedInterfaces();
+            builder.Register<NameFreeInputFactory>(Lifetime.Singleton).AsSelf().AsImplementedInterfaces();
+
             builder.Register<SettingFreeInputFactory>(Lifetime.Singleton)
-                .WithParameter<FreeInputTextDisplayView>(_freeInputTextDisplayViewSetting)
+                .WithParameter<SettingFreeInputDisplayView>(_freeInputTextDisplayViewSetting)
                 .AsSelf();
             builder.RegisterEntryPoint<FreeInputPresenter>();
         }
@@ -492,11 +495,11 @@ namespace gaw241201.Inject
             builder.Register<AdvancedMenuItemListFactory>(Lifetime.Singleton).AsSelf();
             builder.Register<SettingUiMenuItemEmptyFactory>(Lifetime.Singleton).AsSelf();
             builder.Register<PlayerNameSetter>(Lifetime.Singleton)
-                .WithParameter<FreeInputTextDisplayView>(_freeInputTextDisplayViewSetting)
+                .WithParameter<SettingFreeInputDisplayView>(_freeInputTextDisplayViewSetting)
                 .AsImplementedInterfaces();
             builder.Register<PlayerNameDisplayModel>(Lifetime.Singleton).AsSelf();
 
-            builder.RegisterComponentInHierarchy<FreeInputTextDisplayView>().AsSelf().AsImplementedInterfaces();
+            builder.RegisterComponentInHierarchy<SettingFreeInputDisplayView>().AsSelf().AsImplementedInterfaces();
             //builder.RegisterComponentInHierarchy<SettingFreeInputItemView>().AsSelf();
 
             builder.RegisterComponentInHierarchy<SettingTabManager>().AsSelf();

@@ -10,12 +10,15 @@ using VContainer.Unity;
 
 namespace gaw241201.View
 {
-    public interface IFreeInputTextDisplayView
+    public interface IFreeInputDisplayView
     {
         public void SetCharacter(FreeInputArgs args);
 
         public void Focus(int index);
 
         public void Unfocus(int index);
+        public UniTask Enter();
+
+        public UniTask Exit();
     }
 }

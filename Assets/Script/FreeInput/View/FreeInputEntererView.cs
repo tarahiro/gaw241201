@@ -13,10 +13,10 @@ namespace gaw241201.View
 {
     public class FreeInputEntererView : IDisposable
     {
-        [Inject] FreeInputTextDisplayView _freeInputTextDisplayView;
+        [Inject] IFreeInputDisplayView _freeInputTextDisplayView;
         [Inject] FreeInputInputView _freeInputInputView;
 
-        public FreeInputEntererView(FreeInputTextDisplayView freeInputTextDisplayView,FreeInputInputView freeInputInputInputView)
+        public FreeInputEntererView(IFreeInputDisplayView freeInputTextDisplayView,FreeInputInputView freeInputInputInputView)
         {
             _freeInputTextDisplayView = freeInputTextDisplayView;
             _freeInputInputView = freeInputInputInputView;

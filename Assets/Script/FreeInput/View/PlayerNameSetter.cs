@@ -12,7 +12,7 @@ namespace gaw241201.View
 {
     public class PlayerNameSetter : IPlayerNameSettable
     {
-        [Inject] FreeInputTextDisplayView _textDisplayView;
+        [Inject] SettingFreeInputDisplayView _textDisplayView;
 
         public void SetText(string text)
         {

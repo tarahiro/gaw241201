@@ -22,7 +22,7 @@ namespace gaw241201.Presenter
         IFreeInputGateModel _freeInputGateModel;
 
         //View
-        IFreeInputTextDisplayView _freeInputTextDisplayView;
+        IFreeInputDisplayView _freeInputTextDisplayView;
         IFreeInputProcessor _freeInputProcessor;
         FreeInputEntererView _freeInputEntererView;
 
@@ -34,7 +34,7 @@ namespace gaw241201.Presenter
             FreeInputUnfixedText freeInputUnfixedText,
             IFreeInputCharHundler freeInputCharHundler,
             IFreeInputGateModel stringDecidable,
-            IFreeInputTextDisplayView playerNameDisplayView,
+            IFreeInputDisplayView playerNameDisplayView,
             IFreeInputProcessor freeInputProcessor, 
             FreeInputEntererView freeInputEntererView, 
             IDisposablePure disposable)

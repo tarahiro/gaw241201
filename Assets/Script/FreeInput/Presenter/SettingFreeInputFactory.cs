@@ -14,7 +14,7 @@ namespace gaw241201.Presenter
         IFreeInputCharHundler _freeInputCharHundler;
         IFreeInputGateModel _freeInputGateModel => _freeInputPlayerNameModel;
 
-        [Inject] FreeInputTextDisplayView _freeInputTextDisplayView;
+        [Inject] SettingFreeInputDisplayView _freeInputTextDisplayView;
         IFreeInputProcessor _iFreeInputProcessor => _freeInputProcessor;
         FreeInputEntererView _freeInputEntererView;
 

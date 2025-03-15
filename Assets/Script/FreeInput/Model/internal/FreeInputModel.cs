@@ -15,6 +15,7 @@ namespace gaw241201
     {
         [Inject] FreeInputValueRegisterer _valueRegisterer;
         [Inject] FlowViewArgsFactory _flowArgsFactory;
+        [Inject] IFreeInputSwithcerModel _switcherModel;
 
         bool _isEnded = false;
         string _bodyId;
@@ -30,7 +31,12 @@ namespace gaw241201
             _bodyId = bodyId;
             _isEnded = false;
 
+            /*
             _entered.OnNext(_flowArgsFactory.Create(bodyId,_cts.Token));
+            */
+
+            var model = _switcherModel.GetGateModel(EnumUtil.KeyToType<FreeInputConst.FreeInputCategory>(bodyId));
+            model.Enter();
 
             await UniTask.WaitUntil(() =>  _isEnded);
         }
