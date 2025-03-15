@@ -44,8 +44,6 @@ namespace gaw241201.Presenter
 
         public void Initialize()
         {
-            Log.Comment("SettingFreeInputLifetimeScope‚Ì“o˜^ŠJŽn");
-
             _freeInputIndexer = new FreeInputIndexer(FlagConst.c_TimeMaxLength);
             _freeInputUnfixedText = new FreeInputUnfixedText(_freeInputIndexer);
             _charJudger = new CharJudgerTime(_freeInputIndexer,_freeInputUnfixedText);

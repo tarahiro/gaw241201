@@ -17,7 +17,6 @@ namespace gaw241201
         [Inject]
         public ProfileMenuModel(ISettingProfileItemListProvider factory)
         {
-            Log.DebugLog("Construct:ProfileMenuModel");
             _factory = factory;
             _menuModel = new UiMenuModel(_factory.ProvideList());
 

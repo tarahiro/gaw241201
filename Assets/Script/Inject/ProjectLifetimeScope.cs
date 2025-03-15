@@ -503,7 +503,6 @@ namespace gaw241201.Inject
             builder.Register<SettingUiModel>(Lifetime.Singleton).AsSelf();
             builder.Register<SettingTabListFactory>(Lifetime.Singleton).AsSelf();
 
-            Log.DebugLog("ProfileMenuItemListFactory");
             builder.Register<ProfileMenuItemListFactory>(Lifetime.Singleton).AsSelf().AsImplementedInterfaces();
             builder.Register<ProfileMenuModel>(Lifetime.Singleton).AsSelf();
             builder.Register<AdvancedMenuModel>(Lifetime.Singleton).AsSelf();
@@ -532,13 +531,11 @@ namespace gaw241201.Inject
 
         void ConfigureRenderer(IContainerBuilder builder)
         {
-            Log.DebugLog("SettingRenderer");
             builder.RegisterComponentInHierarchy<RendererHundler>().AsSelf();
         }
 
         void ConfigureInput(IContainerBuilder builder)
         {
-            Log.DebugLog("SettingInput");
             builder.Register<ActiveLayerPublisher>(Lifetime.Singleton).AsSelf();
             builder.Register<InputViewFactory>(Lifetime.Singleton).AsSelf();
 
@@ -554,8 +551,6 @@ namespace gaw241201.Inject
 
         void ConfigureSwitch(IContainerBuilder builder)
         {
-            Log.DebugLog("SettingSwitch");
-            //builder.Register<SwitchByTypedFlag_OLD>(Lifetime.Singleton).AsSelf();
             builder.Register<Switcher>(Lifetime.Singleton).AsSelf();
             builder.Register<GoOtherFlow>(Lifetime.Singleton).AsSelf();
             builder.Register<ByStringGetterFactory>(Lifetime.Singleton).AsImplementedInterfaces();

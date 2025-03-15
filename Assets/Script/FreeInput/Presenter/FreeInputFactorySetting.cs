@@ -40,8 +40,6 @@ namespace gaw241201.Presenter
 
         public void Initialize()
         { 
-            Log.Comment("SettingFreeInputLifetimeScope‚Ì“o˜^ŠJŽn");
-
             _freeInputIndexer = new FreeInputIndexer(FlagConst.c_NameMaxLength);
             _playerNameInputJudger = new CharJudgerName(_freeInputIndexer);
             _freeInputUnfixedText = new FreeInputUnfixedText(_freeInputIndexer);

@@ -38,7 +38,6 @@ namespace gaw241201
         public void MoveFocus(int menuIndex)
         {
             ItemIndex = menuIndex;
-            Log.DebugLog("ItemIndex " + ItemIndex + "Ç…çXêV");
             _focusChanged.OnNext(ItemIndex);
         }
         public void Enter()
