@@ -11,30 +11,33 @@ using VContainer.Unity;
 
 namespace gaw241201
 {
-    public class EnterableJudgerByIndex : IEndableJudger
+    public class EnterableJudgerByLength : IEndableJudger
     {
         //èâä˙âªÇ«Ç§Ç∑ÇÈñ‚ëË
 
         int _criteriaIndex;
-        int _index;
+        int _length;
 
         Subject<bool> _enterabled = new Subject<bool>();
         public IObservable<bool> EnterableStateUpdated => _enterabled;
 
-        public EnterableJudgerByIndex(int criteriaIndex)
+        FreeInputUnfixedText _unfixedText;
+
+        public EnterableJudgerByLength(FreeInputUnfixedText unfixedText,int criteriaIndex)
         {
+            _unfixedText = unfixedText;
             _criteriaIndex = criteriaIndex;
         }
 
         public bool IsEnterable()
         {
-            return _index >= _criteriaIndex;
+            return _length >= _criteriaIndex;
         }
 
-        public void CatchUpdateFocus(int index)
+        public void CatchUpdate()
         {
             bool b = IsEnterable();
-            _index = index;
+            _length = _unfixedText.GetUnfixedText().Length;
 
             if(IsEnterable() != b)
             {

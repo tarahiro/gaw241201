@@ -32,7 +32,7 @@ namespace gaw241201.Presenter
 
         public void ActivatePresenter()
         {
-            _underlying._freeInputIndexer.Focused.Subscribe(_enterableJudger.CatchUpdateFocus)
+            _underlying._freeInputUnfixedText.Updated.Subscribe(_ => _enterableJudger.CatchUpdate())
                 .AddTo(_disposable);
             _enterableJudger.EnterableStateUpdated.Subscribe(x => _endableDisplayView.Endable(x)).AddTo(_disposable);
 

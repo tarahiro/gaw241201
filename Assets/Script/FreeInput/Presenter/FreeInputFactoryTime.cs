@@ -17,19 +17,20 @@ namespace gaw241201.Presenter
         FreeInputIndexer _freeInputIndexer;
         ICharJudger _charJudger;
         FreeInputUnfixedText _freeInputUnfixedText;
+        IEndableJudger _endableJudger;
         IFreeInputCharHundler _freeInputCharHundler;
         IFreeInputGateModel _freeInputGateModel;
 
+        [Inject] FreeInputEndableDisplayView _freeInputEndableDisplayView;
         [Inject] FreeInputDisplayFlowView _freeInputTextDisplayView;
         IFreeInputProcessor _iFreeInputProcessor => _freeInputProcessor;
         FreeInputEntererView _freeInputEntererView;
 
-        FreeInputPresenterCore _freeInputPresenterCore;
+        IFreeInputPresenter _freeInputPresenterCore;
 
         FreeInputInputView _freeInputInputView;
 
         FreeInputProcessor _freeInputProcessor;
-        FreeInputFlowNameModel _freeInputFlowNameModel;
 
         [Inject] IGlobalFlagRegisterer _globalFlagRegisterer;
 
@@ -48,14 +49,18 @@ namespace gaw241201.Presenter
             _freeInputIndexer = new FreeInputIndexer(FlagConst.c_TimeMaxLength);
             _freeInputUnfixedText = new FreeInputUnfixedText(_freeInputIndexer);
             _charJudger = new CharJudgerTime(_freeInputIndexer,_freeInputUnfixedText);
-            _freeInputCharHundler = new FreeInputCharHundler(_charJudger, _freeInputUnfixedText);
+            _endableJudger = new EnterableJudgerByLength( _freeInputUnfixedText, FlagConst.c_TimeMaxLength);
+            _freeInputCharHundler = new FreeInputCharHundlerRestrictedEnd(
+                new FreeInputCharHundler(_charJudger, _freeInputUnfixedText),
+                _endableJudger);
             _freeInputGateModel = new FreeInputFlowTimeModel(new FreeInputGateModel(_freeInputUnfixedText), _globalFlagRegisterer);
 
             _freeInputProcessor = new FreeInputProcessor(_decide, _cancel, _keyStroke, _disposablePure);
             _freeInputInputView = new FreeInputInputView(_viewFactory, _freeInputProcessor);
             _freeInputEntererView = new FreeInputEntererView(_freeInputTextDisplayView, _freeInputInputView);
 
-            _freeInputPresenterCore = new FreeInputPresenterCore(
+            _freeInputPresenterCore = new FreeInputPresenterRestrictedEnter(
+                new FreeInputPresenterCore(
                 _freeInputIndexer,
                 _freeInputUnfixedText,
                 _freeInputCharHundler,
@@ -63,7 +68,11 @@ namespace gaw241201.Presenter
                 _freeInputTextDisplayView,
                 _iFreeInputProcessor,
                 _freeInputEntererView,
-                _disposablePure);
+                _disposablePure),
+
+                _endableJudger,
+                _freeInputEndableDisplayView);
+
             _freeInputPresenterCore.ActivatePresenter();
 
         }

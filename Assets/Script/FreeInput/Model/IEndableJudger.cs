@@ -14,7 +14,7 @@ namespace gaw241201
     {
         public bool IsEnterable();
 
-        public void CatchUpdateFocus(int index);
+        public void CatchUpdate();
 
         IObservable<bool> EnterableStateUpdated { get; }
     }

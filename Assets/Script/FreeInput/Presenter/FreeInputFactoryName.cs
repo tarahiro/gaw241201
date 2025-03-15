@@ -13,7 +13,7 @@ namespace gaw241201.Presenter
         FreeInputUnfixedText _freeInputUnfixedText;
         IEndableJudger _endableJudger;
         IFreeInputCharHundler _freeInputCharHundler;
-        IFreeInputGateModel _freeInputGateModel => _freeInputFlowNameModel;
+        IFreeInputGateModel _freeInputGateModel;
 
         [Inject] FreeInputEndableDisplayView _freeInputEndableDisplayView;
         [Inject] FreeInputDisplayFlowView _freeInputTextDisplayView;
@@ -25,7 +25,6 @@ namespace gaw241201.Presenter
         FreeInputInputView _freeInputInputView;
 
         FreeInputProcessor _freeInputProcessor;
-        FreeInputFlowNameModel _freeInputFlowNameModel;
 
 
         [Inject] IGlobalFlagRegisterer _globalFlagRegisterer;
@@ -45,10 +44,10 @@ namespace gaw241201.Presenter
             _freeInputIndexer = new FreeInputIndexer(FlagConst.c_NameMaxLength);
             _playerNameInputJudger = new CharJudgerName(_freeInputIndexer);
             _freeInputUnfixedText = new FreeInputUnfixedText(_freeInputIndexer);
-            _endableJudger = new EnterableJudgerByIndex(FlagConst.c_NameMinLength);
+            _endableJudger = new EnterableJudgerByLength(_freeInputUnfixedText, FlagConst.c_NameMinLength);
             _freeInputCharHundler = new FreeInputCharHundlerRestrictedEnd(new FreeInputCharHundler(_playerNameInputJudger, _freeInputUnfixedText),
                 _endableJudger);
-            _freeInputFlowNameModel = new FreeInputFlowNameModel(new FreeInputGateModel(_freeInputUnfixedText), _globalFlagRegisterer);
+            _freeInputGateModel = new FreeInputFlowNameModel(new FreeInputGateModel(_freeInputUnfixedText), _globalFlagRegisterer);
 
             _freeInputProcessor = new FreeInputProcessor(_decide,_cancel,_keyStroke,_disposablePure);
             _freeInputInputView = new FreeInputInputView(_viewFactory, _freeInputProcessor);
