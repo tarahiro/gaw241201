@@ -23,7 +23,13 @@ namespace gaw241201
         {
             var _returnable = new List<IUiMenuItemModel>();
             _returnable.Add(_emptyFactory.Create("ErrorConversationSignature"));
-            _returnable.Add(_freeInputFactory.Get());
+
+            if(_playerName == null)
+            {
+                _playerName = new SettingMenuItemModelPlayerName(_freeInputFactory.Get());
+            }
+            _returnable.Add(_playerName);
+
             _returnable.Add(_emptyFactory.Create("ErrorConversationSex"));
             return _returnable;
         }

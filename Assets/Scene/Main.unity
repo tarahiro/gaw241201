@@ -7598,6 +7598,7 @@ MonoBehaviour:
   - {fileID: 2609348719531866388, guid: a77cb6aba6efe5c47971e7a556381a9c, type: 3}
   - {fileID: 542683574}
   _initialParameter: {fileID: 11400000, guid: 8299974e608a00e4f86cd4a67525f62d, type: 2}
+  _freeInputTextDisplayViewSetting: {fileID: 1105243866}
   textViewList:
   - {fileID: 920876524}
   - {fileID: 403598741}

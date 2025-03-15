@@ -285,6 +285,8 @@ namespace gaw241201.Inject
             builder.RegisterComponentInHierarchy<SelectInputDisplayView>().AsSelf();
         }
 
+        [SerializeField] FreeInputTextDisplayView _freeInputTextDisplayViewSetting;
+
         void ConfigureFreeInput(IContainerBuilder builder)
         {
 
@@ -296,6 +298,9 @@ namespace gaw241201.Inject
             builder.Register<FreeInputView>(Lifetime.Singleton).AsImplementedInterfaces();
             builder.Register<FlowViewArgsFactory>(Lifetime.Singleton).AsSelf();
 
+            builder.Register<SettingFreeInputFactory>(Lifetime.Singleton)
+                .WithParameter<FreeInputTextDisplayView>(_freeInputTextDisplayViewSetting)
+                .AsSelf();
             builder.RegisterEntryPoint<FreeInputPresenter>();
         }
 
@@ -486,7 +491,9 @@ namespace gaw241201.Inject
             builder.Register<AdvancedItemRoguelike>(Lifetime.Singleton).AsSelf();
             builder.Register<AdvancedMenuItemListFactory>(Lifetime.Singleton).AsSelf();
             builder.Register<SettingUiMenuItemEmptyFactory>(Lifetime.Singleton).AsSelf();
-            builder.Register<PlayerNameSetter>(Lifetime.Singleton).AsImplementedInterfaces();
+            builder.Register<PlayerNameSetter>(Lifetime.Singleton)
+                .WithParameter<FreeInputTextDisplayView>(_freeInputTextDisplayViewSetting)
+                .AsImplementedInterfaces();
             builder.Register<PlayerNameDisplayModel>(Lifetime.Singleton).AsSelf();
 
             builder.RegisterComponentInHierarchy<FreeInputTextDisplayView>().AsSelf().AsImplementedInterfaces();
@@ -499,7 +506,6 @@ namespace gaw241201.Inject
 
             builder.Register<SettingEventCatcher>(Lifetime.Singleton).AsSelf();
             builder.Register<IndexVariantHundlerSettings>(Lifetime.Singleton).AsSelf();
-            builder.Register<SettingFreeInputFactory>(Lifetime.Singleton).AsSelf();
 
             builder.RegisterEntryPoint<SettingFreeInputEntryPoint>();
             builder.RegisterEntryPoint<SettingPresenter>();

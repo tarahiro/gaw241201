@@ -10,14 +10,9 @@ using VContainer.Unity;
 
 namespace gaw241201
 {
-    public static class FreeInputConst
+    public interface IFreeInputSwithcerModel
     {
-        public enum FreeInputCategory
-        {
-            TimeFreeInput,
-            NameFreeInput,
-            BirthDateFreeInput,
-        }
-
+        public IFreeInputGateModel GetGateModel(FreeInputConst.FreeInputCategory category);
+        public List<IFreeInputGateModel> _freeInputGateModelList();
     }
 }

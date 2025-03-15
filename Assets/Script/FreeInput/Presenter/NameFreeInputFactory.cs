@@ -6,7 +6,7 @@ using Tarahiro;
 
 namespace gaw241201.Presenter
 {
-    public class SettingFreeInputFactory
+    public class NameFreeInputFactory
     {
         FreeInputIndexer _freeInputIndexer;
         PlayerNameInputJudger _playerNameInputJudger;
@@ -63,9 +63,9 @@ namespace gaw241201.Presenter
 
         }
 
-        public IPlayerNameInputtableModel Get()
+        public IFreeInputGateModel GetGateModel()
         {
-            return _freeInputPlayerNameModel;
+            return _freeInputGateModel;
         }
     }
 }

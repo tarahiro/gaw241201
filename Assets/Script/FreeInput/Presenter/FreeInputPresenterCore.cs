@@ -32,12 +32,12 @@ namespace gaw241201.Presenter
         public FreeInputPresenterCore(
             FreeInputIndexer freeInputIndexer, 
             FreeInputUnfixedText freeInputUnfixedText,
-            FreeInputCharHundler freeInputCharHundler,
-            IFreeInputGateModel stringDecidable, 
-            FreeInputTextDisplayView playerNameDisplayView,
-            FreeInputProcessor freeInputProcessor, 
-             FreeInputEntererView freeInputEntererView, 
-             IDisposablePure disposable)
+            IFreeInputCharHundler freeInputCharHundler,
+            IFreeInputGateModel stringDecidable,
+            IFreeInputTextDisplayView playerNameDisplayView,
+            IFreeInputProcessor freeInputProcessor, 
+            FreeInputEntererView freeInputEntererView, 
+            IDisposablePure disposable)
         {
             _freeInputUnfixedText = freeInputUnfixedText;
             _freeInputIndexer = freeInputIndexer;
