@@ -10,11 +10,11 @@ using VContainer.Unity;
 
 namespace gaw241201
 {
-    public class PlayerNameInputJudger : ICharInputJudger
+    public class CharJudgerName : ICharJudger
     {
         FreeInputIndexer _indexer;
 
-        public PlayerNameInputJudger(FreeInputIndexer indexer)
+        public CharJudgerName(FreeInputIndexer indexer)
         {
             _indexer = indexer;
         }

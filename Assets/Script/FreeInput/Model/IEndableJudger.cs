@@ -10,8 +10,12 @@ using VContainer.Unity;
 
 namespace gaw241201
 {
-    public interface ICharInputJudger
+    public interface IEndableJudger
     {
-        bool IsCharAvailable(char c);
+        public bool IsEnterable();
+
+        public void CatchUpdateFocus(int index);
+
+        IObservable<bool> EnterableStateUpdated { get; }
     }
 }

@@ -13,20 +13,20 @@ using VContainer.Unity;
 
 namespace gaw241201.Presenter
 {
-    public class FreeInputPresenterCore
+    public class FreeInputPresenterCore : IFreeInputPresenter
     {
         //Model
-        FreeInputIndexer _freeInputIndexer;
-        FreeInputUnfixedText _freeInputUnfixedText;
-        IFreeInputCharHundler _freeInputCharHundler;
-        IFreeInputGateModel _freeInputGateModel;
+        internal FreeInputIndexer _freeInputIndexer;
+        internal FreeInputUnfixedText _freeInputUnfixedText;
+        internal IFreeInputCharHundler _freeInputCharHundler;
+        internal IFreeInputGateModel _freeInputGateModel;
 
         //View
-        IFreeInputDisplayView _freeInputTextDisplayView;
-        IFreeInputProcessor _freeInputProcessor;
-        FreeInputEntererView _freeInputEntererView;
+        internal IFreeInputDisplayView _freeInputTextDisplayView;
+        internal IFreeInputProcessor _freeInputProcessor;
+        internal FreeInputEntererView _freeInputEntererView;
 
-        IDisposablePure _disposable;
+        internal IDisposablePure _disposable;
 
         [Inject]
         public FreeInputPresenterCore(
@@ -49,7 +49,7 @@ namespace gaw241201.Presenter
             _disposable = disposable;
         }
 
-        public void PostInitialize()
+        public void ActivatePresenter()
         {
             //開始、終了処理
             _freeInputGateModel.Entered.Subscribe(_ => _freeInputEntererView.Enter().Forget()).AddTo(_disposable);
@@ -61,7 +61,7 @@ namespace gaw241201.Presenter
 
             //InputProcessorとCharHundlerの紐づけ
             _freeInputProcessor.KeyEntered.Subscribe(_freeInputCharHundler.CatchChar).AddTo(_disposable);
-            _freeInputProcessor.Decided.Subscribe(_ => _freeInputCharHundler.End()).AddTo(_disposable);
+            _freeInputProcessor.Decided.Subscribe(_ => _freeInputCharHundler.TryEnd()).AddTo(_disposable);
             _freeInputProcessor.Deleted.Subscribe(_ => _freeInputCharHundler.Delete()).AddTo(_disposable);
 
             _freeInputCharHundler.Ended.Subscribe(_freeInputGateModel.Decide).AddTo(_disposable);

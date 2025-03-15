@@ -8,15 +8,10 @@ using UnityEngine;
 using VContainer;
 using VContainer.Unity;
 
-namespace gaw241201
+namespace gaw241201.View
 {
-    public static class FreeInputConst
+    public interface IFreeInputEndableDisplayView
     {
-        public enum FreeInputCategory
-        {
-            TimeFreeInput,
-            NameFreeInput,
-            BirthDateFreeInput,
-        }
+        public UniTask Endable(bool b);
     }
 }

@@ -17,10 +17,12 @@ namespace gaw241201.Presenter
     {
         [Inject] FreeInputFactorySetting _factorySetting;
         [Inject] FreeInputFactoryName _factoryName;
+        [Inject] FreeInputFactoryTime _factoryTime;
         public void Initialize()
         {
             _factorySetting.Initialize();
             _factoryName.Initialize();
+            _factoryTime.Initialize();
         }
     }
 }

@@ -10,12 +10,12 @@ using VContainer.Unity;
 
 namespace gaw241201
 {
-    public class FreeInputFlowNameModel : IFreeInputGateModel
+    public class FreeInputFlowTimeModel : IFreeInputGateModel
     {
         IFreeInputGateModel _underlying;
         IGlobalFlagRegisterer _globalFlagRegisterer;
 
-        public FreeInputFlowNameModel(IFreeInputGateModel gateModel, IGlobalFlagRegisterer globalFlagRegisterer)
+        public FreeInputFlowTimeModel(IFreeInputGateModel gateModel, IGlobalFlagRegisterer globalFlagRegisterer)
         {
             _underlying = gateModel;
             _globalFlagRegisterer = globalFlagRegisterer;
@@ -28,7 +28,7 @@ namespace gaw241201
 
         public void Decide(string text)
         {
-            _globalFlagRegisterer.RegisterFlag(FlagConst.Key.Name, text);
+            _globalFlagRegisterer.RegisterFlag(FlagConst.Key.InputTime, text);
             _underlying.Decide(text);
         }
     }

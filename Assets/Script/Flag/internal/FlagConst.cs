@@ -82,5 +82,8 @@ namespace gaw241201
         }
 
         public const int c_NameMaxLength = 12;
+        public const int c_NameMinLength = 2;
+
+        public const int c_TimeMaxLength = 6;
     }
 }

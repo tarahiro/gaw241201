@@ -12,10 +12,12 @@ namespace gaw241201
 {
     public class FreeInputIndexer
     {
-        public FreeInputIndexer()
+        public FreeInputIndexer(int maxLength)
         {
-
+            _maxLength = maxLength;
         }
+
+        int _maxLength;
 
 
         Subject<int> _focused = new Subject<int>();
@@ -24,18 +26,16 @@ namespace gaw241201
         Subject<int> _unfocused = new Subject<int>();
         public IObservable<int> Unfocused => _unfocused;
 
-        Subject<string> _updated = new Subject<string>();
-        public IObservable<string> Updated => _updated;
 
         public void Enter(int textLength)
         {
-            if (textLength < FlagConst.c_NameMaxLength)
+            if (textLength < _maxLength)
             {
                 UpdateFocus(false, textLength);
             }
             else
             {
-                Index = FlagConst.c_NameMaxLength - 1;
+                Index = _maxLength - 1;
                 IsFocusExist = false;
             }
         }
@@ -51,13 +51,13 @@ namespace gaw241201
                 _unfocused.OnNext(Index);
             }
 
-            if (index < FlagConst.c_NameMaxLength)
+            if (index < _maxLength)
             {
                 Index = index;
             }
             else
             {
-               Index = FlagConst.c_NameMaxLength - 1;
+               Index = _maxLength - 1;
             }
             IsFocusExist = true;
             _focused.OnNext(Index);
@@ -65,13 +65,13 @@ namespace gaw241201
 
         public void Exit()
         {
-            _unfocused?.OnNext(Index);
+            _unfocused.OnNext(Index);
             Index = 0;
         }
 
         public bool TryNextFocus()
         {
-            if(Index < FlagConst.c_NameMaxLength - 1)
+            if(Index < _maxLength - 1)
             {
                 UpdateFocus(true, Index + 1);
                 return true;

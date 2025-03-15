@@ -9,21 +9,24 @@ namespace gaw241201.Presenter
     public class FreeInputFactoryName
     {
         FreeInputIndexer _freeInputIndexer;
-        PlayerNameInputJudger _playerNameInputJudger;
+        CharJudgerName _playerNameInputJudger;
         FreeInputUnfixedText _freeInputUnfixedText;
+        IEndableJudger _endableJudger;
         IFreeInputCharHundler _freeInputCharHundler;
-        IFreeInputGateModel _freeInputGateModel => _freeInputModel;
+        IFreeInputGateModel _freeInputGateModel => _freeInputFlowNameModel;
 
+        [Inject] FreeInputEndableDisplayView _freeInputEndableDisplayView;
         [Inject] FreeInputDisplayFlowView _freeInputTextDisplayView;
         IFreeInputProcessor _iFreeInputProcessor => _freeInputProcessor;
         FreeInputEntererView _freeInputEntererView;
 
-        FreeInputPresenterCore _freeInputPresenterCore;
+        IFreeInputPresenter _freeInputPresenterCore;
 
         FreeInputInputView _freeInputInputView;
 
         FreeInputProcessor _freeInputProcessor;
-        FreeInputFlowNameModel _freeInputModel;
+        FreeInputFlowNameModel _freeInputFlowNameModel;
+
 
         [Inject] IGlobalFlagRegisterer _globalFlagRegisterer;
 
@@ -39,17 +42,21 @@ namespace gaw241201.Presenter
         { 
             Log.Comment("SettingFreeInputLifetimeScope‚Ì“o˜^ŠJŽn");
 
-            _freeInputIndexer = new FreeInputIndexer();
-            _playerNameInputJudger = new PlayerNameInputJudger(_freeInputIndexer);
+            _freeInputIndexer = new FreeInputIndexer(FlagConst.c_NameMaxLength);
+            _playerNameInputJudger = new CharJudgerName(_freeInputIndexer);
             _freeInputUnfixedText = new FreeInputUnfixedText(_freeInputIndexer);
-            _freeInputCharHundler = new FreeInputCharHundler(_playerNameInputJudger, _freeInputUnfixedText);
-            _freeInputModel = new FreeInputFlowNameModel(_freeInputUnfixedText, _globalFlagRegisterer);
+            _endableJudger = new EnterableJudgerByIndex(FlagConst.c_NameMinLength);
+            _freeInputCharHundler = new FreeInputCharHundlerRestrictedEnd(new FreeInputCharHundler(_playerNameInputJudger, _freeInputUnfixedText),
+                _endableJudger);
+            _freeInputFlowNameModel = new FreeInputFlowNameModel(new FreeInputGateModel(_freeInputUnfixedText), _globalFlagRegisterer);
 
             _freeInputProcessor = new FreeInputProcessor(_decide,_cancel,_keyStroke,_disposablePure);
             _freeInputInputView = new FreeInputInputView(_viewFactory, _freeInputProcessor);
             _freeInputEntererView = new FreeInputEntererView(_freeInputTextDisplayView, _freeInputInputView);
 
-            _freeInputPresenterCore = new FreeInputPresenterCore(
+            _freeInputPresenterCore = new FreeInputPresenterRestrictedEnter(
+                
+                new FreeInputPresenterCore(
                 _freeInputIndexer,
                 _freeInputUnfixedText,
                 _freeInputCharHundler,
@@ -57,8 +64,12 @@ namespace gaw241201.Presenter
                 _freeInputTextDisplayView,
                 _iFreeInputProcessor,
                 _freeInputEntererView,
-                _disposablePure);
-            _freeInputPresenterCore.PostInitialize();
+                _disposablePure),
+
+                _endableJudger,
+                _freeInputEndableDisplayView
+                );
+            _freeInputPresenterCore.ActivatePresenter();
 
         }
 

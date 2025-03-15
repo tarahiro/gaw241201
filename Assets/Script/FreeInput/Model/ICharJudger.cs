@@ -10,11 +10,8 @@ using VContainer.Unity;
 
 namespace gaw241201
 {
-    public interface IFreeInputCharHundler
+    public interface ICharJudger
     {
-        public void CatchChar(char c);
-        public void TryEnd();
-        public void Delete();
-        public IObservable<string> Ended { get; }
+        bool IsCharAvailable(char c);
     }
 }

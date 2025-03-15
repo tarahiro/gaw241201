@@ -1,20 +1,26 @@
+using Cysharp.Threading.Tasks;
+using gaw241201.View;
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using Tarahiro;
+using UniRx;
+using UnityEngine;
 using VContainer;
 using VContainer.Unity;
-using gaw241201.View;
-using gaw241201.Model;
-using Tarahiro;
+
 
 namespace gaw241201.Presenter
 {
-    public class FreeInputFactorySetting
+    public class FreeInputFactoryTime
     {
         FreeInputIndexer _freeInputIndexer;
-        CharJudgerName _playerNameInputJudger;
+        ICharJudger _charJudger;
         FreeInputUnfixedText _freeInputUnfixedText;
         IFreeInputCharHundler _freeInputCharHundler;
-        IFreeInputGateModel _freeInputGateModel => _freeInputPlayerNameModel;
+        IFreeInputGateModel _freeInputGateModel;
 
-        [Inject] SettingFreeInputDisplayView _freeInputTextDisplayView;
+        [Inject] FreeInputDisplayFlowView _freeInputTextDisplayView;
         IFreeInputProcessor _iFreeInputProcessor => _freeInputProcessor;
         FreeInputEntererView _freeInputEntererView;
 
@@ -23,9 +29,8 @@ namespace gaw241201.Presenter
         FreeInputInputView _freeInputInputView;
 
         FreeInputProcessor _freeInputProcessor;
-        FreeInputSettingNameModel _freeInputPlayerNameModel;
+        FreeInputFlowNameModel _freeInputFlowNameModel;
 
-        [Inject] IGlobalFlagProvider _globalFlagProvider;
         [Inject] IGlobalFlagRegisterer _globalFlagRegisterer;
 
         [Inject] InputExecutorCommand _decide;
@@ -37,16 +42,16 @@ namespace gaw241201.Presenter
         [Inject] IDisposablePure _disposablePure;
 
         public void Initialize()
-        { 
+        {
             Log.Comment("SettingFreeInputLifetimeScope‚Ì“o˜^ŠJŽn");
 
-            _freeInputIndexer = new FreeInputIndexer(FlagConst.c_NameMaxLength);
-            _playerNameInputJudger = new CharJudgerName(_freeInputIndexer);
+            _freeInputIndexer = new FreeInputIndexer(FlagConst.c_TimeMaxLength);
             _freeInputUnfixedText = new FreeInputUnfixedText(_freeInputIndexer);
-            _freeInputCharHundler = new FreeInputCharHundler(_playerNameInputJudger, _freeInputUnfixedText);
-            _freeInputPlayerNameModel = new FreeInputSettingNameModel(new FreeInputGateModel(_freeInputUnfixedText), _globalFlagProvider, _globalFlagRegisterer);
+            _charJudger = new CharJudgerTime(_freeInputIndexer,_freeInputUnfixedText);
+            _freeInputCharHundler = new FreeInputCharHundler(_charJudger, _freeInputUnfixedText);
+            _freeInputGateModel = new FreeInputFlowTimeModel(new FreeInputGateModel(_freeInputUnfixedText), _globalFlagRegisterer);
 
-            _freeInputProcessor = new FreeInputProcessor(_decide,_cancel,_keyStroke,_disposablePure);
+            _freeInputProcessor = new FreeInputProcessor(_decide, _cancel, _keyStroke, _disposablePure);
             _freeInputInputView = new FreeInputInputView(_viewFactory, _freeInputProcessor);
             _freeInputEntererView = new FreeInputEntererView(_freeInputTextDisplayView, _freeInputInputView);
 
@@ -63,9 +68,9 @@ namespace gaw241201.Presenter
 
         }
 
-        public IPlayerNameInputtableModel Get()
+        public IFreeInputGateModel GetGateModel()
         {
-            return _freeInputPlayerNameModel;
+            return _freeInputGateModel;
         }
     }
 }

@@ -12,23 +12,19 @@ namespace gaw241201
 {
     public class FreeInputSettingNameModel :IFreeInputGateModel, IPlayerNameInputtableModel
     {
-        FreeInputUnfixedText _freeInputUnfixedText;
+        FreeInputGateModel _underlying;
         IGlobalFlagProvider _globalFlagProvider;
         IGlobalFlagRegisterer _globalFlagRegisterer;
 
-        public FreeInputSettingNameModel(FreeInputUnfixedText freeInputUnfixedText, IGlobalFlagProvider globalFlagProvider, IGlobalFlagRegisterer globalFlagRegisterer)
+        public FreeInputSettingNameModel(FreeInputGateModel freeInputUnfixedText, IGlobalFlagProvider globalFlagProvider, IGlobalFlagRegisterer globalFlagRegisterer)
         {
-            _freeInputUnfixedText = freeInputUnfixedText;
+            _underlying = freeInputUnfixedText;
             _globalFlagProvider = globalFlagProvider;
             _globalFlagRegisterer = globalFlagRegisterer;
         }
 
-
-        Subject<Unit> _entered = new Subject<Unit>();
-        public IObservable<Unit> Entered => _entered;
-
-        Subject<Unit> _exited = new Subject<Unit>();
-        public IObservable<Unit> Exited => _exited;
+        public IObservable<Unit> Entered => _underlying.Entered;
+        public IObservable<Unit> Exited => _underlying.Exited;
 
 
 
@@ -36,19 +32,16 @@ namespace gaw241201
         public void Enter()
         {
             Log.Comment("ProfileItemPlayerName‚ÉEnter");
-
-            _freeInputUnfixedText.Enter(_globalFlagProvider.GetFlag(FlagConst.Key.Name));
-            _entered.OnNext(Unit.Default);
+            _underlying.InitialText = _globalFlagProvider.GetFlag(FlagConst.Key.Name);
+            _underlying.Enter();
         }
 
 
 
         public void Decide(string text)
         {
-            Log.DebugLog("ProfileItemPlayeName:Decide");
             _globalFlagRegisterer.RegisterFlag(FlagConst.Key.Name, text);
-            _freeInputUnfixedText.Exit();
-            _exited.OnNext(Unit.Default);
+            _underlying.Decide(text);
         }
     }
 }

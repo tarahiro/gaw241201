@@ -12,10 +12,10 @@ namespace gaw241201
 {
     public class FreeInputCharHundler : IFreeInputCharHundler
     {
-        ICharInputJudger _judger;
+        ICharJudger _judger;
         FreeInputUnfixedText _unfixedText;
 
-        public FreeInputCharHundler(ICharInputJudger judger, FreeInputUnfixedText unfixedText)
+        public FreeInputCharHundler(ICharJudger judger, FreeInputUnfixedText unfixedText)
         {
             _judger = judger;
             _unfixedText = unfixedText;
@@ -35,9 +35,8 @@ namespace gaw241201
             }
         }
 
-        public void End()
+        public void TryEnd()
         {
-            Log.DebugLog("FreeInputCharHundler: Enter");
             _ended.OnNext(_unfixedText.GetUnfixedText());
         }
 
