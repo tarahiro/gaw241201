@@ -6,7 +6,7 @@ using Tarahiro;
 
 namespace gaw241201.Presenter
 {
-    public class SettingFreeInputFactory
+    public class FreeInputFactorySetting
     {
         FreeInputIndexer _freeInputIndexer;
         PlayerNameInputJudger _playerNameInputJudger;
@@ -23,7 +23,7 @@ namespace gaw241201.Presenter
         FreeInputInputView _freeInputInputView;
 
         FreeInputProcessor _freeInputProcessor;
-        FreeInputPlayerNameModel _freeInputPlayerNameModel;
+        FreeInputSettingNameModel _freeInputPlayerNameModel;
 
         [Inject] IGlobalFlagProvider _globalFlagProvider;
         [Inject] IGlobalFlagRegisterer _globalFlagRegisterer;
@@ -44,7 +44,7 @@ namespace gaw241201.Presenter
             _playerNameInputJudger = new PlayerNameInputJudger(_freeInputIndexer);
             _freeInputUnfixedText = new FreeInputUnfixedText(_freeInputIndexer);
             _freeInputCharHundler = new FreeInputCharHundler(_playerNameInputJudger, _freeInputUnfixedText);
-            _freeInputPlayerNameModel = new FreeInputPlayerNameModel(_freeInputUnfixedText, _globalFlagProvider, _globalFlagRegisterer);
+            _freeInputPlayerNameModel = new FreeInputSettingNameModel(_freeInputUnfixedText, _globalFlagProvider, _globalFlagRegisterer);
 
             _freeInputProcessor = new FreeInputProcessor(_decide,_cancel,_keyStroke,_disposablePure);
             _freeInputInputView = new FreeInputInputView(_viewFactory, _freeInputProcessor);

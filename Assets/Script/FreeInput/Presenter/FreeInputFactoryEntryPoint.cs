@@ -13,12 +13,14 @@ using VContainer.Unity;
 
 namespace gaw241201.Presenter
 {
-    public class SettingFreeInputEntryPoint : IInitializable
+    public class FreeInputFactoryEntryPoint : IInitializable
     {
-        [Inject] SettingFreeInputFactory _factory;
+        [Inject] FreeInputFactorySetting _factorySetting;
+        [Inject] FreeInputFactoryName _factoryName;
         public void Initialize()
         {
-            _factory.Initialize();
+            _factorySetting.Initialize();
+            _factoryName.Initialize();
         }
     }
 }

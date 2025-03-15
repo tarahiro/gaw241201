@@ -16,7 +16,7 @@ namespace gaw241201
     {
         SettingMenuItemModelPlayerName _playerName;
         [Inject] SettingUiMenuItemEmptyFactory _emptyFactory;
-        [Inject] SettingFreeInputFactory _freeInputFactory;
+        [Inject] FreeInputFactorySetting _freeInputFactory;
 
 
         public List<IUiMenuItemModel> ProvideList()

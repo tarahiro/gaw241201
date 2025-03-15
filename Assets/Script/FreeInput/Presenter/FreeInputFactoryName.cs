@@ -6,15 +6,15 @@ using Tarahiro;
 
 namespace gaw241201.Presenter
 {
-    public class NameFreeInputFactory
+    public class FreeInputFactoryName
     {
         FreeInputIndexer _freeInputIndexer;
         PlayerNameInputJudger _playerNameInputJudger;
         FreeInputUnfixedText _freeInputUnfixedText;
         IFreeInputCharHundler _freeInputCharHundler;
-        IFreeInputGateModel _freeInputGateModel => _freeInputPlayerNameModel;
+        IFreeInputGateModel _freeInputGateModel => _freeInputModel;
 
-        [Inject] SettingFreeInputDisplayView _freeInputTextDisplayView;
+        [Inject] FreeInputDisplayFlowView _freeInputTextDisplayView;
         IFreeInputProcessor _iFreeInputProcessor => _freeInputProcessor;
         FreeInputEntererView _freeInputEntererView;
 
@@ -23,9 +23,8 @@ namespace gaw241201.Presenter
         FreeInputInputView _freeInputInputView;
 
         FreeInputProcessor _freeInputProcessor;
-        FreeInputPlayerNameModel _freeInputPlayerNameModel;
+        FreeInputFlowNameModel _freeInputModel;
 
-        [Inject] IGlobalFlagProvider _globalFlagProvider;
         [Inject] IGlobalFlagRegisterer _globalFlagRegisterer;
 
         [Inject] InputExecutorCommand _decide;
@@ -44,7 +43,7 @@ namespace gaw241201.Presenter
             _playerNameInputJudger = new PlayerNameInputJudger(_freeInputIndexer);
             _freeInputUnfixedText = new FreeInputUnfixedText(_freeInputIndexer);
             _freeInputCharHundler = new FreeInputCharHundler(_playerNameInputJudger, _freeInputUnfixedText);
-            _freeInputPlayerNameModel = new FreeInputPlayerNameModel(_freeInputUnfixedText, _globalFlagProvider, _globalFlagRegisterer);
+            _freeInputModel = new FreeInputFlowNameModel(_freeInputUnfixedText, _globalFlagRegisterer);
 
             _freeInputProcessor = new FreeInputProcessor(_decide,_cancel,_keyStroke,_disposablePure);
             _freeInputInputView = new FreeInputInputView(_viewFactory, _freeInputProcessor);

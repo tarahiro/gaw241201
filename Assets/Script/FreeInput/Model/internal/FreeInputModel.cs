@@ -41,11 +41,17 @@ namespace gaw241201
             await UniTask.WaitUntil(() =>  _isEnded);
         }
 
-        public void EndFlow(string value)
+        public void EndFlow_Fake(string value)
         {
             Log.Comment("FreeInput‚ÌI—¹‚ğŒŸ’mBvalue = " + value);
             _valueRegisterer.Register(EnumUtil.KeyToType<FreeInputConst.FreeInputCategory> (_bodyId), value);
             _isEnded = true;
+        }
+
+        public void EndFlow()
+        { 
+            _isEnded = true;
+
         }
 
         public void ForceEndFlow()

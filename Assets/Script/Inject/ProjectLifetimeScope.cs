@@ -286,6 +286,7 @@ namespace gaw241201.Inject
         }
 
         [SerializeField] SettingFreeInputDisplayView _freeInputTextDisplayViewSetting;
+        [SerializeField] FreeInputDisplayFlowView _freeInputDisplayFlowView;
 
         void ConfigureFreeInput(IContainerBuilder builder)
         {
@@ -299,12 +300,14 @@ namespace gaw241201.Inject
             builder.Register<FlowViewArgsFactory>(Lifetime.Singleton).AsSelf();
 
             builder.Register<FreeInputFlowModelProvider>(Lifetime.Singleton).AsImplementedInterfaces();
-            builder.Register<NameFreeInputFactory>(Lifetime.Singleton).AsSelf().AsImplementedInterfaces();
 
-            builder.Register<SettingFreeInputFactory>(Lifetime.Singleton)
+            builder.Register<FreeInputFactorySetting>(Lifetime.Singleton)
                 .WithParameter<SettingFreeInputDisplayView>(_freeInputTextDisplayViewSetting)
                 .AsSelf();
+
+            builder.Register<FreeInputFactoryName>(Lifetime.Singleton).WithParameter(_freeInputDisplayFlowView).AsSelf();
             builder.RegisterEntryPoint<FreeInputPresenter>();
+            builder.RegisterEntryPoint<FreeInputFactoryEntryPoint>();
         }
 
         void ConfigureConversation(IContainerBuilder builder)
@@ -510,7 +513,6 @@ namespace gaw241201.Inject
             builder.Register<SettingEventCatcher>(Lifetime.Singleton).AsSelf();
             builder.Register<IndexVariantHundlerSettings>(Lifetime.Singleton).AsSelf();
 
-            builder.RegisterEntryPoint<SettingFreeInputEntryPoint>();
             builder.RegisterEntryPoint<SettingPresenter>();
             builder.RegisterEntryPoint<SettingPresenterCoreFactory>();
         }

@@ -13,7 +13,7 @@ namespace gaw241201.Inject
 {
     public class FreeInputFlowModelProvider : IFreeInputSwithcerModel
     {
-        [Inject] NameFreeInputFactory _nameFreeInputFactory;
+        [Inject] FreeInputFactoryName _nameFreeInputFactory;
         public IFreeInputGateModel GetGateModel(FreeInputConst.FreeInputCategory category)
         {
             switch (category)

@@ -10,16 +10,14 @@ using VContainer.Unity;
 
 namespace gaw241201
 {
-    public class FreeInputPlayerNameModel :IFreeInputGateModel, IPlayerNameInputtableModel
+    public class FreeInputFlowNameModel : IFreeInputGateModel
     {
         FreeInputUnfixedText _freeInputUnfixedText;
-        IGlobalFlagProvider _globalFlagProvider;
         IGlobalFlagRegisterer _globalFlagRegisterer;
 
-        public FreeInputPlayerNameModel(FreeInputUnfixedText freeInputUnfixedText, IGlobalFlagProvider globalFlagProvider, IGlobalFlagRegisterer globalFlagRegisterer)
+        public FreeInputFlowNameModel(FreeInputUnfixedText freeInputUnfixedText, IGlobalFlagRegisterer globalFlagRegisterer)
         {
             _freeInputUnfixedText = freeInputUnfixedText;
-            _globalFlagProvider = globalFlagProvider;
             _globalFlagRegisterer = globalFlagRegisterer;
         }
 
@@ -37,8 +35,7 @@ namespace gaw241201
         {
             Log.Comment("ProfileItemPlayerName‚ÉEnter");
 
-            //Initializer‚ð•ÊƒNƒ‰ƒX‚É•ª‚¯‚é‚©‚à
-            _freeInputUnfixedText.Enter(_globalFlagProvider.GetFlag(FlagConst.Key.Name));
+            _freeInputUnfixedText.Enter("");
             _entered.OnNext(Unit.Default);
         }
 
