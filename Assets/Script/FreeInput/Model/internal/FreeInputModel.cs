@@ -31,6 +31,7 @@ namespace gaw241201
 
             var model = _switcherModel.GetGateModel(EnumUtil.KeyToType<FreeInputConst.FreeInputCategory>(bodyId));
             model.Enter();
+            RegisterCanceled(_cts.Token, model);
 
             await UniTask.WaitUntil(() =>  _isEnded);
         }
@@ -45,5 +46,15 @@ namespace gaw241201
         {
             _cts.Cancel();
         }
+
+        
+#if ENABLE_DEBUG
+        void RegisterCanceled(CancellationToken ct, IFreeInputGateFlowModel _model )
+        {
+            _cts.Token.Register(() => _model.ForceDecide());
+
+        }
+#endif
+        
     }
 }

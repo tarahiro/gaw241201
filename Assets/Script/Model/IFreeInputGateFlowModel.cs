@@ -10,9 +10,8 @@ using VContainer.Unity;
 
 namespace gaw241201
 {
-    public interface IFreeInputSwithcerModel
+    public interface IFreeInputGateFlowModel : IFreeInputGateModel
     {
-        public IFreeInputGateFlowModel GetGateModel(FreeInputConst.FreeInputCategory category);
-        public List<IFreeInputGateFlowModel> _freeInputGateModelList();
+        public void ForceDecide();
     }
 }

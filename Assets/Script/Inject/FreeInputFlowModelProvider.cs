@@ -16,7 +16,7 @@ namespace gaw241201.Inject
         [Inject] FreeInputFactoryName _nameFreeInputFactory;
         [Inject] FreeInputFactoryTime _timeFreeInputFactory;
         [Inject] FreeInputFactoryBirth _birthFreeInputFactory;
-        public IFreeInputGateModel GetGateModel(FreeInputConst.FreeInputCategory category)
+        public IFreeInputGateFlowModel GetGateModel(FreeInputConst.FreeInputCategory category)
         {
             switch (category)
             {
@@ -35,9 +35,9 @@ namespace gaw241201.Inject
             }
         }
 
-        public List<IFreeInputGateModel> _freeInputGateModelList()
+        public List<IFreeInputGateFlowModel> _freeInputGateModelList()
         {
-            List<IFreeInputGateModel> _returnable = new List<IFreeInputGateModel>();
+            List<IFreeInputGateFlowModel> _returnable = new List<IFreeInputGateFlowModel>();
 
             _returnable.Add(_nameFreeInputFactory.GetGateModel());
             _returnable.Add(_timeFreeInputFactory.GetGateModel());

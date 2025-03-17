@@ -19,7 +19,7 @@ namespace gaw241201.Presenter
         FreeInputUnfixedText _freeInputUnfixedText;
         IEndableJudger _endableJudger;
         IFreeInputCharHundler _freeInputCharHundler;
-        IFreeInputGateModel _freeInputGateModel;
+        IFreeInputGateFlowModel _freeInputGateModel;
 
         [Inject] FreeInputEndableDisplayView _freeInputEndableDisplayView;
         [Inject] FreeInputDisplayFlowView _freeInputTextDisplayView;
@@ -51,7 +51,7 @@ namespace gaw241201.Presenter
             _freeInputCharHundler = new FreeInputCharHundlerRestrictedEnd(
                 new FreeInputCharHundler(_charJudger, _freeInputUnfixedText),
                 _endableJudger);
-            _freeInputGateModel = new FreeInputFlowTimeModel(new FreeInputGateModel(_freeInputUnfixedText), _globalFlagRegisterer);
+            _freeInputGateModel = new FreeInputModelRegisterFlag(new FreeInputGateModel(_freeInputUnfixedText), _globalFlagRegisterer, FlagConst.Key.InputTime);
 
             _freeInputProcessor = new FreeInputProcessor(_decide, _cancel, _keyStroke, _disposablePure);
             _freeInputInputView = new FreeInputInputView(_viewFactory, _freeInputProcessor);
@@ -75,7 +75,7 @@ namespace gaw241201.Presenter
 
         }
 
-        public IFreeInputGateModel GetGateModel()
+        public IFreeInputGateFlowModel GetGateModel()
         {
             return _freeInputGateModel;
         }

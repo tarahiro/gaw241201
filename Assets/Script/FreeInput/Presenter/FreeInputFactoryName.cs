@@ -14,7 +14,7 @@ namespace gaw241201.Presenter
         FreeInputUnfixedText _freeInputUnfixedText;
         IEndableJudger _endableJudger;
         IFreeInputCharHundler _freeInputCharHundler;
-        IFreeInputGateModel _freeInputGateModel;
+        IFreeInputGateFlowModel _freeInputGateModel;
 
 
         //View
@@ -51,7 +51,7 @@ namespace gaw241201.Presenter
             _endableJudger = new EnterableJudgerByLength(_freeInputUnfixedText, FlagConst.c_NameMinLength);
             _freeInputCharHundler = new FreeInputCharHundlerRestrictedEnd(new FreeInputCharHundler(_playerNameInputJudger, _freeInputUnfixedText),
                 _endableJudger);
-            _freeInputGateModel = new FreeInputFlowNameModel(new FreeInputGateModel(_freeInputUnfixedText), _globalFlagRegisterer);
+            _freeInputGateModel = new FreeInputModelRegisterFlag(new FreeInputGateModel(_freeInputUnfixedText), _globalFlagRegisterer, FlagConst.Key.Name);
 
             //View
             _freeInputProcessor = new FreeInputProcessor(_decide,_cancel,_keyStroke,_disposablePure);
@@ -78,7 +78,7 @@ namespace gaw241201.Presenter
 
         }
 
-        public IFreeInputGateModel GetGateModel()
+        public IFreeInputGateFlowModel GetGateModel()
         {
             return _freeInputGateModel;
         }
