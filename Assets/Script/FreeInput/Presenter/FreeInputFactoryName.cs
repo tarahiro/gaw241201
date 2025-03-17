@@ -8,6 +8,7 @@ namespace gaw241201.Presenter
 {
     public class FreeInputFactoryName
     {
+        //Model
         FreeInputIndexer _freeInputIndexer;
         CharJudgerName _playerNameInputJudger;
         FreeInputUnfixedText _freeInputUnfixedText;
@@ -15,17 +16,21 @@ namespace gaw241201.Presenter
         IFreeInputCharHundler _freeInputCharHundler;
         IFreeInputGateModel _freeInputGateModel;
 
+
+        //View
         [Inject] FreeInputEndableDisplayView _freeInputEndableDisplayView;
         [Inject] FreeInputDisplayFlowView _freeInputTextDisplayView;
         IFreeInputProcessor _iFreeInputProcessor => _freeInputProcessor;
         FreeInputEntererView _freeInputEntererView;
 
-        IFreeInputPresenter _freeInputPresenterCore;
 
+        //Presenter
+        IFreeInputPresenterCore _freeInputPresenterCore;
+
+
+        //Presenter‚É‚Í–³ŠÖŒW‚Ì‚à‚Ì
         FreeInputInputView _freeInputInputView;
-
         FreeInputProcessor _freeInputProcessor;
-
 
         [Inject] IGlobalFlagRegisterer _globalFlagRegisterer;
 
@@ -39,6 +44,7 @@ namespace gaw241201.Presenter
 
         public void Initialize()
         { 
+            //Model
             _freeInputIndexer = new FreeInputIndexer(FlagConst.c_NameMaxLength);
             _playerNameInputJudger = new CharJudgerName(_freeInputIndexer);
             _freeInputUnfixedText = new FreeInputUnfixedText(_freeInputIndexer);
@@ -47,10 +53,12 @@ namespace gaw241201.Presenter
                 _endableJudger);
             _freeInputGateModel = new FreeInputFlowNameModel(new FreeInputGateModel(_freeInputUnfixedText), _globalFlagRegisterer);
 
+            //View
             _freeInputProcessor = new FreeInputProcessor(_decide,_cancel,_keyStroke,_disposablePure);
             _freeInputInputView = new FreeInputInputView(_viewFactory, _freeInputProcessor);
             _freeInputEntererView = new FreeInputEntererView(_freeInputTextDisplayView, _freeInputInputView);
 
+            //Presenter
             _freeInputPresenterCore = new FreeInputPresenterRestrictedEnter(
                 
                 new FreeInputPresenterCore(

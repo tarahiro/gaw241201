@@ -20,7 +20,7 @@ namespace gaw241201.Presenter
         IFreeInputProcessor _iFreeInputProcessor => _freeInputProcessor;
         FreeInputEntererView _freeInputEntererView;
 
-        IFreeInputPresenter _freeInputPresenterCore;
+        IFreeInputPresenterCore _freeInputPresenterCore;
 
         FreeInputInputView _freeInputInputView;
 

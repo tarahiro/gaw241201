@@ -15,6 +15,7 @@ namespace gaw241201.Inject
     {
         [Inject] FreeInputFactoryName _nameFreeInputFactory;
         [Inject] FreeInputFactoryTime _timeFreeInputFactory;
+        [Inject] FreeInputFactoryBirth _birthFreeInputFactory;
         public IFreeInputGateModel GetGateModel(FreeInputConst.FreeInputCategory category)
         {
             switch (category)
@@ -24,6 +25,9 @@ namespace gaw241201.Inject
 
                 case FreeInputConst.FreeInputCategory.TimeFreeInput:
                     return _timeFreeInputFactory.GetGateModel();
+
+                case FreeInputConst.FreeInputCategory.BirthDateFreeInput:
+                    return _birthFreeInputFactory.GetGateModel();
 
                 default:
                     Log.DebugAssert("–¢‘Î‰ž‚Ìcategory‚Å‚·:" + category);
@@ -37,6 +41,7 @@ namespace gaw241201.Inject
 
             _returnable.Add(_nameFreeInputFactory.GetGateModel());
             _returnable.Add(_timeFreeInputFactory.GetGateModel());
+            _returnable.Add(_birthFreeInputFactory.GetGateModel());
 
             return _returnable;
         }

@@ -25,8 +25,11 @@ namespace gaw241201
 
         string _unfixedText;
 
+        bool _isTextFixed = true;
+
         public void Enter(string text)
         {
+            _isTextFixed = false;
             _unfixedText = text;
             Log.DebugAssert(_indexer != null);
             Log.DebugAssert(_unfixedText != null);
@@ -42,7 +45,12 @@ namespace gaw241201
         {
             _unfixedText += c;
             _indexer.TryNextFocus();
-            _updated.OnNext(new FreeInputArgs(c, _unfixedText.Length - 1));
+
+            //本来はFixした時点で関係クラスをすべて消すべき
+            if (!_isTextFixed)
+            {
+                _updated.OnNext(new FreeInputArgs(c, _unfixedText.Length - 1));
+            }
         }
 
         public void DeleteCharacter()
@@ -64,6 +72,7 @@ namespace gaw241201
         {
             _unfixedText = "";
             _indexer.Exit();
+            _isTextFixed = true;
         }
     }
 }

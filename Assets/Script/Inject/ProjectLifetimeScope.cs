@@ -286,13 +286,14 @@ namespace gaw241201.Inject
         }
 
         [SerializeField] SettingFreeInputDisplayView _freeInputTextDisplayViewSetting;
-
         [SerializeField] FreeInputDisplayFlowView _freeInputDisplayFlowNameView;
         [SerializeField] FreeInputDisplayFlowView _freeInputDisplayFlowTimeView;
+        [SerializeField] FreeInputDisplayFlowView _freeInputDisplayFlowBirthView;
 
         [SerializeField] FreeInputEndableDisplayView _freeInputEndableDisplaySettingView;
         [SerializeField] FreeInputEndableDisplayView _freeInputEndableDisplayNameView;
         [SerializeField] FreeInputEndableDisplayView _freeInputEndableDisplayTimeView;
+        [SerializeField] FreeInputEndableDisplayView _freeInputEndableDisplayBirthView;
 
         void ConfigureFreeInput(IContainerBuilder builder)
         {
@@ -315,9 +316,14 @@ namespace gaw241201.Inject
             builder.Register<FreeInputFactoryName>(Lifetime.Singleton)
                 .WithParameter(_freeInputDisplayFlowNameView)
                 .WithParameter(_freeInputEndableDisplayNameView).AsSelf();
+
             builder.Register<FreeInputFactoryTime>(Lifetime.Singleton)
                 .WithParameter(_freeInputDisplayFlowTimeView)
                 .WithParameter(_freeInputEndableDisplayTimeView)
+                .AsSelf();
+            builder.Register<FreeInputFactoryBirth>(Lifetime.Singleton)
+                .WithParameter(_freeInputDisplayFlowBirthView)
+                .WithParameter(_freeInputEndableDisplayBirthView)
                 .AsSelf();
             builder.RegisterEntryPoint<FreeInputPresenter>();
             builder.RegisterEntryPoint<FreeInputFactoryEntryPoint>();

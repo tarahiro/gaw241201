@@ -13,20 +13,20 @@ using VContainer.Unity;
 
 namespace gaw241201.Presenter
 {
-    public class FreeInputPresenterCore : IFreeInputPresenter
+    public class FreeInputPresenterCore : IFreeInputPresenterCore
     {
         //Model
-        internal FreeInputIndexer _freeInputIndexer;
-        internal FreeInputUnfixedText _freeInputUnfixedText;
-        internal IFreeInputCharHundler _freeInputCharHundler;
-        internal IFreeInputGateModel _freeInputGateModel;
+        public FreeInputIndexer FreeInputIndexer { get; private set; }
+        public FreeInputUnfixedText FreeInputUnfixedText { get; private set; }
+        public IFreeInputCharHundler FreeInputCharHundler { get; private set; }
+        public IFreeInputGateModel FreeInputGateModel { get; private set; }
 
         //View
-        internal IFreeInputDisplayView _freeInputTextDisplayView;
-        internal IFreeInputProcessor _freeInputProcessor;
-        internal FreeInputEntererView _freeInputEntererView;
+        public IFreeInputDisplayView FreeInputTextDisplayView { get; private set; }
+        public IFreeInputProcessor FreeInputProcessor { get; private set; }
+        public FreeInputEntererView FreeInputEntererView { get; private set; }
 
-        internal IDisposablePure _disposable;
+        public IDisposablePure Disposable { get; private set; }
 
         [Inject]
         public FreeInputPresenterCore(
@@ -39,32 +39,32 @@ namespace gaw241201.Presenter
             FreeInputEntererView freeInputEntererView, 
             IDisposablePure disposable)
         {
-            _freeInputUnfixedText = freeInputUnfixedText;
-            _freeInputIndexer = freeInputIndexer;
-            _freeInputProcessor = freeInputProcessor;
-            _freeInputCharHundler = freeInputCharHundler;
-            _freeInputGateModel = stringDecidable;
-            _freeInputTextDisplayView = playerNameDisplayView;
-            _freeInputEntererView = freeInputEntererView;
-            _disposable = disposable;
+            FreeInputUnfixedText = freeInputUnfixedText;
+            FreeInputIndexer = freeInputIndexer;
+            FreeInputProcessor = freeInputProcessor;
+            FreeInputCharHundler = freeInputCharHundler;
+            FreeInputGateModel = stringDecidable;
+            FreeInputTextDisplayView = playerNameDisplayView;
+            FreeInputEntererView = freeInputEntererView;
+            Disposable = disposable;
         }
 
         public void ActivatePresenter()
         {
             //開始、終了処理
-            _freeInputGateModel.Entered.Subscribe(_ => _freeInputEntererView.Enter().Forget()).AddTo(_disposable);
-            _freeInputGateModel.Exited.Subscribe(_ => _freeInputEntererView.Exit()).AddTo(_disposable);
+            FreeInputGateModel.Entered.Subscribe(_ => FreeInputEntererView.Enter().Forget()).AddTo(Disposable);
+            FreeInputGateModel.Exited.Subscribe(_ => FreeInputEntererView.Exit()).AddTo(Disposable);
 
-            _freeInputUnfixedText.Updated.Subscribe(_freeInputTextDisplayView.SetCharacter).AddTo(_disposable);
-            _freeInputIndexer.Focused.Subscribe(_freeInputTextDisplayView.Focus).AddTo(_disposable);
-            _freeInputIndexer.Unfocused.Subscribe(_freeInputTextDisplayView.Unfocus).AddTo(_disposable);
+            FreeInputUnfixedText.Updated.Subscribe(FreeInputTextDisplayView.SetCharacter).AddTo(Disposable);
+            FreeInputIndexer.Focused.Subscribe(FreeInputTextDisplayView.Focus).AddTo(Disposable);
+            FreeInputIndexer.Unfocused.Subscribe(FreeInputTextDisplayView.Unfocus).AddTo(Disposable);
 
             //InputProcessorとCharHundlerの紐づけ
-            _freeInputProcessor.KeyEntered.Subscribe(_freeInputCharHundler.CatchChar).AddTo(_disposable);
-            _freeInputProcessor.Decided.Subscribe(_ => _freeInputCharHundler.TryEnd()).AddTo(_disposable);
-            _freeInputProcessor.Deleted.Subscribe(_ => _freeInputCharHundler.Delete()).AddTo(_disposable);
+            FreeInputProcessor.KeyEntered.Subscribe(FreeInputCharHundler.CatchChar).AddTo(Disposable);
+            FreeInputProcessor.Decided.Subscribe(_ => FreeInputCharHundler.TryEnd()).AddTo(Disposable);
+            FreeInputProcessor.Deleted.Subscribe(_ => FreeInputCharHundler.Delete()).AddTo(Disposable);
 
-            _freeInputCharHundler.Ended.Subscribe(_freeInputGateModel.Decide).AddTo(_disposable);
+            FreeInputCharHundler.Ended.Subscribe(FreeInputGateModel.Decide).AddTo(Disposable);
 
         }
     }

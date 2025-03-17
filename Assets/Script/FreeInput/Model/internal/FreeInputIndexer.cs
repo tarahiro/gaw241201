@@ -26,9 +26,14 @@ namespace gaw241201
         Subject<int> _unfocused = new Subject<int>();
         public IObservable<int> Unfocused => _unfocused;
 
+        Subject<int> _updateIndex = new Subject<int>();
+        public IObservable<int> UpdateIndex => _updateIndex;
+
+        bool _isTextFixed = true;
 
         public void Enter(int textLength)
         {
+            _isTextFixed = false;
             if (textLength < _maxLength)
             {
                 UpdateFocus(false, textLength);
@@ -40,33 +45,48 @@ namespace gaw241201
             }
         }
 
-        public int Index { get; private set; } = 0;
+        int _index = 0;
+
+        public int Index
+        {
+            get { return _index; }
+            private set
+            {
+                _index = value;
+                _updateIndex.OnNext(_index);
+            }
+        }
 
         public bool IsFocusExist { get; private set; } = true;
 
         void UpdateFocus(bool unfocusOption, int index)
         {
-            if (unfocusOption)
+            //本来はFixした時点で関係クラスをすべて消すべき
+            if (!_isTextFixed)
             {
-                _unfocused.OnNext(Index);
-            }
+                if (unfocusOption)
+                {
+                    _unfocused.OnNext(Index);
+                }
 
-            if (index < _maxLength)
-            {
-                Index = index;
+                if (index < _maxLength)
+                {
+                    Index = index;
+                }
+                else
+                {
+                    Index = _maxLength - 1;
+                }
+                IsFocusExist = true;
+                _focused.OnNext(Index);
             }
-            else
-            {
-               Index = _maxLength - 1;
-            }
-            IsFocusExist = true;
-            _focused.OnNext(Index);
         }
 
         public void Exit()
         {
             _unfocused.OnNext(Index);
             Index = 0;
+            _isTextFixed = true;
         }
 
         public bool TryNextFocus()
