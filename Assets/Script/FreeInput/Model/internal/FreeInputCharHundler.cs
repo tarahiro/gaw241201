@@ -37,6 +37,11 @@ namespace gaw241201
 
         public void TryEnd()
         {
+            ForceEnd();
+        }
+
+        public void ForceEnd() 
+        { 
             _ended.OnNext(_unfixedText.GetUnfixedText());
         }
 

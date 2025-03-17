@@ -13,8 +13,6 @@ namespace gaw241201
 {
     public class FreeInputModel : ICategoryEnterableModel
     {
-        [Inject] FreeInputValueRegisterer _valueRegisterer;
-        [Inject] FlowViewArgsFactory _flowArgsFactory;
         [Inject] IFreeInputSwithcerModel _switcherModel;
 
         bool _isEnded = false;
@@ -31,21 +29,10 @@ namespace gaw241201
             _bodyId = bodyId;
             _isEnded = false;
 
-            /*
-            _entered.OnNext(_flowArgsFactory.Create(bodyId,_cts.Token));
-            */
-
             var model = _switcherModel.GetGateModel(EnumUtil.KeyToType<FreeInputConst.FreeInputCategory>(bodyId));
             model.Enter();
 
             await UniTask.WaitUntil(() =>  _isEnded);
-        }
-
-        public void EndFlow_Fake(string value)
-        {
-            Log.Comment("FreeInputÇÃèIóπÇåüímÅBvalue = " + value);
-            _valueRegisterer.Register(EnumUtil.KeyToType<FreeInputConst.FreeInputCategory> (_bodyId), value);
-            _isEnded = true;
         }
 
         public void EndFlow()

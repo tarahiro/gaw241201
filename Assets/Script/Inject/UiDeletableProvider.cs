@@ -13,7 +13,6 @@ namespace gaw241201
 {
     public class UiDeletableProvider : IUiDeletableProvider
     {
-        [Inject] DeleteFreeInputUi _deleteFreeInputUi;
         [Inject] DeleteClickInputUi _deleteClickInputUi;
 
         //FlowConst‚ÅŒÄ‚Ô‚Ì‚ª“KØ‚Å‚È‚­‚È‚é‰Â”\«‚ª‚ ‚é
@@ -21,8 +20,6 @@ namespace gaw241201
         {
             switch (category)
             {
-                case FlowConst.Category.FreeInput:  return _deleteFreeInputUi;
-
                 case FlowConst.Category.ClickInput: return _deleteClickInputUi;
 
                 default:

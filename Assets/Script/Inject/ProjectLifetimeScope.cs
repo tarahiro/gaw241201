@@ -300,10 +300,6 @@ namespace gaw241201.Inject
 
             //FreeInput
             builder.Register<FreeInputModel>(Lifetime.Singleton).AsSelf();
-            builder.RegisterComponentInHierarchy<FreeInputView>().AsSelf();
-            builder.Register<FreeInputValueRegisterer>(Lifetime.Singleton).AsSelf();
-            builder.Register<DeleteFreeInputUi>(Lifetime.Singleton).AsSelf().AsImplementedInterfaces();
-            builder.Register<FreeInputView>(Lifetime.Singleton).AsImplementedInterfaces();
             builder.Register<FlowViewArgsFactory>(Lifetime.Singleton).AsSelf();
 
             builder.Register<FreeInputFlowModelProvider>(Lifetime.Singleton).AsImplementedInterfaces();

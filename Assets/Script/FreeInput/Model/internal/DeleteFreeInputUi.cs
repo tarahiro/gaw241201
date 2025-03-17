@@ -10,8 +10,10 @@ using VContainer.Unity;
 
 namespace gaw241201
 {
+    /*
     public class DeleteFreeInputUi : IUiDeletable
     {
+
         Subject<Unit> _uiDeleted = new Subject<Unit>();
         public IObservable<Unit> UiDeleted => _uiDeleted;
 
@@ -22,4 +24,5 @@ namespace gaw241201
         }
 
     }
+    */
 }

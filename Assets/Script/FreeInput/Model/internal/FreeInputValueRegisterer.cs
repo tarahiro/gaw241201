@@ -9,7 +9,7 @@ using VContainer;
 using VContainer.Unity;
 
 namespace gaw241201
-{
+{/*
     public class FreeInputValueRegisterer
     {
         [Inject] IGlobalFlagRegisterer _flagRegisterer;
@@ -37,4 +37,5 @@ namespace gaw241201
             }
         }
     }
+    */
 }

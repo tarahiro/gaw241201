@@ -32,6 +32,8 @@ namespace gaw241201
             }
         }
 
+        public void ForceEnd() => _underlying.ForceEnd();
+
         public void Delete() => _underlying.Delete();
 
     }

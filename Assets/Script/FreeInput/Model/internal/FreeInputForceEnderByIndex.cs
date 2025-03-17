@@ -31,7 +31,7 @@ namespace gaw241201
 
             if(_index >= _indexCriteria && _prevIndex < _indexCriteria)
             {
-                _freeInputCharHundler.TryEnd();
+                _freeInputCharHundler.ForceEnd();
             }
         }
 

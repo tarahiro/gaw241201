@@ -14,6 +14,7 @@ namespace gaw241201
     {
         public void CatchChar(char c);
         public void TryEnd();
+        public void ForceEnd();
         public void Delete();
         public IObservable<string> Ended { get; }
     }

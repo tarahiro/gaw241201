@@ -57,8 +57,8 @@ namespace gaw241201.Presenter
             _freeInputUnfixedText = new FreeInputUnfixedText(_freeInputIndexer);
             _playerNameInputJudger = new CharJudgerBirth(_freeInputIndexer, _freeInputUnfixedText);
             _endableJudger = new EnterableJudgerByLength(_freeInputUnfixedText, FlagConst.c_BirthMaxLength);
-            _freeInputCharHundler = new FreeInputCharHundler(_playerNameInputJudger, _freeInputUnfixedText);
-            _freeInputGateModel = new FreeInputFlowNameModel(new FreeInputGateModel(_freeInputUnfixedText), _globalFlagRegisterer);
+            _freeInputCharHundler = new FreeInputCharHundlerRestrictedEnd(new FreeInputCharHundler(_playerNameInputJudger, _freeInputUnfixedText), _endableJudger);
+            _freeInputGateModel = new FreeInputFlowBirthModel(new FreeInputGateModel(_freeInputUnfixedText), _globalFlagRegisterer);
             _freeInputForceEnderByIndex = new FreeInputForceEnderByIndex(_freeInputCharHundler, 7);
 
             //View
@@ -84,6 +84,7 @@ namespace gaw241201.Presenter
 
                     _endableJudger,
                     _freeInputEndableDisplayView),
+
                 _freeInputForceEnderByIndex);
 
             _freeInputPresenterCore.ActivatePresenter();
