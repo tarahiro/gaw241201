@@ -34,8 +34,8 @@ namespace gaw241201.Presenter
         {
             _underlying._freeInputUnfixedText.Updated.Subscribe(_ => _enterableJudger.CatchUpdate())
                 .AddTo(_disposable);
+            _underlying._freeInputGateModel.Exited.Subscribe(_ => _enterableJudger.OnExit());
             _enterableJudger.EnterableStateUpdated.Subscribe(x => _endableDisplayView.Endable(x)).AddTo(_disposable);
-
             _underlying.ActivatePresenter();
         }
     }

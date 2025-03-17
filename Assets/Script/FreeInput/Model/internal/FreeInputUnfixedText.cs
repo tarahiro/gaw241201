@@ -31,6 +31,11 @@ namespace gaw241201
             Log.DebugAssert(_indexer != null);
             Log.DebugAssert(_unfixedText != null);
             _indexer.Enter(text.Length);
+
+            for (int i = 0; i < _unfixedText.Length; i++)
+            {
+                _updated.OnNext(new FreeInputArgs(_unfixedText[i], i));
+            }
         }
 
         public void AddCharacter(char c)

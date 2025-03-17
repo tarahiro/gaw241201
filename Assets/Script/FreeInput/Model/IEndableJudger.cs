@@ -17,5 +17,7 @@ namespace gaw241201
         public void CatchUpdate();
 
         IObservable<bool> EnterableStateUpdated { get; }
+
+        public void OnExit();
     }
 }

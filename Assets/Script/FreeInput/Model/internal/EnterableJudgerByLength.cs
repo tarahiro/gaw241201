@@ -45,5 +45,24 @@ namespace gaw241201
             }
 
         }
+
+        public void OnExit()
+        {
+            Initialize();
+        }
+
+        void Initialize()
+        {
+            bool b = IsEnterable();
+            _length = 0;
+            if (b)
+            {
+                _enterabled.OnNext(false);
+            }
+            /*
+            //æ‚ÉUnfixedText‚ª‰Šú‰»‚³‚ê‚Ä‚¢‚é‚±‚Æ‚ğˆÃ–Ù“I‚É‰¼’è‚µ‚Ä‚¢‚¢‚È‚çA‚±‚ê‚Å‚æ‚©‚Á‚½
+            CatchUpdate();
+            */
+        }
     }
 }
