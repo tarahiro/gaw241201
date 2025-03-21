@@ -20,11 +20,12 @@ namespace gaw241201
 
         [Inject] DeviceModelKeyReplacer modelFake;
         [Inject] DeviceModelLowerKeyReplacer modelLowerKeyReplacer;
-        [Inject] DeviceTypeFake typeFake;
+        [Inject] DeviceType typeFake;
         [Inject] GraphicsName graphicsName;
         [Inject] GraphicsType GraphicsType;
         [Inject] GraphicsVendor GraphicsVendor;
         [Inject] GraphicsVersion GraphicsVersion;
+        [Inject] VersionKeyReplacer _version;
 
         public IKeyReplacer GetKeyReplacer(FlagConst.MessageKey key)
         {
@@ -62,6 +63,9 @@ namespace gaw241201
 
                 case FlagConst.MessageKey.GraphicsDeviceVersion:
                     return GraphicsVersion;
+
+                case FlagConst.MessageKey.Version:
+                    return _version;
 
 
                 default:

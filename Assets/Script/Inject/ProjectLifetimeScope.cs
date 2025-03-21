@@ -1,6 +1,7 @@
 using VContainer;
 using VContainer.Unity;
 using Tarahiro;
+using gaw241201;
 using gaw241201.Model.MasterData;
 using gaw241201.Presenter;
 using gaw241201.View;
@@ -109,6 +110,7 @@ namespace gaw241201.Inject
             builder.Register<RowKeyReplacer>(Lifetime.Singleton).AsSelf();
             builder.Register<DeviceLowerKeyReplacer>(Lifetime.Singleton).AsSelf();
             builder.Register<DeviceKeyReplacer>(Lifetime.Singleton).AsSelf();
+            builder.Register<VersionKeyReplacer>(Lifetime.Singleton).AsSelf();
             builder.Register<LoopInitializer>(Lifetime.Singleton).AsImplementedInterfaces();
             builder.Register<FlowSwitchPublisher>(Lifetime.Singleton).AsSelf();
 
@@ -343,7 +345,7 @@ namespace gaw241201.Inject
 
             builder.Register<DeviceModelKeyReplacer>(Lifetime.Singleton).AsSelf();
             builder.Register<DeviceModelLowerKeyReplacer>(Lifetime.Singleton).AsSelf();
-            builder.Register<DeviceTypeFake>(Lifetime.Singleton).AsSelf();
+            builder.Register<DeviceType>(Lifetime.Singleton).AsSelf();
             builder.Register<GraphicsName>(Lifetime.Singleton).AsSelf();
             builder.Register<GraphicsType>(Lifetime.Singleton).AsSelf();
             builder.Register<GraphicsVendor>(Lifetime.Singleton).AsSelf();
@@ -486,7 +488,7 @@ namespace gaw241201.Inject
             builder.Register<LanguageMessageMasterDataProvider>(Lifetime.Singleton).AsImplementedInterfaces();
 
             builder.RegisterEntryPoint<LanguageInitializer>(Lifetime.Singleton).AsSelf().WithParameter<LanguageConst.AvailableLanguage>(_initialParameter.Language);
-            builder.RegisterEntryPoint<EmbeddedTextPresenter>(Lifetime.Singleton).AsSelf();
+            builder.RegisterEntryPoint<EmbeddedTextPresenterReplacedKey>(Lifetime.Singleton).AsSelf();
 
             builder.RegisterMessagePipe();
 

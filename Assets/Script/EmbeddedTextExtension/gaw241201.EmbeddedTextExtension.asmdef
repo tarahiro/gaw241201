@@ -1,14 +1,16 @@
 {
-    "name": "gaw241201.Presenter",
-    "rootNamespace": "gaw241201.Presenter",
+    "name": "gaw241201.EmbeddedTextExtension",
+    "rootNamespace": "gaw241201.EmbeddedTextExtension",
     "references": [
         "GUID:0be27b54e10228743974a8df3dda3639",
         "GUID:560b04d1a97f54a4e82edc0cbbb69285",
         "GUID:f51ebe6a0ceec4240a699833d6309b23",
         "GUID:b0214a6008ed146ff8f122a6a9c2f6cc",
+        "GUID:869514e06b3584849b8d2f9c50ea21a8",
         "GUID:80730cb7ec02f6544bfe954bc465eae7",
         "GUID:eab71cc59d3b71e409a49c0566585d57",
-        "GUID:869514e06b3584849b8d2f9c50ea21a8",
+        "GUID:c0fcfd9d8206a764ab9c7d2e5867477d",
+        "GUID:2b376bc4e0c0de9458a5b8d53277afed",
         "GUID:64cbcf6d652e0d0448f2c3b7a11e763f",
         "GUID:08b38f39e2d9e594389b7a4cf4c2c338"
     ],

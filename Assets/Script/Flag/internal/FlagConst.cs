@@ -50,7 +50,8 @@ namespace gaw241201
             GraphicsDeciveName,
             GraphicsDeviceType,
             GraphicsDeviceVendor,
-            GraphicsDeviceVersion
+            GraphicsDeviceVersion,
+            Version,
         }
 
         public enum ContainableMasterKey

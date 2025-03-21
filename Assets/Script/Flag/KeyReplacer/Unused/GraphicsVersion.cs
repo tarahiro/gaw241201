@@ -11,14 +11,12 @@ using static gaw241201.DayTimeUtil;
 
 namespace gaw241201
 {
-    public class DeviceTypeFake : IKeyReplacer
+    public class GraphicsVersion: IKeyReplacer
     {
         [Inject] IGlobalFlagProvider _flagProvider;
         public string ReplaceTo(FlagConst.MessageKey key)
         {
-            Log.Comment("DeviceèëÇ´ä∑Ç¶");
-
-            return SystemInfo.deviceType.ToString();
+            return SystemInfo.graphicsDeviceVersion;
         }
     }
 }

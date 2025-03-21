@@ -426,8 +426,8 @@
    <Row ss:AutoFitHeight="0">
     <Cell ss:StyleID="s67" ss:Formula="=ROW()-5"><Data ss:Type="Number">40</Data></Cell>
     <Cell ss:StyleID="s67"><Data ss:Type="String">FakeVersion</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">ver0.23</Data></Cell>
-    <Cell ss:StyleID="s67"><Data ss:Type="String">ver0.23</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">ver&lt;key=Version&gt;</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="String">ver&lt;key=Version&gt;</Data></Cell>
    </Row>
   </Table>
   <WorksheetOptions xmlns="urn:schemas-microsoft-com:office:excel">
@@ -446,7 +446,7 @@
    <TabColorIndex>13</TabColorIndex>
    <Zoom>115</Zoom>
    <Selected/>
-   <TopRowVisible>20</TopRowVisible>
+   <TopRowVisible>29</TopRowVisible>
    <Panes>
     <Pane>
      <Number>3</Number>
@@ -458,21 +458,7 @@
    <ProtectScenarios>False</ProtectScenarios>
   </WorksheetOptions>
   <ConditionalFormatting xmlns="urn:schemas-microsoft-com:office:excel">
-   <Range>R6C3:R7C3,R7C1:R7C2,R5C4:R7C4,R5C1:R6C3,R8C1:R43C4</Range>
-   <Condition>
-    <Value1>LEN(TRIM(RC))=0</Value1>
-    <Format Style='background:#E7E6E6'/>
-   </Condition>
-  </ConditionalFormatting>
-  <ConditionalFormatting xmlns="urn:schemas-microsoft-com:office:excel">
-   <Range>R44C1:R44C4</Range>
-   <Condition>
-    <Value1>LEN(TRIM(RC))=0</Value1>
-    <Format Style='background:#E7E6E6'/>
-   </Condition>
-  </ConditionalFormatting>
-  <ConditionalFormatting xmlns="urn:schemas-microsoft-com:office:excel">
-   <Range>R45C1:R45C4</Range>
+   <Range>R6C3:R7C3,R7C1:R7C2,R5C4:R7C4,R5C1:R6C3,R8C1:R45C4</Range>
    <Condition>
     <Value1>LEN(TRIM(RC))=0</Value1>
     <Format Style='background:#E7E6E6'/>
