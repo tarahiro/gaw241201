@@ -11,13 +11,13 @@ using System.Threading;
 
 namespace gaw241201.View
 {
-    public class RestartInputView : IInputView
+    public class UiMenuInputView : IInputView
     {
         IInputView _inputView;
         public IObservable<bool> BlockEnabled => _inputView.BlockEnabled;
 
         [Inject]
-        public RestartInputView(InputViewFactory factory, RestartInputProcessor skillInputProcessor)
+        public UiMenuInputView(InputViewFactory factory, UiMenuInputProcessor skillInputProcessor)
         {
             _inputView = factory.Create(skillInputProcessor, ActiveLayerConst.InputLayer.GameOver);
         }

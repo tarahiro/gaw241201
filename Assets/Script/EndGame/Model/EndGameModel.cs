@@ -20,7 +20,7 @@ namespace gaw241201
         public async UniTask EnterFlow(string bodyId)
         {
             Log.DebugLog(bodyId + "ŠJŽn");
-            _coreProvider.Provide(EnumUtil.KeyToType<EndGameConst.Key>(bodyId)).Enter(EnumUtil.KeyToType<EndGameConst.Key>(bodyId));
+            _coreProvider.Provide(EnumUtil.KeyToType<EndGameConst.Key>(bodyId)).MenuStart();
         }
 
 

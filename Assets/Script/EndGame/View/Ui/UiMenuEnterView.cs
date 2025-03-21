@@ -10,9 +10,9 @@ using VContainer.Unity;
 
 namespace gaw241201.View
 {
-    public class RestartEnterView : MonoBehaviour, IMenuRootView
+    public class UiMenuEnterView : MonoBehaviour, IMenuRootView
     {
-        [Inject] RestartInputView _inputView;
+        [Inject] UiMenuInputView _inputView;
 
         [SerializeField] GameObject _root;
 

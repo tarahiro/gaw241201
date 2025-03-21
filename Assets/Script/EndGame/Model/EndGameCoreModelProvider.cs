@@ -12,17 +12,17 @@ namespace gaw241201
 {
     public class EndGameCoreModelProvider
     {
-        [Inject] EndGameCore_Old _oldModel;
-        [Inject] MenuRootModelRestart _menuModel;
+        [Inject] IEndGameUiGateModelProvider _provider;
 
-        public IEndGameCore Provide(EndGameConst.Key bodyId)
+        public IMenuModelGate Provide(EndGameConst.Key bodyId)
         {
             switch (bodyId)
             {
                 case EndGameConst.Key.GameOverExhibition:
-                    return _menuModel;
+                    return _provider.GetGateModel();
+
                 default:
-                    return _oldModel;
+                    return null;
             }
 
         }

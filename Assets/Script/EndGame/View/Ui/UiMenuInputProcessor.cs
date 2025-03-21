@@ -10,9 +10,9 @@ using VContainer.Unity;
 
 namespace gaw241201.View
 {
-    public class RestartInputProcessor : IInputProcessable, IIndexerInputtableView
+    public class UiMenuInputProcessor : IInputProcessable, IIndexerInputtableView
     {
-        [Inject] IndexVariantHundlerRestart _indexVariantHundler;
+        [Inject] IndexVariantHundlerUiMenu _indexVariantHundler;
 
 
         Subject<Unit> _decided = new Subject<Unit>();
@@ -29,25 +29,29 @@ namespace gaw241201.View
         public IObservable<int> IndexerMoved => _indexerMoved;
 
         [Inject]
-        public RestartInputProcessor(InputExecutorCommand executor,
-            InputExecutorDiscreteDirectionVertical vertical,
+        public UiMenuInputProcessor(
+            IndexVariantHundlerUiMenu indexVariantHundler,
+        InputExecutorCommand executor,
+            InputExecutorDiscreteDirectionVertical executorVertical,
+
             IDisposablePure disposable)
         {
+            _indexVariantHundler = indexVariantHundler;
+
             _executorList = new List<IInputExecutor>();
 
             executor.Initialize(InputConst.Command.Decide);
             executor.Inputted.Subscribe(_ => _decided.OnNext(default));
             _executorList.Add(executor);
 
-            vertical.Inputted.Subscribe(x =>
+            executorVertical.Inputted.Subscribe(x =>
             _indexerMoved.OnNext(_indexVariantHundler.IndexVariant(Vector2Int.up * x))).AddTo(disposable);
-            _executorList.Add(vertical);
+            _executorList.Add(executorVertical);
 
         }
 
         public void ProcessInput()
         {
-
             foreach (var item in _executorList)
             {
                 item.TryExecute();

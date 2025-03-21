@@ -10,28 +10,20 @@ using VContainer.Unity;
 
 namespace gaw241201
 {
-    public class MenuRootModelRestart : IMenuModelStartable, IMenuModelEndable, IEndGameCore
+    public class MenuRootModelRestart : IMenuModelGate, IEndGameCore
     {
-        [Inject] UiMenuModelRestart _menuModel;
+        IMenuModelGate _underlying;
 
-        public void Enter(EndGameConst.Key bodyId)
+        public MenuRootModelRestart(IMenuModelGate menuModelGate)
         {
-            MenuStart();
+            _underlying = menuModelGate;
         }
 
-        public void MenuStart()
-        {
-            _started.OnNext(Unit.Default);
-            _menuModel.Enter();
-        }
-        Subject<Unit> _started = new Subject<Unit>();
-        public IObservable<Unit> Started => _started;
+        public void Enter(EndGameConst.Key bodyId) => MenuStart();
 
-        public void MenuEnd()
-        {
-            _exited.OnNext(Unit.Default);
-        }
-        Subject<Unit> _exited = new Subject<Unit>();
-        public IObservable<Unit> MenuEnded => _exited;
+        public void MenuStart() => _underlying.MenuStart();
+        public IObservable<Unit> Started => _underlying.Started;
+        public void MenuEnd() => _underlying.MenuEnd();
+        public IObservable<Unit> MenuEnded => _underlying.MenuEnded;
     }
 }

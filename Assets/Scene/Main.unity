@@ -3979,7 +3979,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 640123324}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fb9b16151f8d84843b28abc71547e98b, type: 3}
+  m_Script: {fileID: 11500000, guid: 2fef924392f757f458a1013452b68075, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _cursor: {fileID: 622467047}
@@ -4762,7 +4762,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 785926743}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a18de43e1b6b3df4fa15ea8db58dd99c, type: 3}
+  m_Script: {fileID: 11500000, guid: 4d3873fc455279a428daf8a3ad95d391, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _root: {fileID: 2107461998}
@@ -8089,6 +8089,8 @@ MonoBehaviour:
   - {fileID: 2609348719531866388, guid: a77cb6aba6efe5c47971e7a556381a9c, type: 3}
   - {fileID: 542683574}
   _initialParameter: {fileID: 11400000, guid: 8299974e608a00e4f86cd4a67525f62d, type: 2}
+  _enterViewGameover: {fileID: 785926745}
+  _menuViewGameOver: {fileID: 640123326}
   _freeInputTextDisplayViewSetting: {fileID: 1105243866}
   _freeInputDisplayFlowNameView: {fileID: 1325404454}
   _freeInputDisplayFlowTimeView: {fileID: 2077604482}

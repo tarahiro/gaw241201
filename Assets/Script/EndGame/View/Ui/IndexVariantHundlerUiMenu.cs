@@ -10,9 +10,14 @@ using VContainer.Unity;
 
 namespace gaw241201.View
 {
-    public class IndexVariantHundlerRestart : IIndexVariantHundler
+    public class IndexVariantHundlerUiMenu : IIndexVariantHundler
     {
-        [Inject] RestartMenuView _menuView;
+        MenuView _menuView;
+
+        public IndexVariantHundlerUiMenu(MenuView menuView)
+        {
+            _menuView = menuView;
+        }
 
         public int IndexVariant(Vector2Int cursorDirection)
         {

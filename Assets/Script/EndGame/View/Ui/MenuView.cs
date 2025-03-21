@@ -11,7 +11,7 @@ using VContainer.Unity;
 
 namespace gaw241201.View
 {
-    public class RestartMenuView : MonoBehaviour, IMenuView
+    public class MenuView : MonoBehaviour, IMenuView
     {
         [SerializeField] List<IMenuItemView> _itemViewList;
         int _index = 0;

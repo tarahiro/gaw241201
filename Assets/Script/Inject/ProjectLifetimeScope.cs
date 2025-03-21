@@ -173,6 +173,9 @@ namespace gaw241201.Inject
 
         }
 
+        [SerializeField] UiMenuEnterView _enterViewGameover;
+        [SerializeField] MenuView _menuViewGameOver;
+
         void ConfigureEndGame(IContainerBuilder builder)
         {
             //EndGame
@@ -189,17 +192,24 @@ namespace gaw241201.Inject
             builder.Register<EndGameCoreModelProvider>(Lifetime.Singleton).AsSelf();
             builder.Register<SceneExecutor>(Lifetime.Singleton).AsSelf();
 
+            /*
             builder.Register<MenuRootModelRestart>(Lifetime.Singleton).AsSelf();
-            builder.RegisterComponentInHierarchy<RestartEnterView>().AsSelf();
-            builder.Register<RestartInputView>(Lifetime.Singleton).AsSelf();
-            builder.Register<RestartInputProcessor>(Lifetime.Singleton).AsSelf();
+            builder.RegisterComponentInHierarchy<UiMenuEnterView>().AsSelf();
+            builder.Register<UiMenuInputView>(Lifetime.Singleton).AsSelf();
+            builder.Register<UiMenuInputProcessor>(Lifetime.Singleton).AsSelf();
             builder.Register<UiMenuModelRestart>(Lifetime.Singleton).AsSelf();
-            builder.RegisterComponentInHierarchy<RestartMenuView>().AsSelf();
-            builder.Register<IndexVariantHundlerRestart>(Lifetime.Singleton).AsSelf();
+            builder.RegisterComponentInHierarchy<MenuView>().AsSelf();
+            */
+            builder.Register<IndexVariantHundlerUiMenu>(Lifetime.Singleton).AsSelf();
             builder.Register<MenuItemRestartProvider>(Lifetime.Singleton).AsImplementedInterfaces();
 
 
-            builder.RegisterEntryPoint<PresenterCoreFactoryGameOver>();
+            builder.Register<PresenterCoreFactoryGameOver>(Lifetime.Singleton)
+                .AsSelf()
+                .As<IEndGameUiGateModelProvider>()
+                .WithParameter(_enterViewGameover)
+                .WithParameter(_menuViewGameOver);
+            builder.RegisterEntryPoint<EndGamePresenterEntryPoint>();
             builder.RegisterEntryPoint<EndGamePresenter>();
 
         }
