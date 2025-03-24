@@ -12,14 +12,20 @@ namespace gaw241201
 {
     public class MenuItemRestartProvider : IMenuItemRestartProvider
     {
-        [Inject] SceneExecutor _executor;
+        SceneExecutor _executor;
+        public MenuItemRestartProvider(SceneExecutor executor)
+        {
+            _executor = executor;
+        }
+
         public IUiMenuItemModel Provide(int index)
         {
             switch (index)
             {
                 case 0: return new UiMenuItemModelRestart(_executor);
 
-                    case 1: return new UiMenuItemModelToTitle(_executor);
+                case 1: return new UiMenuItemModelToTitle(_executor);
+                
                 default:
                     Log.DebugAssert("–³Œø‚Èindex‚Å‚·:" + index);
                     return null;

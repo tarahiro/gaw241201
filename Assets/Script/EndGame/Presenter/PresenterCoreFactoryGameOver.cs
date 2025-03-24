@@ -22,15 +22,20 @@ namespace gaw241201
         [Inject] IDisposablePure _disposable;
 
 
+        UiMenuInputView _inputView;
+        [Inject] SceneExecutor _executor;
+        [Inject] InputViewFactory _inputViewFactory;
         [Inject] InputExecutorCommand _decide;
         [Inject] InputExecutorDiscreteDirectionVertical _vertical;
 
         public void Create()
         {
-            _menuModel = new UiMenuModelRestart(new MenuItemRestartProvider());
+            _menuModel = new UiMenuModelRestart(new MenuItemRestartProvider(_executor));
             _achieveModel = new MenuRootModelRestart(new MenuModelGate(_menuModel));
 
             _inputProcessor = new UiMenuInputProcessor(new IndexVariantHundlerUiMenu(_menuView), _decide, _vertical, _disposable);
+            _inputView = new UiMenuInputView(_inputViewFactory, _inputProcessor);
+            _rootView.Construct(_inputView);
 
 
             var presenter = new UiPresenterCore(

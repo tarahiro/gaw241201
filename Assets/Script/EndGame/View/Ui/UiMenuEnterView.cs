@@ -16,6 +16,11 @@ namespace gaw241201.View
 
         [SerializeField] GameObject _root;
 
+        public void Construct(UiMenuInputView inputView)
+        {
+            _inputView = inputView;
+        }
+
         void Start()
         {
             _root.SetActive(false);

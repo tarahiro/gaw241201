@@ -19,7 +19,7 @@ namespace gaw241201.View
 
         Vector3 c_offset = 50f * Vector3.left;
 
-        void Start()
+        void Awake()
         {
             _itemViewList = GetComponentsInChildren<IMenuItemView>(true).ToList();
         }
