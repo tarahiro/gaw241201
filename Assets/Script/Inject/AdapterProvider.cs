@@ -1,4 +1,5 @@
 using Cysharp.Threading.Tasks;
+using gaw241201.Presenter;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -12,7 +13,7 @@ namespace gaw241201
 {
     public class AdapterProvider : IInitialAdapterProvider, IMainLoopEntererProvider
     {
-        [Inject] TitleEnterModel _toTitle;
+        [Inject] PresenterCoreFactoryTitle _presenterCoreFactoryTitle;
         [Inject] FakeLoopStarter _initialLoopStarter;
         [Inject] MainLoopStarter _mainLoopStarter;
         [Inject] IGlobalFlagProvider _globalFlagProvider;
@@ -29,7 +30,7 @@ namespace gaw241201
             }
             else
             {
-                return _toTitle;
+                return _presenterCoreFactoryTitle.Provide();
             }
         }
 

@@ -15,7 +15,7 @@ namespace gaw241201.View
     {
         IInputView _inputView;
 
-        public FreeInputInputView(InputViewFactory factory, FreeInputProcessor settingMenuInputProcessor)
+        public FreeInputInputView(IInputViewFactory factory, FreeInputProcessor settingMenuInputProcessor)
         {
             _inputView = factory.Create(settingMenuInputProcessor, ActiveLayerConst.InputLayer.SettingMenuItem);
         }

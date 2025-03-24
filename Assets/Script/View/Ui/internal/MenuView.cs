@@ -13,7 +13,7 @@ namespace gaw241201.View
 {
     public class MenuView : MonoBehaviour, IMenuView
     {
-        [SerializeField] List<IMenuItemView> _itemViewList;
+        List<IMenuItemView> _itemViewList;
         int _index = 0;
         [SerializeField] GameObject _cursor;
 
@@ -21,7 +21,14 @@ namespace gaw241201.View
 
         void Awake()
         {
+            Log.DebugLog("Žæ“¾");
             _itemViewList = GetComponentsInChildren<IMenuItemView>(true).ToList();
+            Log.DebugLog("Žæ“¾Š®—¹ Count: " + Count);
+        }
+
+        void Update()
+        {
+            Log.DebugLog("Žæ“¾Š®—¹ Count: " + Count);
         }
 
         public async UniTask Decide(int index)

@@ -11,7 +11,7 @@ using VContainer.Unity;
 
 namespace gaw241201.View
 {
-    public class InputViewFactory
+    public class InputViewFactory : IInputViewFactory
     {
         [Inject] ISubscriber<ActiveLayerConst.InputLayer> _subscriber;
         [Inject] ActiveLayerPublisher _publisher;

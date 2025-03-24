@@ -17,7 +17,7 @@ namespace gaw241201.View
         public IObservable<bool> BlockEnabled => _inputView.BlockEnabled;
 
         [Inject]
-        public SkillIndexInputView(InputViewFactory factory, SkillInputProcessor skillInputProcessor)
+        public SkillIndexInputView(IInputViewFactory factory, SkillInputProcessor skillInputProcessor)
         {
             _inputView = factory.Create(skillInputProcessor, ActiveLayerConst.InputLayer.Skill);
         }

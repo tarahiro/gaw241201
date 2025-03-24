@@ -17,7 +17,7 @@ namespace gaw241201.View
 
         public IObservable<bool> BlockEnabled => _inputView.BlockEnabled;
         [Inject]
-        public SelectInputInputView(InputViewFactory factory, SelectInputProcessor settingMenuInputProcessor)
+        public SelectInputInputView(IInputViewFactory factory, SelectInputProcessor settingMenuInputProcessor)
         {
             _inputView = factory.Create(settingMenuInputProcessor, ActiveLayerConst.InputLayer.SettingMenu);
         }

@@ -34,7 +34,7 @@ namespace gaw241201.Presenter
         [Inject] InputExecutorCommand _cancel;
         [Inject] InputExecutorKeyStroke _keyStroke;
 
-        [Inject] InputViewFactory _viewFactory;
+        [Inject] IInputViewFactory _viewFactory;
 
         [Inject] IDisposablePure _disposablePure;
 

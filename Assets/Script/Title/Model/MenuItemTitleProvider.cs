@@ -10,22 +10,17 @@ using VContainer.Unity;
 
 namespace gaw241201
 {
-    public class MenuItemRestartProvider : IMenuItemProvider
+    public class MenuItemTitleProvider : IMenuItemProvider
     {
-        SceneExecutor _executor;
-        public MenuItemRestartProvider(SceneExecutor executor)
-        {
-            _executor = executor;
-        }
 
         public IUiMenuItemModel Provide(int index)
         {
             switch (index)
             {
-                case 0: return new UiMenuItemModelRestart(_executor);
+                case 0: return new UiMenuItemModelGameStart();
 
-                case 1: return new UiMenuItemModelToTitle(_executor);
-                
+                case 1: return new UiMenuItemModelLanguage();
+
                 default:
                     Log.DebugAssert("–³Œø‚Èindex‚Å‚·:" + index);
                     return null;

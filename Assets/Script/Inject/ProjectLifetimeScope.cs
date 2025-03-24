@@ -90,13 +90,23 @@ namespace gaw241201.Inject
 
         }
 
+        [SerializeField] UiMenuEnterView _enterViewTitle;
+        [SerializeField] MenuView _menuViewTitle;
+
         void ConfigureTitle(IContainerBuilder builder)
         {
-            builder.Register<TitleEnterModel>(Lifetime.Singleton).AsSelf();
+           // builder.Register<MenuRootModelTitle>(Lifetime.Singleton).AsSelf();
             builder.Register<TitleExitModel>(Lifetime.Singleton).AsSelf();
             builder.RegisterComponentInHierarchy<TitleRootView>().AsSelf();
             builder.Register<TitleInputView>(Lifetime.Singleton).AsSelf();
 
+            builder.Register<MenuItemTitleProvider>(Lifetime.Singleton).AsSelf();
+            builder.Register<PresenterCoreFactoryTitle>(Lifetime.Singleton)
+                .WithParameter(_enterViewTitle)
+                .WithParameter(_menuViewTitle)
+                .AsSelf();
+
+            builder.RegisterEntryPoint<TitlePresenterEntryPoint>();
             builder.RegisterEntryPoint<TitlePresenter>();
         }
 
@@ -192,21 +202,14 @@ namespace gaw241201.Inject
             builder.Register<EndGameCoreModelProvider>(Lifetime.Singleton).AsSelf();
             builder.Register<SceneExecutor>(Lifetime.Singleton).AsSelf();
 
-            /*
-            builder.Register<MenuRootModelRestart>(Lifetime.Singleton).AsSelf();
-            builder.RegisterComponentInHierarchy<UiMenuEnterView>().AsSelf();
-            builder.Register<UiMenuInputView>(Lifetime.Singleton).AsSelf();
-            builder.Register<UiMenuInputProcessor>(Lifetime.Singleton).AsSelf();
-            builder.Register<UiMenuModelRestart>(Lifetime.Singleton).AsSelf();
-            builder.RegisterComponentInHierarchy<MenuView>().AsSelf();
-            */
             builder.Register<IndexVariantHundlerUiMenu>(Lifetime.Singleton).AsSelf();
-            builder.Register<MenuItemRestartProvider>(Lifetime.Singleton).AsImplementedInterfaces();
-
+            builder.Register<UiMenuModelFactory>(Lifetime.Singleton).AsSelf();
+            builder.Register<MenuItemRestartProvider>(Lifetime.Singleton).AsSelf();
+            builder.Register<UiMenuInputProcessorFactory>(Lifetime.Singleton).AsImplementedInterfaces();
 
             builder.Register<PresenterCoreFactoryGameOver>(Lifetime.Singleton)
                 .AsSelf()
-                .As<IEndGameUiGateModelProvider>()
+                .As<IEndGameUiGateModelFactory>()
                 .WithParameter(_enterViewGameover)
                 .WithParameter(_menuViewGameOver);
             builder.RegisterEntryPoint<EndGamePresenterEntryPoint>();
@@ -551,7 +554,7 @@ namespace gaw241201.Inject
         void ConfigureInput(IContainerBuilder builder)
         {
             builder.Register<ActiveLayerPublisher>(Lifetime.Singleton).AsSelf();
-            builder.Register<InputViewFactory>(Lifetime.Singleton).AsSelf();
+            builder.Register<InputViewFactory>(Lifetime.Singleton).AsImplementedInterfaces();
 
             builder.Register<InputExecutorCommand>(Lifetime.Transient).AsSelf();
             builder.Register<InputExecutorDiscreteDirectionHorizontal>(Lifetime.Transient).AsSelf();

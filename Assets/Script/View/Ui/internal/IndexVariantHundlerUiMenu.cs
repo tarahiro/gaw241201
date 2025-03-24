@@ -21,6 +21,7 @@ namespace gaw241201.View
 
         public int IndexVariant(Vector2Int cursorDirection)
         {
+            Log.DebugAssert(_menuView != null);
             int index = _menuView.Index;
             if (cursorDirection.y == 1)
             {
@@ -33,6 +34,7 @@ namespace gaw241201.View
             }
 
 
+            Log.DebugAssert(_menuView != null);
             if (index < 0) index = _menuView.Count - 1;
             if (index >= _menuView.Count) index = 0;
 

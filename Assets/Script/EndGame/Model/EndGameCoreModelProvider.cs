@@ -12,7 +12,7 @@ namespace gaw241201
 {
     public class EndGameCoreModelProvider
     {
-        [Inject] IEndGameUiGateModelProvider _provider;
+        [Inject] IEndGameUiGateModelFactory _provider;
 
         public IMenuModelGate Provide(EndGameConst.Key bodyId)
         {

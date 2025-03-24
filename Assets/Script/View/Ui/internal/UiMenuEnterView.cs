@@ -12,11 +12,11 @@ namespace gaw241201.View
 {
     public class UiMenuEnterView : MonoBehaviour, IMenuRootView
     {
-        [Inject] UiMenuInputView _inputView;
+        [Inject] IInputView _inputView;
 
         [SerializeField] GameObject _root;
 
-        public void Construct(UiMenuInputView inputView)
+        public void Construct(IInputView inputView)
         {
             _inputView = inputView;
         }

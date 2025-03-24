@@ -8,12 +8,10 @@ using UnityEngine;
 using VContainer;
 using VContainer.Unity;
 
-namespace gaw241201
+namespace gaw241201.View
 {
-    public interface IMenuItemRestartProvider
+    public interface IInputViewFactory
     {
-        public IUiMenuItemModel Provide(int index);
-
-        public int Count { get; }
+        public IInputView Create(IInputProcessable inputProcessable, ActiveLayerConst.InputLayer layer);
     }
 }

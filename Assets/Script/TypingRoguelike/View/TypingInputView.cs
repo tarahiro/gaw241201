@@ -17,7 +17,7 @@ namespace gaw241201.View
         public IObservable<bool> BlockEnabled => _inputView.BlockEnabled;
 
         [Inject]
-        public TypingInputView(InputViewFactory factory, TypingInputProcessor settingMenuInputProcessor)
+        public TypingInputView(IInputViewFactory factory, TypingInputProcessor settingMenuInputProcessor)
         {
             _inputView = factory.Create(settingMenuInputProcessor, ActiveLayerConst.InputLayer.Typing);
         }

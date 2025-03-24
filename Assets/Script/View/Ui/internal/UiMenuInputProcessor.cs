@@ -12,7 +12,7 @@ namespace gaw241201.View
 {
     public class UiMenuInputProcessor : IInputProcessable, IIndexerInputtableView
     {
-        [Inject] IndexVariantHundlerUiMenu _indexVariantHundler;
+        IIndexVariantHundler _indexVariantHundler;
 
 
         Subject<Unit> _decided = new Subject<Unit>();
@@ -30,10 +30,9 @@ namespace gaw241201.View
 
         [Inject]
         public UiMenuInputProcessor(
-            IndexVariantHundlerUiMenu indexVariantHundler,
-        InputExecutorCommand executor,
+            IIndexVariantHundler indexVariantHundler,
+            InputExecutorCommand executor,
             InputExecutorDiscreteDirectionVertical executorVertical,
-
             IDisposablePure disposable)
         {
             _indexVariantHundler = indexVariantHundler;

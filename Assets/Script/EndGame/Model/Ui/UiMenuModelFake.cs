@@ -10,16 +10,15 @@ using VContainer.Unity;
 
 namespace gaw241201
 {
-    public class UiMenuModelRestart : IUiMenuModel
+    public class UiMenuModelFake : IUiMenuModel
     {
         IUiMenuModel _uiMenuModel;
 
         [Inject]
-        public UiMenuModelRestart(IMenuItemRestartProvider provider)
+        public UiMenuModelFake(IMenuItemProvider provider)
         {
             List<IUiMenuItemModel> list = new List<IUiMenuItemModel>();
 
-            //‚±‚±‚Åprovider“™‚ğg‚Á‚Äitem’Ç‰ÁB‚Ç‚Ì‚æ‚¤‚É’Ç‰Á‚·‚é‚©‚ÍproviderŸ‘æ
             for(int i = 0; i < provider.Count; i++)
             {
                 list.Add(provider.Provide(i));

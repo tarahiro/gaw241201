@@ -14,7 +14,7 @@ namespace gaw241201.Presenter
 {
     public class TitlePresenter : IPostInitializable
     {
-        [Inject] TitleEnterModel _enterModel;
+      //  [Inject] MenuRootModelTitle _enterModel;
         [Inject] TitleExitModel _exitModel;
         [Inject] TitleRootView _rootView;
         [Inject] TitleInputView _inputView;
@@ -23,9 +23,9 @@ namespace gaw241201.Presenter
 
         public void PostInitialize()
         {
-            _enterModel.Entered.Subscribe(_ =>  _rootView.Enter().Forget()).AddTo(_compositeDisposable);
-            _inputView.Decided.Subscribe(_ => _exitModel.ExitTitle()).AddTo(_compositeDisposable);
-            _exitModel.Exited.Subscribe(_ => _rootView.Exit().Forget()).AddTo(_compositeDisposable);
+           // _enterModel.Entered.Subscribe(_ =>  _rootView.Enter().Forget()).AddTo(_compositeDisposable);
+           // _inputView.Decided.Subscribe(_ => _exitModel.ExitTitle()).AddTo(_compositeDisposable);
+           // _exitModel.Exited.Subscribe(_ => _rootView.Exit().Forget()).AddTo(_compositeDisposable);
         }
     }
 }

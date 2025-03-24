@@ -1,4 +1,5 @@
 using Cysharp.Threading.Tasks;
+using gaw241201.Model;
 using gaw241201.View;
 using System;
 using System.Collections;
@@ -10,13 +11,13 @@ using VContainer;
 using VContainer.Unity;
 
 
-namespace gaw241201
+namespace gaw241201.Presenter
 {
-    public class PresenterCoreFactoryGameOver :  IEndGameUiGateModelFactory
+    public class PresenterCoreFactoryTitle
     {
 
         //UiPresenter‚É•K—v‚È‚à‚Ì
-        IMenuModelGate _gateModel;
+        IMenuModelGate _gateModel => _menuRootModelTitle;
         IUiMenuModel _menuModel;
         [Inject] UiMenuEnterView _enterView;
         UiMenuInputProcessor _inputProcessor;
@@ -28,15 +29,15 @@ namespace gaw241201
         [Inject] IInputViewFactory _inputViewFactory;
         [Inject] IUiMenuInputProcessorFactory _inputProcessorFactory;
 
+        MenuRootModelTitle _menuRootModelTitle;
         [Inject] UiMenuModelFactory _menuModelFactory;
-        [Inject] MenuItemRestartProvider _menuItemRestartProvider;
-
+        [Inject] MenuItemTitleProvider _menuItemTitleProvider;
         public void Create()
         {
-            _menuModel = _menuModelFactory.Create(_menuItemRestartProvider);
-            _gateModel = new MenuRootModelRestart(new MenuModelGate(_menuModel));
+            _menuModel = _menuModelFactory.Create(_menuItemTitleProvider);
+            _menuRootModelTitle = new MenuRootModelTitle(new MenuModelGate(_menuModel));
 
-            _inputProcessor = _inputProcessorFactory.Create(_menuView); 
+            _inputProcessor = _inputProcessorFactory.Create(_menuView);
             _inputView = new UiMenuInputView(_inputViewFactory, _inputProcessor);
             _enterView.Construct(_inputView);
 
@@ -54,9 +55,10 @@ namespace gaw241201
 
         }
 
-        public IMenuModelGate GetGateModel()
+        public IAdapterManagerToModel Provide()
         {
-            return _gateModel;
+            return _menuRootModelTitle;
         }
+
     }
 }
