@@ -12,9 +12,10 @@ namespace gaw241201
 {
     public class UiMenuItemModelLanguage : IUiMenuItemModel
     {
+        [Inject] LanguageModel _languageModel;
         public void Enter()
         {
-            Log.DebugLog("Language");
+            _languageModel.SetLanguage(EnumUtil.NoToType<LanguageConst.AvailableLanguage>(((int)_languageModel.Language + 1) % LanguageConst.AvailableLanguageNumber));
         }
     }
 }

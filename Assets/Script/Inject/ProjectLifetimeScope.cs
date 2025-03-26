@@ -95,10 +95,6 @@ namespace gaw241201.Inject
 
         void ConfigureTitle(IContainerBuilder builder)
         {
-           // builder.Register<MenuRootModelTitle>(Lifetime.Singleton).AsSelf();
-            builder.Register<TitleExitModel>(Lifetime.Singleton).AsSelf();
-            builder.RegisterComponentInHierarchy<TitleRootView>().AsSelf();
-            builder.Register<TitleInputView>(Lifetime.Singleton).AsSelf();
 
             builder.Register<MenuItemTitleProvider>(Lifetime.Singleton).AsSelf();
             builder.Register<PresenterCoreFactoryTitle>(Lifetime.Singleton)

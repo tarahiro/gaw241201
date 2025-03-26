@@ -25,6 +25,8 @@ namespace gaw241201.Editor
             WordImporter.Import();
             SwitchImporter.Import();
 
+            Tarahiro.Editor.AllImporter.AllImport();
+
             stopwatch.Stop();
             Log.DebugLog($"Message imported in {stopwatch.ElapsedMilliseconds / 1000.0f} seconds.");
         }
