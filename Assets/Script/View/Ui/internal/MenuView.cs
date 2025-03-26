@@ -26,11 +26,6 @@ namespace gaw241201.View
             Log.DebugLog("Žæ“¾Š®—¹ Count: " + Count);
         }
 
-        void Update()
-        {
-            Log.DebugLog("Žæ“¾Š®—¹ Count: " + Count);
-        }
-
         public async UniTask Decide(int index)
         {
 

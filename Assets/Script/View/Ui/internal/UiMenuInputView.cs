@@ -16,7 +16,6 @@ namespace gaw241201.View
         IInputView _inputView;
         public IObservable<bool> BlockEnabled => _inputView.BlockEnabled;
 
-        [Inject]
         public UiMenuInputView(IInputViewFactory factory, UiMenuInputProcessor skillInputProcessor)
         {
             _inputView = factory.Create(skillInputProcessor, ActiveLayerConst.InputLayer.GameOver);
@@ -24,6 +23,7 @@ namespace gaw241201.View
 
         public async UniTask Enter(CancellationToken ct)
         {
+            Log.DebugLog("Enter: " + typeof(UiMenuInputView).FullName);
             await _inputView.Enter(ct);
         }
 

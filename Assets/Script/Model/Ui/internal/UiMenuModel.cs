@@ -42,6 +42,7 @@ namespace gaw241201
         }
         public void Enter()
         {
+            Log.DebugLog("Enter :" + typeof(UiMenuModel).FullName);
             _entered.OnNext(ItemIndex);
         }
 
@@ -52,6 +53,7 @@ namespace gaw241201
 
         public void Decide()
         {
+            Log.DebugLog("Decide :" + typeof(UiMenuModel).FullName);
             _decided.OnNext(ItemIndex);
             _uiMenuItemModelList[ItemIndex].Enter();
         }

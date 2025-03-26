@@ -12,14 +12,17 @@ namespace gaw241201
 {
     public class MenuItemTitleProvider : IMenuItemProvider
     {
+        [Inject] UiMenuItemModelGameStart _gameStart;
+        [Inject] UiMenuItemModelLanguage _language;
+
 
         public IUiMenuItemModel Provide(int index)
         {
             switch (index)
             {
-                case 0: return new UiMenuItemModelGameStart();
+                case 0: return _gameStart;
 
-                case 1: return new UiMenuItemModelLanguage();
+                case 1: return _language;
 
                 default:
                     Log.DebugAssert("–³Œø‚Èindex‚Å‚·:" + index);

@@ -106,6 +106,9 @@ namespace gaw241201.Inject
                 .WithParameter(_menuViewTitle)
                 .AsSelf();
 
+            builder.Register<UiMenuItemModelGameStart>(Lifetime.Singleton).AsSelf();
+            builder.Register<UiMenuItemModelLanguage>(Lifetime.Singleton).AsSelf();
+
             builder.RegisterEntryPoint<TitlePresenterEntryPoint>();
             builder.RegisterEntryPoint<TitlePresenter>();
         }
@@ -205,7 +208,7 @@ namespace gaw241201.Inject
             builder.Register<IndexVariantHundlerUiMenu>(Lifetime.Singleton).AsSelf();
             builder.Register<UiMenuModelFactory>(Lifetime.Singleton).AsSelf();
             builder.Register<MenuItemRestartProvider>(Lifetime.Singleton).AsSelf();
-            builder.Register<UiMenuInputProcessorFactory>(Lifetime.Singleton).AsImplementedInterfaces();
+            builder.Register<UiMenuInputProcessorFactory>(Lifetime.Transient).AsImplementedInterfaces();
 
             builder.Register<PresenterCoreFactoryGameOver>(Lifetime.Singleton)
                 .AsSelf()

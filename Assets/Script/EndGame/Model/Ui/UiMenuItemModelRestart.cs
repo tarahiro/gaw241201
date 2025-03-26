@@ -21,6 +21,7 @@ namespace gaw241201
 
         public void Enter()
         {
+            Log.DebugLog("Restart");
             _executor.Restart();
         }
     }

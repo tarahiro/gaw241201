@@ -40,7 +40,7 @@ namespace gaw241201.Presenter
                 _tabManager,
                 _disposablePure
                 );
-            presenter.PostInitialize();
+            presenter.Present();
         }
     }
 }

@@ -46,7 +46,7 @@ namespace gaw241201
         }
 
 
-        public void PostInitialize()
+        public void Present()
         {
             //メニュー開始・終了
             //それぞれのクラスの内部にunderlyingがないので、冗長になるかもしれない

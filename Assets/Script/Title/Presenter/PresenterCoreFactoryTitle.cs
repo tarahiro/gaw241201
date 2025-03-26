@@ -51,13 +51,18 @@ namespace gaw241201.Presenter
                 new List<IUiMenuModel>() { _menuModel },
                 _menuView,
                 _disposable);
-            presenter.PostInitialize();
+            presenter.Present();
 
         }
 
-        public IAdapterManagerToModel Provide()
+        public IAdapterManagerToModel GetAdapter()
         {
             return _menuRootModelTitle;
+        }
+
+        public IMenuModelGate GetGate()
+        {
+            return _gateModel;
         }
 
     }

@@ -20,6 +20,7 @@ namespace gaw241201
         }
         public void Enter()
         {
+            Log.DebugLog("ToTitle");
             _executor.ToTitle();
         }
     }

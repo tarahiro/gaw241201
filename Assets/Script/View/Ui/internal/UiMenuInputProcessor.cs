@@ -28,7 +28,6 @@ namespace gaw241201.View
         Subject<int> _indexerMoved = new Subject<int>();
         public IObservable<int> IndexerMoved => _indexerMoved;
 
-        [Inject]
         public UiMenuInputProcessor(
             IIndexVariantHundler indexVariantHundler,
             InputExecutorCommand executor,

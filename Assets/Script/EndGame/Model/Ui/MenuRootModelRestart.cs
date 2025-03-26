@@ -19,7 +19,11 @@ namespace gaw241201
             _underlying = menuModelGate;
         }
 
-        public void Enter(EndGameConst.Key bodyId) => MenuStart();
+        public void Enter(EndGameConst.Key bodyId)
+        {
+            Log.DebugLog("Enter: " + typeof(MenuRootModelRestart).FullName);
+            MenuStart();
+        }
 
         public void MenuStart() => _underlying.MenuStart();
         public IObservable<Unit> Started => _underlying.Started;

@@ -50,7 +50,7 @@ namespace gaw241201
                 new List<IUiMenuModel>() { _menuModel },
                 _menuView,
                 _disposable);
-            presenter.PostInitialize();
+            presenter.Present();
 
         }
 

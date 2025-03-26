@@ -30,7 +30,7 @@ namespace gaw241201
             }
             else
             {
-                return _presenterCoreFactoryTitle.Provide();
+                return _presenterCoreFactoryTitle.GetAdapter();
             }
         }
 
