@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: -6509236557802883430}
   - component: {fileID: 7504772590972617360}
   m_Layer: 5
-  m_Name: gaw241201Tmp
+  m_Name: DefaultText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
