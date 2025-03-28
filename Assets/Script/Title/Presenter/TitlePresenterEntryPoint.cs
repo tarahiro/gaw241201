@@ -16,10 +16,16 @@ namespace gaw241201.Presenter
     public class TitlePresenterEntryPoint : IPostInitializable
     {
         [Inject] PresenterCoreFactoryTitle _factory;
+        [Inject] DrumRollPresenterFactory _drumRollFactory;
+
+        [Inject] TitlePresenter _presenter;
 
         public void PostInitialize()
         {
             _factory.Create();
+            _drumRollFactory.Create();
+
+            _presenter.Present();
         }
     }
 }

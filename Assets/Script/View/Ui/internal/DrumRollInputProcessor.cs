@@ -1,16 +1,16 @@
-using Cysharp.Threading.Tasks;
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using Tarahiro;
-using UniRx;
 using UnityEngine;
+using Cysharp.Threading.Tasks;
+using Tarahiro;
 using VContainer;
 using VContainer.Unity;
+using UniRx;
 
 namespace gaw241201.View
 {
-    public class UiMenuInputProcessor : IInputProcessable, IIndexerInputtableView
+    public class DrumRollInputProcessor : IInputProcessable, IIndexerInputtableView
     {
         IIndexVariantHundler _indexVariantHundler;
 
@@ -23,16 +23,16 @@ namespace gaw241201.View
 
         List<IInputExecutor> _executorList;
 
+
+        //ç°ÇÕFake
         Subject<int> _indexerMoved = new Subject<int>();
         public IObservable<int> IndexerMoved => _indexerMoved;
 
-        public UiMenuInputProcessor(
-            IIndexVariantHundler indexVariantHundler,
+        public DrumRollInputProcessor(
             InputExecutorCommand executor,
-            InputExecutorDiscreteDirectionVertical executorVertical,
+            InputExecutorDiscreteDirectionHorizontal executorHorizontal,
             IDisposablePure disposable)
-        {
-            _indexVariantHundler = indexVariantHundler;
+        { 
 
             _executorList = new List<IInputExecutor>();
 
@@ -40,9 +40,8 @@ namespace gaw241201.View
             executor.Inputted.Subscribe(_ => _decided.OnNext(default));
             _executorList.Add(executor);
 
-            executorVertical.Inputted.Subscribe(x =>
-            _indexerMoved.OnNext(_indexVariantHundler.IndexVariant(Vector2Int.up * x))).AddTo(disposable);
-            _executorList.Add(executorVertical);
+            executorHorizontal.Inputted.Subscribe(x => _indexerMoved.OnNext(x)).AddTo(disposable);
+            _executorList.Add(executorHorizontal);
 
         }
 

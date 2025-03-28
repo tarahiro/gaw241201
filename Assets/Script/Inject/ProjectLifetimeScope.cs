@@ -92,6 +92,7 @@ namespace gaw241201.Inject
 
         [SerializeField] UiMenuEnterView _enterViewTitle;
         [SerializeField] MenuView _menuViewTitle;
+        [SerializeField] DrumRollDisplayView _drumRollDisplayView;
 
         void ConfigureTitle(IContainerBuilder builder)
         {
@@ -101,12 +102,15 @@ namespace gaw241201.Inject
                 .WithParameter(_enterViewTitle)
                 .WithParameter(_menuViewTitle)
                 .AsSelf();
+            builder.Register<DrumRollPresenterFactory>(Lifetime.Singleton)
+                .WithParameter(_drumRollDisplayView)
+                .AsSelf();
 
             builder.Register<UiMenuItemModelGameStart>(Lifetime.Singleton).AsSelf();
             builder.Register<UiMenuItemModelLanguage>(Lifetime.Singleton).AsSelf();
+            builder.Register<TitlePresenter>(Lifetime.Singleton).AsSelf();
 
             builder.RegisterEntryPoint<TitlePresenterEntryPoint>();
-            builder.RegisterEntryPoint<TitlePresenter>();
         }
 
         void ConfigureFlow(IContainerBuilder builder)

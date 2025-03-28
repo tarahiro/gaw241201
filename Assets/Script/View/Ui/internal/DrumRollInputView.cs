@@ -1,24 +1,24 @@
-using Cysharp.Threading.Tasks;
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using Tarahiro;
-using UniRx;
 using UnityEngine;
+using Cysharp.Threading.Tasks;
+using Tarahiro;
 using VContainer;
 using VContainer.Unity;
+using UniRx;
 using System.Threading;
 
 namespace gaw241201.View
 {
-    public class UiMenuInputView : IInputView
+    public class DrumRollInputView : IInputView
     {
         IInputView _inputView;
         public IObservable<bool> BlockEnabled => _inputView.BlockEnabled;
 
-        public UiMenuInputView(IInputViewFactory factory, UiMenuInputProcessor skillInputProcessor)
+        public DrumRollInputView(IInputViewFactory factory, DrumRollInputProcessor inputProcessor)
         {
-            _inputView = factory.Create(skillInputProcessor, ActiveLayerConst.InputLayer.SettingMenu);
+            _inputView = factory.Create(inputProcessor, ActiveLayerConst.InputLayer.GameOver);
         }
 
         public async UniTask Enter(CancellationToken ct)
